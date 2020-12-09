@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+                         ]>
+<section id="entry">
+    <title>entry</title>
+    <para>Static container for a dynamic structure of lexicographic objects and attributes encoding
+        lexicographic payload and metadata.</para>
+
+    <para><emphasis>Contains:</emphasis></para>
+    <simplelist>
+        <member>- elements from other namespaces, <glossterm>optional</glossterm></member>
+        <member>- Zero or one
+            <olink targetdoc="notes.xml" targetptr="notes"><code>&lt;notes></code></olink>
+            elements followed by</member>
+        <member>- <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>object
+            structure ELABORATE in this &amp; subsequent simple list
+            members<?oxy_custom_end?>.</member>
+
+
+
+
+
+
+    </simplelist>
+
+    <para><emphasis>Attributes:</emphasis></para>
+    <simplelist>
+        <member>- <olink targetdoc="../../attributes/id.xml" targetptr="id"><code>id</code></olink>, <glossterm>required</glossterm></member>
+        <member>- <olink targetdoc="../../attributes/name.xml" targetptr="name"><code>name</code></olink>, <glossterm>optional</glossterm></member>
+        <member>- <olink targetdoc="../../attributes/srcdir.xml" targetptr="srcdir"><code>srcDir</code></olink>, <glossterm>optional</glossterm></member>
+        <member>- <olink targetdoc="../../attributes/trgdir.xml" targetptr="trgdir"><code>trgDir</code></olink>, <glossterm>optional</glossterm></member>
+        <member>- <olink targetdoc="../../attributes/xml_space.xml" targetptr="xml_space"><code>xml:space</code></olink>, <glossterm>optional</glossterm></member>
+
+    <member>- <olink targetdoc="../../attributes/type.xml"
+    targetptr="type"><code>type</code></olink>, <glossterm>optional</glossterm></member>
+
+
+
+        <member>- attributes from other namespaces, <glossterm>optional</glossterm></member>
+    </simplelist>
+
+    <itemizedlist>
+        <title>Constraints</title>
+        <listitem>
+            <para>An <link linkend="entry"><code>entry</code></link>
+                <glossterm>must</glossterm> contain ELABORATE. </para>
+        </listitem>
+        <listitem>
+            <para>The following <firstterm>DMLex Module</firstterm> objects are explicitly allowed
+                by the wildcard <code>other</code>:</para>
+            <simplelist>
+                
+                
+                <member>- Zero or one
+                    <olink targetdoc="../module_01/md01_object_wrapper_01.xml" targetptr="md01_object_wrapper_01"><code>&lt;md01:object_wrapper_01></code></olink>
+                    objects</member>
+                <member>- Zero or one
+                    <olink targetdoc="../module_01/md01_object_wrapper_02.xml" targetptr="md01_object_wrapper_02"><code>&lt;md01:object_wrapper_02></code></olink>
+                    objects</member>
+                
+            </simplelist>
+        </listitem>
+        <listitem>
+            <para><firstterm>Module</firstterm> and Extension elements <glossterm>may</glossterm> be
+                used in any order.</para>
+        </listitem>
+        <listitem>
+            <para>The following <firstterm>DMLex Module</firstterm> attributes are explicitly
+                allowed by the wildcard <code>other</code>:</para>
+            <simplelist>
+                <member>- attributes from the namespace
+                    <code>urn:oasis:names:tc:xliff:fs:2.0</code>, <glossterm>optional</glossterm>,
+                    provided that the Constraints specified in the <olink
+                        targetdoc="modules/fs/fs.xml" targetptr="fs-mod">Format Style Module</olink>
+                    are met.</member>
+                <member>- attributes from the namespace
+                        <code>http://www.w3.org/2005/11/its</code>,
+                        <glossterm>optional</glossterm>, provided that the Constraints specified in
+                    the <olink targetdoc="modules/itsm/specification.xml" targetptr="ITS-module">ITS
+                        Module</olink> are met.</member>
+                <member>- attributes from the namespace
+                        <code>urn:oasis:names:tc:xliff:itsm:2.1</code>,
+                        <glossterm>optional</glossterm>, provided that the Constraints specified in
+                    the <olink targetdoc="../../modules/itsm/specification.xml"
+                        targetptr="ITS-module">ITS Module</olink> are met.</member>
+            </simplelist>
+        </listitem>
+        </itemizedlist>
+</section>

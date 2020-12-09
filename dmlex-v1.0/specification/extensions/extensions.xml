@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+"http://www.docbook.org/xml/4.5/docbookx.dtd" [
+<!ENTITY % xinclude SYSTEM "../docbook/xinclude.mod">
+%xinclude;
+<!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED">
+]>
+<section id="extensions">
+    <title>Extension Mechanisms</title>
+    <para>DMLex offers the following mechanisms for storing custom data in DMLex Instances:</para>
+    <orderedlist>
+        <listitem>
+            <para><?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>??A set of
+                metaobjects to store arbitrary metadata??<?oxy_custom_end?></para>
+        </listitem>
+        <listitem>
+            <para>Using a namespace based mechanism for storing data in custom objects or attributes
+                at predefined extension points.</para>
+        </listitem>
+    </orderedlist>
+    <para>Both mechanisms can be used simultaneously.
+        [<?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>if both
+        defined<?oxy_custom_end?>]</para>
+    <section>
+        <title>Extension Points</title>
+        <para>The following <firstterm>DMLex Core</firstterm> objects allow storing custom data in
+            DMLex predefined metaobjects:</para>
+        <simplelist>
+            <member>- <olink targetdoc="../elements/structural/entry.xml" targetptr="entry"><code>entry</code></olink></member>
+            <member>- another allowed object olink</member>
+            <member>- yet another </member>
+        </simplelist>
+            
+        <para>The following <firstterm>DMLex Core</firstterm> objects accept custom
+            attributes:</para>
+        <simplelist>
+            <member>- <olink targetdoc="../elements/structural/dmlex.xml" targetptr="dmlex"><code>dmlex></code></olink></member>
+            <member>- <olink targetdoc="../elements/structural/entry.xml" targetptr="entry"><code>entry</code></olink></member>
+            <member>- another allowed object olink</member>
+            <member>- yet another </member>
+        </simplelist>
+        <section>
+            <title>Extensibility of <firstterm>DMLex Modules</firstterm></title>
+        <para>For extensibility of <firstterm>DMLex Modules</firstterm> please refer to the relevant
+            Module Sections.</para></section>
+        
+    </section>
+  
+  <section id="ext-constraints">
+    <title>Constraints</title>
+    <itemizedlist>
+      <listitem><para>When using identifiers, an extension <glossterm>must</glossterm> use either an attribute named <code>id</code> or the attribute
+        <code>xml:id</code> to specify them.</para></listitem>
+      <listitem><para>Extensions identifiers <glossterm>must</glossterm> be unique within ELABORATE.. .</para></listitem>
+        <listitem><para>Identifier values used in extensions <glossterm>must</glossterm> be of type <code>xs:NCNAME</code>, <code>xs:NMTOKEN</code>, or compatible with <code>xs:NMTOKEN</code>
+        (e.g. <code>xs:NAME</code> and <code>xs:ID</code> are compatible).</para></listitem>
+    </itemizedlist>
+    <para>These constraints are needed for the <olink targetdoc="../fragments/fragments.xml" targetptr="fragid">fragment identification mechanism</olink>.</para>
+  </section>
+  
+    <section>
+        <title>Processing Requirements</title>
+        <itemizedlist>
+            <listitem>
+                <para>A user extension, whether implemented using predefined metaobjects or using a custom namespace,
+                        <glossterm>must not</glossterm> provide the same functionality as an
+                    existing DMLex Core or Module feature, however it <glossterm>may</glossterm>
+                    complement an extensible DMLex Core or Module feature or provide a new
+                    functionality at the provided extension points.</para>
+            </listitem>
+            
+            <listitem>
+                <para>Another requirement. </para>
+            </listitem>
+            
+            <listitem>
+                <para><firstterm>Writers</firstterm> that do not support a given custom namespace based user extension
+                        <glossterm>should</glossterm> preserve that extension without
+                    <firstterm>Modification</firstterm>.</para>
+            </listitem>
+        </itemizedlist>
+    </section>
+</section>

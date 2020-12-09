@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+<section id="schema_tree">
+    <title>Tree diagram of validation artifacts</title>
+
+<programlisting>
+    
+    <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>[Diagram currently contains tentative example structure with some potential references]<?oxy_custom_end?>
+    
+<ulink url="&this-loc;/schemas/advanced_validation.nvdl"><code>Master NVDL Schema</code></ulink>
+   |      |
+   |    <ulink url="&this-loc;/schemas/dmlex-&cschversion;.xsd"><code>Core XML Schema</code></ulink>|
+   |      |
+   |      +---<ulink url="&this-loc;/schemas/module_01.xsd"><code>Module 01 XML Schema</code></ulink>
+   |             |
+   |             +---<ulink url="https://www.w3.org/2005/11/its/its.xsd"><code>Internationalization Tag Set (ITS) Version 1.0</code></ulink>
+   |             |
+   |             +---<ulink url="&this-loc;/schemas/itsm.xsd"><code>XLIFF ITS Module XML Schema</code></ulink>
+   |
+   +---<ulink url="&this-loc;/schemas/dmlex-&cschversion;.sch"><code>Core constraints</code></ulink>
+         |
+         +---<ulink url="&this-loc;/schemas/module_01.sch"><code>Module 01 Constraints</code></ulink>
+         
+ 
+</programlisting>
+
+</section>

@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+<!--the document properties were transferred to "dockbook/dbgenent.mod"-->
+                         ]>
+<section id="RDF_serialization" role="normative | informative">
+  <title>DMLex RDF serialization</title>
+  <section id="RDF_Intro">
+    <title>Introduction</title>
+    <para>This serialization defines ... ELABORATE</para>
+    <note>
+      <para>This serialization specification chiefly describes how... ELABORATE</para>
+    </note>
+    <warning >
+      <para>There is an important difference or similar ELABORATE</para>
+      <para>However, … ELABORATE. </para>
+      <para>Implementers who wish to better access... ELABORATE.</para>
+    </warning>
+  </section>
+  <section id="RDF_artifacts">
+    <title>DMLex namespaces and validation artifacts for its RDF serialization</title>
+    <para>This
+      <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>normative/informative<?oxy_custom_end?>
+      RDF serialization of DMLex Version &version; makes use of all DMLex namespaces (both core and
+      modules) namespaces: <code><ulink
+          url="http://docs.oasis-open.org/lexidma/ns/dmlex-&cschversion;"
+          >http://docs.oasis-open.org/lexidma/ns/dmlex-&cschversion;</ulink></code>, and
+        <code>urn:oasis:names:tc:lexidma:module_01:1.0</code>, and
+        <code><?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>other namespace
+        identifiers as necessary<?oxy_custom_end?></code>.</para>
+    <para>Validation artifacts
+      <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>[specify type of
+      artifacts if any available at all]<?oxy_custom_end?> for this JSON serialization are available
+      at <ulink url="&this-loc;/schemas/filename1.filetype1"
+        >&this-loc;/schemas/filename1.filetype1</ulink>, <ulink
+        url="&this-loc;/schemas/filename2.filetype1">&this-loc;/schemas/filename2.filetype1</ulink>,
+      and <ulink url="&this-loc;/schemas/filename1.filetype2"
+        >&this-loc;/schemas/filename1.filetype2</ulink>. </para>
+    <note>
+      <para><?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>[Potential note
+        content]<?oxy_custom_end?></para>
+      <para>. </para>
+    </note>
+  </section>
+  <section id="RDF_Conformance">
+    <title>Conformance to the RDF serialization of DMLex Version &version;</title>
+    <note>
+      <para>Some Module 01 data categories.... Other data categories …. The below conformance
+        statement is only relevant for data categories .. There is no interrelation between data
+        categories/ data categories are related as explained in ....</para>
+    </note>
+    <!-- -->
+    <itemizedlist>
+      <title>Processing Requirements</title>
+      <listitem>
+        <para>Conformant Processors <glossterm>must</glossterm> be able to use and compute at least
+          all the <firstterm>DMLex Core</firstterm> data categories encoded in <firstterm>DMlex RDF
+            Instances</firstterm> as per certain conformance clauses
+          <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>ELABORATE<?oxy_custom_end?></para>
+        <itemizedlist>
+          <listitem>
+            <para>Subrequirement, ELABORATE.</para>
+          </listitem>
+        </itemizedlist>
+      </listitem>
+      <listitem>
+        <para>Conformant <firstterm>Agents</firstterm>
+          <glossterm>must</glossterm> be DMLex Conformant in the sense of DMLex <olink
+            targetptr="ApplicationConformance" targetdoc="../conformance/conformance.xml"
+            >Application Conformance</olink> and also
+          <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>ELABORATE<?oxy_custom_end?>.</para>
+        <para>In particular:</para>
+        <itemizedlist>
+          <listitem>
+            <para>Conformant <firstterm>Creators</firstterm>
+              <glossterm>must</glossterm> be capable of <firstterm>Creating</firstterm>
+              <firstterm>DMlex RDF Instances</firstterm>
+              <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>ELABORATE<?oxy_custom_end?>. </para>
+          </listitem>
+          <listitem>
+            <para> Conformant <firstterm>Enrichers</firstterm>
+              <glossterm>must</glossterm> be capable of <firstterm>Enriching</firstterm>
+              <firstterm>DMlex Instances</firstterm> with at least one of the above specified Module
+              01 data categories.</para>
+          </listitem>
+          <listitem>
+            <para>Conformant <firstterm>Modifiers</firstterm>
+              <glossterm>must</glossterm> be capable of updating at least one of the above specified
+              Module 01 data categories according to its own Constraints and Processing Requirements
+              as specified in the Module 01 Module.</para>
+          </listitem>
+          <listitem>
+            <para>Etc. ELABORATE.</para>
+          </listitem>
+        </itemizedlist>
+      </listitem>
+    </itemizedlist>
+  </section>
+  <section>
+    <title>Other RDF serialization provisions</title>
+    <para> Other provisions.
+      <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>ELABORATE<?oxy_custom_end?></para>
+    <warning>
+      <para><?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>ELABORATE<?oxy_custom_end?>. </para>
+    </warning>
+    <note>
+      <para><?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>ELABORATE<?oxy_custom_end?></para>
+      <para>Another informative pointer.</para>
+    </note>
+    <itemizedlist>
+      <title>Processing Requirements</title>
+      <listitem>
+        <para><firstterm>Writers</firstterm>
+          <glossterm>must</glossterm>
+          <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>ELABORATE<?oxy_custom_end?>
+          in <firstterm>DMLex RDF Instances</firstterm>.</para>
+      </listitem>
+    </itemizedlist>
+  </section>
+  
+
+  <section id="RDF_objects">
+    <title>RDF serialization objects</title>
+    <para>DMLex RDF serialization uses the following objects:</para>
+    <para><?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>[comma separated list
+      of object olinks]<?oxy_custom_end?></para>
+    <para> </para>
+    <section id="RDF_diagram">
+      <title>Diagram</title>
+      <para>Legend:</para>
+      <simplelist type="vert">
+        <member>1 = one</member>
+        <member>+ = one or more</member>
+        <member>? = zero or one</member>
+        <member>* = zero, one or more</member>
+      </simplelist>
+      <programlisting format="linespecific">
+programlisting code to display the diagram
+    </programlisting>
+    </section>
+<!-- RDF object includes --> 
+    </section>
+  <section id="RDF_attributes">
+    <title>RDF serialization attributes</title>
+    <para>The RDF serialization uses the following attributes:</para>
+      <para><?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>[comma separated list
+        of object olinks]<?oxy_custom_end?></para>
+      <para> </para>
+    <!-- RDF attribute includes from all namespaces -->
+    
+  </section>
+  <section id="RDF_example">
+    <title>Example file</title>
+    <example>
+      <title>Example of a couple of DMLex entries RDF serialized</title>
+      <para>The following example file includes markup related to several <firstterm>DMLex Core and Module</firstterm> data
+        categories.</para>
+      <programlisting>&lt;!-- example file metadata -->
+
+programlisting code</programlisting>
+    </example>
+  </section>
+</section>

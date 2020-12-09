@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+                         ]>
+<section id="md01_object_01_01">
+    <title>md01:object_01_01</title>
+    <para>object_01_01 - a standoff element to hold information about ...ELABORATE.</para>
+    <para><emphasis>Contains:</emphasis></para>
+    <simplelist>
+        <member>This element is always empty.</member>
+    </simplelist>
+    
+    <para><emphasis>Parents:</emphasis></para>
+    
+    <simplelist>
+        <member>- <olink targetdoc="md01_object_wrapper_01.xml"
+            targetptr="md01_object_wrapper_01"><code>md01:object_wrapper_01</code></olink></member>
+        
+    </simplelist>
+    
+
+    <para><emphasis>Attributes:</emphasis></para>
+    <simplelist>
+      <member>- <olink targetdoc="../../attributes/module_01/md01_attribute_01.xml"
+                targetptr="itsm_locQualityIssueType">
+                <code>attribute_01</code></olink>, <glossterm>required</glossterm>
+        </member>
+        <member>- olinks to other attributes as needed, <glossterm>optional | required</glossterm></member>
+        
+        
+    </simplelist>
+
+    <itemizedlist>
+        <title>Constraints</title>
+        <listitem>
+            <para>At least one of the attributes <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>ELABORATE..<?oxy_custom_end?>
+                <glossterm>must</glossterm> be set.</para>
+        </listitem>
+    </itemizedlist>
+    <itemizedlist>
+        <title>Processing Requirements</title>
+        <listitem>
+            <para> For all <firstterm>Agents</firstterm>, when any of the attributes
+                <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>ELABORATE..<?oxy_custom_end?>
+                are declared,  ELABORATE <glossterm>required</glossterm>.</para>
+        </listitem>
+        <listitem>
+            <para><firstterm>Modifiers</firstterm>
+                <glossterm>must</glossterm>
+                <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>ELABORATE..<?oxy_custom_end?>
+                .</para>
+        </listitem>
+    </itemizedlist>
+</section>

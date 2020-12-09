@@ -1,0 +1,822 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="stylesheets/oasis-specification-html-offline.xsl"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "docbook/docbookx.dtd"[
+<!ENTITY % xinclude SYSTEM "docbook/xinclude.mod">
+%xinclude;
+<!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED">
+<!--the document properties were transferred to "dockbook/dbgenent.mod"-->
+]>
+<article status="&standard;" lang="en-US">
+  <articleinfo>
+    <title>Data Model for Lexicography (DMLex), Version &version;</title>
+    <releaseinfo role="cvs">$Id: spectools-docbook-template-wd03.xml,v 1.4 2010/07/08 12:28:15 admin
+      Exp$</releaseinfo>
+    <releaseinfo role="track">Standards Track Work Product</releaseinfo>
+    <productname>&name;</productname>
+    <productnumber>&stage;</productnumber>
+    <releaseinfo role="OASIS-specification-this-authoritative"
+      >&this-loc;/&name;-&stage;.html</releaseinfo>
+    <releaseinfo role="OASIS-specification-this">&this-loc;/&name;-&stage;.pdf</releaseinfo>
+    <releaseinfo role="OASIS-specification-this">&this-loc;/&name;-&stage;.xml</releaseinfo>
+    <releaseinfo role="OASIS-specification-previous-authoritative"
+      >&previous-loc;/&name;-&pstage;.html</releaseinfo>
+    <releaseinfo role="OASIS-specification-previous"
+      >&previous-loc;/&name;-&pstage;.pdf</releaseinfo>
+    <releaseinfo role="OASIS-specification-previous"
+      >&previous-loc;/&name;-&pstage;.xml</releaseinfo>
+    <releaseinfo role="OASIS-specification-latest-authoritative"
+      >&latest-loc;/&name;.html</releaseinfo>
+    <releaseinfo role="OASIS-specification-latest">&latest-loc;/&name;.pdf</releaseinfo>
+    <releaseinfo role="OASIS-specification-latest">&latest-loc;/&name;.xml</releaseinfo>
+    <releaseinfo role="committee"><ulink url="http://www.oasis-open.org/committees/xliff/">OASIS XML
+        Localisation Interchange File Format (XLIFF) TC</ulink></releaseinfo>
+    <authorgroup>
+      <othercredit role="chair">
+        <firstname>Tomaž</firstname>
+        <surname>Erjavec</surname>
+        <affiliation>
+          <orgname><ulink url="http://www.ijs.si/">Jozef Stefan Institute</ulink></orgname>
+          <address format="linespecific"><email>tomaz.erjavec@ijs.si</email></address>
+        </affiliation>
+        <email>tomaz.erjavec@ijs.si</email>
+      </othercredit>
+      <editor>
+        <firstname>David</firstname>
+        <surname>Filip</surname>
+        <affiliation>
+          <orgname><ulink url="http://www.adaptcentre.ie/">Trinity College Dublin
+            (ADAPT)</ulink></orgname>
+          <address format="linespecific"><email>david.filip@adaptcentre.ie</email></address>
+        </affiliation>
+        <email>david.filip@adaptcentre.ie</email>
+      </editor>
+      <editor>
+        <firstname>Simon</firstname>
+        <surname>Krek</surname>
+        <affiliation>
+          <orgname><ulink url="http://www.ijs.si/">Jozef Stefan Institute</ulink></orgname>
+          <address format="linespecific"><email>simon.krek@ijs.si</email></address>
+        </affiliation>
+        <email>simon.krek@ijs.si</email>
+      </editor>
+    </authorgroup>
+    <pubdate>&pubdate;</pubdate>
+    <copyright>
+      <year>&pubyear;</year>
+      <holder>OASIS Open, Inc. All Rights Reserved.</holder>
+    </copyright>
+    <legalnotice role="additional">
+      <title>Additional artifacts</title>
+      <!-- probably will have references to UML diagrams
+      <para>This prose specification is one component of a Work Product that also includes:</para>
+
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para> Declarative validation artifacts accessible from <ulink url="&this-loc;/schemas/"
+              >&this-loc;/schemas/</ulink>
+          </para>
+          
+          
+      
+        </listitem>
+      </itemizedlist>-->
+      <para>NONE AT THE MOMENT</para>
+    </legalnotice>
+    <legalnotice role="related">
+      <title>Related Work</title>
+      <!-- Model content for replaced specifications in the future  
+   <para>This specification replaces or supersedes:</para>
+
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para><emphasis>XLIFF Version &pversion;.</emphasis> Edited by Tom Comerford, David Filip, Rodolfo M. Raya, and Yves Savourel. 
+            05 August 2014. OASIS Standard. <ulink url="http://docs.oasis-open.org/xliff/xliff-core/v2.0/os/xliff-core-v2.0-os.html">http://docs.oasis-open.org/xliff/xliff-core/v&pversion;/os/xliff-core-v&pversion;-os.html</ulink></para>
+        </listitem>
+      </itemizedlist>
+      -->
+      <para>This specification is related to:</para>
+      <itemizedlist spacing="compact">
+        <!-- model content for related specifications in case there are any later on     
+        <listitem>
+          <para><emphasis>JLIFF Version &version;</emphasis>. Edited by Robert van Engelen and David
+            Filip. &pubdate;. OASIS &standard;. <ulink url="&this-loc;/&name;-&stage;.html"
+              >&this-loc;/&name;-&stage;.html</ulink>. Latest version: <ulink
+              url="&latest-loc;/&name;.html">&latest-loc;/&name;.html</ulink>. </para>
+        </listitem>
+        
+        <listitem>
+          <para><emphasis>XLIFF Version 2.1.</emphasis> Edited by David Filip, Tom Comerford,
+            Soroush Saadatfar, Felix Sasaki, and Yves Savourel. 13 February 2018. OASIS Standard.
+              <ulink
+              url="http://docs.oasis-open.org/xliff/xliff-core/v2.1/os/xliff-core-v2.1-os.html"
+              >http://docs.oasis-open.org/xliff/xliff-core/v2.1/os/xliff-core-v2.1-os.html</ulink></para>
+        </listitem>
+        -->
+        <listitem>
+          <para><emphasis>No related specifications.</emphasis></para>
+        </listitem>
+      </itemizedlist>
+    </legalnotice>
+    <legalnotice id="namespaces" role="namespaces">
+      <title>Declared namespaces</title>
+      <para> This specification declares one or more namespaces. Namespace isn't considered an XML
+        specific feature in this serialization independent specification.</para>
+      <itemizedlist spacing="compact">
+        <title>The core namespace</title>
+        <listitem>
+          <para><ulink url="http://docs.oasis-open.org/lexidma/ns/dmlex-&cschversion;"
+              >http://docs.oasis-open.org/lexidma/ns/dmlex-&cschversion;</ulink></para>
+        </listitem>
+      </itemizedlist>
+      <itemizedlist>
+        <title>Module namespaces:</title>
+        <listitem>
+          <para>TBD</para>
+        </listitem>
+        <listitem>
+          <para>TBD</para>
+        </listitem>
+      </itemizedlist>
+    </legalnotice>
+    <abstract>
+      <para>This document defines the 1st version of a data model in support of the high priority
+        technical goals described in the LEXIDMA TC's charter, including:</para>
+      <para>
+        <itemizedlist>
+          <listitem>
+            <para>Serialization independent Data Model for Lexicography (DMLex)</para>
+          </listitem>
+          <listitem>
+            <para>XML serialization of DMLex</para>
+          </listitem>
+          <listitem>
+            <para>JSON serialization of DMLex</para>
+          </listitem>
+          <listitem>
+            <para>RDF serialization of DMLex</para>
+          </listitem>
+          <listitem>
+            <para>Informative Ontolex-Lemon mapping</para>
+          </listitem>
+          <listitem>
+            <para>Informative TEI Lex-0 mapping</para>
+          </listitem>
+        </itemizedlist>
+      </para>
+    </abstract>
+    <legalnotice role="status">
+      <title>Status</title>
+      <!--      <para>{Describe the status and stability of the specification
+      here.}</para>-->
+      <para>This document was last revised or approved by the LEXIDMA TC on the above date. The
+        level of approval is also listed above. Check the "Latest version" location noted above for
+        possible later revisions of this document. Any other numbered Versions and other technical
+        work produced by the Technical Committee (TC) are listed at <ulink
+          url="https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=lexidma#technical"
+          >https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=lexidma#technical</ulink>.</para>
+      <para>TC members should send comments on this document to the TC's email list. Others should
+        send comments to the TC's public comment list, after subscribing to it by following the
+        instructions at the "<ulink
+          url="https://www.oasis-open.org/committees/comments/index.php?wg_abbrev=lexidma">Send A
+          Comment</ulink>" button on the TC's web page at <ulink
+          url="https://www.oasis-open.org/committees/lexidma/"
+          >https://www.oasis-open.org/committees/lexidma/</ulink>.</para>
+      <para>This specification is provided under the <ulink
+          url="https://www.oasis-open.org/policies-guidelines/ipr#Non-Assertion-Mode"
+          >Non-Assertion</ulink> Mode of the <ulink
+          url="https://www.oasis-open.org/policies-guidelines/ipr">OASIS IPR Policy</ulink>, the
+        mode chosen when the Technical Committee was established. For information on whether any
+        patents have been disclosed that may be essential to implementing this specification, and
+        any offers of patent licensing terms, please refer to the Intellectual Property Rights
+        section of the TC's web page (<ulink
+          url="https://www.oasis-open.org/committees/lexidma/ipr.php"
+          >https://www.oasis-open.org/committees/lexidma/ipr.php</ulink>).</para>
+      <para>Note that any machine-readable content (<ulink
+          url="https://www.oasis-open.org/policies-guidelines/tc-process#wpComponentsCompLang"
+          >Computer Language Definitions</ulink>) declared Normative for this Work Product is
+        provided in separate plain text files. In the event of a discrepancy between any such plain
+        text file and display content in the Work Product's prose narrative document(s), the content
+        in the separate plain text file prevails.</para>
+      <!--
+      <para>The non-normative errata page for this specification is located at <ulink
+          url="http://www.oasis-open.org/committees/lexidma/"
+          >http://www.oasis-open.org/committees/lexidma/</ulink>.</para>
+      -->
+    </legalnotice>
+    <legalnotice role="keywords">
+      <title>Key words</title>
+      <para>The key words <glossterm>must</glossterm>, <glossterm>must not</glossterm>,
+          <glossterm>required</glossterm>, <glossterm>shall</glossterm>, <glossterm>shall
+          not</glossterm>, <glossterm>should</glossterm>, <glossterm>should not</glossterm>,
+          <glossterm>recommended</glossterm>, <glossterm>may</glossterm>, and
+          <glossterm>optional</glossterm> in this document are to be interpreted as described in
+          <ulink url="https://tools.ietf.org/html/bcp14">BCP 14</ulink> [<link linkend="rfc2119"
+          >RFC2119</link>] and [<link linkend="rfc8174">RFC8174</link>] if, and only if, they appear
+        in all capitals, as shown here.</para>
+    </legalnotice>
+    <legalnotice role="citation">
+      <title>Citation format</title>
+      <para>When referencing this specification the following citation format should be used:</para>
+      <para><citation>DMLex-&version;</citation></para>
+      <para><emphasis>Data Model for Lexicography Version &version;</emphasis>. Edited by David
+        Filip and Simon Krek. &pubdate;. OASIS &standard;. <ulink
+          url="&this-loc;/&name;-&stage;.html">&this-loc;/&name;-&stage;.html</ulink>. Latest
+        version: <ulink url="&latest-loc;/&name;.html">&latest-loc;/&name;.html</ulink>. </para>
+      <!--
+      <para>The non-normative errata page for this specification is located at <ulink
+          url="http://www.oasis-open.org/committees/xliff/"
+          >http://www.oasis-open.org/committees/xliff/</ulink>.</para>
+      -->
+    </legalnotice>
+    <legalnotice role="notices">
+      <title>Notices</title>
+      <para>Copyright © OASIS<!--®--> Open &pubyear;. All Rights Reserved.</para>
+      <para>All capitalized terms in the following text have the meanings assigned to them in the
+        OASIS Intellectual Property Rights Policy (the "OASIS IPR Policy"). The full <ulink
+          url="https://www.oasis-open.org/policies-guidelines/ipr">Policy</ulink> may be found at
+        the OASIS website.</para>
+      <para>This document and translations of it may be copied and furnished to others, and
+        derivative works that comment on or otherwise explain it or assist in its implementation may
+        be prepared, copied, published, and distributed, in whole or in part, without restriction of
+        any kind, provided that the above copyright notice and this section are included on all such
+        copies and derivative works. However, this document itself may not be modified in any way,
+        including by removing the copyright notice or references to OASIS, except as needed for the
+        purpose of developing any document or deliverable produced by an OASIS Technical Committee
+        (in which case the rules applicable to copyrights, as set forth in the OASIS IPR Policy,
+        must be followed) or as required to translate it into languages other than English.</para>
+      <para>The limited permissions granted above are perpetual and will not be revoked by OASIS or
+        its successors or assigns.</para>
+      <para>This document and the information contained herein is provided on an "AS IS" basis and
+        OASIS DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY
+        WARRANTY THAT THE USE OF THE INFORMATION HEREIN WILL NOT INFRINGE ANY OWNERSHIP RIGHTS OR
+        ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.</para>
+      <para>OASIS requests that any OASIS Party or any other party that believes it has patent
+        claims that would necessarily be infringed by implementations of this OASIS Committee
+        Specification or OASIS Standard, to notify OASIS TC Administrator and provide an indication
+        of its willingness to grant patent licenses to such patent claims in a manner consistent
+        with the IPR Mode of the OASIS Technical Committee that produced this specification.</para>
+      <para>OASIS invites any party to contact the OASIS TC Administrator if it is aware of a claim
+        of ownership of any patent claims that would necessarily be infringed by implementations of
+        this specification by a patent holder that is not willing to provide a license to such
+        patent claims in a manner consistent with the IPR Mode of the OASIS Technical Committee that
+        produced this specification. OASIS may include such claims on its website, but disclaims any
+        obligation to do so.</para>
+      <para>OASIS takes no position regarding the validity or scope of any intellectual property or
+        other rights that might be claimed to pertain to the implementation or use of the technology
+        described in this document or the extent to which any license under such rights might or
+        might not be available; neither does it represent that it has made any effort to identify
+        any such rights. Information on OASIS' procedures with respect to rights in any document or
+        deliverable produced by an OASIS Technical Committee can be found on the OASIS website.
+        Copies of claims of rights made available for publication and any assurances of licenses to
+        be made available, or the result of an attempt made to obtain a general license or
+        permission for the use of such proprietary rights by implementers or users of this OASIS
+        Committee Specification or OASIS Standard, can be obtained from the OASIS TC Administrator.
+        OASIS makes no representation that any information or list of intellectual property rights
+        will at any time be complete, or that any claims in such list are, in fact, Essential
+        Claims.</para>
+      <para>The name "OASIS" is a trademark of <ulink url="http://www.oasis-open.org">OASIS</ulink>,
+        the owner and developer of this specification, and should be used only to refer to the
+        organization and its official outputs. OASIS welcomes reference to, and implementation and
+        use of, specifications, while reserving the right to enforce its marks against misleading
+        uses. Please see <ulink url="https://www.oasis-open.org/policies-guidelines/trademark"
+          >https://www.oasis-open.org/policies-guidelines/trademark</ulink> for above
+        guidance.</para>
+    </legalnotice>
+  </articleinfo>
+  <section id="Introduction">
+    <title>Introduction</title>
+    <para>Data Model for Lexicography (DMLex) is a <emphasis>serialization independent Object
+        Model</emphasis> designed by a group of lexicographers, lexicographic software providers,
+      and researchers. It is intended to provide a simple, modular, and easy to adopt data model for
+      use by all lexicographic industry actors across companies and academia as well as geographic
+      locations. Adoption of this data model will facilitate exchange of lexicographic and
+      linguistic corpus data globally and enable effective interchange with adjacent industries such
+      as language services, terminology management, and technical writing. Semantic interoperability
+      of lexicographic data will help lexicographers to surpass linguistically and geographically
+      demarcated approaches and create a truly global market for lexicographic data across and among
+      languages and locales. </para>
+    <para><emphasis>All text is normative unless otherwise labeled.</emphasis> The following common
+      methods are used for labeling portions of this specification as informative and hence
+      non-normative: <simplelist>
+        <member> Appendices and sections marked as "(Informative)" or "Non-Normative" in
+          title,</member>
+        <member> Notes (sections with the "Note" title),</member>
+        <member> Warnings (sections with the "Warning" title),</member>
+        <member> Examples (mainly example code listings, tree diagrams, but also any inline examples
+          or illustrative exemplary lists in otherwise normative text),</member>
+        <member> Schema and other validation artifacts listings (the corresponding artifacts are
+          normative, not their listings).</member>
+      </simplelist>
+    </para>
+    <section id="terminology">
+      <title>Glossary</title>
+      <section id="definitions">
+        <title>Definitions</title>
+        <variablelist>
+          <varlistentry>
+            <term>Agent</term>
+            <listitem>
+              <para>any application or tool that generates (creates), reads, edits, writes,
+                processes, stores, renders or otherwise handles documents, messages, or any other
+                instantiations of the <firstterm>DMLex</firstterm>.</para>
+              <para><firstterm>Agent</firstterm> is the most general application conformance target
+                that subsumes all other specialized user agents disregarding whether they are
+                defined in this specification or not.</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>Enrich</term>
+            <term>Enriching</term>
+            <listitem>
+              <para> the process of associating metadata and resources with
+                  <firstterm>DMLex</firstterm> based lexicographic data. </para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>Enricher</term>
+            <term>Enricher Agent</term>
+            <listitem>
+              <para>any <firstterm>Agent</firstterm> that performs the
+                  <firstterm>Enriching</firstterm> process. </para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>Modify</term>
+            <term>Modification</term>
+            <listitem>
+              <para> the process of changing core and module <firstterm>DMLex</firstterm> based
+                structural and inline objects that were previously created by other
+                  <firstterm>Writers</firstterm>
+              </para>
+              <itemizedlist>
+                <title>Processing Requirements</title>
+                <listitem>
+                  <para> LIOM objects <glossterm>may</glossterm> be <firstterm>Modified</firstterm>
+                    and <firstterm>Enriched</firstterm> at the same time. </para>
+                </listitem>
+              </itemizedlist>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>Modifier</term>
+            <term>Modifier Agent</term>
+            <listitem>
+              <para>an <firstterm>Agent</firstterm> that performs the
+                  <firstterm>Modification</firstterm> process. </para>
+            </listitem>
+          </varlistentry>
+          <!-- The Reader defintion was not really needed, since such an Agent (that ONLY reads) practically does not exist and the PR for Redaers are well covered by the use of Agent
+          <varlistentry>
+            <term>Reader</term>
+            <term>Reader Agent</term>
+
+            <listitem>
+              <para>an <firstterm>Agent</firstterm> that only renders <firstterm>XLIFF Documents</firstterm> provided by other <firstterm>Writers</firstterm>.
+
+              </para>
+
+              <note><para> Since XLIFF is intended as an exchange format rather than a processing format, many
+              applications will need to generate <firstterm>XLIFF Documents</firstterm> from
+              their internal processing formats, even in cases when they are processing
+              <firstterm>XLIFF Documents</firstterm> created by another
+              <firstterm>Extractor</firstterm>. </para></note>
+
+             </listitem>
+
+          </varlistentry>
+          -->
+          <varlistentry>
+            <term>Writer</term>
+            <term>Writer Agent</term>
+            <listitem>
+              <para>an <firstterm>Agent</firstterm> that creates, generates, or otherwise writes a
+                  <firstterm>DMLex</firstterm> based document for whatever purpose, including but
+                not limited to <firstterm>Creator</firstterm>, <firstterm>Modifier</firstterm>, and
+                  <firstterm>Enricher</firstterm>
+                <firstterm>Agents</firstterm>. </para>
+              <note>
+                <para><firstterm>DMLex</firstterm> intends to define lossless interchange between
+                  and among different pipelines that can be based on arbitrary
+                    <firstterm>DMLex</firstterm> conformant specifications (public) or even private
+                  informally <firstterm>DMLex</firstterm> based formats (that could evolve into
+                    <firstterm>DMLex</firstterm> conformant public specifications over time).
+                  Details of interchange using a given serialization are to be found in this
+                  specifications normative and informative appendices on various serializations and
+                  mappings.</para>
+              </note>
+            </listitem>
+          </varlistentry>
+        </variablelist>
+      </section>
+      <section id="keyconcepts">
+        <title>Key concepts</title>
+        <variablelist>
+          <varlistentry>
+            <term>DMLex Core</term>
+            <listitem>
+              <para>The core of <firstterm>DMLex</firstterm> &version; consists of the minimum set
+                of data objects required to (a) create a <firstterm>DMLex</firstterm> Instance that
+                contains interoperable lexicographic data
+                ...<?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>[ELABORATE]<?oxy_custom_end?></para>
+              <para>The namespace that corresponds to the core subset of
+                  <firstterm>DMLex</firstterm> is <code><ulink
+                    url="http://docs.oasis-open.org/lexidma/ns/dmlex-&cschversion;"
+                    >http://docs.oasis-open.org/lexidma/ns/dmlex-&cschversion;</ulink></code>.</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>DMLex-defined (elements and attributes)</term>
+            <listitem>
+              <para>The following is the list of allowed schema URI prefixes for
+                  <firstterm>DMLex-defined</firstterm> elements and attributes:</para>
+              <simplelist>
+                <member><ulink url="http://docs.oasis-open.org/lexidma/ns/"/></member>
+              </simplelist>
+              <para>Elements and attributes from other namespaces are not
+                  <firstterm>DMLex-defined</firstterm>.</para>
+              <para> </para>
+              <para> </para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>DMLex Conformant Specification</term>
+            <listitem>
+              <para>A publicly available specification that normatively defines a serialization
+                (document, fragment or message payload format) that conforms to the DMLex defined in
+                this specification.</para>
+              <para>Currently known conformant serializations and mappings are defined in appendices
+                to this standard: [olinks to appendices, including their normative status] </para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>DMLex Instance</term>
+            <listitem>
+              <para>A document, fragment or message payload that is a valid instance of any
+                  <firstterm>DMLex Conformant Specification</firstterm>. <note>
+                  <para>Documents, fragments or message payloads cannot conform directly to DMLex,
+                    as DMLex itself doesn't define serializations and an <emphasis>ad hoc</emphasis>
+                    format cannot be reliably checked against the complex requirements of the DMLex.
+                    Currently known LIOM instances include: [Could define and register media tyoes
+                    based on some of the appendices].</para>
+                </note>
+              </para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>DMLex Module</term>
+            <listitem>
+              <para>A module is an <glossterm>optional</glossterm> set of data and metadata
+                categories that were designed to store information about a process applied to a
+                  <firstterm>DMLex Instance</firstterm> and the data incorporated into a
+                  <firstterm>DMLex Instance</firstterm> as result of that process.</para>
+              <para>Each official module defined for DMLex Version &version; has its data categories
+                and structure defined within this specification and corresponds to at least one
+                dedicated namespace, see <olink targetptr="namespaces">Normatively Used
+                  Namespaces</olink>.</para>
+            </listitem>
+          </varlistentry>
+        </variablelist>
+      </section>
+    </section>
+  </section>
+  <!--Conformance section should go last, but it seems to make better sense here -->
+  <xi:include href="conformance/conformance.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <!--
+  Need to decide if fragid mechanism will be defined or reused and on what level
+  <xi:include href="fragments/fragments.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  -->
+  <section id="core">
+    <title>The Core Specification</title>
+    <para>[ELABORATE]</para>
+    <section>
+      <title>General Processing Requirements</title>
+      <itemizedlist>
+        <title/>
+        <listitem>
+          <para>An <firstterm>Agent</firstterm> processing a valid <firstterm>DMLex
+              Instance</firstterm> that contains only objects and attributes from namespaces that
+            correspond to <firstterm>DMLex-defined</firstterm> elements and attributes that it
+            cannot handle <glossterm>must</glossterm> preserve those objects and properties.</para>
+        </listitem>
+        <listitem>
+          <para>An <firstterm>Agent</firstterm> processing a valid <firstterm>DMLex
+              Instance</firstterm> that contains custom objects (extension objects from namespaces
+            that are not DMLex-defined) that it cannot handle <glossterm>should</glossterm> preserve
+            those objects and attributes.</para>
+        </listitem>
+      </itemizedlist>
+    </section>
+    <xi:include href="objects/objects.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="attributes/attributes.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="inline/inline.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="extensions/extensions.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  </section>
+  <section id="modules">
+    <title>The DMLex Modules Specifications</title>
+    <para>This section specifies the <glossterm>optional</glossterm>
+      <firstterm>DMLex Modules</firstterm> that <glossterm>may</glossterm> be used along with
+        <firstterm>DMLex Core</firstterm> for advanced functionality.</para>
+    <para>ONE MODULE PLACEHOLDER INCLUDED AS MODULE CONTENT MODEL</para>
+    <!--Module includes-->
+    <xi:include href="modules/module_01/specification.xml"
+      xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  </section>
+  <!--Serializations includes -->
+  <xi:include href="serializations/XML/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="serializations/JSON/specification.xml"
+    xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="serializations/RDF/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <appendix role="normative" id="references">
+    <title>References</title>
+    <para>This appendix contains the normative and informative references that are used in this
+      document. Normative references are specific (identified by date of publication and/or edition
+      number or Version number) and Informative references are either specific or
+      non-specific.</para>
+    <para>While any hyperlinks included in this appendix were valid at the time of publication,
+      OASIS cannot guarantee their long-term validity.</para>
+    <section id="normativeReferences" role="normative">
+      <title>Normative references</title>
+      <para>The following documents are referenced in such a way that some or all of their content
+        constitutes requirements of this document.
+        <!--note that at least one paragraph (and it can be empty) is needed to satisfy the DocBook document model-->
+      </para>
+      <bibliography>
+        <title/>
+        <bibliomixed id="bcp14">
+          <abbrev>BCP 14</abbrev> is a concatenation of [RFC 2119] and [RFC 8174] </bibliomixed>
+        <bibliomixed id="rfc2119"><abbrev>RFC 2119</abbrev> S. Bradner, <title>Key words for use in
+            RFCs to Indicate Requirement Levels</title>, <citetitle>
+            <ulink url="https://www.ietf.org/rfc/rfc2119.txt"
+              >https://www.ietf.org/rfc/rfc2119.txt</ulink>
+          </citetitle> IETF (Internet Engineering Task Force) RFC 2119, March 1997.</bibliomixed>
+        <bibliomixed id="rfc8174"><abbrev>RFC 8174</abbrev> B. Leiba, <title>Ambiguity of Uppercase
+            vs Lowercase in RFC 2119 Key Words</title>, <citetitle>
+            <ulink url="https://www.ietf.org/rfc/rfc8174.txt"
+              >https://www.ietf.org/rfc/rfc8174.txt</ulink>
+          </citetitle> IETF (Internet Engineering Task Force) RFC 8174, May 2017.</bibliomixed>
+        <bibliomixed id="bcp47"><abbrev>BCP 47</abbrev> M. Davis, <title>Tags for Identifying
+            Languages</title>, <citetitle>
+            <ulink url="http://tools.ietf.org/html/bcp47">http://tools.ietf.org/html/bcp47</ulink>
+          </citetitle> IETF (Internet Engineering Task Force).</bibliomixed>
+        <bibliomixed id="rfc3552"><abbrev>RFC 3552</abbrev> R. Escrola, B. Korver, <title>Guidelines for Writing RFC Text on Security Considerations</title>, <citetitle>
+            <ulink url="https://www.tools.ietf.org/rfc/rfc3552.txt"
+              >https://www.tools.ietf.org/rfc/rfc3552.txt</ulink>
+          </citetitle> IETF (Internet Engineering Task Force) RFC 3552, July 2003.</bibliomixed>
+        <bibliomixed id="exampleid"
+            ><abbrev><?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>EXAMPLE_ABBREV</abbrev>
+          N. Surname, A. Surname, <title>Exampe Title</title>, <citetitle><ulink
+              url="example.org/citetitle">example.org/citetitle</ulink>Example
+          Citetitle</citetitle>, Month dd, yyyy.<?oxy_custom_end?></bibliomixed>
+        <bibliomixed id="ITS20"><abbrev>ITS</abbrev> David Filip, Shaun McCance, Dave Lewis,
+          Christian Lieske, Arle Lommel, Jirka Kosek, Felix Sasaki, Yves Savourel
+            <title>Internationalization Tag Set (ITS) Version 2.0</title>, <citetitle>
+            <ulink url="http://www.w3.org/TR/its20/">http://www.w3.org/TR/its20/</ulink>
+          </citetitle> W3C Recommendation 29 October 2013.</bibliomixed>
+        <bibliomixed><abbrev>JSON</abbrev>
+          <title>The JavaScript Object Notation (JSON) Data Interchange Format</title>, <citetitle>
+            <ulink url="https://tools.ietf.org/html/rfc8259"
+              >https://tools.ietf.org/html/rfc8259</ulink>
+          </citetitle> IETF RFC 8259 December 2017. </bibliomixed>
+        <bibliomixed id="bib_datetime"><abbrev>NOTE-datetime</abbrev> M. Wolf, C. Wicksteed,
+            <title>Date and Time Formats</title>, <citetitle>
+            <ulink url="http://www.w3.org/TR/NOTE-datetime"
+              >http://www.w3.org/TR/NOTE-datetime</ulink>
+          </citetitle> W3C Note, 15th September 1997.</bibliomixed>
+        <bibliomixed id="NVDL"><abbrev>NVDL</abbrev> International Standards Organization,
+            <title>ISO/IEC 19757-4, Information Technology - Document Schema Definition Languages
+            (DSDL) - Part 4: Namespace-based Validation Dispatching Language (NVDL)</title>, <citetitle>
+            <ulink
+              url="http://standards.iso.org/ittf/PubliclyAvailableStandards/c038615_ISO_IEC_19757-4_2006(E).zip"
+              >
+              http://standards.iso.org/ittf/PubliclyAvailableStandards/c038615_ISO_IEC_19757-4_2006(E).zip</ulink>
+          </citetitle> ISO, June 1, 2006.</bibliomixed>
+        <bibliomixed id="rfc3987"><abbrev>RFC 3987</abbrev> M. Duerst and M. Suignard,
+            <title>Internationalized Resource Identifiers (IRIs)</title>, <citetitle>
+            <ulink url="https://www.ietf.org/rfc/rfc3987.txt"
+              >https://www.ietf.org/rfc/rfc3987.txt</ulink>
+          </citetitle> IETF (Internet Engineering Task Force) RFC 3987, January 2005.</bibliomixed>
+        <bibliomixed id="rfc7303"><abbrev>RFC 7303</abbrev> H. Thompson and C. Lilley, <title>XML
+            Media Types</title>, <citetitle>
+            <ulink url="https://www.tools.ietf.org/html/rfc7303">
+              https://www.tools.ietf.org/html/rfc7303</ulink>
+          </citetitle> IETF (Internet Engineering Task Force) RFC 7303, July 2014.</bibliomixed>
+        <bibliomixed id="Schematron"><abbrev>Schematron</abbrev> International Standards
+          Organization, <title>ISO/IEC 19757-3, Information Technology - Document Schema Definition
+            Languages (DSDL) - Part 3: Rule-Based Validation — Schematron (Second Edition)</title>, <citetitle>
+            <ulink
+              url="http://standards.iso.org/ittf/PubliclyAvailableStandards/c055982_ISO_IEC_19757-3_2016.zip"
+              >
+              http://standards.iso.org/ittf/PubliclyAvailableStandards/c055982_ISO_IEC_19757-3_2016.zip</ulink>
+          </citetitle> ISO, January 15, 2016.</bibliomixed>
+        <bibliomixed id="uax9"><abbrev>UAX #9</abbrev> M. Davis, A. Lanin, A. Glass, <title>UNICODE
+            BIDIRECTIONAL ALGORITHM</title>, <citetitle>
+            <ulink url="http://www.unicode.org/reports/tr9/tr9-35.html"
+              >http://www.unicode.org/reports/tr9/tr9-35.html</ulink>
+          </citetitle> Unicode Bidirectional Algorithm, May 18, 2016.</bibliomixed>
+        <bibliomixed id="uax15"><abbrev>UAX #15</abbrev> M. Davis, K. Whistler, <title>UNICODE
+            NORMALIZATION FORMS</title>, <citetitle>
+            <ulink url="http://www.unicode.org/reports/tr15/tr15-44.html"
+              >http://www.unicode.org/reports/tr15/tr15-44.html</ulink>
+          </citetitle> Unicode Normalization Forms, February 24, 2016.</bibliomixed>
+        <bibliomixed id="Unicode"><abbrev>Unicode</abbrev> The Unicode Consortium, <title>The
+            Unicode Standard</title>, <citetitle>
+            <ulink url="http://www.unicode.org/versions/Unicode9.0.0/"
+              >http://www.unicode.org/versions/Unicode9.0.0/</ulink>
+          </citetitle> Mountain View, CA: The Unicode Consortium, June 21, 2016.</bibliomixed>
+        <bibliomixed id="XLIFF21"><abbrev>XLIFF 2.1</abbrev> David Filip, Tom Comerford, Soroush
+          Saadatfar, Felix Sasaki, and Yves Savourel, eds. <title>XLIFF Version 2.0</title>, <citetitle>
+            <ulink url="http://docs.oasis-open.org/xliff/xliff-core/v2.1/os/xliff-core-v2.1-os.html"
+              >http://docs.oasis-open.org/xliff/xliff-core/v2.1/os/xliff-core-v2.1-os.html</ulink>
+          </citetitle> OASIS Standard 13 February 2018 </bibliomixed>
+        <bibliomixed id="bib_XML"><abbrev>XML</abbrev> W3C, <title>Extensible Markup Language (XML)
+            1.0</title>, <citetitle>
+            <ulink url="http://www.w3.org/TR/xml/">http://www.w3.org/TR/xml/</ulink>
+          </citetitle> (Fifth Edition) W3C Recommendation 26 November 2008.</bibliomixed>
+        <bibliomixed id="xml_namespace"><abbrev>XML namespace</abbrev> W3C, <title>Schema document
+            for namespace http://www.w3.org/XML/1998/namespace</title>
+          <citetitle><ulink url="http://www.w3.org/2001/xml.xsd"
+              >http://www.w3.org/2001/xml.xsd</ulink></citetitle> [<edition><ulink
+              url="http://www.w3.org/2009/01/xml.xsd"
+            >http://www.w3.org/2009/01/xml.xsd</ulink>]</edition>. at <edition><ulink
+              url="&this-loc;/schemas/informativeCopiesOf3rdPartySchemas/w3c/xml.xsd"
+              >&this-loc;/schemas/informativeCopiesOf3rdPartySchemas/w3c/xml.xsd</ulink></edition>
+          in this distribution</bibliomixed>
+        <bibliomixed id="XMLCatalogs"><abbrev>XML Catalogs</abbrev> Norman Walsh, <title>XML
+            Catalogs</title>, <citetitle>
+            <ulink url="https://www.oasis-open.org/committees/download.php/14809/xml-catalogs.html"
+              >https://www.oasis-open.org/committees/download.php/14809/xml-catalogs.html</ulink>
+          </citetitle> OASIS Standard V1.1, 07 October 2005.</bibliomixed>
+        <bibliomixed id="XMLSchema"><abbrev>XML Schema</abbrev> W3C, <title>XML Schema</title>,
+            <citetitle> refers to the two part standard comprising <link linkend="XMLSchema1">[XML
+              Schema Structures]</link> and <link linkend="XMLSchema2">[XML Schema Datatypes]</link>
+          </citetitle> (Second Editions) W3C Recommendations 28 October 2004.</bibliomixed>
+        <bibliomixed id="XMLSchema2"><abbrev>XML Schema Datatypes</abbrev> W3C, <title>XML Schema
+            Part 2: Datatypes</title>, <citetitle>
+            <ulink url="http://www.w3.org/TR/xmlschema-2/">http://www.w3.org/TR/xmlschema-2/</ulink>
+          </citetitle> (Second Edition) W3C Recommendation 28 October 2004.</bibliomixed>
+        <bibliomixed id="XMLSchema1"><abbrev>XML Schema Structures</abbrev> W3C, <title>XML Schema
+            Part 1: Structures</title>, <citetitle>
+            <ulink url="https://www.w3.org/TR/xmlschema-1/"
+              >https://www.w3.org/TR/xmlschema-1/</ulink>
+          </citetitle> (Second Edition) W3C Recommendation 28 October 2004.</bibliomixed>
+      </bibliography>
+    </section>
+    <section role="informative" id="informativeReferences">
+      <title>Informative references</title>
+      <para>The following referenced documents are not required for the application of this document
+        but may assist the reader with regard to a particular subject area.
+        <!--note that at least one paragraph (and it can be empty) is needed to satisfy the DocBook document model-->
+      </para>
+      <bibliography>
+        <title/>
+        <bibliomixed id="biblio_ldml"><abbrev>LDML</abbrev>
+          <title>Unicode Locale Data Markup Language</title>
+          <citetitle>
+            <ulink url="http://unicode.org/reports/tr35/">http://unicode.org/reports/tr35/</ulink>
+          </citetitle></bibliomixed>
+        <bibliomixed id="uax29"><abbrev>UAX #29</abbrev> M. Davis, <title>UNICODE TEXT
+            SEGMENTATION</title>, <citetitle>
+            <ulink url="http://www.unicode.org/reports/tr29/"
+              >http://www.unicode.org/reports/tr29/</ulink>
+          </citetitle> Unicode text Segmentation.</bibliomixed>
+      </bibliography>
+    </section>
+  </appendix>
+  <appendix role="informative" id="coreValidation">
+    <title>Machine Readable Validation Artifacts</title>
+    <para>CURRENTLY NO VALIDATION ARTIFACTS FORESEEN FOR THE OM.. JUST FOR SERIALIZATIONS</para>
+    <para> MAY LIST CONFORMANT ARTIFACTS FOR SPECIFIC SERILIZATIONS AT A LATER STAGE </para>
+    <!--
+      <orderedlist>
+        <listitem id="CoreSchema">
+          <para><firstterm>DMLex Core</firstterm> <link linkend="XMLSchema">[XML Schema]</link>,</para>
+          <para><ulink url="&this-loc;/schemas/dmlex&-cschversion;.xsd"
+            >&this-loc;/schemas/dmllex-&cschversion;.xsd</ulink></para>
+          
+        </listitem>
+        <listitem id="DMLexCatalog">
+          <para><link linkend="XMLCatalogs">[XML Catalog]</link> of <firstterm>DMLex-defined</firstterm> XML Schemas,</para>
+          <para><ulink url="&this-loc;/schemas/catalog.xml"
+            >&this-loc;/schemas/catalog.xml</ulink></para>
+        </listitem>
+        <listitem id="NVDL">
+          <para>Master <link linkend="NVDL">[NVDL]</link> file governing validation of all <firstterm>DMLex-defined</firstterm>
+            namespaces by XML Schemas, Schematron Schemas and other rules if and as required,</para>
+          <para><ulink url="&this-loc;/schemas/advanced_validation.nvdl.xml"
+            >&this-loc;/schemas/advanced_validation.nvdl</ulink></para>
+        </listitem>
+        <listitem id="CoreSchematron">
+          <para><firstterm>DMLex Core</firstterm> <link linkend="Schematron">[Schematron]</link> Schema, </para>
+          <para><ulink url="&this-loc;/schemas/dmlex-&cschversion;.sch"
+            >&this-loc;/schemas/dmlex-&cschversion;.sch</ulink></para>
+        </listitem>
+        <listitem>
+          <para>XML and Schematron Schemas of <firstterm>DMLex Modules</firstterm> are referenced
+            from those modules.</para>
+        </listitem>
+      </orderedlist>
+      
+    
+      
+      <warning>
+        <para>NVDL is not capable of discerning Schemtaron Warnings from Schematron Errors.
+          Therefore all Schematron Warnings will be reported as Errors when initiating the
+          validation from the NVDL schema. Also most of the existing Schematron implementations are
+          not capable of discerning Warnings from Errors, thus implementers are encouraged to re-use
+          the provided Schematron schemas in custom made validation services that can make this
+          distinction. Currently, the Warning/Error distinction is only important when evaluating
+          adherence to Processing Requirements for [ELABORATE].</para>
+      </warning>
+    
+    </para>
+    -->
+    <!--  <para>[Relax NG schemas of <firstterm>DMLex Core and Modules</firstterm> are provided. Although the Relax NG schemas are intended as normative validation artifacts, the XML Schema 1.0 [add normative reference] schemas and Schematron [add normative reference] schemas have precedence in case of conflicting validation results.]
+      [This is only relevant if Relax NG is provided.]</para>-->
+    <xi:include href="core/tree.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <!-- LEXIDMA TC may decide to include the schema listings
+    <xi:include href="core/catalog.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+   
+    <xi:include href="core/schema.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+-->
+    <!-- language for potential inclusion of support schemas such as the xml namespace schema 
+    <section>
+      <title>Support Schemas</title>
+      <para>Third party support schemas that are normatively referenced from this specification or
+        from the machine readable artifacts that are a part of this multipart product are distributed
+        along with the <firstterm>DMLex-defined</firstterm> schemas in a subfolder named
+        <code>informativeCopiesOf3rdPartySchemas</code> and further subdivided in folders according to the
+      owner/maintainer of the schema.</para>
+      <warning>
+      <para>Schema copies in this sub-folder are provided solely for implementers convenience and are NOT a part of the OASIS multipart product.
+        These schemas belong to their respective owners and their use is governed by their owners' respective IPR policies.
+        The support schemas are organized in folders per owner/maintainer.
+        It is the implementer's sole responsibility to ensure that their local copies of all schemas are the appropriate up to date versions.</para></warning>
+
+        <para>Currently the only included third party support schema is
+          <ulink url="http://www.w3.org/2001/xml.xsd">http://www.w3.org/2001/xml.xsd</ulink> [<ulink url="http://www.w3.org/2009/01/xml.xsd">http://www.w3.org/2009/01/xml.xsd</ulink>] at <ulink
+            url="&this-loc;/schemas/informativeCopiesOf3rdPartySchemas/w3c/xml.xsd"
+            >&this-loc;/schemas/informativeCopiesOf3rdPartySchemas/w3c/xml.xsd</ulink> in this distribution.</para>
+    </section>-->
+  </appendix>
+  <appendix role="normative | informative" id="SecurityPrivacy">
+    <title>Security and privacy considerations</title>
+    <note>
+      <para>OASIS strongly recommends that Technical Committees consider issues that might affect
+        safety, security, privacy, and/or data protection in implementations of their work products
+        and document these for implementers and adopters. For some purposes, you may find it
+        required, e.g. if you apply for IANA registration.</para>
+      <para>While it may not be immediately obvious how your work product might make systems
+        vulnerable to attack, most work products, because they involve communications between
+        systems, message formats, or system settings, open potential channels for exploit. For
+        example, IETF [<link linkend="rfc3552">RFC 3552</link>] lists “eavesdropping, replay,
+        message insertion, deletion, modification, and man-in-the-middle” as well as potential
+        denial of service attacks as threats that must be considered and, if appropriate, addressed
+        in IETF RFCs.</para>
+      <para>In addition to considering and describing foreseeable risks, this section should include
+        guidance on how implementers and adopters can protect against these risks.</para>
+      <para>We encourage editors and TC members concerned with this subject to read Guidelines for
+        Writing RFC Text on Security Considerations, IETF [<link linkend="rfc3552">RFC 3552</link>],
+        for more information.</para>
+    </note>
+  </appendix>
+  <appendix role="informative" id="specChangeTracking">
+    <title>Specification Change Tracking</title>
+    <para>This appendix will contain tracked changes after the csprd01 phase will have been
+      reached.</para>
+    <!--  
+    <xi:include href="ReviewChangeTracking/ReviewChangeTrack.xml"
+      xmlns:xi="http://www.w3.org/2001/XInclude"/>
+      -->
+  </appendix>
+  <appendix role="informative" id="acknowledgements">
+    <title>Acknowledgements</title>
+    <para>The following individuals have participated in the creation of this specification and are
+      gratefully acknowledged:</para>
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>Erjavec, Tomaž - JSI </para>
+      </listitem>
+      <listitem>
+        <para>Filip, David - TCD, ADAPT Centre </para>
+      </listitem>
+      <listitem>
+        <para>Jakubíček, Miloš - Lexical Computing </para>
+      </listitem>
+      <listitem>
+        <para>Kernerman, Ilan - K Dictionaries </para>
+      </listitem>
+      <listitem>
+        <para>Kosem, Iztok - JSI </para>
+      </listitem>
+      <listitem>
+        <para>Krek, Simon - JSI </para>
+      </listitem>
+      <listitem>
+        <para>McCrae, John - National University of Ireland Galway </para>
+      </listitem>
+      <listitem>
+        <para>Měchura, Milan - JSI </para>
+      </listitem>
+    </itemizedlist>
+  </appendix>
+</article>

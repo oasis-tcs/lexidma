@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+"http://www.docbook.org/xml/4.5/docbookx.dtd" [
+<!ENTITY % xinclude SYSTEM "../docbook/xinclude.mod">
+%xinclude;
+<!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED">
+]>
+<section id="inline">
+  <title>Inline Content</title>
+  <para>Provisions pertaining to inline codes and annotaions</para>
+
+  <itemizedlist>
+    <listitem>
+      <para><link linkend="text">Text</link> -- Textual content.</para>
+    </listitem>
+
+    <listitem>
+      <para><link linkend="inlineCodes">Inline codes</link> -- Sequences of content that are not
+        linguistic text, such as formatting codes.</para>
+    </listitem>
+
+    <listitem>
+      <para><link linkend="annotations">Annotations</link> -- Markers that
+      delimit a span of the content and carry or point to information about
+      the specified content.</para>
+
+      <para>For example: an object indicating that a given expression in a text span references an
+        entry.</para>
+    </listitem>
+  </itemizedlist>
+
+  <para>There are ... objects that contain inline markup in DMLex:
+    <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>olinks to those
+    objects<?oxy_custom_end?>.</para>
+
+  <para>In some cases, data directly associated with inline objects <glossterm>may</glossterm> also
+    be stored at structural levels such as the <olink targetdoc="../objects/structural/entry.xml"
+      targetptr="entry"><code>entry</code></olink> object.</para>
+
+  <section id="text">
+    <title>Text</title>
+
+    <para>The DMLex inline objects provisions do not prescribe how to represent normal text,
+      specific provisions <glossterm>may</glossterm> be specified for different
+      serializations.</para>
+
+    <section>
+      <title>Expressing characters invalid in certain serializations</title>
+
+      <para>DMLex needs to be able to represent all Unicode code points <olink
+          targetdoc="../dmlex.xml" targetptr="Unicode">[Unicode]</olink>.</para>
+      <para>the <olink targetdoc="../objects/inline/cp.xml" targetptr="cp"
+          ><code>cp</code></olink> object <glossterm>must</glossterm> be used for those and only those Uniocode
+        code points that are illegal in a certain serialization.</para>
+
+      <para>The syntax and semantics of <olink targetdoc="../object/inline/cp.xml" targetptr="cp"
+            ><code>cp</code></olink> in DMLex are similar to the ones of
+          <code>&lt;cp&gt;</code> in the Unicode Locale Data Markup Language <olink
+          targetdoc="../dmlex.xml" targetptr="biblio_ldml">[LDML]</olink>.</para>
+    </section>
+  </section>
+
+  <section id="inlineCodes">
+    <title>Inline Codes</title>
+    <para>Inline codes provisions
+      <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>ELABORATE..<?oxy_custom_end?></para>
+
+    <variablelist>
+      <varlistentry id="standalone">
+        <term>Standalone</term>
+
+        <listitem>
+          <para>A <emphasis>standalone</emphasis> code is a code that
+          corresponds to a single position in the content. An example of such
+          code is the <code>&lt;br/&gt;</code> element in HTML.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="spanLike">
+        <term>Spanning</term>
+
+        <listitem>
+          <para>A <emphasis>spanning</emphasis> code is a code that encloses a
+          section of the content using a start and an end marker. There are
+          two kinds of spanning codes:</para>
+
+          <itemizedlist>
+            <listitem>
+              <para>Codes that can overlap, that is: they can enclose a
+              non-closing or a non-opening spanning code. Such codes do not
+              have an XML-like behavior. For example the RTF code
+              <code>\b1...\b0</code> is a spanning code that is allowed to
+              overlap.</para>
+            </listitem>
+
+            <listitem>
+              <para>Codes that cannot overlap, that is: they cannot enclose a partial spanning code
+                and have an XML-like behavior at the same time. An example of such code is the
+                  <code>&lt;emphasis&gt;...&lt;/emphasis&gt;</code> element in DocBook.</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+   
+
+      <table>
+        <title>Inline code use cases</title>
+
+        <tgroup cols="2">
+          <thead>
+            <row>
+              <entry>Use Case</entry>
+
+              <entry>Example of Representation</entry>
+            </row>
+          </thead>
+
+          <tbody>
+            <row>
+              <entry>Standalone code</entry>
+
+              <entry><olink targetdoc="../objects/inline/ph.xml" targetptr="ph"><code>ph</code></olink></entry>
+            </row>
+
+            <row>
+              <entry>Well-formed spanning code</entry>
+
+              <entry><olink targetdoc="../objects/inline/pc.xml"
+              targetptr="pc"><code>pc</code></olink></entry>
+            </row>
+
+            <row>
+              <entry>Start marker of spanning code</entry>
+
+              <entry><olink targetdoc="../objects/inline/sc.xml"
+              targetptr="sc"><code>sc</code></olink></entry>
+            </row>
+
+            <row>
+              <entry>End marker of spanning code</entry>
+
+              <entry><olink targetdoc="../objects/inline/ec.xml"
+              targetptr="ec"><code>ec</code></olink></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+
+  
+
+  <section id="annotations">
+    <title>Annotations</title>
+
+    <para>An annotation is an object that associates a section of the content with some metadata
+      information.</para>
+
+    <para>Annotations <glossterm>may</glossterm> be created by any
+      <firstterm>Writer</firstterm>.</para>
+
+    <para>Annotations are represented using either the <olink
+    targetdoc="../objects/inline/mrk.xml"
+    targetptr="mrk"><code>mrk</code></olink> object, or the pair of
+    <olink targetdoc="../objects/inline/sm.xml"
+    targetptr="sm"><code>sm</code></olink> and <olink
+    targetdoc="../objects/inline/em.xml"
+    targetptr="em"><code>em</code></olink> objects.</para>
+
+    <section id="annotationTypes">
+      <title>Type of Annotations</title>
+
+      <para>There are
+        <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>?several?<?oxy_custom_end?>
+        pre-defined types of annotation and definition of <link linkend="customAnnotation">custom
+          types</link> is also allowed.</para>
+<!-- Create new subssections for predefined annotations -->
+      
+      <section id="customAnnotation">
+        <title>Custom Annotation</title>
+
+        <para>The <olink targetdoc="../objects/inline/mrk.xml" targetptr="mrk"
+          ><code>mrk</code></olink> or <olink targetdoc="../objects/inline/sm.xml" targetptr="sm"
+            ><code>sm</code></olink> and <olink targetdoc="../objects/inline/em.xml" targetptr="em"
+              ><code>em</code></olink> objects can be used to implement custom
+          annotations.</para>
+
+        <para>A custom annotation <glossterm>must not</glossterm> provide the same functionality as a
+        pre-defined annotation.</para>
+
+        <para>Usage:</para>
+
+        <itemizedlist spacing="compact">
+          <listitem>
+            <para>The <olink targetdoc="../../attributes/id.xml"
+            targetptr="id"><code>id</code></olink> attribute is
+            <glossterm>required</glossterm></para>
+          </listitem>
+
+          <listitem>
+            <para>The <olink targetdoc="../../attributes/type.xml"
+            targetptr="type"><code>type</code></olink> attribute is <glossterm>required</glossterm>
+            and set to a unique user-defined value.</para>
+          </listitem>
+
+          
+
+          <listitem>
+            <para>The use and semantics of the <olink
+            targetdoc="../../attributes/value.xml"
+            targetptr="value"><code>value</code></olink> and <olink
+            targetdoc="../../attributes/ref.xml"
+            targetptr="ref"><code>ref</code></olink> attributes are
+            user-defined.</para>
+          </listitem>
+        </itemizedlist>
+
+        <para>For example:</para>
+
+        <programlisting>
+One of the earliest surviving works of literature is
+&lt;mrk id="m1" type="myCorp:isbn" value="978-0-14-44919-8"&gt;The 
+Epic of Gilgamesh&lt;/mrk&gt;.</programlisting>
+      </section>
+    </section>
+
+    <section id="overlappingAnnotations">
+      <title>Overlapping Annotations</title>
+
+      <para>Annotations can overlap spanning inline codes or other annotations. Because of this, a
+        single annotation span can be represented using a pair of <olink
+          targetdoc="../objects/inline/sm.xml" targetptr="sm"><code>sm</code></olink> and
+          <olink targetdoc="../objects/inline/em.xml" targetptr="em"
+          ><code>em</code></olink> elements instead of a single <olink
+          targetdoc="../objects/inline/mrk.xml" targetptr="mrk"><code>mrk</code></olink>
+        element.</para>
+    </section>
+  </section>
+
+  
+  
+
+  <section>
+    <title>White Spaces</title>
+
+    <para>White space provisions for different serializations and for exchange among
+      serializations.</para>
+    
+    <note>
+      <para>Note that in some serializations, all whitespace is significant. Therefore it is
+        advisable to maximize usage of <code>preserve</code> in markup environments in order to
+        maximize interoperability with other serializations. </para>
+    </note>
+
+    <itemizedlist>
+      <title>Processing Requirements</title>
+
+      <listitem>
+        <para>For the inline content and all non empty inline objects: The white spaces
+            <glossterm>must</glossterm> be preserved if the value for <code>xml:space</code> set or
+          inherited at the enclosing <olink targetdoc="../objects/structural/entry.xml"
+            targetptr="entry"><code>entry</code></olink> level is <code>preserve</code>, and
+          they <glossterm>may</glossterm> be preserved if the value is <code>default</code>.</para>
+      </listitem>
+    </itemizedlist>
+  </section>
+
+  <section id="BiDi">
+    <title>Bidirectional Text</title>
+
+    <para>Text directionality in DMLex content is defined by inheritance. Source and target content
+      (for instance in bilingual translation dictionaries) can have different directionality.</para>
+
+    <para>The initial directionality for both the source and the target content is defined in the
+        top level logical root object element, using the <glossterm>optional</glossterm> attributes <olink
+        targetdoc="../../attributes/srcdir.xml" targetptr="srcdir"><code>srcDir</code></olink> for
+      the source and <olink targetdoc="../../attributes/trgdir.xml" targetptr="trgdir"
+          ><code>trgDir</code></olink> for the target. The default value for both attributes is
+        <code>auto</code>.</para>
+
+    <para>Monolingual and multilingual lexicographic content <glossterm>should not</glossterm> use
+      the attributes <olink targetdoc="../../attributes/srcdir.xml" targetptr="srcdir"
+          ><code>srcDir</code></olink> and <olink targetdoc="../../attributes/trgdir.xml"
+        targetptr="trgdir"><code>trgDir</code></olink>. The <olink
+        targetdoc="../../attributes/dir.xml" targetptr="dir"><code>dir</code></olink> attribute with
+      values <code>ltr</code>, <code>rtl</code>, or <code>auto</code> has standard inheritance
+      throughout the DMlex object model, in case the <olink targetdoc="../../attributes/srcdir.xml"
+        targetptr="srcdir"><code>srcDir</code></olink> and <olink
+        targetdoc="../../attributes/trgdir.xml" targetptr="trgdir"><code>trgDir</code></olink> are
+      not used on the top level. </para>
+    <para>In addition, the <olink targetdoc="../objects/structural/data.xml" targetptr="data"
+          ><code>data</code></olink> object has an <glossterm>optional</glossterm> attribute <olink
+        targetdoc="../../attributes/dir.xml" targetptr="dir"><code>dir</code></olink> with a value
+        <code>ltr</code>, <code>rtl</code>, or <code>auto</code> that is not inherited. The default
+      value is <code>auto</code>.</para>
+
+    <para>Directionality text contained in DMLex text nodes is fully governed by <olink
+        targetdoc="../xliff21.xml" targetptr="uax9">[UAX #9]</olink>, whereas explicit
+        <firstterm>DMlex-defined</firstterm> structural and directionality objects and attributes
+      constitute a higher-level protocol in the sense of <olink targetdoc="../xliff21.xml"
+        targetptr="uax9">[UAX #9]</olink>. The <firstterm>DMLex-defined</firstterm> value
+        <code>auto</code> determines the directionality based on the first strong directional
+      character in its scope and <firstterm>DMLex-defined</firstterm> inline directionality behaves
+      exactly as Explicit Directional Isolate Characters, see <olink targetdoc="../xliff21.xml"
+        targetptr="uax9">[UAX #9]</olink>, <ulink
+        url="http://www.unicode.org/reports/tr9/#Directional_Formatting_Characters"
+        >http://www.unicode.org/reports/tr9/#Directional_Formatting_Characters</ulink>.</para>
+  <note>
+    <para>Please note that this specification does not define explicit markup for inline directional
+        Overrides or Embeddings; in case those are needed. ELABORATE .. [UAX #9] defined Directional
+        Formatting Characters
+        [<?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>??<?oxy_custom_end?>].</para>
+  </note>
+    
+  </section>
+
+  
+  <section>
+    <title>Content Comparison</title>
+
+    <para>This specification defines content equality as follows:</para>
+
+    <itemizedlist>
+      <listitem>
+        <para>Two contents are equal if their normalized forms are equal.</para>
+      </listitem>
+    </itemizedlist>
+
+    <para>A content is normalized when:</para>
+
+    <itemizedlist>
+      <listitem>
+        <para>The text nodes are in Unicode Normalized Form C defined in the
+        Unicode Annex #15: Unicode Normalization Forms <olink
+        targetdoc="../xliff21.xml" targetptr="uax15">[UAX #15]</olink>.</para>
+      </listitem>
+
+      <listitem>
+        <para>All annotation markers are removed.</para>
+      </listitem>
+
+      <listitem>
+        <para>All pairs of <olink targetdoc="../objects/inline/sc.xml" targetptr="sc"
+              ><code>sc</code></olink> and <olink targetdoc="../objects/inline/ec.xml"
+            targetptr="ec"><code>ec</code></olink> elements that can be converted into a <olink
+            targetdoc="../objects/inline/pc.xml" targetptr="pc"><code>pc</code></olink> element, are
+          converted.</para>
+      </listitem>
+
+      <listitem>
+        <para>All adjacent text nodes are merged into a single text
+        node.</para>
+      </listitem>
+
+      <listitem>
+        <para>For all the text nodes with the white space property set to
+        <code>default</code>, all adjacent white spaces are collapsed into a
+        single space.</para>
+      </listitem>
+    </itemizedlist>
+  </section>
+</section>
