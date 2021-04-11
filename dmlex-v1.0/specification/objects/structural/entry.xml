@@ -7,8 +7,7 @@
                          ]>
 <section id="entry">
     <title>entry</title>
-    <para>Static container for a dynamic structure of lexicographic objects and attributes encoding
-        lexicographic payload and metadata.</para>
+    <para>part of a lexicographic resource which contains informationrelated to at least one headword.</para>
 
     <para><emphasis>Contains:</emphasis></para>
     <simplelist>
