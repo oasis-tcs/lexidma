@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+  <!ENTITY % xinclude SYSTEM "../docbook/xinclude.mod" >
+  %xinclude;
+  <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+<section id="module-controlled-vocabularies">
+  <title>Controlled vocabularies module</title>
+  <para>
+    This module changes the definition of several attributes in several objects
+    (such as partOfSpeech.value, inflectedForm.indicator, label.value)
+    from free open string (= can take any text) to a reference to a controlled vocabulary.
+  </para>
+  <para>
+    This module adds features to the lexicographicResource data type for specifying
+    what those controlled vocabularies, either by listing them explicitely
+    or by referring to external authority.
+  </para>
+  <para>
+    The module makes it possible to model complex contraints on the values that
+    the various attributes can take. For example, the partOfSpeech.value attribute
+    takes different values depending on whether its parent is
+    entry or headwordTranslation, and if headwordTranslation, depending on what
+    the headwordTranslation's language is.
+  </para>
+  <para>
+    TBD.
+  </para>
+</section>

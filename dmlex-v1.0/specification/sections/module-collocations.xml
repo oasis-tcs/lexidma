@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+  <!ENTITY % xinclude SYSTEM "../docbook/xinclude.mod" >
+  %xinclude;
+  <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+<section id="module-collocations">
+  <title>Collocations module</title>
+  <para>
+    This module makes it possible to organize the examples inside a sense into groups
+    based on the headword's collocate.
+  </para>
+  <para>
+    Note that this is basically just a mechanism for grouping examples.
+    If implementors want to do more complicated things with collocations,
+    such as giving them definition and translations,
+    then they should treat them as separate (multiword) entries,
+    and use the linking module to transclude them as subentries.
+  </para>
+  <para>
+    TBD.
+  </para>
+</section>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+  <!ENTITY % xinclude SYSTEM "../docbook/xinclude.mod" >
+  %xinclude;
+  <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+<section id="module-linking">
+  <title>Linking module</title>
+  <para>
+    Handles
+    (1) synonyms, antonyms, cross-referencing,
+    (2) variants,
+    (3) subentrying and subsensing
+  </para>
+  <para>
+    TBD.
+  </para>
+</section>

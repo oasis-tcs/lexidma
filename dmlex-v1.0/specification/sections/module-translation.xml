@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+  <!ENTITY % xinclude SYSTEM "../docbook/xinclude.mod" >
+  %xinclude;
+  <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+<section id="module-translation">
+    <title>Translation module</title>
+    <para>
+      The translation module adds the data types headwordTranslation and exampleTranslation
+      as optional children of sense and example from the core specification.
+    </para>
+    <para>
+      Additionally, the translation module adds a few attributes to the core's dictionary data type,
+      to indicate the language or languages in which the translations are. TBD.
+    </para>
+
+    <section>
+      <title>headwordTranslation</title>
+      <para>Tells us the translation equivalent of the headword in one of its senses.</para>
+      <itemizedlist>
+        <title>Parent</title>
+        <listitem>sense</listitem>
+      </itemizedlist>
+      <itemizedlist>
+        <title>Attributes</title>
+        <listitem>language: required or implicit, reference to a controlled vocabulary</listitem>
+        <listitem>text: required, non-empty string</listitem>
+      </itemizedlist>
+      <itemizedlist>
+        <title>Children</title>
+        <listitem>zero or more partOfSpeech</listitem>
+        <listitem>zero or more pronunciation</listitem>
+        <listitem>zero or more inflectedForm</listitem>
+      </itemizedlist>
+    </section>
+
+    <section>
+      <title>exampleTranslation</title>
+      <para>Tells us the translation of an example.</para>
+      <itemizedlist>
+        <title>Parent</title>
+        <listitem>example</listitem>
+      </itemizedlist>
+      <itemizedlist>
+        <title>Attributes</title>
+        <listitem>language: required or implicit, reference to a controlled vocabulary</listitem>
+        <listitem>text: required, non-empty string</listitem>
+      </itemizedlist>
+      <itemizedlist>
+        <title>Children</title>
+        <listitem>none</listitem>
+      </itemizedlist>
+      <para></para>
+    </section>
+
+</section>

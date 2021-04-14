@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+  <!ENTITY % xinclude SYSTEM "../docbook/xinclude.mod" >
+  %xinclude;
+  <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+<section id="introduction">
+    <title>Introduction</title>
+
+    <section>
+      <title>What kind of data model this is</title>
+      <para>
+        This is a data model in the most abstract sense.
+        It does not presuppose any particular implementation or serialization.
+        The data model is formulated here in terms of objects, attributes of objects, relationships between objects,
+        and attributes of relationships. How these things translate into things in specific implementations,
+        such as database table rows or XML elements, is a question the data model is agnostic about.
+      </para>
+      <para>
+        Each object, attribute and relation in this data model is of a certain data type.
+        The data type of an object or relation determines which attributes it may or must have,
+        and which objects it may or must be related to.
+        The data types in this data model have names such as entry, headword, sense.
+      </para>
+      <para>
+        One very common relation between objects in lexicography is the parent-child relation.
+        The organization of lexicographic objects such as entries, headwords and senses into
+        hierarchical trees of parents and children has been a pervasive design pattern in lexicography
+        since digitization began. Consequently, in this data model, the parent-child relation is also very prominent.
+        Many data types in this specification are defined in terms of the (types of) parents and children their instances can have.
+      </para>
+      <para>
+        On the other hand, parent-child relations are not the only type of relation that appears in this data model.
+        Parent-child hierarchies are only used here to model the basic entry-headword-sense skeleton of a dictionary.
+        Other phenomena, such as cross-references between entries, or the inclusion of senses under other senses as subsenses,
+        are modelled here with other types of relations, relations which connect entries to other entries,
+        senses to other senses. These other relations can be said to "break out" of the traditional tree-like
+        hierarchy of a dictionary, and to "annotate" the basic parent-child skeleton with additional information.
+      </para>
+      <para>
+        The basic tree-like hierarchy of a dictionary is defined in the core of this specification (in the next section after this),
+        while additional functionality, which sometimes breaks out of the tree-structured pattern, is defined in additional modules.
+      </para>
+    </section>
+
+    <section>
+      <title>Relationship between the core and the modules</title>
+      <para>
+        The core specification of DMLex gives you all the data types you need in order to data-model
+        a basic, simple lexicographic resource (a dictionary).
+        According to the core specification, a lexicographic resource contains one or more entries,
+        and each entry is an easily processable tree structure with
+        headwords, senses, definitions, example sentences and so on.
+      </para>
+      <para>
+        The core specification is deliberately designed to be basic and skeletal.
+        It is an inventory of data types which you can use to model a very simple lexicographic resource.
+        The core can be extended with modules.
+        Each module brings in additional data types and/or adds extra attributes
+        into data types found in the core specification (or in other modules).
+      </para>
+      <para>
+        The following things are not covered by the core specification, and are handled in the modules instead.
+      </para>
+      <itemizedlist>
+        <listitem>
+          <para>
+            The core specification is a data model for monolingual dictionaries only.
+            If you wish to data-model a bilingual dictionary, you need to bring in the translation module.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            The core specification has no data type for modelling dictionaries of collocations,
+            or for including collocation information in dictionaries
+            (that is, information about how the headword usually occurs with other words).
+            To include such information in a dictionary you need to bring in the collocation module.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            The core specification has no data categories for attaching pragmatic labels to entries, senses or examples:
+            labels such as "vulgar", "colloquial", "regional" and so on.
+            To include such information in your dictionary you need to use the labelling module.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            The core specification makes no provision for cross-referencing between entries and senses,
+            for modelling sense relations such as synonymy or antonymy. For that you need the linking module.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            The core specification does not make it possible to add variant forms to lexical items
+            (i.e. the words described by the lexical resource), such as spelling variants.
+            In DMLex, such things are considered to be a special case of linking, and you need the linking module for that.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            In the core specification, the senses of an entry are a flat (non-hierarchical) list.
+            The core specification makes no provisions for organizing the senses of an entry
+            into a hierarchical list of senses and subsenses, or for including subentries inside entries.
+            In DMLex, such things are considered to be a special case of linking, and you need the linking module for that.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            In the core specification, information such as headwords, their parts of speech and their inflected forms
+            have entry-wide scope (they apply to the whole entry)
+            while information such as definitions and examples have sense-wide scope (they apply only to one sense).
+            There is no way in the core specification to declare that, for example,
+            a headword has one plural form in one sense and another plural form in another sense.
+            To do such things you need to bring in the scoping module.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </section>
+
+</section>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+  <!ENTITY % xinclude SYSTEM "../docbook/xinclude.mod" >
+  %xinclude;
+  <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+<section id="module-scoping">
+  <title>Scoping module</title>
+  <para>
+    Allows partOfSpeech, pronunciation, inflectedForm as children of sense.
+    To make it possible top say that, for example,
+    a headword has one plural form in one sense and another plural form in another sense.
+  </para>
+  <para>
+    TBD.
+  </para>
+</section>

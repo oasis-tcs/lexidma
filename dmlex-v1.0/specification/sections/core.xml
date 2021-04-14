@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+  <!ENTITY % xinclude SYSTEM "../docbook/xinclude.mod" >
+  %xinclude;
+  <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+<section id="core">
+    <title>Core</title>
+
+    <section>
+      <title>Tree structure</title>
+      <para>Legend:</para>
+      <simplelist type="vert">
+        <member>1 = one</member>
+        <member>+ = one or more</member>
+        <member>? = zero or one</member>
+        <member>* = zero or more</member>
+      </simplelist>
+      <programlisting format="linespecific">
+- lexicographicResource
+   - entry +
+      - headword 1
+      - pronunciation *
+      - partOfSpeech *
+      - inflectedForm *
+      - sense *
+         - senseIndicator ?
+         - definition ?
+         - example *
+      </programlisting>
+      <para>
+        The cardinalities indicated by these symbols in the diagram are informative, and are explained in more detail below.
+      </para>
+    </section>
+
+    <section>
+      <title>lexicographicResource</title>
+      <para>
+        A lexicographic resource is... (another word for dictionary?)
+      </para>
+      <itemizedlist>
+        <title>Parent</title>
+        <listitem>none</listitem>
+      </itemizedlist>
+      <itemizedlist>
+        <title>Attributes</title>
+        <listitem>name, authors, publisher, URL... TBD</listitem>
+        <listitem>language, any translation languages: TBD</listitem>
+        <listitem>controlled vocabularies, external authorities: TBD</listitem>
+        <listitem>notation(s) used for pronunciation transcriptions: TBD</listitem>
+        <listitem>ID policy: are the IDs of entries and senses given explicitly, or are they computable from other data, and how (eg. headword + pos)?</listitem>
+      </itemizedlist>
+      <itemizedlist>
+        <title>Children</title>
+        <listitem>One or more of entry.</listitem>
+      </itemizedlist>
+      <para>
+        The order of entries inside a lexicographic resource is not significant.
+        If the reader agent wishes to order the entries, it is allowed to show them to the end-user in any order,
+        perhaps using hints given in the the entries (headword, listing order) and in the lexicographic resource (language).
+      </para>
+    </section>
+
+    <section>
+      <title>entry</title>
+      <para>An entry is a part of a lexicographic resource which contains information related to exactly one headword.</para>
+      <itemizedlist>
+        <title>Parent</title>
+        <listitem>dictionary</listitem>
+      </itemizedlist>
+      <itemizedlist>
+        <title>Attributes</title>
+        <listitem>id: required or computable</listitem>
+        <listitem>listingOrder: optional</listitem>
+      </itemizedlist>
+      <itemizedlist>
+        <title>Children</title>
+        <listitem>one headword</listitem>
+        <listitem>zero or more partOfSpeech</listitem>
+        <listitem>zero or more inflectedForm</listitem>
+        <listitem>zero or more sense</listitem>
+      </itemizedlist>
+      <para>Note: it is valid for an entry to contain only a headword and nothing else.</para>
+    </section>
+
+    <section>
+      <title>headword</title>
+      <para>A headword is the main organising element of an entry within a lexicographic resource.</para>
+      <itemizedlist>
+        <title>Parent</title>
+        <listitem>entry</listitem>
+      </itemizedlist>
+      <itemizedlist>
+        <title>Attributes</title>
+        <listitem>text: required, non-empty string</listitem>
+      </itemizedlist>
+      <itemizedlist>
+        <title>Children</title>
+        <listitem>none</listitem>
+      </itemizedlist>
+      <para>Guidance: Can the headword be a multiword thing? Yes.</para>
+      <para>Guidance: How do you model headword variants? Use the linking module instead.</para>
+    </section>
+
+    <section>
+      <title>pronunciation</title>
+      <para>It is... TBD</para>
+      <itemizedlist>
+        <title>Parent - one of:</title>
+        <listitem>entry</listitem>
+        <listitem>headwordTranslation (from the translation module)</listitem>
+      </itemizedlist>
+      <itemizedlist>
+        <title>Attributes (at least one)</title>
+        <listitem>transcription: optional; the notation (IPA or other) is specified in the lexicographic resource's metadata</listitem>
+        <listitem>soundfile: optional: non-empty string, path orURL </listitem>
+      </itemizedlist>
+      <itemizedlist>
+        <title>Children</title>
+        <listitem>none</listitem>
+      </itemizedlist>
+    </section>
+
+    <section>
+      <title>partOfSpeech</title>
+      <para>Any of the word classes to which a lexical item may be assigned, e.g. noun, verb, adjective, etc.</para>
+      <itemizedlist>
+        <title>Parent - one of:</title>
+        <listitem>entry</listitem>
+        <listitem>headwordTranslation (from the translation module)</listitem>
+      </itemizedlist>
+      <itemizedlist>
+        <title>Attributes</title>
+        <listitem>value: required, non-empty string</listitem>
+      </itemizedlist>
+      <itemizedlist>
+        <title>Children</title>
+        <listitem>none</listitem>
+      </itemizedlist>
+    </section>
+
+    <section>
+      <title>inflectedForm</title>
+      <para>An inflected form is a form of the inflectional paradigm of the headword.</para>
+      <itemizedlist>
+        <title>Parent - one of:</title>
+        <listitem>entry</listitem>
+        <listitem>headwordTranslation (from the translation module)</listitem>
+      </itemizedlist>
+      <itemizedlist>
+        <title>Attributes</title>
+        <listitem>indicator: optional, e.g. "plural", reference to a controlled vocabulary</listitem>
+        <listitem>text: required, non-empty string</listitem>
+      </itemizedlist>
+      <itemizedlist>
+        <title>Children</title>
+        <listitem>none</listitem>
+      </itemizedlist>
+    </section>
+
+    <section>
+      <title>sense</title>
+      <para>A sense is a part of an entry which groups together information relating to a meaning of the entry's headword, for example definitions, examples and translations.</para>
+      <itemizedlist>
+        <title>Parent</title>
+        <listitem>entry</listitem>
+      </itemizedlist>
+      <itemizedlist>
+        <title>Attributes</title>
+        <listitem>id; required or computable</listitem>
+        <listitem>listingOrder: required or implicit</listitem>
+      </itemizedlist>
+      <itemizedlist>
+        <title>Children (at least one)</title>
+        <listitem>zero or one of senseIndicator</listitem>
+        <listitem>zero or one of definition</listitem>
+        <listitem>zero or one of headwordTranslation (from the translation module)</listitem>
+        <listitem>zero or one of example</listitem>
+      </itemizedlist>
+    </section>
+
+    <section>
+      <title>senseIndicator</title>
+      <para>A senseIndicator is a short statement that indicates the meaning of a sense and permits its differentiation from other senses in the entry.</para>
+      <itemizedlist>
+        <title>Parent</title>
+        <listitem>sense</listitem>
+      </itemizedlist>
+      <itemizedlist>
+        <title>Attributes</title>
+        <listitem>text: required, non-empty string</listitem>
+      </itemizedlist>
+      <itemizedlist>
+        <title>Children</title>
+        <listitem>none</listitem>
+      </itemizedlist>
+    </section>
+
+    <section>
+      <title>definition</title>
+      <para>A definition is a long statement that describes and or explains the meaning of a sense.</para>
+      <itemizedlist>
+        <title>Parent</title>
+        <listitem>sense</listitem>
+      </itemizedlist>
+      <itemizedlist>
+        <title>Attributes</title>
+        <listitem>text: required, non-empty string</listitem>
+      </itemizedlist>
+      <itemizedlist>
+        <title>Children</title>
+        <listitem>none</listitem>
+      </itemizedlist>
+      <para>Guidance: What is the difference between a sense indicator and a definition?</para>
+    </section>
+
+    <section>
+      <title>example</title>
+      <para>An example is an instance of a lexical item's usage in a specific sense.</para>
+      <itemizedlist>
+        <title>Parent</title>
+        <listitem>sense</listitem>
+      </itemizedlist>
+      <itemizedlist>
+        <title>Attributes</title>
+        <listitem>text: required, non-empty string</listitem>
+      </itemizedlist>
+      <itemizedlist>
+        <title>Children</title>
+        <listitem>none</listitem>
+      </itemizedlist>
+      <para></para>
+    </section>
+
+</section>
