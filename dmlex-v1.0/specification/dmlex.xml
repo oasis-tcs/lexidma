@@ -28,8 +28,7 @@
       >&latest-loc;/&name;.html</releaseinfo>
     <releaseinfo role="OASIS-specification-latest">&latest-loc;/&name;.pdf</releaseinfo>
     <releaseinfo role="OASIS-specification-latest">&latest-loc;/&name;.xml</releaseinfo>
-    <releaseinfo role="committee"><ulink url="http://www.oasis-open.org/committees/xliff/">OASIS XML
-        Localisation Interchange File Format (XLIFF) TC</ulink></releaseinfo>
+    <releaseinfo role="committee"><ulink url="http://www.oasis-open.org/committees/lexidma/">OASIS Lexicographic Infrastructure Data Model and API (LEXIDMA) TC</ulink></releaseinfo>
     <authorgroup>
       <othercredit role="chair">
         <firstname>Tomaž</firstname>

@@ -18,7 +18,10 @@ Please see the [LICENSE file](https://github.com/oasis-tcs/lexidma/blob/master/L
 
 ## Further Description of this Repository
 
-*Any narrative content may be provided here by the TC, for example, if the Members wish to provide an extended statement of purpose.*
+Current working draft versions in this repository:
+
+* [WD01 HTML](https://htmlpreview.github.io/?https://github.com/oasis-tcs/lexidma/blob/master/dmlex-v1.0/specification/dmlex-v1.0-wd01.html)
+* [WD01 PDF](dmlex-v1.0/specification/dmlex-v1.0-wd01.pdf)
 
 ## Contact
 
