@@ -73,9 +73,9 @@
         organization and its official outputs. OASIS welcomes reference to, and implementation and
         use of, specifications, while reserving the right to enforce its marks against misleading
         uses. Please see <a href="https://www.oasis-open.org/policies-guidelines/trademark" target="_top">https://www.oasis-open.org/policies-guidelines/trademark</a> for above
-        guidance.</p></div></div><hr></div><div class="toc"><h2>Table of Contents</h2><dl><dt><span class="section"><a href="#Introduction">1 Introduction</a></span></dt><dd><dl><dt><span class="section"><a href="#terminology">1.1 Glossary</a></span></dt><dd><dl><dt><span class="section"><a href="#definitions">1.1.1 Definitions</a></span></dt><dt><span class="section"><a href="#keyconcepts">1.1.2 Key concepts</a></span></dt></dl></dd></dl></dd><dt><span class="section"><a href="#Conformance">2 Conformance</a></span></dt><dt><span class="section"><a href="#d54e555">3 The Core Specification</a></span></dt><dd><dl><dt><span class="section"><a href="#d54e558">3.1 <code class="literal">LexicographicResource</code> object type</a></span></dt><dt><span class="section"><a href="#d54e604">3.2 <code class="literal">Entry</code> object type</a></span></dt><dt><span class="section"><a href="#d54e661">3.3 <code class="literal">Sense</code> object type</a></span></dt><dt><span class="section"><a href="#d54e718">3.4 The difference between entries and senses</a></span></dt><dt><span class="section"><a href="#d54e728">3.5 <code class="literal">PartOfSpeech</code> object type</a></span></dt><dt><span class="section"><a href="#d54e753">3.6 <code class="literal">Usage</code> object type</a></span></dt><dt><span class="section"><a href="#d54e792">3.7 <code class="literal">Pronunciation</code> object type</a></span></dt><dt><span class="section"><a href="#d54e834">3.8 <code class="literal">InflectedForm</code> object type</a></span></dt><dt><span class="section"><a href="#d54e879">3.9 <code class="literal">Example</code> object type</a></span></dt></dl></dd><dt><span class="section"><a href="#d54e901">4 Bilingual Module</a></span></dt><dd><dl><dt><span class="section"><a href="#d54e904">4.1 Extensions to <code class="literal">LexicographicResource</code> object
-    type</a></span></dt><dt><span class="section"><a href="#d54e934">4.2 Extensions to <code class="literal">Sense</code> object type</a></span></dt><dt><span class="section"><a href="#d54e948">4.3 <code class="literal">HeadwordTranslation</code> object type</a></span></dt><dt><span class="section"><a href="#d54e999">4.4 <code class="literal">TranslationPartOfSpeech</code> object type</a></span></dt><dt><span class="section"><a href="#d54e1024">4.5 <code class="literal">TranslationUsage</code> object type</a></span></dt><dt><span class="section"><a href="#d54e1063">4.6 <code class="literal">TranslationPronunciation</code> object type</a></span></dt><dt><span class="section"><a href="#d54e1105">4.7 <code class="literal">TranslationInflectedForm</code> object type</a></span></dt><dt><span class="section"><a href="#d54e1150">4.8 <code class="literal">HeadwordTranslation</code> object type</a></span></dt><dt><span class="section"><a href="#d54e1201">4.9 Extensions to <code class="literal">Example</code> object type</a></span></dt><dt><span class="section"><a href="#d54e1216">4.10 <code class="literal">ExampleTranslation</code> object type</a></span></dt></dl></dd><dt><span class="section"><a href="#d54e1238">5 Entry Structuring Module</a></span></dt><dd><dl><dt><span class="section"><a href="#d54e1240">5.1 <code class="literal">SenseGroup</code> relation type</a></span></dt><dt><span class="section"><a href="#d54e1265">5.2 <code class="literal">Subsense</code> relation type</a></span></dt><dt><span class="section"><a href="#d54e1285">5.3 <code class="literal">Subentry</code> relation type</a></span></dt></dl></dd><dt><span class="section"><a href="#d54e1316">6 Crossreferencing Module</a></span></dt><dd><dl><dt><span class="section"><a href="#d54e1318">6.1 <code class="literal">Variant</code> relation type</a></span></dt><dt><span class="section"><a href="#d54e1332">6.2 <code class="literal">Opposition</code> relation type</a></span></dt><dt><span class="section"><a href="#d54e1346">6.3 <code class="literal">Similarity</code> relation type</a></span></dt><dt><span class="section"><a href="#d54e1360">6.4 <code class="literal">Pertainment</code> relation type</a></span></dt></dl></dd><dt><span class="section"><a href="#d54e1374">7 Inline Markup Module</a></span></dt><dd><dl><dt><span class="section"><a href="#d54e1376">7.1 <code class="literal">Placeholder</code> markup type</a></span></dt><dt><span class="section"><a href="#d54e1415">7.2 <code class="literal">Headword</code> markup type</a></span></dt></dl></dd><dt><span class="section"><a href="#d54e1442">8 Controlled Vocabularies Module</a></span></dt><dd><dl><dt><span class="section"><a href="#d54e1445">8.1 Extensions to <code class="literal">LexicographicResource</code> object
-    type</a></span></dt><dt><span class="section"><a href="#d54e1500">8.2 <code class="literal">PartOfSpeechLabel</code> object type</a></span></dt><dt><span class="section"><a href="#d54e1538">8.3 <code class="literal">TranslationPartOfSpeechLabel</code> object type</a></span></dt><dt><span class="section"><a href="#d54e1576">8.4 <code class="literal">UsageLabel</code> object type</a></span></dt><dt><span class="section"><a href="#d54e1645">8.5 <code class="literal">TranslationUsageLabel</code> object type</a></span></dt><dt><span class="section"><a href="#d54e1714">8.6 <code class="literal">InflectedFormLabel</code> object type</a></span></dt><dt><span class="section"><a href="#d54e1752">8.7 <code class="literal">TranslationInflectedFormLabel</code> object type</a></span></dt><dt><span class="section"><a href="#d54e1790">8.8 <code class="literal">LabelMapping</code> object type</a></span></dt></dl></dd><dt><span class="section"><a href="#XML_serialization">9 DMLex XML serialization</a></span></dt><dd><dl><dt><span class="section"><a href="#XML_Intro">9.1 Introduction</a></span></dt><dt><span class="section"><a href="#XML_artifacts">9.2 DMLex namespaces and validation artifacts for its XML serialization</a></span></dt><dt><span class="section"><a href="#XML_Conformance">9.3 Conformance to the XML serialization of DMLex Version 1.0</a></span></dt><dt><span class="section"><a href="#d54e1967">9.4 Other XML serialization provisions</a></span></dt><dt><span class="section"><a href="#XML_elements">9.5 XML serialization elements</a></span></dt><dd><dl><dt><span class="section"><a href="#XML_diagram">9.5.1 Diagram</a></span></dt></dl></dd><dt><span class="section"><a href="#XML_attributes">9.6 XML serialization attributes</a></span></dt><dt><span class="section"><a href="#XML_example">9.7 Example file</a></span></dt></dl></dd><dt><span class="section"><a href="#JSON_serialization">10 DMLex JSON serialization</a></span></dt><dd><dl><dt><span class="section"><a href="#JSON_Intro">10.1 Introduction</a></span></dt><dt><span class="section"><a href="#JSON_artifacts">10.2 DMLex namespaces and validation artifacts for its JSON serialization</a></span></dt><dt><span class="section"><a href="#JSON_Conformance">10.3 Conformance to the JSON serialization of DMLex Version 1.0</a></span></dt><dt><span class="section"><a href="#d54e2162">10.4 Other JSON serialization provisions</a></span></dt><dt><span class="section"><a href="#JSON_objects">10.5 JSON serialization objects</a></span></dt><dd><dl><dt><span class="section"><a href="#JSON_diagram">10.5.1 Diagram</a></span></dt></dl></dd><dt><span class="section"><a href="#JSON_properties">10.6 JSON serialization properties</a></span></dt><dt><span class="section"><a href="#JSON_example">10.7 Example file</a></span></dt></dl></dd><dt><span class="section"><a href="#RDF_serialization">11 DMLex RDF serialization</a></span></dt><dd><dl><dt><span class="section"><a href="#RDF_Intro">11.1 Introduction</a></span></dt><dt><span class="section"><a href="#RDF_artifacts">11.2 DMLex namespaces and validation artifacts for its RDF serialization</a></span></dt><dt><span class="section"><a href="#RDF_Conformance">11.3 Conformance to the RDF serialization of DMLex Version 1.0</a></span></dt><dt><span class="section"><a href="#d54e2357">11.4 Other RDF serialization provisions</a></span></dt><dt><span class="section"><a href="#RDF_objects">11.5 RDF serialization objects</a></span></dt><dd><dl><dt><span class="section"><a href="#RDF_diagram">11.5.1 Diagram</a></span></dt></dl></dd><dt><span class="section"><a href="#RDF_attributes">11.6 RDF serialization attributes</a></span></dt><dt><span class="section"><a href="#RDF_example">11.7 Example file</a></span></dt></dl></dd></dl><h3>Appendixes</h3><dl><dt><span class="appendix"><a href="#references">A References</a></span></dt><dd><dl><dt><span class="section"><a href="#normativeReferences">A.1 Normative references</a></span></dt><dt><span class="section"><a href="#informativeReferences">A.2 Informative references (Informative)</a></span></dt></dl></dd><dt><span class="appendix"><a href="#coreValidation">B Machine Readable Validation Artifacts (Informative)</a></span></dt><dt><span class="appendix"><a href="#SecurityPrivacy">C Security and privacy considerations</a></span></dt><dt><span class="appendix"><a href="#specChangeTracking">D Specification Change Tracking (Informative)</a></span></dt><dt><span class="appendix"><a href="#acknowledgements">E Acknowledgements (Informative)</a></span></dt></dl></div><hr><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="Introduction"></a>1 Introduction</h2></div></div></div><p>Data Model for Lexicography (DMLex) is a <span class="emphasis"><em>serialization independent Object
+        guidance.</p></div></div><hr></div><div class="toc"><h2>Table of Contents</h2><dl><dt><span class="section"><a href="#Introduction">1 Introduction</a></span></dt><dd><dl><dt><span class="section"><a href="#terminology">1.1 Glossary</a></span></dt><dd><dl><dt><span class="section"><a href="#definitions">1.1.1 Definitions</a></span></dt><dt><span class="section"><a href="#keyconcepts">1.1.2 Key concepts</a></span></dt></dl></dd></dl></dd><dt><span class="section"><a href="#Conformance">2 Conformance</a></span></dt><dt><span class="section"><a href="#d54e555">3 The Core Specification</a></span></dt><dd><dl><dt><span class="section"><a href="#d54e558">3.1 <code class="literal">LexicographicResource</code> object type</a></span></dt><dt><span class="section"><a href="#d54e604">3.2 <code class="literal">Entry</code> object type</a></span></dt><dt><span class="section"><a href="#d54e662">3.3 <code class="literal">Sense</code> object type</a></span></dt><dt><span class="section"><a href="#d54e719">3.4 The difference between entries and senses</a></span></dt><dt><span class="section"><a href="#d54e729">3.5 <code class="literal">PartOfSpeech</code> object type</a></span></dt><dt><span class="section"><a href="#d54e763">3.6 <code class="literal">Usage</code> object type</a></span></dt><dt><span class="section"><a href="#d54e811">3.7 <code class="literal">Pronunciation</code> object type</a></span></dt><dt><span class="section"><a href="#d54e862">3.8 <code class="literal">InflectedForm</code> object type</a></span></dt><dt><span class="section"><a href="#d54e916">3.9 <code class="literal">Example</code> object type</a></span></dt></dl></dd><dt><span class="section"><a href="#d54e947">4 Bilingual Module</a></span></dt><dd><dl><dt><span class="section"><a href="#d54e950">4.1 Extensions to <code class="literal">LexicographicResource</code> object
+    type</a></span></dt><dt><span class="section"><a href="#d54e980">4.2 Extensions to <code class="literal">Sense</code> object type</a></span></dt><dt><span class="section"><a href="#d54e994">4.3 <code class="literal">HeadwordTranslation</code> object type</a></span></dt><dt><span class="section"><a href="#d54e1054">4.4 <code class="literal">TranslationPartOfSpeech</code> object type</a></span></dt><dt><span class="section"><a href="#d54e1088">4.5 <code class="literal">TranslationUsage</code> object type</a></span></dt><dt><span class="section"><a href="#d54e1136">4.6 <code class="literal">TranslationPronunciation</code> object type</a></span></dt><dt><span class="section"><a href="#d54e1187">4.7 <code class="literal">TranslationInflectedForm</code> object type</a></span></dt><dt><span class="section"><a href="#d54e1241">4.8 <code class="literal">HeadwordTranslation</code> object type</a></span></dt><dt><span class="section"><a href="#d54e1301">4.9 Extensions to <code class="literal">Example</code> object type</a></span></dt><dt><span class="section"><a href="#d54e1316">4.10 <code class="literal">ExampleTranslation</code> object type</a></span></dt></dl></dd><dt><span class="section"><a href="#d54e1347">5 Entry Structuring Module</a></span></dt><dd><dl><dt><span class="section"><a href="#d54e1349">5.1 <code class="literal">SenseGroup</code> relation type</a></span></dt><dt><span class="section"><a href="#d54e1374">5.2 <code class="literal">Subsense</code> relation type</a></span></dt><dt><span class="section"><a href="#d54e1394">5.3 <code class="literal">Subentry</code> relation type</a></span></dt></dl></dd><dt><span class="section"><a href="#d54e1425">6 Crossreferencing Module</a></span></dt><dd><dl><dt><span class="section"><a href="#d54e1427">6.1 <code class="literal">Variant</code> relation type</a></span></dt><dt><span class="section"><a href="#d54e1441">6.2 <code class="literal">Opposition</code> relation type</a></span></dt><dt><span class="section"><a href="#d54e1455">6.3 <code class="literal">Similarity</code> relation type</a></span></dt><dt><span class="section"><a href="#d54e1469">6.4 <code class="literal">Pertainment</code> relation type</a></span></dt></dl></dd><dt><span class="section"><a href="#d54e1483">7 Inline Markup Module</a></span></dt><dd><dl><dt><span class="section"><a href="#d54e1485">7.1 <code class="literal">Placeholder</code> markup type</a></span></dt><dt><span class="section"><a href="#d54e1524">7.2 <code class="literal">Headword</code> markup type</a></span></dt></dl></dd><dt><span class="section"><a href="#d54e1551">8 Controlled Vocabularies Module</a></span></dt><dd><dl><dt><span class="section"><a href="#d54e1554">8.1 Extensions to <code class="literal">LexicographicResource</code> object
+    type</a></span></dt><dt><span class="section"><a href="#d54e1609">8.2 <code class="literal">PartOfSpeechLabel</code> object type</a></span></dt><dt><span class="section"><a href="#d54e1647">8.3 <code class="literal">TranslationPartOfSpeechLabel</code> object type</a></span></dt><dt><span class="section"><a href="#d54e1685">8.4 <code class="literal">UsageLabel</code> object type</a></span></dt><dt><span class="section"><a href="#d54e1754">8.5 <code class="literal">TranslationUsageLabel</code> object type</a></span></dt><dt><span class="section"><a href="#d54e1823">8.6 <code class="literal">InflectedFormLabel</code> object type</a></span></dt><dt><span class="section"><a href="#d54e1861">8.7 <code class="literal">TranslationInflectedFormLabel</code> object type</a></span></dt><dt><span class="section"><a href="#d54e1899">8.8 <code class="literal">LabelMapping</code> object type</a></span></dt></dl></dd><dt><span class="section"><a href="#XML_serialization">9 DMLex XML serialization</a></span></dt><dd><dl><dt><span class="section"><a href="#XML_Intro">9.1 Introduction</a></span></dt><dt><span class="section"><a href="#XML_artifacts">9.2 DMLex namespaces and validation artifacts for its XML serialization</a></span></dt><dt><span class="section"><a href="#XML_Conformance">9.3 Conformance to the XML serialization of DMLex Version 1.0</a></span></dt><dt><span class="section"><a href="#d54e2076">9.4 Other XML serialization provisions</a></span></dt><dt><span class="section"><a href="#XML_elements">9.5 XML serialization elements</a></span></dt><dd><dl><dt><span class="section"><a href="#XML_diagram">9.5.1 Diagram</a></span></dt></dl></dd><dt><span class="section"><a href="#XML_attributes">9.6 XML serialization attributes</a></span></dt><dt><span class="section"><a href="#XML_example">9.7 Example file</a></span></dt></dl></dd><dt><span class="section"><a href="#JSON_serialization">10 DMLex JSON serialization</a></span></dt><dd><dl><dt><span class="section"><a href="#JSON_Intro">10.1 Introduction</a></span></dt><dt><span class="section"><a href="#JSON_artifacts">10.2 DMLex namespaces and validation artifacts for its JSON serialization</a></span></dt><dt><span class="section"><a href="#JSON_Conformance">10.3 Conformance to the JSON serialization of DMLex Version 1.0</a></span></dt><dt><span class="section"><a href="#d54e2271">10.4 Other JSON serialization provisions</a></span></dt><dt><span class="section"><a href="#JSON_objects">10.5 JSON serialization objects</a></span></dt><dd><dl><dt><span class="section"><a href="#JSON_diagram">10.5.1 Diagram</a></span></dt></dl></dd><dt><span class="section"><a href="#JSON_properties">10.6 JSON serialization properties</a></span></dt><dt><span class="section"><a href="#JSON_example">10.7 Example file</a></span></dt></dl></dd><dt><span class="section"><a href="#RDF_serialization">11 DMLex RDF serialization</a></span></dt><dd><dl><dt><span class="section"><a href="#RDF_Intro">11.1 Introduction</a></span></dt><dt><span class="section"><a href="#RDF_artifacts">11.2 DMLex namespaces and validation artifacts for its RDF serialization</a></span></dt><dt><span class="section"><a href="#RDF_Conformance">11.3 Conformance to the RDF serialization of DMLex Version 1.0</a></span></dt><dt><span class="section"><a href="#d54e2466">11.4 Other RDF serialization provisions</a></span></dt><dt><span class="section"><a href="#RDF_objects">11.5 RDF serialization objects</a></span></dt><dd><dl><dt><span class="section"><a href="#RDF_diagram">11.5.1 Diagram</a></span></dt></dl></dd><dt><span class="section"><a href="#RDF_attributes">11.6 RDF serialization attributes</a></span></dt><dt><span class="section"><a href="#RDF_example">11.7 Example file</a></span></dt></dl></dd></dl><h3>Appendixes</h3><dl><dt><span class="appendix"><a href="#references">A References</a></span></dt><dd><dl><dt><span class="section"><a href="#normativeReferences">A.1 Normative references</a></span></dt><dt><span class="section"><a href="#informativeReferences">A.2 Informative references (Informative)</a></span></dt></dl></dd><dt><span class="appendix"><a href="#coreValidation">B Machine Readable Validation Artifacts (Informative)</a></span></dt><dt><span class="appendix"><a href="#SecurityPrivacy">C Security and privacy considerations</a></span></dt><dt><span class="appendix"><a href="#specChangeTracking">D Specification Change Tracking (Informative)</a></span></dt><dt><span class="appendix"><a href="#acknowledgements">E Acknowledgements (Informative)</a></span></dt></dl></div><hr><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="Introduction"></a>1 Introduction</h2></div></div></div><p>Data Model for Lexicography (DMLex) is a <span class="emphasis"><em>serialization independent Object
         Model</em></span> designed by a group of lexicographers, lexicographic software providers,
       and researchers. It is intended to provide a simple, modular, and easy to adopt data model for
       use by all lexicographic industry actors across companies and academia as well as geographic
@@ -212,7 +212,8 @@
             by the entry in the lexicographic resource.
           </p></li></ul></div></li><li><p>
         <code class="literal">homographNumber</code> (number, optional)
-      </p></li></ul></div><p>
+      </p></li></ul></div><p>Note: entries do not have any explicit listing order. An application can imply a listing
+    order from a combination of the headword and the homograph number.</p><p>
     Children:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
         <code class="literal">PartOfSpeech</code> (zero or more)
@@ -222,7 +223,7 @@
         <code class="literal">InflectedForm</code> (zero or more)
       </p></li><li><p>
         <code class="literal">Sense</code> (zero or more)
-      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e661"></a>3.3 <code class="literal">Sense</code> object type</h3></div></div></div><p>
+      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e662"></a>3.3 <code class="literal">Sense</code> object type</h3></div></div></div><p>
     A part of an entry which groups together information relating to one
     of the (possibly multiple) meanings (or meaning potentials) of the
     entry's headword.
@@ -252,14 +253,14 @@
         <code class="literal">Usage</code> (zero or more)
       </p></li><li><p>
         <code class="literal">Example</code> (zero or more)
-      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e718"></a>3.4 The difference between entries and senses</h3></div></div></div><p>
+      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e719"></a>3.4 The difference between entries and senses</h3></div></div></div><p>
       An <span class="strong"><strong>entry</strong></span> is a container for
       "formal" properties of the headword such as orthography,
       morphology, syntax and pronunciation. A
       <span class="strong"><strong>sense</strong></span> is a container for those of
       the headword's properties which are statements about semantics and
       pragmatics.
-    </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e728"></a>3.5 <code class="literal">PartOfSpeech</code> object type</h3></div></div></div><p>
+    </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e729"></a>3.5 <code class="literal">PartOfSpeech</code> object type</h3></div></div></div><p>
     Any of the word classes to which a lexical item may be assigned,
     e.g. noun, verb, adjective, etc.
   </p><p>
@@ -269,11 +270,9 @@
       </p></li></ul></div><p>
     Properties:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
-        <code class="literal">value</code> (non-empty string)
-      </p><div class="itemizedlist"><ul type="circle" compact><li><p>
-            Can be constrained by the DMLex Controlled Vocabularies
-            Module.
-          </p></li></ul></div></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e753"></a>3.6 <code class="literal">Usage</code> object type</h3></div></div></div><p>
+        <code class="literal">value</code> (non-empty string) </p><div class="itemizedlist"><ul type="circle" compact><li><p> Can be constrained by the DMLex Controlled Vocabularies Module. </p></li></ul></div></li><li><p>
+        <code class="literal">listingOrder</code>
+      </p><div class="itemizedlist"><ul type="circle" compact><li><p> Can be implicit from the serialization.</p></li></ul></div></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e763"></a>3.6 <code class="literal">Usage</code> object type</h3></div></div></div><p>
     An indication of some restriction on the use of the lexical item.
     The restriction can be pragmatic (time, region, register), semantic
     (domain, semantic type) or formal ('no plural').
@@ -288,15 +287,10 @@
       </p></li></ul></div><p>
     Properties:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
-        <code class="literal">value</code> (non-empty string)
-      </p><div class="itemizedlist"><ul type="circle" compact><li><p>
-            Can be constrained by the DMLex Controlled Vocabularies
-            Module.
-          </p></li><li><p>
-            Its type (eg. whether register, temporal, geographic etc)
-            can be specified by the by the DMLex Controlled Vocabularies
-            Module.
-          </p></li></ul></div></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e792"></a>3.7 <code class="literal">Pronunciation</code> object type</h3></div></div></div><p>
+        <code class="literal">value</code> (non-empty string) </p><div class="itemizedlist"><ul type="circle" compact><li><p> Can be constrained by the DMLex Controlled Vocabularies Module. </p></li><li><p> Its type (eg. whether register, temporal, geographic etc) can be specified by the
+            by the DMLex Controlled Vocabularies Module. </p></li></ul></div></li><li><p>
+        <code class="literal">listingOrder</code>
+      </p><div class="itemizedlist"><ul type="circle" compact><li><p> Can be implicit from the serialization.</p></li></ul></div></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e811"></a>3.7 <code class="literal">Pronunciation</code> object type</h3></div></div></div><p>
     Information about the pronunciation of its parent.
   </p><p>
     Child of:
@@ -311,11 +305,13 @@
       </p></li><li><p>
         <code class="literal">recording</code> (string: name or URL of a sound
         file)
-      </p></li></ul></div><p>
+      </p></li><li><p>
+        <code class="literal">listingOrder</code>
+      </p><div class="itemizedlist"><ul type="circle" compact><li><p> Can be implicit from the serialization.</p></li></ul></div></li></ul></div><p>
     Children:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
         <code class="literal">Usage</code> (zero or more)
-      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e834"></a>3.8 <code class="literal">InflectedForm</code> object type</h3></div></div></div><p>
+      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e862"></a>3.8 <code class="literal">InflectedForm</code> object type</h3></div></div></div><p>
     An inflected headword is a form of the inflectional paradigm of its
     parent.
   </p><p>
@@ -331,13 +327,15 @@
             Module.
           </p></li></ul></div></li><li><p>
         <code class="literal">value</code> (non-empty string)
-      </p></li></ul></div><p>
+      </p></li><li><p>
+        <code class="literal">listingOrder</code>
+      </p><div class="itemizedlist"><ul type="circle" compact><li><p> Can be implicit from the serialization.</p></li></ul></div></li></ul></div><p>
     Children:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
         <code class="literal">Usage</code> (zero or more)
       </p></li><li><p>
         <code class="literal">Pronunciation</code> (zero or more)
-      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e879"></a>3.9 <code class="literal">Example</code> object type</h3></div></div></div><p>
+      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e916"></a>3.9 <code class="literal">Example</code> object type</h3></div></div></div><p>
     An instance of a lexical item's usage in a specific sense.
   </p><p>
     Child of:
@@ -347,9 +345,11 @@
     Properties:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
         <code class="literal">text</code> (non-empty string)
-      </p></li></ul></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d54e901"></a>4 Bilingual Module</h2></div></div></div><p>
+      </p></li><li><p>
+        <code class="literal">listingOrder</code>
+      </p><div class="itemizedlist"><ul type="circle" compact><li><p> Can be implicit from the serialization.</p></li></ul></div></li></ul></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d54e947"></a>4 Bilingual Module</h2></div></div></div><p>
     Extends DMLex Core to support the encoding of bilingual lexicographic resources.
-  </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e904"></a>4.1 Extensions to <code class="literal">LexicographicResource</code> object
+  </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e950"></a>4.1 Extensions to <code class="literal">LexicographicResource</code> object
     type</h3></div></div></div><p>
     Additional properties:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
@@ -362,11 +362,11 @@
             <code class="literal">transcription</code> property of
             <code class="literal">TranslationPronunciation</code> objects is
             given.
-          </p></li></ul></div></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e934"></a>4.2 Extensions to <code class="literal">Sense</code> object type</h3></div></div></div><p>
+          </p></li></ul></div></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e980"></a>4.2 Extensions to <code class="literal">Sense</code> object type</h3></div></div></div><p>
     Additional children:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
         <code class="literal">HeadwordTranslation</code> (zero or more)
-      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e948"></a>4.3 <code class="literal">HeadwordTranslation</code> object type</h3></div></div></div><p>
+      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e994"></a>4.3 <code class="literal">HeadwordTranslation</code> object type</h3></div></div></div><p>
     The translation equivalent of the headword in one of its senses.
   </p><p>
     Child of:
@@ -375,11 +375,10 @@
       </p></li></ul></div><p>
     Properties:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
-        <code class="literal">text</code> (non-empty string)
-      </p><div class="itemizedlist"><ul type="circle" compact><li><p>
-            Can be a single word, a multi-word expression, or indeed any
-            expression in the target language.
-          </p></li></ul></div></li></ul></div><p>
+        <code class="literal">text</code> (non-empty string) </p><div class="itemizedlist"><ul type="circle" compact><li><p> Can be a single word, a multi-word expression, or indeed any expression in the
+            target language. </p></li></ul></div></li><li><p>
+        <code class="literal">listingOrder</code>
+      </p><div class="itemizedlist"><ul type="circle" compact><li><p> Can be implicit from the serialization.</p></li></ul></div></li></ul></div><p>
     Children:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
         <code class="literal">TranslationPartOfSpeech</code> (zero or more)
@@ -389,7 +388,7 @@
         <code class="literal">TranslationPronunciation</code> (zero or more)
       </p></li><li><p>
         <code class="literal">TranslationInflectedForm</code> (zero or more)
-      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e999"></a>4.4 <code class="literal">TranslationPartOfSpeech</code> object type</h3></div></div></div><p>
+      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1054"></a>4.4 <code class="literal">TranslationPartOfSpeech</code> object type</h3></div></div></div><p>
     Any of the word classes to which the translation may be assigned,
     e.g. noun, verb, adjective, etc.
   </p><p>
@@ -399,11 +398,9 @@
       </p></li></ul></div><p>
     Properties:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
-        <code class="literal">value</code> (non-empty string)
-      </p><div class="itemizedlist"><ul type="circle" compact><li><p>
-            Can be constrained by the DMLex Controlled Vocabularies
-            Module.
-          </p></li></ul></div></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1024"></a>4.5 <code class="literal">TranslationUsage</code> object type</h3></div></div></div><p>
+        <code class="literal">value</code> (non-empty string) </p><div class="itemizedlist"><ul type="circle" compact><li><p> Can be constrained by the DMLex Controlled Vocabularies Module. </p></li></ul></div></li><li><p>
+        <code class="literal">listingOrder</code>
+      </p><div class="itemizedlist"><ul type="circle" compact><li><p> Can be implicit from the serialization.</p></li></ul></div></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1088"></a>4.5 <code class="literal">TranslationUsage</code> object type</h3></div></div></div><p>
     An indication of some restriction on the use of its parent. The
     restriction can be pragmatic (time, region, register), semantic
     (domain, semantic type) or formal ('no plural').
@@ -418,15 +415,10 @@
       </p></li></ul></div><p>
     Properties:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
-        <code class="literal">value</code> (non-empty string)
-      </p><div class="itemizedlist"><ul type="circle" compact><li><p>
-            Can be constrained by the DMLex Controlled Vocabularies
-            Module.
-          </p></li><li><p>
-            Its type (eg. whether register, temporal, geographic etc)
-            can be specified by the by the DMLex Controlled Vocabularies
-            Module.
-          </p></li></ul></div></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1063"></a>4.6 <code class="literal">TranslationPronunciation</code> object type</h3></div></div></div><p>
+        <code class="literal">value</code> (non-empty string) </p><div class="itemizedlist"><ul type="circle" compact><li><p> Can be constrained by the DMLex Controlled Vocabularies Module. </p></li><li><p> Its type (eg. whether register, temporal, geographic etc) can be specified by the
+            by the DMLex Controlled Vocabularies Module. </p></li></ul></div></li><li><p>
+        <code class="literal">listingOrder</code>
+      </p><div class="itemizedlist"><ul type="circle" compact><li><p> Can be implicit from the serialization.</p></li></ul></div></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1136"></a>4.6 <code class="literal">TranslationPronunciation</code> object type</h3></div></div></div><p>
     Information about the pronunciation of its parent.
   </p><p>
     Child of:
@@ -441,11 +433,13 @@
       </p></li><li><p>
         <code class="literal">recording</code> (string: name or URL of a sound
         file)
-      </p></li></ul></div><p>
+      </p></li><li><p>
+        <code class="literal">listingOrder</code>
+      </p><div class="itemizedlist"><ul type="circle" compact><li><p> Can be implicit from the serialization.</p></li></ul></div></li></ul></div><p>
     Children:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
         <code class="literal">TranslationUsage</code> (zero or more)
-      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1105"></a>4.7 <code class="literal">TranslationInflectedForm</code> object type</h3></div></div></div><p>
+      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1187"></a>4.7 <code class="literal">TranslationInflectedForm</code> object type</h3></div></div></div><p>
     A form of the inflectional paradigm of its parent.
   </p><p>
     Child of:
@@ -460,13 +454,15 @@
             Module.
           </p></li></ul></div></li><li><p>
         <code class="literal">value</code> (non-empty string)
-      </p></li></ul></div><p>
+      </p></li><li><p>
+        <code class="literal">listingOrder</code>
+      </p><div class="itemizedlist"><ul type="circle" compact><li><p> Can be implicit from the serialization.</p></li></ul></div></li></ul></div><p>
     Children:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
         <code class="literal">TranslationUsage</code> (zero or more)
       </p></li><li><p>
         <code class="literal">TranslationPronunciation</code> (zero or more)
-      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1150"></a>4.8 <code class="literal">HeadwordTranslation</code> object type</h3></div></div></div><p>
+      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1241"></a>4.8 <code class="literal">HeadwordTranslation</code> object type</h3></div></div></div><p>
     The translation equivalent of the headword in one of its senses.
   </p><p>
     Child of:
@@ -475,11 +471,10 @@
       </p></li></ul></div><p>
     Properties:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
-        <code class="literal">text</code> (non-empty string)
-      </p><div class="itemizedlist"><ul type="circle" compact><li><p>
-            Can be a single word, a multi-word expression, or indeed any
-            expression in the target language.
-          </p></li></ul></div></li></ul></div><p>
+        <code class="literal">text</code> (non-empty string) </p><div class="itemizedlist"><ul type="circle" compact><li><p> Can be a single word, a multi-word expression, or indeed any expression in the
+            target language. </p></li></ul></div></li><li><p>
+        <code class="literal">listingOrder</code>
+      </p><div class="itemizedlist"><ul type="circle" compact><li><p> Can be implicit from the serialization.</p></li></ul></div></li></ul></div><p>
     Children:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
         <code class="literal">TranslationPartOfSpeech</code> (zero or more)
@@ -489,11 +484,11 @@
         <code class="literal">TranslationPronunciation</code> (zero or more)
       </p></li><li><p>
         <code class="literal">TranslationInflectedForm</code> (zero or more)
-      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1201"></a>4.9 Extensions to <code class="literal">Example</code> object type</h3></div></div></div><p>
+      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1301"></a>4.9 Extensions to <code class="literal">Example</code> object type</h3></div></div></div><p>
     Additional children:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
         <code class="literal">ExampleTranslation</code> (zero or more)
-      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1216"></a>4.10 <code class="literal">ExampleTranslation</code> object type</h3></div></div></div><p>
+      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1316"></a>4.10 <code class="literal">ExampleTranslation</code> object type</h3></div></div></div><p>
     The translation of an example.
   </p><p>
     Child of:
@@ -503,7 +498,9 @@
     Properties:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
         <code class="literal">text</code> (non-empty string)
-      </p></li></ul></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d54e1238"></a>5 Entry Structuring Module</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1240"></a>5.1 <code class="literal">SenseGroup</code> relation type</h3></div></div></div><p>
+      </p></li><li><p>
+        <code class="literal">listingOrder</code>
+      </p><div class="itemizedlist"><ul type="circle" compact><li><p> Can be implicit from the serialization.</p></li></ul></div></li></ul></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d54e1347"></a>5 Entry Structuring Module</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1349"></a>5.1 <code class="literal">SenseGroup</code> relation type</h3></div></div></div><p>
     Represents the fact that a group of senses (all belonging to the
     same entry) should be grouped when presented to a human user.
     Typically, when an entry has a large number of senses, it is a
@@ -522,7 +519,7 @@
             A short statement that indicates the broad meaning that
             unites the senses in this group and permits their
             differentiation from other senses in the entry.
-          </p></li></ul></div></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1265"></a>5.2 <code class="literal">Subsense</code> relation type</h3></div></div></div><p>
+          </p></li></ul></div></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1374"></a>5.2 <code class="literal">Subsense</code> relation type</h3></div></div></div><p>
     Represents the fact that one sense (the subordinate sense) should be
     treated as a subsense of another sense (the subordinate). Both
     senses belong to the same entry.
@@ -532,7 +529,7 @@
         the superordinate <code class="literal">Sense</code> (exactly one)
       </p></li><li><p>
         the subordinate <code class="literal">Sense</code> (exactly one)
-      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1285"></a>5.3 <code class="literal">Subentry</code> relation type</h3></div></div></div><p>
+      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1394"></a>5.3 <code class="literal">Subentry</code> relation type</h3></div></div></div><p>
     Represents the fact that one entry (= the subordinate entry) should
     be treated as a subentry inside the sense (= the superordinate
     sense) of another entry.
@@ -548,7 +545,7 @@
         <code class="literal">listingOrder</code>
       </p><div class="itemizedlist"><ul type="circle" compact><li><p>
             Can be implicit from the serialization.
-          </p></li></ul></div></li></ul></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d54e1316"></a>6 Crossreferencing Module</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1318"></a>6.1 <code class="literal">Variant</code> relation type</h3></div></div></div><p>
+          </p></li></ul></div></li></ul></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d54e1425"></a>6 Crossreferencing Module</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1427"></a>6.1 <code class="literal">Variant</code> relation type</h3></div></div></div><p>
     Represents the fact that two entries are understood by the
     lexicographer as variants (for example masculine and feminine
     counterparts, spelling variants).
@@ -556,7 +553,7 @@
     Participants:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
         <code class="literal">Entry</code> (two or more)
-      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1332"></a>6.2 <code class="literal">Opposition</code> relation type</h3></div></div></div><p>
+      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1441"></a>6.2 <code class="literal">Opposition</code> relation type</h3></div></div></div><p>
     Represents the fact that two senses (typically - but not necessarily
     - belonging to two different entries) have opposite meanings. This
     includes antonyms, converses and so on.
@@ -564,7 +561,7 @@
     Participants:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
         <code class="literal">Sense</code> (exactly two)
-      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1346"></a>6.3 <code class="literal">Similarity</code> relation type</h3></div></div></div><p>
+      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1455"></a>6.3 <code class="literal">Similarity</code> relation type</h3></div></div></div><p>
     Represents the fact that two or more senses (typically - but not
     necessarily - belonging to two different entries) have the same or
     similar meanings. This includes synonyms, near synonyms, immediate
@@ -573,7 +570,7 @@
     Participants:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
         <code class="literal">Sense</code> (two or more)
-      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1360"></a>6.4 <code class="literal">Pertainment</code> relation type</h3></div></div></div><p>
+      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1469"></a>6.4 <code class="literal">Pertainment</code> relation type</h3></div></div></div><p>
     Represents the fact that two or more senses (typically - but not
     necessarily - belonging to two different entries) are related to
     each other, in ways other than opposition and similarity.
@@ -581,7 +578,7 @@
     Participants:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
         <code class="literal">Sense</code> (two or more)
-      </p></li></ul></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d54e1374"></a>7 Inline Markup Module</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1376"></a>7.1 <code class="literal">Placeholder</code> markup type</h3></div></div></div><p>
+      </p></li></ul></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d54e1483"></a>7 Inline Markup Module</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1485"></a>7.1 <code class="literal">Placeholder</code> markup type</h3></div></div></div><p>
     Marks up a substring inside a headword (or inside a headword
     translation) which is not part of the expression itself but stands
     for things that can take its place, or constitutes some kind of
@@ -597,7 +594,7 @@
       </p></li><li><p>
         <code class="literal">text</code> property of
         <code class="literal">HeadwordTranslation</code>
-      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1415"></a>7.2 <code class="literal">Headword</code> markup type</h3></div></div></div><p>
+      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1524"></a>7.2 <code class="literal">Headword</code> markup type</h3></div></div></div><p>
     Marks up a substring inside an example (or inside an example
     translation) which corresponds to the headword (or to a translation
     of the headword).
@@ -608,9 +605,9 @@
       </p></li><li><p>
         <code class="literal">text</code> property of
         <code class="literal">ExampleTranslation</code>
-      </p></li></ul></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d54e1442"></a>8 Controlled Vocabularies Module</h2></div></div></div><p>
+      </p></li></ul></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d54e1551"></a>8 Controlled Vocabularies Module</h2></div></div></div><p>
     This module makes it possible to describe constraints on the values of certain plain-text properties of objects defined in DMLex Core and in DMLex Bilingual Module.
-  </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1445"></a>8.1 Extensions to <code class="literal">LexicographicResource</code> object
+  </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1554"></a>8.1 Extensions to <code class="literal">LexicographicResource</code> object
     type</h3></div></div></div><p>
     Additional properties:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
@@ -631,7 +628,7 @@
         <code class="literal">InflectedFormLabel</code> (zero or more)
       </p></li><li><p>
         <code class="literal">TranslationInflectedFormLabel</code> (zero or more)
-      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1500"></a>8.2 <code class="literal">PartOfSpeechLabel</code> object type</h3></div></div></div><p>
+      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1609"></a>8.2 <code class="literal">PartOfSpeechLabel</code> object type</h3></div></div></div><p>
       A <code class="literal">PartOfSpeechLabel</code> represents one of several allowed values for the
       <code class="literal">value</code> property of <code class="literal">PartOfSpeech</code> objects.
   </p><p>
@@ -644,7 +641,7 @@
     Children:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
         <code class="literal">LabelMapping</code> (zero or more)
-      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1538"></a>8.3 <code class="literal">TranslationPartOfSpeechLabel</code> object type</h3></div></div></div><p>
+      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1647"></a>8.3 <code class="literal">TranslationPartOfSpeechLabel</code> object type</h3></div></div></div><p>
     A <code class="literal">TranslationPartOfSpeechLabel</code> represents one
     of several allowed values for the <code class="literal">value</code>
     property of <code class="literal">TranslationPartOfSpeech</code> objects.
@@ -658,7 +655,7 @@
     Children:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
         <code class="literal">LabelMapping</code> (zero or more)
-      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1576"></a>8.4 <code class="literal">UsageLabel</code> object type</h3></div></div></div><p>
+      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1685"></a>8.4 <code class="literal">UsageLabel</code> object type</h3></div></div></div><p>
     A <code class="literal">UsageLabel</code> represents one of several
     allowed values for the <code class="literal">value</code> property of
     <code class="literal">Label</code> objects.
@@ -678,7 +675,7 @@
     Children:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
         <code class="literal">LabelMapping</code> (zero or more)
-      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1645"></a>8.5 <code class="literal">TranslationUsageLabel</code> object type</h3></div></div></div><p>
+      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1754"></a>8.5 <code class="literal">TranslationUsageLabel</code> object type</h3></div></div></div><p>
     A <code class="literal">TranslationUsageLabel</code> represents one of
     several allowed values for the <code class="literal">value</code> property
     of <code class="literal">TranslationLabel</code> objects.
@@ -698,7 +695,7 @@
     Children:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
         <code class="literal">LabelMapping</code> (zero or more)
-      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1714"></a>8.6 <code class="literal">InflectedFormLabel</code> object type</h3></div></div></div><p>
+      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1823"></a>8.6 <code class="literal">InflectedFormLabel</code> object type</h3></div></div></div><p>
     An <code class="literal">InflectedFormLabel</code> represents one of
     several allowed values for the <code class="literal">label</code> property
     of <code class="literal">InflectedForm</code> objects.
@@ -712,7 +709,7 @@
     Children:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
         <code class="literal">LabelMapping</code> (zero or more)
-      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1752"></a>8.7 <code class="literal">TranslationInflectedFormLabel</code> object type</h3></div></div></div><p>
+      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1861"></a>8.7 <code class="literal">TranslationInflectedFormLabel</code> object type</h3></div></div></div><p>
     A <code class="literal">TranslationInflectedFormLabel</code> represents
     one of several allowed values for the <code class="literal">label</code>
     property of <code class="literal">TranslationInflectedForm</code> objects.
@@ -726,7 +723,7 @@
     Children:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
         <code class="literal">LabelMapping</code> (zero or more)
-      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1790"></a>8.8 <code class="literal">LabelMapping</code> object type</h3></div></div></div><p>
+      </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1899"></a>8.8 <code class="literal">LabelMapping</code> object type</h3></div></div></div><p>
     Represents the fact that an item in the controlled vocabulary is
     equivalent to item provided by en external authority.
   </p><p>
@@ -772,7 +769,7 @@
               MUST be capable of <em class="firstterm">Enriching</em>
               <em class="firstterm">DMlex XML Instances</em> with at least ELABORATE.. .</p></li><li><p>Conformant <em class="firstterm">Modifiers</em>
               MUST be capable of updating at least one data category according to its own Constraints and Processing Requirements
-              as specified in ELABORATE.</p></li><li><p>Etc. ELABORATE.</p></li></ul></div></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e1967"></a>9.4 Other XML serialization provisions</h3></div></div></div><p> Other provisions.
+              as specified in ELABORATE.</p></li><li><p>Etc. ELABORATE.</p></li></ul></div></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e2076"></a>9.4 Other XML serialization provisions</h3></div></div></div><p> Other provisions.
       ELABORATE</p><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>ELABORATE. </p></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>ELABORATE</p><p>Another informative pointer.</p></div><div class="itemizedlist"><p class="title"><i>Processing Requirements</i></p><ul type="disc"><li><p><em class="firstterm">Writers</em>
           MUST
           ELABORATE
@@ -780,7 +777,7 @@
       of element olinks]</p><p> </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a name="XML_diagram"></a>9.5.1 Diagram</h4></div></div></div><p>Legend:</p><table class="simplelist" border="0" summary="Simple list"><tr><td>1 = one</td></tr><tr><td>+ = one or more</td></tr><tr><td>? = zero or one</td></tr><tr><td>* = zero, one or more</td></tr></table><pre class="programlisting">
 programlisting code to display the diagram
     </pre></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="XML_attributes"></a>9.6 XML serialization attributes</h3></div></div></div><p>The XML serialization uses the following attributes:</p><p>[comma separated list
-        of attribute olinks]</p><p> </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="XML_example"></a>9.7 Example file</h3></div></div></div><div class="example"><a name="d54e2030"></a><p class="title"><i>Example 1. Example of a couple of DMLex entries RDF serialized</i></p><p>The following example file includes markup related to several <em class="firstterm">DMLex Core and Module</em> data
+        of attribute olinks]</p><p> </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="XML_example"></a>9.7 Example file</h3></div></div></div><div class="example"><a name="d54e2139"></a><p class="title"><i>Example 1. Example of a couple of DMLex entries RDF serialized</i></p><p>The following example file includes markup related to several <em class="firstterm">DMLex Core and Module</em> data
         categories.</p><pre class="programlisting">&lt;!-- example file metadata --&gt;
 
 programlisting code</pre></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="JSON_serialization"></a>10 DMLex JSON serialization</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="JSON_Intro"></a>10.1 Introduction</h3></div></div></div><p>This serialization defines ... ELABORATE</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>This serialization specification chiefly describes how... ELABORATE</p></div><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>There is an important difference or similar ELABORATE</p><p>However, … ELABORATE. </p><p>Implementers who wish to better access... ELABORATE.</p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="JSON_artifacts"></a>10.2 DMLex namespaces and validation artifacts for its JSON serialization</h3></div></div></div><p>This
@@ -808,7 +805,7 @@ programlisting code</pre></div></div></div><div class="section" lang="en-US"><di
               MUST be capable of <em class="firstterm">Enriching</em>
               <em class="firstterm">DMlex JSON Instances</em> with at least ELABORATE.. .</p></li><li><p>Conformant <em class="firstterm">Modifiers</em>
               MUST be capable of updating at least one data category according to its own Constraints and Processing Requirements
-              as specified in ELABORATE.</p></li><li><p>Etc. ELABORATE.</p></li></ul></div></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e2162"></a>10.4 Other JSON serialization provisions</h3></div></div></div><p> Other provisions.
+              as specified in ELABORATE.</p></li><li><p>Etc. ELABORATE.</p></li></ul></div></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e2271"></a>10.4 Other JSON serialization provisions</h3></div></div></div><p> Other provisions.
       ELABORATE</p><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>ELABORATE. </p></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>ELABORATE</p><p>Another informative pointer.</p></div><div class="itemizedlist"><p class="title"><i>Processing Requirements</i></p><ul type="disc"><li><p><em class="firstterm">Writers</em>
           MUST
           ELABORATE
@@ -816,7 +813,7 @@ programlisting code</pre></div></div></div><div class="section" lang="en-US"><di
       of object olinks]</p><p> </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a name="JSON_diagram"></a>10.5.1 Diagram</h4></div></div></div><p>Legend:</p><table class="simplelist" border="0" summary="Simple list"><tr><td>1 = one</td></tr><tr><td>+ = one or more</td></tr><tr><td>? = zero or one</td></tr><tr><td>* = zero, one or more</td></tr></table><pre class="programlisting">
 programlisting code to display the diagram
     </pre></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="JSON_properties"></a>10.6 JSON serialization properties</h3></div></div></div><p>The JSON serialization uses the following properties:</p><p>[comma separated list
-        of properties olinks]</p><p> </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="JSON_example"></a>10.7 Example file</h3></div></div></div><div class="example"><a name="d54e2225"></a><p class="title"><i>Example 2. Example of a couple of DMLex entries RDF serialized</i></p><p>The following example file includes markup related to several <em class="firstterm">DMLex Core and Module</em> data
+        of properties olinks]</p><p> </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="JSON_example"></a>10.7 Example file</h3></div></div></div><div class="example"><a name="d54e2334"></a><p class="title"><i>Example 2. Example of a couple of DMLex entries RDF serialized</i></p><p>The following example file includes markup related to several <em class="firstterm">DMLex Core and Module</em> data
         categories.</p><pre class="programlisting">&lt;!-- example file metadata --&gt;
 
 programlisting code</pre></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="RDF_serialization"></a>11 DMLex RDF serialization</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="RDF_Intro"></a>11.1 Introduction</h3></div></div></div><p>This serialization defines ... ELABORATE</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>This serialization specification chiefly describes how... ELABORATE</p></div><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>There is an important difference or similar ELABORATE</p><p>However, … ELABORATE. </p><p>Implementers who wish to better access... ELABORATE.</p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="RDF_artifacts"></a>11.2 DMLex namespaces and validation artifacts for its RDF serialization</h3></div></div></div><p>This
@@ -846,7 +843,7 @@ programlisting code</pre></div></div></div><div class="section" lang="en-US"><di
               01 data categories.</p></li><li><p>Conformant <em class="firstterm">Modifiers</em>
               MUST be capable of updating at least one of the above specified
               Module 01 data categories according to its own Constraints and Processing Requirements
-              as specified in the Module 01 Module.</p></li><li><p>Etc. ELABORATE.</p></li></ul></div></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e2357"></a>11.4 Other RDF serialization provisions</h3></div></div></div><p> Other provisions.
+              as specified in the Module 01 Module.</p></li><li><p>Etc. ELABORATE.</p></li></ul></div></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="d54e2466"></a>11.4 Other RDF serialization provisions</h3></div></div></div><p> Other provisions.
       ELABORATE</p><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>ELABORATE. </p></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>ELABORATE</p><p>Another informative pointer.</p></div><div class="itemizedlist"><p class="title"><i>Processing Requirements</i></p><ul type="disc"><li><p><em class="firstterm">Writers</em>
           MUST
           ELABORATE
@@ -854,14 +851,14 @@ programlisting code</pre></div></div></div><div class="section" lang="en-US"><di
       of object olinks]</p><p> </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a name="RDF_diagram"></a>11.5.1 Diagram</h4></div></div></div><p>Legend:</p><table class="simplelist" border="0" summary="Simple list"><tr><td>1 = one</td></tr><tr><td>+ = one or more</td></tr><tr><td>? = zero or one</td></tr><tr><td>* = zero, one or more</td></tr></table><pre class="programlisting">
 programlisting code to display the diagram
     </pre></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="RDF_attributes"></a>11.6 RDF serialization attributes</h3></div></div></div><p>The RDF serialization uses the following attributes:</p><p>[comma separated list
-        of object olinks]</p><p> </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="RDF_example"></a>11.7 Example file</h3></div></div></div><div class="example"><a name="d54e2420"></a><p class="title"><i>Example 3. Example of a couple of DMLex entries RDF serialized</i></p><p>The following example file includes markup related to several <em class="firstterm">DMLex Core and Module</em> data
+        of object olinks]</p><p> </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="RDF_example"></a>11.7 Example file</h3></div></div></div><div class="example"><a name="d54e2529"></a><p class="title"><i>Example 3. Example of a couple of DMLex entries RDF serialized</i></p><p>The following example file includes markup related to several <em class="firstterm">DMLex Core and Module</em> data
         categories.</p><pre class="programlisting">&lt;!-- example file metadata --&gt;
 
 programlisting code</pre></div></div></div><div class="appendix" lang="en-US"><h2 class="title" style="clear: both"><a name="references"></a>Appendix A References</h2><p>This appendix contains the normative and informative references that are used in this
       document. Normative references are specific (identified by date of publication and/or edition
       number or Version number) and Informative references are either specific or
       non-specific.</p><p>While any hyperlinks included in this appendix were valid at the time of publication,
-      OASIS cannot guarantee their long-term validity.</p><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="normativeReferences"></a>A.1 Normative references</h3></div></div></div><div class="bibliography"><div class="titlepage"><div><div><h3 class="title"><a name="d54e2438"></a></h3></div></div></div><div class="bibliomixed"><a name="bcp14"></a><p class="bibliomixed">[<b><span class="abbrev">BCP 14</span></b>] 
+      OASIS cannot guarantee their long-term validity.</p><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="normativeReferences"></a>A.1 Normative references</h3></div></div></div><div class="bibliography"><div class="titlepage"><div><div><h3 class="title"><a name="d54e2547"></a></h3></div></div></div><div class="bibliomixed"><a name="bcp14"></a><p class="bibliomixed">[<b><span class="abbrev">BCP 14</span></b>] 
            is a concatenation of [RFC 2119] and [RFC 8174] </p></div><div class="bibliomixed"><a name="rfc2119"></a><p class="bibliomixed">[<b><span class="abbrev">RFC 2119</span></b>]  S. Bradner, <i>Key words for use in
             RFCs to Indicate Requirement Levels</i>, <span class="citetitle"><em class="citetitle">
             <a href="https://www.ietf.org/rfc/rfc2119.txt" target="_top">https://www.ietf.org/rfc/rfc2119.txt</a>
@@ -932,7 +929,7 @@ programlisting code</pre></div></div></div><div class="appendix" lang="en-US"><h
           </em></span> (Second Edition) W3C Recommendation 28 October 2004.</p></div><div class="bibliomixed"><a name="XMLSchema1"></a><p class="bibliomixed">[<b><span class="abbrev">XML Schema Structures</span></b>]  W3C, <i>XML Schema
             Part 1: Structures</i>, <span class="citetitle"><em class="citetitle">
             <a href="https://www.w3.org/TR/xmlschema-1/" target="_top">https://www.w3.org/TR/xmlschema-1/</a>
-          </em></span> (Second Edition) W3C Recommendation 28 October 2004.</p></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="informativeReferences"></a>A.2 Informative references (Informative)</h3></div></div></div><div class="bibliography"><div class="titlepage"><div><div><h3 class="title"><a name="d54e2706"></a></h3></div></div></div><div class="bibliomixed"><a name="biblio_ldml"></a><p class="bibliomixed">[<b><span class="abbrev">LDML</span></b>] 
+          </em></span> (Second Edition) W3C Recommendation 28 October 2004.</p></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="informativeReferences"></a>A.2 Informative references (Informative)</h3></div></div></div><div class="bibliography"><div class="titlepage"><div><div><h3 class="title"><a name="d54e2815"></a></h3></div></div></div><div class="bibliomixed"><a name="biblio_ldml"></a><p class="bibliomixed">[<b><span class="abbrev">LDML</span></b>] 
           <i>Unicode Locale Data Markup Language</i>
           <span class="citetitle"><em class="citetitle">
             <a href="http://unicode.org/reports/tr35/" target="_top">http://unicode.org/reports/tr35/</a>

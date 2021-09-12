@@ -43,6 +43,16 @@
         <literal>value</literal> (non-empty string)
       </para>
     </listitem>
+    <listitem>
+      <para>
+        <literal>listingOrder</literal>
+      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para> Can be implicit from the serialization.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
   </itemizedlist>
   <para>
     Children:

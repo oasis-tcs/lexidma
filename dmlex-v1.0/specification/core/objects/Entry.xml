@@ -46,6 +46,8 @@
       </para>
     </listitem>
   </itemizedlist>
+  <para>Note: entries do not have any explicit listing order. An application can imply a listing
+    order from a combination of the headword and the homograph number.</para>
   <para>
     Children:
   </para>

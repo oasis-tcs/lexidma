@@ -657,6 +657,8 @@
       </para>
     </listitem>
   </itemizedlist>
+  <para>Note: entries do not have any explicit listing order. An application can imply a listing
+    order from a combination of the headword and the homograph number.</para>
   <para>
     Children:
   </para>
@@ -792,14 +794,20 @@
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal moreinfo="none">value</literal> (non-empty string)
+        <literal moreinfo="none">value</literal> (non-empty string) </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para> Can be constrained by the DMLex Controlled Vocabularies Module. </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">listingOrder</literal>
       </para>
       <itemizedlist spacing="compact">
         <listitem>
-          <para>
-            Can be constrained by the DMLex Controlled Vocabularies
-            Module.
-          </para>
+          <para> Can be implicit from the serialization.</para>
         </listitem>
       </itemizedlist>
     </listitem>
@@ -837,21 +845,24 @@
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal moreinfo="none">value</literal> (non-empty string)
+        <literal moreinfo="none">value</literal> (non-empty string) </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para> Can be constrained by the DMLex Controlled Vocabularies Module. </para>
+        </listitem>
+        <listitem>
+          <para> Its type (eg. whether register, temporal, geographic etc) can be specified by the
+            by the DMLex Controlled Vocabularies Module. </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">listingOrder</literal>
       </para>
       <itemizedlist spacing="compact">
         <listitem>
-          <para>
-            Can be constrained by the DMLex Controlled Vocabularies
-            Module.
-          </para>
-        </listitem>
-        <listitem>
-          <para>
-            Its type (eg. whether register, temporal, geographic etc)
-            can be specified by the by the DMLex Controlled Vocabularies
-            Module.
-          </para>
+          <para> Can be implicit from the serialization.</para>
         </listitem>
       </itemizedlist>
     </listitem>
@@ -890,6 +901,16 @@
         <literal moreinfo="none">recording</literal> (string: name or URL of a sound
         file)
       </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">listingOrder</literal>
+      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para> Can be implicit from the serialization.</para>
+        </listitem>
+      </itemizedlist>
     </listitem>
   </itemizedlist>
   <para>
@@ -941,6 +962,16 @@
         <literal moreinfo="none">value</literal> (non-empty string)
       </para>
     </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">listingOrder</literal>
+      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para> Can be implicit from the serialization.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
   </itemizedlist>
   <para>
     Children:
@@ -981,6 +1012,16 @@
       <para>
         <literal moreinfo="none">text</literal> (non-empty string)
       </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">listingOrder</literal>
+      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para> Can be implicit from the serialization.</para>
+        </listitem>
+      </itemizedlist>
     </listitem>
   </itemizedlist>
 </section>
@@ -1054,14 +1095,21 @@
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal moreinfo="none">text</literal> (non-empty string)
+        <literal moreinfo="none">text</literal> (non-empty string) </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para> Can be a single word, a multi-word expression, or indeed any expression in the
+            target language. </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">listingOrder</literal>
       </para>
       <itemizedlist spacing="compact">
         <listitem>
-          <para>
-            Can be a single word, a multi-word expression, or indeed any
-            expression in the target language.
-          </para>
+          <para> Can be implicit from the serialization.</para>
         </listitem>
       </itemizedlist>
     </listitem>
@@ -1114,14 +1162,20 @@
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal moreinfo="none">value</literal> (non-empty string)
+        <literal moreinfo="none">value</literal> (non-empty string) </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para> Can be constrained by the DMLex Controlled Vocabularies Module. </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">listingOrder</literal>
       </para>
       <itemizedlist spacing="compact">
         <listitem>
-          <para>
-            Can be constrained by the DMLex Controlled Vocabularies
-            Module.
-          </para>
+          <para> Can be implicit from the serialization.</para>
         </listitem>
       </itemizedlist>
     </listitem>
@@ -1160,21 +1214,24 @@
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal moreinfo="none">value</literal> (non-empty string)
+        <literal moreinfo="none">value</literal> (non-empty string) </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para> Can be constrained by the DMLex Controlled Vocabularies Module. </para>
+        </listitem>
+        <listitem>
+          <para> Its type (eg. whether register, temporal, geographic etc) can be specified by the
+            by the DMLex Controlled Vocabularies Module. </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">listingOrder</literal>
       </para>
       <itemizedlist spacing="compact">
         <listitem>
-          <para>
-            Can be constrained by the DMLex Controlled Vocabularies
-            Module.
-          </para>
-        </listitem>
-        <listitem>
-          <para>
-            Its type (eg. whether register, temporal, geographic etc)
-            can be specified by the by the DMLex Controlled Vocabularies
-            Module.
-          </para>
+          <para> Can be implicit from the serialization.</para>
         </listitem>
       </itemizedlist>
     </listitem>
@@ -1214,6 +1271,16 @@
         <literal moreinfo="none">recording</literal> (string: name or URL of a sound
         file)
       </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">listingOrder</literal>
+      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para> Can be implicit from the serialization.</para>
+        </listitem>
+      </itemizedlist>
     </listitem>
   </itemizedlist>
   <para>
@@ -1264,6 +1331,16 @@
         <literal moreinfo="none">value</literal> (non-empty string)
       </para>
     </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">listingOrder</literal>
+      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para> Can be implicit from the serialization.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
   </itemizedlist>
   <para>
     Children:
@@ -1302,14 +1379,21 @@
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal moreinfo="none">text</literal> (non-empty string)
+        <literal moreinfo="none">text</literal> (non-empty string) </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para> Can be a single word, a multi-word expression, or indeed any expression in the
+            target language. </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">listingOrder</literal>
       </para>
       <itemizedlist spacing="compact">
         <listitem>
-          <para>
-            Can be a single word, a multi-word expression, or indeed any
-            expression in the target language.
-          </para>
+          <para> Can be implicit from the serialization.</para>
         </listitem>
       </itemizedlist>
     </listitem>
@@ -1376,6 +1460,16 @@
       <para>
         <literal moreinfo="none">text</literal> (non-empty string)
       </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">listingOrder</literal>
+      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para> Can be implicit from the serialization.</para>
+        </listitem>
+      </itemizedlist>
     </listitem>
   </itemizedlist>
 </section>

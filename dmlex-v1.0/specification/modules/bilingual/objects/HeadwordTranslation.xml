@@ -27,14 +27,21 @@
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal>text</literal> (non-empty string)
+        <literal>text</literal> (non-empty string) </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para> Can be a single word, a multi-word expression, or indeed any expression in the
+            target language. </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>listingOrder</literal>
       </para>
       <itemizedlist spacing="compact">
         <listitem>
-          <para>
-            Can be a single word, a multi-word expression, or indeed any
-            expression in the target language.
-          </para>
+          <para> Can be implicit from the serialization.</para>
         </listitem>
       </itemizedlist>
     </listitem>
