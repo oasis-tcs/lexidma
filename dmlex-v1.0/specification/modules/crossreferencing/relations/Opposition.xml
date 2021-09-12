@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section>
+  <title><literal>Opposition</literal> relation type</title>
+  <para>
+    Represents the fact that two senses (typically - but not necessarily
+    - belonging to two different entries) have opposite meanings. This
+    includes antonyms, converses and so on.
+  </para>
+  <para>
+    Participants:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal>Sense</literal> (exactly two)
+      </para>
+    </listitem>
+  </itemizedlist>
+</section>

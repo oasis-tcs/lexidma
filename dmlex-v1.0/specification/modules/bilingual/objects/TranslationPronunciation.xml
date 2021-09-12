@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section>
+  <title><literal>TranslationPronunciation</literal> object type</title>
+  <para>
+    Information about the pronunciation of its parent.
+  </para>
+  <para>
+    Child of:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal>HeadwordTranslation</literal>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>TranslationInflectedForm</literal>
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Properties (at least one):
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal>transcription</literal> (non-empty string)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>recording</literal> (string: name or URL of a sound
+        file)
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Children:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal>TranslationUsage</literal> (zero or more)
+      </para>
+    </listitem>
+  </itemizedlist>
+</section>

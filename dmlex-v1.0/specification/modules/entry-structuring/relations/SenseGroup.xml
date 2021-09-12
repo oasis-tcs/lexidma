@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section>
+  <title><literal>SenseGroup</literal> relation type</title>
+  <para>
+    Represents the fact that a group of senses (all belonging to the
+    same entry) should be grouped when presented to a human user.
+    Typically, when an entry has a large number of senses, it is a
+    convenience to the human user to group them into a smaler number of
+    groups by some broad criterion, such as by part of speech or by
+    semantic similarity.
+  </para>
+  <para>
+    Participants:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal>Sense</literal> (two or more)
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal>indicator</literal> (optional, non-empty string)
+      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            A short statement that indicates the broad meaning that
+            unites the senses in this group and permits their
+            differentiation from other senses in the entry.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+  </itemizedlist>
+</section>

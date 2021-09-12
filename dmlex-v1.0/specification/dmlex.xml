@@ -74,35 +74,35 @@
           <para> Declarative validation artifacts accessible from <ulink url="&this-loc;/schemas/"
               >&this-loc;/schemas/</ulink>
           </para>
-          
-          
-      
+
+
+
         </listitem>
       </itemizedlist>-->
       <para>NONE AT THE MOMENT</para>
     </legalnotice>
     <legalnotice role="related">
       <title>Related Work</title>
-      <!-- Model content for replaced specifications in the future  
+      <!-- Model content for replaced specifications in the future
    <para>This specification replaces or supersedes:</para>
 
       <itemizedlist spacing="compact">
         <listitem>
-          <para><emphasis>XLIFF Version &pversion;.</emphasis> Edited by Tom Comerford, David Filip, Rodolfo M. Raya, and Yves Savourel. 
+          <para><emphasis>XLIFF Version &pversion;.</emphasis> Edited by Tom Comerford, David Filip, Rodolfo M. Raya, and Yves Savourel.
             05 August 2014. OASIS Standard. <ulink url="http://docs.oasis-open.org/xliff/xliff-core/v2.0/os/xliff-core-v2.0-os.html">http://docs.oasis-open.org/xliff/xliff-core/v&pversion;/os/xliff-core-v&pversion;-os.html</ulink></para>
         </listitem>
       </itemizedlist>
       -->
       <para>This specification is related to:</para>
       <itemizedlist spacing="compact">
-        <!-- model content for related specifications in case there are any later on     
+        <!-- model content for related specifications in case there are any later on
         <listitem>
           <para><emphasis>JLIFF Version &version;</emphasis>. Edited by Robert van Engelen and David
             Filip. &pubdate;. OASIS &standard;. <ulink url="&this-loc;/&name;-&stage;.html"
               >&this-loc;/&name;-&stage;.html</ulink>. Latest version: <ulink
               url="&latest-loc;/&name;.html">&latest-loc;/&name;.html</ulink>. </para>
         </listitem>
-        
+
         <listitem>
           <para><emphasis>XLIFF Version 2.1.</emphasis> Edited by David Filip, Tom Comerford,
             Soroush Saadatfar, Felix Sasaki, and Yves Savourel. 13 February 2018. OASIS Standard.
@@ -484,42 +484,17 @@
   Need to decide if fragid mechanism will be defined or reused and on what level
   <xi:include href="fragments/fragments.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   -->
-  <section id="core">
-    <title>The Core Specification</title>
-    <para>[ELABORATE]</para>
-    <section>
-      <title>General Processing Requirements</title>
-      <itemizedlist>
-        <title/>
-        <listitem>
-          <para>An <firstterm>Agent</firstterm> processing a valid <firstterm>DMLex
-              Instance</firstterm> that contains only objects and attributes from namespaces that
-            correspond to <firstterm>DMLex-defined</firstterm> elements and attributes that it
-            cannot handle <glossterm>must</glossterm> preserve those objects and properties.</para>
-        </listitem>
-        <listitem>
-          <para>An <firstterm>Agent</firstterm> processing a valid <firstterm>DMLex
-              Instance</firstterm> that contains custom objects (extension objects from namespaces
-            that are not DMLex-defined) that it cannot handle <glossterm>should</glossterm> preserve
-            those objects and attributes.</para>
-        </listitem>
-      </itemizedlist>
-    </section>
-    <xi:include href="objects/objects.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="attributes/attributes.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="inline/inline.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="extensions/extensions.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  </section>
-  <section id="modules">
-    <title>The DMLex Modules Specifications</title>
-    <para>This section specifies the <glossterm>optional</glossterm>
-      <firstterm>DMLex Modules</firstterm> that <glossterm>may</glossterm> be used along with
-        <firstterm>DMLex Core</firstterm> for advanced functionality.</para>
-    <para>ONE MODULE PLACEHOLDER INCLUDED AS MODULE CONTENT MODEL</para>
-    <!--Module includes-->
-    <xi:include href="modules/module_01/specification.xml"
-      xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  </section>
+
+
+  <!-- core and modules -->
+  <xi:include href="core/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="modules/bilingual/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="modules/entry-structuring/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="modules/crossreferencing/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="modules/inline-markup/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="modules/controlled-vocabularies/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  
+
   <!--Serializations includes -->
   <xi:include href="serializations/XML/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="serializations/JSON/specification.xml"
@@ -691,7 +666,7 @@
           <para><firstterm>DMLex Core</firstterm> <link linkend="XMLSchema">[XML Schema]</link>,</para>
           <para><ulink url="&this-loc;/schemas/dmlex&-cschversion;.xsd"
             >&this-loc;/schemas/dmllex-&cschversion;.xsd</ulink></para>
-          
+
         </listitem>
         <listitem id="DMLexCatalog">
           <para><link linkend="XMLCatalogs">[XML Catalog]</link> of <firstterm>DMLex-defined</firstterm> XML Schemas,</para>
@@ -714,9 +689,9 @@
             from those modules.</para>
         </listitem>
       </orderedlist>
-      
-    
-      
+
+
+
       <warning>
         <para>NVDL is not capable of discerning Schemtaron Warnings from Schematron Errors.
           Therefore all Schematron Warnings will be reported as Errors when initiating the
@@ -726,18 +701,18 @@
           distinction. Currently, the Warning/Error distinction is only important when evaluating
           adherence to Processing Requirements for [ELABORATE].</para>
       </warning>
-    
+
     </para>
     -->
     <!--  <para>[Relax NG schemas of <firstterm>DMLex Core and Modules</firstterm> are provided. Although the Relax NG schemas are intended as normative validation artifacts, the XML Schema 1.0 [add normative reference] schemas and Schematron [add normative reference] schemas have precedence in case of conflicting validation results.]
       [This is only relevant if Relax NG is provided.]</para>-->
-    <xi:include href="core/tree.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <!-- <xi:include href="core/tree.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>-->
     <!-- LEXIDMA TC may decide to include the schema listings
     <xi:include href="core/catalog.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-   
+
     <xi:include href="core/schema.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 -->
-    <!-- language for potential inclusion of support schemas such as the xml namespace schema 
+    <!-- language for potential inclusion of support schemas such as the xml namespace schema
     <section>
       <title>Support Schemas</title>
       <para>Third party support schemas that are normatively referenced from this specification or
@@ -782,7 +757,7 @@
     <title>Specification Change Tracking</title>
     <para>This appendix will contain tracked changes after the csprd01 phase will have been
       reached.</para>
-    <!--  
+    <!--
     <xi:include href="ReviewChangeTracking/ReviewChangeTrack.xml"
       xmlns:xi="http://www.w3.org/2001/XInclude"/>
       -->

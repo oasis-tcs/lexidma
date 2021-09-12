@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section>
+  <title>Controlled Vocabularies Module</title>
+  <para>
+    This module makes it possible to describe constraints on the values of certain plain-text properties of objects defined in DMLex Core and in DMLex Bilingual Module.
+  </para>
+  <xi:include href="extensions/LexicographicResource.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objects/PartOfSpeechLabel.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objects/TranslationPartOfSpeechLabel.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objects/UsageLabel.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objects/TranslationUsageLabel.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objects/InflectedFormLabel.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objects/TranslationInflectedFormLabel.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objects/LabelMapping.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</section>

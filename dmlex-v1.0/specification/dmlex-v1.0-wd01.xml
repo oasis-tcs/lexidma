@@ -17,8 +17,7 @@
     <releaseinfo role="OASIS-specification-latest-authoritative">http://docs.oasis-open.org/lexidma/dmlex/v1.0/dmlex-v1.0.html</releaseinfo>
     <releaseinfo role="OASIS-specification-latest">http://docs.oasis-open.org/lexidma/dmlex/v1.0/dmlex-v1.0.pdf</releaseinfo>
     <releaseinfo role="OASIS-specification-latest">http://docs.oasis-open.org/lexidma/dmlex/v1.0/dmlex-v1.0.xml</releaseinfo>
-    <releaseinfo role="committee"><ulink url="http://www.oasis-open.org/committees/xliff/">OASIS XML
-        Localisation Interchange File Format (XLIFF) TC</ulink></releaseinfo>
+    <releaseinfo role="committee"><ulink url="http://www.oasis-open.org/committees/lexidma/">OASIS Lexicographic Infrastructure Data Model and API (LEXIDMA) TC</ulink></releaseinfo>
     <authorgroup>
       <othercredit role="chair">
         <firstname>Tomaž</firstname>
@@ -64,35 +63,35 @@
           <para> Declarative validation artifacts accessible from <ulink url="&this-loc;/schemas/"
               >&this-loc;/schemas/</ulink>
           </para>
-          
-          
-      
+
+
+
         </listitem>
       </itemizedlist> -->
       <para>NONE AT THE MOMENT</para>
     </legalnotice>
     <legalnotice role="related">
       <title>Related Work</title>
-      <!--  Model content for replaced specifications in the future  
+      <!--  Model content for replaced specifications in the future
    <para>This specification replaces or supersedes:</para>
 
       <itemizedlist spacing="compact">
         <listitem>
-          <para><emphasis>XLIFF Version &pversion;.</emphasis> Edited by Tom Comerford, David Filip, Rodolfo M. Raya, and Yves Savourel. 
+          <para><emphasis>XLIFF Version &pversion;.</emphasis> Edited by Tom Comerford, David Filip, Rodolfo M. Raya, and Yves Savourel.
             05 August 2014. OASIS Standard. <ulink url="http://docs.oasis-open.org/xliff/xliff-core/v2.0/os/xliff-core-v2.0-os.html">http://docs.oasis-open.org/xliff/xliff-core/v&pversion;/os/xliff-core-v&pversion;-os.html</ulink></para>
         </listitem>
       </itemizedlist>
        -->
       <para>This specification is related to:</para>
       <itemizedlist spacing="compact">
-        <!--  model content for related specifications in case there are any later on     
+        <!--  model content for related specifications in case there are any later on
         <listitem>
           <para><emphasis>JLIFF Version &version;</emphasis>. Edited by Robert van Engelen and David
             Filip. &pubdate;. OASIS &standard;. <ulink url="&this-loc;/&name;-&stage;.html"
               >&this-loc;/&name;-&stage;.html</ulink>. Latest version: <ulink
               url="&latest-loc;/&name;.html">&latest-loc;/&name;.html</ulink>. </para>
         </listitem>
-        
+
         <listitem>
           <para><emphasis>XLIFF Version 2.1.</emphasis> Edited by David Filip, Tom Comerford,
             Soroush Saadatfar, Felix Sasaki, and Yves Savourel. 13 February 2018. OASIS Standard.
@@ -558,2299 +557,1406 @@
   Need to decide if fragid mechanism will be defined or reused and on what level
   <xi:include href="fragments/fragments.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
    -->
-  <section id="core">
-    <title>The Core Specification</title>
-    <para>[ELABORATE]</para>
-    <section>
-      <title>General Processing Requirements</title>
-      <itemizedlist>
-        <title/>
+
+
+  <!--  core and modules  -->
+  <section>
+  <title>The Core Specification</title>
+  <para>
+    The DMLex Core is for monolingual lexical resources, where headwords, definitions, examples etc. are all in one and the same language.
+  </para>
+  <section>
+  <title><literal moreinfo="none">LexicographicResource</literal> object type</title>
+  <para>
+    A data set which can be viewed and used by humans as a dictionary
+    and - simultaneously - ingested, processed and understood by
+    software agents as a machine-readable database. Terminological note:
+    <emphasis>lexicographic</emphasis> resource, not
+    <emphasis>lexical</emphasis>.
+  </para>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">language</literal> (optional, IETF language code)
+      </para>
+      <itemizedlist spacing="compact">
         <listitem>
-          <para>An <firstterm>Agent</firstterm> processing a valid <firstterm>DMLex
-              Instance</firstterm> that contains only objects and attributes from namespaces that
-            correspond to <firstterm>DMLex-defined</firstterm> elements and attributes that it
-            cannot handle <glossterm>must</glossterm> preserve those objects and properties.</para>
-        </listitem>
-        <listitem>
-          <para>An <firstterm>Agent</firstterm> processing a valid <firstterm>DMLex
-              Instance</firstterm> that contains custom objects (extension objects from namespaces
-            that are not DMLex-defined) that it cannot handle <glossterm>should</glossterm> preserve
-            those objects and attributes.</para>
+          <para>
+            The language of headwords, definitions, examples.
+          </para>
         </listitem>
       </itemizedlist>
-    </section>
-    <section>
-    <title>Objects</title>
-    <para>This section contains a description of all objects used in <firstterm>DMLex
-            Core</firstterm>.</para>
-    <section><!--  gen. 20140318  -->
-  <title>Tree Structure</title>
-  <para>Legend:</para>
-  <simplelist type="vert">
-    <member>1 = one</member>
-    <member>+ = one or more</member>
-    <member>? = zero or one</member>
-    <member>* = zero or more</member>
-  </simplelist>
-  <programlisting format="linespecific">
-<link linkend="dmlex"><code>dmlex</code></link>
-|
-+---<link linkend="entry"><code>entry</code></link> +
-  |
-  [structural diagram]
-  </programlisting>
-</section>
-    <section id="structural">
-    <title>Structural Objects</title>
-    <para>The structural objects used in <firstterm>DMLex Core</firstterm> are: <link linkend="dmlex"><code>dmlex</code></link>, <link linkend="entry"><code>entry</code></link>, <link linkend="notes"><code>&lt;notes&gt;</code></link>,
-            <link linkend="note"><code>&lt;note&gt;</code></link>,
-            <link linkend="data"><code>&lt;data&gt;</code></link>,
-        [<?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>other object
-        olinks<?oxy_custom_end ?>] </para>
-
-    <section id="xliff">
-    <title>dmelx</title>
-    <para>Highest possible level root object for DMLex Instances.</para>
-    <para><emphasis>Contains:</emphasis></para>
-    <simplelist type="vert">
-        <member>- One or more <link linkend="entry"><code>entry</code></link> 
-            elements</member>
-    </simplelist>
-    
-    
-    <para><emphasis>Attributes:</emphasis></para>
-    <simplelist type="vert">
-        <member>- <link linkend="version"><code>version</code></link>, <glossterm>required</glossterm></member>
-        <member>- <link linkend="srcLang"><code>xml:lang</code></link>, <glossterm>optional</glossterm></member>
-        <member>- <link linkend="srcLang"><code>srcLang</code></link>, <glossterm>optional</glossterm></member>
-        <member>- <link linkend="trgLang"><code>trgLang</code></link>, <glossterm>optional</glossterm></member>
-        <member>- <link linkend="xml_space"><code>xml:space</code></link>, <glossterm>optional</glossterm></member>
-        <member>- attributes from other namespaces, <glossterm>optional</glossterm></member>
-    </simplelist>
-    
-    <itemizedlist>
-        <title>Constraints</title>
-        <listitem>
-            <para> The attributes  <link linkend="srcLang"><code>srcLang</code></link> and <link linkend="trgLang"><code>trgLang</code></link> <glossterm>must</glossterm> be both either set or not set.</para>
-        </listitem>
-        <listitem>
-            <para> The attribute <link linkend="xml_lang"><code>xml:lang</code></link>  <glossterm>must</glossterm>
-                be used if and only if  the pair of <link linkend="trgLang"><code>trgLang</code></link> and <link linkend="srcLang"><code>srcLang</code></link> is not used.</para>
-        </listitem>
-        
-    </itemizedlist>
-</section>
-
-    <section id="entry">
-    <title>entry</title>
-    <para>Static container for a dynamic structure of lexicographic objects and attributes encoding
-        lexicographic payload and metadata.</para>
-
-    <para><emphasis>Contains:</emphasis></para>
-    <simplelist type="vert">
-        <member>- elements from other namespaces, <glossterm>optional</glossterm></member>
-        <member>- Zero or one
-            <link linkend="notes"><code>&lt;notes&gt;</code></link>
-            elements followed by</member>
-        <member>- <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>object
-            structure ELABORATE in this &amp; subsequent simple list
-            members<?oxy_custom_end ?>.</member>
-
-
-
-
-
-
-    </simplelist>
-
-    <para><emphasis>Attributes:</emphasis></para>
-    <simplelist type="vert">
-        <member>- <link linkend="id"><code>id</code></link>, <glossterm>required</glossterm></member>
-        <member>- <link linkend="name"><code>name</code></link>, <glossterm>optional</glossterm></member>
-        <member>- <link linkend="srcdir"><code>srcDir</code></link>, <glossterm>optional</glossterm></member>
-        <member>- <link linkend="trgdir"><code>trgDir</code></link>, <glossterm>optional</glossterm></member>
-        <member>- <link linkend="xml_space"><code>xml:space</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="type"><code>type</code></link>, <glossterm>optional</glossterm></member>
-
-
-
-        <member>- attributes from other namespaces, <glossterm>optional</glossterm></member>
-    </simplelist>
-
-    <itemizedlist>
-        <title>Constraints</title>
-        <listitem>
-            <para>An <link linkend="entry"><code>entry</code></link>
-                <glossterm>must</glossterm> contain ELABORATE. </para>
-        </listitem>
-        <listitem>
-            <para>The following <firstterm>DMLex Module</firstterm> objects are explicitly allowed
-                by the wildcard <code>other</code>:</para>
-            <simplelist type="vert">
-                
-                
-                <member>- Zero or one
-                    <link linkend="md01_object_wrapper_01"><code>&lt;md01:object_wrapper_01&gt;</code></link>
-                    objects</member>
-                <member>- Zero or one
-                    <link linkend="md01_object_wrapper_02"><code>&lt;md01:object_wrapper_02&gt;</code></link>
-                    objects</member>
-                
-            </simplelist>
-        </listitem>
-        <listitem>
-            <para><firstterm>Module</firstterm> and Extension elements <glossterm>may</glossterm> be
-                used in any order.</para>
-        </listitem>
-        <listitem>
-            <para>The following <firstterm>DMLex Module</firstterm> attributes are explicitly
-                allowed by the wildcard <code>other</code>:</para>
-            <simplelist type="vert">
-                <member>- attributes from the namespace
-                    <code>urn:oasis:names:tc:xliff:fs:2.0</code>, <glossterm>optional</glossterm>,
-                    provided that the Constraints specified in the <link linkend="fs-mod">Format Style Module</link>
-                    are met.</member>
-                <member>- attributes from the namespace
-                        <code>http://www.w3.org/2005/11/its</code>,
-                        <glossterm>optional</glossterm>, provided that the Constraints specified in
-                    the <link linkend="ITS-module">ITS
-                        Module</link> are met.</member>
-                <member>- attributes from the namespace
-                        <code>urn:oasis:names:tc:xliff:itsm:2.1</code>,
-                        <glossterm>optional</glossterm>, provided that the Constraints specified in
-                    the <link linkend="ITS-module">ITS Module</link> are met.</member>
-            </simplelist>
-        </listitem>
-        </itemizedlist>
-</section>
-    
-    
-   
-    <section id="notes">
-    <title>notes</title>
-    <para>Collection of comments.</para>
-    <para><emphasis>Contains:</emphasis></para>
-    <simplelist type="vert">
-        <member>- One or more <link linkend="note"><code>&lt;note&gt;</code></link>
-            elements</member>
-    </simplelist>
-
-</section>
-    
-    <section id="note">
-    <title>note</title>
-    <para>This is a DMLex specific way how to present end user readable comments and annotations. A
-        note can contain information about
-        <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>list olinks of objects
-        to which notes can pertain<?oxy_custom_end ?>.</para>
-    <para><emphasis>Contains:</emphasis></para>
-    <simplelist type="vert">
-        <member>- Text</member>
-    </simplelist>
-    <para><emphasis>Attributes:</emphasis></para>
-    <simplelist type="vert">
-        <member>- <link linkend="id"><code>id</code></link>, <glossterm>optional</glossterm></member>
-        <member>- <link linkend="appliesto"><code>appliesTo</code></link>, <glossterm>optional</glossterm></member>
-        <member>- <link linkend="category"><code>category</code></link>, <glossterm>optional</glossterm></member>
-        <member>- <link linkend="priority"><code>priority</code></link>, <glossterm>optional</glossterm></member>
-
-
-        <member>- attributes from other namespaces, <glossterm>optional</glossterm></member>
-    </simplelist>
-
-    <itemizedlist>
-        <title>Constraints</title>
-        <listitem>
-            <para>The following <firstterm>DMLex Module</firstterm> attributes are explicitly
-                allowed by the wildcard <code>other</code>:</para>
-            <simplelist type="vert">
-                <member>- <link linkend="fs"><code>fs:fs</code></link>, <glossterm>optional</glossterm></member>
-                <member>- <link linkend="subFs"><code>fs:subFs</code></link>, <glossterm>optional</glossterm></member>
-            </simplelist>
-        </listitem>
-    </itemizedlist>
-</section>
-    
-    
-    
-    <section id="data">
-  <title>data</title>
-
-  <para>Storage for the original data of an inline code.</para>
-
-  <para><emphasis>Contains:</emphasis></para>
-
-  <simplelist type="vert">
-    <member>- Non-translatable text</member>
-
-    <member>- Zero, one or more <link linkend="cp"><code>&lt;cp&gt;</code></link> elements.</member>
-  </simplelist>
-
-  <para>Non-translatable text and <link linkend="cp"><code>&lt;cp&gt;</code></link> elements <glossterm>may</glossterm> appear in any
-    order.</para>
-
-  <para><emphasis>Attributes:</emphasis></para>
-
-  <simplelist type="vert">
-    <member>- <link linkend="id"><code>id</code></link>, <glossterm>required</glossterm></member>
-
-    <member>- <link linkend="dir"><code>dir</code></link>, <glossterm>optional</glossterm></member>
-    
-    <member>- <link linkend="xml_space"><code>xml:space</code></link>, <glossterm>optional</glossterm>, the value is restricted
-      to <code>preserve</code> on this element</member>
-	
-	
-
-  </simplelist>
-
-  <!--  
-   -->
-</section>
-    
-    
-    <!-- [other object includes]  -->
-</section>
-    <section id="inlineelements">
-  <title>Inline Elements</title>
-
-    <para>The <firstterm>XLIFF Core</firstterm> inline elements at the <link linkend="source"><code>&lt;source&gt;</code></link> or <link linkend="target"><code>&lt;target&gt;</code></link> level are: <link linkend="cp"><code>&lt;cp&gt;</code></link>, <link linkend="ph"><code>&lt;ph&gt;</code></link>, <link linkend="pc"><code>&lt;pc&gt;</code></link>, <link linkend="sc"><code>&lt;sc&gt;</code></link>, <link linkend="ec"><code>&lt;ec&gt;</code></link>, <link linkend="mrk"><code>&lt;mrk&gt;</code></link>, <link linkend="sm"><code>&lt;sm&gt;</code></link> and <link linkend="em"><code>&lt;em&gt;</code></link>.</para>
-
-    <para>The elements at the <link linkend="unit"><code>&lt;unit&gt;</code></link> level directly related
-    to inline elements are: <link linkend="originaldata"><code>&lt;originalData&gt;</code></link> and
-    <link linkend="data"><code>&lt;data&gt;</code></link>.</para>
-
-    <section id="cp">
-  <title>cp</title>
-
-  <para>Represents a Unicode character that is invalid in XML.</para>
-
-  <para><emphasis>Contains:</emphasis></para>
-
-  <simplelist type="vert">
-    <member>This element is always empty.</member>
-  </simplelist>
-
-  <para><emphasis>Parents:</emphasis></para>
-
-  <simplelist type="vert">
-    <member><link linkend="data"><code>&lt;data&gt;</code></link>, <link linkend="mrk"><code>&lt;mrk&gt;</code></link>,
-    <link linkend="source"><code>&lt;source&gt;</code></link>, <link linkend="target"><code>&lt;target&gt;</code></link> and <link linkend="pc"><code>&lt;pc&gt;</code></link></member>
-  </simplelist>
-
-  <para><emphasis>Attributes:</emphasis></para>
-
-  <simplelist type="vert">
-    <member>- <link linkend="hex"><code>hex</code></link>, <glossterm>required</glossterm></member>
-
-
-  </simplelist>
-
-  <para><emphasis>Example:</emphasis></para>
-
-  <programlisting format="linespecific">
-&lt;unit id="1"&gt;
-  &lt;segment&gt;
-    &lt;source&gt;Ctrl+C=&lt;cp hex="0003"/&gt;&lt;/source&gt;
-  &lt;/segment&gt;
-&lt;/unit&gt;
-</programlisting>
-
-  <para>The example above shows a character U+0003 (Control C) as it has to be represented in
-    XLIFF.</para>
-
-  <itemizedlist>
-    <title>Processing Requirements</title>
-
-    <listitem>
-      <para><firstterm>Writers</firstterm> <glossterm>must</glossterm> encode all invalid XML characters of the content
-      using <link linkend="cp"><code>&lt;cp&gt;</code></link>.</para>
     </listitem>
-
     <listitem>
-      <para><firstterm>Writers</firstterm> <glossterm>must not</glossterm> encode valid XML characters of the content using
-      <link linkend="cp"><code>&lt;cp&gt;</code></link>.</para>
+      <para>
+        <literal moreinfo="none">transcriptionScheme</literal> (optional, reference to
+        some external authority - which?)
+      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            The scheme (e.g. IPA) in which the
+            <literal moreinfo="none">transcription</literal> property of
+            <literal moreinfo="none">Pronunciation</literal> objects is given.
+          </para>
+        </listitem>
+      </itemizedlist>
     </listitem>
   </itemizedlist>
-</section>
-
-    <section id="ph">
-  <title>ph</title>
-
-  <para>Represents a standalone code of the original format.</para>
-
-  <para><emphasis>Contains:</emphasis></para>
-
-  <simplelist type="vert">
-    <member>This element is always empty.</member>
-  </simplelist>
-
-  <para><emphasis>Parents:</emphasis></para>
-
-  <simplelist type="vert">
-    <member><link linkend="source"><code>&lt;source&gt;</code></link>, <link linkend="target"><code>&lt;target&gt;</code></link>, <link linkend="pc"><code>&lt;pc&gt;</code></link> and
-    <link linkend="mrk"><code>&lt;mrk&gt;</code></link></member>
-  </simplelist>
-
-  <para><emphasis>Attributes:</emphasis></para>
-
-  <simplelist type="vert">
-    <member>- <link linkend="cancopy"><code>canCopy</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="cancopy"><code>canDelete</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="canreorder"><code>canReorder</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="copyof"><code>copyOf</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="disp"><code>disp</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="equiv"><code>equiv</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="id"><code>id</code></link>, <glossterm>required</glossterm>.</member>
-
-    <member>- <link linkend="dataref"><code>dataRef</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="subflows"><code>subFlows</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="subtype"><code>subType</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="type"><code>type</code></link>, <glossterm>optional</glossterm></member>
-    <member>- attributes from other namespaces, <glossterm>optional</glossterm></member>
-
-
-  </simplelist>
-
-  <para><emphasis>Example:</emphasis></para>
-
-  <programlisting format="linespecific">
-&lt;unit id="1"&gt;
-  &lt;originalData&gt;
-    &lt;data id="d1"&gt;%d&lt;/data&gt;
-    &lt;data id="d2"&gt;&amp;lt;br/&gt;&lt;/data&gt;
-  &lt;/originalData&gt;
-  &lt;segment&gt;
-    &lt;source&gt;Number of entries: &lt;ph id="1" dataRef="d1" /&gt;&lt;ph id="2"
-        dataRef="d2"/&gt;(These entries are only the ones matching the
-        current filter settings)&lt;/source&gt;
-  &lt;/segment&gt;
-&lt;/unit&gt;
-</programlisting>
-
-  <itemizedlist>
-    <title>Constraints</title>
+  <para>
+    Children:
+  </para>
+  <itemizedlist spacing="compact">
     <listitem>
-      <para>The following <firstterm>XLIFF Module</firstterm> attributes are explicitly
-        allowed by the wildcard <code>other</code>:</para>
-      <simplelist type="vert">
-        <member>- attributes from the namespace <code>urn:oasis:names:tc:xliff:fs:2.0</code>,
-          <glossterm>optional</glossterm>, provided that the Constraints specified in the <link linkend="fs-mod">Format Style Module</link> are
-          met.</member>
-        <member>- attributes from the namespace
-          <code>urn:oasis:names:tc:xliff:sizerestriction:2.0</code>,
-          <glossterm>optional</glossterm>, provided that the Constraints specified in the <link linkend="size_restriction_module">Size and Length Restriction Module</link> are
-          met.</member>
-        <!--  may need to allow ITSM at a later stage, but not needed by now 7th Aug, 2015.   ITS storage size would use the slr provsions 18th Jan 2017 -->
-      </simplelist>
-    </listitem>
-    <listitem><para>No other attributes <glossterm>must</glossterm> be used.</para></listitem>
-
-  </itemizedlist>
-  <itemizedlist>
-    <title>Processing Requirements</title>
-    <listitem>
-      <para><firstterm>Extractors</firstterm>
-        <glossterm>must not</glossterm> use the <link linkend="ph"><code>&lt;ph&gt;</code></link> element to represent spanning codes.</para>
-      <para><emphasis>Rationale:</emphasis> Using a standalone placeholder code for a spanning code
-        does not allow for controlling the span (for instance tag order and data integrity) when
-          <firstterm>Modifying</firstterm> inline content and is in <emphasis>direct
-            contradiction</emphasis> to the business logic described in <link linkend="representingcodes">Representation of the
-              codes</link> and normative statements included in <link linkend="spanningcodeusage">Usage of &lt;pc&gt; and &lt;sc&gt;/&lt;ec&gt;</link>
+      <para>
+        <literal moreinfo="none">Entry</literal> (one or more)
       </para>
     </listitem>
   </itemizedlist>
-  <note><para>It is possible although not advised to use <link linkend="ph">&lt;ph&gt;</link> to mask non
-      translatable inline content. The preferred way of protecting portions of inline content from
-      translation is the <firstterm>Core</firstterm>
-      <link linkend="translateAnnotation">Translate Annotation</link>. See also discussion in
-      the <link linkend="Translate_Inline">ITS Module section on representing translatability
-        inline.</link>. </para></note>
 </section>
-
-    <section id="pc">
-  <title>pc</title>
-
-  <para>Represents a well-formed spanning original code.</para>
-
-  <para><emphasis>Contains:</emphasis></para>
-
-  <simplelist type="vert">
-    <member>- Text</member>
-
-    <member>- Zero, one or more <link linkend="cp"><code>&lt;cp&gt;</code></link> elements</member>
-
-    <member>- Zero, one or more <link linkend="ph"><code>&lt;ph&gt;</code></link> elements</member>
-
-    <member>- Zero, one or more <link linkend="pc"><code>&lt;pc&gt;</code></link> elements</member>
-
-    <member>- Zero, one or more <link linkend="sc"><code>&lt;sc&gt;</code></link> elements</member>
-
-    <member>- Zero, one or more <link linkend="ec"><code>&lt;ec&gt;</code></link> elements</member>
-
-    <member>- Zero, one or more <link linkend="mrk"><code>&lt;mrk&gt;</code></link> elements</member>
-
-    <member>- Zero, one or more <link linkend="sm"><code>&lt;sm&gt;</code></link> elements</member>
-
-    <member>- Zero, one or more <link linkend="em"><code>&lt;em&gt;</code></link> elements</member>
-  </simplelist>
-
-  <para>Text and inline elements may appear in any order.</para>
-
-  <para><emphasis>Parents:</emphasis></para>
-
-  <simplelist type="vert">
-    <member>- <link linkend="source"><code>&lt;source&gt;</code></link></member>
-    <member>- <link linkend="target"><code>&lt;target&gt;</code></link></member>
-    <member>- <link linkend="pc"><code>&lt;pc&gt;</code></link></member>
-    <member>-<link linkend="mrk"><code>&lt;mrk&gt;</code></link></member>
-  </simplelist>
-
-  <para><emphasis>Attributes:</emphasis></para>
-
-  <simplelist type="vert">
-    <member>- <link linkend="cancopy"><code>canCopy</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="cancopy"><code>canDelete</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="canoverlap"><code>canOverlap</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="canreorder"><code>canReorder</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="copyof"><code>copyOf</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="dispend"><code>dispEnd</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="dispstart"><code>dispStart</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="equivend"><code>equivEnd</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="equivstart"><code>equivStart</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="id"><code>id</code></link>, <glossterm>required</glossterm></member>
-
-    <member>- <link linkend="datarefend"><code>dataRefEnd</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="datarefstart"><code>dataRefStart</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="subflowsend"><code>subFlowsEnd</code></link>,
-    <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="subflowsstart"><code>subFlowsStart</code></link>,
-    <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="subtype"><code>subType</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="type"><code>type</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="dir"><code>dir</code></link>, <glossterm>optional</glossterm></member>
-    <member>- attributes from other namespaces, <glossterm>optional</glossterm></member>
-
-
-
-
-  </simplelist>
-
-  <para><emphasis>Example:</emphasis></para>
-
-  <programlisting format="linespecific">
-&lt;unit id="1"&gt;
-  &lt;originalData&gt;
-    &lt;data id="1"&gt;&amp;lt;B&amp;gt;&lt;/data&gt;
-    &lt;data id="2"&gt;&amp;lt;/B&amp;gt;&lt;/data&gt;
-  &lt;/originalData&gt;
-  &lt;segment&gt;&lt;pc id="1" dataRefStart="1" dataRefEnd="2"&gt;
-      Important&lt;/pc&gt; text&lt;/source&gt;&lt;/segment&gt;
-&lt;/unit&gt;
-</programlisting>
-
-  <itemizedlist>
-    <title>Constraints</title>
-    <listitem>
-      <para>The following <firstterm>XLIFF Module</firstterm> attributes are explicitly
-        allowed by the wildcard <code>other</code>:</para>
-      <simplelist type="vert">
-        <member>- attributes from the namespace <code>urn:oasis:names:tc:xliff:fs:2.0</code>,
-            <glossterm>optional</glossterm>, provided that the Constraints specified in the <link linkend="fs-mod">Format Style Module</link> are
-          met.</member>
-        <member>- attributes from the namespace
-            <code>urn:oasis:names:tc:xliff:sizerestriction:2.0</code>,
-            <glossterm>optional</glossterm>, provided that the Constraints specified in the <link linkend="size_restriction_module">Size and Length Restriction Module</link> are
-          met.</member>
-        <!--  may need to allow ITSM at a later stage, but not needed by now 7th Aug, 2015.  -->
-      </simplelist>
-    </listitem>
-    <listitem><para>No other attributes <glossterm>must</glossterm> be used.</para></listitem>
-
-  </itemizedlist>
-
-  <itemizedlist>
-    <title>Processing Requirements</title>
-
-    <listitem>
-      <para><firstterm>Extractors</firstterm>
-        <glossterm>must not</glossterm> use the <link linkend="pc"><code>&lt;pc&gt;</code></link> element to represent standalone codes.</para>
-      <para>Rationale: Using a spanning code for a standalone code can easily result in having
-        text inside a span where the original format does not allow it.</para>
-          </listitem>
-  </itemizedlist>
-</section>
-
-    <section id="sc">
-  <title>sc</title>
-
-  <para>Start of a spanning original code.</para>
-
-  <para><emphasis>Contains:</emphasis></para>
-
-  <simplelist type="vert">
-    <member>This element is always empty.</member>
-  </simplelist>
-
-  <para><emphasis>Parents:</emphasis></para>
-
-  <simplelist type="vert">
-    <member><link linkend="source"><code>&lt;source&gt;</code></link>, <link linkend="target"><code>&lt;target&gt;</code></link>, <link linkend="pc"><code>&lt;pc&gt;</code></link> and
-    <link linkend="mrk"><code>&lt;mrk&gt;</code></link></member>
-  </simplelist>
-
-  <para><emphasis>Attributes:</emphasis></para>
-
-  <simplelist type="vert">
-    <member>- <link linkend="cancopy"><code>canCopy</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="cancopy"><code>canDelete</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="canoverlap"><code>canOverlap</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="canreorder"><code>canReorder</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="copyof"><code>copyOf</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="dataref"><code>dataRef</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="dir"><code>dir</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="disp"><code>disp</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="equiv"><code>equiv</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="id"><code>id</code></link>, <glossterm>required</glossterm></member>
-
-    <member>- <link linkend="isolated"><code>isolated</code></link>, <glossterm>optional</glossterm></member>
-
-
-    <member>- <link linkend="subflows"><code>subFlows</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="subtype"><code>subType</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="type"><code>type</code></link>, <glossterm>optional</glossterm></member>
-
-
-
-    <member>- attributes from other namespaces, <glossterm>optional</glossterm></member>
-
-
-
-
-  </simplelist>
-
-  <para><emphasis>Example:</emphasis></para>
-
-  <programlisting format="linespecific">
-&lt;unit id="1"&gt;
-  &lt;segment&gt;
-    &lt;source&gt;&lt;sc id="1" type="fmt" subType="xlf:b"/&gt;
-        First sentence. &lt;/source&gt;
-  &lt;/segment&gt;
-  &lt;segment&gt;
-    &lt;source&gt;Second sentence.&lt;ec startRef="1" type="fmt"
-        subType="xlf:b"/&gt;&lt;/source&gt;
-  &lt;/segment&gt;
-&lt;/unit&gt;
-</programlisting>
-
-  <itemizedlist>
-    <title>Constraints</title>
-
-    <listitem>
-      <para>The following <firstterm>XLIFF Module</firstterm> attributes are explicitly
-        allowed by the wildcard <code>other</code>:</para>
-
-        <simplelist type="vert">
-          <member>- attributes from the namespace <code>urn:oasis:names:tc:xliff:fs:2.0</code>,
-            <glossterm>optional</glossterm>, provided that the Constraints specified in the <link linkend="fs-mod">Format Style Module</link> are
-            met.</member>
-          <member>- attributes from the namespace
-            <code>urn:oasis:names:tc:xliff:sizerestriction:2.0</code>,
-            <glossterm>optional</glossterm>, provided that the Constraints specified in the <link linkend="size_restriction_module">Size and Length Restriction Module</link> are
-            met.</member>
-          <!--  may need to allow ITSM at a later stage, but not needed by now 7th Aug, 2015.  -->
-        </simplelist>
-
-    </listitem>
-    <listitem><para>No other attributes <glossterm>must</glossterm> be used.</para></listitem>
-
-    <listitem>
-      <para>The values of the attributes <link linkend="cancopy"><code>canCopy</code></link>, <link linkend="candelete"><code>canDelete</code></link>, <link linkend="canreorder"><code>canReorder</code></link> and <link linkend="canoverlap"><code>canOverlap</code></link>
-        <glossterm>must</glossterm> be the same as the values the ones in the <link linkend="ec"><code>&lt;ec&gt;</code></link> element
-        corresponding to this start code.</para>
-    </listitem>
-
-    <listitem>
-      <para>The attribute <link linkend="isolated"><code>isolated</code></link> <glossterm>must</glossterm> be set to
-      <code>yes</code> if and only if the <link linkend="ec"><code>&lt;ec&gt;</code></link> element corresponding to
-      this start marker is not in the same <link linkend="unit"><code>&lt;unit&gt;</code></link>, and set to
-      <code>no</code> otherwise.</para>
-    </listitem>
-    </itemizedlist>
-    <itemizedlist>
-      <title>Processing Requirements</title>
-
-    <listitem>
-      <para><firstterm>Extractors</firstterm>
-        <glossterm>must not</glossterm> use the <link linkend="sc"><code>&lt;sc&gt;</code></link> / <link linkend="ec"><code>&lt;ec&gt;</code></link> pair to represent standalone codes.</para>
-        <para>Rationale: Using a spanning code for a standalone code can easily result in having
-        text inside a span where the original format does not allow it.</para>
-    </listitem>
-  </itemizedlist>
-</section>
-
-    <section id="ec">
-  <title>ec</title>
-
-  <para>End of a spanning original code.</para>
-
-  <para><emphasis>Contains:</emphasis></para>
-
-  <simplelist type="vert">
-    <member>This element is always empty.</member>
-  </simplelist>
-
-  <para><emphasis>Parents:</emphasis></para>
-
-  <simplelist type="vert">
-    <member><link linkend="source"><code>&lt;source&gt;</code></link>, <link linkend="target"><code>&lt;target&gt;</code></link>, <link linkend="pc"><code>&lt;pc&gt;</code></link> and
-    <link linkend="mrk"><code>&lt;mrk&gt;</code></link></member>
-  </simplelist>
-
-  <para><emphasis>Attributes:</emphasis></para>
-
-  <simplelist type="vert">
-    <member>- <link linkend="cancopy"><code>canCopy</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="cancopy"><code>canDelete</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="canoverlap"><code>canOverlap</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="canreorder"><code>canReorder</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="copyof"><code>copyOf</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="dataref"><code>dataRef</code></link>, <glossterm>optional</glossterm></member>
-    <member><!--  pending discussion with Fredrik  -->- <link linkend="dir"><code>dir</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="disp"><code>disp</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="equiv"><code>equiv</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="id"><code>id</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="isolated"><code>isolated</code></link>, <glossterm>optional</glossterm></member>
-
-
-    <member>- <link linkend="startref"><code>startRef</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="subflows"><code>subFlows</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="subtype"><code>subType</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="type"><code>type</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- attributes from other namespaces, <glossterm>optional</glossterm></member>
-
-
-    </simplelist>
-
-  <para><emphasis>Example:</emphasis></para>
-
-  <programlisting format="linespecific">
-&lt;unit id="1"&gt;
-  &lt;originalData&gt;
-    &lt;data id="d1"&gt;\b &lt;/data&gt;
-    &lt;data id="d2"&gt;\i &lt;/data&gt;
-    &lt;data id="d3"&gt;\b0 &lt;/data&gt;
-    &lt;data id="d4"&gt;\i0 &lt;/data&gt;
-  &lt;/originalData&gt;
-  &lt;segment&gt;
-    &lt;source&gt;Text in &lt;sc id="1" dataRef="d1"/&gt;bold &lt;sc id="2"
-        dataRef="d2"/&gt; and&lt;ec startRef="1" dataRef="d3"/&gt;
-         italics&lt;ec startRef="2" dataRef="d4"/&gt;. &lt;/source&gt;
-  &lt;/segment&gt;
-&lt;/unit&gt;
-</programlisting>
-
-  <itemizedlist>
-    <title>Constraints</title>
-    <listitem>
-      <para>The following <firstterm>XLIFF Module</firstterm> attributes are explicitly
-        allowed by the wildcard <code>other</code>:</para>
-      <simplelist type="vert">
-        <member>- attributes from the namespace <code>urn:oasis:names:tc:xliff:fs:2.0</code>,
-          <glossterm>optional</glossterm>, provided that the Constraints specified in the <link linkend="fs-mod">Format Style Module</link> are
-          met.</member>
-        <member>- attributes from the namespace
-          <code>urn:oasis:names:tc:xliff:sizerestriction:2.0</code>,
-          <glossterm>optional</glossterm>, provided that the Constraints specified in the <link linkend="size_restriction_module">Size and Length Restriction Module</link> are
-          met.</member>
-        <!--  may need to allow ITSM at a later stage, but not needed by now 7th Aug, 2015.  -->
-      </simplelist>
-    </listitem>
-    <listitem><para>No other attributes <glossterm>must</glossterm> be used.</para></listitem>
-
-
-
-    <listitem>
-      <para>The values of the attributes <link linkend="cancopy"><code>canCopy</code></link>, <link linkend="candelete"><code>canDelete</code></link> and <link linkend="canoverlap"><code>canOverlap</code></link> <glossterm>must</glossterm> be the same
-        as the values the ones in the <link linkend="sc"><code>&lt;sc&gt;</code></link> element corresponding to
-        this end code.</para>
-    </listitem>
-
-    <listitem>
-      <para>The value of the attribute <link linkend="canreorder"><code>canReorder</code></link> <glossterm>must</glossterm> be <code>no</code>
-        if the value of <link linkend="canreorder"><code>canReorder</code></link> is <code>firstNo</code> in the <link linkend="sc"><code>&lt;sc&gt;</code></link> element corresponding to
-        this end code.</para>
-    </listitem>
-
-    <listitem>
-      <para>The attribute <link linkend="isolated"><code>isolated</code></link>
-        <glossterm>must</glossterm> be set to <code>yes</code> if and only if the <link linkend="sc"><code>&lt;sc&gt;</code></link> element
-        corresponding to this end code is not in the same <link linkend="unit"><code>&lt;unit&gt;</code></link> and set to <code>no</code> otherwise.</para>
-    </listitem>
-
-    <listitem id="ecIFF">
-      <para>If and only if the attribute <link linkend="isolated"><code>isolated</code></link> is set to <code>yes</code>, the
-        attribute <link linkend="id"><code>id</code></link>
-        <glossterm>must</glossterm> be used instead of the attribute <link linkend="startref"><code>startRef</code></link> that <glossterm>must</glossterm> be used otherwise.</para>
-    </listitem>
-    <listitem>
-      <para><!--  pending discussion with Fredrik  --> If and only if the attribute <link linkend="isolated"><code>isolated</code></link> is set to <code>yes</code>, the attribute <link linkend="dir"><code>dir</code></link>
-        <glossterm>may</glossterm> be used, otherwise the attribute <link linkend="dir"><code>dir</code></link>
-        <glossterm>must not</glossterm> be used on the <link linkend="ec"><code>&lt;ec&gt;</code></link> element. </para>
-    </listitem>
-  </itemizedlist>
-    <itemizedlist>
-      <title>Processing Requirements</title>
-
-    <listitem>
-      <para><firstterm>Extractors</firstterm>
-        <glossterm>must not</glossterm> use the <link linkend="sc"><code>&lt;sc&gt;</code></link> / <link linkend="ec"><code>&lt;ec&gt;</code></link> pair to represent standalone codes.</para>
-      <para>Rationale: Using a spanning code for a standalone code can easily result in having
-        text inside a span where the original format does not allow it.</para>
-    </listitem>
-  </itemizedlist>
-</section>
-
-    <section id="mrk">
-  <title>mrk</title>
-
-  <para>Represents an annotation pertaining to the marked span.</para>
-
-  <para><emphasis>Contains:</emphasis></para>
-
-  <simplelist type="vert">
-    <member>- Text</member>
-
-    <member>- Zero, one or more <link linkend="cp"><code>&lt;cp&gt;</code></link> elements</member>
-
-    <member>- Zero, one or more <link linkend="ph"><code>&lt;ph&gt;</code></link> elements</member>
-
-    <member>- Zero, one or more <link linkend="pc"><code>&lt;pc&gt;</code></link> elements</member>
-
-    <member>- Zero, one or more <link linkend="sc"><code>&lt;sc&gt;</code></link> elements</member>
-
-    <member>- Zero, one or more <link linkend="ec"><code>&lt;ec&gt;</code></link> elements</member>
-
-    <member>- Zero, one or more <link linkend="mrk"><code>&lt;mrk&gt;</code></link> elements</member>
-    <member>- Zero, one or more <link linkend="sm"><code>&lt;sm&gt;</code></link> elements</member>
-    <member>- Zero, one or more <link linkend="em"><code>&lt;em&gt;</code></link> elements</member>
-  </simplelist>
-
-  <para>Text and inline elements may appear in any order.</para>
-
-  <para><emphasis>Parents:</emphasis></para>
-
-  <simplelist type="vert">
-    <member><link linkend="source"><code>&lt;source&gt;</code></link>, <link linkend="target"><code>&lt;target&gt;</code></link>, <link linkend="pc"><code>&lt;pc&gt;</code></link> and
-    <link linkend="mrk"><code>&lt;mrk&gt;</code></link></member>
-  </simplelist>
-
-  <para><emphasis>Attributes:</emphasis></para>
-
-  <simplelist type="vert">
-    <member>- <link linkend="id"><code>id</code></link>, <glossterm>required</glossterm></member>
-
-    <member>- <link linkend="translate"><code>translate</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="type"><code>type</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="ref"><code>ref</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="value"><code>value</code></link>, <glossterm>optional</glossterm></member>
-    
-    
-    <member>- attributes from other namespaces, <glossterm>optional</glossterm></member>
-
-  </simplelist>
-  
-  <itemizedlist>
-    <title>Constraints</title>
-    <listitem>
-      <para>The <link linkend="xml_namespace">[XML
-          namespace]</link>
-        <glossterm>must not</glossterm> be used at this extension point.</para>
-    </listitem>
-    <listitem>
-      <para>The following <firstterm>XLIFF Module</firstterm> attributes are explicitly
-        allowed by the wildcard <code>other</code>:</para>
-      <simplelist type="vert">
-        <member>- attributes from the namespace
-          <code>urn:oasis:names:tc:xliff:fs:2.0</code>, <glossterm>optional</glossterm>,
-          provided that the Constraints specified in the <link linkend="fs-mod">Format Style Module</link>
-          are met.</member>
-        <member>- attributes from the namespace
-          <code>urn:oasis:names:tc:xliff:sizerestriction:2.0</code>,
-          <glossterm>optional</glossterm>, provided that the Constraints specified in
-          the <link linkend="size_restriction_module">Size and Length Restriction
-            Module</link> are met.</member>
-        <member>- attributes from the namespace
-          <code>http://www.w3.org/2005/11/its</code>,
-          <glossterm>optional</glossterm>, provided that the Constraints specified in
-          the <link linkend="ITS-module">ITS
-            Module</link> are met.</member>
-        <member>- attributes from the namespace <code>urn:oasis:names:tc:xliff:itsm:2.1</code>,
-            <glossterm>optional</glossterm>, provided that the Constraints specified in the <link linkend="ITS-module">ITS
-            Module</link> are met.</member>
-      </simplelist>
-    </listitem>
-    
-    
-  </itemizedlist>
-
-  <para>See the <link linkend="annotations">Annotations section</link> for more details and
-  examples on how to use the <link linkend="mrk"><code>&lt;mrk&gt;</code></link> element.</para>
-</section>
-    <section id="sm">
-  <title>sm</title>
-
-  <para>Start marker of an annotation where the spanning marker cannot be used for wellformedness
-    reasons.</para>
-
-  <para><emphasis>Contains:</emphasis></para>
-
-  <simplelist type="vert">
-    <member>This element is always empty.</member>
-  </simplelist>
-
-  <para><emphasis>Parents:</emphasis></para>
-
-  <simplelist type="vert">
-    <member><link linkend="source"><code>&lt;source&gt;</code></link>, <link linkend="target"><code>&lt;target&gt;</code></link>, <link linkend="pc"><code>&lt;pc&gt;</code></link> and
-    <link linkend="mrk"><code>&lt;mrk&gt;</code></link></member>
-  </simplelist>
-
-  <para><emphasis>Attributes:</emphasis></para>
-
-  <simplelist type="vert">
-    <member>- <link linkend="id"><code>id</code></link>, <glossterm>required</glossterm></member>
-
-    <member>- <link linkend="translate"><code>translate</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="type"><code>type</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="ref"><code>ref</code></link>, <glossterm>optional</glossterm></member>
-
-    <member>- <link linkend="value"><code>value</code></link>, <glossterm>optional</glossterm></member>
-    
-    
-    <member>- attributes from other namespaces, <glossterm>optional</glossterm></member>
-
-  </simplelist>
-  
-  <itemizedlist>
-    <title>Constraints</title>
-    <listitem>
-      <para>The <link linkend="xml_namespace">[XML
-          namespace]</link>
-        <glossterm>must not</glossterm> be used at this extension point.</para>
-    </listitem>
-    <listitem>
-      <para>The following <firstterm>XLIFF Module</firstterm> attributes are explicitly allowed by
-        the wildcard <code>other</code>:</para>
-      <simplelist type="vert">
-        <member>- attributes from the namespace
-          <code>urn:oasis:names:tc:xliff:fs:2.0</code>, <glossterm>optional</glossterm>,
-          provided that the Constraints specified in the <link linkend="fs-mod">Format Style Module</link>
-          are met.</member>
-        <member>- attributes from the namespace
-          <code>urn:oasis:names:tc:xliff:sizerestriction:2.0</code>,
-          <glossterm>optional</glossterm>, provided that the Constraints specified in
-          the <link linkend="size_restriction_module">Size and Length Restriction
-            Module</link> are met.</member>
-        <member>- attributes from the namespace
-          <code>http://www.w3.org/2005/11/its</code>,
-          <glossterm>optional</glossterm>, provided that the Constraints specified in
-          the <link linkend="ITS-module">ITS
-            Module</link> are met.</member>
-        <member>- attributes from the namespace <code>urn:oasis:names:tc:xliff:itsm:2.1</code>,
-            <glossterm>optional</glossterm>, provided that the Constraints specified in the <link linkend="ITS-module">ITS
-            Module</link> are met.</member>
-      </simplelist>
-    </listitem>
-    
-    
-  </itemizedlist>
-
-  <para>See the <link linkend="annotations">Annotations section</link> for more details and
-  examples on how to use the <link linkend="sm"><code>&lt;sm&gt;</code></link> element.</para>
-</section>
-    <section id="em">
-  <title>em</title>
-
-  <para>End marker of an annotation where the spanning marker cannot be used for wellformedness
-    reasons.</para>
-
-  <para><emphasis>Contains:</emphasis></para>
-
-  <simplelist type="vert">
-    <member>This element is always empty.</member>
-  </simplelist>
-
-  <para><emphasis>Parents:</emphasis></para>
-
-  <simplelist type="vert">
-    <member><link linkend="source"><code>&lt;source&gt;</code></link>, <link linkend="target"><code>&lt;target&gt;</code></link>, <link linkend="pc"><code>&lt;pc&gt;</code></link> and
-    <link linkend="mrk"><code>&lt;mrk&gt;</code></link></member>
-  </simplelist>
-
-  <para><emphasis>Attributes:</emphasis></para>
-
-  <simplelist type="vert">
-    <member>- <link linkend="startref"><code>startRef</code></link>, <glossterm>required</glossterm></member>
-    <!--  Since markers do not have a provision for appeareing isolated, it does not seem to make sense to allow fs formatting on the end marker..  
-    <member>- <olink targetdoc="../../attributes/fs.xml" targetptr="fs"><code>fs:fs</code></olink>,
-      optional</member>
-    <member>- <olink targetdoc="../../attributes/subFs.xml" targetptr="subFs"
-        ><code>fs:subFs</code></olink>, optional</member> 
-     -->
-  </simplelist>
-
-  <para>See the <link linkend="annotations">Annotations section</link> for more details and
-  examples on how to use the <link linkend="em"><code>&lt;em&gt;</code></link> element.</para>
-</section>
- </section>
-</section>
-    <section>
-  <title>Attributes</title>
-
-  <para>This section lists all the various attributes used on DMLex core objects.</para>
-
   <section>
-    <title>DMLex Attributes</title>
-
-    <para>The attributes defined in DMLex 1.0 are:</para>
-    <para>[olinks to attribute anchors in their files, left in some XLIFF attributes that should
-      come handy]  <link linkend="dir"><code>dir</code></link>,<link linkend="hex"><code>hex</code></link>, <link linkend="id"><code>id</code></link>,  <link linkend="ref"><code>ref</code></link>, <link linkend="srcdir"><code>srcDir</code></link>, <link linkend="srcLang"><code>srcLang</code></link>,  <link linkend="trgLang"><code>trgLang</code></link>,  <link linkend="trgdir"><code>trgDir</code></link>,  and <link linkend="version"><code>version</code></link>.</para>
-
-    
-    <section id="dir">
-  <title>dir</title>
-
-  <para>Directionality - indicates the directionality of content.</para>
-
-  <para><emphasis>Value description:</emphasis>
-    <code>ltr</code> (Left-To-Right), <code>rtl</code> (Right-To-Left), or <code>auto</code>
-    (determined heuristically, based on the first strong directional character in scope, see <link linkend="uax9">[UAX #9]</link>).</para>
-
-  <para><emphasis>Default value:</emphasis> default values for this attribute
-  depend on the element in which it is used:</para>
-
-  <itemizedlist>
-    <listitem>
-      <para>When used in a <link linkend="pc"><code>&lt;pc&gt;</code></link>, <link linkend="sc"><code>&lt;sc&gt;</code></link>, or <link linkend="ec"><code>&lt;ec&gt;</code></link>
-        element that has a <link linkend="source"><code>&lt;source&gt;</code></link> element as its parent:</para>
-
-      <para>The value of the <link linkend="srcdir"><code>srcDir</code></link> attribute of the <link linkend="unit"><code>&lt;unit&gt;</code></link> element, in which the elements are located.</para>
-    </listitem>
-
-    <listitem>
-      <para>When used in a <link linkend="pc"><code>&lt;pc&gt;</code></link>, <link linkend="sc"><code>&lt;sc&gt;</code></link>, or <link linkend="ec"><code>&lt;ec&gt;</code></link>
-        element that has a <link linkend="target"><code>&lt;target&gt;</code></link> element as its parent: </para>
-
-      <para>The value of the <link linkend="trgdir"><code>trgDir</code></link> attribute of the <link linkend="unit"><code>&lt;unit&gt;</code></link> element, in which the elements are located.</para>
-    </listitem>
-
-    <listitem>
-      <para>When used in a <link linkend="pc"><code>&lt;pc&gt;</code></link>, <link linkend="sc"><code>&lt;sc&gt;</code></link>, or <link linkend="ec"><code>&lt;ec&gt;</code></link>
-        element that has a <link linkend="pc"><code>&lt;pc&gt;</code></link> element as its parent:</para>
-
-      <para>The value of the <link linkend="dir"><code>dir</code></link>
-        attribute of the parent <link linkend="pc"><code>&lt;pc&gt;</code></link> element.</para>
-    </listitem>
-
-    <listitem>
-      <para>When used in <link linkend="data"><code>&lt;data&gt;</code></link>:</para>
-
-      <para>The value <code>auto</code>.</para>
-    </listitem>
-  </itemizedlist>
-
-  <para><emphasis>Used in:</emphasis> 
-    <!--  killed on source and target to simplify re-segmentation PRs and to make use of BiDi control characters less likely 
-      <olink
-  targetdoc="../elements/structural/source.xml"
-  targetptr="source"><code>&lt;source&gt;</code></olink>, <olink
-  targetdoc="../elements/structural/target.xml"
-  targetptr="target"><code>&lt;target&gt;</code></olink>, --> <link linkend="data"><code>&lt;data&gt;</code></link>, <link linkend="pc"><code>&lt;pc&gt;</code></link>, <link linkend="sc"><code>&lt;sc&gt;</code></link>, and <link linkend="ec"><code>&lt;ec&gt;</code></link>.</para>
-</section>
-
-    
-    <section id="hex">
-  <title>hex</title>
-
-  <para>Hexadecimal code point - holds the value of a Unicode code point that is invalid in
-    XML.</para>
-
-  <para><emphasis>Value description:</emphasis> A canonical representation of
-    the hexBinary <link linkend="XMLSchema2">[XML Schema Datatypes]</link> data type: Two hexadecimal digits to represent each octet
-  of the Unicode code point. The allowed values are any of the values
-  representing code points invalid in XML, between hexadecimal 0000 and 10FFFF
-  (both included).</para>
-
-  <para><emphasis>Default value:</emphasis> undefined</para>
-
-  <para><emphasis>Used in:</emphasis> <link linkend="cp"><code>&lt;cp&gt;</code></link>.</para>
-
-  <para><emphasis>Example:</emphasis></para>
-
-  <programlisting format="linespecific">
-&lt;cp hex="001A"/&gt;&lt;cp hex="0003"/&gt;</programlisting>
-
-  <para>The example above shows a character U+001A and a character U+0003 as they have to be
-    represented in XLIFF.</para>
-</section>
-
-    
-
-    <section id="id">
-  <title>id</title>
-
-  <para>Identifier - a character string used to identify an element.</para>
-
-  <para><emphasis>Value description:</emphasis> NCNAME. The scope of the values for this attribute
-    depends on the element, in which it is used.</para>
-  <note><para>All of the above defined uniqueness scopes ignore <firstterm>Module</firstterm> and
-        <firstterm>Extension</firstterm> data. It would be impossible to impose those uniqueness
-      requirements onto <firstterm>Module</firstterm> or <firstterm>Extension</firstterm> data. As
-        <firstterm>Core</firstterm> only <firstterm>Modifiers</firstterm> could inadvertently cause
-      conflicts with <firstterm>Modules</firstterm> or <firstterm>Extensions</firstterm> based data
-      they cannot access. <firstterm>Modules</firstterm> and <firstterm>Extensions</firstterm>
-      reusing <firstterm>Core</firstterm> need to specify their own uniqueness scopes for the <link linkend="id">dmlex:id</link>. In general, <firstterm>Modules</firstterm> and
-        <firstterm>Extensions</firstterm> are advised to mimic the <firstterm>Core</firstterm>
-      uniqueness requirement within their specific wrapper elements enclosing the reused
-        <firstterm>Core</firstterm> elements or attributes, yet <firstterm>Module</firstterm> or
-        <firstterm>Extensions</firstterm> are free to set wider uniqueness scopes if it makes
-      business sense.</para></note>
-
-  <para><emphasis>Default value:</emphasis> undefined</para>
-
-  <para><emphasis>Used in:</emphasis>
+  <title><literal moreinfo="none">Entry</literal> object type</title>
+  <para>
+    A part of a lexicographic resource which contains information related
+    to exactly one headword.
   </para>
-  <para>[<?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>olinks to objects that
-    use id<?oxy_custom_end ?>] 
-    <link linkend="entry"><code>entry</code></link>, 
-    <link linkend="note"><code>note</code></link>, <link linkend="data"><code>data</code></link>, <link linkend="sc"><code>sc</code></link>, <link linkend="ec"><code>ec</code></link>, <link linkend="ph"><code>ph</code></link>, <link linkend="pc"><code>pc</code></link>, <link linkend="mrk"><code>mrk</code></link> and
-      <link linkend="sm"><code>sm</code></link>.</para>
-</section>
-
-
-    <section id="ref">
-  <title>ref</title>
-
-  <para>Reference - holds a reference for the associated annotation.</para>
-
-  <para><emphasis>Value description:</emphasis> A value of the <link linkend="XMLSchema2">[XML Schema Datatypes]</link> type
-  anyURI. The semantics of the value depends on the type of annotation:</para>
-
-  <itemizedlist>
+  <para>
+    Child of:
+  </para>
+  <itemizedlist spacing="compact">
     <listitem>
-      <para>When used in a <link linkend="termAnnotation">term
-          annotation</link>, the URI value is referring to a resource providing information about
-        the term.</para>
-    </listitem>
-
-    <listitem>
-      <para>When used in a <link linkend="matchAnnotation">translation candidates annotation</link>, the URI value is referring
-        to an external resource providing information about the translation candidate.</para>
-    </listitem>
-
-    <listitem>
-      <para>When used in a <link linkend="commentAnnotation">comment annotation</link>, the value is referring to a <link linkend="note"><code>&lt;note&gt;</code></link> element within the same enclosing <link linkend="unit"><code>&lt;unit&gt;</code></link>.</para>
-    </listitem>
-
-    <listitem>
-      <para>When used in a <link linkend="customAnnotation">custom annotation</link>, the value is
-      defined by each custom annotation.</para>
+      <para>
+        <literal moreinfo="none">LexicographicResource</literal>
+      </para>
     </listitem>
   </itemizedlist>
-
-  <para><emphasis>Default value:</emphasis> undefined</para>
-
-  <para><emphasis>Used in:</emphasis> <link linkend="mrk"><code>&lt;mrk&gt;</code></link> or <link linkend="sm"><code>&lt;sm&gt;</code></link>.</para>
-
-  <para><emphasis>Example:</emphasis></para>
-
-  <programlisting format="linespecific">
-&lt;unit id="1"&gt;
-  &lt;segment&gt;
-    &lt;source&gt;The &lt;pc id="1"&gt;ref&lt;/pc&gt; attribute of a term
-        annotation holds a &lt;mrk id="m1" type="term"
-        ref="http://dbpedia.org/page/Uniform_Resource_Identifier"&gt;
-        URI&lt;/mrk&gt; pointing to more information about the given
-        term.&lt;/source&gt;
-  &lt;/segment&gt;
-&lt;/unit&gt;
-</programlisting>
-<!--  This Constraint does not make sense with the current fragmnt identifying mechanism
-  <itemizedlist>
-    <title>Constraints</title>
-
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
     <listitem>
-      <para>The value of the <olink targetdoc="ref.xml" targetptr="ref"><code>ref</code></olink>
-        attribute <glossterm>should</glossterm> point to an element that is a child of the <olink
-          targetdoc="../elements/structural/unit.xml" targetptr="unit"
-          ><code>&lt;unit&gt;</code></olink> element where the parent of the attribute is
-        located.</para>
-      <para>Rationale: Pointing to an element located
-      elsewhere is likely to prevent proper execution of Processing
-      Requirements.</para>
-    </listitem>
-  </itemizedlist> -->
-</section>
-
-    <section id="srcdir">
-  <title>srcDir</title>
-
-  <para>Source directionality - indicates the directionality of the source content.</para>
-
-  <para><emphasis>Value description:</emphasis>
-    <code>ltr</code> (Left-To-Right), <code>rtl</code> (Right-To-Left), , or <code>auto</code>
-    (determined heuristically, based on the first strong directional character in scope, see <link linkend="uax9">[UAX #9]</link>).</para>
-
-  <para><emphasis>Default value:</emphasis> default values for this attribute depend on the element
-    in which it is used:</para>
-
-  <itemizedlist>
-    <listitem>
-      <para>When used in <link linkend="file"><code>&lt;file&gt;</code></link>:</para>
-
-      <para>The value <code>auto</code>.</para>
-    </listitem>
-
-    <listitem>
-      <para>When used in any other element:</para>
-
-      <para>The value of the <link linkend="srcdir"><code>srcDir</code></link> attribute of its parent element.</para>
-    </listitem>
-  </itemizedlist>
-
-  <para><emphasis>Used in:</emphasis>
-    <link linkend="file"><code>&lt;file&gt;</code></link>, <link linkend="group"><code>&lt;group&gt;</code></link>, and <link linkend="unit"><code>&lt;unit&gt;</code></link>. </para>
-</section>
-
-    <section id="srcLang">
-    <title>srcLang</title>
-    
-    <para>Source language - the code of the language, in which the text to be <firstterm>Translated</firstterm> is
-        expressed.</para>
-    
-    <para><emphasis>Value description:</emphasis> A language code as described in <link linkend="bcp47">[BCP 47]</link>.</para>
-    
-    <para><emphasis>Default value:</emphasis> undefined</para>
-    
-    <para><emphasis>Used in:</emphasis> <link linkend="xliff"><code>&lt;xliff&gt;</code></link>.</para>
-</section>
-
-   
-    <section id="trgLang">
-    <title>trgLang</title>
-    
-    <para>Target language - the code of the language, in which the <firstterm>Translated</firstterm> text is
-        expressed.</para>
-    
-    <para><emphasis>Value description:</emphasis> A language code as described in <link linkend="bcp47">[BCP 47]</link>.</para>
-    
-    <para><emphasis>Default value:</emphasis> undefined</para>
-    
-    <para><emphasis>Used in:</emphasis> <link linkend="xliff"><code>&lt;xliff&gt;</code></link>.</para>
-</section>
-
-   
-    <section id="trgdir">
-  <title>trgDir</title>
-
-  <para>Target directionality - indicates the directionality of the target content.</para>
-
-  <para><emphasis>Value description:</emphasis>
-    <code>ltr</code> (Left-To-Right), <code>rtl</code> (Right-To-Left), or <code>auto</code>
-    (determined heuristically, based on the first strong directional character in scope, see <link linkend="uax9">[UAX #9]</link>).</para>
-
-  <para><emphasis>Default value:</emphasis> default values for this attribute
-  depend on the element in which it is used:</para>
-
-  <itemizedlist>
-    <listitem>
-      <para>When used in <link linkend="file"><code>&lt;file&gt;</code></link>:</para>
-
-      <para>The value <code>auto</code>.</para>
-    </listitem>
-
-    <listitem>
-      <para>When used in any other element:</para>
-
-      <para>The value of the <link linkend="trgdir"><code>trgDir</code></link> attribute of its parent element.</para>
-    </listitem>
-  </itemizedlist>
-
-  <para><emphasis>Used in:</emphasis>
-    <link linkend="file"><code>&lt;file&gt;</code></link>, <link linkend="group"><code>&lt;group&gt;</code></link>, and <link linkend="unit"><code>&lt;unit&gt;</code></link>. </para>
-</section>
-
-   
-    <section id="version">
-    <title>version</title>
-
-    <para>XLIFF Version - is used to specify the Version of the <firstterm>XLIFF Document</firstterm>. This corresponds to
-        the Version number of the XLIFF specification that the <firstterm>XLIFF Document</firstterm> adheres to.</para>
-
-    <para><emphasis>Value description:</emphasis> Text.</para>
-
-    <para><emphasis>Default value:</emphasis> undefined</para>
-
-    <para><emphasis>Used in:</emphasis> <link linkend="xliff"><code>&lt;xliff&gt;</code></link>.</para>
-
-</section>
-  </section>
-
-  <section>
-    <title>XML namespace</title>
-
-    <para>The attributes from XML namespace used in DMLex are: <link linkend="xml_lang">xml:lang</link> and <link linkend="xml_space">xml:space</link>.</para>
-
-    <section id="xml_lang">
-    <title>xml:lang</title>
-    
-    <para>Language - the xml:lang attribute specifies the language variant of the text of a given
-        element. For example: <code>xml:lang="fr-FR"</code> indicates the French language as spoken
-        in France.</para>
-    
-    <para><emphasis>Value description:</emphasis> A language code as described in <link linkend="bcp47">[BCP 47]</link>.</para>
-    
-    <para><emphasis>Default value:</emphasis> default values for this attribute
-        depend on the element in which it is used:</para>
-    
-    <itemizedlist>
-        <listitem>
-            <para>Describe xml:lang inheritance rules for DMLex objects and relationship to srcLang,
-                trgLang, as well as itmsLang</para>
-        </listitem>        
-        <listitem>
-          <para>When used in any other object:</para>
-          <para>The value of the <code>xml:lang</code> attribute of its parent element.
-          </para>   
-        </listitem>
-      
-    </itemizedlist>
-    
-    <para><emphasis>Used in:</emphasis></para>
-    <para>[<?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>olinks to objects
-        using xml:lang<?oxy_custom_end ?>] and where extension attributes are allowed.<warning>
-            <para><?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>Elaborate on
-                dangers of the inhertance, interaction and inline usage<?oxy_custom_end ?></para>
-        </warning></para>
-    
-  <!--   -->
-</section>
-
-    <section id="xml_space">
-    <title>xml:space</title>
-    
-    <para>White spaces - the xml:space attribute specifies how white spaces (ASCII spaces, tabs and
-        line-breaks) are to be treated.</para>
-    
-    
-    <para><emphasis>Value description:</emphasis>
-        <code>default</code> or <code>preserve</code>. The value <code>default</code> signals that
-        an application's default white-space processing modes are acceptable for this element; the
-        value <code>preserve</code> indicates the intent that applications preserve all the white
-        space. This declared intent is considered to apply to all elements within the content of the
-        element where it is specified, unless overridden with another instance of the xml:space
-        attribute. For more information see <ulink url="http://www.w3.org/TR/REC-xml/#sec-white-space">the section on xml:space</ulink> in the <link linkend="bib_XML">[XML]</link> specification. </para>
-    
-    <para><emphasis>Default value:</emphasis>  default values for this attribute
-        depend on the object in which it is used:</para>
-    
-    <itemizedlist>
-        <listitem>
-            <para>When used in <link linkend="data"><code>data</code></link>:</para>
-            
-            <para>The value <code>preserve</code>.</para>
-        </listitem>
-        <listitem>
-            <para>When used in <link linkend="dmlex"><code>dmlex</code></link>:</para>
-            
-            <para>The value <code>default</code>.</para>
-        </listitem>
-        <listitem>
-            <para>When used in any other object:</para>
-            <para>The value of the <code>xml:space</code> attribute of its parent object.
-            </para>   
-        </listitem>
-    </itemizedlist>
-    
-    <para><emphasis>Used in:</emphasis> <link linkend="dmlex"><code>dmlex&gt;</code></link>, 
-        other olinks.
-    </para>
-</section>
-  </section>
-</section>
-    <section id="inline">
-  <title>Inline Content</title>
-  <para>Provisions pertaining to inline codes and annotaions</para>
-
-  <itemizedlist>
-    <listitem>
-      <para><link linkend="text">Text</link> -- Textual content.</para>
-    </listitem>
-
-    <listitem>
-      <para><link linkend="inlineCodes">Inline codes</link> -- Sequences of content that are not
-        linguistic text, such as formatting codes.</para>
-    </listitem>
-
-    <listitem>
-      <para><link linkend="annotations">Annotations</link> -- Markers that
-      delimit a span of the content and carry or point to information about
-      the specified content.</para>
-
-      <para>For example: an object indicating that a given expression in a text span references an
-        entry.</para>
-    </listitem>
-  </itemizedlist>
-
-  <para>There are ... objects that contain inline markup in DMLex:
-    <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>olinks to those
-    objects<?oxy_custom_end ?>.</para>
-
-  <para>In some cases, data directly associated with inline objects <glossterm>may</glossterm> also
-    be stored at structural levels such as the <link linkend="entry"><code>entry</code></link> object.</para>
-
-  <section id="text">
-    <title>Text</title>
-
-    <para>The DMLex inline objects provisions do not prescribe how to represent normal text,
-      specific provisions <glossterm>may</glossterm> be specified for different
-      serializations.</para>
-
-    <section>
-      <title>Expressing characters invalid in certain serializations</title>
-
-      <para>DMLex needs to be able to represent all Unicode code points <link linkend="Unicode">[Unicode]</link>.</para>
-      <para>the <link linkend="cp"><code>cp</code></link> object <glossterm>must</glossterm> be used for those and only those Uniocode
-        code points that are illegal in a certain serialization.</para>
-
-      <para>The syntax and semantics of <link linkend="cp"><code>cp</code></link> in DMLex are similar to the ones of
-          <code>&lt;cp&gt;</code> in the Unicode Locale Data Markup Language <link linkend="biblio_ldml">[LDML]</link>.</para>
-    </section>
-  </section>
-
-  <section id="inlineCodes">
-    <title>Inline Codes</title>
-    <para>Inline codes provisions
-      <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>ELABORATE..<?oxy_custom_end ?></para>
-
-    <variablelist>
-      <varlistentry id="standalone">
-        <term>Standalone</term>
-
-        <listitem>
-          <para>A <emphasis>standalone</emphasis> code is a code that
-          corresponds to a single position in the content. An example of such
-          code is the <code>&lt;br/&gt;</code> element in HTML.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="spanLike">
-        <term>Spanning</term>
-
-        <listitem>
-          <para>A <emphasis>spanning</emphasis> code is a code that encloses a
-          section of the content using a start and an end marker. There are
-          two kinds of spanning codes:</para>
-
-          <itemizedlist>
-            <listitem>
-              <para>Codes that can overlap, that is: they can enclose a
-              non-closing or a non-opening spanning code. Such codes do not
-              have an XML-like behavior. For example the RTF code
-              <code>\b1...\b0</code> is a spanning code that is allowed to
-              overlap.</para>
-            </listitem>
-
-            <listitem>
-              <para>Codes that cannot overlap, that is: they cannot enclose a partial spanning code
-                and have an XML-like behavior at the same time. An example of such code is the
-                  <code>&lt;emphasis&gt;...&lt;/emphasis&gt;</code> element in DocBook.</para>
-            </listitem>
-          </itemizedlist>
-        </listitem>
-      </varlistentry>
-    </variablelist>
-
-   
-
-      <table>
-        <title>Inline code use cases</title>
-
-        <tgroup cols="2">
-          <thead>
-            <row>
-              <entry>Use Case</entry>
-
-              <entry>Example of Representation</entry>
-            </row>
-          </thead>
-
-          <tbody>
-            <row>
-              <entry>Standalone code</entry>
-
-              <entry><link linkend="ph"><code>ph</code></link></entry>
-            </row>
-
-            <row>
-              <entry>Well-formed spanning code</entry>
-
-              <entry><link linkend="pc"><code>pc</code></link></entry>
-            </row>
-
-            <row>
-              <entry>Start marker of spanning code</entry>
-
-              <entry><link linkend="sc"><code>sc</code></link></entry>
-            </row>
-
-            <row>
-              <entry>End marker of spanning code</entry>
-
-              <entry><link linkend="ec"><code>ec</code></link></entry>
-            </row>
-          </tbody>
-        </tgroup>
-      </table>
-    </section>
-
-  
-
-  <section id="annotations">
-    <title>Annotations</title>
-
-    <para>An annotation is an object that associates a section of the content with some metadata
-      information.</para>
-
-    <para>Annotations <glossterm>may</glossterm> be created by any
-      <firstterm>Writer</firstterm>.</para>
-
-    <para>Annotations are represented using either the <link linkend="mrk"><code>mrk</code></link> object, or the pair of
-    <link linkend="sm"><code>sm</code></link> and <link linkend="em"><code>em</code></link> objects.</para>
-
-    <section id="annotationTypes">
-      <title>Type of Annotations</title>
-
-      <para>There are
-        <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>?several?<?oxy_custom_end ?>
-        pre-defined types of annotation and definition of <link linkend="customAnnotation">custom
-          types</link> is also allowed.</para>
-<!--  Create new subssections for predefined annotations  -->
-      
-      <section id="customAnnotation">
-        <title>Custom Annotation</title>
-
-        <para>The <link linkend="mrk"><code>mrk</code></link> or <link linkend="sm"><code>sm</code></link> and <link linkend="em"><code>em</code></link> objects can be used to implement custom
-          annotations.</para>
-
-        <para>A custom annotation <glossterm>must not</glossterm> provide the same functionality as a
-        pre-defined annotation.</para>
-
-        <para>Usage:</para>
-
-        <itemizedlist spacing="compact">
-          <listitem>
-            <para>The <link linkend="id"><code>id</code></link> attribute is
-            <glossterm>required</glossterm></para>
-          </listitem>
-
-          <listitem>
-            <para>The <link linkend="type"><code>type</code></link> attribute is <glossterm>required</glossterm>
-            and set to a unique user-defined value.</para>
-          </listitem>
-
-          
-
-          <listitem>
-            <para>The use and semantics of the <link linkend="value"><code>value</code></link> and <link linkend="ref"><code>ref</code></link> attributes are
-            user-defined.</para>
-          </listitem>
-        </itemizedlist>
-
-        <para>For example:</para>
-
-        <programlisting format="linespecific">
-One of the earliest surviving works of literature is
-&lt;mrk id="m1" type="myCorp:isbn" value="978-0-14-44919-8"&gt;The 
-Epic of Gilgamesh&lt;/mrk&gt;.</programlisting>
-      </section>
-    </section>
-
-    <section id="overlappingAnnotations">
-      <title>Overlapping Annotations</title>
-
-      <para>Annotations can overlap spanning inline codes or other annotations. Because of this, a
-        single annotation span can be represented using a pair of <link linkend="sm"><code>sm</code></link> and
-          <link linkend="em"><code>em</code></link> elements instead of a single <link linkend="mrk"><code>mrk</code></link>
-        element.</para>
-    </section>
-  </section>
-
-  
-  
-
-  <section>
-    <title>White Spaces</title>
-
-    <para>White space provisions for different serializations and for exchange among
-      serializations.</para>
-    
-    <note>
-      <para>Note that in some serializations, all whitespace is significant. Therefore it is
-        advisable to maximize usage of <code>preserve</code> in markup environments in order to
-        maximize interoperability with other serializations. </para>
-    </note>
-
-    <itemizedlist>
-      <title>Processing Requirements</title>
-
-      <listitem>
-        <para>For the inline content and all non empty inline objects: The white spaces
-            <glossterm>must</glossterm> be preserved if the value for <code>xml:space</code> set or
-          inherited at the enclosing <link linkend="entry"><code>entry</code></link> level is <code>preserve</code>, and
-          they <glossterm>may</glossterm> be preserved if the value is <code>default</code>.</para>
-      </listitem>
-    </itemizedlist>
-  </section>
-
-  <section id="BiDi">
-    <title>Bidirectional Text</title>
-
-    <para>Text directionality in DMLex content is defined by inheritance. Source and target content
-      (for instance in bilingual translation dictionaries) can have different directionality.</para>
-
-    <para>The initial directionality for both the source and the target content is defined in the
-        top level logical root object element, using the <glossterm>optional</glossterm> attributes <link linkend="srcdir"><code>srcDir</code></link> for
-      the source and <link linkend="trgdir"><code>trgDir</code></link> for the target. The default value for both attributes is
-        <code>auto</code>.</para>
-
-    <para>Monolingual and multilingual lexicographic content <glossterm>should not</glossterm> use
-      the attributes <link linkend="srcdir"><code>srcDir</code></link> and <link linkend="trgdir"><code>trgDir</code></link>. The <link linkend="dir"><code>dir</code></link> attribute with
-      values <code>ltr</code>, <code>rtl</code>, or <code>auto</code> has standard inheritance
-      throughout the DMlex object model, in case the <link linkend="srcdir"><code>srcDir</code></link> and <link linkend="trgdir"><code>trgDir</code></link> are
-      not used on the top level. </para>
-    <para>In addition, the <link linkend="data"><code>data</code></link> object has an <glossterm>optional</glossterm> attribute <link linkend="dir"><code>dir</code></link> with a value
-        <code>ltr</code>, <code>rtl</code>, or <code>auto</code> that is not inherited. The default
-      value is <code>auto</code>.</para>
-
-    <para>Directionality text contained in DMLex text nodes is fully governed by <link linkend="uax9">[UAX #9]</link>, whereas explicit
-        <firstterm>DMlex-defined</firstterm> structural and directionality objects and attributes
-      constitute a higher-level protocol in the sense of <link linkend="uax9">[UAX #9]</link>. The <firstterm>DMLex-defined</firstterm> value
-        <code>auto</code> determines the directionality based on the first strong directional
-      character in its scope and <firstterm>DMLex-defined</firstterm> inline directionality behaves
-      exactly as Explicit Directional Isolate Characters, see <link linkend="uax9">[UAX #9]</link>, <ulink url="http://www.unicode.org/reports/tr9/#Directional_Formatting_Characters">http://www.unicode.org/reports/tr9/#Directional_Formatting_Characters</ulink>.</para>
-  <note>
-    <para>Please note that this specification does not define explicit markup for inline directional
-        Overrides or Embeddings; in case those are needed. ELABORATE .. [UAX #9] defined Directional
-        Formatting Characters
-        [<?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>??<?oxy_custom_end ?>].</para>
-  </note>
-    
-  </section>
-
-  
-  <section>
-    <title>Content Comparison</title>
-
-    <para>This specification defines content equality as follows:</para>
-
-    <itemizedlist>
-      <listitem>
-        <para>Two contents are equal if their normalized forms are equal.</para>
-      </listitem>
-    </itemizedlist>
-
-    <para>A content is normalized when:</para>
-
-    <itemizedlist>
-      <listitem>
-        <para>The text nodes are in Unicode Normalized Form C defined in the
-        Unicode Annex #15: Unicode Normalization Forms <link linkend="uax15">[UAX #15]</link>.</para>
-      </listitem>
-
-      <listitem>
-        <para>All annotation markers are removed.</para>
-      </listitem>
-
-      <listitem>
-        <para>All pairs of <link linkend="sc"><code>sc</code></link> and <link linkend="ec"><code>ec</code></link> elements that can be converted into a <link linkend="pc"><code>pc</code></link> element, are
-          converted.</para>
-      </listitem>
-
-      <listitem>
-        <para>All adjacent text nodes are merged into a single text
-        node.</para>
-      </listitem>
-
-      <listitem>
-        <para>For all the text nodes with the white space property set to
-        <code>default</code>, all adjacent white spaces are collapsed into a
-        single space.</para>
-      </listitem>
-    </itemizedlist>
-  </section>
-</section>
-    <section id="extensions">
-    <title>Extension Mechanisms</title>
-    <para>DMLex offers the following mechanisms for storing custom data in DMLex Instances:</para>
-    <orderedlist inheritnum="ignore" continuation="restarts">
-        <listitem>
-            <para><?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>??A set of
-                metaobjects to store arbitrary metadata??<?oxy_custom_end ?></para>
-        </listitem>
-        <listitem>
-            <para>Using a namespace based mechanism for storing data in custom objects or attributes
-                at predefined extension points.</para>
-        </listitem>
-    </orderedlist>
-    <para>Both mechanisms can be used simultaneously.
-        [<?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>if both
-        defined<?oxy_custom_end ?>]</para>
-    <section>
-        <title>Extension Points</title>
-        <para>The following <firstterm>DMLex Core</firstterm> objects allow storing custom data in
-            DMLex predefined metaobjects:</para>
-        <simplelist type="vert">
-            <member>- <link linkend="entry"><code>entry</code></link></member>
-            <member>- another allowed object olink</member>
-            <member>- yet another </member>
-        </simplelist>
-            
-        <para>The following <firstterm>DMLex Core</firstterm> objects accept custom
-            attributes:</para>
-        <simplelist type="vert">
-            <member>- <link linkend="dmlex"><code>dmlex&gt;</code></link></member>
-            <member>- <link linkend="entry"><code>entry</code></link></member>
-            <member>- another allowed object olink</member>
-            <member>- yet another </member>
-        </simplelist>
-        <section>
-            <title>Extensibility of <firstterm>DMLex Modules</firstterm></title>
-        <para>For extensibility of <firstterm>DMLex Modules</firstterm> please refer to the relevant
-            Module Sections.</para></section>
-        
-    </section>
-  
-  <section id="ext-constraints">
-    <title>Constraints</title>
-    <itemizedlist>
-      <listitem><para>When using identifiers, an extension <glossterm>must</glossterm> use either an attribute named <code>id</code> or the attribute
-        <code>xml:id</code> to specify them.</para></listitem>
-      <listitem><para>Extensions identifiers <glossterm>must</glossterm> be unique within ELABORATE.. .</para></listitem>
-        <listitem><para>Identifier values used in extensions <glossterm>must</glossterm> be of type <code>xs:NCNAME</code>, <code>xs:NMTOKEN</code>, or compatible with <code>xs:NMTOKEN</code>
-        (e.g. <code>xs:NAME</code> and <code>xs:ID</code> are compatible).</para></listitem>
-    </itemizedlist>
-    <para>These constraints are needed for the <link linkend="fragid">fragment identification mechanism</link>.</para>
-  </section>
-  
-    <section>
-        <title>Processing Requirements</title>
-        <itemizedlist>
-            <listitem>
-                <para>A user extension, whether implemented using predefined metaobjects or using a custom namespace,
-                        <glossterm>must not</glossterm> provide the same functionality as an
-                    existing DMLex Core or Module feature, however it <glossterm>may</glossterm>
-                    complement an extensible DMLex Core or Module feature or provide a new
-                    functionality at the provided extension points.</para>
-            </listitem>
-            
-            <listitem>
-                <para>Another requirement. </para>
-            </listitem>
-            
-            <listitem>
-                <para><firstterm>Writers</firstterm> that do not support a given custom namespace based user extension
-                        <glossterm>should</glossterm> preserve that extension without
-                    <firstterm>Modification</firstterm>.</para>
-            </listitem>
-        </itemizedlist>
-    </section>
-</section>
-  </section>
-  <section id="modules">
-    <title>The DMLex Modules Specifications</title>
-    <para>This section specifies the <glossterm>optional</glossterm>
-      <firstterm>DMLex Modules</firstterm> that <glossterm>may</glossterm> be used along with
-        <firstterm>DMLex Core</firstterm> for advanced functionality.</para>
-    <para>ONE MODULE PLACEHOLDER INCLUDED AS MODULE CONTENT MODEL</para>
-    <!-- Module includes -->
-    <section id="module_01">
-  <title>Module 01 content model</title>
-  <section>
-    <title>Introduction</title>
-    <para>This module defines ... ELABORATE</para>
-    <note>
-      <para>This module specification chiefly describes how... ELABORATE</para>
-    </note>
-    <warning id="module_01_warning">
-      <para>There is an important difference or similar ELABORATE</para>
-      <para>However, … ELABORATE. </para>
-      <para>Implementers who wish to better access... ELABORATE.</para>
-    </warning>
-  </section>
-  <section>
-    <title>Module namespace and validation artifacts</title>
-    <para>The namespaces for Module 01 are: <code>https://www.w3.org/2005/11/its/</code> and
-        <code>urn:oasis:names:tc:lexidma:module_01:1.0</code>.</para>
-    <para>Validation artifacts
-      <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>[specify type of
-      artifacts if any available at all]<?oxy_custom_end ?> for this module are available at <ulink url="http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename1.filetype1">http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename1.filetype1</ulink>,
-        <ulink url="http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename2.filetype1">http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename2.filetype1</ulink>, and <ulink url="http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename1.filetype2">http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename1.filetype2</ulink>. </para>
-    <note>
-      <para>Although setting and usage of prefixes for namespaces in XML is arbitrary, we are using
-          <code>md01:</code> for the <code><ulink url="http://docs.oasis-open.org/lexidma/ns/module_01-1.0">http://docs.oasis-open.org/lexidma/ns/module_01-1.0</ulink></code> namespace
-        and <code>md01n:</code> for the <code>urn:oasis:names:tc:lexidma:module_01:1.0</code>
-        namespace throughout this specification.</para>
-      <para>While colon ":" is the mandatory separator character in XML, other separator characters,
-        such as hyphen "-" or undescore "_" <glossterm>may</glossterm> be used in other
-        serializations. </para>
-    </note>
-  </section>
-  <section>
-    <title>Module fragment identification prefix</title>
-    <para>The fragment identification prefix for the Module 01 module is: <code>md01</code>.</para>
-    <note>
-      <para>Although this module has to use several different XML namespace prefixes it uses only
-        one fragment identification and authority prefix which is <code>md01</code>.</para>
-    </note>
-  </section>
-  <section id="Module_01_Conformance">
-    <title>Conformance to the Module 01 specification</title>
-    <note>
-      <para>Some Module 01 data categories.... Other data categories …. The below conformance
-        statement is only relevant for data categories .. There is no interrelation between data
-        categories/ data categories are related as explained in ....</para>
-    </note>
-    <!--   -->
-    <itemizedlist>
-      <title>Processing Requirements</title>
-      <listitem>
-        <para>Conformant Module 01 Processors <glossterm>must</glossterm> be able to use the
-          external global rules included in the module's [validation artifact - adjust according to
-          the type of validation artifact] file <ulink url="http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/its.sch">http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/its.sch</ulink> and compute Module 01 data categories encoded in
-            <firstterm>DMlex Instances</firstterm> as per certain conformance clauses
-          ELABORATE</para>
-        <itemizedlist>
-          <listitem>
-            <para>Subrequirement, ELABORATE.</para>
-          </listitem>
-        </itemizedlist>
-      </listitem>
-      <listitem>
-        <para>Conformant <firstterm>Agents</firstterm>
-          <glossterm>must</glossterm> be DMLex Conformant in the sense of DMLex <link linkend="ApplicationConformance">Application Conformance</link> and also implement at least one Module 01 data category
-          defined in the section <link linkend="Module_01_defined_categories">Module 01 data
-            categories defined in the Module 01 Module</link> of this <link linkend="module_01">Module 01</link> or provide full support for at least one of the custom annotations
-          etc. ELABORATE.</para>
-        <para>In particular:</para>
-        <itemizedlist>
-          <listitem>
-            <para>Conformant <firstterm>Creators</firstterm>
-              <glossterm>must</glossterm> be capable of <firstterm>Creating</firstterm> at least one
-              of the above specified Module 01 data categories in a resulting conformant
-                <firstterm>DMlex Instance</firstterm> with Module 01 based metadata. </para>
-          </listitem>
-          <listitem>
-            <para> Conformant <firstterm>Enrichers</firstterm>
-              <glossterm>must</glossterm> be capable of <firstterm>Enriching</firstterm>
-              <firstterm>DMlex Instances</firstterm> with at least one of the above specified Module
-              01 data categories.</para>
-          </listitem>
-          <listitem>
-            <para>Conformant <firstterm>Modifiers</firstterm>
-              <glossterm>must</glossterm> be capable of updating at least one of the above specified
-              Module 01 data categories according to its own Constraints and Processing Requirements
-              as specified in the Module 01 Module.</para>
-          </listitem>
-          <listitem>
-            <para>Etc. ELABORATE.</para>
-          </listitem>
-        </itemizedlist>
-      </listitem>
-    </itemizedlist>
-  </section>
-  <section id="module_01_funtionality_01">
-    <title>Module 01 functionality 01</title>
-    <para> Module 01 functionality 01 mechanism provides a way to record metadata..etc.
-      ELABORATE&gt;</para>
-    <warning>
-      <para>This mechanism is reserved for … ELABORATE. </para>
-    </warning>
-    <note>
-      <para>The Module 01 functionality 01 mechanism has to be always used with the ELABORATE.
-        .</para>
-      <para>Another informative pointer.</para>
-    </note>
-    <itemizedlist>
-      <title>Processing Requirements</title>
-      <listitem>
-        <para><firstterm>Writers</firstterm>
-          <glossterm>must</glossterm> use the attribute … ELABORATE to express the information
-          provided through the Module 01 functionality 01 mechanism in <firstterm>DMLex
-            Instances</firstterm>.</para>
-      </listitem>
-    </itemizedlist>
-    <section id="module_01_functionality_01Annotation">
-      <title>Module 01 functionality 01 annotation</title>
-      <para>This is used to express the Module 01 functionality 01 mechanism on inline
-        markers.</para>
-      <para>Usage:</para>
+      <para>
+        <literal moreinfo="none">headword</literal> (non-empty string)
+      </para>
       <itemizedlist spacing="compact">
         <listitem>
-          <para>The <link linkend="id"><code>id</code></link> attribute is <glossterm>required</glossterm>.</para>
-        </listitem>
-        <listitem>
-          <para>Other attributes related provision.</para>
-        </listitem>
-        <listitem>
-          <para>Etc.</para>
+          <para>
+            The headword can be a single word, a multi-word expression, or
+            any expression in the source language which is being described
+            by the entry in the lexicographic resource.
+          </para>
         </listitem>
       </itemizedlist>
-    </section>
-  </section>
-  <section id="Module_01_defined_categories">
-    <title>Module 01 data categories defined in the Module 01 Module</title>
-    <para>The following Module 01 data categories are fully specified within this module:</para>
-    <itemizedlist>
-      <listitem>
-        <para><link linkend="data_category_01">data_category_01</link></para>
-      </listitem>
-      <!-- more olinks to Module 01 supported categories ?? check if the list is complete.. -->
-    </itemizedlist>
-  </section>
-  <section>
-    <title>Module objects</title>
-    <para>All Module 01 objects and attributes belong to the <ulink url="http://docs.oasis-open.org/lexidma/ns/module_01-2.1"/> namespace. The Module 01 defines
-      the following objects:</para>
-    <para>
-      <link linkend="md01_object_01"><code>md01:object_01&gt;</code></link>. </para>
-    <section>
-      <title>Diagram</title>
-      <para>Legend:</para>
-      <simplelist type="vert">
-        <member>1 = one</member>
-        <member>+ = one or more</member>
-        <member>? = zero or one</member>
-        <member>* = zero, one or more</member>
-      </simplelist>
-      <programlisting format="linespecific">
-programlisting code to display the diagram
-    </programlisting>
-    </section>
-    <!--  includes of the module defined objects  -->
-    <section id="md01_object_01_01">
-    <title>md01:object_01_01</title>
-    <para>object_01_01 - a standoff element to hold information about ...ELABORATE.</para>
-    <para><emphasis>Contains:</emphasis></para>
-    <simplelist type="vert">
-        <member>This element is always empty.</member>
-    </simplelist>
-    
-    <para><emphasis>Parents:</emphasis></para>
-    
-    <simplelist type="vert">
-        <member>- <link linkend="md01_object_wrapper_01"><code>md01:object_wrapper_01</code></link></member>
-        
-    </simplelist>
-    
-
-    <para><emphasis>Attributes:</emphasis></para>
-    <simplelist type="vert">
-      <member>- <link linkend="itsm_locQualityIssueType">
-                <code>attribute_01</code></link>, <glossterm>required</glossterm>
-        </member>
-        <member>- olinks to other attributes as needed, <glossterm>optional | required</glossterm></member>
-        
-        
-    </simplelist>
-
-    <itemizedlist>
-        <title>Constraints</title>
-        <listitem>
-            <para>At least one of the attributes <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>ELABORATE..<?oxy_custom_end ?>
-                <glossterm>must</glossterm> be set.</para>
-        </listitem>
-    </itemizedlist>
-    <itemizedlist>
-        <title>Processing Requirements</title>
-        <listitem>
-            <para> For all <firstterm>Agents</firstterm>, when any of the attributes
-                <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>ELABORATE..<?oxy_custom_end ?>
-                are declared,  ELABORATE <glossterm>required</glossterm>.</para>
-        </listitem>
-        <listitem>
-            <para><firstterm>Modifiers</firstterm>
-                <glossterm>must</glossterm>
-                <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>ELABORATE..<?oxy_custom_end ?>
-                .</para>
-        </listitem>
-    </itemizedlist>
-</section>
-    
-    <section id="md01_object_wrapper_01">
-    <title>md01:object wrapper 01</title>
-    <para>Object wrapper 01 - a standoff wrapper element to group any number of single object 01
-    objects related to the same node or span of lexicographic content.</para>
-    <para><emphasis>Contains:</emphasis></para>
-    <simplelist type="vert">
-      <member>- One or more <link linkend="md01_object_01_01"><code>md01:object_01_01</code></link>
-            objects</member>
-        
-    </simplelist>
-  
-  <para><emphasis>Parents:</emphasis></para>
-  
-  <simplelist type="vert">
-    <member>- <link linkend="entry"><code>entry</code></link></member>
-    
-  </simplelist>
-  
-
-    <para><emphasis>Attributes:</emphasis></para>
-    <simplelist type="vert">
-      <member>- <link linkend="itsm_id">
-        <code>xml:id</code>
-      </link>, <glossterm>required</glossterm>
-    </member>
-        
-    </simplelist>
-
-  <itemizedlist>
-    <title>Constraints</title>
+    </listitem>
     <listitem>
-      <para>Each <link linkend="md01_object_wrapper_01"><code>md01:object wrapper 01</code></link> object
-        <glossterm>should</glossterm> be referenced ELABORATE..       within the same <link linkend="entry"><code>entry</code></link> object as per Constraints
-        for ELABORATE.. .</para>
+      <para>
+        <literal moreinfo="none">homographNumber</literal> (number, optional)
+      </para>
     </listitem>
   </itemizedlist>
-  
-
-  <itemizedlist>
-    <title>Processing Requirements</title>
-    <listitem>
-      <para><firstterm>Modifiers</firstterm> detecting an orphaned <link linkend="md01_object_wrapper_01"><code>md01:object wrapper 01</code></link> object
-        <glossterm>may</glossterm> delete that <link linkend="md01_object_wrapper_01"><code>md01:object wrapper 01</code></link> object.</para>
-    </listitem>
-  </itemizedlist>
-    
-    
-</section>
-    
-    <section id="md01_object_02_01">
-    <title>md01:object_02_01</title>
-    <para>Object 02 01 - a standoff element to hold information of
-        <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>ELABORATE..<?oxy_custom_end ?>
-        .</para>
-    <para><emphasis>Contains:</emphasis></para>
-    <simplelist type="vert">
-        <member>This element is always empty.</member>
-    </simplelist>
-    
-    <para><emphasis>Parents:</emphasis></para>
-    
-    <simplelist type="vert">
-        <member>- <link linkend="md01_object_wrapper_02"><code>md01_object_wrapper_02</code></link></member>
-        
-    </simplelist>
-    
-
-    <para><emphasis>Attributes:</emphasis></para>
-    <simplelist type="vert">
-        <member>- <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>each member
-            keeps an olink to an admissible attribute<?oxy_custom_end ?> , <glossterm>optional |
-                required</glossterm></member>
-        
-    </simplelist>
-
-    <itemizedlist>
-        <title>Constraints</title>
-        <listitem>
-            <para><?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>FOR
-                INSTANCE<?oxy_custom_end ?> At least one of the following <glossterm>must</glossterm>
-                be set:</para>
-            <itemizedlist>
-                <listitem><para>
-                        <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>each
-                        list item keeps a para wrapped olink to an admissible attribute<?oxy_custom_end ?>, </para></listitem>
-                
-            </itemizedlist>
-        </listitem>
-            
-            
-    </itemizedlist>
-        
-       <itemizedlist>
-            
-       <title>Processing Requirements</title>
-                <listitem><para> For all <firstterm>Agents</firstterm>, when any of the attributes
-                <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>ELABORATE<?oxy_custom_end ?>
-                are declared on the <link linkend="md01_object_02_01"><code>md01_object_02_01</code></link> object, these apply to the respective
-                structural objects' content or the marker delimited inline spans of <link linkend="module_01_functionality_01Annotation">Module 01 functionality 01
-                    annotation</link>, from which their enclosing <link linkend="md01_object_wrapper_02"><code>md01_object_wrapper_02</code></link> object is referenced. </para></listitem>
-    </itemizedlist>
-</section>
-    
-    <section id="md01_object_wrapper_02">
-    <title>md 01 object wrapper 02</title>
-    <para>Md 01 object wrapper 02 - a standoff wrapper element to group any number of single md 01
-    object 02 01 objects related to the same span of lexicographic content.</para>
-    <para><emphasis>Contains:</emphasis></para>
-    <simplelist type="vert">
-      <member>- One or more <link linkend="md01_object_02_01"><code>md01_object_02_01</code></link>
-            objects</member>
-        
-    </simplelist>
-  
-  <para><emphasis>Parents:</emphasis></para>
-  
-  <simplelist type="vert">
-    <member>- <link linkend="entry"><code>entry</code></link></member>
-    <member>- <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>olink to another
-      admissible parent<?oxy_custom_end ?></member>
-  </simplelist>
-  
-
-    <para><emphasis>Attributes:</emphasis></para>
-    <simplelist type="vert">
-      <member>- <link linkend="itsm_id">
-        <code>xml:id</code>
-      </link>, <glossterm>required</glossterm>
-    </member>
-        
-    </simplelist>
-<!--  This Constraint would be too strong as a MUST, it would invalidate DMLex Documents with orphaned md01 wrappers. But this can happen because the references can be removed by core only Modifiers. -->
-<itemizedlist>
-  <title>Constraints</title>
-  <listitem>
-    <para>Each <link linkend="md01_object_wrapper_02">md 01 object wrapper 02</link> object
-          <glossterm>should</glossterm> be referenced ELABORATE.. .</para>
-  </listitem>
-</itemizedlist>
-  <itemizedlist>
-    <title>Processing Requirements</title>
-    <listitem>
-      <para><firstterm>Modifiers</firstterm> detecting an orphaned <link linkend="md01_object_wrapper_02">md 01 object wrapper 02</link> object
-          <glossterm>may</glossterm> delete that <link linkend="md01_object_wrapper_02">md 01 object wrapper 02</link> element.</para>
-    </listitem>
-  </itemizedlist>
-  
-</section>
-      </section>
-  <section>
-    <title>Module Attributes</title>
-    <para>The <link linkend="module_01">Module 01</link> uses the following attributes from the
-        <ulink url="http://docs.oasis-open.org/lexidma/ns/module_01-2.1"/> namespace: </para>
-    <para><?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>[olinks to module
-      atribute anchors in their files]<?oxy_custom_end ?></para>
-    <para>The attributes defined in the <link linkend="module_01">Module 01</link> that belong to
-      the <code>urn:oasis:names:tc:xliff:itsm:2.1</code> namespace are: <link linkend="itsm_domains"><code>domains</code></link> and <link linkend="itsm_lang"><code>lang</code></link>. </para>
-    <para> The <link linkend="module_01">Module 01</link>  also uses the <link linkend="itsm_id"><code>xml:id</code></link> attribute. </para>
-    <!--  Includes of the Module 01 attributes from all namespaces  -->
-    <section id="itsm_domains">
-    <title>itsm:domains</title>
-    
-    <para>Domains - the <code>itsm:domains</code> attribute expresses the <link linkend="ITS20">[ITS]</link>
-        <ulink url="http://www.w3.org/TR/its20/#domain">Domain</ulink> data category.</para>
-    
-    
-    <para><emphasis>Value description:</emphasis>
-        The value is a text string, however commas if present separate distinct domain values within the string.</para>
-    
-    <para><emphasis>Default value:</emphasis>: default values for this attribute
-        depend on the element in which it is used:</para>
-    
-    <itemizedlist>
-        <listitem>
-            <para>When used in <link linkend="file"><code>&lt;file&gt;</code></link>:</para>
-            
-            <para>The value is undefined.</para>
-        </listitem>
-        <listitem>
-            <para>When used in any other admissible structural element (<link linkend="group"><code>&lt;group&gt;</code></link> or <link linkend="unit"><code>&lt;unit&gt;</code></link>):</para>
-            <para>The value of the <link linkend="itsm_domains"><code>domains</code></link> attribute of its parent element
-                (which can be undefined).</para>
-        </listitem>
-        <listitem>
-            <para>When used in annotations markers
-                <link linkend="mrk"><code>&lt;mrk&gt;</code></link> or
-                <link linkend="sm"><code>&lt;sm&gt;</code></link>:</para>
-            
-            
-            <para>The value of the <link linkend="itsm_domains"><code>domains</code></link> attribute of the innermost
-                <link linkend="mrk"><code>&lt;mrk&gt;</code></link>, <link linkend="unit"><code>&lt;unit&gt;</code></link>, or <link linkend="match"><code>&lt;mtc:match&gt;</code></link> element, element, in which the marker
-                in question is located (which can be undefined). </para>
-            
-        </listitem>
-        <listitem>
-            <para> When used in the <link linkend="match"><code>&lt;mtc:match&gt;</code></link> element:</para>
-            <para>The value is undefined.</para>
-        </listitem>
-        
-        
-        
-    </itemizedlist>
-    
-    
-    
-    <para><emphasis>Used in:</emphasis>
-        <link linkend="file"><code>&lt;file&gt;</code></link>
-        <link linkend="group"><code>&lt;group&gt;</code></link>
-        <link linkend="unit"><code>&lt;unit&gt;</code></link>, <link linkend="mrk"><code>&lt;mrk&gt;</code></link>, <link linkend="sm"><code>&lt;sm&gt;</code></link>,
-        and <link linkend="match"><code>&lt;mtc:match&gt;</code></link>.</para>
-    
-    <para>See the <link linkend="domainsAnnotation">ITS Domain Annotation</link> for the normative usage description of this attribute inline.</para>
-    <warning>
-        <para>This attribute belongs to the <code>urn:oasis:names:tc:xliff:itsm:2.1</code>
-            namespace that is being prefixed with <code>itsm:</code> throughout this
-            specification, unlike the original W3C ITS namespace
-            <code>https://www.w3.org/2005/11/its/</code> that is being prefixed with
-            <code>its:</code>.</para>
-    </warning>
-    
-</section>
-    <section id="itsm_lang">
-    <title>itsm:lang</title>
-    
-    <para>Inline language information - the <code>itsm:lang</code> attribute specifies <emphasis>an
-            inline foreign language span</emphasis> within the source or target content of the
-        otherwise bilingual <firstterm>XLIFF Document</firstterm>. For example:
-        <code>itsm:lang="fr-FR"</code> indicates the French language as spoken in France.</para>
-    <note>
-            <para>This is NEVER used on structural elements that have their Language Information set
-            by the <firstterm>XLIFF Core</firstterm>
-            <link linkend="srcLang"><code>xlf:srcLang</code></link>
-            and <link linkend="trgLang"><code>xlf:trgLang</code></link> attributes. It is not advisable to use this
-            attribute on structural elements even outside of XLIFF where the Language Information is
-            typically given by the <code>xml:lang</code> attribute.</para>
-        </note>
-    
-    <para><emphasis>Value description:</emphasis> A language code as described in <link linkend="bcp47">[BCP 47]</link>.</para>
-    
-    <para><emphasis>Default value:</emphasis></para>
-    
-            
-            <para>The value of the <link linkend="xml_lang"><code>xml:lang</code></link> or <code>itsm:lang</code> attribute set or inherited
-        on the parent element of the <link linkend="mrk"><code>&lt;mrk&gt;</code></link> or <link linkend="sm"><code>&lt;sm&gt;</code></link>
-        element in question.</para>                
-        
-    
-    <para><emphasis>Used in:</emphasis>
-        <link linkend="mrk"><code>&lt;mrk&gt;</code></link> and <link linkend="sm"><code>&lt;sm&gt;</code></link>.</para>
-    <para>See the <link linkend="langAnnotation">ITS Language Information Annotation</link> for the normative usage description of this
-        attribute.</para>
-    
   <para>
-      <note>
-          <para>
-                <code>itsm:lang</code> is an attribute analogical to <link linkend="xml_lang"><code>xml:lang</code></link>.
-                Unlike <link linkend="xml_lang"><code>xml:lang</code></link>, it is allowed on XLIFF inline <link linkend="annotations">Annotations</link>.
-                The normative behavior of this attribute results from the <firstterm>XLIFF
-                    Core</firstterm> behavior as further specified by the <link linkend="langAnnotation">ITS
-                    Language Information Annotation</link>.</para>
-      </note>
-      <warning>
-          <para>This attribute belongs to the <code>urn:oasis:names:tc:xliff:itsm:2.1</code>
-                namespace that is being prefixed with <code>itsm:</code> throughout this
-                specification, unlike the original W3C ITS namespace
-                    <code>https://www.w3.org/2005/11/its/</code> that is being prefixed with
-                    <code>its:</code>.</para>
-      </warning>
+    Children:
   </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">PartOfSpeech</literal> (zero or more)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">Pronunciation</literal> (zero or more)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">InflectedForm</literal> (zero or more)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">Sense</literal> (zero or more)
+      </para>
+    </listitem>
+  </itemizedlist>
 </section>
-    <section id="itsm_id">
-  <title>xml:id</title>
-
-  <para>Identifier - the <code>id</code> attribute from the <code>http://www.w3.org/XML/1998/</code>
-    namespace is used to identify module standoff wrapper objects.</para>
-
-  <para><emphasis>Value description:</emphasis> xs:ID</para>
-
-  <para><emphasis>Default value:</emphasis> undefined</para>
-
-  <para><emphasis>Used in:</emphasis><link linkend="itsm_locQualityIssues"><code>&lt;locQualityIssues&gt;</code></link> and 
-    <link linkend="itsm_provenanceRecords"><code>&lt;provenanceRecords&gt;</code></link>.</para>
-  <warning>
-    <para>Implementers need to be aware that <code>xs:ID</code>
-      has to be globally unique.</para>
-  </warning>
-  
-  
-   
-
-
+  <section>
+  <title><literal moreinfo="none">Sense</literal> object type</title>
+  <para>
+    A part of an entry which groups together information relating to one
+    of the (possibly multiple) meanings (or meaning potentials) of the
+    entry's headword.
+  </para>
+  <para>
+    Child of:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">Entry</literal>
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">listingOrder</literal>
+      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            Can be implicit from the serialization.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">indicator</literal> (optional, non-empty string)
+      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            A short statement that indicates the meaning of a sense and
+            permits its differentiation from other senses in the entry.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">definition</literal> (optional, non-empty string)
+      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            A long statement that describes and or explains the meaning of
+            a sense.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Children:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">Usage</literal> (zero or more)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">Example</literal> (zero or more)
+      </para>
+    </listitem>
+  </itemizedlist>
 </section>
-    
-    
-    <!--  more to be added as module progresses  -->
+  <section>
+    <title>The difference between entries and senses</title>
+    <para>
+      An <emphasis role="strong">entry</emphasis> is a container for
+      "formal" properties of the headword such as orthography,
+      morphology, syntax and pronunciation. A
+      <emphasis role="strong">sense</emphasis> is a container for those of
+      the headword's properties which are statements about semantics and
+      pragmatics.
+    </para>    
   </section>
   <section>
-    <title>Example file</title>
-    <example>
-      <title>Module 01 Data Categories Example</title>
-      <para>The following example file includes markup related to several Module 01 data
-        categories.</para>
-      <programlisting format="linespecific">&lt;!-- example file metadata --&gt;
-
-programlisting code</programlisting>
-    </example>
-  </section>
+  <title><literal moreinfo="none">PartOfSpeech</literal> object type</title>
+  <para>
+    Any of the word classes to which a lexical item may be assigned,
+    e.g. noun, verb, adjective, etc.
+  </para>
+  <para>
+    Child of:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">Entry</literal>
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">value</literal> (non-empty string)
+      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            Can be constrained by the DMLex Controlled Vocabularies
+            Module.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+  </itemizedlist></section>
+  <section>
+  <title><literal moreinfo="none">Usage</literal> object type</title>
+  <para>
+    An indication of some restriction on the use of the lexical item.
+    The restriction can be pragmatic (time, region, register), semantic
+    (domain, semantic type) or formal ('no plural').
+  </para>
+  <para>
+    Child of:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">Sense</literal>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">Pronunciation</literal>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">InflectedForm</literal>
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">value</literal> (non-empty string)
+      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            Can be constrained by the DMLex Controlled Vocabularies
+            Module.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Its type (eg. whether register, temporal, geographic etc)
+            can be specified by the by the DMLex Controlled Vocabularies
+            Module.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+  </itemizedlist></section>
+  <section>
+  <title><literal moreinfo="none">Pronunciation</literal> object type</title>
+  <para>
+    Information about the pronunciation of its parent.
+  </para>
+  <para>
+    Child of:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">Entry</literal>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">InflectedForm</literal>
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Properties (at least one):
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">transcription</literal> (non-empty string)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">recording</literal> (string: name or URL of a sound
+        file)
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Children:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">Usage</literal> (zero or more)
+      </para>
+    </listitem>
+  </itemizedlist>
 </section>
-  </section>
+  <section>
+  <title><literal moreinfo="none">InflectedForm</literal> object type</title>
+  <para>
+    An inflected headword is a form of the inflectional paradigm of its
+    parent.
+  </para>
+  <para>
+    Child of:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">Entry</literal>
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">label</literal> (non-empty string) e.g. 'plural'
+      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            Can be constrained by the DMLex Controlled Vocabularies
+            Module.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">value</literal> (non-empty string)
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Children:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">Usage</literal> (zero or more)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">Pronunciation</literal> (zero or more)
+      </para>
+    </listitem>
+  </itemizedlist>
+</section>
+  <section>
+  <title><literal moreinfo="none">Example</literal> object type</title>
+  <para>
+    An instance of a lexical item's usage in a specific sense.
+  </para>
+  <para>
+    Child of:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">Sense</literal>
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">text</literal> (non-empty string)
+      </para>
+    </listitem>
+  </itemizedlist>
+</section>
+</section>
+  <section>
+  <title>Bilingual Module</title>
+  <para>
+    Extends DMLex Core to support the encoding of bilingual lexicographic resources.
+  </para>
+  <section>
+  <title>Extensions to <literal moreinfo="none">LexicographicResource</literal> object
+    type</title>
+  <para>
+    Additional properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">translationLanguage</literal> (optional, IETF language
+        code)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">translationTranscriptionScheme</literal> (optional, reference to some external
+        authority - which?) </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            The scheme (e.g. IPA) in which the
+            <literal moreinfo="none">transcription</literal> property of
+            <literal moreinfo="none">TranslationPronunciation</literal> objects is
+            given.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+  </itemizedlist>
+</section>
+  <section>
+  <title>Extensions to <literal moreinfo="none">Sense</literal> object type</title>
+  <para>
+    Additional children:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">HeadwordTranslation</literal> (zero or more)
+      </para>
+    </listitem>
+  </itemizedlist>
+</section>
+  <section>
+  <title><literal moreinfo="none">HeadwordTranslation</literal> object type</title>
+  <para>
+    The translation equivalent of the headword in one of its senses.
+  </para>
+  <para>
+    Child of:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">Sense</literal>
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">text</literal> (non-empty string)
+      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            Can be a single word, a multi-word expression, or indeed any
+            expression in the target language.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Children:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">TranslationPartOfSpeech</literal> (zero or more)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">TranslationUsage</literal> (zero or more)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">TranslationPronunciation</literal> (zero or more)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">TranslationInflectedForm</literal> (zero or more)
+      </para>
+    </listitem>
+  </itemizedlist>
+</section>
+  <section>
+  <title><literal moreinfo="none">TranslationPartOfSpeech</literal> object type</title>
+  <para>
+    Any of the word classes to which the translation may be assigned,
+    e.g. noun, verb, adjective, etc.
+  </para>
+  <para>
+    Child of:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">HeadwordTranslation</literal>
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">value</literal> (non-empty string)
+      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            Can be constrained by the DMLex Controlled Vocabularies
+            Module.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+  </itemizedlist>
+</section>
+  <section>
+  <title><literal moreinfo="none">TranslationUsage</literal> object type</title>
+  <para>
+    An indication of some restriction on the use of its parent. The
+    restriction can be pragmatic (time, region, register), semantic
+    (domain, semantic type) or formal ('no plural').
+  </para>
+  <para>
+    Child of:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">HeadwordTranslation</literal>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">TranslationPronunciation</literal>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">TranslationInflectedForm</literal>
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">value</literal> (non-empty string)
+      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            Can be constrained by the DMLex Controlled Vocabularies
+            Module.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Its type (eg. whether register, temporal, geographic etc)
+            can be specified by the by the DMLex Controlled Vocabularies
+            Module.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+  </itemizedlist>
+</section>
+  <section>
+  <title><literal moreinfo="none">TranslationPronunciation</literal> object type</title>
+  <para>
+    Information about the pronunciation of its parent.
+  </para>
+  <para>
+    Child of:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">HeadwordTranslation</literal>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">TranslationInflectedForm</literal>
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Properties (at least one):
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">transcription</literal> (non-empty string)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">recording</literal> (string: name or URL of a sound
+        file)
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Children:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">TranslationUsage</literal> (zero or more)
+      </para>
+    </listitem>
+  </itemizedlist>
+</section>
+  <section>
+  <title><literal moreinfo="none">TranslationInflectedForm</literal> object type</title>
+  <para>
+    A form of the inflectional paradigm of its parent.
+  </para>
+  <para>
+    Child of:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">HeadwordTranslation</literal>
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">label</literal> (non-empty string) e.g. 'plural'
+      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            Can be constrained by the DMLex Controlled Vocabularies
+            Module.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">value</literal> (non-empty string)
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Children:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">TranslationUsage</literal> (zero or more)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">TranslationPronunciation</literal> (zero or more)
+      </para>
+    </listitem>
+  </itemizedlist>
+</section>
+  <section>
+  <title><literal moreinfo="none">HeadwordTranslation</literal> object type</title>
+  <para>
+    The translation equivalent of the headword in one of its senses.
+  </para>
+  <para>
+    Child of:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">Sense</literal>
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">text</literal> (non-empty string)
+      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            Can be a single word, a multi-word expression, or indeed any
+            expression in the target language.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Children:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">TranslationPartOfSpeech</literal> (zero or more)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">TranslationUsage</literal> (zero or more)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">TranslationPronunciation</literal> (zero or more)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">TranslationInflectedForm</literal> (zero or more)
+      </para>
+    </listitem>
+  </itemizedlist>
+</section>
+  <section>
+  <title>Extensions to <literal moreinfo="none">Example</literal> object type</title>
+  <para>
+    Additional children:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">ExampleTranslation</literal> (zero or more)
+      </para>
+    </listitem>
+  </itemizedlist>
+</section>
+  <section>
+  <title><literal moreinfo="none">ExampleTranslation</literal> object type</title>
+  <para>
+    The translation of an example.
+  </para>
+  <para>
+    Child of:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">Example</literal>
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">text</literal> (non-empty string)
+      </para>
+    </listitem>
+  </itemizedlist>
+</section>
+</section>
+  <section>
+  <title>Entry Structuring Module</title>
+  <section>
+  <title><literal moreinfo="none">SenseGroup</literal> relation type</title>
+  <para>
+    Represents the fact that a group of senses (all belonging to the
+    same entry) should be grouped when presented to a human user.
+    Typically, when an entry has a large number of senses, it is a
+    convenience to the human user to group them into a smaler number of
+    groups by some broad criterion, such as by part of speech or by
+    semantic similarity.
+  </para>
+  <para>
+    Participants:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">Sense</literal> (two or more)
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">indicator</literal> (optional, non-empty string)
+      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            A short statement that indicates the broad meaning that
+            unites the senses in this group and permits their
+            differentiation from other senses in the entry.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+  </itemizedlist>
+</section>
+  <section>
+  <title><literal moreinfo="none">Subsense</literal> relation type</title>
+  <para>
+    Represents the fact that one sense (the subordinate sense) should be
+    treated as a subsense of another sense (the subordinate). Both
+    senses belong to the same entry.
+  </para>
+  <para>
+    Participants:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        the superordinate <literal moreinfo="none">Sense</literal> (exactly one)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        the subordinate <literal moreinfo="none">Sense</literal> (exactly one)
+      </para>
+    </listitem>
+  </itemizedlist>
+</section>
+  <section>
+  <title><literal moreinfo="none">Subentry</literal> relation type</title>
+  <para>
+    Represents the fact that one entry (= the subordinate entry) should
+    be treated as a subentry inside the sense (= the superordinate
+    sense) of another entry.
+  </para>
+  <para>
+    Participants:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        the superordinate <literal moreinfo="none">Sense</literal> (exactly one)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        the subordinate <literal moreinfo="none">Entry</literal> (exactly one)
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">listingOrder</literal>
+      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            Can be implicit from the serialization.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+  </itemizedlist>
+</section>
+</section>
+  <section>
+  <title>Crossreferencing Module</title>
+  <section>
+  <title><literal moreinfo="none">Variant</literal> relation type</title>
+  <para>
+    Represents the fact that two entries are understood by the
+    lexicographer as variants (for example masculine and feminine
+    counterparts, spelling variants).
+  </para>
+  <para>
+    Participants:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">Entry</literal> (two or more)
+      </para>
+    </listitem>
+  </itemizedlist>
+</section>
+  <section>
+  <title><literal moreinfo="none">Opposition</literal> relation type</title>
+  <para>
+    Represents the fact that two senses (typically - but not necessarily
+    - belonging to two different entries) have opposite meanings. This
+    includes antonyms, converses and so on.
+  </para>
+  <para>
+    Participants:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">Sense</literal> (exactly two)
+      </para>
+    </listitem>
+  </itemizedlist>
+</section>
+  <section>
+  <title><literal moreinfo="none">Similarity</literal> relation type</title>
+  <para>
+    Represents the fact that two or more senses (typically - but not
+    necessarily - belonging to two different entries) have the same or
+    similar meanings. This includes synonyms, near synonyms, immediate
+    hypernyms/hyponyms and so on.
+  </para>
+  <para>
+    Participants:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">Sense</literal> (two or more)
+      </para>
+    </listitem>
+  </itemizedlist>
+</section>
+  <section>
+  <title><literal moreinfo="none">Pertainment</literal> relation type</title>
+  <para>
+    Represents the fact that two or more senses (typically - but not
+    necessarily - belonging to two different entries) are related to
+    each other, in ways other than opposition and similarity.
+  </para>
+  <para>
+    Participants:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">Sense</literal> (two or more)
+      </para>
+    </listitem>
+  </itemizedlist>
+</section>
+</section>
+  <section>
+  <title>Inline Markup Module</title>
+  <section>
+  <title><literal moreinfo="none">Placeholder</literal> markup type</title>
+  <para>
+    Marks up a substring inside a headword (or inside a headword
+    translation) which is not part of the expression itself but stands
+    for things that can take its place, or constitutes some kind of
+    meta-notation. Examples:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">beat [sb.] up</literal>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">continue [your] studies</literal>
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Markup of:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">headword</literal> property of <literal moreinfo="none">Entry</literal>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">text</literal> property of
+        <literal moreinfo="none">HeadwordTranslation</literal>
+      </para>
+    </listitem>
+  </itemizedlist>
+</section>
+  <section>
+  <title><literal moreinfo="none">Headword</literal> markup type</title>
+  <para>
+    Marks up a substring inside an example (or inside an example
+    translation) which corresponds to the headword (or to a translation
+    of the headword).
+  </para>
+  <para>
+    Markup of:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">text</literal> property of <literal moreinfo="none">Example</literal>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">text</literal> property of
+        <literal moreinfo="none">ExampleTranslation</literal>
+      </para>
+    </listitem>
+  </itemizedlist>
+</section>
+</section>
+  <section>
+  <title>Controlled Vocabularies Module</title>
+  <para>
+    This module makes it possible to describe constraints on the values of certain plain-text properties of objects defined in DMLex Core and in DMLex Bilingual Module.
+  </para>
+  <section>
+  <title>Extensions to <literal moreinfo="none">LexicographicResource</literal> object
+    type</title>
+  <para>
+    Additional properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">labelLanguage</literal> (IETF language code)
+      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            The language of the display values of labels.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Additional children:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">PartOfSpeechLabel</literal> (zero or more)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">TranslationPartOfSpeechLabel</literal> (zero or more)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">UsageLabel</literal> (zero or more)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">TranslationUsageLabel</literal> (zero or more)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">InflectedFormLabel</literal> (zero or more)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">TranslationInflectedFormLabel</literal> (zero or more)
+      </para>
+    </listitem>
+  </itemizedlist>
+</section>
+  <section>
+  <title><literal moreinfo="none">PartOfSpeechLabel</literal> object type</title>
+  <para>
+      A <literal moreinfo="none">PartOfSpeechLabel</literal> represents one of several allowed values for the
+      <literal moreinfo="none">value</literal> property of <literal moreinfo="none">PartOfSpeech</literal> objects.
+  </para>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">value</literal> (non-empty string)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">displayValue</literal> (optional)
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Children:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">LabelMapping</literal> (zero or more)
+      </para>
+    </listitem>
+  </itemizedlist>
+</section>
+  <section>
+  <title><literal moreinfo="none">TranslationPartOfSpeechLabel</literal> object type</title>
+  <para>
+    A <literal moreinfo="none">TranslationPartOfSpeechLabel</literal> represents one
+    of several allowed values for the <literal moreinfo="none">value</literal>
+    property of <literal moreinfo="none">TranslationPartOfSpeech</literal> objects.
+  </para>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">value</literal> (non-empty string)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">displayValue</literal> (optional)
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Children:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">LabelMapping</literal> (zero or more)
+      </para>
+    </listitem>
+  </itemizedlist>
+</section>
+  <section>
+  <title><literal moreinfo="none">UsageLabel</literal> object type</title>
+  <para>
+    A <literal moreinfo="none">UsageLabel</literal> represents one of several
+    allowed values for the <literal moreinfo="none">value</literal> property of
+    <literal moreinfo="none">Label</literal> objects.
+  </para>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">type</literal> (one of: <literal moreinfo="none">normative</literal>,
+        <literal moreinfo="none">register</literal>, <literal moreinfo="none">temporal</literal>,
+        <literal moreinfo="none">geographic</literal>, <literal moreinfo="none">sociocultural</literal>,
+        <literal moreinfo="none">domain</literal>, <literal moreinfo="none">frequency</literal>,
+        <literal moreinfo="none">attitude</literal>)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">value</literal> (non-empty string)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">displayValue</literal> (optional)
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Children:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">LabelMapping</literal> (zero or more)
+      </para>
+    </listitem>
+  </itemizedlist>
+</section>
+  <section>
+  <title><literal moreinfo="none">TranslationUsageLabel</literal> object type</title>
+  <para>
+    A <literal moreinfo="none">TranslationUsageLabel</literal> represents one of
+    several allowed values for the <literal moreinfo="none">value</literal> property
+    of <literal moreinfo="none">TranslationLabel</literal> objects.
+  </para>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">type</literal> (one of: <literal moreinfo="none">normative</literal>,
+        <literal moreinfo="none">register</literal>, <literal moreinfo="none">temporal</literal>,
+        <literal moreinfo="none">geographic</literal>, <literal moreinfo="none">sociocultural</literal>,
+        <literal moreinfo="none">domain</literal>, <literal moreinfo="none">frequency</literal>,
+        <literal moreinfo="none">attitude</literal>)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">value</literal> (non-empty string)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">displayValue</literal> (optional)
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Children:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">LabelMapping</literal> (zero or more)
+      </para>
+    </listitem>
+  </itemizedlist>
+</section>
+  <section>
+  <title><literal moreinfo="none">InflectedFormLabel</literal> object type</title>
+  <para>
+    An <literal moreinfo="none">InflectedFormLabel</literal> represents one of
+    several allowed values for the <literal moreinfo="none">label</literal> property
+    of <literal moreinfo="none">InflectedForm</literal> objects.
+  </para>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">value</literal> (non-empty string)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">displayValue</literal> (optional)
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Children:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">LabelMapping</literal> (zero or more)
+      </para>
+    </listitem>
+  </itemizedlist>
+</section>
+  <section>
+  <title><literal moreinfo="none">TranslationInflectedFormLabel</literal> object type</title>
+  <para>
+    A <literal moreinfo="none">TranslationInflectedFormLabel</literal> represents
+    one of several allowed values for the <literal moreinfo="none">label</literal>
+    property of <literal moreinfo="none">TranslationInflectedForm</literal> objects.
+  </para>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">value</literal> (non-empty string)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">displayValue</literal> (optional)
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Children:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">LabelMapping</literal> (zero or more)
+      </para>
+    </listitem>
+  </itemizedlist>
+</section>
+  <section>
+  <title><literal moreinfo="none">LabelMapping</literal> object type</title>
+  <para>
+    Represents the fact that an item in the controlled vocabulary is
+    equivalent to item provided by en external authority.
+  </para>
+  <para>
+    Parents:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">PartOfSpeechLabel</literal>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">TranslationPartOfSpeechLabel</literal>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">UsageLabel</literal>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">TranslationUsageLabel</literal>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">InflectedFormLabel</literal>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">TranslationInflectedFormLabel</literal>
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">sameAs</literal> (URI)
+      </para>
+    </listitem>
+  </itemizedlist>
+</section>
+</section>
+  
+
   <!-- Serializations includes  -->
   <section id="XML_serialization" role="normative | informative">
   <title>DMLex XML serialization</title>
@@ -3443,7 +2549,7 @@ programlisting code</programlisting>
           <para><firstterm>DMLex Core</firstterm> <link linkend="XMLSchema">[XML Schema]</link>,</para>
           <para><ulink url="&this-loc;/schemas/dmlex&-cschversion;.xsd"
             >&this-loc;/schemas/dmllex-&cschversion;.xsd</ulink></para>
-          
+
         </listitem>
         <listitem id="DMLexCatalog">
           <para><link linkend="XMLCatalogs">[XML Catalog]</link> of <firstterm>DMLex-defined</firstterm> XML Schemas,</para>
@@ -3466,9 +2572,9 @@ programlisting code</programlisting>
             from those modules.</para>
         </listitem>
       </orderedlist>
-      
-    
-      
+
+
+
       <warning>
         <para>NVDL is not capable of discerning Schemtaron Warnings from Schematron Errors.
           Therefore all Schematron Warnings will be reported as Errors when initiating the
@@ -3478,42 +2584,18 @@ programlisting code</programlisting>
           distinction. Currently, the Warning/Error distinction is only important when evaluating
           adherence to Processing Requirements for [ELABORATE].</para>
       </warning>
-    
+
     </para>
      -->
     <!--   <para>[Relax NG schemas of <firstterm>DMLex Core and Modules</firstterm> are provided. Although the Relax NG schemas are intended as normative validation artifacts, the XML Schema 1.0 [add normative reference] schemas and Schematron [add normative reference] schemas have precedence in case of conflicting validation results.]
       [This is only relevant if Relax NG is provided.]</para> -->
-    <section id="schema_tree">
-    <title>Tree diagram of validation artifacts</title>
-
-<programlisting format="linespecific">
-    
-    <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>[Diagram currently contains tentative example structure with some potential references]<?oxy_custom_end ?>
-    
-<ulink url="http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/advanced_validation.nvdl"><code>Master NVDL Schema</code></ulink>
-   |      |
-   |    <ulink url="http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/dmlex-1.0.xsd"><code>Core XML Schema</code></ulink>|
-   |      |
-   |      +---<ulink url="http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/module_01.xsd"><code>Module 01 XML Schema</code></ulink>
-   |             |
-   |             +---<ulink url="https://www.w3.org/2005/11/its/its.xsd"><code>Internationalization Tag Set (ITS) Version 1.0</code></ulink>
-   |             |
-   |             +---<ulink url="http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/itsm.xsd"><code>XLIFF ITS Module XML Schema</code></ulink>
-   |
-   +---<ulink url="http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/dmlex-1.0.sch"><code>Core constraints</code></ulink>
-         |
-         +---<ulink url="http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/module_01.sch"><code>Module 01 Constraints</code></ulink>
-         
- 
-</programlisting>
-
-</section>
+    <!--  <xi:include href="core/tree.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> -->
     <!--  LEXIDMA TC may decide to include the schema listings
     <xi:include href="core/catalog.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-   
+
     <xi:include href="core/schema.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
  -->
-    <!--  language for potential inclusion of support schemas such as the xml namespace schema 
+    <!--  language for potential inclusion of support schemas such as the xml namespace schema
     <section>
       <title>Support Schemas</title>
       <para>Third party support schemas that are normatively referenced from this specification or
@@ -3558,7 +2640,7 @@ programlisting code</programlisting>
     <title>Specification Change Tracking</title>
     <para>This appendix will contain tracked changes after the csprd01 phase will have been
       reached.</para>
-    <!--   
+    <!-- 
     <xi:include href="ReviewChangeTracking/ReviewChangeTrack.xml"
       xmlns:xi="http://www.w3.org/2001/XInclude"/>
        -->
