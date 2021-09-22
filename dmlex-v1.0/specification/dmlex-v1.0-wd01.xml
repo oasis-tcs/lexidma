@@ -1477,7 +1477,7 @@
   <section>
   <title>Entry Structuring Module</title>
   <section>
-  <title><literal moreinfo="none">SenseGroup</literal> relation type</title>
+  <title><literal moreinfo="none">SenseGroupRelation</literal> relation type</title>
   <para>
     Represents the fact that a group of senses (all belonging to the
     same entry) should be grouped when presented to a human user.
@@ -1517,7 +1517,7 @@
   </itemizedlist>
 </section>
   <section>
-  <title><literal moreinfo="none">Subsense</literal> relation type</title>
+  <title><literal moreinfo="none">SubsenseRelation</literal> relation type</title>
   <para>
     Represents the fact that one sense (the subordinate sense) should be
     treated as a subsense of another sense (the subordinate). Both
@@ -1540,7 +1540,7 @@
   </itemizedlist>
 </section>
   <section>
-  <title><literal moreinfo="none">Subentry</literal> relation type</title>
+  <title><literal moreinfo="none">SubentryRelation</literal> relation type</title>
   <para>
     Represents the fact that one entry (= the subordinate entry) should
     be treated as a subentry inside the sense (= the superordinate
@@ -1583,7 +1583,7 @@
   <section>
   <title>Crossreferencing Module</title>
   <section>
-  <title><literal moreinfo="none">Variant</literal> relation type</title>
+  <title><literal moreinfo="none">VariantRelation</literal> relation type</title>
   <para>
     Represents the fact that two entries are understood by the
     lexicographer as variants (for example masculine and feminine
@@ -1601,7 +1601,7 @@
   </itemizedlist>
 </section>
   <section>
-  <title><literal moreinfo="none">Opposition</literal> relation type</title>
+  <title><literal moreinfo="none">OppositionRelation</literal> relation type</title>
   <para>
     Represents the fact that two senses (typically - but not necessarily
     - belonging to two different entries) have opposite meanings. This
@@ -1619,7 +1619,7 @@
   </itemizedlist>
 </section>
   <section>
-  <title><literal moreinfo="none">Similarity</literal> relation type</title>
+  <title><literal moreinfo="none">SimilarityRelation</literal> relation type</title>
   <para>
     Represents the fact that two or more senses (typically - but not
     necessarily - belonging to two different entries) have the same or
@@ -1638,7 +1638,7 @@
   </itemizedlist>
 </section>
   <section>
-  <title><literal moreinfo="none">Pertainment</literal> relation type</title>
+  <title><literal moreinfo="none">PertainmentRelation</literal> relation type</title>
   <para>
     Represents the fact that two or more senses (typically - but not
     necessarily - belonging to two different entries) are related to
@@ -1659,7 +1659,7 @@
   <section>
   <title>Inline Markup Module</title>
   <section>
-  <title><literal moreinfo="none">Placeholder</literal> markup type</title>
+  <title><literal moreinfo="none">PlaceholderMarker</literal> marker type</title>
   <para>
     Marks up a substring inside a headword (or inside a headword
     translation) which is not part of the expression itself but stands
@@ -1696,7 +1696,7 @@
   </itemizedlist>
 </section>
   <section>
-  <title><literal moreinfo="none">Headword</literal> markup type</title>
+  <title><literal moreinfo="none">HeadwordMarker</literal> marker type</title>
   <para>
     Marks up a substring inside an example (or inside an example
     translation) which corresponds to the headword (or to a translation

@@ -8,8 +8,8 @@
 
 <section>
   <title>Crossreferencing Module</title>
-  <xi:include href="relations/Variant.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="relations/Opposition.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="relations/Similarity.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="relations/Pertainment.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="relations/VariantRelation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="relations/OppositionRelation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="relations/SimilarityRelation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="relations/PertainmentRelation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 </section>

@@ -7,11 +7,11 @@
 ]>
 
 <section>
-  <title><literal>Subsense</literal> relation type</title>
+  <title><literal>SubentryRelation</literal> relation type</title>
   <para>
-    Represents the fact that one sense (the subordinate sense) should be
-    treated as a subsense of another sense (the subordinate). Both
-    senses belong to the same entry.
+    Represents the fact that one entry (= the subordinate entry) should
+    be treated as a subentry inside the sense (= the superordinate
+    sense) of another entry.
   </para>
   <para>
     Participants:
@@ -24,8 +24,25 @@
     </listitem>
     <listitem>
       <para>
-        the subordinate <literal>Sense</literal> (exactly one)
+        the subordinate <literal>Entry</literal> (exactly one)
       </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal>listingOrder</literal>
+      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            Can be implicit from the serialization.
+          </para>
+        </listitem>
+      </itemizedlist>
     </listitem>
   </itemizedlist>
 </section>

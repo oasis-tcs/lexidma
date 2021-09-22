@@ -7,7 +7,7 @@
 ]>
 
 <section>
-  <title><literal>Placeholder</literal> markup type</title>
+  <title><literal>PlaceholderMarker</literal> marker type</title>
   <para>
     Marks up a substring inside a headword (or inside a headword
     translation) which is not part of the expression itself but stands

@@ -8,7 +8,7 @@
 
 <section>
   <title>Entry Structuring Module</title>
-  <xi:include href="relations/SenseGroup.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="relations/Subsense.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="relations/Subentry.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="relations/SenseGroupRelation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="relations/SubsenseRelation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="relations/SubentryRelation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 </section>

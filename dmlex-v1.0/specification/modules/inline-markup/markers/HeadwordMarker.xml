@@ -7,19 +7,25 @@
 ]>
 
 <section>
-  <title><literal>Opposition</literal> relation type</title>
+  <title><literal>HeadwordMarker</literal> marker type</title>
   <para>
-    Represents the fact that two senses (typically - but not necessarily
-    - belonging to two different entries) have opposite meanings. This
-    includes antonyms, converses and so on.
+    Marks up a substring inside an example (or inside an example
+    translation) which corresponds to the headword (or to a translation
+    of the headword).
   </para>
   <para>
-    Participants:
+    Markup of:
   </para>
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal>Sense</literal> (exactly two)
+        <literal>text</literal> property of <literal>Example</literal>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>text</literal> property of
+        <literal>ExampleTranslation</literal>
       </para>
     </listitem>
   </itemizedlist>

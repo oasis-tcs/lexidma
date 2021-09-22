@@ -7,7 +7,7 @@
 ]>
 
 <section>
-  <title><literal>SenseGroup</literal> relation type</title>
+  <title><literal>SenseGroupRelation</literal> relation type</title>
   <para>
     Represents the fact that a group of senses (all belonging to the
     same entry) should be grouped when presented to a human user.

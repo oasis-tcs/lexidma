@@ -7,25 +7,20 @@
 ]>
 
 <section>
-  <title><literal>Headword</literal> markup type</title>
+  <title><literal>SimilarityRelation</literal> relation type</title>
   <para>
-    Marks up a substring inside an example (or inside an example
-    translation) which corresponds to the headword (or to a translation
-    of the headword).
+    Represents the fact that two or more senses (typically - but not
+    necessarily - belonging to two different entries) have the same or
+    similar meanings. This includes synonyms, near synonyms, immediate
+    hypernyms/hyponyms and so on.
   </para>
   <para>
-    Markup of:
+    Participants:
   </para>
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal>text</literal> property of <literal>Example</literal>
-      </para>
-    </listitem>
-    <listitem>
-      <para>
-        <literal>text</literal> property of
-        <literal>ExampleTranslation</literal>
+        <literal>Sense</literal> (two or more)
       </para>
     </listitem>
   </itemizedlist>
