@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section>
+  <title><literal>LabelMapping</literal> object type</title>
+  <para>
+    Represents the fact that an item in the controlled vocabulary is
+    equivalent to item provided by en external authority.
+  </para>
+  <para>
+    Parents:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal>PartOfSpeechLabel</literal>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>TranslationPartOfSpeechLabel</literal>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>UsageLabel</literal>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>TranslationUsageLabel</literal>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>InflectedFormLabel</literal>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>TranslationInflectedFormLabel</literal>
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal>sameAs</literal> (URI)
+      </para>
+    </listitem>
+  </itemizedlist>
+</section>

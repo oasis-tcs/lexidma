@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section>
+  <title><literal>LexicographicResource</literal> object type</title>
+  <para>
+    A data set which can be viewed and used by humans as a dictionary
+    and - simultaneously - ingested, processed and understood by
+    software agents as a machine-readable database. Terminological note:
+    <emphasis>lexicographic</emphasis> resource, not
+    <emphasis>lexical</emphasis>.
+  </para>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal>language</literal> (optional, IETF language code)
+      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            The language of headwords, definitions, examples.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>transcriptionScheme</literal> (optional, reference to
+        some external authority - which?)
+      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            The scheme (e.g. IPA) in which the
+            <literal>transcription</literal> property of
+            <literal>Pronunciation</literal> objects is given.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Children:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal>Entry</literal> (one or more)
+      </para>
+    </listitem>
+  </itemizedlist>
+</section>

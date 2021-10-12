@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section>
+  <title>The Core Specification</title>
+  <para>
+    The DMLex Core is for monolingual lexical resources, where headwords, definitions, examples etc. are all in one and the same language.
+  </para>
+  <xi:include href="objects/LexicographicResource.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objects/Entry.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objects/Sense.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <section>
+    <title>The difference between entries and senses</title>
+    <para>
+      An <emphasis role="strong">entry</emphasis> is a container for
+      &quot;formal&quot; properties of the headword such as orthography,
+      morphology, syntax and pronunciation. A
+      <emphasis role="strong">sense</emphasis> is a container for those of
+      the headword's properties which are statements about semantics and
+      pragmatics.
+    </para>    
+  </section>
+  <xi:include href="objects/PartOfSpeech.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objects/Usage.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objects/Pronunciation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objects/InflectedForm.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objects/Example.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</section>

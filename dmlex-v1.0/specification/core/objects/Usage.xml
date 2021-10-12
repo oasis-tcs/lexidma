@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section>
+  <title><literal>Usage</literal> object type</title>
+  <para>
+    An indication of some restriction on the use of the lexical item.
+    The restriction can be pragmatic (time, region, register), semantic
+    (domain, semantic type) or formal ('no plural').
+  </para>
+  <para>
+    Child of:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal>Sense</literal>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>Pronunciation</literal>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>InflectedForm</literal>
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal>value</literal> (non-empty string) </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para> Can be constrained by the DMLex Controlled Vocabularies Module. </para>
+        </listitem>
+        <listitem>
+          <para> Its type (eg. whether register, temporal, geographic etc) can be specified by the
+            by the DMLex Controlled Vocabularies Module. </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>listingOrder</literal>
+      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para> Can be implicit from the serialization.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+  </itemizedlist></section>
