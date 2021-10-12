@@ -48,9 +48,9 @@
         <email>simon.krek@ijs.si</email>
       </editor>
     </authorgroup>
-    <pubdate>21 December 2020</pubdate>
+    <pubdate>12 October 2021</pubdate>
     <copyright>
-      <year>2020</year>
+      <year>2021</year>
       <holder>OASIS Open, Inc. All Rights Reserved.</holder>
     </copyright>
     <legalnotice role="additional">
@@ -193,7 +193,7 @@
       <para>When referencing this specification the following citation format should be used:</para>
       <para><citation>DMLex-1.0</citation></para>
       <para><emphasis>Data Model for Lexicography Version 1.0</emphasis>. Edited by David
-        Filip and Simon Krek. 21 December 2020. OASIS Working Draft 01. <ulink url="http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/dmlex-v1.0-wd01.html">http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/dmlex-v1.0-wd01.html</ulink>. Latest
+        Filip and Simon Krek. 12 October 2021. OASIS Working Draft 01. <ulink url="http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/dmlex-v1.0-wd01.html">http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/dmlex-v1.0-wd01.html</ulink>. Latest
         version: <ulink url="http://docs.oasis-open.org/lexidma/dmlex/v1.0/dmlex-v1.0.html">http://docs.oasis-open.org/lexidma/dmlex/v1.0/dmlex-v1.0.html</ulink>. </para>
       <!-- 
       <para>The non-normative errata page for this specification is located at <ulink
@@ -203,7 +203,7 @@
     </legalnotice>
     <legalnotice role="notices">
       <title>Notices</title>
-      <para>Copyright © OASIS<!-- ® --> Open 2020. All Rights Reserved.</para>
+      <para>Copyright © OASIS<!-- ® --> Open 2021. All Rights Reserved.</para>
       <para>All capitalized terms in the following text have the meanings assigned to them in the
         OASIS Intellectual Property Rights Policy (the "OASIS IPR Policy"). The full <ulink url="https://www.oasis-open.org/policies-guidelines/ipr">Policy</ulink> may be found at
         the OASIS website.</para>
