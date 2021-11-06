@@ -19,8 +19,8 @@
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal>Sense</literal> (exactly two)
-      </para>
+        <literal>Sense</literal> (exactly two, both in the same
+          <literal>LexicographicResource</literal>) </para>
     </listitem>
   </itemizedlist>
 </section>

@@ -33,9 +33,8 @@
     </listitem>
     <listitem>
       <para>
-        <literal>transcriptionScheme</literal> (optional, reference to
-        some external authority - which?)
-      </para>
+        <literal>transcriptionScheme</literal> (optional, IETF language code, eg. <literal>en-fonipa</literal> for
+        English IPA) </para>
       <itemizedlist spacing="compact">
         <listitem>
           <para>
