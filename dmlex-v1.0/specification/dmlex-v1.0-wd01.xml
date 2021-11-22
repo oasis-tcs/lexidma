@@ -48,7 +48,7 @@
         <email>simon.krek@ijs.si</email>
       </editor>
     </authorgroup>
-    <pubdate>12 October 2021</pubdate>
+    <pubdate>6 November 2021</pubdate>
     <copyright>
       <year>2021</year>
       <holder>OASIS Open, Inc. All Rights Reserved.</holder>
@@ -193,7 +193,7 @@
       <para>When referencing this specification the following citation format should be used:</para>
       <para><citation>DMLex-1.0</citation></para>
       <para><emphasis>Data Model for Lexicography Version 1.0</emphasis>. Edited by David
-        Filip and Simon Krek. 12 October 2021. OASIS Working Draft 01. <ulink url="http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/dmlex-v1.0-wd01.html">http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/dmlex-v1.0-wd01.html</ulink>. Latest
+        Filip and Simon Krek. 6 November 2021. OASIS Working Draft 01. <ulink url="http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/dmlex-v1.0-wd01.html">http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/dmlex-v1.0-wd01.html</ulink>. Latest
         version: <ulink url="http://docs.oasis-open.org/lexidma/dmlex/v1.0/dmlex-v1.0.html">http://docs.oasis-open.org/lexidma/dmlex/v1.0/dmlex-v1.0.html</ulink>. </para>
       <!-- 
       <para>The non-normative errata page for this specification is located at <ulink
@@ -592,9 +592,8 @@
     </listitem>
     <listitem>
       <para>
-        <literal moreinfo="none">transcriptionScheme</literal> (optional, reference to
-        some external authority - which?)
-      </para>
+        <literal moreinfo="none">transcriptionScheme</literal> (optional, IETF language code, eg. <literal moreinfo="none">en-fonipa</literal> for
+        English IPA) </para>
       <itemizedlist spacing="compact">
         <listitem>
           <para>
@@ -814,11 +813,8 @@
   </itemizedlist></section>
   <section>
   <title><literal moreinfo="none">Usage</literal> object type</title>
-  <para>
-    An indication of some restriction on the use of the lexical item.
-    The restriction can be pragmatic (time, region, register), semantic
-    (domain, semantic type) or formal ('no plural').
-  </para>
+  <para> An indication of some pragmatic restriction on the use of the lexical item: time, region,
+    register, domain... </para>
   <para>
     Child of:
   </para>
@@ -849,10 +845,6 @@
       <itemizedlist spacing="compact">
         <listitem>
           <para> Can be constrained by the DMLex Controlled Vocabularies Module. </para>
-        </listitem>
-        <listitem>
-          <para> Its type (eg. whether register, temporal, geographic etc) can be specified by the
-            by the DMLex Controlled Vocabularies Module. </para>
         </listitem>
       </itemizedlist>
     </listitem>
@@ -887,20 +879,20 @@
       </para>
     </listitem>
   </itemizedlist>
-  <para>
-    Properties (at least one):
-  </para>
+  <para> Properties: </para>
   <itemizedlist spacing="compact">
     <listitem>
-      <para>
-        <literal moreinfo="none">transcription</literal> (non-empty string)
-      </para>
-    </listitem>
-    <listitem>
-      <para>
-        <literal moreinfo="none">recording</literal> (string: name or URL of a sound
-        file)
-      </para>
+      <para>At least one of:</para>
+      <itemizedlist>
+        <listitem>
+          <para>
+            <literal moreinfo="none">transcription</literal> (non-empty string) </para>
+        </listitem>
+        <listitem>
+          <para>
+            <literal moreinfo="none">recording</literal> (string: name or URL of a sound file) </para>
+        </listitem>
+      </itemizedlist>
     </listitem>
     <listitem>
       <para>
@@ -1582,6 +1574,8 @@
 </section>
   <section>
   <title>Crossreferencing Module</title>
+  <para>Used to construct clickable (or otherwise navigable) hyperlinks between objects within the same
+    <literal moreinfo="none">LexicographicResource</literal>.</para>
   <section>
   <title><literal moreinfo="none">VariantRelation</literal> relation type</title>
   <para>
@@ -1595,8 +1589,8 @@
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal moreinfo="none">Entry</literal> (two or more)
-      </para>
+        <literal moreinfo="none">Entry</literal> (two or more, all in the same
+          <literal moreinfo="none">LexicographicResource</literal>) </para>
     </listitem>
   </itemizedlist>
 </section>
@@ -1613,45 +1607,93 @@
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal moreinfo="none">Sense</literal> (exactly two)
-      </para>
+        <literal moreinfo="none">Sense</literal> (exactly two, both in the same
+          <literal moreinfo="none">LexicographicResource</literal>) </para>
     </listitem>
   </itemizedlist>
 </section>
   <section>
   <title><literal moreinfo="none">SimilarityRelation</literal> relation type</title>
-  <para>
-    Represents the fact that two or more senses (typically - but not
-    necessarily - belonging to two different entries) have the same or
-    similar meanings. This includes synonyms, near synonyms, immediate
-    hypernyms/hyponyms and so on.
-  </para>
+  <para> Represents the fact that two or more senses (typically - but not necessarily - belonging to
+    two different entries) have the same or similar meanings. This includes synonyms, near synonyms,
+    close hypernyms/hyponyms and so on. </para>
   <para>
     Participants:
   </para>
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal moreinfo="none">Sense</literal> (two or more)
-      </para>
+        <literal moreinfo="none">Sense</literal> (two or more, all in the same
+          <literal moreinfo="none">LexicographicResource</literal>) </para>
     </listitem>
   </itemizedlist>
 </section>
   <section>
-  <title><literal moreinfo="none">PertainmentRelation</literal> relation type</title>
-  <para>
-    Represents the fact that two or more senses (typically - but not
-    necessarily - belonging to two different entries) are related to
-    each other, in ways other than opposition and similarity.
-  </para>
+  <title><literal moreinfo="none">RelevanceRelation</literal> relation type</title>
+  <para> Represents the fact that two or more senses (typically - but not necessarily - belonging to
+    two different entries) are relevant to each other, in ways other than opposition and similarity.
+    This relation type is suitable for connecting words (more accurately: senses of words) which are
+    connected to one another in experience (= one encounters them together) but are not any kind of
+    "nyms", eg. <emphasis>money</emphasis>, <emphasis>pay</emphasis>, <emphasis>bill</emphasis>,
+      <emphasis>charge</emphasis>...</para>
   <para>
     Participants:
   </para>
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal moreinfo="none">Sense</literal> (two or more)
-      </para>
+        <literal moreinfo="none">Sense</literal> (two or more, all in the same
+          <literal moreinfo="none">LexicographicResource</literal>) </para>
+    </listitem>
+  </itemizedlist>
+</section>
+</section>
+  <section>
+  <title>Dictionary Linking Module</title>
+  <para>Used to construct links between objects from different lexicographic resources.</para>
+  <section>
+  <title><literal moreinfo="none">SameRelation</literal> relation type</title>
+  <para> Represents the fact that two or more senses from two or more lexicographic resources are
+    semantically the same.</para>
+  <para>
+    Participants:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">Sense</literal> (two or more, no two of which belong to the same
+          <literal moreinfo="none">LexicographicResource</literal>) </para>
+    </listitem>
+  </itemizedlist>
+</section>
+  <section>
+  <title><literal moreinfo="none">SubsumptionRelation</literal> relation type</title>
+  <para> Represents the fact that one sense from one lexicographic resource is semantically wholly
+    contained inside another sense from another lexicographic resource.</para>
+  <para>
+    Participants:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>the broader <literal moreinfo="none">Sense</literal> (exactly one) </para>
+    </listitem>
+    <listitem>
+      <para>the narrower <literal moreinfo="none">Sense</literal> (exactly one)</para>
+    </listitem>
+  </itemizedlist>
+  <para>The two senses must not be within the <literal moreinfo="none">LexicographicResource</literal>.</para>
+</section>
+  <section>
+  <title><literal moreinfo="none">OverlapRelation</literal> relation type</title>
+  <para> Represents the fact that two or more senses from two or more lexicographic resources
+    overlap semantically, without either one being semantically wholly contained inside the
+    other.</para>
+  <para> Participants: </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">Sense</literal> (two or more, no two of which belong to the same
+          <literal moreinfo="none">LexicographicResource</literal>) </para>
     </listitem>
   </itemizedlist>
 </section>
@@ -1857,15 +1899,6 @@
     Properties:
   </para>
   <itemizedlist spacing="compact">
-    <listitem>
-      <para>
-        <literal moreinfo="none">type</literal> (one of: <literal moreinfo="none">normative</literal>,
-        <literal moreinfo="none">register</literal>, <literal moreinfo="none">temporal</literal>,
-        <literal moreinfo="none">geographic</literal>, <literal moreinfo="none">sociocultural</literal>,
-        <literal moreinfo="none">domain</literal>, <literal moreinfo="none">frequency</literal>,
-        <literal moreinfo="none">attitude</literal>)
-      </para>
-    </listitem>
     <listitem>
       <para>
         <literal moreinfo="none">value</literal> (non-empty string)

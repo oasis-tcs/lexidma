@@ -7,19 +7,15 @@
 ]>
 
 <section>
-  <title><literal>VariantRelation</literal> relation type</title>
-  <para>
-    Represents the fact that two entries are understood by the
-    lexicographer as variants (for example masculine and feminine
-    counterparts, spelling variants).
-  </para>
-  <para>
-    Participants:
-  </para>
+  <title><literal>OverlapRelation</literal> relation type</title>
+  <para> Represents the fact that two or more senses from two or more lexicographic resources
+    overlap semantically, without either one being semantically wholly contained inside the
+    other.</para>
+  <para> Participants: </para>
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal>Entry</literal> (two or more, all in the same
+        <literal>Sense</literal> (two or more, no two of which belong to the same
           <literal>LexicographicResource</literal>) </para>
     </listitem>
   </itemizedlist>
