@@ -7,10 +7,13 @@
 ]>
 
 <section>
-  <title><literal>SimilarityRelation</literal> relation type</title>
+  <title><literal>RelevanceRelation</literal> relation type</title>
   <para> Represents the fact that two or more senses (typically - but not necessarily - belonging to
-    two different entries) have the same or similar meanings. This includes synonyms, near synonyms,
-    close hypernyms/hyponyms and so on. </para>
+    two different entries) are relevant to each other, in ways other than opposition and similarity.
+    This relation type is suitable for connecting words (more accurately: senses of words) which are
+    connected to one another in experience (= one encounters them together) but are not any kind of
+    "nyms", eg. <emphasis>money</emphasis>, <emphasis>pay</emphasis>, <emphasis>bill</emphasis>,
+      <emphasis>charge</emphasis>...</para>
   <para>
     Participants:
   </para>

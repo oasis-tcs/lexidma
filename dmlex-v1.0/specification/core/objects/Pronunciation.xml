@@ -26,20 +26,20 @@
       </para>
     </listitem>
   </itemizedlist>
-  <para>
-    Properties (at least one):
-  </para>
+  <para> Properties: </para>
   <itemizedlist spacing="compact">
     <listitem>
-      <para>
-        <literal>transcription</literal> (non-empty string)
-      </para>
-    </listitem>
-    <listitem>
-      <para>
-        <literal>recording</literal> (string: name or URL of a sound
-        file)
-      </para>
+      <para>At least one of:</para>
+      <itemizedlist>
+        <listitem>
+          <para>
+            <literal>transcription</literal> (non-empty string) </para>
+        </listitem>
+        <listitem>
+          <para>
+            <literal>recording</literal> (string: name or URL of a sound file) </para>
+        </listitem>
+      </itemizedlist>
     </listitem>
     <listitem>
       <para>
