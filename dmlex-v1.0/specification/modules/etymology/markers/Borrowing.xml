@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section>
+  <title><literal>Borrowing</literal> </title>
+  <para>
+      Marks up a form that is the source of borrowed loanword
+  </para>
+  <para>
+      Markup of:
+  </para>
+  <itemizedlist spacing="compact">
+      <listitem>
+          <para>
+              <literal>text</literal> property of <literal>Etymology</literal>
+          </para>
+      </listitem>
+  </itemizedlist>
+  <para>
+      Properties:
+  </para>
+  <itemizedlist spacing="compact">
+      <listitem>
+          <para>
+              <literal>language</literal> (ISO-639 code) the language of the borrowed form
+          </para>
+      </listitem>
+      <listitem>
+          <para>
+              <literal>note</literal> (non-empty string) extra information about the language, for example the precise time (e.g., 16th century) or geographical variants
+          </para>
+      </listitem>
+      <listitem>
+          <para>
+              <literal>n</literal> (integer) an identifier used to connect forms with translations
+          </para>
+      </listitem>
+  </itemizedlist>
+</section>
+ 

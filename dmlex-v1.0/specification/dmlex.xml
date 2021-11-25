@@ -493,6 +493,7 @@
   <xi:include href="modules/crossreferencing/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="modules/inline-markup/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="modules/controlled-vocabularies/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="modules/etymology/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   
 
   <!--Serializations includes -->
