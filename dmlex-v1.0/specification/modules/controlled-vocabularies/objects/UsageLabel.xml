@@ -19,15 +19,6 @@
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal>type</literal> (one of: <literal>normative</literal>,
-        <literal>register</literal>, <literal>temporal</literal>,
-        <literal>geographic</literal>, <literal>sociocultural</literal>,
-        <literal>domain</literal>, <literal>frequency</literal>,
-        <literal>attitude</literal>)
-      </para>
-    </listitem>
-    <listitem>
-      <para>
         <literal>value</literal> (non-empty string)
       </para>
     </listitem>
