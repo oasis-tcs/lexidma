@@ -37,4 +37,33 @@
       </para>
     </listitem>
   </itemizedlist>
+  
+  <example>
+    <title>Example: restricting part-of-speech values</title>
+    <programlisting>LexicographicResource: labelLanguage="en"
+    PartOfSpeechLabel: value="n", displayValue="noun"
+    PartOfSpeechLabel: value="v", displayValue="verb"
+    PartOfSpeechLabel: value="adj", displayValue= "adjective"
+    Entry: headword="aardvark"
+        PartOfSpeech: value="n"
+    Entry: headword="speak"
+        PartOfSpeech: value="v"
+    Entry: headword="small"
+        PartOfSpeech: value="adj"</programlisting>
+  </example>
+  
+  <example>
+    <title>Example: mapping part-of-speech values to external inventories</title>
+    <programlisting>PartOfSpeechLabel: value="n", displayValue="noun"
+    LabelMapping: sameAs="http://www.lexinfo.net/ontology/3.0/lexinfo#noun"</programlisting>
+  </example>
+  
+  <example>
+    <title>Example: mapping complex part-of-speech values to external inventories</title>
+    <programlisting>PartOfSpeechLabel: value="Nma", displayValue="masculine animate noun"
+    LabelMapping: sameAs="http://www.lexinfo.net/ontology/3.0/lexinfo#noun"
+    LabelMapping: sameAs="http://www.lexinfo.net/ontology/3.0/lexinfo#masculine"
+    LabelMapping: sameAs="http://www.lexinfo.net/ontology/3.0/lexinfo#animate"</programlisting>
+  </example>
+  
 </section>

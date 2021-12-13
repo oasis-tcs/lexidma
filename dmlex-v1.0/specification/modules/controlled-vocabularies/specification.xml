@@ -15,6 +15,10 @@
   <xi:include href="objects/PartOfSpeechLabel.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objects/TranslationPartOfSpeechLabel.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objects/UsageLabel.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objects/EntrySetLabel.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objects/SenseSetLabel.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objects/SensePairLabel.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objects/SenseTupleLabel.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objects/TranslationUsageLabel.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objects/InflectedFormLabel.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objects/TranslationInflectedFormLabel.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>

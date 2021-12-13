@@ -38,4 +38,21 @@
       </para>
     </listitem>
   </itemizedlist>
+  
+  <example>
+    <title>Example: restricting the values of usage labels</title>
+    <programlisting>LexicographicResource: labelLanguage="en"
+    UsageLabel: value="sl", displayValue="slang"
+    UsageLabel: value="vul", displayValue="vulgar"</programlisting>
+  </example>
+  
+  <example>
+    <title>Example: mapping the values of usage labels to external ontologies</title>
+    <programlisting>LexicographicResource: labelLanguage="en"
+    UsageLabel: value="sl", displayValue="slang"
+        LabelMapping: sameAs="http://www.lexinfo.net/ontology/3.0/lexinfo#slangRegister"
+    UsageLabel: value="vul", displayValue="vulgar"
+        LabelMapping: sameAs="http://www.lexinfo.net/ontology/3.0/lexinfo#vulgarRegister"</programlisting>
+  </example>
+  
 </section>

@@ -31,7 +31,7 @@
         <literal>value</literal> (non-empty string) </para>
       <itemizedlist spacing="compact">
         <listitem>
-          <para> Can be constrained by the DMLex Controlled Vocabularies Module. </para>
+          <para>Can be constrained and mapped to external authorities by the DMLex Controlled Vocabularies Module.</para>
         </listitem>
       </itemizedlist>
     </listitem>
@@ -45,4 +45,18 @@
         </listitem>
       </itemizedlist>
     </listitem>
-  </itemizedlist></section>
+  </itemizedlist>
+  <note>
+    <para>
+      If you want to model other grammatical properties of the headword besides part of speech, such as
+      gender (of nouns) or aspect (of verbs), the recommended way to do that in DMLex is tto conflate them
+      to the part-of-speech label, for example "masculine noun" and "feminine noun",
+      or "perfective verb" and "imperfective verb". 
+    </para>
+  </note>
+  <example>
+    <title>Example of a part of speech object</title>
+    <programlisting>Entry: headword="aardvark"
+    PartOfSpeech: value="noun"</programlisting>
+  </example>
+</section>

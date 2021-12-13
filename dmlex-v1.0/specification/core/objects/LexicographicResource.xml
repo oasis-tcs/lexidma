@@ -11,10 +11,15 @@
   <para>
     A data set which can be viewed and used by humans as a dictionary
     and - simultaneously - ingested, processed and understood by
-    software agents as a machine-readable database. Terminological note:
-    <emphasis>lexicographic</emphasis> resource, not
-    <emphasis>lexical</emphasis>.
+    software agents as a machine-readable database.
   </para>
+  <warning>
+    <para>
+      The correct name of this data type in DMLex is  
+      <emphasis>lexicographic</emphasis> resource, not
+      <emphasis>lexical</emphasis>.
+    </para>
+  </warning>
   <para>
     Properties:
   </para>
@@ -30,6 +35,14 @@
           </para>
         </listitem>
       </itemizedlist>
+      <note>
+        <para>
+          DMLex is based on the assumption that all headwords in a single lexicographic resource
+          are in the same language, and that definitions and examples, if any occur in the resource, 
+          are in that language too. The <literal>language</literal> property informs potential users
+          of the resource which language that is.
+        </para>
+      </note>
     </listitem>
     <listitem>
       <para>
@@ -44,6 +57,13 @@
           </para>
         </listitem>
       </itemizedlist>
+      <note>
+        <para>
+          DMLex is based on the assumption that, if you do use any pronunciation transcriptions in your (monolingual)
+          lexicographic resource, they all follow the same scheme. The <literal>transcriptionScheme</literal>
+          tells potential users of the lexicographic resource which scheme that is.
+        </para>
+      </note>
     </listitem>
   </itemizedlist>
   <para>
@@ -56,4 +76,17 @@
       </para>
     </listitem>
   </itemizedlist>
+  <example>
+    <title>Example of a lexicographic resource</title>
+    <programlisting>LexicographicResource: language="en"
+    Entry: headword="aardvark"
+        Sense: ...
+        Sense: ...
+    Entry: headword="abacus"
+        Sense: ...
+        Sense: ...
+    Entry: headword="abandon"
+        Sense: ...
+        Sense: ...</programlisting>    
+  </example>
 </section>

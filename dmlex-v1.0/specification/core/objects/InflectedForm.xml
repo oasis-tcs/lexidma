@@ -32,10 +32,7 @@
       </para>
       <itemizedlist spacing="compact">
         <listitem>
-          <para>
-            Can be constrained by the DMLex Controlled Vocabularies
-            Module.
-          </para>
+          <para>Can be constrained and mapped to external authorities by the DMLex Controlled Vocabularies Module.</para>
         </listitem>
       </itemizedlist>
     </listitem>
@@ -70,4 +67,11 @@
       </para>
     </listitem>
   </itemizedlist>
+  <example>
+    <title>Example of an entry with two inflected forms</title>
+    <programlisting>Entry: headword="deirfiúr"
+    PartOfSpeech: value="feminine noun"
+    InflectedForm: label="genitive singular", value="deirféar"
+    InflectedForm: label="plural", value="deirfiúracha"</programlisting>
+  </example>
 </section>

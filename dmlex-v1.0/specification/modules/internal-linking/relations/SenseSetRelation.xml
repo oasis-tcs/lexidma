@@ -7,11 +7,11 @@
 ]>
 
 <section>
-  <title><literal>TranslationUsageLabel</literal> object type</title>
+  <title><literal>SenseSetRelation</literal> relation type</title>
   <para>
-    A <literal>TranslationUsageLabel</literal> represents one of
-    several allowed values for the <literal>value</literal> property
-    of <literal>TranslationLabel</literal> objects.
+    Represents an unordered set of two or more senses (typically - but not necessarily -
+    belonging to two or more different entries). Recommended for encoding synonyms, near synonyms
+    etc.
   </para>
   <para>
     Properties:
@@ -19,23 +19,22 @@
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal>value</literal> (non-empty string)
+        <literal>label</literal> (non-empty string) eg. "synonyms"
       </para>
-    </listitem>
-    <listitem>
-      <para>
-        <literal>displayValue</literal> (optional)
-      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>Can be constrained and mapped to external authorities by the DMLex Controlled Vocabularies Module.</para>
+        </listitem>
+      </itemizedlist>
     </listitem>
   </itemizedlist>
   <para>
-    Children:
+    Participants:
   </para>
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal>LabelMapping</literal> (zero or more)
-      </para>
+        <literal>Sense</literal> (two or more, all in the same <literal>LexicographicResource</literal>) </para>
     </listitem>
   </itemizedlist>
 </section>

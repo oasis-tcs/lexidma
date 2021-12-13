@@ -38,4 +38,27 @@
       </para>
     </listitem>
   </itemizedlist>
+  
+  <example>
+    <title>Example: restricting the labels of inflected forms</title>
+    <programlisting>LexicographicResource: language="ga", labelLanguage="en"
+    PartOfSpeechLabel: value="nf", displayValue="feminine noun"
+    InflectedFormLabel: value="gs", displayValue="genitive singular"
+    InflectedFormLabel: value="pl", displayValue="plural"
+    Entry headword="deirfiúr"
+        PartOfSpeech: value="nf"
+        InflectedForm: label="gs", value="deirféar"
+        InflectedForm: label="pl", value="deirfiúracha"</programlisting>
+  </example>
+  
+  <example>
+    <title>Example: mapping the labels of inflected forms to external inventories</title>
+    <programlisting>InflectedFormLabel: value="gs", displayValue="genitive singular"
+    LabelMapping: sameAs="http://www.lexinfo.net/ontology/3.0/lexinfo#singular"
+    LabelMapping: sameAs= "http://www.lexinfo.net/ontology/3.0/lexinfo#genitiveCase"
+InflectedFormLabel: value="pl", displayValue="plural"
+    LabelMapping: sameAs="http://www.lexinfo.net/ontology/3.0/lexinfo#plural"</programlisting>
+  </example>
+  
+  
 </section>

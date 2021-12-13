@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section>
+  <title><literal>SenseTupleRelation</literal> relation type</title>
+  <para> Represents a directed pair of two senses (typically - but not necessarily - belonging to
+    two different entries). Recommended for representing pairs of hypernym/hyponym,
+    broader/narrower, holonym/meronym. </para>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal>label</literal> (non-empty string) eg. "hypernym/hyponym" </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>Can be constrained and mapped to external authorities by the DMLex Controlled Vocabularies Module.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Participants:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para> the first <literal>Sense</literal> of the pair</para>
+    </listitem>
+    <listitem>
+      <para> the second <literal>Sense</literal> of the pair</para>
+    </listitem>
+  </itemizedlist>
+  
+</section>

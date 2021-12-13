@@ -33,6 +33,26 @@
     </listitem>
     <listitem>
       <para>
+        <literal>EntrySetLabel</literal>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>SenseSetLabel</literal>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>SensePairLabel</literal>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>SenseTupleLabel</literal>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
         <literal>TranslationUsageLabel</literal>
       </para>
     </listitem>

@@ -7,11 +7,11 @@
 ]>
 
 <section>
-  <title><literal>TranslationUsageLabel</literal> object type</title>
+  <title><literal>SensePairLabel</literal> object type</title>
   <para>
-    A <literal>TranslationUsageLabel</literal> represents one of
-    several allowed values for the <literal>value</literal> property
-    of <literal>TranslationLabel</literal> objects.
+    Represents one of several
+    allowed values for the <literal>label</literal> property of
+    <literal>SensePair</literal> objects.
   </para>
   <para>
     Properties:

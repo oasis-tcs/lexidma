@@ -33,7 +33,15 @@
       <itemizedlist>
         <listitem>
           <para>
-            <literal>transcription</literal> (non-empty string) </para>
+            <literal>transcription</literal> (non-empty string)
+          </para>
+          <note>
+            <para>
+              The scheme of the transcription (e.g. IPA) can be communicated to
+              users of the lexicographic resource through the <literal>transcriptionScheme</literal>
+              property of the <literal>LexicographicResource</literal> object.
+            </para>
+          </note>
         </listitem>
         <listitem>
           <para>
@@ -47,7 +55,7 @@
       </para>
       <itemizedlist spacing="compact">
         <listitem>
-          <para> Can be implicit from the serialization.</para>
+          <para>Can be implicit from the serialization.</para>
         </listitem>
       </itemizedlist>
     </listitem>
@@ -62,4 +70,19 @@
       </para>
     </listitem>
   </itemizedlist>
+  <example>
+    <title>Example of pronunciation given as transcription</title>
+    <programlisting>Entry: headword="aardvark"
+    Pronunciation: transcription="a:rdva:rk"</programlisting>
+  </example>
+  <example>
+    <title>Example of pronunciation given as a sound file</title>
+    <programlisting>Entry: headword="aardvark"
+    Pronunciation: recording="aardvark.mp3"</programlisting>
+  </example>
+  <example>
+    <title>Example of pronunciation given both ways</title>
+    <programlisting>Entry: headword="aardvark"
+    Pronunciation: transcription="a:rdva:rk", recording="aardvark.mp3"</programlisting>
+  </example>
 </section>

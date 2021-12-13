@@ -47,6 +47,26 @@
     </listitem>
     <listitem>
       <para>
+        <literal>EntrySetLabel</literal> (zero or more)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>SenseSetLabel</literal> (zero or more)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>SensePairLabel</literal> (zero or more)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>SenseTupleLabel</literal> (zero or more)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
         <literal>TranslationUsageLabel</literal> (zero or more)
       </para>
     </listitem>

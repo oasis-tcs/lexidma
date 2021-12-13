@@ -7,11 +7,11 @@
 ]>
 
 <section>
-  <title><literal>TranslationUsageLabel</literal> object type</title>
+  <title><literal>SensePairRelation</literal> relation type</title>
   <para>
-    A <literal>TranslationUsageLabel</literal> represents one of
-    several allowed values for the <literal>value</literal> property
-    of <literal>TranslationLabel</literal> objects.
+    Represents an undirected pair of two senses (typically - but not necessarily - belonging to
+    two different entries). Recommended for representing pairs of antonyms, opposites, converses and
+    so on.
   </para>
   <para>
     Properties:
@@ -19,22 +19,22 @@
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal>value</literal> (non-empty string)
+        <literal>label</literal> (non-empty string) eg. "antonyms"
       </para>
-    </listitem>
-    <listitem>
-      <para>
-        <literal>displayValue</literal> (optional)
-      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>Can be constrained and mapped to external authorities by the DMLex Controlled Vocabularies Module.</para>
+        </listitem>
+      </itemizedlist>
     </listitem>
   </itemizedlist>
   <para>
-    Children:
+    Participants:
   </para>
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal>LabelMapping</literal> (zero or more)
+        <literal>Sense</literal> (exactly two, both in the same <literal>LexicographicResource</literal>)
       </para>
     </listitem>
   </itemizedlist>
