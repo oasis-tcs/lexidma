@@ -9,7 +9,7 @@
 <section>
   <title>External Linking Module</title>
   <para>Used to construct links between objects from different lexicographic resources.</para>
-  <xi:include href="relations/SameRelation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="relations/SubsumptionRelation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="relations/OverlapRelation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="relations/Same.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="relations/Subsumption.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="relations/Overlap.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 </section>

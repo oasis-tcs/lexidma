@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section>
+  <title><literal>SenseEntryTuple</literal> relation type</title>
+  <para>Represents a directed pair of a sense and an entry, such that the entry does
+      <emphasis>not</emphasis> cotain the sense. This type is recommended to be used for situations
+    when the entry is expected to be show to a human user as a subentry inside the sense of another
+    entry.</para>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal>caption</literal> (non-empty string) eg. "subentry" </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>Can be constrained and mapped to external authorities by the DMLex Controlled Vocabularies Module.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Participants (all in the same <literal>LexicographicResource</literal>):
+  </para>
+  <itemizedlist spacing="compact">
+    
+    <listitem>
+      <para><literal>superordinate</literal> (exacly one)</para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            Reference to a <literal>Sense</literal> object.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+    
+    <listitem>
+      <para><literal>subordinate</literal> (exacly one)</para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            Reference to an <literal>Entry</literal> object.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+    
+  </itemizedlist>
+  
+  <example>
+    <title>Example: encoding a subentry at subsense level</title>
+    <para>
+      In this example, when the entry for safe is being shown to a human user,
+      the entry for better safe than sorry is supposed to appear as a subentry at at the end of the first sense.
+    </para>
+    <programlisting>Entry[#safe]: headword="safe"
+  Sense[#safe-sense-1]: indicator="protected from harm"
+    Example: value="It isn't safe to park here."
+  Sense[#safe-sense-2]: indicator="not likely to cause harm"
+    Example: value="Is the ride safe for a small child?"
+    
+Entry[#bsts]: headword="better safe than sorry"
+  Sense: definition="you should be careful even if it seems unnecessary"
+  
+SenseEntryTuple: caption: "subentry" superordinate="#safe-sense-1" subordinate="#bsts"</programlisting>
+  </example>
+  
+  <example>
+    <title>Example: encoding a subentry at sense level</title>
+    <para>
+      In this example, when the entry for bible is being shown to the human user,
+      the entry for the Bible is supposed to be appear there as a subentry, as if it were its first sense. 
+    </para>
+    <programlisting>Entry[#the-bible]: headword="the Bible"
+  Sense: "the book considered holy by Christians..."
+  
+Entry[#bible]: headword="bible" 
+  Sense[#bible-sense-1]: //empty sense, serves as a container for "the Bible"
+  Sense[#bible-sense-2]: definition="a book considered important..."
+  
+SenseEntryTuple: caption="subentry" superordinate="#bible-sense-1" subordinate="#the-bible"    </programlisting>
+  </example>
+  
+  
+</section>

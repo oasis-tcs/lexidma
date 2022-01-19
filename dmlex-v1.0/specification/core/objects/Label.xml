@@ -7,7 +7,7 @@
 ]>
 
 <section>
-  <title><literal>Usage</literal> object type</title>
+  <title><literal>Label</literal> object type</title>
   <para> An indication of some restriction on the use of the lexical item such time (old-fashioned,
     neologism), region (dialect), register (formal, colloquial), domain (medicine, politics) or
     grammar (singular-only).</para>
@@ -61,10 +61,10 @@
     </listitem>
   </itemizedlist>
   <example>
-    <title>Example of a usage label</title>
+    <title>Example of a label object</title>
     <programlisting>Entry: headword="bitch"
     Sense: definition="a female dog"
     Sense: definition="a woman who is difficult to get along with"
-        Usage: value="slang"</programlisting>
+        Label: value="slang"</programlisting>
   </example>
 </section>

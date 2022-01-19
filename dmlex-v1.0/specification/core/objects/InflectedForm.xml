@@ -28,7 +28,7 @@
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal>label</literal> (non-empty string) e.g. 'plural'
+        <literal>caption</literal> (non-empty string) e.g. 'plural'
       </para>
       <itemizedlist spacing="compact">
         <listitem>

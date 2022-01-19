@@ -48,9 +48,9 @@
         <email>simon.krek@ijs.si</email>
       </editor>
     </authorgroup>
-    <pubdate>6 November 2021</pubdate>
+    <pubdate>19 January 2022</pubdate>
     <copyright>
-      <year>2021</year>
+      <year>2022</year>
       <holder>OASIS Open, Inc. All Rights Reserved.</holder>
     </copyright>
     <legalnotice role="additional">
@@ -193,7 +193,7 @@
       <para>When referencing this specification the following citation format should be used:</para>
       <para><citation>DMLex-1.0</citation></para>
       <para><emphasis>Data Model for Lexicography Version 1.0</emphasis>. Edited by David
-        Filip and Simon Krek. 6 November 2021. OASIS Working Draft 01. <ulink url="http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/dmlex-v1.0-wd01.html">http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/dmlex-v1.0-wd01.html</ulink>. Latest
+        Filip and Simon Krek. 19 January 2022. OASIS Working Draft 01. <ulink url="http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/dmlex-v1.0-wd01.html">http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/dmlex-v1.0-wd01.html</ulink>. Latest
         version: <ulink url="http://docs.oasis-open.org/lexidma/dmlex/v1.0/dmlex-v1.0.html">http://docs.oasis-open.org/lexidma/dmlex/v1.0/dmlex-v1.0.html</ulink>. </para>
       <!-- 
       <para>The non-normative errata page for this specification is located at <ulink
@@ -203,7 +203,7 @@
     </legalnotice>
     <legalnotice role="notices">
       <title>Notices</title>
-      <para>Copyright © OASIS<!-- ® --> Open 2021. All Rights Reserved.</para>
+      <para>Copyright © OASIS<!-- ® --> Open 2022. All Rights Reserved.</para>
       <para>All capitalized terms in the following text have the meanings assigned to them in the
         OASIS Intellectual Property Rights Policy (the "OASIS IPR Policy"). The full <ulink url="https://www.oasis-open.org/policies-guidelines/ipr">Policy</ulink> may be found at
         the OASIS website.</para>
@@ -570,10 +570,15 @@
   <para>
     A data set which can be viewed and used by humans as a dictionary
     and - simultaneously - ingested, processed and understood by
-    software agents as a machine-readable database. Terminological note:
-    <emphasis>lexicographic</emphasis> resource, not
-    <emphasis>lexical</emphasis>.
+    software agents as a machine-readable database.
   </para>
+  <warning>
+    <para>
+      The correct name of this data type in DMLex is  
+      <emphasis>lexicographic</emphasis> resource, not
+      <emphasis>lexical</emphasis>.
+    </para>
+  </warning>
   <para>
     Properties:
   </para>
@@ -589,6 +594,14 @@
           </para>
         </listitem>
       </itemizedlist>
+      <note>
+        <para>
+          DMLex is based on the assumption that all headwords in a single lexicographic resource
+          are in the same language, and that definitions and examples, if any occur in the resource, 
+          are in that language too. The <literal moreinfo="none">language</literal> property informs potential users
+          of the resource which language that is.
+        </para>
+      </note>
     </listitem>
     <listitem>
       <para>
@@ -603,6 +616,13 @@
           </para>
         </listitem>
       </itemizedlist>
+      <note>
+        <para>
+          DMLex is based on the assumption that, if you do use any pronunciation transcriptions in your (monolingual)
+          lexicographic resource, they all follow the same scheme. The <literal moreinfo="none">transcriptionScheme</literal>
+          tells potential users of the lexicographic resource which scheme that is.
+        </para>
+      </note>
     </listitem>
   </itemizedlist>
   <para>
@@ -615,6 +635,19 @@
       </para>
     </listitem>
   </itemizedlist>
+  <example>
+    <title>Example of a lexicographic resource</title>
+    <programlisting format="linespecific">LexicographicResource: language="en"
+    Entry: headword="aardvark"
+        Sense: ...
+        Sense: ...
+    Entry: headword="abacus"
+        Sense: ...
+        Sense: ...
+    Entry: headword="abandon"
+        Sense: ...
+        Sense: ...</programlisting>    
+  </example>
 </section>
   <section>
   <title><literal moreinfo="none">Entry</literal> object type</title>
@@ -656,8 +689,10 @@
       </para>
     </listitem>
   </itemizedlist>
-  <para>Note: entries do not have any explicit listing order. An application can imply a listing
-    order from a combination of the headword and the homograph number.</para>
+  <note>
+    <para>Entries do not have an explicit listing order. An application can imply a listing
+      order from a combination of the headword and the homograph number.</para>  
+  </note>
   <para>
     Children:
   </para>
@@ -665,6 +700,11 @@
     <listitem>
       <para>
         <literal moreinfo="none">PartOfSpeech</literal> (zero or more)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">Label</literal> (zero or more)
       </para>
     </listitem>
     <listitem>
@@ -683,6 +723,14 @@
       </para>
     </listitem>
   </itemizedlist>
+  <example>
+    <title>Example of a lexicographic entry</title>
+    <programlisting format="linespecific">Entry: headword="bank", homographNumber=1
+    PartOfSpeech: ...
+    Pronunciation: ...
+    Sense: ...
+    Sense: ...</programlisting>
+  </example>
 </section>
   <section>
   <title><literal moreinfo="none">Sense</literal> object type</title>
@@ -691,6 +739,13 @@
     of the (possibly multiple) meanings (or meaning potentials) of the
     entry's headword.
   </para>
+  <note>
+    <para>
+      An <emphasis role="strong">entry</emphasis> is a container for formal properties of the headword such as orthography,
+      morphology, syntax and pronunciation.
+      A <emphasis role="strong">sense</emphasis> is a container for statements about the headword's semantics.
+    </para>    
+  </note>
   <para>
     Child of:
   </para>
@@ -729,6 +784,13 @@
           </para>
         </listitem>
       </itemizedlist>
+      <note>
+        <para>
+          Indicators are sometimes used in dictionaries as "mini-definitions" instead of
+          or in addition to regular definitions. They are short, one-word or two-word paraphrases
+          of the sense. Their purpose is to allow the (human) user to find the desired sense quickly. 
+        </para>
+      </note>
     </listitem>
     <listitem>
       <para>
@@ -736,12 +798,15 @@
       </para>
       <itemizedlist spacing="compact">
         <listitem>
-          <para>
-            A long statement that describes and or explains the meaning of
-            a sense.
-          </para>
+          <para> A long statement that describes and/or explains the meaning of a sense.</para>
         </listitem>
       </itemizedlist>
+      <note>
+        <para>
+          In DMLex, the term <emphasis>definition</emphasis> encompasses not only
+          formal sciency definitions, but also less formal explanations.
+        </para>
+      </note>
     </listitem>
   </itemizedlist>
   <para>
@@ -750,7 +815,7 @@
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal moreinfo="none">Usage</literal> (zero or more)
+        <literal moreinfo="none">Label</literal> (zero or more)
       </para>
     </listitem>
     <listitem>
@@ -759,18 +824,15 @@
       </para>
     </listitem>
   </itemizedlist>
+  <example>
+    <title>Example of an entry with two senses, each having both an indicator and a definition</title>
+    <programlisting format="linespecific">Entry: headword="bank"
+    Sense: indicator="financial institution", definition = "an institution which..."
+        Example: ...
+    Sense: indicator="riverside", definition = "an earthen mound which..."
+        Example: ...</programlisting>
+  </example>
 </section>
-  <section>
-    <title>The difference between entries and senses</title>
-    <para>
-      An <emphasis role="strong">entry</emphasis> is a container for
-      "formal" properties of the headword such as orthography,
-      morphology, syntax and pronunciation. A
-      <emphasis role="strong">sense</emphasis> is a container for those of
-      the headword's properties which are statements about semantics and
-      pragmatics.
-    </para>    
-  </section>
   <section>
   <title><literal moreinfo="none">PartOfSpeech</literal> object type</title>
   <para>
@@ -796,7 +858,7 @@
         <literal moreinfo="none">value</literal> (non-empty string) </para>
       <itemizedlist spacing="compact">
         <listitem>
-          <para> Can be constrained by the DMLex Controlled Vocabularies Module. </para>
+          <para>Can be constrained and mapped to external authorities by the DMLex Controlled Vocabularies Module.</para>
         </listitem>
       </itemizedlist>
     </listitem>
@@ -810,15 +872,33 @@
         </listitem>
       </itemizedlist>
     </listitem>
-  </itemizedlist></section>
+  </itemizedlist>
+  <note>
+    <para> If you want to model other grammatical properties of the headword besides part of speech,
+      such as gender (of nouns) or aspect (of verbs), the recommended way to do that in DMLex is to
+      conflate them to the part-of-speech label, for example "masculine noun" and "feminine noun",
+      or "perfective verb" and "imperfective verb". </para>
+  </note>
+  <example>
+    <title>Example of a part of speech object</title>
+    <programlisting format="linespecific">Entry: headword="aardvark"
+    PartOfSpeech: value="noun"</programlisting>
+  </example>
+</section>
   <section>
-  <title><literal moreinfo="none">Usage</literal> object type</title>
-  <para> An indication of some pragmatic restriction on the use of the lexical item: time, region,
-    register, domain... </para>
+  <title><literal moreinfo="none">Label</literal> object type</title>
+  <para> An indication of some restriction on the use of the lexical item such time (old-fashioned,
+    neologism), region (dialect), register (formal, colloquial), domain (medicine, politics) or
+    grammar (singular-only).</para>
   <para>
     Child of:
   </para>
   <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">Entry</literal>
+      </para>
+    </listitem>
     <listitem>
       <para>
         <literal moreinfo="none">Sense</literal>
@@ -844,7 +924,7 @@
         <literal moreinfo="none">value</literal> (non-empty string) </para>
       <itemizedlist spacing="compact">
         <listitem>
-          <para> Can be constrained by the DMLex Controlled Vocabularies Module. </para>
+          <para>Can be constrained and mapped to external authorities by the DMLex Controlled Vocabularies Module.</para>
         </listitem>
       </itemizedlist>
     </listitem>
@@ -858,7 +938,15 @@
         </listitem>
       </itemizedlist>
     </listitem>
-  </itemizedlist></section>
+  </itemizedlist>
+  <example>
+    <title>Example of a label object</title>
+    <programlisting format="linespecific">Entry: headword="bitch"
+    Sense: definition="a female dog"
+    Sense: definition="a woman who is difficult to get along with"
+        Label: value="slang"</programlisting>
+  </example>
+</section>
   <section>
   <title><literal moreinfo="none">Pronunciation</literal> object type</title>
   <para>
@@ -886,7 +974,15 @@
       <itemizedlist>
         <listitem>
           <para>
-            <literal moreinfo="none">transcription</literal> (non-empty string) </para>
+            <literal moreinfo="none">transcription</literal> (non-empty string)
+          </para>
+          <note>
+            <para>
+              The scheme of the transcription (e.g. IPA) can be communicated to
+              users of the lexicographic resource through the <literal moreinfo="none">transcriptionScheme</literal>
+              property of the <literal moreinfo="none">LexicographicResource</literal> object.
+            </para>
+          </note>
         </listitem>
         <listitem>
           <para>
@@ -900,7 +996,7 @@
       </para>
       <itemizedlist spacing="compact">
         <listitem>
-          <para> Can be implicit from the serialization.</para>
+          <para>Can be implicit from the serialization.</para>
         </listitem>
       </itemizedlist>
     </listitem>
@@ -911,10 +1007,24 @@
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal moreinfo="none">Usage</literal> (zero or more)
-      </para>
+        <literal moreinfo="none">Label</literal> (zero or more) </para>
     </listitem>
   </itemizedlist>
+  <example>
+    <title>Example of pronunciation given as transcription</title>
+    <programlisting format="linespecific">Entry: headword="aardvark"
+    Pronunciation: transcription="a:rdva:rk"</programlisting>
+  </example>
+  <example>
+    <title>Example of pronunciation given as a sound file</title>
+    <programlisting format="linespecific">Entry: headword="aardvark"
+    Pronunciation: recording="aardvark.mp3"</programlisting>
+  </example>
+  <example>
+    <title>Example of pronunciation given both ways</title>
+    <programlisting format="linespecific">Entry: headword="aardvark"
+    Pronunciation: transcription="a:rdva:rk", recording="aardvark.mp3"</programlisting>
+  </example>
 </section>
   <section>
   <title><literal moreinfo="none">InflectedForm</literal> object type</title>
@@ -938,14 +1048,11 @@
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal moreinfo="none">label</literal> (non-empty string) e.g. 'plural'
+        <literal moreinfo="none">caption</literal> (non-empty string) e.g. 'plural'
       </para>
       <itemizedlist spacing="compact">
         <listitem>
-          <para>
-            Can be constrained by the DMLex Controlled Vocabularies
-            Module.
-          </para>
+          <para>Can be constrained and mapped to external authorities by the DMLex Controlled Vocabularies Module.</para>
         </listitem>
       </itemizedlist>
     </listitem>
@@ -980,12 +1087,17 @@
       </para>
     </listitem>
   </itemizedlist>
+  <example>
+    <title>Example of an entry with two inflected forms</title>
+    <programlisting format="linespecific">Entry: headword="deirfiúr"
+    PartOfSpeech: value="feminine noun"
+    InflectedForm: label="genitive singular", value="deirféar"
+    InflectedForm: label="plural", value="deirfiúracha"</programlisting>
+  </example>
 </section>
   <section>
   <title><literal moreinfo="none">Example</literal> object type</title>
-  <para>
-    An instance of a lexical item's usage in a specific sense.
-  </para>
+  <para> A sentence or other text extract which illustrates the headword being used in the sense. </para>
   <para>
     Child of:
   </para>
@@ -1016,6 +1128,12 @@
       </itemizedlist>
     </listitem>
   </itemizedlist>
+  <example>
+    <title>Example of an example</title>
+    <programlisting format="linespecific">Entry: headword="gripe"
+    Sense:
+        Example: text="I have a gripe about the service here."</programlisting>
+  </example>
 </section>
 </section>
   <section>
@@ -1117,8 +1235,7 @@
     </listitem>
     <listitem>
       <para>
-        <literal moreinfo="none">TranslationUsage</literal> (zero or more)
-      </para>
+        <literal moreinfo="none">TranslationLabel</literal> (zero or more) </para>
     </listitem>
     <listitem>
       <para>
@@ -1174,7 +1291,7 @@
   </itemizedlist>
 </section>
   <section>
-  <title><literal moreinfo="none">TranslationUsage</literal> object type</title>
+  <title><literal moreinfo="none">TranslationLabel</literal> object type</title>
   <para>
     An indication of some restriction on the use of its parent. The
     restriction can be pragmatic (time, region, register), semantic
@@ -1281,8 +1398,7 @@
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal moreinfo="none">TranslationUsage</literal> (zero or more)
-      </para>
+        <literal moreinfo="none">TranslationLabel</literal> (zero or more) </para>
     </listitem>
   </itemizedlist>
 </section>
@@ -1340,8 +1456,7 @@
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal moreinfo="none">TranslationUsage</literal> (zero or more)
-      </para>
+        <literal moreinfo="none">TranslationLabel</literal> (zero or more) </para>
     </listitem>
     <listitem>
       <para>
@@ -1401,8 +1516,7 @@
     </listitem>
     <listitem>
       <para>
-        <literal moreinfo="none">TranslationUsage</literal> (zero or more)
-      </para>
+        <literal moreinfo="none">TranslationLabel</literal> (zero or more) </para>
     </listitem>
     <listitem>
       <para>
@@ -1467,192 +1581,265 @@
 </section>
 </section>
   <section>
-  <title>Entry Structuring Module</title>
-  <section>
-  <title><literal moreinfo="none">SenseGroupRelation</literal> relation type</title>
-  <para>
-    Represents the fact that a group of senses (all belonging to the
-    same entry) should be grouped when presented to a human user.
-    Typically, when an entry has a large number of senses, it is a
-    convenience to the human user to group them into a smaler number of
-    groups by some broad criterion, such as by part of speech or by
-    semantic similarity.
-  </para>
-  <para>
-    Participants:
-  </para>
-  <itemizedlist spacing="compact">
-    <listitem>
-      <para>
-        <literal moreinfo="none">Sense</literal> (two or more)
-      </para>
-    </listitem>
-  </itemizedlist>
-  <para>
-    Properties:
-  </para>
-  <itemizedlist spacing="compact">
-    <listitem>
-      <para>
-        <literal moreinfo="none">indicator</literal> (optional, non-empty string)
-      </para>
-      <itemizedlist spacing="compact">
-        <listitem>
-          <para>
-            A short statement that indicates the broad meaning that
-            unites the senses in this group and permits their
-            differentiation from other senses in the entry.
-          </para>
-        </listitem>
-      </itemizedlist>
-    </listitem>
-  </itemizedlist>
-</section>
-  <section>
-  <title><literal moreinfo="none">SubsenseRelation</literal> relation type</title>
-  <para>
-    Represents the fact that one sense (the subordinate sense) should be
-    treated as a subsense of another sense (the subordinate). Both
-    senses belong to the same entry.
-  </para>
-  <para>
-    Participants:
-  </para>
-  <itemizedlist spacing="compact">
-    <listitem>
-      <para>
-        the superordinate <literal moreinfo="none">Sense</literal> (exactly one)
-      </para>
-    </listitem>
-    <listitem>
-      <para>
-        the subordinate <literal moreinfo="none">Sense</literal> (exactly one)
-      </para>
-    </listitem>
-  </itemizedlist>
-</section>
-  <section>
-  <title><literal moreinfo="none">SubentryRelation</literal> relation type</title>
-  <para>
-    Represents the fact that one entry (= the subordinate entry) should
-    be treated as a subentry inside the sense (= the superordinate
-    sense) of another entry.
-  </para>
-  <para>
-    Participants:
-  </para>
-  <itemizedlist spacing="compact">
-    <listitem>
-      <para>
-        the superordinate <literal moreinfo="none">Sense</literal> (exactly one)
-      </para>
-    </listitem>
-    <listitem>
-      <para>
-        the subordinate <literal moreinfo="none">Entry</literal> (exactly one)
-      </para>
-    </listitem>
-  </itemizedlist>
-  <para>
-    Properties:
-  </para>
-  <itemizedlist spacing="compact">
-    <listitem>
-      <para>
-        <literal moreinfo="none">listingOrder</literal>
-      </para>
-      <itemizedlist spacing="compact">
-        <listitem>
-          <para>
-            Can be implicit from the serialization.
-          </para>
-        </listitem>
-      </itemizedlist>
-    </listitem>
-  </itemizedlist>
-</section>
-</section>
-  <section>
-  <title>Crossreferencing Module</title>
+  <title>Internal Linking Module</title>
   <para>Used to construct clickable (or otherwise navigable) hyperlinks between objects within the same
     <literal moreinfo="none">LexicographicResource</literal>.</para>
   <section>
-  <title><literal moreinfo="none">VariantRelation</literal> relation type</title>
+  <title><literal moreinfo="none">EntrySet</literal> relation type</title>
   <para>
-    Represents the fact that two entries are understood by the
-    lexicographer as variants (for example masculine and feminine
-    counterparts, spelling variants).
+    Represents an unordered set of two or more entries.
+    Recommended for encoding variants such for example masculine and feminine
+    counterparts or spelling variants.
   </para>
   <para>
-    Participants:
-  </para>
-  <itemizedlist spacing="compact">
-    <listitem>
-      <para>
-        <literal moreinfo="none">Entry</literal> (two or more, all in the same
-          <literal moreinfo="none">LexicographicResource</literal>) </para>
-    </listitem>
-  </itemizedlist>
-</section>
-  <section>
-  <title><literal moreinfo="none">OppositionRelation</literal> relation type</title>
-  <para>
-    Represents the fact that two senses (typically - but not necessarily
-    - belonging to two different entries) have opposite meanings. This
-    includes antonyms, converses and so on.
-  </para>
-  <para>
-    Participants:
+    Properties:
   </para>
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal moreinfo="none">Sense</literal> (exactly two, both in the same
-          <literal moreinfo="none">LexicographicResource</literal>) </para>
+        <literal moreinfo="none">caption</literal> (non-empty string) eg. "variants" </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>Can be constrained and mapped to external authorities by the DMLex Controlled Vocabularies Module.</para>
+        </listitem>
+      </itemizedlist>
     </listitem>
+  </itemizedlist>
+  <para>
+    Participants (all in the same <literal moreinfo="none">LexicographicResource</literal>):
+  </para>
+  <itemizedlist spacing="compact">
+
+    <listitem>
+      <para>
+        <literal moreinfo="none">entry</literal> (two or more)
+      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            Reference to an <literal moreinfo="none">Entry</literal> object.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+    
   </itemizedlist>
 </section>
   <section>
-  <title><literal moreinfo="none">SimilarityRelation</literal> relation type</title>
-  <para> Represents the fact that two or more senses (typically - but not necessarily - belonging to
-    two different entries) have the same or similar meanings. This includes synonyms, near synonyms,
-    close hypernyms/hyponyms and so on. </para>
+  <title><literal moreinfo="none">SenseSet</literal> relation type</title>
   <para>
-    Participants:
+    Represents an unordered set of two or more senses (typically - but not necessarily -
+    belonging to two or more different entries). Recommended for encoding synonyms, near synonyms
+    etc.
+  </para>
+  <para>
+    Properties:
   </para>
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal moreinfo="none">Sense</literal> (two or more, all in the same
-          <literal moreinfo="none">LexicographicResource</literal>) </para>
+        <literal moreinfo="none">caption</literal> (non-empty string) eg. "synonyms" </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>Can be constrained and mapped to external authorities by the DMLex Controlled Vocabularies Module.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Participants (all in the same <literal moreinfo="none">LexicographicResource</literal>):
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para><literal moreinfo="none">sense</literal> (two or more)</para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            Reference to a <literal moreinfo="none">Sense</literal> object.
+          </para>
+        </listitem>
+      </itemizedlist>
     </listitem>
   </itemizedlist>
 </section>
   <section>
-  <title><literal moreinfo="none">RelevanceRelation</literal> relation type</title>
-  <para> Represents the fact that two or more senses (typically - but not necessarily - belonging to
-    two different entries) are relevant to each other, in ways other than opposition and similarity.
-    This relation type is suitable for connecting words (more accurately: senses of words) which are
-    connected to one another in experience (= one encounters them together) but are not any kind of
-    "nyms", eg. <emphasis>money</emphasis>, <emphasis>pay</emphasis>, <emphasis>bill</emphasis>,
-      <emphasis>charge</emphasis>...</para>
+  <title><literal moreinfo="none">SensePair</literal> relation type</title>
   <para>
-    Participants:
+    Represents an undirected pair of two senses (typically - but not necessarily - belonging to
+    two different entries). Recommended for representing pairs of antonyms, opposites, converses and
+    so on.
+  </para>
+  <para>
+    Properties:
   </para>
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal moreinfo="none">Sense</literal> (two or more, all in the same
-          <literal moreinfo="none">LexicographicResource</literal>) </para>
+        <literal moreinfo="none">caption</literal> (non-empty string) eg. "antonyms" </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>Can be constrained and mapped to external authorities by the DMLex Controlled Vocabularies Module.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Participants (all in the same <literal moreinfo="none">LexicographicResource</literal>):
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para><literal moreinfo="none">sense</literal> (exacly two)</para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            Reference to a <literal moreinfo="none">Sense</literal> object.
+          </para>
+        </listitem>
+      </itemizedlist>
     </listitem>
   </itemizedlist>
 </section>
+  <section>
+  <title><literal moreinfo="none">SenseTuple</literal> relation type</title>
+  <para>Represents a directed pair of two senses. When the two senses belong to two different
+    entries, then this type is recommended for representing pairs of hypernym/hyponym,
+    broader/narrower, holonym/meronym. When the two senses belong to the same entry, then this type
+    is recommended for representing the relationship between a sense and a subsense.</para>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">caption</literal> (non-empty string) eg. "hypernymy" </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>Can be constrained and mapped to external authorities by the DMLex Controlled Vocabularies Module.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Participants (all in the same <literal moreinfo="none">LexicographicResource</literal>):
+  </para>
+  <itemizedlist spacing="compact">
+
+    <listitem>
+      <para><literal moreinfo="none">superordinate</literal> (exacly one)</para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            Reference to a <literal moreinfo="none">Sense</literal> object.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+    
+    <listitem>
+      <para><literal moreinfo="none">subordinate</literal> (exacly one)</para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            Reference to a <literal moreinfo="none">Sense</literal> object.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+  </itemizedlist>
+  
 </section>
   <section>
-  <title>Dictionary Linking Module</title>
+  <title><literal moreinfo="none">SenseEntryTuple</literal> relation type</title>
+  <para>Represents a directed pair of a sense and an entry, such that the entry does
+      <emphasis>not</emphasis> cotain the sense. This type is recommended to be used for situations
+    when the entry is expected to be show to a human user as a subentry inside the sense of another
+    entry.</para>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">caption</literal> (non-empty string) eg. "subentry" </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>Can be constrained and mapped to external authorities by the DMLex Controlled Vocabularies Module.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Participants (all in the same <literal moreinfo="none">LexicographicResource</literal>):
+  </para>
+  <itemizedlist spacing="compact">
+    
+    <listitem>
+      <para><literal moreinfo="none">superordinate</literal> (exacly one)</para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            Reference to a <literal moreinfo="none">Sense</literal> object.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+    
+    <listitem>
+      <para><literal moreinfo="none">subordinate</literal> (exacly one)</para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            Reference to an <literal moreinfo="none">Entry</literal> object.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+    
+  </itemizedlist>
+  
+  <example>
+    <title>Example: encoding a subentry at subsense level</title>
+    <para>
+      In this example, when the entry for safe is being shown to a human user,
+      the entry for better safe than sorry is supposed to appear as a subentry at at the end of the first sense.
+    </para>
+    <programlisting format="linespecific">Entry[#safe]: headword="safe"
+  Sense[#safe-sense-1]: indicator="protected from harm"
+    Example: value="It isn't safe to park here."
+  Sense[#safe-sense-2]: indicator="not likely to cause harm"
+    Example: value="Is the ride safe for a small child?"
+    
+Entry[#bsts]: headword="better safe than sorry"
+  Sense: definition="you should be careful even if it seems unnecessary"
+  
+SenseEntryTuple: caption: "subentry" superordinate="#safe-sense-1" subordinate="#bsts"</programlisting>
+  </example>
+  
+  <example>
+    <title>Example: encoding a subentry at sense level</title>
+    <para>
+      In this example, when the entry for bible is being shown to the human user,
+      the entry for the Bible is supposed to be appear there as a subentry, as if it were its first sense. 
+    </para>
+    <programlisting format="linespecific">Entry[#the-bible]: headword="the Bible"
+  Sense: "the book considered holy by Christians..."
+  
+Entry[#bible]: headword="bible" 
+  Sense[#bible-sense-1]: //empty sense, serves as a container for "the Bible"
+  Sense[#bible-sense-2]: definition="a book considered important..."
+  
+SenseEntryTuple: caption="subentry" superordinate="#bible-sense-1" subordinate="#the-bible"    </programlisting>
+  </example>
+  
+  
+</section>
+</section>
+  <section>
+  <title>External Linking Module</title>
   <para>Used to construct links between objects from different lexicographic resources.</para>
   <section>
-  <title><literal moreinfo="none">SameRelation</literal> relation type</title>
+  <title><literal moreinfo="none">Same</literal> relation type</title>
   <para> Represents the fact that two or more senses from two or more lexicographic resources are
     semantically the same.</para>
   <para>
@@ -1667,7 +1854,7 @@
   </itemizedlist>
 </section>
   <section>
-  <title><literal moreinfo="none">SubsumptionRelation</literal> relation type</title>
+  <title><literal moreinfo="none">Subsumption</literal> relation type</title>
   <para> Represents the fact that one sense from one lexicographic resource is semantically wholly
     contained inside another sense from another lexicographic resource.</para>
   <para>
@@ -1684,7 +1871,7 @@
   <para>The two senses must not be within the <literal moreinfo="none">LexicographicResource</literal>.</para>
 </section>
   <section>
-  <title><literal moreinfo="none">OverlapRelation</literal> relation type</title>
+  <title><literal moreinfo="none">Overlap</literal> relation type</title>
   <para> Represents the fact that two or more senses from two or more lexicographic resources
     overlap semantically, without either one being semantically wholly contained inside the
     other.</para>
@@ -1761,6 +1948,53 @@
     </listitem>
   </itemizedlist>
 </section>
+  <section>
+  <title><literal moreinfo="none">CollocateMarker</literal> marker type</title>
+  <para>
+    Marks up a substring inside an example (or inside an example
+    translation) where an important collocate of the headword (or of its translation)
+    occurs.
+  </para>
+  <para>
+    Markup of:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">text</literal> property of <literal moreinfo="none">Example</literal>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">text</literal> property of
+        <literal moreinfo="none">ExampleTranslation</literal>
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">lemma</literal>
+      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            Optional. The lemmatized form of the collocate.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+  </itemizedlist>
+  <example>
+    <title>Marking up the headword and a collocate inside an example</title>
+    <programlisting format="linespecific">Example: value="The coroner performed an autopsy."
+  HeadwordMarker: value=first occurence of "autopsy"
+  CollocateMarker: value=first occurence of "performed" lemma="perform"</programlisting>
+  </example>
+</section>
 </section>
   <section>
   <title>Controlled Vocabularies Module</title>
@@ -1776,12 +2010,12 @@
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal moreinfo="none">labelLanguage</literal> (IETF language code)
+        <literal moreinfo="none">displayLanguage</literal> (IETF language code)
       </para>
       <itemizedlist spacing="compact">
         <listitem>
           <para>
-            The language of the display values of labels.
+            The language of the display values of the controlled vocabulary items.
           </para>
         </listitem>
       </itemizedlist>
@@ -1793,42 +2027,63 @@
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal moreinfo="none">PartOfSpeechLabel</literal> (zero or more)
+        <literal moreinfo="none">PartOfSpeechValue</literal> (zero or more) </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">TranslationPartOfSpeechValue</literal> (zero or more) </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">LabelValue</literal> (zero or more)
       </para>
     </listitem>
     <listitem>
       <para>
-        <literal moreinfo="none">TranslationPartOfSpeechLabel</literal> (zero or more)
+        <literal moreinfo="none">TranslationLabelValue</literal> (zero or more)
       </para>
     </listitem>
     <listitem>
       <para>
-        <literal moreinfo="none">UsageLabel</literal> (zero or more)
+        <literal moreinfo="none">EntrySetCaption</literal> (zero or more)
       </para>
     </listitem>
     <listitem>
       <para>
-        <literal moreinfo="none">TranslationUsageLabel</literal> (zero or more)
+        <literal moreinfo="none">SenseSetCaption</literal> (zero or more)
       </para>
     </listitem>
     <listitem>
       <para>
-        <literal moreinfo="none">InflectedFormLabel</literal> (zero or more)
+        <literal moreinfo="none">SensePairCaption</literal> (zero or more)
       </para>
     </listitem>
     <listitem>
       <para>
-        <literal moreinfo="none">TranslationInflectedFormLabel</literal> (zero or more)
+        <literal moreinfo="none">SenseTupleCaption</literal> (zero or more)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">SenseEntryTupleCaption</literal> (zero or more)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">InflectedFormCaption</literal> (zero or more)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">TranslationInflectedFormCaption</literal> (zero or more)
       </para>
     </listitem>
   </itemizedlist>
 </section>
   <section>
-  <title><literal moreinfo="none">PartOfSpeechLabel</literal> object type</title>
-  <para>
-      A <literal moreinfo="none">PartOfSpeechLabel</literal> represents one of several allowed values for the
-      <literal moreinfo="none">value</literal> property of <literal moreinfo="none">PartOfSpeech</literal> objects.
-  </para>
+  <title><literal moreinfo="none">PartOfSpeechValue</literal> object type</title>
+  <para>Represents one of several allowed values for the <literal moreinfo="none">value</literal> property of
+      <literal moreinfo="none">PartOfSpeech</literal> objects. </para>
   <para>
     Properties:
   </para>
@@ -1850,18 +2105,43 @@
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal moreinfo="none">LabelMapping</literal> (zero or more)
-      </para>
+        <literal moreinfo="none">Mapping</literal> (zero or more) </para>
     </listitem>
   </itemizedlist>
+  
+  <example>
+    <title>Example: restricting part-of-speech values</title>
+    <programlisting format="linespecific">LexicographicResource: displayLanguage="en"
+    PartOfSpeechValue: value="n", displayValue="noun"
+    PartOfSpeechValue: value="v", displayValue="verb"
+    PartOfSpeechValue: value="adj", displayValue= "adjective"
+    Entry: headword="aardvark"
+        PartOfSpeech: value="n"
+    Entry: headword="speak"
+        PartOfSpeech: value="v"
+    Entry: headword="small"
+        PartOfSpeech: value="adj"</programlisting>
+  </example>
+  
+  <example>
+    <title>Example: mapping part-of-speech values to external inventories</title>
+    <programlisting format="linespecific">PartOfSpeechValue: value="n", displayValue="noun"
+    Mapping: sameAs="http://www.lexinfo.net/ontology/3.0/lexinfo#noun"</programlisting>
+  </example>
+  
+  <example>
+    <title>Example: mapping complex part-of-speech values to external inventories</title>
+    <programlisting format="linespecific">PartOfSpeechValue: value="Nma", displayValue="masculine animate noun"
+    Mapping: sameAs="http://www.lexinfo.net/ontology/3.0/lexinfo#noun"
+    Mapping: sameAs="http://www.lexinfo.net/ontology/3.0/lexinfo#masculine"
+    Mapping: sameAs="http://www.lexinfo.net/ontology/3.0/lexinfo#animate"</programlisting>
+  </example>
+  
 </section>
   <section>
-  <title><literal moreinfo="none">TranslationPartOfSpeechLabel</literal> object type</title>
-  <para>
-    A <literal moreinfo="none">TranslationPartOfSpeechLabel</literal> represents one
-    of several allowed values for the <literal moreinfo="none">value</literal>
-    property of <literal moreinfo="none">TranslationPartOfSpeech</literal> objects.
-  </para>
+  <title><literal moreinfo="none">TranslationPartOfSpeechValue</literal> object type</title>
+  <para>Represents one of several allowed values for the <literal moreinfo="none">value</literal> property of
+      <literal moreinfo="none">TranslationPartOfSpeech</literal> objects. </para>
   <para>
     Properties:
   </para>
@@ -1883,18 +2163,14 @@
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal moreinfo="none">LabelMapping</literal> (zero or more)
-      </para>
+        <literal moreinfo="none">Mapping</literal> (zero or more) </para>
     </listitem>
   </itemizedlist>
 </section>
   <section>
-  <title><literal moreinfo="none">UsageLabel</literal> object type</title>
-  <para>
-    A <literal moreinfo="none">UsageLabel</literal> represents one of several
-    allowed values for the <literal moreinfo="none">value</literal> property of
-    <literal moreinfo="none">Label</literal> objects.
-  </para>
+  <title><literal moreinfo="none">LabelValue</literal> object type</title>
+  <para> Represents one of several allowed values for the <literal moreinfo="none">value</literal> property of
+      <literal moreinfo="none">Label</literal> objects. </para>
   <para>
     Properties:
   </para>
@@ -1916,60 +2192,31 @@
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal moreinfo="none">LabelMapping</literal> (zero or more)
-      </para>
+        <literal moreinfo="none">Mapping</literal> (zero or more) </para>
     </listitem>
   </itemizedlist>
+  
+  <example>
+    <title>Example: restricting the values of Label objects</title>
+    <programlisting format="linespecific">LexicographicResource: displayLanguage="en"
+    LabelValue: value="sl", displayValue="slang"
+    LabelValue: value="vul", displayValue="vulgar"</programlisting>
+  </example>
+  
+  <example>
+    <title>Example: mapping the values of Label objects to external ontologies</title>
+    <programlisting format="linespecific">LexicographicResource: displayLanguage="en"
+    LabelValue: value="sl", displayValue="slang"
+        Mapping: sameAs="http://www.lexinfo.net/ontology/3.0/lexinfo#slangRegister"
+    LabelValue: value="vul", displayValue="vulgar"
+        Mapping: sameAs="http://www.lexinfo.net/ontology/3.0/lexinfo#vulgarRegister"</programlisting>
+  </example>
+  
 </section>
   <section>
-  <title><literal moreinfo="none">TranslationUsageLabel</literal> object type</title>
-  <para>
-    A <literal moreinfo="none">TranslationUsageLabel</literal> represents one of
-    several allowed values for the <literal moreinfo="none">value</literal> property
-    of <literal moreinfo="none">TranslationLabel</literal> objects.
-  </para>
-  <para>
-    Properties:
-  </para>
-  <itemizedlist spacing="compact">
-    <listitem>
-      <para>
-        <literal moreinfo="none">type</literal> (one of: <literal moreinfo="none">normative</literal>,
-        <literal moreinfo="none">register</literal>, <literal moreinfo="none">temporal</literal>,
-        <literal moreinfo="none">geographic</literal>, <literal moreinfo="none">sociocultural</literal>,
-        <literal moreinfo="none">domain</literal>, <literal moreinfo="none">frequency</literal>,
-        <literal moreinfo="none">attitude</literal>)
-      </para>
-    </listitem>
-    <listitem>
-      <para>
-        <literal moreinfo="none">value</literal> (non-empty string)
-      </para>
-    </listitem>
-    <listitem>
-      <para>
-        <literal moreinfo="none">displayValue</literal> (optional)
-      </para>
-    </listitem>
-  </itemizedlist>
-  <para>
-    Children:
-  </para>
-  <itemizedlist spacing="compact">
-    <listitem>
-      <para>
-        <literal moreinfo="none">LabelMapping</literal> (zero or more)
-      </para>
-    </listitem>
-  </itemizedlist>
-</section>
-  <section>
-  <title><literal moreinfo="none">InflectedFormLabel</literal> object type</title>
-  <para>
-    An <literal moreinfo="none">InflectedFormLabel</literal> represents one of
-    several allowed values for the <literal moreinfo="none">label</literal> property
-    of <literal moreinfo="none">InflectedForm</literal> objects.
-  </para>
+  <title><literal moreinfo="none">TranslationLabelValue</literal> object type</title>
+  <para>Represents one of several allowed values for the <literal moreinfo="none">value</literal> property of
+      <literal moreinfo="none">TranslationLabel</literal> objects. </para>
   <para>
     Properties:
   </para>
@@ -1991,18 +2238,14 @@
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal moreinfo="none">LabelMapping</literal> (zero or more)
-      </para>
+        <literal moreinfo="none">Mapping</literal> (zero or more) </para>
     </listitem>
   </itemizedlist>
 </section>
   <section>
-  <title><literal moreinfo="none">TranslationInflectedFormLabel</literal> object type</title>
-  <para>
-    A <literal moreinfo="none">TranslationInflectedFormLabel</literal> represents
-    one of several allowed values for the <literal moreinfo="none">label</literal>
-    property of <literal moreinfo="none">TranslationInflectedForm</literal> objects.
-  </para>
+  <title><literal moreinfo="none">InflectedFormCaption</literal> object type</title>
+  <para> An <literal moreinfo="none">InflectedFormCaption</literal> represents one of several allowed values for the
+      <literal moreinfo="none">caption</literal> property of <literal moreinfo="none">InflectedForm</literal> objects. </para>
   <para>
     Properties:
   </para>
@@ -2024,13 +2267,209 @@
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal moreinfo="none">LabelMapping</literal> (zero or more)
+        <literal moreinfo="none">Mapping</literal> (zero or more) </para>
+    </listitem>
+  </itemizedlist>
+  
+  <example>
+    <title>Example: restricting the captions of inflected forms</title>
+    <programlisting format="linespecific">LexicographicResource: language="ga", displayLanguage="en"
+    PartOfSpeechCaption: value="nf", displayValue="feminine noun"
+    InflectedFormCaption: value="gs", displayValue="genitive singular"
+    InflectedFormCaption: value="pl", displayValue="plural"
+    Entry headword="deirfiúr"
+        PartOfSpeech: value="nf"
+        InflectedForm: caption="gs", value="deirféar"
+        InflectedForm: caption="pl", value="deirfiúracha"</programlisting>
+  </example>
+  
+  <example>
+    <title>Example: mapping the captions of inflected forms to external inventories</title>
+    <programlisting format="linespecific">InflectedFormCaption: value="gs", displayValue="genitive singular"
+    Mapping: sameAs="http://www.lexinfo.net/ontology/3.0/lexinfo#singular"
+    Mapping: sameAs= "http://www.lexinfo.net/ontology/3.0/lexinfo#genitiveCase"
+InflectedFormCaption: value="pl", displayValue="plural"
+    Mapping: sameAs="http://www.lexinfo.net/ontology/3.0/lexinfo#plural"</programlisting>
+  </example>
+  
+  
+</section>
+  <section>
+  <title><literal moreinfo="none">TranslationInflectedFormCaption</literal> object type</title>
+  <para>Represents one of several allowed values for the <literal moreinfo="none">caption</literal> property of
+      <literal moreinfo="none">TranslationInflectedForm</literal> objects. </para>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">value</literal> (non-empty string)
       </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">displayValue</literal> (optional)
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Children:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">Mapping</literal> (zero or more) </para>
     </listitem>
   </itemizedlist>
 </section>
   <section>
-  <title><literal moreinfo="none">LabelMapping</literal> object type</title>
+  <title><literal moreinfo="none">EntrySetCaption</literal> object type</title>
+  <para> Represents one of several allowed values for the <literal moreinfo="none">caption</literal> property of
+      <literal moreinfo="none">EntrySet</literal> objects. </para>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">value</literal> (non-empty string)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">displayValue</literal> (optional)
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Children:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">Mapping</literal> (zero or more) </para>
+    </listitem>
+  </itemizedlist>
+</section>
+  <section>
+  <title><literal moreinfo="none">SenseSetCaption</literal> object type</title>
+  <para> Represents one of several allowed values for the <literal moreinfo="none">caption</literal> property of
+      <literal moreinfo="none">SenseSet</literal> objects. </para>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">value</literal> (non-empty string)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">displayValue</literal> (optional)
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Children:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">Mapping</literal> (zero or more) </para>
+    </listitem>
+  </itemizedlist>
+</section>
+  <section>
+  <title><literal moreinfo="none">SensePairCaption</literal> object type</title>
+  <para> Represents one of several allowed values for the <literal moreinfo="none">caption</literal> property of
+      <literal moreinfo="none">SensePair</literal> objects. </para>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">value</literal> (non-empty string)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">displayValue</literal> (optional)
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Children:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">Mapping</literal> (zero or more) </para>
+    </listitem>
+  </itemizedlist>
+</section>
+  <section>
+  <title><literal moreinfo="none">SenseTupleCaption</literal> object type</title>
+  <para> Represents one of several allowed values for the <literal moreinfo="none">caption</literal> property of
+      <literal moreinfo="none">SenseTuple</literal> objects. </para>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">value</literal> (non-empty string)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">displayValue</literal> (optional)
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Children:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">Mapping</literal> (zero or more) </para>
+    </listitem>
+  </itemizedlist>
+</section>
+  <section>
+  <title><literal moreinfo="none">SenseEntryTupleCaption</literal> object type</title>
+  <para> Represents one of several allowed values for the <literal moreinfo="none">caption</literal> property of
+      <literal moreinfo="none">SenseEntryTuple</literal> objects. </para>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">value</literal> (non-empty string)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">displayValue</literal> (optional)
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Children:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">Mapping</literal> (zero or more) </para>
+    </listitem>
+  </itemizedlist>
+</section>
+  <section>
+  <title><literal moreinfo="none">Mapping</literal> object type</title>
   <para>
     Represents the fact that an item in the controlled vocabulary is
     equivalent to item provided by en external authority.
@@ -2041,32 +2480,52 @@
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal moreinfo="none">PartOfSpeechLabel</literal>
+        <literal moreinfo="none">PartOfSpeechCaption</literal>
       </para>
     </listitem>
     <listitem>
       <para>
-        <literal moreinfo="none">TranslationPartOfSpeechLabel</literal>
+        <literal moreinfo="none">TranslationPartOfSpeechCaption</literal>
       </para>
     </listitem>
     <listitem>
       <para>
-        <literal moreinfo="none">UsageLabel</literal>
+        <literal moreinfo="none">LabelCaption</literal>
       </para>
     </listitem>
     <listitem>
       <para>
-        <literal moreinfo="none">TranslationUsageLabel</literal>
+        <literal moreinfo="none">EntrySetCaption</literal>
       </para>
     </listitem>
     <listitem>
       <para>
-        <literal moreinfo="none">InflectedFormLabel</literal>
+        <literal moreinfo="none">SenseSetCaption</literal>
       </para>
     </listitem>
     <listitem>
       <para>
-        <literal moreinfo="none">TranslationInflectedFormLabel</literal>
+        <literal moreinfo="none">SensePairCaption</literal>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">SenseTupleCaption</literal>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">TranslationLabelCaption</literal>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">InflectedFormCaption</literal>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">TranslationInflectedFormCaption</literal>
       </para>
     </listitem>
   </itemizedlist>

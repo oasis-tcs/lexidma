@@ -15,12 +15,12 @@
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal>labelLanguage</literal> (IETF language code)
+        <literal>displayLanguage</literal> (IETF language code)
       </para>
       <itemizedlist spacing="compact">
         <listitem>
           <para>
-            The language of the display values of labels.
+            The language of the display values of the controlled vocabulary items.
           </para>
         </listitem>
       </itemizedlist>
@@ -32,52 +32,55 @@
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal>PartOfSpeechLabel</literal> (zero or more)
+        <literal>PartOfSpeechValue</literal> (zero or more) </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>TranslationPartOfSpeechValue</literal> (zero or more) </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>LabelValue</literal> (zero or more)
       </para>
     </listitem>
     <listitem>
       <para>
-        <literal>TranslationPartOfSpeechLabel</literal> (zero or more)
+        <literal>TranslationLabelValue</literal> (zero or more)
       </para>
     </listitem>
     <listitem>
       <para>
-        <literal>UsageLabel</literal> (zero or more)
+        <literal>EntrySetCaption</literal> (zero or more)
       </para>
     </listitem>
     <listitem>
       <para>
-        <literal>EntrySetLabel</literal> (zero or more)
+        <literal>SenseSetCaption</literal> (zero or more)
       </para>
     </listitem>
     <listitem>
       <para>
-        <literal>SenseSetLabel</literal> (zero or more)
+        <literal>SensePairCaption</literal> (zero or more)
       </para>
     </listitem>
     <listitem>
       <para>
-        <literal>SensePairLabel</literal> (zero or more)
+        <literal>SenseTupleCaption</literal> (zero or more)
       </para>
     </listitem>
     <listitem>
       <para>
-        <literal>SenseTupleLabel</literal> (zero or more)
+        <literal>SenseEntryTupleCaption</literal> (zero or more)
       </para>
     </listitem>
     <listitem>
       <para>
-        <literal>TranslationUsageLabel</literal> (zero or more)
+        <literal>InflectedFormCaption</literal> (zero or more)
       </para>
     </listitem>
     <listitem>
       <para>
-        <literal>InflectedFormLabel</literal> (zero or more)
-      </para>
-    </listitem>
-    <listitem>
-      <para>
-        <literal>TranslationInflectedFormLabel</literal> (zero or more)
+        <literal>TranslationInflectedFormCaption</literal> (zero or more)
       </para>
     </listitem>
   </itemizedlist>

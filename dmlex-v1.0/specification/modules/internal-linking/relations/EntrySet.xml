@@ -7,7 +7,7 @@
 ]>
 
 <section>
-  <title><literal>EntrySetRelation</literal> relation type</title>
+  <title><literal>EntrySet</literal> relation type</title>
   <para>
     Represents an unordered set of two or more entries.
     Recommended for encoding variants such for example masculine and feminine
@@ -19,8 +19,7 @@
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal>label</literal> (non-empty string) eg. "synonyms"
-      </para>
+        <literal>caption</literal> (non-empty string) eg. "variants" </para>
       <itemizedlist spacing="compact">
         <listitem>
           <para>Can be constrained and mapped to external authorities by the DMLex Controlled Vocabularies Module.</para>
@@ -29,13 +28,22 @@
     </listitem>
   </itemizedlist>
   <para>
-    Participants:
+    Participants (all in the same <literal>LexicographicResource</literal>):
   </para>
   <itemizedlist spacing="compact">
+
     <listitem>
       <para>
-        <literal>Entry</literal> (two or more, all in the same <literal>LexicographicResource</literal>)
+        <literal>entry</literal> (two or more)
       </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            Reference to an <literal>Entry</literal> object.
+          </para>
+        </listitem>
+      </itemizedlist>
     </listitem>
+    
   </itemizedlist>
 </section>

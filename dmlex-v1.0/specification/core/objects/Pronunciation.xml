@@ -66,8 +66,7 @@
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal>Usage</literal> (zero or more)
-      </para>
+        <literal>Label</literal> (zero or more) </para>
     </listitem>
   </itemizedlist>
   <example>

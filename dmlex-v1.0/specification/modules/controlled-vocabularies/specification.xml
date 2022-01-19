@@ -12,15 +12,16 @@
     This module makes it possible to describe constraints on the values of certain plain-text properties of objects defined in DMLex Core and in DMLex Bilingual Module.
   </para>
   <xi:include href="extensions/LexicographicResource.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="objects/PartOfSpeechLabel.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="objects/TranslationPartOfSpeechLabel.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="objects/UsageLabel.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="objects/EntrySetLabel.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="objects/SenseSetLabel.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="objects/SensePairLabel.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="objects/SenseTupleLabel.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="objects/TranslationUsageLabel.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="objects/InflectedFormLabel.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="objects/TranslationInflectedFormLabel.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="objects/LabelMapping.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objects/PartOfSpeechValue.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objects/TranslationPartOfSpeechValue.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objects/LabelValue.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objects/TranslationLabelValue.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objects/InflectedFormCaption.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objects/TranslationInflectedFormCaption.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objects/EntrySetCaption.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objects/SenseSetCaption.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objects/SensePairCaption.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objects/SenseTupleCaption.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objects/SenseEntryTupleCaption.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objects/Mapping.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 </section>

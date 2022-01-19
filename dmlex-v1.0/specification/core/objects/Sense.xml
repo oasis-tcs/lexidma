@@ -72,10 +72,7 @@
       </para>
       <itemizedlist spacing="compact">
         <listitem>
-          <para>
-            A long statement that describes and or explains the meaning of
-            a sense.
-          </para>
+          <para> A long statement that describes and/or explains the meaning of a sense.</para>
         </listitem>
       </itemizedlist>
       <note>
@@ -92,7 +89,7 @@
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal>Usage</literal> (zero or more)
+        <literal>Label</literal> (zero or more)
       </para>
     </listitem>
     <listitem>

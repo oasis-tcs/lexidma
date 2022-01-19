@@ -7,17 +7,19 @@
 ]>
 
 <section>
-  <title><literal>SenseTupleRelation</literal> relation type</title>
-  <para> Represents a directed pair of two senses (typically - but not necessarily - belonging to
-    two different entries). Recommended for representing pairs of hypernym/hyponym,
-    broader/narrower, holonym/meronym. </para>
+  <title><literal>SensePair</literal> relation type</title>
+  <para>
+    Represents an undirected pair of two senses (typically - but not necessarily - belonging to
+    two different entries). Recommended for representing pairs of antonyms, opposites, converses and
+    so on.
+  </para>
   <para>
     Properties:
   </para>
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal>label</literal> (non-empty string) eg. "hypernym/hyponym" </para>
+        <literal>caption</literal> (non-empty string) eg. "antonyms" </para>
       <itemizedlist spacing="compact">
         <listitem>
           <para>Can be constrained and mapped to external authorities by the DMLex Controlled Vocabularies Module.</para>
@@ -26,15 +28,18 @@
     </listitem>
   </itemizedlist>
   <para>
-    Participants:
+    Participants (all in the same <literal>LexicographicResource</literal>):
   </para>
   <itemizedlist spacing="compact">
     <listitem>
-      <para> the first <literal>Sense</literal> of the pair</para>
-    </listitem>
-    <listitem>
-      <para> the second <literal>Sense</literal> of the pair</para>
+      <para><literal>sense</literal> (exacly two)</para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            Reference to a <literal>Sense</literal> object.
+          </para>
+        </listitem>
+      </itemizedlist>
     </listitem>
   </itemizedlist>
-  
 </section>

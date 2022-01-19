@@ -10,4 +10,5 @@
   <title>Inline Markup Module</title>
   <xi:include href="markers/PlaceholderMarker.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="markers/HeadwordMarker.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="markers/CollocateMarker.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 </section>
