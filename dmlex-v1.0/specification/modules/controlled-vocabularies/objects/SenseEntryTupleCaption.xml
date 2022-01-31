@@ -7,11 +7,9 @@
 ]>
 
 <section>
-  <title><literal>PartOfSpeechLabel</literal> object type</title>
-  <para>
-      A <literal>PartOfSpeechLabel</literal> represents one of several allowed values for the
-      <literal>value</literal> property of <literal>PartOfSpeech</literal> objects.
-  </para>
+  <title><literal>SenseEntryTupleCaption</literal> object type</title>
+  <para> Represents one of several allowed values for the <literal>caption</literal> property of
+      <literal>SenseEntryTuple</literal> objects. </para>
   <para>
     Properties:
   </para>
@@ -33,8 +31,7 @@
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal>LabelMapping</literal> (zero or more)
-      </para>
+        <literal>Mapping</literal> (zero or more) </para>
     </listitem>
   </itemizedlist>
 </section>

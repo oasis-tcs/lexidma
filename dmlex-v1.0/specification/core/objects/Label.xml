@@ -7,13 +7,19 @@
 ]>
 
 <section>
-  <title><literal>Usage</literal> object type</title>
-  <para> An indication of some pragmatic restriction on the use of the lexical item: time, region,
-    register, domain... </para>
+  <title><literal>Label</literal> object type</title>
+  <para> An indication of some restriction on the use of the lexical item such time (old-fashioned,
+    neologism), region (dialect), register (formal, colloquial), domain (medicine, politics) or
+    grammar (singular-only).</para>
   <para>
     Child of:
   </para>
   <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal>Entry</literal>
+      </para>
+    </listitem>
     <listitem>
       <para>
         <literal>Sense</literal>
@@ -39,7 +45,7 @@
         <literal>value</literal> (non-empty string) </para>
       <itemizedlist spacing="compact">
         <listitem>
-          <para> Can be constrained by the DMLex Controlled Vocabularies Module. </para>
+          <para>Can be constrained and mapped to external authorities by the DMLex Controlled Vocabularies Module.</para>
         </listitem>
       </itemizedlist>
     </listitem>
@@ -53,4 +59,12 @@
         </listitem>
       </itemizedlist>
     </listitem>
-  </itemizedlist></section>
+  </itemizedlist>
+  <example>
+    <title>Example of a label object</title>
+    <programlisting>Entry: headword="bitch"
+    Sense: definition="a female dog"
+    Sense: definition="a woman who is difficult to get along with"
+        Label: value="slang"</programlisting>
+  </example>
+</section>

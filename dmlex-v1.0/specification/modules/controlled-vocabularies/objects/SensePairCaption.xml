@@ -7,25 +7,13 @@
 ]>
 
 <section>
-  <title><literal>TranslationUsageLabel</literal> object type</title>
-  <para>
-    A <literal>TranslationUsageLabel</literal> represents one of
-    several allowed values for the <literal>value</literal> property
-    of <literal>TranslationLabel</literal> objects.
-  </para>
+  <title><literal>SensePairCaption</literal> object type</title>
+  <para> Represents one of several allowed values for the <literal>caption</literal> property of
+      <literal>SensePair</literal> objects. </para>
   <para>
     Properties:
   </para>
   <itemizedlist spacing="compact">
-    <listitem>
-      <para>
-        <literal>type</literal> (one of: <literal>normative</literal>,
-        <literal>register</literal>, <literal>temporal</literal>,
-        <literal>geographic</literal>, <literal>sociocultural</literal>,
-        <literal>domain</literal>, <literal>frequency</literal>,
-        <literal>attitude</literal>)
-      </para>
-    </listitem>
     <listitem>
       <para>
         <literal>value</literal> (non-empty string)
@@ -43,8 +31,7 @@
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal>LabelMapping</literal> (zero or more)
-      </para>
+        <literal>Mapping</literal> (zero or more) </para>
     </listitem>
   </itemizedlist>
 </section>

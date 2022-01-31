@@ -7,7 +7,7 @@
 ]>
 
 <section>
-  <title><literal>SubsumptionRelation</literal> relation type</title>
+  <title><literal>Subsumption</literal> relation type</title>
   <para> Represents the fact that one sense from one lexicographic resource is semantically wholly
     contained inside another sense from another lexicographic resource.</para>
   <para>

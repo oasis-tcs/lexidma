@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section>
+  <title><literal>SenseTuple</literal> relation type</title>
+  <para>Represents a directed pair of two senses. When the two senses belong to two different
+    entries, then this type is recommended for representing pairs of hypernym/hyponym,
+    broader/narrower, holonym/meronym. When the two senses belong to the same entry, then this type
+    is recommended for representing the relationship between a sense and a subsense.</para>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal>caption</literal> (non-empty string) eg. "hypernymy" </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>Can be constrained and mapped to external authorities by the DMLex Controlled Vocabularies Module.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Participants (all in the same <literal>LexicographicResource</literal>):
+  </para>
+  <itemizedlist spacing="compact">
+
+    <listitem>
+      <para><literal>superordinate</literal> (exacly one)</para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            Reference to a <literal>Sense</literal> object.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+    
+    <listitem>
+      <para><literal>subordinate</literal> (exacly one)</para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            Reference to a <literal>Sense</literal> object.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+  </itemizedlist>
+  
+</section>

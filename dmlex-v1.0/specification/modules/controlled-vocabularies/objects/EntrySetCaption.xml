@@ -7,25 +7,31 @@
 ]>
 
 <section>
-  <title><literal>SubsenseRelation</literal> relation type</title>
+  <title><literal>EntrySetCaption</literal> object type</title>
+  <para> Represents one of several allowed values for the <literal>caption</literal> property of
+      <literal>EntrySet</literal> objects. </para>
   <para>
-    Represents the fact that one sense (the subordinate sense) should be
-    treated as a subsense of another sense (the subordinate). Both
-    senses belong to the same entry.
-  </para>
-  <para>
-    Participants:
+    Properties:
   </para>
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        the superordinate <literal>Sense</literal> (exactly one)
+        <literal>value</literal> (non-empty string)
       </para>
     </listitem>
     <listitem>
       <para>
-        the subordinate <literal>Sense</literal> (exactly one)
+        <literal>displayValue</literal> (optional)
       </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Children:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal>Mapping</literal> (zero or more) </para>
     </listitem>
   </itemizedlist>
 </section>

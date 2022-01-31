@@ -8,9 +8,7 @@
 
 <section>
   <title><literal>Example</literal> object type</title>
-  <para>
-    An instance of a lexical item's usage in a specific sense.
-  </para>
+  <para> A sentence or other text extract which illustrates the headword being used in the sense. </para>
   <para>
     Child of:
   </para>
@@ -41,4 +39,10 @@
       </itemizedlist>
     </listitem>
   </itemizedlist>
+  <example>
+    <title>Example of an example</title>
+    <programlisting>Entry: headword="gripe"
+    Sense:
+        Example: text="I have a gripe about the service here."</programlisting>
+  </example>
 </section>

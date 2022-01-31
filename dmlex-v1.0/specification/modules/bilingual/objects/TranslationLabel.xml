@@ -7,7 +7,7 @@
 ]>
 
 <section>
-  <title><literal>TranslationUsage</literal> object type</title>
+  <title><literal>TranslationLabel</literal> object type</title>
   <para>
     An indication of some restriction on the use of its parent. The
     restriction can be pragmatic (time, region, register), semantic
