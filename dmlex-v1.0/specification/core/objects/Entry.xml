@@ -46,8 +46,10 @@
       </para>
     </listitem>
   </itemizedlist>
-  <para>Note: entries do not have any explicit listing order. An application can imply a listing
-    order from a combination of the headword and the homograph number.</para>
+  <note>
+    <para>Entries do not have an explicit listing order. An application can imply a listing
+      order from a combination of the headword and the homograph number.</para>  
+  </note>
   <para>
     Children:
   </para>
@@ -55,6 +57,11 @@
     <listitem>
       <para>
         <literal>PartOfSpeech</literal> (zero or more)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>Label</literal> (zero or more)
       </para>
     </listitem>
     <listitem>
@@ -73,4 +80,12 @@
       </para>
     </listitem>
   </itemizedlist>
+  <example>
+    <title>Example of a lexicographic entry</title>
+    <programlisting>Entry: headword="bank", homographNumber=1
+    PartOfSpeech: ...
+    Pronunciation: ...
+    Sense: ...
+    Sense: ...</programlisting>
+  </example>
 </section>

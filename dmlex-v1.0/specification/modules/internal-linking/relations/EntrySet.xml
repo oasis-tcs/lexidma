@@ -7,42 +7,43 @@
 ]>
 
 <section>
-  <title><literal>SenseGroupRelation</literal> relation type</title>
+  <title><literal>EntrySet</literal> relation type</title>
   <para>
-    Represents the fact that a group of senses (all belonging to the
-    same entry) should be grouped when presented to a human user.
-    Typically, when an entry has a large number of senses, it is a
-    convenience to the human user to group them into a smaler number of
-    groups by some broad criterion, such as by part of speech or by
-    semantic similarity.
+    Represents an unordered set of two or more entries.
+    Recommended for encoding variants such for example masculine and feminine
+    counterparts or spelling variants.
   </para>
-  <para>
-    Participants:
-  </para>
-  <itemizedlist spacing="compact">
-    <listitem>
-      <para>
-        <literal>Sense</literal> (two or more)
-      </para>
-    </listitem>
-  </itemizedlist>
   <para>
     Properties:
   </para>
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal>indicator</literal> (optional, non-empty string)
+        <literal>caption</literal> (non-empty string) eg. "variants" </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>Can be constrained and mapped to external authorities by the DMLex Controlled Vocabularies Module.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Participants (all in the same <literal>LexicographicResource</literal>):
+  </para>
+  <itemizedlist spacing="compact">
+
+    <listitem>
+      <para>
+        <literal>entry</literal> (two or more)
       </para>
       <itemizedlist spacing="compact">
         <listitem>
           <para>
-            A short statement that indicates the broad meaning that
-            unites the senses in this group and permits their
-            differentiation from other senses in the entry.
+            Reference to an <literal>Entry</literal> object.
           </para>
         </listitem>
       </itemizedlist>
     </listitem>
+    
   </itemizedlist>
 </section>

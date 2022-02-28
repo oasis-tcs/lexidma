@@ -7,11 +7,12 @@
 ]>
 
 <section>
-  <title><literal>OverlapRelation</literal> relation type</title>
-  <para> Represents the fact that two or more senses from two or more lexicographic resources
-    overlap semantically, without either one being semantically wholly contained inside the
-    other.</para>
-  <para> Participants: </para>
+  <title><literal>Same</literal> relation type</title>
+  <para> Represents the fact that two or more senses from two or more lexicographic resources are
+    semantically the same.</para>
+  <para>
+    Participants:
+  </para>
   <itemizedlist spacing="compact">
     <listitem>
       <para>

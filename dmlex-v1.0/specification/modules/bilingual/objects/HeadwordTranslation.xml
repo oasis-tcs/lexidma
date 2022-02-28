@@ -57,8 +57,7 @@
     </listitem>
     <listitem>
       <para>
-        <literal>TranslationUsage</literal> (zero or more)
-      </para>
+        <literal>TranslationLabel</literal> (zero or more) </para>
     </listitem>
     <listitem>
       <para>

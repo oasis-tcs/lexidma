@@ -7,11 +7,12 @@
 ]>
 
 <section>
-  <title>Crossreferencing Module</title>
+  <title>Internal Linking Module</title>
   <para>Used to construct clickable (or otherwise navigable) hyperlinks between objects within the same
     <literal>LexicographicResource</literal>.</para>
-  <xi:include href="relations/VariantRelation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="relations/OppositionRelation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="relations/SimilarityRelation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="relations/RelevanceRelation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="relations/EntrySet.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="relations/SenseSet.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="relations/SensePair.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="relations/SenseTuple.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="relations/SenseEntryTuple.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 </section>

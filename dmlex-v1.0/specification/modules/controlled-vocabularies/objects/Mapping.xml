@@ -7,7 +7,7 @@
 ]>
 
 <section>
-  <title><literal>LabelMapping</literal> object type</title>
+  <title><literal>Mapping</literal> object type</title>
   <para>
     Represents the fact that an item in the controlled vocabulary is
     equivalent to item provided by en external authority.
@@ -18,32 +18,52 @@
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal>PartOfSpeechLabel</literal>
+        <literal>PartOfSpeechCaption</literal>
       </para>
     </listitem>
     <listitem>
       <para>
-        <literal>TranslationPartOfSpeechLabel</literal>
+        <literal>TranslationPartOfSpeechCaption</literal>
       </para>
     </listitem>
     <listitem>
       <para>
-        <literal>UsageLabel</literal>
+        <literal>LabelCaption</literal>
       </para>
     </listitem>
     <listitem>
       <para>
-        <literal>TranslationUsageLabel</literal>
+        <literal>EntrySetCaption</literal>
       </para>
     </listitem>
     <listitem>
       <para>
-        <literal>InflectedFormLabel</literal>
+        <literal>SenseSetCaption</literal>
       </para>
     </listitem>
     <listitem>
       <para>
-        <literal>TranslationInflectedFormLabel</literal>
+        <literal>SensePairCaption</literal>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>SenseTupleCaption</literal>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>TranslationLabelCaption</literal>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>InflectedFormCaption</literal>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>TranslationInflectedFormCaption</literal>
       </para>
     </listitem>
   </itemizedlist>

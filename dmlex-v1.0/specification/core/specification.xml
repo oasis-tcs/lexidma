@@ -14,19 +14,8 @@
   <xi:include href="objects/LexicographicResource.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objects/Entry.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objects/Sense.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <section>
-    <title>The difference between entries and senses</title>
-    <para>
-      An <emphasis role="strong">entry</emphasis> is a container for
-      &quot;formal&quot; properties of the headword such as orthography,
-      morphology, syntax and pronunciation. A
-      <emphasis role="strong">sense</emphasis> is a container for those of
-      the headword's properties which are statements about semantics and
-      pragmatics.
-    </para>    
-  </section>
   <xi:include href="objects/PartOfSpeech.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="objects/Usage.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objects/Label.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objects/Pronunciation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objects/InflectedForm.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objects/Example.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
