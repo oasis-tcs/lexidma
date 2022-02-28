@@ -11,9 +11,7 @@
   <para>
     Extends DMLex Core to support the encoding of etymological information in dictionaries.
   </para> 
+  <xi:include href="extensions/Entry.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> 
   <xi:include href="objects/Etymology.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> 
-  <xi:include href="markers/EtymForm.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> 
-  <xi:include href="markers/EtymTranslation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> 
-  <xi:include href="markers/Cognate.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> 
-  <xi:include href="markers/Borrowing.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> 
+
 </section>

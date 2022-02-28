@@ -7,17 +7,22 @@
 ]>
 
 <section>
-  <title><literal>EtymForm</literal> </title>
+  <title><literal>Derivation</literal> </title>
   <para>
       Marks up a form that is the etymological origin of the entry
   </para>
   <para>
-      Markup of:
+      Child of:
   </para>
   <itemizedlist spacing="compact">
       <listitem>
           <para>
-              <literal>text</literal> property of <literal>Etymology</literal>
+              <literal>Etymology</literal>
+          </para>
+      </listitem>
+      <listitem>
+          <para>
+              <literal>Compound</literal>
           </para>
       </listitem>
   </itemizedlist>
@@ -42,7 +47,22 @@
       </listitem>
       <listitem>
           <para>
-              <literal>n</literal> (integer) an identifier used to connect forms with translations
+              <literal>gramLabel</literal>  A label that indicates a particular grammatical form in the same way as for <literal>InflectedForm</literal>
+          </para>
+      </listitem>
+  </itemizedlist>
+  <para>
+      Children:
+  </para>
+  <itemizedlist>
+      <listitem>
+          <para>
+              <literal>EtymTranslation</literal> (zero or more)
+          </para>
+      </listitem>
+      <listitem>
+          <para>
+              <literal>EtymDate</literal> (zero or more)
           </para>
       </listitem>
   </itemizedlist>
