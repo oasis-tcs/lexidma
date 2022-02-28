@@ -7,9 +7,12 @@
 ]>
 
 <section>
-  <title><literal>EtymTranslation</literal> </title>
+  <title><literal>EtymDescription</literal> </title>
   <para>
-      Gives a translation of a historical or borrowed form in the language of the dictionary
+      A plain text form of the etymology, which may contain notes about the
+      etymology. This may be used instead or alongside a structured set of
+      <literal>Etymon</literal>s. The goal of this is to capture the textual
+      description of etymologies for retrodigitised dictionaries.
   </para>
   <para>
       Child of:
@@ -17,7 +20,7 @@
   <itemizedlist spacing="compact">
       <listitem>
           <para>
-              <literal>Etymon</literal>
+              <literal>Etymology</literal>
           </para>
       </listitem>
   </itemizedlist>
@@ -27,11 +30,10 @@
   <itemizedlist spacing="compact">
       <listitem>
           <para>
-              <literal>text</literal> (non-empty string, required) the 
-              translation of the etymological form in the language of the 
-              dictionary
+              <literal>text</literal> (non-empty string, required) the text of the etymological description
           </para>
       </listitem>
   </itemizedlist>
 </section>
+ 
  

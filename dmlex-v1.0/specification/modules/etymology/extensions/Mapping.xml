@@ -7,29 +7,31 @@
 ]>
 
 <section>
-  <title><literal>Etymology</literal> object type</title>
+  <title>Extensions to <literal>Mapping</literal> object
+    type</title>
   <para>
-      An <literal>Etymology</literal> represents the historical derivation of
-      a word.
-  </para>
-  <para>
-   Children:
+    Additional children:
   </para>
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal moreinfo="none">EtymDescription</literal> (zero or more)
+        <literal>EtymonGramLabel</literal> (zero or more)
       </para>
     </listitem>
     <listitem>
       <para>
-        <literal moreinfo="none">Etymon</literal> (zero or more)
+        <literal>EtymonLanguage</literal> (zero or more)
       </para>
     </listitem>
     <listitem>
       <para>
-        <literal moreinfo="none">MultiEtymon</literal> (zero or more)
+        <literal>EtymonType</literal> (zero or more)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>EtymRelationCaption</literal> (zero or more)
       </para>
     </listitem>
   </itemizedlist>
-</section> 
+</section>

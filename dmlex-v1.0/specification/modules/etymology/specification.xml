@@ -13,5 +13,15 @@
   </para> 
   <xi:include href="extensions/Entry.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> 
   <xi:include href="objects/Etymology.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> 
+  <xi:include href="objects/EtymDescription.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> 
+  <xi:include href="objects/Etymon.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> 
+  <xi:include href="objects/EtymTranslation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> 
+  <xi:include href="objects/EtymDate.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> 
+  <xi:include href="relations/EtymRelation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> 
+  <xi:include href="extensions/Mapping.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> 
+  <xi:include href="objects/EtymonGramLabel.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> 
+  <xi:include href="objects/EtymonLanguage.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> 
+  <xi:include href="objects/EtymonType.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> 
+  <xi:include href="objects/EtymRelationCaption.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> 
 
 </section>

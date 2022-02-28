@@ -7,9 +7,9 @@
 ]>
 
 <section>
-  <title><literal>EtymTranslation</literal> </title>
+  <title><literal>EtymDate</literal> </title>
   <para>
-      Gives a translation of a historical or borrowed form in the language of the dictionary
+      Gives a period of time for which an etymology was valid
   </para>
   <para>
       Child of:
@@ -27,9 +27,16 @@
   <itemizedlist spacing="compact">
       <listitem>
           <para>
-              <literal>text</literal> (non-empty string, required) the 
-              translation of the etymological form in the language of the 
-              dictionary
+              <literal>start</literal> (non-empty string, optional)
+                the start date of when this etymon was used. This can be a 
+              year in the Gregorian calendar or an approximate value.
+          </para>
+      </listitem>
+      <listitem>
+          <para>
+              <literal>end</literal> (non-empty string, optional)
+                the end date of when this etymon was used. This can be a 
+              year in the Gregorian calendar or an approximate value.
           </para>
       </listitem>
   </itemizedlist>
