@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section>
+  <title><literal>SenseSet</literal></title>
+  <para>
+    Represents an unordered set of two or more senses (typically - but not necessarily -
+    belonging to two or more different entries). Recommended for encoding synonyms, near synonyms
+    etc.
+  </para>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal>caption</literal> (non-empty string) eg. "synonyms" </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>Must be one of the values defined by instances of
+            <literal>SenseSetCaption</literal>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Participants (all in the same <literal>LexicographicResource</literal>):
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para><literal>sense</literal> (two or more)</para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            Reference to a <literal>Sense</literal> object.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+  </itemizedlist>
+
+  <example>
+    <title>Encoding near synonyms</title>
+    <programlisting>LexicographicResource: language="de" displayLanguage="en" translationLanguage="en"
+    EntrySetCaption value="nsyn" displayValue="near synonyms"
+    PartOfSpeechValue value="n-masc" displayValue="masculine noun"
+    PartOfSpeechValue value="n-fem" displayValue="feminine noun"
+    PartOfSpeechValue value="n-neut" displayValue="neuter noun"
+
+    Entry id="#die-see" headword="See"
+       PartOfSpeech: value="n-fem"	
+	Sense: id="#die-see-1"
+            Translation: "see"
+
+    Entry id="#das-meer" headword="Meer"
+       PartOfSpeech: value="n-neut"
+	Sense: id="#das-meer-1"
+            Translation: "see"
+
+    Entry id="#der-ozean" headword="Ozean"
+       PartOfSpeech: value="n-masc"
+	Sense: id="#der-ozean-1"
+            Translation: "ocean"
+
+    SenseSet caption="nsyn"
+	sense: #die-see-1
+	sense: #das-meer-1
+	sense: #der-ozean-1</programlisting>
+  </example>
+  
+  
+</section>

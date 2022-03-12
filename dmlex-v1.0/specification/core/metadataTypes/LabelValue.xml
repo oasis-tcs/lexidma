@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section>
+  <title><literal>LabelValue</literal></title>
+  <para> Represents one of several allowed values for the <literal>value</literal> property of
+      <literal>Label</literal> objects. </para>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal>value</literal> (non-empty string)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>displayValue</literal> (optional)
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Children:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal>Mapping</literal> (zero or more) </para>
+    </listitem>
+  </itemizedlist>
+  
+  <example>
+    <title>Example: restricting the values of Label objects</title>
+    <programlisting>LexicographicResource: displayLanguage="en"
+    LabelValue: value="sl", displayValue="slang"
+    LabelValue: value="vul", displayValue="vulgar"</programlisting>
+  </example>
+  
+  <example>
+    <title>Example: mapping the values of Label objects to external ontologies</title>
+    <programlisting>LexicographicResource: displayLanguage="en"
+    LabelValue: value="sl", displayValue="slang"
+        Mapping: sameAs="http://www.lexinfo.net/ontology/3.0/lexinfo#slangRegister"
+    LabelValue: value="vul", displayValue="vulgar"
+        Mapping: sameAs="http://www.lexinfo.net/ontology/3.0/lexinfo#vulgarRegister"</programlisting>
+  </example>
+  
+</section>

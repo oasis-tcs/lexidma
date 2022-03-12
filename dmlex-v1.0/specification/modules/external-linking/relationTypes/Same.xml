@@ -7,15 +7,17 @@
 ]>
 
 <section>
-  <title><literal>Sense</literal></title>
+  <title><literal>Same</literal></title>
+  <para> Represents the fact that two or more senses from two or more lexicographic resources are
+    semantically the same.</para>
   <para>
-    Additional children:
+    Participants:
   </para>
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal>HeadwordTranslation</literal> (zero or more)
-      </para>
+        <literal>Sense</literal> (two or more, no two of which belong to the same
+          <literal>LexicographicResource</literal>) </para>
     </listitem>
   </itemizedlist>
 </section>

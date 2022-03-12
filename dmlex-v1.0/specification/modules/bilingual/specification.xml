@@ -11,14 +11,26 @@
   <para>
     Extends DMLex Core to support the encoding of bilingual lexicographic resources.
   </para>
-  <xi:include href="extensions/LexicographicResource.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="extensions/Sense.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="objects/HeadwordTranslation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="objects/TranslationPartOfSpeech.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="objects/TranslationLabel.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="objects/TranslationPronunciation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="objects/TranslationInflectedForm.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="objects/HeadwordTranslation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="extensions/Example.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="objects/ExampleTranslation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <section>
+    <title>Extensions to core data types</title>
+    <xi:include href="extensions/LexicographicResource.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="extensions/Sense.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="extensions/Example.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  </section>
+  <section>
+    <title>Data types</title>
+    <xi:include href="dataTypes/HeadwordTranslation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="dataTypes/TranslationPartOfSpeech.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="dataTypes/TranslationLabel.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="dataTypes/TranslationPronunciation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="dataTypes/TranslationInflectedForm.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="dataTypes/HeadwordTranslation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="dataTypes/ExampleTranslation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  </section>
+  <section>
+    <title>Metadata types</title>
+    <xi:include href="metadataTypes/TranslationInflectedFormCaption.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="metadataTypes/TranslationLabelValue.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="metadataTypes/TranslationPartOfSpeechValue.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  </section>
 </section>
