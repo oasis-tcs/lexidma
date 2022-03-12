@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section>
+  <title><literal>InflectedForm</literal></title>
+  <para>
+    An inflected headword is a form of the inflectional paradigm of its
+    parent.
+  </para>
+  <para>
+    Child of:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal>Entry</literal>
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal>caption</literal> (non-empty string) e.g. 'plural'
+      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>Must be one of the values defined by instances of <literal>InlectedFormCaption</literal>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>value</literal> (non-empty string)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>listingOrder</literal>
+      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para> Can be implicit from the serialization.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Children:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal>Usage</literal> (zero or more)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>Pronunciation</literal> (zero or more)
+      </para>
+    </listitem>
+  </itemizedlist>
+  <example>
+    <title>Example of an entry with two inflected forms</title>
+    <programlisting>LexicographicResource: language="ga", displayLanguage="en"
+    PartOfSpeechCaption: value="nf", displayValue="feminine noun"
+    InflectedFormCaption: value="gs", displayValue="genitive singular"
+    InflectedFormCaption: value="pl", displayValue="plural"
+    Entry headword="deirfiúr"
+        PartOfSpeech: value="nf"
+        InflectedForm: caption="gs", value="deirféar"
+        InflectedForm: caption="pl", value="deirfiúracha"</programlisting>
+  </example>
+</section>

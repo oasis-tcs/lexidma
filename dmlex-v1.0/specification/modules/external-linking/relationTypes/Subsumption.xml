@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section>
+  <title><literal>Subsumption</literal></title>
+  <para> Represents the fact that one sense from one lexicographic resource is semantically wholly
+    contained inside another sense from another lexicographic resource.</para>
+  <para>
+    Participants:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>the broader <literal>Sense</literal> (exactly one) </para>
+    </listitem>
+    <listitem>
+      <para>the narrower <literal>Sense</literal> (exactly one)</para>
+    </listitem>
+  </itemizedlist>
+  <para>The two senses must not be within the <literal>LexicographicResource</literal>.</para>
+</section>

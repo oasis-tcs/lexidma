@@ -7,14 +7,12 @@
 ]>
 
 <section>
-  <title><literal>Sense</literal></title>
-  <para>
-    Additional children:
-  </para>
+  <title><literal>Entry</literal></title>
+  <para> Additional properties: </para>
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal>HeadwordTranslation</literal> (zero or more)
+        <literal>id</literal>
       </para>
     </listitem>
   </itemizedlist>

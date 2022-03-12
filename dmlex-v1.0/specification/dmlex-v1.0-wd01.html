@@ -205,7 +205,8 @@
           DMLex is based on the assumption that, if you do use any pronunciation transcriptions in your (monolingual)
           lexicographic resource, they all follow the same scheme. The <code class="literal">transcriptionScheme</code>
           tells potential users of the lexicographic resource which scheme that is.
-        </p></div></li></ul></div><p>
+        </p></div></li><li><p>
+        <code class="literal">metadataLanguage</code> (IETF language code) </p><div class="itemizedlist"><ul type="circle" compact><li><p> The language of the display captions of metadata items. </p></li></ul></div></li></ul></div><p>
     Children:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
         <code class="literal">Entry</code> (one or more)
@@ -304,7 +305,8 @@
       </p></li></ul></div><p>
     Properties:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
-        <code class="literal">value</code> (non-empty string) </p><div class="itemizedlist"><ul type="circle" compact><li><p>Can be constrained and mapped to external authorities by the DMLex Controlled Vocabularies Module.</p></li></ul></div></li><li><p>
+        <code class="literal">value</code> (non-empty string) </p><div class="itemizedlist"><ul type="circle" compact><li><p>Must be one of the values defined by instances of
+              <code class="literal">PartOfSpeechValue</code>.</p></li></ul></div></li><li><p>
         <code class="literal">listingOrder</code>
       </p><div class="itemizedlist"><ul type="circle" compact><li><p> Can be implicit from the serialization.</p></li></ul></div></li></ul></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p> If you want to model other grammatical properties of the headword besides part of speech,
       such as gender (of nouns) or aspect (of verbs), the recommended way to do that in DMLex is to
@@ -325,7 +327,8 @@
       </p></li></ul></div><p>
     Properties:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
-        <code class="literal">value</code> (non-empty string) </p><div class="itemizedlist"><ul type="circle" compact><li><p>Can be constrained and mapped to external authorities by the DMLex Controlled Vocabularies Module.</p></li></ul></div></li><li><p>
+        <code class="literal">value</code> (non-empty string) </p><div class="itemizedlist"><ul type="circle" compact><li><p>Must be one of the values defined by instances of
+            <code class="literal">LabelValue</code>.</p></li></ul></div></li><li><p>
         <code class="literal">listingOrder</code>
       </p><div class="itemizedlist"><ul type="circle" compact><li><p> Can be implicit from the serialization.</p></li></ul></div></li></ul></div><div class="example"><a name="idm531"></a><p class="title"><i>Example 5. Example of a label object</i></p><pre class="programlisting">Entry: headword="bitch"
     Sense: definition="a female dog"
@@ -364,7 +367,7 @@
     Properties:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
         <code class="literal">caption</code> (non-empty string) e.g. 'plural'
-      </p><div class="itemizedlist"><ul type="circle" compact><li><p>Can be constrained and mapped to external authorities by the DMLex Controlled Vocabularies Module.</p></li></ul></div></li><li><p>
+      </p><div class="itemizedlist"><ul type="circle" compact><li><p>Must be one of the values defined by instances of <code class="literal">InlectedFormCaption</code>.</p></li></ul></div></li><li><p>
         <code class="literal">value</code> (non-empty string)
       </p></li><li><p>
         <code class="literal">listingOrder</code>
@@ -439,7 +442,8 @@
       </p></li></ul></div><p>
     Properties:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
-        <code class="literal">value</code> (non-empty string) </p><div class="itemizedlist"><ul type="circle" compact><li><p> Can be constrained by the DMLex Controlled Vocabularies Module. </p></li></ul></div></li><li><p>
+        <code class="literal">value</code> (non-empty string) </p><div class="itemizedlist"><ul type="circle" compact><li><p> Must be one of the values defined by instances of
+              <code class="literal">TranslationPartOfSpeechValue</code>. </p></li></ul></div></li><li><p>
         <code class="literal">listingOrder</code>
       </p><div class="itemizedlist"><ul type="circle" compact><li><p> Can be implicit from the serialization.</p></li></ul></div></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="idm728"></a>4.5 <code class="literal">TranslationLabel</code> object type</h3></div></div></div><p>
     An indication of some restriction on the use of its parent. The
@@ -456,8 +460,8 @@
       </p></li></ul></div><p>
     Properties:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
-        <code class="literal">value</code> (non-empty string) </p><div class="itemizedlist"><ul type="circle" compact><li><p> Can be constrained by the DMLex Controlled Vocabularies Module. </p></li><li><p> Its type (eg. whether register, temporal, geographic etc) can be specified by the
-            by the DMLex Controlled Vocabularies Module. </p></li></ul></div></li><li><p>
+        <code class="literal">value</code> (non-empty string) </p><div class="itemizedlist"><ul type="circle" compact><li><p> Must be one of the values defined by instances of
+              <code class="literal">TranslaionLabelValue</code>. </p></li></ul></div></li><li><p>
         <code class="literal">listingOrder</code>
       </p><div class="itemizedlist"><ul type="circle" compact><li><p> Can be implicit from the serialization.</p></li></ul></div></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="idm759"></a>4.6 <code class="literal">TranslationPronunciation</code> object type</h3></div></div></div><p>
     Information about the pronunciation of its parent.
@@ -489,10 +493,8 @@
     Properties:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
         <code class="literal">label</code> (non-empty string) e.g. 'plural'
-      </p><div class="itemizedlist"><ul type="circle" compact><li><p>
-            Can be constrained by the DMLex Controlled Vocabularies
-            Module.
-          </p></li></ul></div></li><li><p>
+      </p><div class="itemizedlist"><ul type="circle" compact><li><p> Must be one of the values defined by instances of
+              <code class="literal">TranslationInlectedFormCaption</code>. </p></li></ul></div></li><li><p>
         <code class="literal">value</code> (non-empty string)
       </p></li><li><p>
         <code class="literal">listingOrder</code>
@@ -546,7 +548,8 @@
   </p><p>
     Properties:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
-        <code class="literal">caption</code> (non-empty string) eg. "variants" </p><div class="itemizedlist"><ul type="circle" compact><li><p>Can be constrained and mapped to external authorities by the DMLex Controlled Vocabularies Module.</p></li></ul></div></li></ul></div><p>
+        <code class="literal">caption</code> (non-empty string) eg. "variants" </p><div class="itemizedlist"><ul type="circle" compact><li><p>Must be one of the values defined by instances of
+            <code class="literal">EntrySetCaption</code>.</p></li></ul></div></li></ul></div><p>
     Participants (all in the same <code class="literal">LexicographicResource</code>):
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
         <code class="literal">entry</code> (two or more)
@@ -559,7 +562,8 @@
   </p><p>
     Properties:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
-        <code class="literal">caption</code> (non-empty string) eg. "synonyms" </p><div class="itemizedlist"><ul type="circle" compact><li><p>Can be constrained and mapped to external authorities by the DMLex Controlled Vocabularies Module.</p></li></ul></div></li></ul></div><p>
+        <code class="literal">caption</code> (non-empty string) eg. "synonyms" </p><div class="itemizedlist"><ul type="circle" compact><li><p>Must be one of the values defined by instances of
+            <code class="literal">SenseSetCaption</code>.</p></li></ul></div></li></ul></div><p>
     Participants (all in the same <code class="literal">LexicographicResource</code>):
   </p><div class="itemizedlist"><ul type="disc" compact><li><p><code class="literal">sense</code> (two or more)</p><div class="itemizedlist"><ul type="circle" compact><li><p>
             Reference to a <code class="literal">Sense</code> object.
@@ -570,7 +574,8 @@
   </p><p>
     Properties:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
-        <code class="literal">caption</code> (non-empty string) eg. "antonyms" </p><div class="itemizedlist"><ul type="circle" compact><li><p>Can be constrained and mapped to external authorities by the DMLex Controlled Vocabularies Module.</p></li></ul></div></li></ul></div><p>
+        <code class="literal">caption</code> (non-empty string) eg. "antonyms" </p><div class="itemizedlist"><ul type="circle" compact><li><p>Must be one of the values defined by instances of
+              <code class="literal">SensePairCaption</code>.</p></li></ul></div></li></ul></div><p>
     Participants (all in the same <code class="literal">LexicographicResource</code>):
   </p><div class="itemizedlist"><ul type="disc" compact><li><p><code class="literal">sense</code> (exacly two)</p><div class="itemizedlist"><ul type="circle" compact><li><p>
             Reference to a <code class="literal">Sense</code> object.
@@ -580,7 +585,8 @@
     is recommended for representing the relationship between a sense and a subsense.</p><p>
     Properties:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
-        <code class="literal">caption</code> (non-empty string) eg. "hypernymy" </p><div class="itemizedlist"><ul type="circle" compact><li><p>Can be constrained and mapped to external authorities by the DMLex Controlled Vocabularies Module.</p></li></ul></div></li></ul></div><p>
+        <code class="literal">caption</code> (non-empty string) eg. "hypernymy" </p><div class="itemizedlist"><ul type="circle" compact><li><p>Must be one of the values defined by instances of
+              <code class="literal">SenseTupleCaption</code>.</p></li></ul></div></li></ul></div><p>
     Participants (all in the same <code class="literal">LexicographicResource</code>):
   </p><div class="itemizedlist"><ul type="disc" compact><li><p><code class="literal">superordinate</code> (exacly one)</p><div class="itemizedlist"><ul type="circle" compact><li><p>
             Reference to a <code class="literal">Sense</code> object.
@@ -592,7 +598,8 @@
     entry.</p><p>
     Properties:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
-        <code class="literal">caption</code> (non-empty string) eg. "subentry" </p><div class="itemizedlist"><ul type="circle" compact><li><p>Can be constrained and mapped to external authorities by the DMLex Controlled Vocabularies Module.</p></li></ul></div></li></ul></div><p>
+        <code class="literal">caption</code> (non-empty string) eg. "subentry" </p><div class="itemizedlist"><ul type="circle" compact><li><p>Must be one of the values defined by instances of
+              <code class="literal">SenseEntryTupleCaption</code>.</p></li></ul></div></li></ul></div><p>
     Participants (all in the same <code class="literal">LexicographicResource</code>):
   </p><div class="itemizedlist"><ul type="disc" compact><li><p><code class="literal">superordinate</code> (exacly one)</p><div class="itemizedlist"><ul type="circle" compact><li><p>
             Reference to a <code class="literal">Sense</code> object.
@@ -613,12 +620,15 @@ Entry[#bsts]: headword="better safe than sorry"
 SenseEntryTuple: caption: "subentry" superordinate="#safe-sense-1" subordinate="#bsts"</pre></div><div class="example"><a name="idm1022"></a><p class="title"><i>Example 12. Example: encoding a subentry at sense level</i></p><p>
       In this example, when the entry for bible is being shown to the human user,
       the entry for the Bible is supposed to be appear there as a subentry, as if it were its first sense. 
-    </p><pre class="programlisting">Entry[#the-bible]: headword="the Bible"
-  Sense: "the book considered holy by Christians..."
+    </p><pre class="programlisting">LexicographicResource: language="en", displayLanguage="en"
+  SenseEntryTupleCaption value="propnamesub" displayValue="proper name subentry"
+
+  Entry: id="#the-bible" headword="the Bible"
+    Sense: id="the-bible-1" definition="the book considered holy by Christians..."
   
-Entry[#bible]: headword="bible" 
-  Sense[#bible-sense-1]: //empty sense, serves as a container for "the Bible"
-  Sense[#bible-sense-2]: definition="a book considered important..."
+  Entry: id="#bible" headword="bible" 
+    Sense: id="#bible-1" //empty sense, serves as a container for "the Bible"
+    Sense: id="#bible-2" definition="a book considered important..."
   
 SenseEntryTuple: caption="subentry" superordinate="#bible-sense-1" subordinate="#the-bible"    </pre></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="idm1026"></a>6 External Linking Module</h2></div></div></div><p>Used to construct links between objects from different lexicographic resources.</p><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="idm1029"></a>6.1 <code class="literal">Same</code> relation type</h3></div></div></div><p> Represents the fact that two or more senses from two or more lexicographic resources are
     semantically the same.</p><p>
@@ -823,9 +833,9 @@ InflectedFormCaption: value="pl", displayValue="plural"
       <code class="literal">SensePair</code> objects. </p><p>
     Properties:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
-        <code class="literal">value</code> (non-empty string)
+        <code class="literal">beat [sb.] up</code>
       </p></li><li><p>
-        <code class="literal">displayValue</code> (optional)
+        <code class="literal">continue [your] studies</code>
       </p></li></ul></div><p>
     Children:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
@@ -833,7 +843,7 @@ InflectedFormCaption: value="pl", displayValue="plural"
       <code class="literal">SenseTuple</code> objects. </p><p>
     Properties:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
-        <code class="literal">value</code> (non-empty string)
+        <code class="literal">headword</code> property of <code class="literal">Entry</code>
       </p></li><li><p>
         <code class="literal">displayValue</code> (optional)
       </p></li></ul></div><p>
@@ -843,7 +853,7 @@ InflectedFormCaption: value="pl", displayValue="plural"
       <code class="literal">SenseEntryTuple</code> objects. </p><p>
     Properties:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
-        <code class="literal">value</code> (non-empty string)
+        <code class="literal">text</code> property of <code class="literal">Example</code>
       </p></li><li><p>
         <code class="literal">displayValue</code> (optional)
       </p></li></ul></div><p>
@@ -853,32 +863,21 @@ InflectedFormCaption: value="pl", displayValue="plural"
     Represents the fact that an item in the controlled vocabulary is
     equivalent to item provided by en external authority.
   </p><p>
-    Parents:
+    Markup of:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
-        <code class="literal">PartOfSpeechCaption</code>
+        <code class="literal">text</code> property of <code class="literal">Example</code>
       </p></li><li><p>
-        <code class="literal">TranslationPartOfSpeechCaption</code>
-      </p></li><li><p>
-        <code class="literal">LabelCaption</code>
-      </p></li><li><p>
-        <code class="literal">EntrySetCaption</code>
-      </p></li><li><p>
-        <code class="literal">SenseSetCaption</code>
-      </p></li><li><p>
-        <code class="literal">SensePairCaption</code>
-      </p></li><li><p>
-        <code class="literal">SenseTupleCaption</code>
-      </p></li><li><p>
-        <code class="literal">TranslationLabelCaption</code>
-      </p></li><li><p>
-        <code class="literal">InflectedFormCaption</code>
-      </p></li><li><p>
-        <code class="literal">TranslationInflectedFormCaption</code>
+        <code class="literal">text</code> property of
+        <code class="literal">ExampleTranslation</code>
       </p></li></ul></div><p>
     Properties:
   </p><div class="itemizedlist"><ul type="disc" compact><li><p>
-        <code class="literal">sameAs</code> (URI)
-      </p></li></ul></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="XML_serialization"></a>9 DMLex XML serialization</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="XML_Intro"></a>9.1 Introduction</h3></div></div></div><p>This serialization defines ... ELABORATE</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>This serialization specification chiefly describes how... ELABORATE</p></div><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>There is an important difference or similar ELABORATE</p><p>However, … ELABORATE. </p><p>Implementers who wish to better access... ELABORATE.</p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="XML_artifacts"></a>9.2 DMLex namespaces and validation artifacts for its XML serialization</h3></div></div></div><p>This
+        <code class="literal">lemma</code>
+      </p><div class="itemizedlist"><ul type="circle" compact><li><p>
+            Optional. The lemmatized form of the collocate.
+          </p></li></ul></div></li></ul></div><div class="example"><a name="d54e2515"></a><p class="title"><i>Example 29. Marking up the headword and a collocate inside an example</i></p><pre class="programlisting">Example: value="The coroner performed an autopsy."
+  HeadwordMarker: value=first occurence of "autopsy"
+  CollocateMarker: value=first occurence of "performed" lemma="perform"</pre></div></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="XML_serialization"></a>8 DMLex XML serialization</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="XML_Intro"></a>8.1 Introduction</h3></div></div></div><p>This serialization defines ... ELABORATE</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>This serialization specification chiefly describes how... ELABORATE</p></div><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>There is an important difference or similar ELABORATE</p><p>However, … ELABORATE. </p><p>Implementers who wish to better access... ELABORATE.</p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="XML_artifacts"></a>8.2 DMLex namespaces and validation artifacts for its XML serialization</h3></div></div></div><p>This
       normative/informative
       XML serialization of DMLex Version 1.0 makes use of all DMLex namespaces (both core and
       modules) namespaces: <code class="code"><a href="http://docs.oasis-open.org/lexidma/ns/dmlex-1.0" target="_top">http://docs.oasis-open.org/lexidma/ns/dmlex-1.0</a></code>, and
@@ -889,7 +888,7 @@ InflectedFormCaption: value="pl", displayValue="plural"
       artifacts if any available at all] for this RDF serialization are available
       at <a href="http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename1.filetype1" target="_top">http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename1.filetype1</a>, <a href="http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename2.filetype1" target="_top">http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename2.filetype1</a>,
       and <a href="http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename1.filetype2" target="_top">http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename1.filetype2</a>. </p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>[Potential note
-        content]</p><p>. </p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="XML_Conformance"></a>9.3 Conformance to the XML serialization of DMLex Version 1.0</h3></div></div></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Some data categories.... Other data categories …. The below conformance
+        content]</p><p>. </p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="XML_Conformance"></a>8.3 Conformance to the XML serialization of DMLex Version 1.0</h3></div></div></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Some data categories.... Other data categories …. The below conformance
         statement is relevant for all data categories expressible in the XML serialization.. There is no interrelation between data
         categories/ data categories are related as explained in ....</p></div><div class="itemizedlist"><p class="title"><i>Processing Requirements</i></p><ul type="disc"><li><p>Conformant Processors MUST be able to use and compute at least
           all the <em class="firstterm">DMLex Core</em> data categories encoded in <em class="firstterm">DMlex XML
@@ -907,14 +906,14 @@ InflectedFormCaption: value="pl", displayValue="plural"
       ELABORATE</p><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>ELABORATE. </p></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>ELABORATE</p><p>Another informative pointer.</p></div><div class="itemizedlist"><p class="title"><i>Processing Requirements</i></p><ul type="disc"><li><p><em class="firstterm">Writers</em>
           MUST
           ELABORATE
-          in <em class="firstterm">DMLex XML Instances</em>.</p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="XML_elements"></a>9.5 XML serialization elements</h3></div></div></div><p>DMLex XML serialization uses the following elements:</p><p>[comma separated list
-      of element olinks]</p><p> </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a name="XML_diagram"></a>9.5.1 Diagram</h4></div></div></div><p>Legend:</p><table class="simplelist" border="0" summary="Simple list"><tr><td>1 = one</td></tr><tr><td>+ = one or more</td></tr><tr><td>? = zero or one</td></tr><tr><td>* = zero, one or more</td></tr></table><pre class="programlisting">
+          in <em class="firstterm">DMLex XML Instances</em>.</p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="XML_elements"></a>8.5 XML serialization elements</h3></div></div></div><p>DMLex XML serialization uses the following elements:</p><p>[comma separated list
+      of element olinks]</p><p> </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a name="XML_diagram"></a>8.5.1 Diagram</h4></div></div></div><p>Legend:</p><table class="simplelist" border="0" summary="Simple list"><tr><td>1 = one</td></tr><tr><td>+ = one or more</td></tr><tr><td>? = zero or one</td></tr><tr><td>* = zero, one or more</td></tr></table><pre class="programlisting">
 programlisting code to display the diagram
     </pre></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="XML_attributes"></a>9.6 XML serialization attributes</h3></div></div></div><p>The XML serialization uses the following attributes:</p><p>[comma separated list
         of attribute olinks]</p><p> </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="XML_example"></a>9.7 Example file</h3></div></div></div><div class="example"><a name="idm1546"></a><p class="title"><i>Example 21. Example of a couple of DMLex entries RDF serialized</i></p><p>The following example file includes markup related to several <em class="firstterm">DMLex Core and Module</em> data
         categories.</p><pre class="programlisting">&lt;!-- example file metadata --&gt;
 
-programlisting code</pre></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="JSON_serialization"></a>10 DMLex JSON serialization</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="JSON_Intro"></a>10.1 Introduction</h3></div></div></div><p>This serialization defines ... ELABORATE</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>This serialization specification chiefly describes how... ELABORATE</p></div><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>There is an important difference or similar ELABORATE</p><p>However, … ELABORATE. </p><p>Implementers who wish to better access... ELABORATE.</p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="JSON_artifacts"></a>10.2 DMLex namespaces and validation artifacts for its JSON serialization</h3></div></div></div><p>This
+programlisting code</pre></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="JSON_serialization"></a>9 DMLex JSON serialization</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="JSON_Intro"></a>9.1 Introduction</h3></div></div></div><p>This serialization defines ... ELABORATE</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>This serialization specification chiefly describes how... ELABORATE</p></div><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>There is an important difference or similar ELABORATE</p><p>However, … ELABORATE. </p><p>Implementers who wish to better access... ELABORATE.</p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="JSON_artifacts"></a>9.2 DMLex namespaces and validation artifacts for its JSON serialization</h3></div></div></div><p>This
       normative/informative
       JSON serialization of DMLex Version 1.0 makes use of all DMLex namespaces (both core and
       modules) namespaces: <code class="code"><a href="http://docs.oasis-open.org/lexidma/ns/dmlex-1.0" target="_top">http://docs.oasis-open.org/lexidma/ns/dmlex-1.0</a></code>, and
@@ -925,7 +924,7 @@ programlisting code</pre></div></div></div><div class="section" lang="en-US"><di
       artifacts if any available at all] for this RDF serialization are available
       at <a href="http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename1.filetype1" target="_top">http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename1.filetype1</a>, <a href="http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename2.filetype1" target="_top">http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename2.filetype1</a>,
       and <a href="http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename1.filetype2" target="_top">http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename1.filetype2</a>. </p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>[Potential note
-        content]</p><p>. </p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="JSON_Conformance"></a>10.3 Conformance to the JSON serialization of DMLex Version 1.0</h3></div></div></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Some data categories.... Other data categories …. The below conformance
+        content]</p><p>. </p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="JSON_Conformance"></a>9.3 Conformance to the JSON serialization of DMLex Version 1.0</h3></div></div></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Some data categories.... Other data categories …. The below conformance
         statement is relevant for all data categories expressible in the JSON serialization.. There is no interrelation between data
         categories/ data categories are related as explained in ....</p></div><div class="itemizedlist"><p class="title"><i>Processing Requirements</i></p><ul type="disc"><li><p>Conformant Processors MUST be able to use and compute at least
           all the <em class="firstterm">DMLex Core</em> data categories encoded in <em class="firstterm">DMlex JSON
@@ -943,14 +942,14 @@ programlisting code</pre></div></div></div><div class="section" lang="en-US"><di
       ELABORATE</p><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>ELABORATE. </p></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>ELABORATE</p><p>Another informative pointer.</p></div><div class="itemizedlist"><p class="title"><i>Processing Requirements</i></p><ul type="disc"><li><p><em class="firstterm">Writers</em>
           MUST
           ELABORATE
-          in <em class="firstterm">DMLex JSON Instances</em>.</p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="JSON_objects"></a>10.5 JSON serialization objects</h3></div></div></div><p>DMLex JSON serialization uses the following objects:</p><p>[comma separated list
-      of object olinks]</p><p> </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a name="JSON_diagram"></a>10.5.1 Diagram</h4></div></div></div><p>Legend:</p><table class="simplelist" border="0" summary="Simple list"><tr><td>1 = one</td></tr><tr><td>+ = one or more</td></tr><tr><td>? = zero or one</td></tr><tr><td>* = zero, one or more</td></tr></table><pre class="programlisting">
+          in <em class="firstterm">DMLex JSON Instances</em>.</p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="JSON_objects"></a>9.5 JSON serialization objects</h3></div></div></div><p>DMLex JSON serialization uses the following objects:</p><p>[comma separated list
+      of object olinks]</p><p> </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a name="JSON_diagram"></a>9.5.1 Diagram</h4></div></div></div><p>Legend:</p><table class="simplelist" border="0" summary="Simple list"><tr><td>1 = one</td></tr><tr><td>+ = one or more</td></tr><tr><td>? = zero or one</td></tr><tr><td>* = zero, one or more</td></tr></table><pre class="programlisting">
 programlisting code to display the diagram
     </pre></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="JSON_properties"></a>10.6 JSON serialization properties</h3></div></div></div><p>The JSON serialization uses the following properties:</p><p>[comma separated list
         of properties olinks]</p><p> </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="JSON_example"></a>10.7 Example file</h3></div></div></div><div class="example"><a name="idm1651"></a><p class="title"><i>Example 22. Example of a couple of DMLex entries RDF serialized</i></p><p>The following example file includes markup related to several <em class="firstterm">DMLex Core and Module</em> data
         categories.</p><pre class="programlisting">&lt;!-- example file metadata --&gt;
 
-programlisting code</pre></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="RDF_serialization"></a>11 DMLex RDF serialization</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="RDF_Intro"></a>11.1 Introduction</h3></div></div></div><p>This serialization defines ... ELABORATE</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>This serialization specification chiefly describes how... ELABORATE</p></div><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>There is an important difference or similar ELABORATE</p><p>However, … ELABORATE. </p><p>Implementers who wish to better access... ELABORATE.</p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="RDF_artifacts"></a>11.2 DMLex namespaces and validation artifacts for its RDF serialization</h3></div></div></div><p>This
+programlisting code</pre></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="RDF_serialization"></a>10 DMLex RDF serialization</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="RDF_Intro"></a>10.1 Introduction</h3></div></div></div><p>This serialization defines ... ELABORATE</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>This serialization specification chiefly describes how... ELABORATE</p></div><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>There is an important difference or similar ELABORATE</p><p>However, … ELABORATE. </p><p>Implementers who wish to better access... ELABORATE.</p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="RDF_artifacts"></a>10.2 DMLex namespaces and validation artifacts for its RDF serialization</h3></div></div></div><p>This
       normative/informative
       RDF serialization of DMLex Version 1.0 makes use of all DMLex namespaces (both core and
       modules) namespaces: <code class="code"><a href="http://docs.oasis-open.org/lexidma/ns/dmlex-1.0" target="_top">http://docs.oasis-open.org/lexidma/ns/dmlex-1.0</a></code>, and
@@ -961,7 +960,7 @@ programlisting code</pre></div></div></div><div class="section" lang="en-US"><di
       artifacts if any available at all] for this JSON serialization are available
       at <a href="http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename1.filetype1" target="_top">http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename1.filetype1</a>, <a href="http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename2.filetype1" target="_top">http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename2.filetype1</a>,
       and <a href="http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename1.filetype2" target="_top">http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename1.filetype2</a>. </p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>[Potential note
-        content]</p><p>. </p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="RDF_Conformance"></a>11.3 Conformance to the RDF serialization of DMLex Version 1.0</h3></div></div></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Some Module 01 data categories.... Other data categories …. The below conformance
+        content]</p><p>. </p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="RDF_Conformance"></a>10.3 Conformance to the RDF serialization of DMLex Version 1.0</h3></div></div></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Some Module 01 data categories.... Other data categories …. The below conformance
         statement is only relevant for data categories .. There is no interrelation between data
         categories/ data categories are related as explained in ....</p></div><div class="itemizedlist"><p class="title"><i>Processing Requirements</i></p><ul type="disc"><li><p>Conformant Processors MUST be able to use and compute at least
           all the <em class="firstterm">DMLex Core</em> data categories encoded in <em class="firstterm">DMlex RDF
@@ -981,8 +980,8 @@ programlisting code</pre></div></div></div><div class="section" lang="en-US"><di
       ELABORATE</p><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>ELABORATE. </p></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>ELABORATE</p><p>Another informative pointer.</p></div><div class="itemizedlist"><p class="title"><i>Processing Requirements</i></p><ul type="disc"><li><p><em class="firstterm">Writers</em>
           MUST
           ELABORATE
-          in <em class="firstterm">DMLex RDF Instances</em>.</p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="RDF_objects"></a>11.5 RDF serialization objects</h3></div></div></div><p>DMLex RDF serialization uses the following objects:</p><p>[comma separated list
-      of object olinks]</p><p> </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a name="RDF_diagram"></a>11.5.1 Diagram</h4></div></div></div><p>Legend:</p><table class="simplelist" border="0" summary="Simple list"><tr><td>1 = one</td></tr><tr><td>+ = one or more</td></tr><tr><td>? = zero or one</td></tr><tr><td>* = zero, one or more</td></tr></table><pre class="programlisting">
+          in <em class="firstterm">DMLex RDF Instances</em>.</p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="RDF_objects"></a>10.5 RDF serialization objects</h3></div></div></div><p>DMLex RDF serialization uses the following objects:</p><p>[comma separated list
+      of object olinks]</p><p> </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a name="RDF_diagram"></a>10.5.1 Diagram</h4></div></div></div><p>Legend:</p><table class="simplelist" border="0" summary="Simple list"><tr><td>1 = one</td></tr><tr><td>+ = one or more</td></tr><tr><td>? = zero or one</td></tr><tr><td>* = zero, one or more</td></tr></table><pre class="programlisting">
 programlisting code to display the diagram
     </pre></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="RDF_attributes"></a>11.6 RDF serialization attributes</h3></div></div></div><p>The RDF serialization uses the following attributes:</p><p>[comma separated list
         of object olinks]</p><p> </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a name="RDF_example"></a>11.7 Example file</h3></div></div></div><div class="example"><a name="idm1756"></a><p class="title"><i>Example 23. Example of a couple of DMLex entries RDF serialized</i></p><p>The following example file includes markup related to several <em class="firstterm">DMLex Core and Module</em> data

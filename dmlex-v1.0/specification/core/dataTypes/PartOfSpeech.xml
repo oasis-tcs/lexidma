@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section>
+  <title><literal>PartOfSpeech</literal></title>
+  <para>
+    Any of the word classes to which a lexical item may be assigned,
+    e.g. noun, verb, adjective, etc.
+  </para>
+  <para>
+    Child of:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal>Entry</literal>
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal>value</literal> (non-empty string) </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>Must be one of the values defined by instances of
+              <literal>PartOfSpeechValue</literal>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>listingOrder</literal>
+      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para> Can be implicit from the serialization.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+  </itemizedlist>
+  <note>
+    <para> If you want to model other grammatical properties of the headword besides part of speech,
+      such as gender (of nouns) or aspect (of verbs), the recommended way to do that in DMLex is to
+      conflate them to the part-of-speech label, for example "masculine noun" and "feminine noun",
+      or "perfective verb" and "imperfective verb". </para>
+  </note>
+  <example>
+    <title>Example of a part of speech</title>
+    <programlisting>LexicographicResource
+  PartOfSpeechValue: value="n", displayValue="noun"
+  Entry: headword="aardvark"
+    PartOfSpeech: value="n"</programlisting>
+  </example>
+</section>
