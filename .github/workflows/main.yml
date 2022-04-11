@@ -32,7 +32,7 @@ jobs:
       - name: Install packages
         run: |
           sudo apt-get update
-          sudo apt-get install xsltproc fop
+          sudo apt-get install xsltproc fop xmlstarlet
       - name: Make XML, HTML and PDF
         run: make html pdf
       - name: Commit files
