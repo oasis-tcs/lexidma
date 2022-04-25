@@ -485,17 +485,14 @@
   <xi:include href="fragments/fragments.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   -->
 
-
   <!-- core and modules -->
   <xi:include href="core/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="modules/bilingual/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="modules/internal-linking/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="modules/external-linking/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="modules/inline-markup/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="modules/controlled-vocabularies/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="modules/etymology/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   
-
   <!--Serializations includes -->
   <xi:include href="serializations/XML/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="serializations/JSON/specification.xml"

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section>
+  <title><literal>LexicographicResource</literal></title>
+  <para>
+    A data set which can be viewed and used by humans as a dictionary
+    and - simultaneously - ingested, processed and understood by
+    software agents as a machine-readable database.
+  </para>
+  <warning>
+    <para>
+      The correct name of this data type in DMLex is  
+      <emphasis>lexicographic</emphasis> resource, not
+      <emphasis>lexical</emphasis>.
+    </para>
+  </warning>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal>language</literal> (optional, IETF language code)
+      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            The language of headwords, definitions, examples.
+          </para>
+        </listitem>
+      </itemizedlist>
+      <note>
+        <para>
+          DMLex is based on the assumption that all headwords in a single lexicographic resource
+          are in the same language, and that definitions and examples, if any occur in the resource, 
+          are in that language too. The <literal>language</literal> property informs potential users
+          of the resource which language that is.
+        </para>
+      </note>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>transcriptionScheme</literal> (optional, IETF language code, eg. <literal>en-fonipa</literal> for
+        English IPA) </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            The scheme (e.g. IPA) in which the
+            <literal>transcription</literal> property of
+            <literal>Pronunciation</literal> objects is given.
+          </para>
+        </listitem>
+      </itemizedlist>
+      <note>
+        <para>
+          DMLex is based on the assumption that, if you do use any pronunciation transcriptions in your (monolingual)
+          lexicographic resource, they all follow the same scheme. The <literal>transcriptionScheme</literal>
+          tells potential users of the lexicographic resource which scheme that is.
+        </para>
+      </note>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>metadataLanguage</literal> (IETF language code) </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para> The language of the display captions of metadata items. </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Children:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal>Entry</literal> (one or more)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>PartOfSpeechValue</literal> (zero or more) </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>LabelValue</literal> (zero or more)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>InflectedFormCaption</literal> (zero or more)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>Mapping</literal> (zero or more)
+      </para>
+    </listitem>
+  </itemizedlist>
+  <example>
+    <title>Example of a lexicographic resource</title>
+    <programlisting>LexicographicResource: language="en"
+    Entry: headword="aardvark"
+        Sense: ...
+        Sense: ...
+    Entry: headword="abacus"
+        Sense: ...
+        Sense: ...
+    Entry: headword="abandon"
+        Sense: ...
+        Sense: ...</programlisting>    
+  </example>
+</section>

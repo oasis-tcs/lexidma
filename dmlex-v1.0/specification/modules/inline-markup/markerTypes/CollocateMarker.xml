@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section>
+  <title><literal>CollocateMarker</literal></title>
+  <para>
+    Marks up a substring inside an example (or inside an example
+    translation) where an important collocate of the headword (or of its translation)
+    occurs.
+  </para>
+  <para>
+    Markup of:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal>text</literal> property of <literal>Example</literal>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>text</literal> property of
+        <literal>ExampleTranslation</literal>
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal>lemma</literal>
+      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            Optional. The lemmatized form of the collocate.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+  </itemizedlist>
+  <example>
+    <title>Marking up the headword and a collocate inside an example</title>
+    <programlisting>Example: value="The coroner performed an autopsy."
+  HeadwordMarker: value=first occurence of "autopsy"
+  CollocateMarker: value=first occurence of "performed" lemma="perform"</programlisting>
+  </example>
+</section>

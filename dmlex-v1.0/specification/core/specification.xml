@@ -11,12 +11,23 @@
   <para>
     The DMLex Core is for monolingual lexical resources, where headwords, definitions, examples etc. are all in one and the same language.
   </para>
-  <xi:include href="objects/LexicographicResource.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="objects/Entry.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="objects/Sense.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="objects/PartOfSpeech.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="objects/Label.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="objects/Pronunciation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="objects/InflectedForm.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="objects/Example.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <section>
+    <title>Data types</title>
+    <xi:include href="dataTypes/LexicographicResource.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="dataTypes/Entry.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="dataTypes/Sense.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="dataTypes/PartOfSpeech.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="dataTypes/Label.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="dataTypes/Pronunciation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="dataTypes/InflectedForm.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="dataTypes/Example.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  </section>
+  <section>
+    <title>Metadata types</title>
+    <xi:include href="metadataTypes/InflectedFormCaption.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="metadataTypes/PartOfSpeechValue.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="metadataTypes/LabelValue.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="metadataTypes/ExampleSource.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="metadataTypes/Mapping.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  </section>
 </section>

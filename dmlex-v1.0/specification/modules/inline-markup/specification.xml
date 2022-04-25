@@ -8,7 +8,10 @@
 
 <section>
   <title>Inline Markup Module</title>
-  <xi:include href="markers/PlaceholderMarker.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="markers/HeadwordMarker.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="markers/CollocateMarker.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <section>
+    <title>Marker types</title>
+    <xi:include href="markerTypes/PlaceholderMarker.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="markerTypes/HeadwordMarker.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="markerTypes/CollocateMarker.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  </section>
 </section>

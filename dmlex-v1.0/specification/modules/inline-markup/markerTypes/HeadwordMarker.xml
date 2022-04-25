@@ -7,14 +7,25 @@
 ]>
 
 <section>
-  <title><literal>Sense</literal></title>
+  <title><literal>HeadwordMarker</literal></title>
   <para>
-    Additional children:
+    Marks up a substring inside an example (or inside an example
+    translation) which corresponds to the headword (or to a translation
+    of the headword).
+  </para>
+  <para>
+    Markup of:
   </para>
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal>HeadwordTranslation</literal> (zero or more)
+        <literal>text</literal> property of <literal>Example</literal>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>text</literal> property of
+        <literal>ExampleTranslation</literal>
       </para>
     </listitem>
   </itemizedlist>

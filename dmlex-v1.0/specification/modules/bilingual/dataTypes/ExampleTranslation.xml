@@ -7,29 +7,36 @@
 ]>
 
 <section>
-  <title><literal>LexicographicResource</literal></title>
+  <title><literal>ExampleTranslation</literal></title>
   <para>
-    Additional properties:
+    The translation of an example.
+  </para>
+  <para>
+    Child of:
   </para>
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal>translationLanguage</literal> (optional, IETF language
-        code)
+        <literal>Example</literal>
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal>text</literal> (non-empty string)
       </para>
     </listitem>
     <listitem>
       <para>
-        <literal>translationTranscriptionScheme</literal> (optional, reference to some external
-        authority - which?) </para>
+        <literal>listingOrder</literal>
+      </para>
       <itemizedlist spacing="compact">
         <listitem>
-          <para>
-            The scheme (e.g. IPA) in which the
-            <literal>transcription</literal> property of
-            <literal>TranslationPronunciation</literal> objects is
-            given.
-          </para>
+          <para> Can be implicit from the serialization.</para>
         </listitem>
       </itemizedlist>
     </listitem>

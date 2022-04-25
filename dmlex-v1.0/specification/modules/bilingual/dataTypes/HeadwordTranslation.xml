@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section>
+  <title><literal>HeadwordTranslation</literal></title>
+  <para>
+    The translation equivalent of the headword in one of its senses.
+  </para>
+  <para>
+    Child of:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal>Sense</literal>
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal>text</literal> (non-empty string) </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para> Can be a single word, a multi-word expression, or indeed any expression in the
+            target language. </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>listingOrder</literal>
+      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para> Can be implicit from the serialization.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Children:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal>TranslationPartOfSpeech</literal> (zero or more)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>TranslationLabel</literal> (zero or more) </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>TranslationPronunciation</literal> (zero or more)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>TranslationInflectedForm</literal> (zero or more)
+      </para>
+    </listitem>
+  </itemizedlist>
+</section>

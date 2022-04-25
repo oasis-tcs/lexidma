@@ -7,15 +7,16 @@
 ]>
 
 <section>
-  <title><literal>Sense</literal></title>
-  <para>
-    Additional children:
-  </para>
+  <title><literal>Overlap</literal></title>
+  <para> Represents the fact that two or more senses from two or more lexicographic resources
+    overlap semantically, without either one being semantically wholly contained inside the
+    other.</para>
+  <para> Participants: </para>
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal>HeadwordTranslation</literal> (zero or more)
-      </para>
+        <literal>Sense</literal> (two or more, no two of which belong to the same
+          <literal>LexicographicResource</literal>) </para>
     </listitem>
   </itemizedlist>
 </section>
