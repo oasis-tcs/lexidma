@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+    xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
+    xmlns:dmlex="http://docs.oasis-open.org/lexidma/ns/dmlex-1.0">
+    <a:documentation>RelaxNG XML schema for OASIS DMLex lexicographic resources.</a:documentation>
+    <a:documentation>Notes: 1. The XML serialisation does not consistently follow the DMLex
+        distinction into object (which are naturally modelled as XML elements) properties (which are
+        naturally modelled as element attributes in XML) and but rather models the properties that
+        can contain free text (e.g. definition, text, value) as XML elements. In this we follow the
+        TEI principle, where attributes should not contain free text, also, otherwise these
+        properties could not contain mark-up as described in the Inline Markup Module. Note that the
+        casing remains the same as in the abstract model, i.e. elements based on object are
+        capitalised (eg. LexicographicResource), and elements based on properties start with lower
+        case (e.g. homographNumber). 2. For DMLex property "id" we used the XML attribute "xml:id"
+        and for "langauge" we use "xml:lang". 3. XML does not model the listingOrder property, as
+        this corresponds to the order of elements in XML. 4. There are several pointing attributes
+        in DMLex. However, they are (mostly) not given IDREF datatypes, as the specification writes
+        that a DMLex resources does not enforce "referential integrity" 5. Whether the children
+        elements are allowed to appear in any order or in the order specified in the specification
+        has been determined on a case-by-case basis.</a:documentation>
+
+    <a:documentation>DMLex Core module: obligatory.</a:documentation>
+    <include href="dmlex-module-core.rng"/>
+
+    <a:documentation>Include for bilingual lexical resources. Not meant to be used together with
+        multilingual module.</a:documentation>
+    <!--include href="dmlex-module-bilingual.rng"/-->
+
+    <a:documentation>Include for multilingual lexical resources. Not meant to be used together with
+        bilingual module.</a:documentation>
+    <!--include href="dmlex-module-multilingual.rng"/-->
+
+    <a:documentation>Include for lexical resources that use the linking module.</a:documentation>
+    <!--include href="dmlex-module-linking.rng"/-->
+
+    <a:documentation>Include for lexical resources that use inline markup module.</a:documentation>
+    <!--include href="dmlex-module-inline.rng"/-->
+
+</grammar>

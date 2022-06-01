@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section>
+  <title><literal>EtymRelation</literal> relation type</title>
+  <para>
+      Indicates a relation between two etymons 
+  </para>
+  <para>
+      Child of:
+  </para>
+  <itemizedlist spacing="compact">
+      <listitem>
+          <para>
+              <literal>Etymon</literal>
+          </para>
+      </listitem>
+  </itemizedlist>
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+          <literal>caption</literal> (non-empty string, required) indicates the
+          relationship between the etymons. The most typical value is 
+          <literal>derivative</literal> indicating that one etymon is a later
+          form of another. </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>Can be constrained and mapped to external authorities using a controlled vocabulary.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Participants (all in the same <literal>LexicographicResource</literal>):
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para><literal>etymons</literal> (exacly two)</para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            Reference to a <literal>Etymon</literal> object.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+  </itemizedlist>
+
+</section>
+ 

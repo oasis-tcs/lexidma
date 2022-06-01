@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+    xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
+    xmlns:dmlex="http://docs.oasis-open.org/lexidma/ns/dmlex-1.0">
+    <a:documentation>RelaxNG XML schema for OASIS DMLex lexicographic resources: module for
+        linking.</a:documentation>
+    <a:documentation>Note that this is not a stand-alone schema, as it is dependent on the DMLeX
+        Core module.</a:documentation>
+    
+    <!-- Add ID to various objects -->
+    <!-- These are now specified already in core, contrary to the current specs! -->
+    <!--define name="LexicographicResource.attributes" combine="interleave">
+        <ref name="id"/>
+    </define>
+    <define name="Entry.attributes" combine="interleave">
+        <ref name="id"/>
+    </define-->
+
+    <!-- Additional elements for LexicographicResource object -->
+    <define name="LexicographicResource.linking.elements" combine="choice">
+        <ref name="Relation"/>
+        <ref name="RelationTag"/>
+    </define>
+    <!-- Additional attributes for Sense object -->
+    <!-- These are now specified already in core, contrary to the current specs!-->
+    <!--define name="Sense.linking.attributes" combine="choice">
+        <ref name="id"/>
+    </define-->
+    
+    <!-- Define new Relation object -->
+    <define name="Relation">
+        <element name="dmlex:Relation">
+            <optional>
+                <ref name="id"/>
+            </optional>
+            <ref name="tag"/>
+            <optional>
+                <ref name="description"/>
+            </optional>
+            <oneOrMore>
+                <element name="dmlex:Membership">
+                    <ref name="tag"/>
+                    <attribute name="member">
+                        <data type="IDREF"/>
+                    </attribute>
+                    <!-- What about reverseListingOrder: is it neccessary, what does it mean? -->
+                    <empty/>
+                </element>
+            </oneOrMore>
+        </element>
+    </define>
+
+    <!-- Define new RelationTag object -->
+    <define name="RelationTag">
+        <element name="dmlex:RelationTag">
+            <ref name="tag"/>
+            <optional>
+                <ref name="description"/>
+            </optional>
+            <attribute name="scope">
+                <choice>
+                    <value>any</value>
+                    <value>sameResource</value>
+                    <value>sameEntry</value>
+                </choice>
+            </attribute>
+            <oneOrMore>
+                <ref name="MembershipTag"/>
+            </oneOrMore>
+        </element>
+    </define>
+
+    <!-- Define new MembershipTagTag object -->
+    <define name="MembershipTag">
+        <element name="dmlex:MembershipTag">
+            <ref name="tag"/>
+            <optional>
+                <ref name="description"/>
+            </optional>
+            <attribute name="type">
+                <choice>
+                    <value>entry</value>
+                    <value>sense</value>
+                    <value>collocationMarker</value>
+                    <value>relation</value>
+                </choice>
+            </attribute>
+            <attribute name="min">
+                <data type="integer"/>
+            </attribute>
+            <attribute name="max">
+                <data type="integer"/>
+            </attribute>
+            <attribute name="action" a:defaultValue="none">
+                <choice>
+                    <value>embed</value>
+                    <value>navigable</value>
+                    <value>none</value>
+                </choice>
+            </attribute>
+            <optional>
+                <ref name="TagMapping"/>
+            </optional>
+        </element>
+
+    </define>
+</grammar>

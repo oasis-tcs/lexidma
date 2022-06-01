@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+    xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
+    xmlns:dmlex="http://docs.oasis-open.org/lexidma/ns/dmlex-1.0">
+    <a:documentation>RelaxNG XML schema for OASIS DMLex lexicographic resources: module for inline
+        markup.</a:documentation>
+    <a:documentation>Note that this is not a stand-alone schema, as it is dependent on the DMLeX
+        Core module.</a:documentation>
+   
+    <a:documentation>Content of Headword object if this module is used.</a:documentation>
+    <define name="Headword.inline.content" combine="choice">
+        <mixed>
+            <zeroOrMore>
+                <element name="dmlex:PlaceholderMarker">
+                    <data type="token"/>
+                </element>
+            </zeroOrMore>
+        </mixed>
+    </define>
+    <a:documentation>And example can have mixed content.</a:documentation>
+    <define name="Example.inline.content" combine="choice">
+        <mixed>
+            <zeroOrMore>
+                <choice>
+                    <element name="dmlex:HeadwordMarker">
+                        <data type="token"/>
+                    </element>
+                    <element name="dmlex:CollocateMarker">
+                        <data type="token"/>
+                    </element>
+                </choice>
+            </zeroOrMore>
+        </mixed>
+    </define>
+
+</grammar>
