@@ -153,11 +153,28 @@ entry: aardvark-noun
 
 ### XML {.unnumbered .unlisted}
 
-TBD
+```xml
+<entry id="aardvark-noun">
+    <headword>aardvark</headword>
+    <pronunciation>
+        <transcription>a:rdva:rk</transcription>
+    </pronunciation>
+    <sense>...</sense>
+</entry>
+```
 
 ### JSON {.unnumbered .unlisted}
 
-TBD
+```json
+{
+    "id": "aardvark-noun",
+    "headword": "aardvark",
+    "pronunciations": [{
+        "transcriptions": [{"text": "a:rdva:rk"}]
+    }],
+    "senses": [...]
+}
+```
 
 
 ## Pronunciation given as a sound file {#ex03}
@@ -174,11 +191,26 @@ entry: aardvark-noun
 
 ### XML {.unnumbered .unlisted}
 
-TBD
+```xml
+<entry id="aardvark-noun">
+    <headword>aardvark</headword>
+    <pronunciation soundFile="aardvark.mp3"/>
+    <sense>...</sense>
+</entry>
+```
 
 ### JSON {.unnumbered .unlisted}
 
-TBD
+```json
+{
+    "id": "aardvark-noun",
+    "headword": "aardvark",
+    "pronunciations": [{
+        "soundFile": "aardvark.mp3"
+    }],
+    "senses": [...]
+}
+```
 
 
 ## Pronunciation given both ways {#ex04}
@@ -196,11 +228,29 @@ entry: aardvark-noun
 
 ### XML {.unnumbered .unlisted}
 
-TBD
+```xml
+<entry id="aardvark-noun">
+    <headword>aardvark</headword>
+    <pronunciation soundFile="aardvark.mp3">
+        <transcription>a:rdva:rk</transcription>
+    </pronunciation>
+    <sense>...</sense>
+</entry>
+```
 
 ### JSON {.unnumbered .unlisted}
 
-TBD
+```json
+{
+    "id": "aardvark-noun",
+    "headword": "aardvark",
+    "pronunciations": [{
+        "soundFile": "aardvark.mp3",
+        "transcriptions": [{"text": "a:rdva:rk"}]
+    }],
+    "senses": [...]
+}
+```
 
 
 ## How to use `tag` {#ex05}
@@ -210,41 +260,108 @@ This is an entry from a hypothetical Irish dictionary for the headword "folúsgh
 ### NVH {.unnumbered .unlisted}
 
 ```yaml
-entry: folúsghlantóir-n
-    headword: folúsghlantóir
-    partOfSpeech: n-masc
-    inflectedForm: folúsghlantóra
-        inflectedTag: sg-gen
-    inflectedForm: folúsghlantóirí
-        inflectedTag: pl
-    sense: ...
-    
-tag: n-masc
-    description: noun, masculine
-    target: partOfSpeech
-tag: n-fem
-    description: noun, feminine
-    target: partOfSpeech
-
-tag: sg-gen
-    description: singular genitive
-    target: inflectedTag
-    partOfSpeechConstraint: n-masc
-    partOfSpeechConstraint: n-fem
-tag: pl
-    description: plural
-    target: inflectedTag
-    partOfSpeechConstraint: n-masc
-    partOfSpeechConstraint: n-fem
+lexicographicResource: my-irish-dictionary
+    language: ga
+    entry: folúsghlantóir-n
+        headword: folúsghlantóir
+        partOfSpeech: n-masc
+        inflectedForm: folúsghlantóra
+            inflectedTag: sg-gen
+        inflectedForm: folúsghlantóirí
+            inflectedTag: pl
+        sense: ...
+    tag: n-masc
+        description: noun, masculine
+        target: partOfSpeech
+    tag: n-fem
+        description: noun, feminine
+        target: partOfSpeech
+    tag: sg-gen
+        description: singular genitive
+        target: inflectedTag
+        partOfSpeechConstraint: n-masc
+        partOfSpeechConstraint: n-fem
+    tag: pl
+        description: plural
+        target: inflectedTag
+        partOfSpeechConstraint: n-masc
+        partOfSpeechConstraint: n-fem
 ```
 
 ### XML {.unnumbered .unlisted}
 
-TBD
+```xml
+<lexicographicResource id="my-irish-dictionary" language="ga">
+    <entry id="folúsghlantóir-n">
+        <headword>folúsghlantóir</headword>
+        <partOfSpeech value="n-masc"/>
+        <inflectedForm inflectedTag="sg-gen">folúsghlantóra</inflectedForm>
+        <inflectedForm inflectedTag="pl">folúsghlantóirí</inflectedForm>
+        <sense>...</sense>
+    </entry>
+    <tag value="n-masc">
+        <description>noun, masculine</description>
+        <target value="partOfSPeech"/>
+    </tag>
+    <tag value="n-fem">
+        <description>noun, feminine</description>
+        <target value="partOfSPeech"/>
+    </tag>
+    <tag value="sg-gen">
+        <description>singular genitive</description>
+        <target value="inflectedTag"/>
+        <partOfSpeechConstraint value="n-masc"/>
+        <partOfSpeechConstraint value="n-fem"/>
+    </tag>
+    <tag value="pl">
+        <description>plural</description>
+        <target value="inflectedTag"/>
+        <partOfSpeechConstraint value="n-masc"/>
+        <partOfSpeechConstraint value="n-fem"/>
+    </tag>
+</lexicographicResource>
+```
 
 ### JSON {.unnumbered .unlisted}
 
-TBD
+```json
+{
+    "id": "my-irish-dictionary",
+    "language": "ga",
+    "entries": [{
+        "id": "folúsghlantóir-n",
+        "headword": "folúsghlantóir",
+        "partsOfSpeech": ["n-masc"],
+        "inflectedForms": [{
+            "text": "folúsghlantóra",
+            "inflectedTag": "sg-gen",
+        }, {
+            "text": "folúsghlantóirí",
+            "inflectedTag": "pl",
+        }],
+        "senses": [...]
+    }],
+    "tags": [{
+        "value": "n-masc",
+        "description": "noun, masculine",
+        "targets": ["partOfSpeech"]
+    }, {
+        "value": "n-fem",
+        "description": "noun, feminine",
+        "targets": ["partOfSpeech"]
+    }, {
+        "value": "sg-gen",
+        "description": "singular genitive",
+        "targets": ["inflectedTag"],
+        "partOfSpeechConstraints": ["n-masc", "n-fem"]
+    }, {
+        "value": "pl",
+        "description": "plural",
+        "targets": ["inflectedTag"],
+        "partOfSpeechConstraints": ["n-masc", "n-fem"]
+    }]
+}
+```
 
 
 ## Mapping `tag` to external inventories {#ex06}
@@ -268,11 +385,44 @@ tag: n-fem
 
 ### XML {.unnumbered .unlisted}
 
-TBD
+```xml
+<tag value="n-masc">
+    <description>noun, masculine</description>
+    <target value="partOfSPeech"/>
+    <sameAs uri="http://www.lexinfo.net/ontology/3.0/lexinfo#noun"/>
+    <sameAs uri="http://www.lexinfo.net/ontology/3.0/lexinfo#masculine"/>
+</tag>
+<tag value="n-fem">
+    <description>noun, feminine</description>
+    <target value="partOfSPeech"/>
+    <sameAs uri="http://www.lexinfo.net/ontology/3.0/lexinfo#noun"/>
+    <sameAs uri="http://www.lexinfo.net/ontology/3.0/lexinfo#feminine"/>
+</tag>
+```
 
 ### JSON {.unnumbered .unlisted}
 
-TBD
+```json
+{
+    "tags": [{
+        "value": "n-masc",
+        "description": "noun, masculine",
+        "targets": ["partOfSpeech"],
+        "sameAs": [
+            "http://www.lexinfo.net/ontology/3.0/lexinfo#noun",
+            "http://www.lexinfo.net/ontology/3.0/lexinfo#masculine"
+        ]
+    }, {
+        "value": "n-fem",
+        "description": "noun, feminine",
+        "targets": ["partOfSpeech"],
+        "sameAs": [
+            "http://www.lexinfo.net/ontology/3.0/lexinfo#noun",
+            "http://www.lexinfo.net/ontology/3.0/lexinfo#feminine"
+        ]
+    }]
+}
+```
 
 
 ## Defining a bilingual lexicographic resource {#ex07}
@@ -283,18 +433,32 @@ This defines a lexicographic resource where the source language is German and th
 
 ```yaml
 lexicographicResource: deueng
-    description: My German-English Dictionary
+    title: My German-English Dictionary
     language: de
     translationLanguage: en
 ```
 
 ### XML {.unnumbered .unlisted}
 
-TBD
+```xml
+<lexicographicResource id="deueng" language="de">
+    <title>My German-English Dictionary</title>
+    <translationLanguage langCode="en"/>
+    ...
+</lexicographicResource>
+```
 
 ### JSON {.unnumbered .unlisted}
 
-TBD
+```json
+{
+    "id": "deueng",
+    "title": "My German-English Dictionary",
+    "language": "de",
+    "translationLanguages": ["en"],
+    ...
+}
+```
 
 
 ## Defining a multilingual lexicographic resource {#ex10}
@@ -314,11 +478,27 @@ lexicographicResource: irish-multilingual
 
 ### XML {.unnumbered .unlisted}
 
-TBD
+```xml
+<lexicographicResource id="irish-multilingual" language="ga">
+    <title>My Irish-Multilingual Dictionary</title>
+    <translationLanguage langCode="en"/>
+    <translationLanguage langCode="de"/>
+    <translationLanguage langCode="cs"/>
+    ...
+</lexicographicResource>
+```
 
 ### JSON {.unnumbered .unlisted}
 
-TBD
+```json
+{
+    "id": "irish-multilingual",
+    "title": "My Irish-Multilingual Dictionary",
+    "language": "ga",
+    "translationLanguages": ["en", "de", "cs"],
+    ...
+}
+```
 
 
 ## How to use `headwordTranslation` in a bilingual lexicographic resource {#ex08}
