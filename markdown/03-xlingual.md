@@ -25,7 +25,7 @@ lexicographicResource: ...
 ```json
 {
     ...,
-    "translationLanguage": [...]
+    "translationLanguages": [...]
 }
 ```
 
@@ -134,13 +134,13 @@ headwordTranslation: <string>
 
 ```json
 "headwordTranslations": {
-    language: [{
+    <language>: [{
         "text": "...",
         "partsOfSpeech": [...],
         "labels": [...],
         "pronunciations": [...],
         "inflectedForms": [...]
-    }, ...], 
+    }], 
     ...
 }
 ```
@@ -196,7 +196,7 @@ headwordExplanation: <string>
 
 ```json
 "headwordExplanations": {
-    language: "...", 
+    <language>: "...", 
     ...
 }
 ```
@@ -274,11 +274,11 @@ exampleTranslation: <string>
 
 ```json
 "exampleTranslations": {
-    language: [{
+    <language>: [{
         "text": "...",
         "labels": [...],
         "soundFile": "..."
-    }, ...], 
+    }],
     ...
 }
 ```

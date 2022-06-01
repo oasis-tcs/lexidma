@@ -15,15 +15,26 @@ headword: ...
 
 ### XML {.unnumbered .unlisted}
 
-TBD
+```xml
+<headword>
+    ...<placeholderMarker>...</placeholderMarker>...
+</headword>
+```
 
 ### JSON {.unnumbered .unlisted}
 
-TBD
+```json
+{
+    ...,
+    "headword": "...",
+    "placeholderMarkers": [...],
+    ...
+}
+```
 
 ### SQL {.unnumbered .unlisted}
 
-TBD
+No changes needed.
 
 ## Extensions to `headwordTranslation`
 
@@ -36,15 +47,34 @@ headwordTranslation: ...
 
 ### XML {.unnumbered .unlisted}
 
-TBD
+```xml
+<headwordTranslation>
+    <text>
+        ...<placeholderMarker>...</placeholderMarker>...
+    </text>
+</headwordTranslation>
+```
 
 ### JSON {.unnumbered .unlisted}
 
-TBD
+```json
+{
+    ...,
+    "headwordTranslations": {
+        <language>: [{
+            "text": "...",
+            "placeholderMarkers": [...],
+            ...
+        }], 
+        ...
+    },
+    ...
+}
+```
 
 ### SQL {.unnumbered .unlisted}
 
-TBD
+No changes needed.
 
 ## Extensions to `example`
 
@@ -53,20 +83,37 @@ Additional children:
 ```yaml
 example: ...
     headwordMarker: (0..n)
-    collocateMarker: (0..n)
+    itemMarker: (0..n)
 ```
 
 ### XML {.unnumbered .unlisted}
 
-TBD
+```xml
+<example>
+    <text>
+        ...
+        <headwordMarker>...</headwordMarker>
+        ...
+        <itemMarker...>...</itemMarker>
+        ...
+    </text>
+</example>
+```
 
 ### JSON {.unnumbered .unlisted}
 
-TBD
+```json
+{
+    "text": "...",
+    "headwordMarkers": [...],
+    "itemMarkers": [...],
+    ...
+}
+```
 
 ### SQL {.unnumbered .unlisted}
 
-TBD
+No changes needed.
 
 ## Extensions to `exampleTranslation`
 
@@ -75,20 +122,37 @@ Additional children:
 ```yaml
 exampleTranslation: ...
     headwordMarker: (0..n)
-    collocateMarker: (0..n)
+    itemMarker: (0..n)
 ```
 
 ### XML {.unnumbered .unlisted}
 
-TBD
+```xml
+<exampleTranslation>
+    <text>
+        ...
+        <headwordMarker>...</headwordMarker>
+        ...
+        <itemMarker...>...</itemMarker>
+        ...
+    </text>
+</exampleTranslation>
+```
 
 ### JSON {.unnumbered .unlisted}
 
-TBD
+```json
+{
+    "text": "...",
+    "headwordMarkers": [...],
+    "itemMarkers": [...],
+    ...
+}
+```
 
 ### SQL {.unnumbered .unlisted}
 
-TBD
+No changes needed.
 
 ## Extensions to `definition`
 
@@ -97,20 +161,35 @@ Additional children:
 ```yaml
 definition: ...
     headwordMarker: (0..n)
-    collocateMarker: (0..n)
+    itemMarker: (0..n)
 ```
 
 ### XML {.unnumbered .unlisted}
 
-TBD
+```xml
+<definition...>
+    ...
+    <headwordMarker>...</headwordMarker>
+    ...
+    <itemMarker...>...</itemMarker>
+    ...
+</definition>
+```
 
 ### JSON {.unnumbered .unlisted}
 
-TBD
+```json
+{
+    "text": "...",
+    "headwordMarkers": [...],
+    "itemMarkers": [...],
+    ...
+}
+```
 
 ### SQL {.unnumbered .unlisted}
 
-TBD
+No changes needed.
 
 ## `placeholderMarker`
 
@@ -122,15 +201,29 @@ placeholderMarker: <string>
 
 ### XML {.unnumbered .unlisted}
 
-TBD
+```xml
+<placeholderMarker>...</placeholderMarker>
+```
 
 ### JSON {.unnumbered .unlisted}
 
-TBD
+```json
+{
+    "startIndex": ...,
+    "endIndex": ...
+}
+```
 
 ### SQL {.unnumbered .unlisted}
 
-TBD
+```sql
+create table placeholderMarkers (
+    entryID int foreign key references entries(id),
+    startIndex int,
+    endIndex int,
+    id int primary key
+)
+```
 
 ## `headwordMarker`
 
@@ -142,15 +235,31 @@ headwordMarker: <string>
 
 ### XML {.unnumbered .unlisted}
 
-TBD
+```xml
+<headwordMarker>...</headwordMarker>
+```
 
 ### JSON {.unnumbered .unlisted}
 
-TBD
+```json
+{
+    "startIndex": ...,
+    "endIndex": ...
+}
+```
 
 ### SQL {.unnumbered .unlisted}
 
-TBD
+```sql
+create table headwordMarkers (
+    entryID int foreign key references entries(id),
+    headwordTranslationID int foreign key references headwordTranslations(id),
+    definitionID int foreign key references definitions(id),
+    startIndex int,
+    endIndex int,
+    id int primary key
+)
+```
 
 ## `itemMarker`
 
@@ -164,17 +273,44 @@ itemMarker: <string>
 
 ### XML {.unnumbered .unlisted}
 
-TBD
+```xml
+<itemMarker lemma="...">
+    ...
+    <itemRole value="..."/>
+</itemMarker>
+```
 
 ### JSON {.unnumbered .unlisted}
 
-TBD
+```json
+{
+    "startIndex": ...,
+    "endIndex": ...,
+    lemma: "...",
+    itemRoles: ["..."]
+}
+```
 
 ### SQL {.unnumbered .unlisted}
 
-TBD
+```sql
+create table itemMarkers (
+    entryID int foreign key references entries(id),
+    headwordTranslationID int foreign key references headwordTranslations(id),
+    definitionID int foreign key references definitions(id),
+    startIndex int,
+    endIndex int,
+    lemma varchar(50),
+    id int primary key
+);
+create table itemMarkerRoles (
+    itemMarkerID int foreign key references itemMarkers(id),
+    role: "...",
+    id int primary key
+)
+```
 
-Comments
+### Comments {.unnumbered .unlisted}
 
 - `lemma` is the lemmatized form of the collocate. An application can use it to provide a clickable link for the user to search for the lemma in the rest of the lexicographic resource or on the web. (If you want to link the collocate explicitly to a specific entry or to a specific sense in your lexicographic resource, or even in an external lexicographic resource, you can use the Linking Module for that.)
 
