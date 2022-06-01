@@ -13,18 +13,6 @@ headword: ...
     placeholderMarker: (0..n)
 ```
 
-### XML {.unnumbered .unlisted}
-
-TBD
-
-### JSON {.unnumbered .unlisted}
-
-TBD
-
-### SQL {.unnumbered .unlisted}
-
-TBD
-
 ## Extensions to `headwordTranslation`
 
 Additional children:
@@ -34,18 +22,6 @@ headwordTranslation: ...
     placeholderMarker: (0..n)
 ```
 
-### XML {.unnumbered .unlisted}
-
-TBD
-
-### JSON {.unnumbered .unlisted}
-
-TBD
-
-### SQL {.unnumbered .unlisted}
-
-TBD
-
 ## Extensions to `example`
 
 Additional children:
@@ -53,20 +29,8 @@ Additional children:
 ```yaml
 example: ...
     headwordMarker: (0..n)
-    collocateMarker: (0..n)
+    itemMarker: (0..n)
 ```
-
-### XML {.unnumbered .unlisted}
-
-TBD
-
-### JSON {.unnumbered .unlisted}
-
-TBD
-
-### SQL {.unnumbered .unlisted}
-
-TBD
 
 ## Extensions to `exampleTranslation`
 
@@ -75,20 +39,8 @@ Additional children:
 ```yaml
 exampleTranslation: ...
     headwordMarker: (0..n)
-    collocateMarker: (0..n)
+    itemMarker: (0..n)
 ```
-
-### XML {.unnumbered .unlisted}
-
-TBD
-
-### JSON {.unnumbered .unlisted}
-
-TBD
-
-### SQL {.unnumbered .unlisted}
-
-TBD
 
 ## Extensions to `definition`
 
@@ -97,20 +49,8 @@ Additional children:
 ```yaml
 definition: ...
     headwordMarker: (0..n)
-    collocateMarker: (0..n)
+    itemMarker: (0..n)
 ```
-
-### XML {.unnumbered .unlisted}
-
-TBD
-
-### JSON {.unnumbered .unlisted}
-
-TBD
-
-### SQL {.unnumbered .unlisted}
-
-TBD
 
 ## `placeholderMarker`
 
