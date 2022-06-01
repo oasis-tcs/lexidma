@@ -25,7 +25,7 @@ lexicographicResource: ...
 ```json
 {
     ...,
-    "translationLanguage": [...]
+    "translationLanguages": [...]
 }
 ```
 
