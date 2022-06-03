@@ -740,9 +740,8 @@ We have three entries with one sense each: "glasses", "microscope" and "lens". W
 ### NVH {.unnumbered .unlisted}
 
 ```yaml
-lexicographicResource:
+lexicographicResource: my-dictionary
     language: en
-
     entry: glasses
         headword: glasses
         sense: glasses-1
@@ -755,7 +754,6 @@ lexicographicResource:
         headword: lens
         sense: lens-1
             definition: curved glass that makes things seem bigger
-        
     relation: meronymy
         member: glasses-1
             role: whole
@@ -766,7 +764,6 @@ lexicographicResource:
             role: whole
         member: lens-1
             role: part
-        
     relationType: meronomy
         description: used for modelling part-whole relationships 
         memberRole: whole
@@ -785,11 +782,112 @@ lexicographicResource:
 
 ### XML {.unnumbered .unlisted}
 
-TBD
+```xml
+<lexicographicResource id="my-dictionary" language="en">
+    <entry id="glasses">
+        <headword>glasses</headword>
+        <sense id="glasses-1">
+            <definition>an optical seeing aid</definition>
+        </sense>
+    </entry>
+    <entry id="microscope">
+        <headword>microscope</headword>
+        <sense id="microscope-1">
+            <definition>equipment for looking at very small things</definition>
+        </sense>
+    </entry>
+    <entry id="lens">
+        <headword>lens</headword>
+        <sense id="lens-1">
+            <definition>curved glass that makes things seem bigger</definition>
+        </sense>
+    </entry>
+    <relation type="meronymy">
+        <member idref="glasses-1" role="whole"/>
+        <member idref="lens-1" role="part"/>
+    </relation>
+    <relation type="meronymy">
+        <member idref="microscrope-1" role="whole"/>
+        <member idref="lens-1" role="part"/>
+    </relation>
+    <relationType type="meronomy">
+        <description>used for modelling part-whole relationships</description>
+        <memberRole role="whole" memberType="sense"  min="1" max="1" action="navigate">
+            <description>the whole</description>
+        </memberRole>
+        <memberRole role="part" memberType="sense" min="1" max="1" action="navigate">
+            <description>the part</description>
+        </memberRole>
+    </relationType>
+</lexicographicResource>
+```
 
 ### JSON {.unnumbered .unlisted}
 
-TBD
+```json
+{
+    "id": "my-dictionary",
+    "language": "en",
+    "entries": [{
+        "id": "glasses",
+        "headword": "glasses",
+        "senses": [{
+            "id": "glasses-1",
+            "definition": "an optical seeing aid"
+        }, {
+        "id": "microscope",
+        "headword": "microscope",
+        "senses": [{
+            "id": "microscope-1",
+            "definition": "equipment for looking at very small things"
+        }, {
+        "id": "lens",
+        "headword": "lens",
+        "senses": [{
+            "id": "lens-1",
+            "definition": "curved glass that makes things seem bigger"
+        }]
+    }],
+    "relations": [{
+        "type": "meronymy",
+        "members": [{
+            "idref": "glasses-1",
+            "role": "whole"
+        }, {
+            "idref": "lens-1",
+            "role": "part"
+        }]
+    }, {
+        "type": "meronymy",
+        "members": [{
+            "idref": "microscope-1",
+            "role": "whole"
+        }, {
+            "idref": "lens-1",
+            "role": "part"
+        }]
+    }],
+    "relationTypes": [{
+        "type": "meronymy",
+        "description": "used for modelling part-whole relationships",
+        "memberRoles": [{
+            "role": "whole",
+            "description": "the whole",
+            "memberType": "sense",
+            "min": 1,
+            "max": 1,
+            "action": "navigate"
+        }, {
+            "role": "part",
+            "description": "the part",
+            "memberType": "sense",
+            "min": 1,
+            "max": 1,
+            "action": "navigate"
+        }]
+    }]
+}
+```
 
 ### Suggested rendering for human users {.unnumbered .unlisted}
 
@@ -806,7 +904,7 @@ We have two entries for the verbs "buy" and "sell" with one sense each. We want 
 ### NVH {.unnumbered .unlisted}
 
 ```yaml
-lexicographicResource:
+lexicographicResource: my-dictionary
     language: en
     entry: buy
         headword: buy
@@ -814,13 +912,11 @@ lexicographicResource:
             definition: get something by paying money for it
     entry: sell
         headword: sell
-        sense: see-1
+        sense: sell-1
             definition: exchange something for money
-        
     relation: ants
         member: buy-1
         member: sell-1
-        
     relationType: ants
         description: antonyms
         memberRole:
@@ -832,11 +928,70 @@ lexicographicResource:
 
 ### XML {.unnumbered .unlisted}
 
-TBD
+```xml
+<lexicographicResource id="my-dictionary" language="en">
+    <entry id="buy">
+        <headword>buy</headword>
+        <sense id="buy-1">
+            <definition>get something by paying money for it</definition>
+        </sense>
+    </entry>
+    <entry id="sell">
+        <headword>sell</headword>
+        <sense id="sell-1">
+            <definition>exchange something for money</definition>
+        </sense>
+    </entry>
+    <relation type="ants">
+        <member idref="buy-1"/>
+        <member idref="sell-1"/>
+    </relation>
+    <relationType type="ants">
+        <description>antonyms</description>
+        <memberRole memberType="sense" min="2" max="2" action="navigate"/>
+    </relationType>
+</lexicographicResource>
+```
 
 ### JSON {.unnumbered .unlisted}
 
-TBD
+```json
+{
+    "id": "my-dictionary",
+    "language": "en",
+    "entries": [{
+        "id": "buy",
+        "headword": "buy",
+        "senses": [{
+            "id": "buy-1",
+            "definition": "get something by paying money for it"
+        }, {
+        "id": "sell",
+        "headword": "sell",
+        "senses": [{
+            "id": "sell-1",
+            "definition": "exchange something for money"
+        }]
+    }],
+    "relations": [{
+        "type": "ants",
+        "members": [
+            {"idref": "buy-1"},
+            {"idref": "sell-1"}
+        ]
+    }],
+    "relationTypes": [{
+        "type": "ants",
+        "description": "antonyms",
+        "memberRoles": [{
+            "memberType": "sense",
+            "min": 2,
+            "max": 2,
+            "action": "navigate"
+        }]
+    }]
+}
+```
 
 ### Suggested rendering for human users {.unnumbered .unlisted}
 
@@ -853,34 +1008,29 @@ We have three German entries with one sense each, two which mean "sea" and one w
 ### NVH {.unnumbered .unlisted}
 
 ```yaml
-lexicographicResource:
+lexicographicResource: my-dictionary
     language: de
     translationLanguage: en
-
     entry: die-see
         headword: See
         partOfSpeech: n-fem	
         sense: die-see-1
-            headwordTranslation: see
-
+            headwordTranslation: sea
     entry: das-meer
         headword: Meer
         partOfSpeech: n-neut
         sense: das-meer-1
-            headwordTranslation: see
-
+            headwordTranslation: sea
     entry: der-ozean
         headword: Ozean
         partOfSpeech: n-masc
         sense: der-ozean-1
             translation: ocean
-            
     relation: syns
         description: words that mean sea and ocean
         member: die-see-1
         member: das-meer-1
         member: der-ozean-1
-        
     relationType: syns
         description: synonyms and near synonyms
         memberRole:
@@ -891,11 +1041,95 @@ lexicographicResource:
 
 ### XML {.unnumbered .unlisted}
 
-TBD
+```xml
+<lexicographicResource id="my-dictionary" language="en">
+    <translationLanguage langCode="de"/>
+    <entry id="die-see">
+        <headword>See</headword>
+        <partOfSpeech value="n-fem"/>
+        <sense id="die-see-1">
+            <headwordTranslation><text>sea</text></headwordTranslation>
+        </sense>
+    </entry>
+    <entry id="das-meer">
+        <headword>Meer</headword>
+        <partOfSpeech value="n-neut"/>
+        <sense id="das-meer-1">
+            <headwordTranslation><text>sea</text></headwordTranslation>
+        </sense>
+    </entry>
+    <entry id="der-ozean">
+        <headword>Ozean</headword>
+        <partOfSpeech value="n-masc"/>
+        <sense id="der-ozean-1">
+            <headwordTranslation><text>ocean</text></headwordTranslation>
+        </sense>
+    </entry>
+    <relation type="syns">
+        <description>words that mean sea and ocean</description>
+        <member idref="die-see-1"/>
+        <member idref="das-meer-1"/>
+        <member idref="der-ozean-1"/>
+    </relation>
+    <relationType type="syns">
+        <description>synonyms and near synonyms</description>
+        <memberRole memberType="sense" min="2" action="navigate"/>
+    </relationType>
+</lexicographicResource>
+```
 
 ### JSON {.unnumbered .unlisted}
 
-TBD
+```json
+{
+    "id": "my-dictionary",
+    "language": "de",
+    "translationLanguages": ["en"],
+    "entries": [{
+        "id": "die-see",
+        "headword": "See",
+        "partsOfSpeech": ["n-fem"],
+        "senses": [{
+            "id": "die-see-1",
+            "headwordTranslations": [{"text": "sea"}]
+        }]
+    }, {
+        "id": "das-meer",
+        "headword": "Meer",
+        "partsOfSpeech": ["n-neut"],
+        "senses": [{
+            "id": "das-meer-1",
+            "headwordTranslations": [{"text": "sea"}]
+        }]
+    }, {
+        "id": "der-ozean",
+        "headword": "OZean",
+        "partsOfSpeech": ["n-masc"],
+        "senses": [{
+            "id": "der-ozean-1",
+            "headwordTranslations": [{"text": "ocean"}]
+        }]
+    }],
+    "relations": [{
+        "type": "syns",
+        "description": "words that mean sea and ocean",
+        "members": [
+          {"idref": "die-see-1"},
+          {"idref": "das-meer-1"},
+          {"idref": "der-ozean-1"}
+        ]
+    }],
+    "relationTypes": [{
+        "type": "syns",
+        "description": "synonyms and near synonyms",
+        "memberRoles": [{
+            "memberType": "sense",
+            "min": 2,
+            "action": "navigate"
+        }]
+    }]
+}
+```
 
 ### Suggested rendering for human users {.unnumbered .unlisted}
 
@@ -912,7 +1146,7 @@ We have two entries in our lexicographic resource, one for the headword "colour"
 ### NVH {.unnumbered .unlisted}
 
 ```yaml
-lexicographicResource:
+lexicographicResource: my-dictionary
     language: en
     entry: colour
         headword: colour
@@ -925,11 +1159,9 @@ lexicographicResource:
         headword: color
         partOfSpeech: n
         label: americanSpelling
-        
     relation: vars
         member: colour
         member: color
-        
     relationType: vars
         description: variants, words which differ only in spelling
         memberRole:
@@ -940,11 +1172,73 @@ lexicographicResource:
 
 ### XML {.unnumbered .unlisted}
 
-TBD
+```xml
+<lexicographicResource id="my-dictionary" language="en">
+    <entry id="colour">
+        <headword>colour</headword>
+        <partOfSpeech value="n"/>
+        <label value="europeanSpelling"/>
+        <sense id="colour-1">
+            <definition>red, blue, yellow etc.</definition>
+            <example><text>What is your favourite colour?</text></example>
+        </sense>
+    </entry>
+    <entry id="color">
+        <headword>color</headword>
+        <partOfSpeech value="n"/>
+        <label value="americanSpelling"/>
+    </entry>
+    <relation type="vars">
+        <member idref="colour"/>
+        <member idref="color"/>
+    </relation>
+    <relationType type="vars">
+        <description>variants, words which differ only in spelling</description>
+        <memberRole memberType="entry" min="2" action="navigate"/>
+    </relationType>
+</lexicographicResource>
+```
 
 ### JSON {.unnumbered .unlisted}
 
-TBD
+```json
+{
+    "id": "my-dictionary",
+    "language": "en",
+    "entries": [{
+        "id": "colour",
+        "headword": "colour",
+        "partsOfSpeech": ["n"],
+        "labels": ["europeanSpelling"],
+        "senses": [{
+            "id": "colour-1",
+            "definitions": [{"text": "red, blue, yellow etc."}],
+            "examples": [{"text": "What is your favourite colour?"}]
+        }]
+    }, {
+        "id": "color",
+        "headword": "color",
+        "partsOfSpeech": ["n"],
+        "labels": ["americanSpelling"]
+    }],
+    "relations": [{
+        "type": "vars",
+        "members": [
+          {"idref": "colour"},
+          {"idref": "color"}
+        ]
+    }],
+    "relationTypes": [{
+        "type": "vars",
+        "description": "variants, words which differ only in spelling",
+        "memberRoles": [{
+            "memberType": "entry",
+            "min": 2,
+            "action": "navigate"
+        }]
+    }]
+}
+```
 
 ### Suggested rendering for human users {.unnumbered .unlisted}
 
@@ -963,9 +1257,8 @@ We have an entry for the noun "colour" with four senses. We want to express the 
 ### NVH {.unnumbered .unlisted}
 
 ```yaml
-lexicographicResource:
+lexicographicResource: my-dictionary
     language: en
-    
     entry: colour
         headword: colour
             sense: colour-1
@@ -980,7 +1273,6 @@ lexicographicResource:
             sense: colour-4
                 definition: interest or excitement
                 example: Examples add colour to your writing.
-                
     relation: subsensing
         member: colour-1
             role: supersense
@@ -991,7 +1283,6 @@ lexicographicResource:
             role: supersense
         member: colour-3
             role: subsense
-            
     relationType: subsensing
         description: expresses the fact that a sense is a subsense of another sense
         scope: sameEntry
@@ -1009,11 +1300,107 @@ lexicographicResource:
 
 ### XML {.unnumbered .unlisted}
 
-TBD
+```xml
+<lexicographicResource id="my-dictionary" language="en">
+    <entry id="colour">
+        <headword>colour</headword>
+        <sense id="colour-1">
+            <definition>red, blue, yellow etc.</definition>
+            <example><text>What is your favourite colour?</text></example>
+        </sense>
+        <sense id="colour-2">
+            <definition>not being black and white</definition>
+            <example><text>Back then owning a colour TV meant you were rich.</text></example>
+        </sense>
+        <sense id="colour-3">
+            <definition>a sign of a person's race</definition>
+            <example><text>We welcome people of all creeds and colours.</text></example>
+        </sense>
+        <sense id="colour-4">
+            <definition>interest or excitement</definition>
+            <example><text>Examples add colour to your writing.</text></example>
+        </sense>
+    </entry>
+    <relation type="subsensing">
+        <member idref="colour-1" role="supersense"/>
+        <member idref="colour-2" role="subsense"/>
+    </relation>
+    <relation type="subsensing">
+        <member idref="colour-1" role="supersense"/>
+        <member idref="colour-3" role="subsense"/>
+    </relation>
+    <relationType type="subsensing" scope="sameEntry">
+        <description>
+            expresses the fact that a sense is a subsense of another sense
+        </description>
+        <memberRole role="supersense" memberType="sense" min="1" max="1"
+                    action="none"/>
+        <memberRole role="subsense" memberType="sense" min="1" max="1"
+                    action="embed"/>
+    </relationType>
+</lexicographicResource>
+```
 
 ### JSON {.unnumbered .unlisted}
 
-TBD
+```json
+{
+    "id": "my-dictionary",
+    "language": "en",
+    "entries": [{
+        "id": "colour",
+        "headword": "colour",
+        "senses": [{
+            "id": "colour-1",
+            "definitions": [{"text": "red, blue, yellow etc."}],
+            "examples": [{"text": "What is your favourite colour?"}]
+        }, {
+            "id": "colour-2",
+            "definitions": [{"text": "not being black and white"}],
+            "examples": [{"text": "Back then owning a colour TV meant you were rich."}]
+        }, {
+            "id": "colour-3",
+            "definitions": [{"text": "a sign of a person's race"}],
+            "examples": [{"text": "We welcome people of all creeds and colours."}]
+        }, {
+            "id": "colour-4",
+            "definitions": [{"text": "interest or excitement"}],
+            "examples": [{"text": "Examples add colour to your writing."}]
+        }]
+    }],
+    "relations": [{
+        "type": "subsensing",
+        "members": [
+          {"role": "supersense", "idref": "colour-1"},
+          {"role": "subsense", "idref": "colour-2"}
+        ]
+    }, {
+        "type": "subsensing",
+        "members": [
+          {"role": "supersense", "idref": "colour-1"},
+          {"role": "subsense", "idref": "colour-3"}
+        ]
+    }],
+    "relationTypes": [{
+        "type": "subsensing",
+        "description": "expresses the fact that a sense is a subsense of another sense",
+        "scope": "sameEntry",
+        "memberRoles": [{
+            "role": "supersense",
+            "memberType": "sense",
+            "min": 1,
+            "max": 1,
+            "action": "none"
+        }, {
+            "role": "subsense",
+            "memberType": "sense",
+            "min": 1,
+            "max": 1,
+            "action": "embed"
+        }]
+    }]
+}
+```
 
 ### Suggested rendering for human users {.unnumbered .unlisted}
 
@@ -1036,9 +1423,8 @@ We have an entry for the adjective "safe" with two senses, and an entry for the 
 ### NVH {.unnumbered .unlisted}
 
 ```yaml
-lexicographicResource:
+lexicographicResource: my-dictionary
     language: en
-
     entry: safe
         headword: safe
         sense: safe-1
@@ -1047,18 +1433,15 @@ lexicographicResource:
         sense: safe-2
             indicator: not likely to cause harm
             example: Is the ride safe for a small child?
-    
     entry: better-safe
         headword: better safe than sorry
-        sense:
+        sense: better-safe-1
             definition: you should be careful even if it seems unnecessary
-    
     relation: subentrying
-        membership: safe-2
+        membership: safe-1
             role: container
         membership: better-safe
             role: subentry
-        
     relationType: subentrying
         scope: sameResource
         memberRole: container
@@ -1075,11 +1458,94 @@ lexicographicResource:
 
 ### XML {.unnumbered .unlisted}
 
-TBD
+```xml
+<lexicographicResource id="my-dictionary" language="en">
+    <entry id="safe">
+        <headword>safe</headword>
+        <sense id="safe-1">
+            <indicator>protected from harm</indicator>
+            <example><text>It isn't safe to park here.</text></example>
+        </sense>
+        <sense id="safe-2">
+            <indicator>not likely to cause harm</indicator>
+            <example><text>Is the ride safe for a small child?</text></example>
+        </sense>
+    </entry>
+    <entry id="better-safe">
+        <headword>better safe than sorry</headword>
+        <sense id="better-safe-1">
+            <definition>
+                <text>you should be careful even if it seems unnecessary</text>
+            </definition>
+        </sense>
+    </entry>
+    <relation type="subentrying">
+        <member idref="safe-1" role="container"/>
+        <member idref="better-safe" role="subentry"/>
+    </relation>
+    <relationType type="subentrying" scope="sameResource">
+        <memberRole role="container" memberType="sense" min="1" max="1"
+                    action="navigate"/>
+        <memberRole role="subentry" memberType="entry" min="1" max="1"
+                    action="embed"/>
+    </relationType>
+</lexicographicResource>
+```
 
 ### JSON {.unnumbered .unlisted}
 
-TBD
+```json
+{
+    "id": "my-dictionary",
+    "language": "en",
+    "entries": [{
+        "id": "safe",
+        "headword": "safe",
+        "senses": [{
+            "id": "safe-1",
+            "indicator": "protected from harm",
+            "examples": [{"text": "It isn't safe to park here."}]
+        }, {
+            "id": "safe-2",
+            "indicator": "not likely to cause harm",
+            "examples": [{"text": "Is the ride safe for a small child?"}]
+        }]
+    }, {
+        "id": "better-safe",
+        "headword": "better safe than sorry",
+        "senses": [{
+            "id": "better-safe-1",
+            "definitions": [{
+                "text": "you should be careful even if it seems unnecessary"
+            }]
+        }]
+    }],
+    "relations": [{
+        "type": "subentrying",
+        "members": [
+          {"role": "container", "idref": "safe-1"},
+          {"role": "subentry", "idref": "better-safe"}
+        ]
+    }],
+    "relationTypes": [{
+        "type": "subentrying",
+        "scope": "sameResource",
+        "memberRoles": [{
+            "role": "container",
+            "memberType": "sense",
+            "min": 1,
+            "max": 1,
+            "action": "navigate"
+        }, {
+            "role": "subentry",
+            "memberType": "entry",
+            "min": 1,
+            "max": 1,
+            "action": "embed"
+        }]
+    }]
+}
+```
 
 ### Suggested rendering for human users {.unnumbered .unlisted}
 
@@ -1088,8 +1554,6 @@ TBD
 > 1.  protected from harm: _It isn't safe to park here._
 >     -  **better safe than sorry** you should be careful even if it seems unnecessary
 > 2.  not likely to cause harm:  _Is the ride safe for a small child?_
-
-Suggeted rendering of the entry "better safe than sorry" for human users:
 
 > **better safe than sorry**
 > 
@@ -1105,26 +1569,22 @@ We have an entry for the word "bible" and another entry for the expression "the 
 ### NVH {.unnumbered .unlisted}
 
 ```yaml
-lexicographicResource:
+lexicographicResource: my-dictionary
     language: en
-
     entry: the-bible
         headword: the Bible
         Sense: the-bible-1
             definition: the book considered holy by Christians
-
     entry: bible
         headword: bible 
         sense: bible-1
         sense: bible-2
             definition: a book considered important for a subject
-    
     relation: subentrying
         member: bible-1
             role: container
         member: the-bible
             role: subentry
-        
     relationType: subentrying
         scope: sameResource
         memberRole: container
@@ -1141,11 +1601,87 @@ lexicographicResource:
 
 ### XML {.unnumbered .unlisted}
 
-TBD
+```xml
+<lexicographicResource id="my-dictionary" language="en">
+    <entry id="the-bible">
+        <headword>the Bible</headword>
+        <sense id="the-bible-1">
+            <definition>
+                <text>the book considered holy by Christians</text>
+            </definition>
+        </sense>
+    </entry>
+    <entry id="bible">
+        <headword>bible</headword>
+        <sense id="bible-1"/>
+        <sense id="bible-2">
+            <definition>
+                <text>a book considered important for a subject</text>
+            </definition>
+        </sense>
+    </entry>
+    <relation type="subentrying">
+        <member idref="bible-1" role="container"/>
+        <member idref="the-bible" role="subentry"/>
+    </relation>
+    <relationType type="subentrying" scope="sameResource">
+        <memberRole role="container" memberType="sense" min="1" max="1"
+                    action="navigate"/>
+        <memberRole role="subentry" memberType="entry" min="1" max="1"
+                    action="embed"/>
+    </relationType>
+</lexicographicResource>
+```
 
 ### JSON {.unnumbered .unlisted}
 
-TBD
+```json
+{
+    "id": "my-dictionary",
+    "language": "en",
+    "entries": [{
+        "id": "the-bible",
+        "headword": "the Bible",
+        "senses": [{
+            "id": "the-bible-1",
+            "definitions": [{"text": "the book considered holy by Christians"}]
+        }]
+    }, {
+        "id": "bible",
+        "headword": "bible",
+        "senses": [{
+            "id": "bible-1"
+        }, {
+            "id": "bible-2",
+            "definitions": [{"text": "a book considered important for a subject"}]
+        }]
+    }],
+    "relations": [{
+        "type": "subentrying",
+        "members": [
+          {"role": "container", "idref": "bible-1"},
+          {"role": "subentry", "idref": "the-bible"}
+        ]
+    }],
+    "relationTypes": [{
+        "type": "subentrying",
+        "scope": "sameResource",
+        "memberRoles": [{
+            "role": "container",
+            "memberType": "sense",
+            "min": 1,
+            "max": 1,
+            "action": "navigate"
+        }, {
+            "role": "subentry",
+            "memberType": "entry",
+            "min": 1,
+            "max": 1,
+            "action": "embed"
+        }]
+    }]
+}
+```
 
 ### Suggested rendering for human users {.unnumbered .unlisted}
 
