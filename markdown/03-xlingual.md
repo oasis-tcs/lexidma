@@ -94,8 +94,8 @@ sense: ...
 ```json
 {
     ...
-    "headwordExplanations": {...},
-    "headwordTranslations": {...},
+    "headwordExplanations": [...],
+    "headwordTranslations": [...],
     ...
 }
 ```
@@ -133,15 +133,13 @@ headwordTranslation: <string>
 ### JSON {.unnumbered .unlisted}
 
 ```json
-"headwordTranslations": {
-    <language>: [{
-        "text": "...",
-        "partsOfSpeech": [...],
-        "labels": [...],
-        "pronunciations": [...],
-        "inflectedForms": [...]
-    }], 
-    ...
+{
+    "language": "...",
+    "text": "...",
+    "partsOfSpeech": [...],
+    "labels": [...],
+    "pronunciations": [...],
+    "inflectedForms": [...]
 }
 ```
 
@@ -195,9 +193,9 @@ headwordExplanation: <string>
 ### JSON {.unnumbered .unlisted}
 
 ```json
-"headwordExplanations": {
-    <language>: "...", 
-    ...
+{
+    "language": "...", 
+    "text": "...",
 }
 ```
 
@@ -243,7 +241,7 @@ sense: ...
 ```json
 {
     ...,
-    "exampleTranslations": {...}
+    "exampleTranslations": [...]
 }
 ```
 
@@ -273,13 +271,11 @@ exampleTranslation: <string>
 ### JSON {.unnumbered .unlisted}
 
 ```json
-"exampleTranslations": {
-    <language>: [{
-        "text": "...",
-        "labels": [...],
-        "soundFile": "..."
-    }],
-    ...
+{
+    "language": "...",
+    "text": "...",
+    "labels": [...],
+    "soundFile": "..."
 }
 ```
 
