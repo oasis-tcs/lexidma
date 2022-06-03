@@ -1704,21 +1704,35 @@ Suggeted rendering of the entry "the Bible" for human users:
 ### NVH {.unnumbered .unlisted}
 
 ```yaml
-lexicographicResource:
-    language: en
-    entry: continue-studies
-        headword: continue your studies
-            placeholderMarker: your
-        sense: ...
+entry: continue-studies
+    headword: continue your studies
+        placeholderMarker: your
+    sense: ...
 ```
 
 ### XML {.unnumbered .unlisted}
 
-TBD
+```xml
+<entry id="continue-studies">
+    <headword>
+        continue <placeholderMarker>your</placeholderMarker> studies
+    </headword>
+    <sense.../>
+</entry>
+```
 
 ### JSON {.unnumbered .unlisted}
 
-TBD
+```json
+{
+  "id": "continue-studies",
+  "headword": "continue your studies",
+  "placeholderMarkers": [
+     {"startIndex": 9, "endIndex": 13}
+  ],
+  "senses": [...]
+}
+```
 
 
 ## Using `placeholderMarker` in a bilingual lexicographic resource {#ex20}
@@ -1726,24 +1740,51 @@ TBD
 ### NVH {.unnumbered .unlisted}
 
 ```yaml
-lexicographicResource:
-    language: en
-    translationLanguage: de
-    entry: beat-up
-        headword: beat sb. up
-            placeholderMarker: sb.
-        sense: beat-up-1
-            headwordTranslation: jemanden verprügeln
-                placeholderMarker: jemanden
+entry: beat-up
+    headword: beat sb. up
+        placeholderMarker: sb.
+    sense: beat-up-1
+        headwordTranslation: jemanden verprügeln
+            placeholderMarker: jemanden
 ```
 
 ### XML {.unnumbered .unlisted}
 
-TBD
+```xml
+<entry id="beat-up">
+    <headword>
+        beat <placeholderMarker>sb.</placeholderMarker> up
+    </headword>
+    <sense id="beat-up-1">
+      <headwordTranslation>
+        <text>
+            <placeholderMarker>jemanden</placeholderMarker> verprügeln
+        </text>
+      </headwordTranslation>
+    </sense>
+</entry>
+```
 
 ### JSON {.unnumbered .unlisted}
 
-TBD
+```json
+{
+  "id": "beat-up",
+  "headword": "beat sb. up",
+  "placeholderMarkers": [
+      {"startIndex": 5, "endIndex": 8}
+  ],
+  "senses": [{
+    "id": "beat-up-1",
+    "headwordTranslations": [{
+      "text": "jemanden verprügeln",
+      "placeholderMarkers": [
+          {"startIndex": 0, "endIndex": 8}
+      ],
+    }]
+  }]
+}
+```
 
 
 ## Using `headwordMarker` {#ex21}
@@ -1751,26 +1792,61 @@ TBD
 ### NVH {.unnumbered .unlisted}
 
 ```yaml
-lexicographicResource:
-    language: en
-    translationLanguage: cs
-    entry: autopsy
-        headword: autopsy
-        sense: autopsy-1
-            headwordTranslation: pitva
-            example: The coroner performed an autopsy.
-                headwordMarker: autopsy
-                exampleTranslation: Koroner provedl pitvu.
-                    headwordMarker: pitvu
+entry: autopsy
+    headword: autopsy
+    sense: autopsy-1
+        headwordTranslation: pitva
+        example: The coroner performed an autopsy.
+            headwordMarker: autopsy
+            exampleTranslation: Koroner provedl pitvu.
+                headwordMarker: pitvu
 ```
 
 ### XML {.unnumbered .unlisted}
 
-TBD
+```xml
+<entry id="autopsy">
+    <headword>autopsy</headword>
+    <sense id="autopsy-1">
+        <headwordTranslation><text>pitva</text></headwordTranslation>
+        <example>
+            <text>
+                The coroner performed an <headwordMarker>autopsy</headwordMarker>.
+            </text>
+            <exampleTranslation>
+                <text>
+                    Koroner provedl <headwordMarker>pitvu</headwordMarker>.
+                </text>
+            </exampleTranslation>
+        </example>
+    </sense>
+</entry>
+```
 
 ### JSON {.unnumbered .unlisted}
 
-TBD
+```json
+{
+  "id": "autopsy",
+  "headword": "autopsy",
+  "senses": [{
+    "id": "autopsy-1",
+    "headwordTranslations": [{"text": "pitva"}],
+    "examples": [{
+      "text": "The coroner performed an autopsy.",
+      "headwordMarkers": [
+        {"startIndex": 25, "endIndex": 32}
+      ],
+      "exampleTranslations": [{
+        "text": "Koroner provedl pitvu.",
+        "headwordMarkers": [
+          {"startIndex": 16, "endIndex": 21}
+        ]
+      }]
+    }]
+  }]
+}
+```
 
 
 ## Using `itemMarker` {#ex22}
@@ -1778,27 +1854,70 @@ TBD
 ### NVH {.unnumbered .unlisted}
 
 ```yaml
-lexicographicResource:
-    language: en
-    translationLanguage: cs
-    entry: autopsy
-        headword: autopsy
-        sense: autopsy-1
-            headwordTranslation: pitva
-            example: The coroner performed an autopsy.
-                headwordMarker: autopsy
-                itemMarker: performed
-                    lemma: perform
-                exampleTranslation: Koroner provedl pitvu.
-                    headwordMarker: pitvu
-                    itemMarker: provedl
-                        lemma: provést
+entry: autopsy
+    headword: autopsy
+    sense: autopsy-1
+        headwordTranslation: pitva
+        example: The coroner performed an autopsy.
+            headwordMarker: autopsy
+            itemMarker: performed
+                lemma: perform
+            exampleTranslation: Koroner provedl pitvu.
+                headwordMarker: pitvu
+                itemMarker: provedl
+                    lemma: provést
 ```
 
 ### XML {.unnumbered .unlisted}
 
-TBD
+```xml
+<entry id="autopsy">
+    <headword>autopsy</headword>
+    <sense id="autopsy-1">
+        <headwordTranslation><text>pitva</text></headwordTranslation>
+        <example>
+            <text>
+                The coroner <itemMarker lemma="perform">performed</itemMarker>
+                an <headwordMarker>autopsy</headwordMarker>.
+            </text>
+            <exampleTranslation>
+                <text>
+                    Koroner <itemMarker lemma="provést">provedl</itemMarker>
+                    <headwordMarker>pitvu</headwordMarker>.
+                </text>
+            </exampleTranslation>
+        </example>
+    </sense>
+</entry>
+```
 
 ### JSON {.unnumbered .unlisted}
 
-TBD
+```json
+{
+  "id": "autopsy",
+  "headword": "autopsy",
+  "senses": [{
+    "id": "autopsy-1",
+    "headwordTranslations": [{"text": "pitva"}],
+    "examples": [{
+      "text": "The coroner performed an autopsy.",
+      "headwordMarkers": [
+        {"startIndex": 25, "endIndex": 32}
+      ],
+      "itemMarkers": [
+        {"startIndex": 12, "endIndex": 21, "lemma": "perform"}
+      ],
+      "exampleTranslations": [{
+        "text": "Koroner provedl pitvu.",
+        "headwordMarkers": [
+          {"startIndex": 16, "endIndex": 21}
+        ],
+        "itemMarkers": [
+          {"startIndex": 8, "endIndex": 15, "lemma": "provést"}
+        ],
+      }]
+    }]
+  }]
+}
+```
