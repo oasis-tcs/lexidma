@@ -527,11 +527,63 @@ entry: doctor-n
 
 ### XML {.unnumbered .unlisted}
 
-TBD
+```xml
+<entry id="doctor-n">
+    <headword>doctor</headword>
+    <sense id="doctor-n-1">
+        <indicator>medical doctor</indicator>
+        <headwordTranslation>
+            <text>Arzt</text>
+            <partOfSpeech value="n-masc"/>
+        </headwordTranslation>
+        <headwordTranslation>
+            <text>Ärztin</text>
+            <partOfSpeech value="n-fem"/>
+        </headwordTranslation>
+    </sense>
+    <sense id="doctor-n-2">
+        <indicator>academic title</indicator>
+        <headwordTranslation>
+            <text>Doktor</text>
+            <partOfSpeech value="n-masc"/>
+        </headwordTranslation>
+        <headwordTranslation>
+            <text>Doktorin</text>
+            <partOfSpeech value="n-fem"/>
+        </headwordTranslation>
+    </sense>
+</entry>
+```
 
 ### JSON {.unnumbered .unlisted}
 
-TBD
+```json
+{
+    "id": "doctor-n",
+    "headword": "doctor",
+    "senses": [{
+        "id": "doctor-n-1",
+        "indicator": "medical doctor",
+        "headwordTranslations": [{
+            "text": "Arzt",
+            "partsOfSpeech": ["n-masc"]
+        }, {
+            "text": "Ärztin",
+            "partsOfSpeech": ["n-fem"]
+        }]
+    }, {
+        "id": "doctor-n-2",
+        "indicator": "academic title",
+        "headwordTranslations": [{
+            "text": "Doktor",
+            "partsOfSpeech": ["n-masc"]
+        }, {
+            "text": "Doktorin",
+            "partsOfSpeech": ["n-fem"]
+        }]
+    }]
+}
+```
 
 
 ## How to use `headwordTranslation` in a multilingual lexicographic resource {#ex11}
@@ -543,9 +595,6 @@ This is an entry from a hypothetical Irish-multilingual dictionary.
 ```yaml
 entry: fómhar-n
     headword: fómhar
-    partOfSpeech: n-masc
-    inflectedForm: fómhair
-        inflectedTag: genitive-case
     sense: fómhar-n-1
         headwordTranslation: autumn
             language: en
@@ -566,11 +615,73 @@ entry: fómhar-n
 
 ### XML {.unnumbered .unlisted}
 
-TBD
+```xml
+<entry id="fómhar-n">
+    <headword>fómhar</headword>
+    <sense id="fómhar-n-1">
+        <headwordTranslation language="en">
+            <text>autumn</text>
+        </headwordTranslation>
+        <headwordTranslation language="en">
+            <text>fall</text>
+        </headwordTranslation>
+        <headwordTranslation language="de">
+            <text>Herbst</text>
+        </headwordTranslation>
+        <headwordTranslation language="cs">
+            <text>podzim</text>
+        </headwordTranslation>
+    </sense>
+    <sense id="fómhar-n-2">
+        <headwordTranslation language="en">
+            <text>harvest</text>
+        </headwordTranslation>
+        <headwordTranslation language="de">
+            <text>Ernte</text>
+        </headwordTranslation>
+        <headwordTranslation language="cs">
+            <text>sklizeň</text>
+        </headwordTranslation>
+    </sense>
+</entry>
+```
 
 ### JSON {.unnumbered .unlisted}
 
-TBD
+```json
+{
+    "id": "fómhar-n",
+    "headword": "fómhar",
+    "senses": [{
+        "id": "fómhar-n-1",
+        "headwordTranslations": [{
+            "language": "en",
+            "text": "autumn"
+        }, {
+            "language": "en",
+            "text": "fall"
+        }, {
+            "language": "de",
+            "text": "Herbst"
+        }, {
+            "language": "cs",
+            "text": "podzim"
+        }]
+    }, {
+        "id": "fómhar-n-2",
+        "headwordTranslations": [{
+            "language": "en",
+            "text": "harvest"
+        }, {
+            "language": "de",
+            "text": "Ernte"
+        }, {
+            "language": "cs",
+            "text": "sklizeň"
+        }]
+    },]
+}
+```
 
 
 ## How to use `headwordExplanation` {#ex09}
@@ -588,11 +699,38 @@ entry: treppenwitz
 
 ### XML {.unnumbered .unlisted}
 
-TBD
+```xml
+<entry id="treppenwitz">
+    <headword>Treppenwitz</headword>
+    <partOfSpeech value="n-masc"/>
+    <sense id="treppenwitz-1">
+        <headwordExplanation>
+            belated realisation of what one could have said
+        </headwordExplanation>
+        <headwordTranslation>
+            <text>staircase wit</text>
+        </headwordTranslation>
+    </sense>
+```
 
 ### JSON {.unnumbered .unlisted}
 
-TBD
+```json
+{
+    "id": "treppenwitz",
+    "headword": "Treppenwitz",
+    "partsOfSpeech": ["n-masc"],
+    "senses": [{
+        "id": "treppenwitz-1",
+        "headwordExplanations": [{
+            "text": "belated realisation of what one could have said"
+        }],
+        "headwordTranslations": [{
+            "text": "staircase wit"
+        }]
+    }]
+}
+```
 
 
 ## Modelling parts and wholes {#ex12}
