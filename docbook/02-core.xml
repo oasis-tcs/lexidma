@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron?>
+<book xmlns="http://docbook.org/ns/docbook" version="5">
+   <title>book</title>
+   <chapter>
+      <title>DMLex Core</title>
+      <para>The DMLex Core provides data types for modelling monolingual dictionaries (called <emphasis>lexicographic resources</emphasis> in DMLex) where headwords, definitions and examples are all in one and the same language. DMLex Core gives you the tools you need to model simple dictionary entries which consist of headwords, part-of-speech labels, senses, definitions and so on.</para>
+      <section>
+         <title>
+            <code>lexicographicResource</code>
+         </title>
+         <para>Represents a dictionary. A lexicographic resource is a dataset which can be used, viewed and read by humans as a dictionary and – simultaneously – ingested, processed and understood by software agents as a machine-readable database. Note that the correct name of this data type in DMLex is <emphasis>lexicographic</emphasis>, not <emphasis>lexical</emphasis>, resource.</para>
+         <para>```yaml
+lexicographicResource: &lt;id&gt;
+    title: (0..1) &lt;string&gt;
+    uri: (0..1) &lt;uri&gt;
+    language: (1..1) &lt;langCode&gt;
+    entry: (0..n)
+    tag: (0..n)
+```</para>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;lexicographicResource id="..." uri="..." language="..."&gt;
+    &lt;title&gt;...&lt;/title&gt;
+    &lt;entry.../&gt;
+    &lt;tag.../&gt;
+&lt;/lexicographicResource&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "id": "...",
+    "title": "...",
+    "language": "...",
+    "entries": [...],
+    "tags": [...]
+}
+```</para>
+         </section>
+         <section>
+            <title>SQL {.unnumbered .unlisted}</title>
+            <para>```sql
+create table lexicographicResources (
+    id int primary key,
+    title varchar(255),
+    language varchar(10)
+)
+```</para>
+         </section>
+         <section>
+            <title>Comments {.unnumbered .unlisted}</title>
+            <itemizedlist>
+               <listitem>
+                  <para>
+                     <code>language</code> identifies the language of headwords, definitions and examples in this dictionary. DMLex is based on the assumption that all headwords in a lexicographic resource are in the same language, and that definitions and examples, if any occur in the lexicographic resource, are in that language too. The <code>language</code> child object of <code>lexicographicResource</code> informs potential users of the lexicographic resource which language that is.</para>
+               </listitem>
+               <listitem>
+                  <para>The main role of a lexicographic resource is to contain entries (<code>entry</code> objects). The other two object types that can optionally occur as children of a <code>lexicographicResource</code>, especially <code>tag</code>, are for lists of look-up values such as part-of-speech labels.</para>
+               </listitem>
+            </itemizedlist>
+         </section>
+      </section>
+      <section>
+         <title>
+            <code>entry</code>
+         </title>
+         <para>Represents a dictionary entry. An entry contains information about one headword.</para>
+         <para>```yaml
+entry: &lt;id&gt;
+    headword: (1..1) &lt;string&gt;
+    homographNumber: (0..1) &lt;number&gt;
+    partOfSpeech: (0..n)
+    label: (0..n)
+    pronunciation: (0..n)
+    inflectedForm: (0..n)
+    sense: (0..n)
+```</para>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;entry id="..." homographNumber="..."&gt;
+    &lt;headword&gt;...&lt;/headword&gt;
+    &lt;partOfSpeech.../&gt;
+    &lt;label.../&gt;
+    &lt;pronunciation.../&gt;
+    &lt;inflectedForm.../&gt;
+    &lt;sense.../&gt;
+&lt;/entry&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "id": "...",
+    "headword": "...",
+    "labels": [...],
+    "pronunciations": [...],
+    "inflectedForms": [...],
+    "senses": [...]
+}
+```</para>
+         </section>
+         <section>
+            <title>SQL {.unnumbered .unlisted}</title>
+            <para>```sql
+create table entries (
+    lexicographicResourceID int foreign key references lexicographicResource(id),
+    id int primary key,
+    headword varchar(255),
+    homographNumber int
+)
+```</para>
+         </section>
+         <section>
+            <title>Comments {.unnumbered .unlisted}</title>
+            <itemizedlist>
+               <listitem>
+                  <para>
+                     <code>headword</code> contains entry's headword. The headword can be a single word, a multi-word expression, or any expression in the source language which is being described by the entry.</para>
+               </listitem>
+               <listitem>
+                  <para>Entries in DMLex do not have an explicit listing order. An application can imply a listing order from a combination of the headword and the homograph number.</para>
+               </listitem>
+               <listitem>
+                  <para>DMLex Core does not have a concept of 'subentry'. If you wish to have subentries (ie. entries inside entries) in your lexicographic resource you can use types from the Linking Module for that.</para>
+               </listitem>
+            </itemizedlist>
+         </section>
+      </section>
+      <section>
+         <title>
+            <code>partOfSpeech</code>
+         </title>
+         <para>Represents a part-of-speech label.</para>
+         <para>```yaml
+partOfSpeech: &lt;string&gt;
+    listingOrder: (1..1) &lt;number&gt;
+```</para>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;partOfSpeech value="..."/&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+"..."
+```</para>
+         </section>
+         <section>
+            <title>SQL {.unnumbered .unlisted}</title>
+            <para>```sql
+create table partsOfSpeech (
+    entryID int foreign key references entries(id),
+    value varchar(10),
+    listingOrder int,
+    id int primary key
+)
+```</para>
+         </section>
+         <section>
+            <title>Comments {.unnumbered .unlisted}</title>
+            <itemizedlist>
+               <listitem>
+                  <para>
+                     <code>partOfSpeech</code> is an abbreviation, a code or some other string of text which identifies the part-of-speech label, for example <code>n</code> for noun,  <code>v</code> for verb, <code>adj</code> for adjective. You can use the <code>tag</code> datatype to explain the meaning of the part-of-speech tags, to constrain which part-of-speech tags are allowed to occur in your lexicographic resource, and to map them onto external inventories and ontologies.</para>
+               </listitem>
+               <listitem>
+                  <para>If you want to model other grammatical properties of the headword besides part of speech, such as gender (of nouns) or aspect (of verbs), the way to do that in DMLex is to conflate them to the part-of-speech label, for example <code>noun-masc</code> and <code>noun-fem</code>, or <code>v-perf</code> and <code>v-imperf</code>.</para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <code>listingOrder</code> is the position of this part-of-speech label among other part-of-speech labels of the same entry. This can be implicit from the serialization.</para>
+               </listitem>
+            </itemizedlist>
+         </section>
+      </section>
+      <section>
+         <title>
+            <code>sense</code>
+         </title>
+         <para>Represents one of possibly many meanings (or meaning potentials) of the headword.</para>
+         <para>```yaml
+sense: &lt;id&gt;
+    listingOrder: (1..1) &lt;number&gt;
+    indicator: (0..1) &lt;string&gt;
+    label: (0..n)
+    definition: (0..n)
+    example: (0..n)
+```</para>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;sense id="..."&gt;
+    &lt;indicator&gt;...&lt;/indicator&gt;
+    &lt;label.../&gt;
+    &lt;definition.../&gt;
+    &lt;example.../&gt;
+&lt;/sense&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "id": "...",
+    "indicator": "...",
+    "labels": [...],
+    "definitions": [...],
+    "examples": [...]
+}
+```</para>
+         </section>
+         <section>
+            <title>SQL {.unnumbered .unlisted}</title>
+            <para>```sql
+create table senses (
+    entryID int foreign key references entries(id),
+    id int primary key,
+    indicator nvarchar(50),
+    listingOrder int
+)
+```</para>
+         </section>
+         <section>
+            <title>Comments {.unnumbered .unlisted}</title>
+            <itemizedlist>
+               <listitem>
+                  <para>
+                     <code>listingOrder</code> represents the position of this sense among other senses of the same entry. Can be implicit from the serialization.</para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <code>indicator</code> is a short statement, in the same language as the headword, that gives an indication of the meaning of a sense and permits its differentiation from other senses in the entry. Indicators are sometimes used in dictionaries instead of or in addition to definitions.</para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <code>definition</code> is a statement, in the same language as the headword, that describes and/or explains the meaning of a sense. In DMLex, the term definition encompasses not only formal definitions, but also less formal explanations.</para>
+               </listitem>
+            </itemizedlist>
+         </section>
+         <section>
+            <title>Note {.unnumbered .unlisted}</title>
+            <para>An <emphasis role="strong">entry</emphasis> is a container for formal properties of the headword such as orthography, morphology, syntax and pronunciation. A <emphasis role="strong">sense</emphasis> is a container for statements about the headword's semantics. DMLex deliberately makes it impossible to include morphological information at sense level. If you have an entry where each sense has slightly different morphological properties (eg. a noun has a weak plural in one sense and a strong plural in another) then, in DMLex, you need to treat it as two entries (homographs), and you can use the Linking Module two link the two entries together and to make sure they are always shown together to human users.</para>
+         </section>
+      </section>
+      <section>
+         <title>
+            <code>definition</code>
+         </title>
+         <para>Represents one of possibly several definitions of a sense.</para>
+         <para>```yaml
+definition: &lt;string&gt;
+    definitionType: (0..1) &lt;string&gt;
+    listingOrder: (1..1) &lt;number&gt;
+```</para>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;definition definitionType="..."&gt;...&lt;/definition&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "text": "....",
+    "definitionType": "..."
+}
+```</para>
+         </section>
+         <section>
+            <title>SQL {.unnumbered .unlisted}</title>
+            <para>```sql
+create table definitions (
+    senseID int foreign key references sense(id),
+    text nvarchar(255),
+    definitionType nvarchar(10),
+    listingOrder int,
+    id int primary key
+)
+```</para>
+         </section>
+         <section>
+            <title>Comments {.unnumbered .unlisted}</title>
+            <itemizedlist>
+               <listitem>
+                  <para>If you have multiple definitions inside a single sense, you can use <code>definitionType</code> to indicate the difference between them, for example that they are intended for different audiences. Optionally, you can use the <code>tag</code> data type to constrain and/or explain the definition types that occur in your lexicographic resource.</para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <code>listingOrder</code> is the position of this definition among other definitions of the same sense. This can be implicit from the serialization.</para>
+               </listitem>
+            </itemizedlist>
+         </section>
+      </section>
+      <section>
+         <title>
+            <code>inflectedForm</code>
+         </title>
+         <para>Represents one (of possibly many) inflected forms of the headword. See Example \ref{ex01}.</para>
+         <para>```yaml
+inflectedForm: &lt;string&gt;
+    inflectedTag: (0..1) &lt;string&gt;
+    listingOrder: (1..1) &lt;number&gt;
+    label: (0..n)
+    pronunciation: (0..n)
+```</para>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;inflectedForm inflectedTag="..."&gt;
+    &lt;text&gt;...&lt;/text&gt;
+    &lt;label.../&gt;
+    &lt;pronunciation.../&gt;
+&lt;/inflectedTag&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "inflectedTag": "...",
+    "text": "...",
+    "labels": [...],
+    "pronunciations": [...]
+}
+```</para>
+         </section>
+         <section>
+            <title>SQL {.unnumbered .unlisted}</title>
+            <para>```sql
+create table inflectedForms (
+    entryID int foreign key references entries(id),
+    inflectedTag varchar(10),
+    text varchar(255),
+    listingOrder int,
+    id int primary key
+)
+```</para>
+         </section>
+         <section>
+            <title>Comments {.unnumbered .unlisted}</title>
+            <itemizedlist>
+               <listitem>
+                  <para>
+                     <code>inflectedTag</code> is an abbreviation, a code or some other string of text which identifies the inflected form, for example <code>pl</code> for plural,  <code>gs</code> for genitive singular, <code>com</code> for comparative. You can use the <code>tag</code> datatype to explain the meaning of the inflection tags, to constrain which inflection tags are allowed to occur in your lexicographic resource, and to map them onto external inventories and ontologies.</para>
+               </listitem>
+               <listitem>
+                  <para>The value of the <code>inflectedForm</code> object is the text of the inflected word itself.</para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <code>listingOrder</code> is the position of this inflected form among other inflected forms of the same entry. This can be implicit from the serialization.</para>
+               </listitem>
+               <listitem>
+                  <para>The <code>inflectedForm</code> object is intended to model the <emphasis role="strong">inflectional morphology</emphasis> of a headword. To model derivational morphology, for example feminine forms of maculine nouns, the recommended way to do that in DMLex is to create separate entries for the two words, and link them using the Linking Module.</para>
+               </listitem>
+            </itemizedlist>
+         </section>
+      </section>
+      <section>
+         <title>
+            <code>label</code>
+         </title>
+         <para>Represents a restriction on its parent such as temporal (old-fashioned, neologism), regional (dialect), register (formal, colloquial), domain (medicine, politics) or grammar (singular-only).</para>
+         <para>```yaml
+label: &lt;string&gt;
+    listingOrder: (1..1) &lt;number&gt;
+```</para>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;label value="..."/&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+"..."
+```</para>
+         </section>
+         <section>
+            <title>SQL {.unnumbered .unlisted}</title>
+            <para>```sql
+create table labels (
+    entryID int foreign key references entries(id),
+    senseID int foreign key references senses(id),
+    inflectedFormID int foreign key references inflectedForms(id),
+    pronunciationID int foreign key references pronunciations(id),
+    exampleID int foreign key references examples(id),
+    value varchar(10),
+    listingOrder int,
+    id int primary key
+)
+```</para>
+         </section>
+         <section>
+            <title>Comments {.unnumbered .unlisted}</title>
+            <itemizedlist>
+               <listitem>
+                  <para>The value of the label object is an abbreviation, a code or some other string of text which identifies the label, for example <code>neo</code> for neologism,  <code>colloq</code> for colloquial, <code>polit</code> for politics. You can use the <code>tag</code> datatype to explain the meaning of the label tags, to constrain which label tags are allowed to occur in your lexicographic resource, and to map them onto external inventories and ontologies.</para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <code>listingOrder</code> is the position of this label among other labels of the same entry. This can be implicit from the serialization.</para>
+               </listitem>
+               <listitem>
+                  <para>A label applies to the object that it is a child of. When the label is a child of <code>entry</code>, then it applies to the headword in all its senses. When the label is a child of <code>sense</code>, then it applies to the headword in that sense only (<emphasis role="strong">not</emphasis> including any subsenses linked to it using the Linking Module). When the label is a child of <code>inlectedForm</code>, then it applies only to that inflected form of the headword (in all senses). When the label is a child of <code>pronunciation</code>, then it applies only to that pronuciation of the headword (in all senses).</para>
+               </listitem>
+            </itemizedlist>
+         </section>
+      </section>
+      <section>
+         <title>
+            <code>pronunciation</code>
+         </title>
+         <para>Represents the pronunciation of its parent. See Examples \ref{ex02}, \ref{ex03}, \ref{ex04}.</para>
+         <para>```yaml
+pronunciation: &lt;empty&gt;
+    soundFile: (0..1) &lt;uri&gt;
+    transcription: (0..n)
+    listingOrder: (1..1) &lt;number&gt;
+    label: (0..n)
+```</para>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;pronunciation soundFile="..."&gt;
+    &lt;transcription.../&gt;
+    &lt;label.../&gt;
+&lt;/pronunciation&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "soundFile": "...",
+    "transcriptions": [...],
+    "labels": [...]
+}
+```</para>
+         </section>
+         <section>
+            <title>SQL {.unnumbered .unlisted}</title>
+            <para>```sql
+create table pronunciations (
+    entryID int foreign key references entries(id),
+    soundFile varchar(255),
+    listingOrder int,
+    id int primary key
+)
+```</para>
+         </section>
+         <section>
+            <title>Comments {.unnumbered .unlisted}</title>
+            <itemizedlist>
+               <listitem>
+                  <para>
+                     <code>transcription</code> is the  transcription of the pronuciation in some notation, such as IPA. If more than transcription is present in a single pronuncuation object, then they must be different transcriptions (in different schemes) of the same pronunciation, eg. one in IPA and one in SAMPA.</para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <code>soundFile</code> is a pointer to a file containing a sound recording of the pronunciation.</para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <code>listingOrder</code> is the position of this <code>pronunciation</code> object among other <code>pronunciation</code> objects of the same parent. This can be implicit from the serialization.</para>
+               </listitem>
+            </itemizedlist>
+         </section>
+      </section>
+      <section>
+         <title>
+            <code>transcription</code>
+         </title>
+         <para>Represents the transcription of a pronunciation in some notation such as IPA.</para>
+         <para>```yaml
+transcription: &lt;string&gt;
+    scheme: (0..1) &lt;langCode&gt;
+    listingOrder: (1..1) &lt;number&gt;
+```</para>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;transcription scheme="..."&gt;...&lt;/transcription&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "text": "...",
+    "scheme": "..."
+}
+```</para>
+         </section>
+         <section>
+            <title>SQL {.unnumbered .unlisted}</title>
+            <para>```sql
+create table transcriptions (
+    pronunciationID int foreign key references pronunciation(id),
+    text varchar(255),
+    scheme varchar(10),
+    listingOrder int,
+    id int primary key
+) 
+```</para>
+         </section>
+         <section>
+            <title>Comments {.unnumbered .unlisted}</title>
+            <itemizedlist>
+               <listitem>
+                  <para>
+                     <code>scheme</code> object identifies the transcription scheme used here. Example: <code>en-fonipa</code> for English IPA. This can be implicit if the lexicographic resource uses only one transcription scheme throughout.</para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <code>listingOrder</code> is the position of this <code>transcription</code> object among other <code>transcription</code> objects of the same pronunciation. This can be implicit from the serialization.</para>
+               </listitem>
+            </itemizedlist>
+         </section>
+      </section>
+      <section>
+         <title>
+            <code>example</code>
+         </title>
+         <para>Represents a sentence or other text fragment which illustrates the headword being used.</para>
+         <para>```yaml
+example: &lt;string&gt;
+    sourceIdentity: (0..1) &lt;string&gt;
+    sourceElaboration: (0..1) &lt;string&gt;
+    label: (0..n)
+    soundFile: (0..1) &lt;uri&gt;
+    listingOrder: (1..1) &lt;number&gt;
+```</para>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;example sourceIdentity="..." sourceElaboration="..." soundFile="..."&gt;
+    &lt;text&gt;...&lt;/text&gt;
+    &lt;label.../&gt;
+&lt;/example&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "text": "...",
+    "sourceIdentity": "...",
+    "sourceElaboration": "...",
+    "labels": [...],
+    "soundFile": "..."
+}
+```</para>
+         </section>
+         <section>
+            <title>SQL {.unnumbered .unlisted}</title>
+            <para>```sql
+create table examples (
+    senseID int foreign key references senses(id),
+    text varchar(255),
+    sourceIdentity varchar(50),
+    sourceElaboration varchar(255),
+    soundFile varchar(255),
+    id int primary key
+) 
+```</para>
+         </section>
+         <section>
+            <title>Comments {.unnumbered .unlisted}</title>
+            <itemizedlist>
+               <listitem>
+                  <para>
+                     <code>sourceIdentity</code> is an abbreviation, a code or some other string of text which identifies the source. You can use the <code>tag</code> datatype to explain the meaning of the source identifiers and to constrain which source identifiers are allowed to occur in your lexicographic resource.</para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <code>sourceElaboration</code> is a free-form statement about the source of the example. If <code>source</code> is present, then <code>sourceElaboration</code> can be used for information where in the source the example can be found: page number, chapter and so on. If <code>sourceIdentity</code> is absent then <code>sourceElaboration</code> can be used to fully name the source.</para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <code>soundFile</code> is a pointer to a file containing a sound recording of the example.</para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <code>listingOrder</code> is the position of this example among other examples in the same sense. This can be implicit from the serialization.</para>
+               </listitem>
+            </itemizedlist>
+         </section>
+      </section>
+      <section>
+         <title>
+            <code>tag</code>
+         </title>
+         <para>Represents one (of many) possible values for <code>partOfSpeech</code>, <code>inflectedTag</code>, <code>label</code>, and <code>source</code>. See Example \ref{ex05}.</para>
+         <para>```yaml
+tag: &lt;string&gt;
+    description: (0..1) &lt;string&gt;
+    target: (0..n) &lt;symbol&gt;
+    partOfSpeechConstraint: (0..n) &lt;string&gt;
+    sameAs: (0..n)
+```</para>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;tag value="..."&gt;
+    &lt;description&gt;...&lt;/description&gt;
+    &lt;target value="..."/&gt;
+    &lt;partOfSpeechConstraint value="..."/&gt;
+    &lt;sameAs.../&gt;
+&lt;/tag&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "value": "...",
+    "description": "...",
+    "targets": ["..."],
+    "partOfSpeechConstraints": ["..."],
+    "sameAs": [...]
+}
+```</para>
+         </section>
+         <section>
+            <title>SQL {.unnumbered .unlisted}</title>
+            <para>```sql
+create table tags (
+    lexicographicResourceID int foreign key references lexicographicResource(id),
+    value varchar(10),
+    description varchar(255),
+    targets varchar(255), --comma-separated list
+    partOfSpeechConstraints varchar(255), --comma-separated list
+    id int primary key
+)
+```</para>
+         </section>
+         <section>
+            <title>Comments {.unnumbered .unlisted}</title>
+            <itemizedlist>
+               <listitem>
+                  <para>The value is an abbreviation, a code or some other string of text which identifies the source. If you want, you can design your implementation to enforce referential integrity between <code>tag</code> values on the one hand and  <code>partOfSpeech</code>, <code>inflectedTag</code> etc. objects on the other hand. In other words, you can make it so that the tags you define in <code>tag</code> objects are the only values allowed for <code>partOfSpeech</code>, <code>inflectedTag</code> etc. However, doing this is optional in DMLex. An implementation of DMLex is compliant regardless of whether it enforces referential integrity on <code>tag</code> values.</para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <code>description</code> is a human-readable description of what the tag means.</para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <code>target</code> tells us where exactly the tag is expected to be used. If omitted, then all four. The possible values are:</para>
+                  <itemizedlist>
+                     <listitem>
+                        <para>
+                           <code>partOfSpeech</code>: as the value of a <code>partOfSpeech</code> object</para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <code>inflectedTag</code>: as the value of an <code>inflectedTag</code> object</para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <code>sourceIdentity</code>: as the value of a <code>sourceIdentity</code> object</para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <code>label</code>: as the value of a <code>label</code> object</para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <code>definitionType</code>: as the value of a <code>definitionType</code> object</para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <code>collocateRole</code>: as the value of a <code>collocateRole</code> object</para>
+                     </listitem>
+                  </itemizedlist>
+               </listitem>
+               <listitem>
+                  <para>
+                     <code>partOfSpeechConstraint</code>, if present, says that this tag is only intended to be used inside entries that are labelled with this part of speech. You can us this to constrain that, for example, only nouns and adjectives can have plurals but other parts of speech cannot.</para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <code>target</code> and <code>partOfSpeechConstraint</code> allow you to specify constraints on which tags are expected to appear where throughout the lexicographic resource. Enforcing these constraints in your implementation is optional.</para>
+               </listitem>
+            </itemizedlist>
+         </section>
+      </section>
+      <section>
+         <title>
+            <code>sameAs</code>
+         </title>
+         <para>Represents the fact that the parent object is equivalent to an item available from an external authority. See Example \ref{ex06}.</para>
+         <para>```yaml
+sameAs: &lt;uri&gt;
+```</para>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;sameAs uri="..."/&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+"..."
+```</para>
+         </section>
+         <section>
+            <title>SQL {.unnumbered .unlisted}</title>
+            <para>```sql
+create table sameAs (
+    tagID int foreign key references tags(id),
+    uri varchar(255),
+    id int primary key
+)
+```</para>
+         </section>
+         <section>
+            <title>Comments {.unnumbered .unlisted}</title>
+            <itemizedlist>
+               <listitem>
+                  <para>The value is the URI of an item in an external inventory.</para>
+               </listitem>
+            </itemizedlist>
+         </section>
+      </section>
+   </chapter>
+</book>

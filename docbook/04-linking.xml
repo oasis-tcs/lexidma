@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron?>
+<book xmlns="http://docbook.org/ns/docbook" version="5">
+   <title>book</title>
+   <chapter>
+      <title>DMLex Linking Module</title>
+      <para>DMLex's Linking Module can be used to construct <emphasis>relations</emphasis> between objects which "break out" of the tree-like parent-and-child hierarchy constructed from datatypes from the Core and from other modules. The Linking Module can be used to create relations between senses which are synonyms or antonyms, between entries whose headwords are homonyms or spelling variants, between senses which represent superordinate and subordinate concepts (eg. hypernyms and hyponyms, holonyms and meronyms), between entries and subentries, between senses and subsenses, and many others.</para>
+      <para>Each relation is represented in DMLex by an instance of the <code>relation</code> datatype. A relation brings two or more <emphasis>members</emphasis> together. The fact that an object (such as a sense or an entry) is a member of a relation is represented in DMLex by an instance of the <code>member</code> datatype.</para>
+      <para>The Linking Module can be used to set up relations between objects inside the same lexicographic resource, or between objects residing in different lexicographic resources.</para>
+      <para>Relations themselves can be members of other relations.</para>
+      <para>See Examples ref{ex12}, \ref{ex13}, \ref{ex14}, \ref{ex15}, \ref{ex16}, \ref{ex17}, \ref{ex18}.</para>
+      <section>
+         <title>Extensions to <code>lexicographicResource</code>
+         </title>
+         <para>Additional children:</para>
+         <para>```yaml
+lexicographicResource: ...
+    relation: (0..n)
+    relationType: (0..n)
+```</para>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;lexicographicResource ...&gt;
+    ...
+    &lt;relation.../&gt;
+    &lt;relationType.../&gt;
+&lt;/lexicographicResource&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    ...,
+    "relations": [...],
+    "relationTypes": [...]
+}
+```</para>
+         </section>
+         <section>
+            <title>SQL {.unnumbered .unlisted}</title>
+            <para>No changes needed.</para>
+         </section>
+      </section>
+      <section>
+         <title>
+            <code>relation</code>
+         </title>
+         <para>Represents the fact that a relation exists between two or more objects.</para>
+         <para>```yaml
+relation: &lt;string&gt;
+    description: (0..1) &lt;string&gt;
+    member: (2..n)
+```</para>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;relation type="..."&gt;
+    &lt;description&gt;...&lt;/description&gt;
+    &lt;member.../&gt;
+&lt;/relation&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "type": "...",
+    "description": "...",
+    "members": [...]
+}
+```</para>
+         </section>
+         <section>
+            <title>SQL {.unnumbered .unlisted}</title>
+            <para>```sql
+create table relations (
+    id int primary key,
+    type varchar(10),
+    description nvarchar(255)
+)
+```</para>
+            <para>Comments</para>
+            <itemizedlist>
+               <listitem>
+                  <para>The value of a relation specifies what type of relation it is, for example a relation between synonyms or a relation between a sense and a subsense. Optionally, you can use <code>relationType</code> objects to explain those types and to constrain which types of relations are allowed to exist in your lexicographic resource.</para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <code>description</code> is an optional human-readable explanation of this relation.</para>
+               </listitem>
+            </itemizedlist>
+         </section>
+      </section>
+      <section>
+         <title>
+            <code>member</code>
+         </title>
+         <para>Represents the fact that an object is a member of a relation.</para>
+         <para>```yaml
+member: &lt;idref&gt;
+    role: (0..1) &lt;string&gt;
+    listingOrder: (1..1) &lt;number&gt;
+    reverseListingOrder: (1..1) &lt;number&gt;
+```</para>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;member idref="..." role="..." reverseListingOrder="..."/&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "idref": "...",
+    "role": "...",
+    "reverseListingOrder": "..."
+}
+```</para>
+         </section>
+         <section>
+            <title>SQL {.unnumbered .unlisted}</title>
+            <para>```sql
+create table members (
+    lexicographicResourceID int foreign key references lexicographicResources(id),
+    relationID int foreign key references relations(id),
+    memberEntryID int foreign key references entries(id),
+    memberSenseID int foreign key references senses(id),
+    memberCollocateMarkerID int foreign key references collocateMarkers(id),
+    role nvarchar(50),
+    listingOrder int,
+    reverseListingOrder int,
+    id int primary key
+)
+```</para>
+            <para>Comments</para>
+            <itemizedlist>
+               <listitem>
+                  <para>The value of <code>member</code> is the ID of an object, such as an entry or a sense.</para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <code>role</code> is an indication of the role the member has in this relation: whether it is the hypernym or the hyponym (in a hyperonymy/hyponymy relation), or whether it is one of the synonyms (in a synonymy relation), and so on. You can use <code>membershipRole</code> objects to explain those roles and to constrain which relations are allowed to contain which roles, what their object types are allowed to be (eg. entries or senses) and how many members with this role each relation is allowed to have.</para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <code>listingOrder</code> is the position of this member among other members of the same relation. It should be respected when showing members of the relation to human users. This can be implicit from the serialization.</para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <code>reverseListingOrder</code> is the position of this relation among other relations this member is involved in. It should be respected when showing the relations of this member to a human user. This can be implicit from the serialization.</para>
+               </listitem>
+            </itemizedlist>
+         </section>
+      </section>
+      <section>
+         <title>
+            <code>relationType</code>
+         </title>
+         <para>Represents one of possible values for <code>relation</code>.</para>
+         <para>```yaml
+relationType: &lt;string&gt;
+    description: (0..1) &lt;string&gt;
+    scope: (0..1) &lt;symbol&gt;
+    sameAs: (0..n)
+    memberRole: &lt;0..n&gt;
+```</para>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;relationType type="..." scope="..."&gt;
+    &lt;description&gt;...&lt;/description&gt;
+    &lt;sameAs.../&gt;
+    &lt;memberRole.../&gt;
+&lt;/relationType&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "type": "...",
+    "scope": "...",
+    "sameAs": ["..."],
+    "memberRoles": [...]
+}
+```</para>
+         </section>
+         <section>
+            <title>SQL {.unnumbered .unlisted}</title>
+            <para>```sql
+create table relationTypes (
+    lexicographicResourceID int foreign key references lexicographicResources(id),
+    type varchar(10),
+    scope varcar(50),
+    id int primary key
+);
+alter table sameAs (
+    add relationTypeID int foreign key references relationTypes(id)
+)
+```</para>
+            <para>Comments</para>
+            <itemizedlist>
+               <listitem>
+                  <para>
+                     <code>description</code> is a human-readable explanation of this relation type.</para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <code>scope</code> specifies restrictions on member of relations of this type. The possible values are:</para>
+                  <itemizedlist>
+                     <listitem>
+                        <para>
+                           <code>sameEntry</code>: members must be within of the same <code>entry</code>
+                        </para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <code>sameResource</code>: members must be within the same <code>lexicographicResource</code>
+                        </para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <code>any</code>: no restriction</para>
+                     </listitem>
+                  </itemizedlist>
+               </listitem>
+               <listitem>
+                  <para>
+                     <code>memberRole</code> objects define roles for members of relations of this type.</para>
+               </listitem>
+            </itemizedlist>
+         </section>
+      </section>
+      <section>
+         <title>
+            <code>memberRole</code>
+         </title>
+         <para>```yaml
+memberRole: &lt;stringOrEmpty&gt;
+    description: (1..1) &lt;string&gt;
+    memberType: (1..1) &lt;symbol&gt;
+    min: (0..1) &lt;number&gt;
+    max: (0..1) &lt;number&gt;
+    action: (1..1) &lt;symbol&gt;
+    sameAs: (0..n)
+```</para>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;memberRole role="..." memberType="..." min="..." max="..." action="..."&gt;
+    &lt;description&gt;&lt;/description&gt;
+    &lt;sameAs.../&gt;
+&lt;/memberRole&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "role": "...",
+    "description": "...",
+    "memberType": "...",
+    "min": "...",
+    "max": "...",
+    "action": "...",
+    "sameAs": [...]
+}
+```</para>
+         </section>
+         <section>
+            <title>SQL {.unnumbered .unlisted}</title>
+            <para>```sql
+create table memberRoles (
+    relationTypeID int foreign key references relationTypes(id),
+    role varchar(50),
+    description varchar(255),
+    memberType varchar(50),
+    min int,
+    max int,
+    action varchar(50)
+);
+alter table sameAs (
+    add memberRoleID int foreign key references memberRoles(id)
+)
+```</para>
+            <para>Comments</para>
+            <itemizedlist>
+               <listitem>
+                  <para>If the value is empty, then members having this role do not need to have a <code>role</code> property.</para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <code>description</code> is a human-readable explanation of this member role.</para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <code>memberType</code> is a restrictions on the types of objects that can have this role. The possible values are:</para>
+                  <itemizedlist>
+                     <listitem>
+                        <para>
+                           <code>sense</code>: the object that has this role must be a <code>sense</code>.</para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <code>entry</code>: the object that has this role must be an <code>entry</code>.</para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <code>itemMarker</code>: the object that has this role must be a <code>itemMarker</code>.</para>
+                     </listitem>
+                  </itemizedlist>
+               </listitem>
+               <listitem>
+                  <para>
+                     <code>min</code> is a number which says that relations of this type must have at least this many members with this role. If omitted then there is no lower limit (effectively, zero).</para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <code>max</code> is a number which says that relations of this type may have at most this many members with this role. If omitted then there is no upper limit.</para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <code>action</code> gives instructions on what machine agents should do when showing this relation to a human user (either on its own or in the context of one of its members). The possibe values are:</para>
+                  <itemizedlist>
+                     <listitem>
+                        <para>
+                           <code>embed</code>: Members that have this role should be shown in their entirety, i.e. the entire entry or the entire sense. This is suitable for the relation between entries and subentries, or senses and subsenses.</para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <code>navigate</code>: Members that have this role should not be shown in their entirety, but a navigable (e.g. clickable) link should be provided. This is suitable for the relation between synonyms, for example.</para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <code>none</code>: Members that have this role should not shown.</para>
+                     </listitem>
+                  </itemizedlist>
+               </listitem>
+            </itemizedlist>
+         </section>
+      </section>
+   </chapter>
+</book>

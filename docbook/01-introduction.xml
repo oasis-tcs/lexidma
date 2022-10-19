@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron?>
+<book xmlns="http://docbook.org/ns/docbook" version="5">
+   <title>book</title>
+   <chapter>
+      <title>Introduction</title>
+      <para>DMLex is a data model for modelling dictionaries (here called <emphasis>lexicographic resources</emphasis>) in computer applications such as dictionary writing systems.</para>
+      <para>DMLex is a data model, not an encoding format. DMLex is abstract, independent of any markup language or formalism. At the same time, DMLex has been designed to be easily and straightforwardly implementable in XML, JSON, as a relational database, and as a Semantic Web triplestore.</para>
+      <section>
+         <title>Modular structure of DMLex</title>
+         <para>The DMLex specification is divided into a core with several optional modules.</para>
+         <itemizedlist>
+            <listitem>
+               <para>
+                  <emphasis role="strong">DMLex Core</emphasis> allows you to model the basic entries-and-sense structure if a monolingual lexicographic resource.</para>
+            </listitem>
+            <listitem>
+               <para>
+                  <emphasis role="strong">DMLex Crosslingual Module</emphasis> extends DMLex Core to model bilingual and multilingual lexicographic resources.</para>
+            </listitem>
+            <listitem>
+               <para>
+                  <emphasis role="strong">DMLex Linking Module</emphasis> extends DMLex Core and allows you to model various kinds of relations between entries, senses and other objects, including semantic relations such as synonymy and antonymy and presentational relations such as subentries and subsenses, both within a single lexicographic resource and across multiple lexicographic resources.</para>
+            </listitem>
+            <listitem>
+               <para>
+                  <emphasis role="strong">DMLex Inline Markup Module</emphasis> extends DMLex Core to allow the modelling of inline markup on various objects such as example sentences, including the modelling of collocations and corpus patterns.</para>
+            </listitem>
+         </itemizedlist>
+      </section>
+      <section>
+         <title>Schema formalism</title>
+         <para>DMLex models a lexicographic resource as a <emphasis role="strong">hierarchical list of objects</emphasis>. Each object has a name, a value and an optional list of child objects, each of which can in turn also have a <emphasis role="strong">name</emphasis>, a <emphasis role="strong">value</emphasis> and an optional list of child objects.</para>
+         <para>The data model is defined in this standard through the means of a formalism which defines, for each object: (1) what its name is, (2) what its value is supposed to be (from a list of predefined primitive types) and (3) which child objects it may contain, with what arities.</para>
+         <para>The arities of child objects are indicated with the following codes:</para>
+         <itemizedlist>
+            <listitem>
+               <para>
+                  <code>(0..1)</code> zero or one</para>
+            </listitem>
+            <listitem>
+               <para>
+                  <code>(0..n)</code> zero or one or more</para>
+            </listitem>
+            <listitem>
+               <para>
+                  <code>(1..1)</code> exactly one</para>
+            </listitem>
+            <listitem>
+               <para>
+                  <code>(1..n)</code> one or more</para>
+            </listitem>
+            <listitem>
+               <para>
+                  <code>(2..n)</code> two or more</para>
+            </listitem>
+         </itemizedlist>
+         <para>The primitive types of the values of objects are given with the following codes:</para>
+         <itemizedlist>
+            <listitem>
+               <para>
+                  <code>&lt;string&gt;</code> a non-empty string</para>
+            </listitem>
+            <listitem>
+               <para>
+                  <code>&lt;stringOrEmpty&gt;</code> a string which may be empty</para>
+            </listitem>
+            <listitem>
+               <para>
+                  <code>&lt;number&gt;</code> a positive integer number</para>
+            </listitem>
+            <listitem>
+               <para>
+                  <code>&lt;id&gt;</code> an alphanumeric identifier</para>
+            </listitem>
+            <listitem>
+               <para>
+                  <code>&lt;idref&gt;</code> a reference to something through its alphanumeric identifier</para>
+            </listitem>
+            <listitem>
+               <para>
+                  <code>&lt;uri&gt;</code> a URI</para>
+            </listitem>
+            <listitem>
+               <para>
+                  <code>&lt;langCode&gt;</code> an IETF language code</para>
+            </listitem>
+            <listitem>
+               <para>
+                  <code>&lt;empty&gt;</code> nothing: the object serves only as a container for child objects</para>
+            </listitem>
+            <listitem>
+               <para>
+                  <code>&lt;symbol&gt;</code> one of a specified finite number of values</para>
+            </listitem>
+         </itemizedlist>
+         <para>When the primitive type of a child object is absent, this means that the schema for objects of that name is defined elsewhere in the code.</para>
+      </section>
+      <section>
+         <title>Implementing DMLex</title>
+         <para>DMLex is an abstract data model which can be implemented in many different programming environments and serialization languages. In this document, we give recommended implementations in XML, JSON and SQL. Examples of what such implementations look like with real-world data are given in Section \ref{examples}.</para>
+         <section>
+            <title>Implementing DMLex in XML</title>
+            <para>The XML implementation of DMLex shown in this document follows these priciples:</para>
+            <itemizedlist>
+               <listitem>
+                  <para>The top-level <code>lexicographicResource</code> object is implemented as an XML element.</para>
+               </listitem>
+               <listitem>
+                  <para>All other objects are implemented as XML attributes of their parents, unless:</para>
+                  <itemizedlist>
+                     <listitem>
+                        <para>the object has an arity other than <code>(0..1)</code> and <code>(1..1)</code>
+                        </para>
+                     </listitem>
+                     <listitem>
+                        <para>or the object can have child objects</para>
+                     </listitem>
+                     <listitem>
+                        <para>or the object's value is human-readable text, such as a headword or a definition.</para>
+                        <para>In such cases the object is implemented as a child XML element of its parent.</para>
+                     </listitem>
+                  </itemizedlist>
+               </listitem>
+            </itemizedlist>
+         </section>
+         <section>
+            <title>Implementing DMLex in JSON</title>
+            <para>The XML implementation of DMLex shown in this document follows these priciples:</para>
+            <itemizedlist>
+               <listitem>
+                  <para>The top-level <code>lexicographicResource</code> object is implemented as a JSON object: <code>{...}</code>.</para>
+               </listitem>
+               <listitem>
+                  <para>All other objects are implemented as JSON name-value pairs inside their parent JSON object: <code>{"name": ...}</code>.</para>
+               </listitem>
+               <listitem>
+                  <para>The values of objects are implemented:</para>
+                  <itemizedlist>
+                     <listitem>
+                        <para>If the object has an arity of <code>(0..1)</code> or <code>(1..1)</code>:</para>
+                        <itemizedlist>
+                           <listitem>
+                              <para>If the object cannot have any child objects: as a string or number.</para>
+                           </listitem>
+                           <listitem>
+                              <para>If the object can have child objects: as a JSON object.</para>
+                           </listitem>
+                        </itemizedlist>
+                     </listitem>
+                     <listitem>
+                        <para>If the object has any other arity:</para>
+                        <itemizedlist>
+                           <listitem>
+                              <para>If the object cannot have any child objects: as an array of strings or numbers.</para>
+                           </listitem>
+                           <listitem>
+                              <para>If the object can have child objects: as an array of JSON objects.</para>
+                           </listitem>
+                        </itemizedlist>
+                     </listitem>
+                  </itemizedlist>
+               </listitem>
+            </itemizedlist>
+         </section>
+         <section>
+            <title>Implementing DMLex as a relational database</title>
+            <para>The SQL implementation of DMLex shown in this document follows these priciples:</para>
+            <itemizedlist>
+               <listitem>
+                  <para>The <code>lexicographicResource</code> object is implemented as table. (Alternatively, it can left unimplemented if the database is going to contain only one lexicographic resource.)</para>
+               </listitem>
+               <listitem>
+                  <para>Other objects with an arity other than <code>(0..1)</code> and <code>(1..1)</code> are implemented as tables.</para>
+               </listitem>
+               <listitem>
+                  <para>The values of objects, and objects with an arity of <code>(0..1)</code> or <code>(1..1)</code> are implemented as columns in those tables.</para>
+               </listitem>
+               <listitem>
+                  <para>The parent-child relation is implemented as a one-to-many relation between tables.</para>
+               </listitem>
+            </itemizedlist>
+         </section>
+      </section>
+   </chapter>
+</book>

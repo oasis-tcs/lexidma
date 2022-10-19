@@ -1,0 +1,1983 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron?>
+<book xmlns="http://docbook.org/ns/docbook" version="5">
+   <title>book</title>
+   <chapter>
+      <title>Examples {#examples}</title>
+      <para>This section gives examples which show how to use DMLex to model lexicographic resources. The examples are shown in three formalisms: ### NVH {.unnumbered .unlisted}, ### XML {.unnumbered .unlisted} and ### JSON {.unnumbered .unlisted}.</para>
+      <para>Each example is shown in NVH first. NVH (Name-Value Hierarchy)[^1] is a concise serialization language designed for lexicographic data. ### NVH {.unnumbered .unlisted} encodes data as a hierarchical list of names, values and children, which corresponds exactly to DMLex’s own data model. We use NVH here in order to demonstrate the object model at an abstract level.</para>
+      <para>After that, each example is shown in ### XML {.unnumbered .unlisted} and ### JSON {.unnumbered .unlisted}, two popular serialization languages. The ### XML {.unnumbered .unlisted} and ### JSON {.unnumbered .unlisted} encoding shown here follows DMLex’s own implementation guidance for ### XML {.unnumbered .unlisted} and ### JSON {.unnumbered .unlisted}.</para>
+      <section>
+         <title>A basic entry {#ex00}</title>
+         <para>This is a basic, beginner-level example of how to use DMLex to represent a simple monolingual lexicographic resource consisting of one entry with two senses. It demonstrates some of the basic features of DMLex Core: how to subdivide a entry into senses, how attach various data such as definition, part-of-speech labels to entries and senses, and how to add labels to various objects such as senses and examples.</para>
+         <section>
+            <title>NVH {.unnumbered .unlisted}</title>
+            <para>```yaml
+lexicographicResource: my-dictionary
+    entry: abandon-verb
+        headword: abandon
+        partOfSpeech: verb
+        sense: abandon-verb-1
+            definition: to suddenly leave a place or a person
+            example: I'm sorry I abandoned you like that.
+            example: Abandon ship!
+                label: idiom
+        sense: abandon-verb-2
+            label: mostly-passive
+            definition: to stop supporting an idea
+            example: That theory has been abandoned.
+```</para>
+         </section>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;lexicographicResource id="my-dictionary"&gt;
+    &lt;entry id="abandon-verb"&gt;
+        &lt;headword&gt;abandon&lt;/headword&gt;
+        &lt;partOfSpeech value="verb"/&gt;
+        &lt;sense id="abandon-verb-1"&gt;
+            &lt;definition&gt;to suddenly leave a place or a person&lt;/definition&gt;
+            &lt;example&gt;
+                &lt;text&gt;I'm sorry I abandoned you like that.&lt;/text&gt;
+            &lt;/example&gt;
+            &lt;example&gt;
+                &lt;text&gt;Abandon ship!&lt;/text&gt;
+                &lt;label value="idiom"/&gt;
+            &lt;/example&gt;
+        &lt;sense id="abandon-verb-2"&gt;
+            &lt;label value="mostly-passive"/&gt;
+            &lt;definition&gt;to stop supporting an idea&lt;/definition&gt;
+            &lt;example&gt;
+                &lt;text&gt;That theory has been abandoned.&lt;/text&gt;
+            &lt;/example&gt;
+        &lt;/sense&gt;
+    &lt;/entry&gt;
+&lt;lexicographicResource&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "id": "my-dictionary",
+    "entry": {
+        "id": "abandon-verb",
+        "headword": "abandon",
+        "partsOfSpeech": ["verb"],
+        "senses": [{
+            "id": "abandon-verb-1",
+            "definitions": [{
+                "text": "to suddenly leave a place or a person"
+            }],
+            "examples": [{
+                "text": "I'm sorry I abandoned you like that."
+            }, {
+                "text": "Abandon ship!",
+                "labels": ["idiom"]
+            }]
+        }, {
+            "id": "abandon-verb-2",
+            "labels": ["mostly-passive"],
+            "definitions": ["to stop supporting an idea"],
+            "examples": [{
+                "text": "That theory has been abandoned."
+            }]
+        }]
+    }
+}
+```</para>
+         </section>
+      </section>
+      <section>
+         <title>How to use <code>inflectedForm</code> {#ex01}</title>
+         <para>This is an entry from a hypothetical Irish dictionary for the headword "folúsghlantóir" ("vacuum cleaner") which gives its two inflected forms, the singular genitive and the plural.</para>
+         <section>
+            <title>NVH {.unnumbered .unlisted}</title>
+            <para>```yaml
+entry: folúsghlantóir-n
+    headword: folúsghlantóir
+    partOfSpeech: n-masc
+    inflectedForm: folúsghlantóra
+        inflectedTag: sg-gen
+    inflectedForm: folúsghlantóirí
+        inflectedTag: pl
+    sense: ...
+```</para>
+         </section>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;entry id="folúsghlantóir-n"&gt;
+    &lt;headword&gt;folúsghlantóir&lt;/headword&gt;
+    &lt;partOfSpeech value="n-masc"/&gt;
+    &lt;inflectedForm inflectedTag="sg-gen"&gt;folúsghlantóra&lt;/inflectedForm&gt;
+    &lt;inflectedForm inflectedTag="pl"&gt;folúsghlantóirí&lt;/inflectedForm&gt;
+    &lt;sense&gt;...&lt;/sense&gt;
+&lt;/entry&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "id": "folúsghlantóir-n",
+    "headword": "folúsghlantóir",
+    "partsOfSpeech": ["n-masc"],
+    "inflectedForms": [{
+        "text": "folúsghlantóra",
+        "inflectedTag": "sg-gen",
+    }, {
+        "text": "folúsghlantóirí",
+        "inflectedTag": "pl",
+    }],
+    "senses": [...]
+}
+```</para>
+         </section>
+      </section>
+      <section>
+         <title>Pronunciation given as transcription {#ex02}</title>
+         <section>
+            <title>NVH {.unnumbered .unlisted}</title>
+            <para>```yaml
+entry: aardvark-noun
+    headword: aardvark
+    pronunciation:
+        transcription: a:rdva:rk
+    sense: ...
+```</para>
+         </section>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;entry id="aardvark-noun"&gt;
+    &lt;headword&gt;aardvark&lt;/headword&gt;
+    &lt;pronunciation&gt;
+        &lt;transcription&gt;a:rdva:rk&lt;/transcription&gt;
+    &lt;/pronunciation&gt;
+    &lt;sense&gt;...&lt;/sense&gt;
+&lt;/entry&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "id": "aardvark-noun",
+    "headword": "aardvark",
+    "pronunciations": [{
+        "transcriptions": [{"text": "a:rdva:rk"}]
+    }],
+    "senses": [...]
+}
+```</para>
+         </section>
+      </section>
+      <section>
+         <title>Pronunciation given as a sound file {#ex03}</title>
+         <section>
+            <title>NVH {.unnumbered .unlisted}</title>
+            <para>```yaml
+entry: aardvark-noun
+    headword: aardvark
+    pronunciation:
+        soundFile: aardvark.mp3
+    sense: ...
+```</para>
+         </section>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;entry id="aardvark-noun"&gt;
+    &lt;headword&gt;aardvark&lt;/headword&gt;
+    &lt;pronunciation soundFile="aardvark.mp3"/&gt;
+    &lt;sense&gt;...&lt;/sense&gt;
+&lt;/entry&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "id": "aardvark-noun",
+    "headword": "aardvark",
+    "pronunciations": [{
+        "soundFile": "aardvark.mp3"
+    }],
+    "senses": [...]
+}
+```</para>
+         </section>
+      </section>
+      <section>
+         <title>Pronunciation given both ways {#ex04}</title>
+         <section>
+            <title>NVH {.unnumbered .unlisted}</title>
+            <para>```yaml
+entry: aardvark-noun
+    headword: aardvark
+    pronunciation:
+        transcription: a:rdva:rk
+        soundFile: aardvark.mp3
+    sense: ...
+```</para>
+         </section>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;entry id="aardvark-noun"&gt;
+    &lt;headword&gt;aardvark&lt;/headword&gt;
+    &lt;pronunciation soundFile="aardvark.mp3"&gt;
+        &lt;transcription&gt;a:rdva:rk&lt;/transcription&gt;
+    &lt;/pronunciation&gt;
+    &lt;sense&gt;...&lt;/sense&gt;
+&lt;/entry&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "id": "aardvark-noun",
+    "headword": "aardvark",
+    "pronunciations": [{
+        "soundFile": "aardvark.mp3",
+        "transcriptions": [{"text": "a:rdva:rk"}]
+    }],
+    "senses": [...]
+}
+```</para>
+         </section>
+      </section>
+      <section>
+         <title>How to use <code>tag</code> {#ex05}</title>
+         <para>This is an entry from a hypothetical Irish dictionary for the headword "folúsghlantóir" ("vacuum cleaner"). The meaning of the various tags used in this entry is explained in the <code>tag</code> objects.</para>
+         <section>
+            <title>NVH {.unnumbered .unlisted}</title>
+            <para>```yaml
+lexicographicResource: my-irish-dictionary
+    language: ga
+    entry: folúsghlantóir-n
+        headword: folúsghlantóir
+        partOfSpeech: n-masc
+        inflectedForm: folúsghlantóra
+            inflectedTag: sg-gen
+        inflectedForm: folúsghlantóirí
+            inflectedTag: pl
+        sense: ...
+    tag: n-masc
+        description: noun, masculine
+        target: partOfSpeech
+    tag: n-fem
+        description: noun, feminine
+        target: partOfSpeech
+    tag: sg-gen
+        description: singular genitive
+        target: inflectedTag
+        partOfSpeechConstraint: n-masc
+        partOfSpeechConstraint: n-fem
+    tag: pl
+        description: plural
+        target: inflectedTag
+        partOfSpeechConstraint: n-masc
+        partOfSpeechConstraint: n-fem
+```</para>
+         </section>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;lexicographicResource id="my-irish-dictionary" language="ga"&gt;
+    &lt;entry id="folúsghlantóir-n"&gt;
+        &lt;headword&gt;folúsghlantóir&lt;/headword&gt;
+        &lt;partOfSpeech value="n-masc"/&gt;
+        &lt;inflectedForm inflectedTag="sg-gen"&gt;folúsghlantóra&lt;/inflectedForm&gt;
+        &lt;inflectedForm inflectedTag="pl"&gt;folúsghlantóirí&lt;/inflectedForm&gt;
+        &lt;sense&gt;...&lt;/sense&gt;
+    &lt;/entry&gt;
+    &lt;tag value="n-masc"&gt;
+        &lt;description&gt;noun, masculine&lt;/description&gt;
+        &lt;target value="partOfSPeech"/&gt;
+    &lt;/tag&gt;
+    &lt;tag value="n-fem"&gt;
+        &lt;description&gt;noun, feminine&lt;/description&gt;
+        &lt;target value="partOfSPeech"/&gt;
+    &lt;/tag&gt;
+    &lt;tag value="sg-gen"&gt;
+        &lt;description&gt;singular genitive&lt;/description&gt;
+        &lt;target value="inflectedTag"/&gt;
+        &lt;partOfSpeechConstraint value="n-masc"/&gt;
+        &lt;partOfSpeechConstraint value="n-fem"/&gt;
+    &lt;/tag&gt;
+    &lt;tag value="pl"&gt;
+        &lt;description&gt;plural&lt;/description&gt;
+        &lt;target value="inflectedTag"/&gt;
+        &lt;partOfSpeechConstraint value="n-masc"/&gt;
+        &lt;partOfSpeechConstraint value="n-fem"/&gt;
+    &lt;/tag&gt;
+&lt;/lexicographicResource&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "id": "my-irish-dictionary",
+    "language": "ga",
+    "entries": [{
+        "id": "folúsghlantóir-n",
+        "headword": "folúsghlantóir",
+        "partsOfSpeech": ["n-masc"],
+        "inflectedForms": [{
+            "text": "folúsghlantóra",
+            "inflectedTag": "sg-gen",
+        }, {
+            "text": "folúsghlantóirí",
+            "inflectedTag": "pl",
+        }],
+        "senses": [...]
+    }],
+    "tags": [{
+        "value": "n-masc",
+        "description": "noun, masculine",
+        "targets": ["partOfSpeech"]
+    }, {
+        "value": "n-fem",
+        "description": "noun, feminine",
+        "targets": ["partOfSpeech"]
+    }, {
+        "value": "sg-gen",
+        "description": "singular genitive",
+        "targets": ["inflectedTag"],
+        "partOfSpeechConstraints": ["n-masc", "n-fem"]
+    }, {
+        "value": "pl",
+        "description": "plural",
+        "targets": ["inflectedTag"],
+        "partOfSpeechConstraints": ["n-masc", "n-fem"]
+    }]
+}
+```</para>
+         </section>
+      </section>
+      <section>
+         <title>Mapping <code>tag</code> to external inventories {#ex06}</title>
+         <para>This shows how to map the value of a tag such as <code>n-masc</code> and <code>n-fem</code> to items in an external inventory such as LexInfo.</para>
+         <section>
+            <title>NVH {.unnumbered .unlisted}</title>
+            <para>```yaml
+tag: n-masc
+    description: noun, masculine
+    target: partOfSpeech
+    sameAs: http://www.lexinfo.net/ontology/3.0/lexinfo#noun
+    sameAs: http://www.lexinfo.net/ontology/3.0/lexinfo#masculine
+tag: n-fem
+    description: noun, feminine
+    target: partOfSpeech
+    sameAs: http://www.lexinfo.net/ontology/3.0/lexinfo#noun
+    sameAs: http://www.lexinfo.net/ontology/3.0/lexinfo#feminine
+```</para>
+         </section>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;tag value="n-masc"&gt;
+    &lt;description&gt;noun, masculine&lt;/description&gt;
+    &lt;target value="partOfSPeech"/&gt;
+    &lt;sameAs uri="http://www.lexinfo.net/ontology/3.0/lexinfo#noun"/&gt;
+    &lt;sameAs uri="http://www.lexinfo.net/ontology/3.0/lexinfo#masculine"/&gt;
+&lt;/tag&gt;
+&lt;tag value="n-fem"&gt;
+    &lt;description&gt;noun, feminine&lt;/description&gt;
+    &lt;target value="partOfSPeech"/&gt;
+    &lt;sameAs uri="http://www.lexinfo.net/ontology/3.0/lexinfo#noun"/&gt;
+    &lt;sameAs uri="http://www.lexinfo.net/ontology/3.0/lexinfo#feminine"/&gt;
+&lt;/tag&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "tags": [{
+        "value": "n-masc",
+        "description": "noun, masculine",
+        "targets": ["partOfSpeech"],
+        "sameAs": [
+            "http://www.lexinfo.net/ontology/3.0/lexinfo#noun",
+            "http://www.lexinfo.net/ontology/3.0/lexinfo#masculine"
+        ]
+    }, {
+        "value": "n-fem",
+        "description": "noun, feminine",
+        "targets": ["partOfSpeech"],
+        "sameAs": [
+            "http://www.lexinfo.net/ontology/3.0/lexinfo#noun",
+            "http://www.lexinfo.net/ontology/3.0/lexinfo#feminine"
+        ]
+    }]
+}
+```</para>
+         </section>
+      </section>
+      <section>
+         <title>Defining a bilingual lexicographic resource {#ex07}</title>
+         <para>This defines a lexicographic resource where the source language is German and the translation language is English and the English translations are going to come with pronunciation transcriptions in English IPA.</para>
+         <section>
+            <title>NVH {.unnumbered .unlisted}</title>
+            <para>```yaml
+lexicographicResource: deueng
+    title: My German-English Dictionary
+    language: de
+    translationLanguage: en
+```</para>
+         </section>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;lexicographicResource id="deueng" language="de"&gt;
+    &lt;title&gt;My German-English Dictionary&lt;/title&gt;
+    &lt;translationLanguage langCode="en"/&gt;
+    ...
+&lt;/lexicographicResource&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "id": "deueng",
+    "title": "My German-English Dictionary",
+    "language": "de",
+    "translationLanguages": ["en"],
+    ...
+}
+```</para>
+         </section>
+      </section>
+      <section>
+         <title>Defining a multilingual lexicographic resource {#ex10}</title>
+         <para>This defines a lexicographic resource where the source language is Irish and the translation languages are English, German and Czech.</para>
+         <section>
+            <title>NVH {.unnumbered .unlisted}</title>
+            <para>```yaml
+lexicographicResource: irish-multilingual
+    description: My Irish-Multilingual Dictionary
+    language: ga
+    translationLanguage: en
+    translationLanguage: de
+    translationLanguage: cs
+```</para>
+         </section>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;lexicographicResource id="irish-multilingual" language="ga"&gt;
+    &lt;title&gt;My Irish-Multilingual Dictionary&lt;/title&gt;
+    &lt;translationLanguage langCode="en"/&gt;
+    &lt;translationLanguage langCode="de"/&gt;
+    &lt;translationLanguage langCode="cs"/&gt;
+    ...
+&lt;/lexicographicResource&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "id": "irish-multilingual",
+    "title": "My Irish-Multilingual Dictionary",
+    "language": "ga",
+    "translationLanguages": ["en", "de", "cs"],
+    ...
+}
+```</para>
+         </section>
+      </section>
+      <section>
+         <title>How to use <code>headwordTranslation</code> in a bilingual lexicographic resource {#ex08}</title>
+         <para>This is an entry from a hypothetical English-German dictionary for English-speaking learners of German.</para>
+         <section>
+            <title>NVH {.unnumbered .unlisted}</title>
+            <para>```yaml
+entry: doctor-n
+    headword: doctor
+    sense: doctor-n-1
+        indicator: medical doctor
+        headwordTranslation: Arzt
+            partOfSpeech: n-masc
+        headwordTranslation: Ärztin
+            partOfSpeech: n-fem
+    sense: doctor-n-2
+        indicator: academic title
+        headwordTranslation: Doktor
+            partOfSpeech: n-masc
+        headwordTranslation: Doktorin
+            partOfSpeech: n-fem
+            label: rare
+```</para>
+         </section>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;entry id="doctor-n"&gt;
+    &lt;headword&gt;doctor&lt;/headword&gt;
+    &lt;sense id="doctor-n-1"&gt;
+        &lt;indicator&gt;medical doctor&lt;/indicator&gt;
+        &lt;headwordTranslation&gt;
+            &lt;text&gt;Arzt&lt;/text&gt;
+            &lt;partOfSpeech value="n-masc"/&gt;
+        &lt;/headwordTranslation&gt;
+        &lt;headwordTranslation&gt;
+            &lt;text&gt;Ärztin&lt;/text&gt;
+            &lt;partOfSpeech value="n-fem"/&gt;
+        &lt;/headwordTranslation&gt;
+    &lt;/sense&gt;
+    &lt;sense id="doctor-n-2"&gt;
+        &lt;indicator&gt;academic title&lt;/indicator&gt;
+        &lt;headwordTranslation&gt;
+            &lt;text&gt;Doktor&lt;/text&gt;
+            &lt;partOfSpeech value="n-masc"/&gt;
+        &lt;/headwordTranslation&gt;
+        &lt;headwordTranslation&gt;
+            &lt;text&gt;Doktorin&lt;/text&gt;
+            &lt;partOfSpeech value="n-fem"/&gt;
+        &lt;/headwordTranslation&gt;
+    &lt;/sense&gt;
+&lt;/entry&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "id": "doctor-n",
+    "headword": "doctor",
+    "senses": [{
+        "id": "doctor-n-1",
+        "indicator": "medical doctor",
+        "headwordTranslations": [{
+            "text": "Arzt",
+            "partsOfSpeech": ["n-masc"]
+        }, {
+            "text": "Ärztin",
+            "partsOfSpeech": ["n-fem"]
+        }]
+    }, {
+        "id": "doctor-n-2",
+        "indicator": "academic title",
+        "headwordTranslations": [{
+            "text": "Doktor",
+            "partsOfSpeech": ["n-masc"]
+        }, {
+            "text": "Doktorin",
+            "partsOfSpeech": ["n-fem"]
+        }]
+    }]
+}
+```</para>
+         </section>
+      </section>
+      <section>
+         <title>How to use <code>headwordTranslation</code> in a multilingual lexicographic resource {#ex11}</title>
+         <para>This is an entry from a hypothetical Irish-multilingual dictionary.</para>
+         <section>
+            <title>NVH {.unnumbered .unlisted}</title>
+            <para>```yaml
+entry: fómhar-n
+    headword: fómhar
+    sense: fómhar-n-1
+        headwordTranslation: autumn
+            language: en
+        headwordTranslation: fall
+            language: en
+        headwordTranslation: Herbst
+            language: de
+        headwordTranslation: podzim
+            language: cs
+    sense: fómhar-n-2
+        headwordTranslation: harvest
+            language: en
+        headwordTranslation: Ernte
+            language: de
+        headwordTranslation: sklizeň
+            language: cs
+```</para>
+         </section>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;entry id="fómhar-n"&gt;
+    &lt;headword&gt;fómhar&lt;/headword&gt;
+    &lt;sense id="fómhar-n-1"&gt;
+        &lt;headwordTranslation language="en"&gt;
+            &lt;text&gt;autumn&lt;/text&gt;
+        &lt;/headwordTranslation&gt;
+        &lt;headwordTranslation language="en"&gt;
+            &lt;text&gt;fall&lt;/text&gt;
+        &lt;/headwordTranslation&gt;
+        &lt;headwordTranslation language="de"&gt;
+            &lt;text&gt;Herbst&lt;/text&gt;
+        &lt;/headwordTranslation&gt;
+        &lt;headwordTranslation language="cs"&gt;
+            &lt;text&gt;podzim&lt;/text&gt;
+        &lt;/headwordTranslation&gt;
+    &lt;/sense&gt;
+    &lt;sense id="fómhar-n-2"&gt;
+        &lt;headwordTranslation language="en"&gt;
+            &lt;text&gt;harvest&lt;/text&gt;
+        &lt;/headwordTranslation&gt;
+        &lt;headwordTranslation language="de"&gt;
+            &lt;text&gt;Ernte&lt;/text&gt;
+        &lt;/headwordTranslation&gt;
+        &lt;headwordTranslation language="cs"&gt;
+            &lt;text&gt;sklizeň&lt;/text&gt;
+        &lt;/headwordTranslation&gt;
+    &lt;/sense&gt;
+&lt;/entry&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "id": "fómhar-n",
+    "headword": "fómhar",
+    "senses": [{
+        "id": "fómhar-n-1",
+        "headwordTranslations": [{
+            "language": "en",
+            "text": "autumn"
+        }, {
+            "language": "en",
+            "text": "fall"
+        }, {
+            "language": "de",
+            "text": "Herbst"
+        }, {
+            "language": "cs",
+            "text": "podzim"
+        }]
+    }, {
+        "id": "fómhar-n-2",
+        "headwordTranslations": [{
+            "language": "en",
+            "text": "harvest"
+        }, {
+            "language": "de",
+            "text": "Ernte"
+        }, {
+            "language": "cs",
+            "text": "sklizeň"
+        }]
+    },]
+}
+```</para>
+         </section>
+      </section>
+      <section>
+         <title>How to use <code>headwordExplanation</code> {#ex09}</title>
+         <section>
+            <title>NVH {.unnumbered .unlisted}</title>
+            <para>```yaml
+entry: treppenwitz
+    headword: Treppenwitz
+    partOfSpeech: n-masc
+    sense: treppenwitz-1
+        headwordExplanation: belated realisation of what one could have said
+        headwordTranslation: staircase wit
+```</para>
+         </section>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;entry id="treppenwitz"&gt;
+    &lt;headword&gt;Treppenwitz&lt;/headword&gt;
+    &lt;partOfSpeech value="n-masc"/&gt;
+    &lt;sense id="treppenwitz-1"&gt;
+        &lt;headwordExplanation&gt;
+            belated realisation of what one could have said
+        &lt;/headwordExplanation&gt;
+        &lt;headwordTranslation&gt;
+            &lt;text&gt;staircase wit&lt;/text&gt;
+        &lt;/headwordTranslation&gt;
+    &lt;/sense&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "id": "treppenwitz",
+    "headword": "Treppenwitz",
+    "partsOfSpeech": ["n-masc"],
+    "senses": [{
+        "id": "treppenwitz-1",
+        "headwordExplanations": [{
+            "text": "belated realisation of what one could have said"
+        }],
+        "headwordTranslations": [{
+            "text": "staircase wit"
+        }]
+    }]
+}
+```</para>
+         </section>
+      </section>
+      <section>
+         <title>Modelling parts and wholes {#ex12}</title>
+         <para>We have three entries with one sense each: "glasses", "microscope" and "lens". We want to represent the fact that "lens" is a meronym of both "glasses" and "microscope", and simultanously that "glasses" and "microscope" are both holonyms of "lens".</para>
+         <section>
+            <title>NVH {.unnumbered .unlisted}</title>
+            <para>```yaml
+lexicographicResource: my-dictionary
+    language: en
+    entry: glasses
+        headword: glasses
+        sense: glasses-1
+            definition: an optical seeing aid
+    entry: microscope
+        headword: microscope
+        sense: microscope-1
+            definition: equipment for looking at very small things
+    entry: lens
+        headword: lens
+        sense: lens-1
+            definition: curved glass that makes things seem bigger
+    relation: meronymy
+        member: glasses-1
+            role: whole
+        member: lens-1
+            role: part
+    relation: meronymy
+        member: microscrope-1
+            role: whole
+        member: lens-1
+            role: part
+    relationType: meronomy
+        description: used for modelling part-whole relationships 
+        memberRole: whole
+            description: the whole
+            memberType: sense
+            min: 1
+            max: 1
+            action: navigate
+        memberRole: part
+            description: the part
+            memberType: sense
+            min: 1
+            max: 1
+            action: navigate
+```</para>
+         </section>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;lexicographicResource id="my-dictionary" language="en"&gt;
+    &lt;entry id="glasses"&gt;
+        &lt;headword&gt;glasses&lt;/headword&gt;
+        &lt;sense id="glasses-1"&gt;
+            &lt;definition&gt;an optical seeing aid&lt;/definition&gt;
+        &lt;/sense&gt;
+    &lt;/entry&gt;
+    &lt;entry id="microscope"&gt;
+        &lt;headword&gt;microscope&lt;/headword&gt;
+        &lt;sense id="microscope-1"&gt;
+            &lt;definition&gt;equipment for looking at very small things&lt;/definition&gt;
+        &lt;/sense&gt;
+    &lt;/entry&gt;
+    &lt;entry id="lens"&gt;
+        &lt;headword&gt;lens&lt;/headword&gt;
+        &lt;sense id="lens-1"&gt;
+            &lt;definition&gt;curved glass that makes things seem bigger&lt;/definition&gt;
+        &lt;/sense&gt;
+    &lt;/entry&gt;
+    &lt;relation type="meronymy"&gt;
+        &lt;member idref="glasses-1" role="whole"/&gt;
+        &lt;member idref="lens-1" role="part"/&gt;
+    &lt;/relation&gt;
+    &lt;relation type="meronymy"&gt;
+        &lt;member idref="microscrope-1" role="whole"/&gt;
+        &lt;member idref="lens-1" role="part"/&gt;
+    &lt;/relation&gt;
+    &lt;relationType type="meronomy"&gt;
+        &lt;description&gt;used for modelling part-whole relationships&lt;/description&gt;
+        &lt;memberRole role="whole" memberType="sense"  min="1" max="1" action="navigate"&gt;
+            &lt;description&gt;the whole&lt;/description&gt;
+        &lt;/memberRole&gt;
+        &lt;memberRole role="part" memberType="sense" min="1" max="1" action="navigate"&gt;
+            &lt;description&gt;the part&lt;/description&gt;
+        &lt;/memberRole&gt;
+    &lt;/relationType&gt;
+&lt;/lexicographicResource&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "id": "my-dictionary",
+    "language": "en",
+    "entries": [{
+        "id": "glasses",
+        "headword": "glasses",
+        "senses": [{
+            "id": "glasses-1",
+            "definition": "an optical seeing aid"
+        }, {
+        "id": "microscope",
+        "headword": "microscope",
+        "senses": [{
+            "id": "microscope-1",
+            "definition": "equipment for looking at very small things"
+        }, {
+        "id": "lens",
+        "headword": "lens",
+        "senses": [{
+            "id": "lens-1",
+            "definition": "curved glass that makes things seem bigger"
+        }]
+    }],
+    "relations": [{
+        "type": "meronymy",
+        "members": [{
+            "idref": "glasses-1",
+            "role": "whole"
+        }, {
+            "idref": "lens-1",
+            "role": "part"
+        }]
+    }, {
+        "type": "meronymy",
+        "members": [{
+            "idref": "microscope-1",
+            "role": "whole"
+        }, {
+            "idref": "lens-1",
+            "role": "part"
+        }]
+    }],
+    "relationTypes": [{
+        "type": "meronymy",
+        "description": "used for modelling part-whole relationships",
+        "memberRoles": [{
+            "role": "whole",
+            "description": "the whole",
+            "memberType": "sense",
+            "min": 1,
+            "max": 1,
+            "action": "navigate"
+        }, {
+            "role": "part",
+            "description": "the part",
+            "memberType": "sense",
+            "min": 1,
+            "max": 1,
+            "action": "navigate"
+        }]
+    }]
+}
+```</para>
+         </section>
+         <section>
+            <title>Suggested rendering for human users {.unnumbered .unlisted}</title>
+            <blockquote>
+               <para>
+                  <emphasis role="strong">lens</emphasis>
+               </para>
+               <itemizedlist>
+                  <listitem>
+                     <para>curved glass that makes things seem bigger <emphasis>things that contain lens:</emphasis>
+                        <emphasis role="strong">glasses</emphasis>, <emphasis role="strong">microscope</emphasis>
+                     </para>
+                  </listitem>
+               </itemizedlist>
+            </blockquote>
+         </section>
+      </section>
+      <section>
+         <title>Modelling antonyms {#ex13}</title>
+         <para>We have two entries for the verbs "buy" and "sell" with one sense each. We want to express the fact that the senses are antonyms.</para>
+         <section>
+            <title>NVH {.unnumbered .unlisted}</title>
+            <para>```yaml
+lexicographicResource: my-dictionary
+    language: en
+    entry: buy
+        headword: buy
+        sense: buy-1
+            definition: get something by paying money for it
+    entry: sell
+        headword: sell
+        sense: sell-1
+            definition: exchange something for money
+    relation: ants
+        member: buy-1
+        member: sell-1
+    relationType: ants
+        description: antonyms
+        memberRole:
+            memberType: sense
+            min: 2
+            max: 2
+            action: navigate
+```</para>
+         </section>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;lexicographicResource id="my-dictionary" language="en"&gt;
+    &lt;entry id="buy"&gt;
+        &lt;headword&gt;buy&lt;/headword&gt;
+        &lt;sense id="buy-1"&gt;
+            &lt;definition&gt;get something by paying money for it&lt;/definition&gt;
+        &lt;/sense&gt;
+    &lt;/entry&gt;
+    &lt;entry id="sell"&gt;
+        &lt;headword&gt;sell&lt;/headword&gt;
+        &lt;sense id="sell-1"&gt;
+            &lt;definition&gt;exchange something for money&lt;/definition&gt;
+        &lt;/sense&gt;
+    &lt;/entry&gt;
+    &lt;relation type="ants"&gt;
+        &lt;member idref="buy-1"/&gt;
+        &lt;member idref="sell-1"/&gt;
+    &lt;/relation&gt;
+    &lt;relationType type="ants"&gt;
+        &lt;description&gt;antonyms&lt;/description&gt;
+        &lt;memberRole memberType="sense" min="2" max="2" action="navigate"/&gt;
+    &lt;/relationType&gt;
+&lt;/lexicographicResource&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "id": "my-dictionary",
+    "language": "en",
+    "entries": [{
+        "id": "buy",
+        "headword": "buy",
+        "senses": [{
+            "id": "buy-1",
+            "definition": "get something by paying money for it"
+        }, {
+        "id": "sell",
+        "headword": "sell",
+        "senses": [{
+            "id": "sell-1",
+            "definition": "exchange something for money"
+        }]
+    }],
+    "relations": [{
+        "type": "ants",
+        "members": [
+            {"idref": "buy-1"},
+            {"idref": "sell-1"}
+        ]
+    }],
+    "relationTypes": [{
+        "type": "ants",
+        "description": "antonyms",
+        "memberRoles": [{
+            "memberType": "sense",
+            "min": 2,
+            "max": 2,
+            "action": "navigate"
+        }]
+    }]
+}
+```</para>
+         </section>
+         <section>
+            <title>Suggested rendering for human users {.unnumbered .unlisted}</title>
+            <blockquote>
+               <para>
+                  <emphasis role="strong">buy</emphasis>
+               </para>
+               <itemizedlist>
+                  <listitem>
+                     <para>get something by paying money for it <emphasis>opposite meaning:</emphasis>
+                        <emphasis role="strong">sell</emphasis>
+                     </para>
+                  </listitem>
+               </itemizedlist>
+            </blockquote>
+         </section>
+      </section>
+      <section>
+         <title>Modelling synonyms {#ex14}</title>
+         <para>We have three German entries with one sense each, two which mean "sea" and one which means "ocean". We want to set up a relation which brings these three sense together as near-synonyms.</para>
+         <section>
+            <title>NVH {.unnumbered .unlisted}</title>
+            <para>```yaml
+lexicographicResource: my-dictionary
+    language: de
+    translationLanguage: en
+    entry: die-see
+        headword: See
+        partOfSpeech: n-fem	
+        sense: die-see-1
+            headwordTranslation: sea
+    entry: das-meer
+        headword: Meer
+        partOfSpeech: n-neut
+        sense: das-meer-1
+            headwordTranslation: sea
+    entry: der-ozean
+        headword: Ozean
+        partOfSpeech: n-masc
+        sense: der-ozean-1
+            translation: ocean
+    relation: syns
+        description: words that mean sea and ocean
+        member: die-see-1
+        member: das-meer-1
+        member: der-ozean-1
+    relationType: syns
+        description: synonyms and near synonyms
+        memberRole:
+            memberType: sense
+            min: 2
+            action: navigate
+```</para>
+         </section>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;lexicographicResource id="my-dictionary" language="en"&gt;
+    &lt;translationLanguage langCode="de"/&gt;
+    &lt;entry id="die-see"&gt;
+        &lt;headword&gt;See&lt;/headword&gt;
+        &lt;partOfSpeech value="n-fem"/&gt;
+        &lt;sense id="die-see-1"&gt;
+            &lt;headwordTranslation&gt;&lt;text&gt;sea&lt;/text&gt;&lt;/headwordTranslation&gt;
+        &lt;/sense&gt;
+    &lt;/entry&gt;
+    &lt;entry id="das-meer"&gt;
+        &lt;headword&gt;Meer&lt;/headword&gt;
+        &lt;partOfSpeech value="n-neut"/&gt;
+        &lt;sense id="das-meer-1"&gt;
+            &lt;headwordTranslation&gt;&lt;text&gt;sea&lt;/text&gt;&lt;/headwordTranslation&gt;
+        &lt;/sense&gt;
+    &lt;/entry&gt;
+    &lt;entry id="der-ozean"&gt;
+        &lt;headword&gt;Ozean&lt;/headword&gt;
+        &lt;partOfSpeech value="n-masc"/&gt;
+        &lt;sense id="der-ozean-1"&gt;
+            &lt;headwordTranslation&gt;&lt;text&gt;ocean&lt;/text&gt;&lt;/headwordTranslation&gt;
+        &lt;/sense&gt;
+    &lt;/entry&gt;
+    &lt;relation type="syns"&gt;
+        &lt;description&gt;words that mean sea and ocean&lt;/description&gt;
+        &lt;member idref="die-see-1"/&gt;
+        &lt;member idref="das-meer-1"/&gt;
+        &lt;member idref="der-ozean-1"/&gt;
+    &lt;/relation&gt;
+    &lt;relationType type="syns"&gt;
+        &lt;description&gt;synonyms and near synonyms&lt;/description&gt;
+        &lt;memberRole memberType="sense" min="2" action="navigate"/&gt;
+    &lt;/relationType&gt;
+&lt;/lexicographicResource&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "id": "my-dictionary",
+    "language": "de",
+    "translationLanguages": ["en"],
+    "entries": [{
+        "id": "die-see",
+        "headword": "See",
+        "partsOfSpeech": ["n-fem"],
+        "senses": [{
+            "id": "die-see-1",
+            "headwordTranslations": [{"text": "sea"}]
+        }]
+    }, {
+        "id": "das-meer",
+        "headword": "Meer",
+        "partsOfSpeech": ["n-neut"],
+        "senses": [{
+            "id": "das-meer-1",
+            "headwordTranslations": [{"text": "sea"}]
+        }]
+    }, {
+        "id": "der-ozean",
+        "headword": "OZean",
+        "partsOfSpeech": ["n-masc"],
+        "senses": [{
+            "id": "der-ozean-1",
+            "headwordTranslations": [{"text": "ocean"}]
+        }]
+    }],
+    "relations": [{
+        "type": "syns",
+        "description": "words that mean sea and ocean",
+        "members": [
+          {"idref": "die-see-1"},
+          {"idref": "das-meer-1"},
+          {"idref": "der-ozean-1"}
+        ]
+    }],
+    "relationTypes": [{
+        "type": "syns",
+        "description": "synonyms and near synonyms",
+        "memberRoles": [{
+            "memberType": "sense",
+            "min": 2,
+            "action": "navigate"
+        }]
+    }]
+}
+```</para>
+         </section>
+         <section>
+            <title>Suggested rendering for human users {.unnumbered .unlisted}</title>
+            <blockquote>
+               <para>
+                  <emphasis role="strong">See</emphasis>
+                  <emphasis>feminine noun</emphasis>
+               </para>
+               <itemizedlist>
+                  <listitem>
+                     <para>sea <emphasis>same or similar meaning:</emphasis>
+                        <emphasis role="strong">Meer</emphasis>, <emphasis role="strong">Ozean</emphasis>
+                     </para>
+                  </listitem>
+               </itemizedlist>
+            </blockquote>
+         </section>
+      </section>
+      <section>
+         <title>Modelling variants {#ex15}</title>
+         <para>We have two entries in our lexicographic resource, one for the headword "colour" and one for the headword "color". We want to create a relation to represent the fact that these are spelling variants.</para>
+         <section>
+            <title>NVH {.unnumbered .unlisted}</title>
+            <para>```yaml
+lexicographicResource: my-dictionary
+    language: en
+    entry: colour
+        headword: colour
+        partOfSpeech: n
+        label: europeanSpelling
+        sense: colour-1
+            definition: red, blue, yellow etc.
+            example: What is your favourite colour?
+    entry: color
+        headword: color
+        partOfSpeech: n
+        label: americanSpelling
+    relation: vars
+        member: colour
+        member: color
+    relationType: vars
+        description: variants, words which differ only in spelling
+        memberRole:
+            memberType: entry
+            min: 2
+            action: navigate
+```</para>
+         </section>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;lexicographicResource id="my-dictionary" language="en"&gt;
+    &lt;entry id="colour"&gt;
+        &lt;headword&gt;colour&lt;/headword&gt;
+        &lt;partOfSpeech value="n"/&gt;
+        &lt;label value="europeanSpelling"/&gt;
+        &lt;sense id="colour-1"&gt;
+            &lt;definition&gt;red, blue, yellow etc.&lt;/definition&gt;
+            &lt;example&gt;&lt;text&gt;What is your favourite colour?&lt;/text&gt;&lt;/example&gt;
+        &lt;/sense&gt;
+    &lt;/entry&gt;
+    &lt;entry id="color"&gt;
+        &lt;headword&gt;color&lt;/headword&gt;
+        &lt;partOfSpeech value="n"/&gt;
+        &lt;label value="americanSpelling"/&gt;
+    &lt;/entry&gt;
+    &lt;relation type="vars"&gt;
+        &lt;member idref="colour"/&gt;
+        &lt;member idref="color"/&gt;
+    &lt;/relation&gt;
+    &lt;relationType type="vars"&gt;
+        &lt;description&gt;variants, words which differ only in spelling&lt;/description&gt;
+        &lt;memberRole memberType="entry" min="2" action="navigate"/&gt;
+    &lt;/relationType&gt;
+&lt;/lexicographicResource&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "id": "my-dictionary",
+    "language": "en",
+    "entries": [{
+        "id": "colour",
+        "headword": "colour",
+        "partsOfSpeech": ["n"],
+        "labels": ["europeanSpelling"],
+        "senses": [{
+            "id": "colour-1",
+            "definitions": [{"text": "red, blue, yellow etc."}],
+            "examples": [{"text": "What is your favourite colour?"}]
+        }]
+    }, {
+        "id": "color",
+        "headword": "color",
+        "partsOfSpeech": ["n"],
+        "labels": ["americanSpelling"]
+    }],
+    "relations": [{
+        "type": "vars",
+        "members": [
+          {"idref": "colour"},
+          {"idref": "color"}
+        ]
+    }],
+    "relationTypes": [{
+        "type": "vars",
+        "description": "variants, words which differ only in spelling",
+        "memberRoles": [{
+            "memberType": "entry",
+            "min": 2,
+            "action": "navigate"
+        }]
+    }]
+}
+```</para>
+         </section>
+         <section>
+            <title>Suggested rendering for human users {.unnumbered .unlisted}</title>
+            <blockquote>
+               <para>
+                  <emphasis role="strong">colour</emphasis>
+                  <emphasis>noun, European spelling</emphasis>
+               </para>
+               <itemizedlist>
+                  <listitem>
+                     <para>red, blue, yellow etc. <emphasis>What is your favourite colour?</emphasis>
+                     </para>
+                  </listitem>
+               </itemizedlist>
+               <para>see also: color</para>
+            </blockquote>
+         </section>
+      </section>
+      <section>
+         <title>Modelling subsenses {#ex16}</title>
+         <para>We have an entry for the noun "colour" with four senses. We want to express the fact that senses number two and three are subsenses of sense number one, and should be displayed as such to human users.</para>
+         <section>
+            <title>NVH {.unnumbered .unlisted}</title>
+            <para>```yaml
+lexicographicResource: my-dictionary
+    language: en
+    entry: colour
+        headword: colour
+            sense: colour-1
+                definition: red, blue, yellow etc.
+                example: What is your favourite colour?
+            sense: colour-2
+                definition: not being black and white
+                example: Back then owning a colour TV meant you were rich.
+            sense: colour-3
+                definition: a sign of a person's race
+                example: We welcome people of all creeds and colours.
+            sense: colour-4
+                definition: interest or excitement
+                example: Examples add colour to your writing.
+    relation: subsensing
+        member: colour-1
+            role: supersense
+        member: colour-2
+            role: subsense
+    relation: subsensing
+        member: colour-1
+            role: supersense
+        member: colour-3
+            role: subsense
+    relationType: subsensing
+        description: expresses the fact that a sense is a subsense of another sense
+        scope: sameEntry
+        memberRole: supersense
+            memberType: sense
+            min: 1
+            max: 1
+            action: none
+        memberRole: subsense
+            memberType: sense
+            min: 1
+            max: 1
+            action: embed
+```</para>
+         </section>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;lexicographicResource id="my-dictionary" language="en"&gt;
+    &lt;entry id="colour"&gt;
+        &lt;headword&gt;colour&lt;/headword&gt;
+        &lt;sense id="colour-1"&gt;
+            &lt;definition&gt;red, blue, yellow etc.&lt;/definition&gt;
+            &lt;example&gt;&lt;text&gt;What is your favourite colour?&lt;/text&gt;&lt;/example&gt;
+        &lt;/sense&gt;
+        &lt;sense id="colour-2"&gt;
+            &lt;definition&gt;not being black and white&lt;/definition&gt;
+            &lt;example&gt;&lt;text&gt;Back then owning a colour TV meant you were rich.&lt;/text&gt;&lt;/example&gt;
+        &lt;/sense&gt;
+        &lt;sense id="colour-3"&gt;
+            &lt;definition&gt;a sign of a person's race&lt;/definition&gt;
+            &lt;example&gt;&lt;text&gt;We welcome people of all creeds and colours.&lt;/text&gt;&lt;/example&gt;
+        &lt;/sense&gt;
+        &lt;sense id="colour-4"&gt;
+            &lt;definition&gt;interest or excitement&lt;/definition&gt;
+            &lt;example&gt;&lt;text&gt;Examples add colour to your writing.&lt;/text&gt;&lt;/example&gt;
+        &lt;/sense&gt;
+    &lt;/entry&gt;
+    &lt;relation type="subsensing"&gt;
+        &lt;member idref="colour-1" role="supersense"/&gt;
+        &lt;member idref="colour-2" role="subsense"/&gt;
+    &lt;/relation&gt;
+    &lt;relation type="subsensing"&gt;
+        &lt;member idref="colour-1" role="supersense"/&gt;
+        &lt;member idref="colour-3" role="subsense"/&gt;
+    &lt;/relation&gt;
+    &lt;relationType type="subsensing" scope="sameEntry"&gt;
+        &lt;description&gt;
+            expresses the fact that a sense is a subsense of another sense
+        &lt;/description&gt;
+        &lt;memberRole role="supersense" memberType="sense" min="1" max="1"
+                    action="none"/&gt;
+        &lt;memberRole role="subsense" memberType="sense" min="1" max="1"
+                    action="embed"/&gt;
+    &lt;/relationType&gt;
+&lt;/lexicographicResource&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "id": "my-dictionary",
+    "language": "en",
+    "entries": [{
+        "id": "colour",
+        "headword": "colour",
+        "senses": [{
+            "id": "colour-1",
+            "definitions": [{"text": "red, blue, yellow etc."}],
+            "examples": [{"text": "What is your favourite colour?"}]
+        }, {
+            "id": "colour-2",
+            "definitions": [{"text": "not being black and white"}],
+            "examples": [{"text": "Back then owning a colour TV meant you were rich."}]
+        }, {
+            "id": "colour-3",
+            "definitions": [{"text": "a sign of a person's race"}],
+            "examples": [{"text": "We welcome people of all creeds and colours."}]
+        }, {
+            "id": "colour-4",
+            "definitions": [{"text": "interest or excitement"}],
+            "examples": [{"text": "Examples add colour to your writing."}]
+        }]
+    }],
+    "relations": [{
+        "type": "subsensing",
+        "members": [
+          {"role": "supersense", "idref": "colour-1"},
+          {"role": "subsense", "idref": "colour-2"}
+        ]
+    }, {
+        "type": "subsensing",
+        "members": [
+          {"role": "supersense", "idref": "colour-1"},
+          {"role": "subsense", "idref": "colour-3"}
+        ]
+    }],
+    "relationTypes": [{
+        "type": "subsensing",
+        "description": "expresses the fact that a sense is a subsense of another sense",
+        "scope": "sameEntry",
+        "memberRoles": [{
+            "role": "supersense",
+            "memberType": "sense",
+            "min": 1,
+            "max": 1,
+            "action": "none"
+        }, {
+            "role": "subsense",
+            "memberType": "sense",
+            "min": 1,
+            "max": 1,
+            "action": "embed"
+        }]
+    }]
+}
+```</para>
+         </section>
+         <section>
+            <title>Suggested rendering for human users {.unnumbered .unlisted}</title>
+            <blockquote>
+               <para>
+                  <emphasis role="strong">colour</emphasis>
+               </para>
+               <orderedlist numeration="arabic">
+                  <listitem>
+                     <para>red, blue, yellow etc. <emphasis>What is your favourite colour?</emphasis>
+a.  not being black and white     <emphasis>Back then owning a colour TV meant you were rich.</emphasis>
+b.  a sign of a person's race     <emphasis>We welcome people of all creeds and colours.</emphasis>
+                     </para>
+                  </listitem>
+                  <listitem>
+                     <para>interest or excitement <emphasis>Examples add colour to your writing.</emphasis>
+                     </para>
+                  </listitem>
+               </orderedlist>
+            </blockquote>
+         </section>
+      </section>
+      <section>
+         <title>Modelling subentries (at subsense level) {#ex17}</title>
+         <para>We have an entry for the adjective "safe" with two senses, and an entry for the multi-word expression "better safe than sorry" with one sense. We want to express the fact that the multi-word entry should appear under the first sense of "safe" as a subentry.</para>
+         <section>
+            <title>NVH {.unnumbered .unlisted}</title>
+            <para>```yaml
+lexicographicResource: my-dictionary
+    language: en
+    entry: safe
+        headword: safe
+        sense: safe-1
+            indicator: protected from harm
+            example: It isn't safe to park here.
+        sense: safe-2
+            indicator: not likely to cause harm
+            example: Is the ride safe for a small child?
+    entry: better-safe
+        headword: better safe than sorry
+        sense: better-safe-1
+            definition: you should be careful even if it seems unnecessary
+    relation: subentrying
+        membership: safe-1
+            role: container
+        membership: better-safe
+            role: subentry
+    relationType: subentrying
+        scope: sameResource
+        memberRole: container
+            memberType: sense
+            min: 1
+            max: 1
+            action: navigate
+        memberRole: subentry
+            memberType: entry
+            min: 1
+            max: 1
+            action: embed
+```</para>
+         </section>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;lexicographicResource id="my-dictionary" language="en"&gt;
+    &lt;entry id="safe"&gt;
+        &lt;headword&gt;safe&lt;/headword&gt;
+        &lt;sense id="safe-1"&gt;
+            &lt;indicator&gt;protected from harm&lt;/indicator&gt;
+            &lt;example&gt;&lt;text&gt;It isn't safe to park here.&lt;/text&gt;&lt;/example&gt;
+        &lt;/sense&gt;
+        &lt;sense id="safe-2"&gt;
+            &lt;indicator&gt;not likely to cause harm&lt;/indicator&gt;
+            &lt;example&gt;&lt;text&gt;Is the ride safe for a small child?&lt;/text&gt;&lt;/example&gt;
+        &lt;/sense&gt;
+    &lt;/entry&gt;
+    &lt;entry id="better-safe"&gt;
+        &lt;headword&gt;better safe than sorry&lt;/headword&gt;
+        &lt;sense id="better-safe-1"&gt;
+            &lt;definition&gt;
+                &lt;text&gt;you should be careful even if it seems unnecessary&lt;/text&gt;
+            &lt;/definition&gt;
+        &lt;/sense&gt;
+    &lt;/entry&gt;
+    &lt;relation type="subentrying"&gt;
+        &lt;member idref="safe-1" role="container"/&gt;
+        &lt;member idref="better-safe" role="subentry"/&gt;
+    &lt;/relation&gt;
+    &lt;relationType type="subentrying" scope="sameResource"&gt;
+        &lt;memberRole role="container" memberType="sense" min="1" max="1"
+                    action="navigate"/&gt;
+        &lt;memberRole role="subentry" memberType="entry" min="1" max="1"
+                    action="embed"/&gt;
+    &lt;/relationType&gt;
+&lt;/lexicographicResource&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "id": "my-dictionary",
+    "language": "en",
+    "entries": [{
+        "id": "safe",
+        "headword": "safe",
+        "senses": [{
+            "id": "safe-1",
+            "indicator": "protected from harm",
+            "examples": [{"text": "It isn't safe to park here."}]
+        }, {
+            "id": "safe-2",
+            "indicator": "not likely to cause harm",
+            "examples": [{"text": "Is the ride safe for a small child?"}]
+        }]
+    }, {
+        "id": "better-safe",
+        "headword": "better safe than sorry",
+        "senses": [{
+            "id": "better-safe-1",
+            "definitions": [{
+                "text": "you should be careful even if it seems unnecessary"
+            }]
+        }]
+    }],
+    "relations": [{
+        "type": "subentrying",
+        "members": [
+          {"role": "container", "idref": "safe-1"},
+          {"role": "subentry", "idref": "better-safe"}
+        ]
+    }],
+    "relationTypes": [{
+        "type": "subentrying",
+        "scope": "sameResource",
+        "memberRoles": [{
+            "role": "container",
+            "memberType": "sense",
+            "min": 1,
+            "max": 1,
+            "action": "navigate"
+        }, {
+            "role": "subentry",
+            "memberType": "entry",
+            "min": 1,
+            "max": 1,
+            "action": "embed"
+        }]
+    }]
+}
+```</para>
+         </section>
+         <section>
+            <title>Suggested rendering for human users {.unnumbered .unlisted}</title>
+            <blockquote>
+               <para>
+                  <emphasis role="strong">safe</emphasis>
+               </para>
+               <itemizedlist>
+                  <listitem>
+                     <para>protected from harm: <emphasis>It isn't safe to park here.</emphasis>
+                     </para>
+                     <itemizedlist>
+                        <listitem>
+                           <para>
+                              <emphasis role="strong">better safe than sorry</emphasis> you should be careful even if it seems unnecessary</para>
+                        </listitem>
+                     </itemizedlist>
+                  </listitem>
+                  <listitem>
+                     <para>not likely to cause harm:  <emphasis>Is the ride safe for a small child?</emphasis>
+                     </para>
+                  </listitem>
+               </itemizedlist>
+               <para>
+                  <emphasis role="strong">better safe than sorry</emphasis>
+               </para>
+               <itemizedlist>
+                  <listitem>
+                     <para>you should be careful even if it seems unnecessary</para>
+                  </listitem>
+               </itemizedlist>
+               <para>see also: safe</para>
+            </blockquote>
+         </section>
+      </section>
+      <section>
+         <title>Modelling subentries (at sense level) {#ex18}</title>
+         <para>We have an entry for the word "bible" and another entry for the expression "the Bible". We want to make sure that, when a human user is viewing the entry for "bible", the entry for "the Bible" is shown as a subentry of it, as if it were its first sense.</para>
+         <section>
+            <title>NVH {.unnumbered .unlisted}</title>
+            <para>```yaml
+lexicographicResource: my-dictionary
+    language: en
+    entry: the-bible
+        headword: the Bible
+        Sense: the-bible-1
+            definition: the book considered holy by Christians
+    entry: bible
+        headword: bible 
+        sense: bible-1
+        sense: bible-2
+            definition: a book considered important for a subject
+    relation: subentrying
+        member: bible-1
+            role: container
+        member: the-bible
+            role: subentry
+    relationType: subentrying
+        scope: sameResource
+        memberRole: container
+            memberType: sense
+            min: 1
+            max: 1
+            action: navigate
+        memberRole: subentry
+            memberType: entry
+            min: 1
+            max: 1
+            action: embed
+```</para>
+         </section>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;lexicographicResource id="my-dictionary" language="en"&gt;
+    &lt;entry id="the-bible"&gt;
+        &lt;headword&gt;the Bible&lt;/headword&gt;
+        &lt;sense id="the-bible-1"&gt;
+            &lt;definition&gt;
+                &lt;text&gt;the book considered holy by Christians&lt;/text&gt;
+            &lt;/definition&gt;
+        &lt;/sense&gt;
+    &lt;/entry&gt;
+    &lt;entry id="bible"&gt;
+        &lt;headword&gt;bible&lt;/headword&gt;
+        &lt;sense id="bible-1"/&gt;
+        &lt;sense id="bible-2"&gt;
+            &lt;definition&gt;
+                &lt;text&gt;a book considered important for a subject&lt;/text&gt;
+            &lt;/definition&gt;
+        &lt;/sense&gt;
+    &lt;/entry&gt;
+    &lt;relation type="subentrying"&gt;
+        &lt;member idref="bible-1" role="container"/&gt;
+        &lt;member idref="the-bible" role="subentry"/&gt;
+    &lt;/relation&gt;
+    &lt;relationType type="subentrying" scope="sameResource"&gt;
+        &lt;memberRole role="container" memberType="sense" min="1" max="1"
+                    action="navigate"/&gt;
+        &lt;memberRole role="subentry" memberType="entry" min="1" max="1"
+                    action="embed"/&gt;
+    &lt;/relationType&gt;
+&lt;/lexicographicResource&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "id": "my-dictionary",
+    "language": "en",
+    "entries": [{
+        "id": "the-bible",
+        "headword": "the Bible",
+        "senses": [{
+            "id": "the-bible-1",
+            "definitions": [{"text": "the book considered holy by Christians"}]
+        }]
+    }, {
+        "id": "bible",
+        "headword": "bible",
+        "senses": [{
+            "id": "bible-1"
+        }, {
+            "id": "bible-2",
+            "definitions": [{"text": "a book considered important for a subject"}]
+        }]
+    }],
+    "relations": [{
+        "type": "subentrying",
+        "members": [
+          {"role": "container", "idref": "bible-1"},
+          {"role": "subentry", "idref": "the-bible"}
+        ]
+    }],
+    "relationTypes": [{
+        "type": "subentrying",
+        "scope": "sameResource",
+        "memberRoles": [{
+            "role": "container",
+            "memberType": "sense",
+            "min": 1,
+            "max": 1,
+            "action": "navigate"
+        }, {
+            "role": "subentry",
+            "memberType": "entry",
+            "min": 1,
+            "max": 1,
+            "action": "embed"
+        }]
+    }]
+}
+```</para>
+         </section>
+         <section>
+            <title>Suggested rendering for human users {.unnumbered .unlisted}</title>
+            <blockquote>
+               <para>
+                  <emphasis role="strong">bible</emphasis>
+               </para>
+               <orderedlist numeration="arabic">
+                  <listitem>
+                     <para>
+                        <emphasis role="strong">the Bible</emphasis> the book considered holy by Christians</para>
+                  </listitem>
+                  <listitem>
+                     <para>a book considered important for a subject</para>
+                  </listitem>
+               </orderedlist>
+            </blockquote>
+            <para>Suggeted rendering of the entry "the Bible" for human users:</para>
+            <blockquote>
+               <para>
+                  <emphasis role="strong">the Bible</emphasis>
+               </para>
+               <itemizedlist>
+                  <listitem>
+                     <para>the book considered holy by Christians</para>
+                  </listitem>
+               </itemizedlist>
+               <para>see also: bible</para>
+            </blockquote>
+         </section>
+      </section>
+      <section>
+         <title>Using <code>placeholderMarker</code> {#ex19}</title>
+         <section>
+            <title>NVH {.unnumbered .unlisted}</title>
+            <para>```yaml
+entry: continue-studies
+    headword: continue your studies
+        placeholderMarker: your
+    sense: ...
+```</para>
+         </section>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;entry id="continue-studies"&gt;
+    &lt;headword&gt;
+        continue &lt;placeholderMarker&gt;your&lt;/placeholderMarker&gt; studies
+    &lt;/headword&gt;
+    &lt;sense.../&gt;
+&lt;/entry&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+  "id": "continue-studies",
+  "headword": "continue your studies",
+  "placeholderMarkers": [
+     {"startIndex": 9, "endIndex": 13}
+  ],
+  "senses": [...]
+}
+```</para>
+         </section>
+      </section>
+      <section>
+         <title>Using <code>placeholderMarker</code> in a bilingual lexicographic resource {#ex20}</title>
+         <section>
+            <title>NVH {.unnumbered .unlisted}</title>
+            <para>```yaml
+entry: beat-up
+    headword: beat sb. up
+        placeholderMarker: sb.
+    sense: beat-up-1
+        headwordTranslation: jemanden verprügeln
+            placeholderMarker: jemanden
+```</para>
+         </section>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;entry id="beat-up"&gt;
+    &lt;headword&gt;
+        beat &lt;placeholderMarker&gt;sb.&lt;/placeholderMarker&gt; up
+    &lt;/headword&gt;
+    &lt;sense id="beat-up-1"&gt;
+      &lt;headwordTranslation&gt;
+        &lt;text&gt;
+            &lt;placeholderMarker&gt;jemanden&lt;/placeholderMarker&gt; verprügeln
+        &lt;/text&gt;
+      &lt;/headwordTranslation&gt;
+    &lt;/sense&gt;
+&lt;/entry&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+  "id": "beat-up",
+  "headword": "beat sb. up",
+  "placeholderMarkers": [
+      {"startIndex": 5, "endIndex": 8}
+  ],
+  "senses": [{
+    "id": "beat-up-1",
+    "headwordTranslations": [{
+      "text": "jemanden verprügeln",
+      "placeholderMarkers": [
+          {"startIndex": 0, "endIndex": 8}
+      ],
+    }]
+  }]
+}
+```</para>
+         </section>
+      </section>
+      <section>
+         <title>Using <code>headwordMarker</code> {#ex21}</title>
+         <section>
+            <title>NVH {.unnumbered .unlisted}</title>
+            <para>```yaml
+entry: autopsy
+    headword: autopsy
+    sense: autopsy-1
+        headwordTranslation: pitva
+        example: The coroner performed an autopsy.
+            headwordMarker: autopsy
+            exampleTranslation: Koroner provedl pitvu.
+                headwordMarker: pitvu
+```</para>
+         </section>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;entry id="autopsy"&gt;
+    &lt;headword&gt;autopsy&lt;/headword&gt;
+    &lt;sense id="autopsy-1"&gt;
+        &lt;headwordTranslation&gt;&lt;text&gt;pitva&lt;/text&gt;&lt;/headwordTranslation&gt;
+        &lt;example&gt;
+            &lt;text&gt;
+                The coroner performed an &lt;headwordMarker&gt;autopsy&lt;/headwordMarker&gt;.
+            &lt;/text&gt;
+            &lt;exampleTranslation&gt;
+                &lt;text&gt;
+                    Koroner provedl &lt;headwordMarker&gt;pitvu&lt;/headwordMarker&gt;.
+                &lt;/text&gt;
+            &lt;/exampleTranslation&gt;
+        &lt;/example&gt;
+    &lt;/sense&gt;
+&lt;/entry&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+  "id": "autopsy",
+  "headword": "autopsy",
+  "senses": [{
+    "id": "autopsy-1",
+    "headwordTranslations": [{"text": "pitva"}],
+    "examples": [{
+      "text": "The coroner performed an autopsy.",
+      "headwordMarkers": [
+        {"startIndex": 25, "endIndex": 32}
+      ],
+      "exampleTranslations": [{
+        "text": "Koroner provedl pitvu.",
+        "headwordMarkers": [
+          {"startIndex": 16, "endIndex": 21}
+        ]
+      }]
+    }]
+  }]
+}
+```</para>
+         </section>
+      </section>
+      <section>
+         <title>Using <code>itemMarker</code> {#ex22}</title>
+         <section>
+            <title>NVH {.unnumbered .unlisted}</title>
+            <para>```yaml
+entry: autopsy
+    headword: autopsy
+    sense: autopsy-1
+        headwordTranslation: pitva
+        example: The coroner performed an autopsy.
+            headwordMarker: autopsy
+            itemMarker: performed
+                lemma: perform
+            exampleTranslation: Koroner provedl pitvu.
+                headwordMarker: pitvu
+                itemMarker: provedl
+                    lemma: provést
+```</para>
+         </section>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;entry id="autopsy"&gt;
+    &lt;headword&gt;autopsy&lt;/headword&gt;
+    &lt;sense id="autopsy-1"&gt;
+        &lt;headwordTranslation&gt;&lt;text&gt;pitva&lt;/text&gt;&lt;/headwordTranslation&gt;
+        &lt;example&gt;
+            &lt;text&gt;
+                The coroner &lt;itemMarker lemma="perform"&gt;performed&lt;/itemMarker&gt;
+                an &lt;headwordMarker&gt;autopsy&lt;/headwordMarker&gt;.
+            &lt;/text&gt;
+            &lt;exampleTranslation&gt;
+                &lt;text&gt;
+                    Koroner &lt;itemMarker lemma="provést"&gt;provedl&lt;/itemMarker&gt;
+                    &lt;headwordMarker&gt;pitvu&lt;/headwordMarker&gt;.
+                &lt;/text&gt;
+            &lt;/exampleTranslation&gt;
+        &lt;/example&gt;
+    &lt;/sense&gt;
+&lt;/entry&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+  "id": "autopsy",
+  "headword": "autopsy",
+  "senses": [{
+    "id": "autopsy-1",
+    "headwordTranslations": [{"text": "pitva"}],
+    "examples": [{
+      "text": "The coroner performed an autopsy.",
+      "headwordMarkers": [
+        {"startIndex": 25, "endIndex": 32}
+      ],
+      "itemMarkers": [
+        {"startIndex": 12, "endIndex": 21, "lemma": "perform"}
+      ],
+      "exampleTranslations": [{
+        "text": "Koroner provedl pitvu.",
+        "headwordMarkers": [
+          {"startIndex": 16, "endIndex": 21}
+        ],
+        "itemMarkers": [
+          {"startIndex": 8, "endIndex": 15, "lemma": "provést"}
+        ],
+      }]
+    }]
+  }]
+}
+```</para>
+         </section>
+      </section>
+   </chapter>
+</book>

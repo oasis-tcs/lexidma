@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron?>
+<book xmlns="http://docbook.org/ns/docbook" version="5">
+   <title>book</title>
+   <chapter>
+      <title>DMLex Crosslingual Module</title>
+      <para>DMLex's Multilingual Module extends the Core and turns a monolingual lexicographic resource into a bilingual or multilingual one. A bilingual or multilingual lexicographic resource is a lexicographic resource with multiple (two or more) languages: the headwords and the examples are in one language (called the <emphasis>headword language</emphasis> in DMLex) and their translations are in one or more other languages (called the <emphasis>translation languages</emphasis> in DMLex).</para>
+      <section>
+         <title>Extensions to <code>lexicographicResource</code>
+         </title>
+         <para>Additional children:</para>
+         <para>```yaml
+lexicographicResource: ...
+    translationLanguage: (1...n)
+```</para>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;lexicographicResource ...&gt;
+    ...
+    &lt;translationLanguage.../&gt;
+&lt;/lexicographicResource&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    ...,
+    "translationLanguages": [...]
+}
+```</para>
+         </section>
+         <section>
+            <title>SQL {.unnumbered .unlisted}</title>
+            <para>No changes needed.</para>
+         </section>
+      </section>
+      <section>
+         <title>
+            <code>translationLanguage</code>
+         </title>
+         <para>Represents one of the languages in which translations are given in this lexicographic resource. See Examples \ref{ex07}, \ref{ex10}.</para>
+         <para>```yaml
+translationLanguage: &lt;langCode&gt;
+    listingOrder: (1..1) &lt;number&gt;
+```</para>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;translationLanguage langCode=""/&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+"..."
+```</para>
+         </section>
+         <section>
+            <title>SQL {.unnumbered .unlisted}</title>
+            <para>```sql
+create table translationLanguage (
+    lexicographicResourceID int foreign key references lexicographicResources(id),
+    langCode varchar(10) primary key,
+    listingOrder int,
+)
+```</para>
+            <para>Comments</para>
+            <itemizedlist>
+               <listitem>
+                  <para>
+                     <code>listingOrder</code> sets the order in which translations (of headwords and examples) should be shown. It outranks the listing order given in <code>headwordTranslation</code>, <code>headwordExplanation</code> and <code>exampleTranslation</code> objects.</para>
+               </listitem>
+            </itemizedlist>
+         </section>
+      </section>
+      <section>
+         <title>Extensions to <code>sense</code>
+         </title>
+         <para>Additional children:</para>
+         <para>```yaml
+sense: ...
+    headwordExplanation: (0..n)
+    headwordTranslation: (0..n)
+```</para>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;sense ...&gt;
+    ...
+    &lt;headwordExplanation.../&gt;
+    &lt;headwordTranslation.../&gt;
+    ...
+&lt;/sense&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    ...
+    "headwordExplanations": [...],
+    "headwordTranslations": [...],
+    ...
+}
+```</para>
+         </section>
+         <section>
+            <title>SQL {.unnumbered .unlisted}</title>
+            <para>No changes needed.</para>
+         </section>
+      </section>
+      <section>
+         <title>
+            <code>headwordTranslation</code>
+         </title>
+         <para>Represents one of possibly multiple translations of a headword. See Examples \ref{ex08}, \ref{ex11}.</para>
+         <para>```yaml
+headwordTranslation: &lt;string&gt;
+    language: (0..1) &lt;langCode&gt;
+    listingOrder: (1..1) &lt;number&gt;
+    partOfSpeech: (0..n) &lt;string&gt;
+    label: (0..n)
+    pronunciation: (0..n)
+    inflectedForm: (0..n)
+```</para>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;headwordTranslation language="..."&gt;
+    &lt;text&gt;...&lt;/text&gt;
+    &lt;partOfSpeech.../&gt;
+    &lt;label.../&gt;
+    &lt;pronunciation.../&gt;
+    &lt;inflectedForm.../&gt;
+&lt;/headwordTranslation&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "language": "...",
+    "text": "...",
+    "partsOfSpeech": [...],
+    "labels": [...],
+    "pronunciations": [...],
+    "inflectedForms": [...]
+}
+```</para>
+         </section>
+         <section>
+            <title>SQL {.unnumbered .unlisted}</title>
+            <para>```sql
+create table headwordTranslations (
+    senseID int foreign key references senses(id),
+    language nvarchar(10) foreign key references translationLanguage(langCode),
+    text nvarchar(255),
+    listingOrder int,
+    id int primary key
+);
+alter table partsOfSpeech (
+    add headwordTranslationID int foreign key references headwordTranslations(id)
+);
+alter table labels (
+    add headwordTranslationID int foreign key references headwordTranslations(id)
+);
+alter table pronunciations (
+    add headwordTranslationID int foreign key references headwordTranslations(id)
+);
+alter table inflectedForms (
+    add headwordTranslationID int foreign key references headwordTranslations(id)
+)
+```</para>
+            <para>Comments</para>
+            <itemizedlist>
+               <listitem>
+                  <para>
+                     <code>language</code> indicates the language of this translation. You can use the <code>translationLanguage</code> datatype to explain the meaning of the language codes that appear here and/or to constrain which language codes are allowed.</para>
+               </listitem>
+               <listitem>
+                  <para>If ony one translation language exists in your lexicographic resource, then <code>language</code> can be left out.</para>
+               </listitem>
+               <listitem>
+                  <para>For more comments see comments under <code>headwordTranslation</code> in the Bilingual Module.</para>
+               </listitem>
+            </itemizedlist>
+         </section>
+      </section>
+      <section>
+         <title>
+            <code>headwordExplanation</code>
+         </title>
+         <para>Represents a statement in the target language which explains (but does not translate) the meaning of the headword. See Example \ref{ex09}.</para>
+         <para>```yaml
+headwordExplanation: &lt;string&gt;
+    language: (1..1) &lt;langCode&gt;
+```</para>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;headwordExplanation language="..."&gt;...&lt;/headwordExplanation&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "language": "...", 
+    "text": "...",
+}
+```</para>
+         </section>
+         <section>
+            <title>SQL {.unnumbered .unlisted}</title>
+            <para>```sql
+create table headwordExplanations (
+    senseID int foreign key references senses(id),
+    language nvarchar(10) foreign key references translationLanguage(langCode),
+    text nvarchar(255),
+    id int primary key
+)
+```</para>
+            <para>Comments</para>
+            <itemizedlist>
+               <listitem>
+                  <para>
+                     <code>language</code> indicates the language of this explanation. You can use the <code>translationLanguage</code> datatype to explain the meaning of the language codes that appear here and/or to constrain which language codes are allowed.</para>
+               </listitem>
+               <listitem>
+                  <para>If ony one translation language exists in your lexicographic resource, then <code>language</code> can be left out.</para>
+               </listitem>
+               <listitem>
+                  <para>It is assume that there will always be a maximum of one <code>headwordExplanation</code> per translation language.</para>
+               </listitem>
+            </itemizedlist>
+         </section>
+      </section>
+      <section>
+         <title>Extensions to <code>example</code>
+         </title>
+         <para>Additional children:</para>
+         <para>```yaml
+sense: ...
+    exampleTranslation: (0..n)
+```</para>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;example ...&gt;
+    ...
+    &lt;exampleTranslation.../&gt;
+&lt;/example&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    ...,
+    "exampleTranslations": [...]
+}
+```</para>
+         </section>
+         <section>
+            <title>SQL {.unnumbered .unlisted}</title>
+            <para>No changes needed.</para>
+         </section>
+      </section>
+      <section>
+         <title>
+            <code>exampleTranslation</code>
+         </title>
+         <para>Represents the translation of an example.</para>
+         <para>```yaml
+exampleTranslation: &lt;string&gt;
+    language: (1..1) &lt;langCode&gt;
+    soundFile: (0..1) &lt;uri&gt;
+    listingOrder: (1..1) &lt;number&gt;
+```</para>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;exampleTranslation language="..." soundFile="..."&gt;
+    &lt;text&gt;...&lt;/text&gt;
+    &lt;label.../&gt;
+&lt;/exampleTranslation&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "language": "...",
+    "text": "...",
+    "labels": [...],
+    "soundFile": "..."
+}
+```</para>
+         </section>
+         <section>
+            <title>SQL {.unnumbered .unlisted}</title>
+            <para>```sql
+create table exampleTranslations (
+    exampleID int foreign key references examples(id),
+    language varchar(10) foreign key references translationLanguage(langCode),
+    text varchar(255),
+    soundFile varchar(255),
+    listingOrder int,
+    id int primary key
+);
+alter table labels (
+    add exampleTranslationID foreign key references exampleTranslations(id) 
+)
+```</para>
+            <para>Comments</para>
+            <itemizedlist>
+               <listitem>
+                  <para>
+                     <code>language</code> indicates the language of this translation. You can use the <code>translationLanguage</code> datatype to explain the meaning of the language codes that appear here and/or to constrain which language codes are allowed.</para>
+               </listitem>
+               <listitem>
+                  <para>If ony one translation language exists in your lexicographic resource, then <code>language</code> can be left out.</para>
+               </listitem>
+               <listitem>
+                  <para>For more comments see commens under <code>exampleTranslation</code> in the Bilingual Module.</para>
+               </listitem>
+            </itemizedlist>
+         </section>
+      </section>
+      <section>
+         <title>Extensions to <code>tag</code>
+         </title>
+         <para>Redefinition of  <code>partOfSpeechConstraint</code>:</para>
+         <itemizedlist>
+            <listitem>
+               <para>If present, says that:</para>
+               <itemizedlist>
+                  <listitem>
+                     <para>If this tag is used inside a <code>headwordTranslation</code>, then it is intended to be used only inside a <code>headwordTranslation</code> labelled with this part of speech.</para>
+                  </listitem>
+                  <listitem>
+                     <para>If this tag is used outside a <code>headwordTranslation</code>, then it is intended to be used only inside entries that are labelled with this part of speech.</para>
+                  </listitem>
+               </itemizedlist>
+            </listitem>
+         </itemizedlist>
+         <para>Additional child:</para>
+         <para>```yaml
+tag: ...
+    translationLanguageConstraint: (0..n) &lt;langCode&gt;
+```</para>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;tag ...&gt;
+    ...
+    &lt;translationLanguageConstraint langCode="..."/&gt;
+&lt;/tag&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    ...,
+    "translationLanguageConstraint": ["..."]
+}
+```</para>
+         </section>
+         <section>
+            <title>SQL {.unnumbered .unlisted}</title>
+            <para>```sql
+alter table tags (
+    add translationLanguageConstraints varchar(255), --comma-separated list
+)
+```</para>
+            <para>Comments</para>
+            <itemizedlist>
+               <listitem>
+                  <para>
+                     <code>translationLanguageConstraint</code>, if present, says that if this tag is being used inside a <code>headwordTranslation</code> or an <code>exampleTranslation</code>, then it is intended to be used only inside <code>headwordTranslation</code> and <code>exampleTranslation</code> objects labelled with this language.</para>
+               </listitem>
+               <listitem>
+                  <para>For a redefinition of  <code>partOfSpeechConstraint</code>, see see <code>tag</code> in the Bilingual Module.</para>
+               </listitem>
+            </itemizedlist>
+         </section>
+      </section>
+   </chapter>
+</book>

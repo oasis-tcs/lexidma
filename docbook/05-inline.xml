@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron?>
+<book xmlns="http://docbook.org/ns/docbook" version="5">
+   <title>book</title>
+   <chapter>
+      <title>DMLex Inline Markup Module</title>
+      <para>This module makes it possible to mark up substrings inside the string values of certain objects and to attach properties to them.</para>
+      <para>It is up to the implementer to decide how to implement inline markup in an implementation of the DMLex Inline Markup module, whether <emphasis>in-place</emphasis> (as XML) or as <emphasis>stand-off</emphasis> markup (for example through start and end indexes).</para>
+      <section>
+         <title>Extensions to <code>headword</code>
+         </title>
+         <para>Additional children:</para>
+         <para>```yaml
+headword: ...
+    placeholderMarker: (0..n)
+```</para>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;headword&gt;
+    ...&lt;placeholderMarker&gt;...&lt;/placeholderMarker&gt;...
+&lt;/headword&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    ...,
+    "headword": "...",
+    "placeholderMarkers": [...],
+    ...
+}
+```</para>
+         </section>
+         <section>
+            <title>SQL {.unnumbered .unlisted}</title>
+            <para>No changes needed.</para>
+         </section>
+      </section>
+      <section>
+         <title>Extensions to <code>headwordTranslation</code>
+         </title>
+         <para>Additional children:</para>
+         <para>```yaml
+headwordTranslation: ...
+    placeholderMarker: (0..n)
+```</para>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;headwordTranslation&gt;
+    &lt;text&gt;
+        ...&lt;placeholderMarker&gt;...&lt;/placeholderMarker&gt;...
+    &lt;/text&gt;
+&lt;/headwordTranslation&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    ...,
+    "headwordTranslations": {
+        &lt;language&gt;: [{
+            "text": "...",
+            "placeholderMarkers": [...],
+            ...
+        }], 
+        ...
+    },
+    ...
+}
+```</para>
+         </section>
+         <section>
+            <title>SQL {.unnumbered .unlisted}</title>
+            <para>No changes needed.</para>
+         </section>
+      </section>
+      <section>
+         <title>Extensions to <code>example</code>
+         </title>
+         <para>Additional children:</para>
+         <para>```yaml
+example: ...
+    headwordMarker: (0..n)
+    itemMarker: (0..n)
+```</para>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;example&gt;
+    &lt;text&gt;
+        ...
+        &lt;headwordMarker&gt;...&lt;/headwordMarker&gt;
+        ...
+        &lt;itemMarker...&gt;...&lt;/itemMarker&gt;
+        ...
+    &lt;/text&gt;
+&lt;/example&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "text": "...",
+    "headwordMarkers": [...],
+    "itemMarkers": [...],
+    ...
+}
+```</para>
+         </section>
+         <section>
+            <title>SQL {.unnumbered .unlisted}</title>
+            <para>No changes needed.</para>
+         </section>
+      </section>
+      <section>
+         <title>Extensions to <code>exampleTranslation</code>
+         </title>
+         <para>Additional children:</para>
+         <para>```yaml
+exampleTranslation: ...
+    headwordMarker: (0..n)
+    itemMarker: (0..n)
+```</para>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;exampleTranslation&gt;
+    &lt;text&gt;
+        ...
+        &lt;headwordMarker&gt;...&lt;/headwordMarker&gt;
+        ...
+        &lt;itemMarker...&gt;...&lt;/itemMarker&gt;
+        ...
+    &lt;/text&gt;
+&lt;/exampleTranslation&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "text": "...",
+    "headwordMarkers": [...],
+    "itemMarkers": [...],
+    ...
+}
+```</para>
+         </section>
+         <section>
+            <title>SQL {.unnumbered .unlisted}</title>
+            <para>No changes needed.</para>
+         </section>
+      </section>
+      <section>
+         <title>Extensions to <code>definition</code>
+         </title>
+         <para>Additional children:</para>
+         <para>```yaml
+definition: ...
+    headwordMarker: (0..n)
+    itemMarker: (0..n)
+```</para>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;definition...&gt;
+    ...
+    &lt;headwordMarker&gt;...&lt;/headwordMarker&gt;
+    ...
+    &lt;itemMarker...&gt;...&lt;/itemMarker&gt;
+    ...
+&lt;/definition&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "text": "...",
+    "headwordMarkers": [...],
+    "itemMarkers": [...],
+    ...
+}
+```</para>
+         </section>
+         <section>
+            <title>SQL {.unnumbered .unlisted}</title>
+            <para>No changes needed.</para>
+         </section>
+      </section>
+      <section>
+         <title>
+            <code>placeholderMarker</code>
+         </title>
+         <para>Marks up a substring inside a headword or inside a headword translation which is not part of the expression itself but stands for things that can take its place. An application can use the inline markup to format the placeholders differently from the rest of the text, to ignore the placeholder in full-text search, and so on. See Examples \ref{ex19}, \ref{ex20}.</para>
+         <para>```yaml
+placeholderMarker: &lt;string&gt;
+```</para>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;placeholderMarker&gt;...&lt;/placeholderMarker&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "startIndex": ...,
+    "endIndex": ...
+}
+```</para>
+         </section>
+         <section>
+            <title>SQL {.unnumbered .unlisted}</title>
+            <para>```sql
+create table placeholderMarkers (
+    entryID int foreign key references entries(id),
+    startIndex int,
+    endIndex int,
+    id int primary key
+)
+```</para>
+         </section>
+      </section>
+      <section>
+         <title>
+            <code>headwordMarker</code>
+         </title>
+         <para>Marks up a substring inside an example, inside an example translation or inside a definition which corresponds to the headword (or to a translation of the headword). An application can use the inline markup to highlight the occurence of the headword for human readers through formatting. See Example \ref{ex21}.</para>
+         <para>```yaml
+headwordMarker: &lt;string&gt;
+```</para>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;headwordMarker&gt;...&lt;/headwordMarker&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "startIndex": ...,
+    "endIndex": ...
+}
+```</para>
+         </section>
+         <section>
+            <title>SQL {.unnumbered .unlisted}</title>
+            <para>```sql
+create table headwordMarkers (
+    entryID int foreign key references entries(id),
+    headwordTranslationID int foreign key references headwordTranslations(id),
+    definitionID int foreign key references definitions(id),
+    startIndex int,
+    endIndex int,
+    id int primary key
+)
+```</para>
+         </section>
+      </section>
+      <section>
+         <title>
+            <code>itemMarker</code>
+         </title>
+         <para>Marks up a substring other than the headword inside an example, inside an example translation or inside a definition. An application can use the inline markup to highlight collocates or constituents. See Example \ref{ex22}.</para>
+         <para>```yaml
+itemMarker: &lt;string&gt;
+    lemma: (0..1) &lt;string&gt;
+    itemRole: (0..n) &lt;string&gt;
+```</para>
+         <section>
+            <title>XML {.unnumbered .unlisted}</title>
+            <para>```xml
+&lt;itemMarker lemma="..."&gt;
+    ...
+    &lt;itemRole value="..."/&gt;
+&lt;/itemMarker&gt;
+```</para>
+         </section>
+         <section>
+            <title>JSON {.unnumbered .unlisted}</title>
+            <para>```json
+{
+    "startIndex": ...,
+    "endIndex": ...,
+    lemma: "...",
+    itemRoles: ["..."]
+}
+```</para>
+         </section>
+         <section>
+            <title>SQL {.unnumbered .unlisted}</title>
+            <para>```sql
+create table itemMarkers (
+    entryID int foreign key references entries(id),
+    headwordTranslationID int foreign key references headwordTranslations(id),
+    definitionID int foreign key references definitions(id),
+    startIndex int,
+    endIndex int,
+    lemma varchar(50),
+    id int primary key
+);
+create table itemMarkerRoles (
+    itemMarkerID int foreign key references itemMarkers(id),
+    role: "...",
+    id int primary key
+)
+```</para>
+         </section>
+         <section>
+            <title>Comments {.unnumbered .unlisted}</title>
+            <itemizedlist>
+               <listitem>
+                  <para>
+                     <code>lemma</code> is the lemmatized form of the collocate. An application can use it to provide a clickable link for the user to search for the lemma in the rest of the lexicographic resource or on the web. (If you want to link the collocate explicitly to a specific entry or to a specific sense in your lexicographic resource, or even in an external lexicographic resource, you can use the Linking Module for that.)</para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <code>itemRole</code> can be used to communicate facts about the role of the item in the sentence, for example its syntactic role (subject, direct object etc.), its semantic role (agent, affected etc) or its semantic type (human, institution etc.) Optionally, you use the <code>tag</code> datatype to explain and/or constrain the item types that are allowed to appear in your lexicographic resource.</para>
+               </listitem>
+            </itemizedlist>
+         </section>
+      </section>
+   </chapter>
+</book>
