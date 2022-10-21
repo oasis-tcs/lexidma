@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section>
+
+  <title>
+    <code>translationLanguage</code>
+  </title>
+  <para>Represents one of the languages in which translations are given in this lexicographic resource. Examples: <xref linkend="ex07"/>, <xref linkend="ex10"/>.</para>
+  <programlisting>
+translationLanguage: &lt;langCode&gt;
+    listingOrder: (1..1) &lt;number&gt;
+</programlisting>
+  <section>
+    <title>XML</title>
+    <programlisting>
+&lt;translationLanguage langCode=""/&gt;
+</programlisting>
+  </section>
+  <section>
+    <title>JSON</title>
+    <programlisting>
+"..."
+</programlisting>
+  </section>
+  <section>
+    <title>SQL</title>
+    <programlisting>
+create table translationLanguage (
+    lexicographicResourceID int foreign key references lexicographicResources(id),
+    langCode varchar(10) primary key,
+    listingOrder int,
+)
+</programlisting>
+    <para>Comments</para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          <code>listingOrder</code> sets the order in which translations (of headwords and examples) should be shown. It outranks the listing order given in <code>headwordTranslation</code>, <code>headwordExplanation</code> and <code>exampleTranslation</code> objects.</para>
+      </listitem>
+    </itemizedlist>
+  </section>
+  
+
+</section>

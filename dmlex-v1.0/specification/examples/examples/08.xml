@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section id="ex08">
+
+                         <title>How to use <code>headwordTranslation</code> in a bilingual lexicographic resource</title>
+                         <para>This is an entry from a hypothetical English-German dictionary for English-speaking learners of German.</para>
+                         <section>
+                                                  <title>NVH</title>
+                                                  <programlisting>
+entry: doctor-n
+    headword: doctor
+    sense: doctor-n-1
+        indicator: medical doctor
+        headwordTranslation: Arzt
+            partOfSpeech: n-masc
+        headwordTranslation: Ärztin
+            partOfSpeech: n-fem
+    sense: doctor-n-2
+        indicator: academic title
+        headwordTranslation: Doktor
+            partOfSpeech: n-masc
+        headwordTranslation: Doktorin
+            partOfSpeech: n-fem
+            label: rare
+</programlisting>
+                         </section>
+                         <section>
+                                                  <title>XML</title>
+                                                  <programlisting>
+&lt;entry id="doctor-n"&gt;
+    &lt;headword&gt;doctor&lt;/headword&gt;
+    &lt;sense id="doctor-n-1"&gt;
+        &lt;indicator&gt;medical doctor&lt;/indicator&gt;
+        &lt;headwordTranslation&gt;
+            &lt;text&gt;Arzt&lt;/text&gt;
+            &lt;partOfSpeech value="n-masc"/&gt;
+        &lt;/headwordTranslation&gt;
+        &lt;headwordTranslation&gt;
+            &lt;text&gt;Ärztin&lt;/text&gt;
+            &lt;partOfSpeech value="n-fem"/&gt;
+        &lt;/headwordTranslation&gt;
+    &lt;/sense&gt;
+    &lt;sense id="doctor-n-2"&gt;
+        &lt;indicator&gt;academic title&lt;/indicator&gt;
+        &lt;headwordTranslation&gt;
+            &lt;text&gt;Doktor&lt;/text&gt;
+            &lt;partOfSpeech value="n-masc"/&gt;
+        &lt;/headwordTranslation&gt;
+        &lt;headwordTranslation&gt;
+            &lt;text&gt;Doktorin&lt;/text&gt;
+            &lt;partOfSpeech value="n-fem"/&gt;
+        &lt;/headwordTranslation&gt;
+    &lt;/sense&gt;
+&lt;/entry&gt;
+</programlisting>
+                         </section>
+                         <section>
+                                                  <title>JSON</title>
+                                                  <programlisting>
+{
+    "id": "doctor-n",
+    "headword": "doctor",
+    "senses": [{
+        "id": "doctor-n-1",
+        "indicator": "medical doctor",
+        "headwordTranslations": [{
+            "text": "Arzt",
+            "partsOfSpeech": ["n-masc"]
+        }, {
+            "text": "Ärztin",
+            "partsOfSpeech": ["n-fem"]
+        }]
+    }, {
+        "id": "doctor-n-2",
+        "indicator": "academic title",
+        "headwordTranslations": [{
+            "text": "Doktor",
+            "partsOfSpeech": ["n-masc"]
+        }, {
+            "text": "Doktorin",
+            "partsOfSpeech": ["n-fem"]
+        }]
+    }]
+}
+</programlisting>
+                         </section>
+
+</section>

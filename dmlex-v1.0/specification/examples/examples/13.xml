@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section id="ex13">
+
+                         <title>Modelling antonyms</title>
+                         <para>We have two entries for the verbs "buy" and "sell" with one sense each. We want to express the fact that the senses are antonyms.</para>
+                         <section>
+                                                  <title>NVH</title>
+                                                  <programlisting>
+lexicographicResource: my-dictionary
+    language: en
+    entry: buy
+        headword: buy
+        sense: buy-1
+            definition: get something by paying money for it
+    entry: sell
+        headword: sell
+        sense: sell-1
+            definition: exchange something for money
+    relation: ants
+        member: buy-1
+        member: sell-1
+    relationType: ants
+        description: antonyms
+        memberRole:
+            memberType: sense
+            min: 2
+            max: 2
+            action: navigate
+</programlisting>
+                         </section>
+                         <section>
+                                                  <title>XML</title>
+                                                  <programlisting>
+&lt;lexicographicResource id="my-dictionary" language="en"&gt;
+    &lt;entry id="buy"&gt;
+        &lt;headword&gt;buy&lt;/headword&gt;
+        &lt;sense id="buy-1"&gt;
+            &lt;definition&gt;get something by paying money for it&lt;/definition&gt;
+        &lt;/sense&gt;
+    &lt;/entry&gt;
+    &lt;entry id="sell"&gt;
+        &lt;headword&gt;sell&lt;/headword&gt;
+        &lt;sense id="sell-1"&gt;
+            &lt;definition&gt;exchange something for money&lt;/definition&gt;
+        &lt;/sense&gt;
+    &lt;/entry&gt;
+    &lt;relation type="ants"&gt;
+        &lt;member idref="buy-1"/&gt;
+        &lt;member idref="sell-1"/&gt;
+    &lt;/relation&gt;
+    &lt;relationType type="ants"&gt;
+        &lt;description&gt;antonyms&lt;/description&gt;
+        &lt;memberRole memberType="sense" min="2" max="2" action="navigate"/&gt;
+    &lt;/relationType&gt;
+&lt;/lexicographicResource&gt;
+</programlisting>
+                         </section>
+                         <section>
+                                                  <title>JSON</title>
+                                                  <programlisting>
+{
+    "id": "my-dictionary",
+    "language": "en",
+    "entries": [{
+        "id": "buy",
+        "headword": "buy",
+        "senses": [{
+            "id": "buy-1",
+            "definition": "get something by paying money for it"
+        }, {
+        "id": "sell",
+        "headword": "sell",
+        "senses": [{
+            "id": "sell-1",
+            "definition": "exchange something for money"
+        }]
+    }],
+    "relations": [{
+        "type": "ants",
+        "members": [
+            {"idref": "buy-1"},
+            {"idref": "sell-1"}
+        ]
+    }],
+    "relationTypes": [{
+        "type": "ants",
+        "description": "antonyms",
+        "memberRoles": [{
+            "memberType": "sense",
+            "min": 2,
+            "max": 2,
+            "action": "navigate"
+        }]
+    }]
+}
+</programlisting>
+                         </section>
+                         <section>
+                                                  <title>Suggested rendering for human users</title>
+                                                  <blockquote>
+                                                                           <para>
+                                                                                                    <emphasis role="strong">buy</emphasis>
+                                                                           </para>
+                                                                           <itemizedlist>
+                                                                                                    <listitem>
+                                                                                                                             <para>get something by paying money for it <emphasis>opposite meaning:</emphasis>
+                                                                                                                                                      <emphasis role="strong">sell</emphasis>
+                                                                                                                             </para>
+                                                                                                    </listitem>
+                                                                           </itemizedlist>
+                                                  </blockquote>
+                         </section>
+
+</section>

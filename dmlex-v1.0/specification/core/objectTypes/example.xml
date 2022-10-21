@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section>
+
+  <title>
+    <code>example</code>
+  </title>
+  <para>Represents a sentence or other text fragment which illustrates the headword being used.</para>
+  <programlisting>
+example: &lt;string&gt;
+    sourceIdentity: (0..1) &lt;string&gt;
+    sourceElaboration: (0..1) &lt;string&gt;
+    label: (0..n)
+    soundFile: (0..1) &lt;uri&gt;
+    listingOrder: (1..1) &lt;number&gt;
+</programlisting>
+  <section>
+    <title>XML</title>
+    <programlisting>
+&lt;example sourceIdentity="..." sourceElaboration="..." soundFile="..."&gt;
+    &lt;text&gt;...&lt;/text&gt;
+    &lt;label.../&gt;
+&lt;/example&gt;
+</programlisting>
+  </section>
+  <section>
+    <title>JSON</title>
+    <programlisting>
+{
+    "text": "...",
+    "sourceIdentity": "...",
+    "sourceElaboration": "...",
+    "labels": [...],
+    "soundFile": "..."
+}
+</programlisting>
+  </section>
+  <section>
+    <title>SQL</title>
+    <programlisting>
+create table examples (
+    senseID int foreign key references senses(id),
+    text varchar(255),
+    sourceIdentity varchar(50),
+    sourceElaboration varchar(255),
+    soundFile varchar(255),
+    id int primary key
+)
+</programlisting>
+  </section>
+  <section>
+    <title>Comments</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          <code>sourceIdentity</code> is an abbreviation, a code or some other string of text which identifies the source. You can use the <code>tag</code> datatype to explain the meaning of the source identifiers and to constrain which source identifiers are allowed to occur in your lexicographic resource.</para>
+      </listitem>
+      <listitem>
+        <para>
+          <code>sourceElaboration</code> is a free-form statement about the source of the example. If <code>source</code> is present, then <code>sourceElaboration</code> can be used for information where in the source the example can be found: page number, chapter and so on. If <code>sourceIdentity</code> is absent then <code>sourceElaboration</code> can be used to fully name the source.</para>
+      </listitem>
+      <listitem>
+        <para>
+          <code>soundFile</code> is a pointer to a file containing a sound recording of the example.</para>
+      </listitem>
+      <listitem>
+        <para>
+          <code>listingOrder</code> is the position of this example among other examples in the same sense. This can be implicit from the serialization.</para>
+      </listitem>
+    </itemizedlist>
+  </section>
+  
+</section>

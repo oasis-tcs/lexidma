@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section id="ex10">
+
+                         <title>Defining a multilingual lexicographic resource</title>
+                         <para>This defines a lexicographic resource where the source language is Irish and the translation languages are English, German and Czech.</para>
+                         <section>
+                                                  <title>NVH</title>
+                                                  <programlisting>
+lexicographicResource: irish-multilingual
+    description: My Irish-Multilingual Dictionary
+    language: ga
+    translationLanguage: en
+    translationLanguage: de
+    translationLanguage: cs
+</programlisting>
+                         </section>
+                         <section>
+                                                  <title>XML</title>
+                                                  <programlisting>
+&lt;lexicographicResource id="irish-multilingual" language="ga"&gt;
+    &lt;title&gt;My Irish-Multilingual Dictionary&lt;/title&gt;
+    &lt;translationLanguage langCode="en"/&gt;
+    &lt;translationLanguage langCode="de"/&gt;
+    &lt;translationLanguage langCode="cs"/&gt;
+    ...
+&lt;/lexicographicResource&gt;
+</programlisting>
+                         </section>
+                         <section>
+                                                  <title>JSON</title>
+                                                  <programlisting>
+{
+    "id": "irish-multilingual",
+    "title": "My Irish-Multilingual Dictionary",
+    "language": "ga",
+    "translationLanguages": ["en", "de", "cs"],
+    ...
+}
+</programlisting>
+                         </section>
+
+</section>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section>
+
+  <title>
+    <code>definition</code>
+  </title>
+  <para>Represents one of possibly several definitions of a sense.</para>
+  <programlisting>
+definition: &lt;string&gt;
+    definitionType: (0..1) &lt;string&gt;
+    listingOrder: (1..1) &lt;number&gt;
+</programlisting>
+  <section>
+    <title>XML</title>
+    <programlisting>
+&lt;definition definitionType="..."&gt;...&lt;/definition&gt;
+</programlisting>
+  </section>
+  <section>
+    <title>JSON</title>
+    <programlisting>
+{
+    "text": "....",
+    "definitionType": "..."
+}
+</programlisting>
+  </section>
+  <section>
+    <title>SQL</title>
+    <programlisting>
+create table definitions (
+    senseID int foreign key references sense(id),
+    text nvarchar(255),
+    definitionType nvarchar(10),
+    listingOrder int,
+    id int primary key
+)
+</programlisting>
+  </section>
+  <section>
+    <title>Comments</title>
+    <itemizedlist>
+      <listitem>
+        <para>If you have multiple definitions inside a single sense, you can use <code>definitionType</code> to indicate the difference between them, for example that they are intended for different audiences. Optionally, you can use the <code>tag</code> data type to constrain and/or explain the definition types that occur in your lexicographic resource.</para>
+      </listitem>
+      <listitem>
+        <para>
+          <code>listingOrder</code> is the position of this definition among other definitions of the same sense. This can be implicit from the serialization.</para>
+      </listitem>
+    </itemizedlist>
+  </section>
+  
+</section>

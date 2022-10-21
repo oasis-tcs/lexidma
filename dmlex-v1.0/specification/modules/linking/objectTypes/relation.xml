@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section>
+
+  <title>
+    <code>relation</code>
+  </title>
+  <para>Represents the fact that a relation exists between two or more objects.</para>
+  <programlisting>
+relation: &lt;string&gt;
+    description: (0..1) &lt;string&gt;
+    member: (2..n)
+</programlisting>
+  <section>
+    <title>XML</title>
+    <programlisting>
+&lt;relation type="..."&gt;
+    &lt;description&gt;...&lt;/description&gt;
+    &lt;member.../&gt;
+&lt;/relation&gt;
+</programlisting>
+  </section>
+  <section>
+    <title>JSON</title>
+    <programlisting>
+{
+    "type": "...",
+    "description": "...",
+    "members": [...]
+}
+</programlisting>
+  </section>
+  <section>
+    <title>SQL</title>
+    <programlisting>
+create table relations (
+    id int primary key,
+    type varchar(10),
+    description nvarchar(255)
+)
+</programlisting>
+    <para>Comments</para>
+    <itemizedlist>
+      <listitem>
+        <para>The value of a relation specifies what type of relation it is, for example a relation between synonyms or a relation between a sense and a subsense. Optionally, you can use <code>relationType</code> objects to explain those types and to constrain which types of relations are allowed to exist in your lexicographic resource.</para>
+      </listitem>
+      <listitem>
+        <para>
+          <code>description</code> is an optional human-readable explanation of this relation.</para>
+      </listitem>
+    </itemizedlist>
+  </section>
+  
+</section>

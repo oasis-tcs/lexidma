@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section id="ex07">
+
+                         <title>Defining a bilingual lexicographic resource</title>
+                         <para>This defines a lexicographic resource where the source language is German and the translation language is English and the English translations are going to come with pronunciation transcriptions in English IPA.</para>
+                         <section>
+                                                  <title>NVH</title>
+                                                  <programlisting>
+lexicographicResource: deueng
+    title: My German-English Dictionary
+    language: de
+    translationLanguage: en
+</programlisting>
+                         </section>
+                         <section>
+                                                  <title>XML</title>
+                                                  <programlisting>
+&lt;lexicographicResource id="deueng" language="de"&gt;
+    &lt;title&gt;My German-English Dictionary&lt;/title&gt;
+    &lt;translationLanguage langCode="en"/&gt;
+    ...
+&lt;/lexicographicResource&gt;
+</programlisting>
+                         </section>
+                         <section>
+                                                  <title>JSON</title>
+                                                  <programlisting>
+{
+    "id": "deueng",
+    "title": "My German-English Dictionary",
+    "language": "de",
+    "translationLanguages": ["en"],
+    ...
+}
+</programlisting>
+                         </section>
+                         
+
+</section>

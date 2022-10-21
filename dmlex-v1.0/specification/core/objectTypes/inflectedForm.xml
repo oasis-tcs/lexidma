@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section>
+
+  <title>
+    <code>inflectedForm</code>
+  </title>
+  <para>Represents one (of possibly many) inflected forms of the headword. Example: <xref linkend="ex01"/>.</para>
+  <programlisting>
+inflectedForm: &lt;string&gt;
+    inflectedTag: (0..1) &lt;string&gt;
+    listingOrder: (1..1) &lt;number&gt;
+    label: (0..n)
+    pronunciation: (0..n)
+</programlisting>
+  <section>
+    <title>XML</title>
+    <programlisting>
+&lt;inflectedForm inflectedTag="..."&gt;
+    &lt;text&gt;...&lt;/text&gt;
+    &lt;label.../&gt;
+    &lt;pronunciation.../&gt;
+&lt;/inflectedTag&gt;
+</programlisting>
+  </section>
+  <section>
+    <title>JSON</title>
+    <programlisting>
+{
+    "inflectedTag": "...",
+    "text": "...",
+    "labels": [...],
+    "pronunciations": [...]
+}
+</programlisting>
+  </section>
+  <section>
+    <title>SQL</title>
+    <programlisting>
+create table inflectedForms (
+    entryID int foreign key references entries(id),
+    inflectedTag varchar(10),
+    text varchar(255),
+    listingOrder int,
+    id int primary key
+)
+</programlisting>
+  </section>
+  <section>
+    <title>Comments</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          <code>inflectedTag</code> is an abbreviation, a code or some other string of text which identifies the inflected form, for example <code>pl</code> for plural,  <code>gs</code> for genitive singular, <code>com</code> for comparative. You can use the <code>tag</code> datatype to explain the meaning of the inflection tags, to constrain which inflection tags are allowed to occur in your lexicographic resource, and to map them onto external inventories and ontologies.</para>
+      </listitem>
+      <listitem>
+        <para>The value of the <code>inflectedForm</code> object is the text of the inflected word itself.</para>
+      </listitem>
+      <listitem>
+        <para>
+          <code>listingOrder</code> is the position of this inflected form among other inflected forms of the same entry. This can be implicit from the serialization.</para>
+      </listitem>
+      <listitem>
+        <para>The <code>inflectedForm</code> object is intended to model the <emphasis role="strong">inflectional morphology</emphasis> of a headword. To model derivational morphology, for example feminine forms of maculine nouns, the recommended way to do that in DMLex is to create separate entries for the two words, and link them using the Linking Module.</para>
+      </listitem>
+    </itemizedlist>
+  </section>
+  
+</section>

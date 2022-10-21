@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section id="ex06">
+
+                         <title>Mapping <code>tag</code> to external inventories</title>
+                         <para>This shows how to map the value of a tag such as <code>n-masc</code> and <code>n-fem</code> to items in an external inventory such as LexInfo.</para>
+                         <section>
+                                                  <title>NVH</title>
+                                                  <programlisting>
+tag: n-masc
+    description: noun, masculine
+    target: partOfSpeech
+    sameAs: http://www.lexinfo.net/ontology/3.0/lexinfo#noun
+    sameAs: http://www.lexinfo.net/ontology/3.0/lexinfo#masculine
+tag: n-fem
+    description: noun, feminine
+    target: partOfSpeech
+    sameAs: http://www.lexinfo.net/ontology/3.0/lexinfo#noun
+    sameAs: http://www.lexinfo.net/ontology/3.0/lexinfo#feminine
+</programlisting>
+                         </section>
+                         <section>
+                                                  <title>XML</title>
+                                                  <programlisting>
+&lt;tag value="n-masc"&gt;
+    &lt;description&gt;noun, masculine&lt;/description&gt;
+    &lt;target value="partOfSPeech"/&gt;
+    &lt;sameAs uri="http://www.lexinfo.net/ontology/3.0/lexinfo#noun"/&gt;
+    &lt;sameAs uri="http://www.lexinfo.net/ontology/3.0/lexinfo#masculine"/&gt;
+&lt;/tag&gt;
+&lt;tag value="n-fem"&gt;
+    &lt;description&gt;noun, feminine&lt;/description&gt;
+    &lt;target value="partOfSPeech"/&gt;
+    &lt;sameAs uri="http://www.lexinfo.net/ontology/3.0/lexinfo#noun"/&gt;
+    &lt;sameAs uri="http://www.lexinfo.net/ontology/3.0/lexinfo#feminine"/&gt;
+&lt;/tag&gt;
+</programlisting>
+                         </section>
+                         <section>
+                                                  <title>JSON</title>
+                                                  <programlisting>
+{
+    "tags": [{
+        "value": "n-masc",
+        "description": "noun, masculine",
+        "targets": ["partOfSpeech"],
+        "sameAs": [
+            "http://www.lexinfo.net/ontology/3.0/lexinfo#noun",
+            "http://www.lexinfo.net/ontology/3.0/lexinfo#masculine"
+        ]
+    }, {
+        "value": "n-fem",
+        "description": "noun, feminine",
+        "targets": ["partOfSpeech"],
+        "sameAs": [
+            "http://www.lexinfo.net/ontology/3.0/lexinfo#noun",
+            "http://www.lexinfo.net/ontology/3.0/lexinfo#feminine"
+        ]
+    }]
+}
+</programlisting>
+                         </section>
+                         
+
+</section>

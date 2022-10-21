@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section>
+
+  <title>
+    <code>partOfSpeech</code>
+  </title>
+  <para>Represents a part-of-speech label.</para>
+  <programlisting>
+partOfSpeech: &lt;string&gt;
+    listingOrder: (1..1) &lt;number&gt;
+</programlisting>
+  <section>
+    <title>XML</title>
+    <programlisting>
+&lt;partOfSpeech value="..."/&gt;
+</programlisting>
+  </section>
+  <section>
+    <title>JSON</title>
+    <programlisting>
+"..."
+</programlisting>
+  </section>
+  <section>
+    <title>SQL</title>
+    <programlisting>
+create table partsOfSpeech (
+    entryID int foreign key references entries(id),
+    value varchar(10),
+    listingOrder int,
+    id int primary key
+)
+</programlisting>
+  </section>
+  <section>
+    <title>Comments</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          <code>partOfSpeech</code> is an abbreviation, a code or some other string of text which identifies the part-of-speech label, for example <code>n</code> for noun,  <code>v</code> for verb, <code>adj</code> for adjective. You can use the <code>tag</code> datatype to explain the meaning of the part-of-speech tags, to constrain which part-of-speech tags are allowed to occur in your lexicographic resource, and to map them onto external inventories and ontologies.</para>
+      </listitem>
+      <listitem>
+        <para>If you want to model other grammatical properties of the headword besides part of speech, such as gender (of nouns) or aspect (of verbs), the way to do that in DMLex is to conflate them to the part-of-speech label, for example <code>noun-masc</code> and <code>noun-fem</code>, or <code>v-perf</code> and <code>v-imperf</code>.</para>
+      </listitem>
+      <listitem>
+        <para>
+          <code>listingOrder</code> is the position of this part-of-speech label among other part-of-speech labels of the same entry. This can be implicit from the serialization.</para>
+      </listitem>
+    </itemizedlist>
+  </section>
+  
+</section>

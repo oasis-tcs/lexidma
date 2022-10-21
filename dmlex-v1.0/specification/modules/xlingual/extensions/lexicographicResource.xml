@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section>
+
+  <title>Extensions to <code>lexicographicResource</code>
+  </title>
+  <para>Additional children:</para>
+  <programlisting>
+lexicographicResource: ...
+    translationLanguage: (1...n)
+</programlisting>
+  <section>
+    <title>XML</title>
+    <programlisting>
+&lt;lexicographicResource ...&gt;
+    ...
+    &lt;translationLanguage.../&gt;
+&lt;/lexicographicResource&gt;
+</programlisting>
+  </section>
+  <section>
+    <title>JSON</title>
+    <programlisting>
+{
+    ...,
+    "translationLanguages": [...]
+}
+</programlisting>
+  </section>
+  <section>
+    <title>SQL</title>
+    <para>No changes needed.</para>
+  </section>
+ 
+
+</section>

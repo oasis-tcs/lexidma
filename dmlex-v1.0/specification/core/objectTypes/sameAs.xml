@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section>
+
+  <title>
+    <code>sameAs</code>
+  </title>
+  <para>Represents the fact that the parent object is equivalent to an item available from an external authority. Example: <xref linkend="x06"/>.</para>
+  <programlisting>
+sameAs: &lt;uri&gt;
+</programlisting>
+  <section>
+    <title>XML</title>
+    <programlisting>
+&lt;sameAs uri="..."/&gt;
+</programlisting>
+  </section>
+  <section>
+    <title>JSON</title>
+    <programlisting>
+"..."
+</programlisting>
+  </section>
+  <section>
+    <title>SQL</title>
+    <programlisting>
+create table sameAs (
+    tagID int foreign key references tags(id),
+    uri varchar(255),
+    id int primary key
+)
+</programlisting>
+  </section>
+  <section>
+    <title>Comments</title>
+    <itemizedlist>
+      <listitem>
+        <para>The value is the URI of an item in an external inventory.</para>
+      </listitem>
+    </itemizedlist>
+  </section>
+  
+</section>

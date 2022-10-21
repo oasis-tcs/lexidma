@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section>
+
+    <title>
+        <code>exampleTranslation</code>
+    </title>
+    <para>Represents the translation of an example.</para>
+    <programlisting>
+exampleTranslation: &lt;string&gt;
+    language: (1..1) &lt;langCode&gt;
+    soundFile: (0..1) &lt;uri&gt;
+    listingOrder: (1..1) &lt;number&gt;
+</programlisting>
+    <section>
+        <title>XML</title>
+        <programlisting>
+&lt;exampleTranslation language="..." soundFile="..."&gt;
+    &lt;text&gt;...&lt;/text&gt;
+    &lt;label.../&gt;
+&lt;/exampleTranslation&gt;
+</programlisting>
+    </section>
+    <section>
+        <title>JSON</title>
+        <programlisting>
+{
+    "language": "...",
+    "text": "...",
+    "labels": [...],
+    "soundFile": "..."
+}
+</programlisting>
+    </section>
+    <section>
+        <title>SQL</title>
+        <programlisting>
+create table exampleTranslations (
+    exampleID int foreign key references examples(id),
+    language varchar(10) foreign key references translationLanguage(langCode),
+    text varchar(255),
+    soundFile varchar(255),
+    listingOrder int,
+    id int primary key
+);
+alter table labels (
+    add exampleTranslationID foreign key references exampleTranslations(id)
+)
+</programlisting>
+        <para>Comments</para>
+        <itemizedlist>
+            <listitem>
+                <para>
+                    <code>language</code> indicates the language of this translation. You can use the <code>translationLanguage</code> datatype to explain the meaning of the language codes that appear here and/or to constrain which language codes are allowed.</para>
+            </listitem>
+            <listitem>
+                <para>If ony one translation language exists in your lexicographic resource, then <code>language</code> can be left out.</para>
+            </listitem>
+            <listitem>
+                <para>For more comments see commens under <code>exampleTranslation</code> in the Bilingual Module.</para>
+            </listitem>
+        </itemizedlist>
+    </section>
+    
+</section>

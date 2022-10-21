@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section id="ex20">
+
+                         <title>Using <code>placeholderMarker</code> in a bilingual lexicographic resource</title>
+                         <section>
+                                                  <title>NVH</title>
+                                                  <programlisting>
+entry: beat-up
+    headword: beat sb. up
+        placeholderMarker: sb.
+    sense: beat-up-1
+        headwordTranslation: jemanden verprügeln
+            placeholderMarker: jemanden
+</programlisting>
+                         </section>
+                         <section>
+                                                  <title>XML</title>
+                                                  <programlisting>
+&lt;entry id="beat-up"&gt;
+    &lt;headword&gt;
+        beat &lt;placeholderMarker&gt;sb.&lt;/placeholderMarker&gt; up
+    &lt;/headword&gt;
+    &lt;sense id="beat-up-1"&gt;
+      &lt;headwordTranslation&gt;
+        &lt;text&gt;
+            &lt;placeholderMarker&gt;jemanden&lt;/placeholderMarker&gt; verprügeln
+        &lt;/text&gt;
+      &lt;/headwordTranslation&gt;
+    &lt;/sense&gt;
+&lt;/entry&gt;
+</programlisting>
+                         </section>
+                         <section>
+                                                  <title>JSON</title>
+                                                  <programlisting>
+{
+  "id": "beat-up",
+  "headword": "beat sb. up",
+  "placeholderMarkers": [
+      {"startIndex": 5, "endIndex": 8}
+  ],
+  "senses": [{
+    "id": "beat-up-1",
+    "headwordTranslations": [{
+      "text": "jemanden verprügeln",
+      "placeholderMarkers": [
+          {"startIndex": 0, "endIndex": 8}
+      ],
+    }]
+  }]
+}
+</programlisting>
+                         </section>
+
+</section>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section id="ex09">
+
+                         <title>How to use <code>headwordExplanation</code></title>
+                         <section>
+                                                  <title>NVH</title>
+                                                  <programlisting>
+entry: treppenwitz
+    headword: Treppenwitz
+    partOfSpeech: n-masc
+    sense: treppenwitz-1
+        headwordExplanation: belated realisation of what one could have said
+        headwordTranslation: staircase wit
+</programlisting>
+                         </section>
+                         <section>
+                                                  <title>XML</title>
+                                                  <programlisting>
+&lt;entry id="treppenwitz"&gt;
+    &lt;headword&gt;Treppenwitz&lt;/headword&gt;
+    &lt;partOfSpeech value="n-masc"/&gt;
+    &lt;sense id="treppenwitz-1"&gt;
+        &lt;headwordExplanation&gt;
+            belated realisation of what one could have said
+        &lt;/headwordExplanation&gt;
+        &lt;headwordTranslation&gt;
+            &lt;text&gt;staircase wit&lt;/text&gt;
+        &lt;/headwordTranslation&gt;
+    &lt;/sense&gt;
+</programlisting>
+                         </section>
+                         <section>
+                                                  <title>JSON</title>
+                                                  <programlisting>
+{
+    "id": "treppenwitz",
+    "headword": "Treppenwitz",
+    "partsOfSpeech": ["n-masc"],
+    "senses": [{
+        "id": "treppenwitz-1",
+        "headwordExplanations": [{
+            "text": "belated realisation of what one could have said"
+        }],
+        "headwordTranslations": [{
+            "text": "staircase wit"
+        }]
+    }]
+}
+</programlisting>
+                         </section>
+
+</section>

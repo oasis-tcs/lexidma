@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section>
+  <title>
+    <code>lexicographicResource</code>
+  </title>
+  <para>Represents a dictionary. A lexicographic resource is a dataset which can be used, viewed and read by humans as a dictionary and – simultaneously – ingested, processed and understood by software agents as a machine-readable database. Note that the correct name of this data type in DMLex is <emphasis>lexicographic</emphasis>, not <emphasis>lexical</emphasis>, resource.</para>
+  <programlisting>
+lexicographicResource: &lt;id&gt;
+    title: (0..1) &lt;string&gt;
+    uri: (0..1) &lt;uri&gt;
+    language: (1..1) &lt;langCode&gt;
+    entry: (0..n)
+    tag: (0..n)
+</programlisting>
+  <section>
+    <title>XML</title>
+    <programlisting>
+&lt;lexicographicResource id="..." uri="..." language="..."&gt;
+    &lt;title&gt;...&lt;/title&gt;
+    &lt;entry.../&gt;
+    &lt;tag.../&gt;
+&lt;/lexicographicResource&gt;
+</programlisting>
+  </section>
+  <section>
+    <title>JSON</title>
+    <programlisting>
+{
+    "id": "...",
+    "title": "...",
+    "language": "...",
+    "entries": [...],
+    "tags": [...]
+}
+</programlisting>
+  </section>
+  <section>
+    <title>SQL</title>
+    <programlisting>
+create table lexicographicResources (
+    id int primary key,
+    title varchar(255),
+    language varchar(10)
+)
+</programlisting>
+  </section>
+  <section>
+    <title>Comments</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          <code>language</code> identifies the language of headwords, definitions and examples in this dictionary. DMLex is based on the assumption that all headwords in a lexicographic resource are in the same language, and that definitions and examples, if any occur in the lexicographic resource, are in that language too. The <code>language</code> child object of <code>lexicographicResource</code> informs potential users of the lexicographic resource which language that is.</para>
+      </listitem>
+      <listitem>
+        <para>The main role of a lexicographic resource is to contain entries (<code>entry</code> objects). The other two object types that can optionally occur as children of a <code>lexicographicResource</code>, especially <code>tag</code>, are for lists of look-up values such as part-of-speech labels.</para>
+      </listitem>
+    </itemizedlist>
+  </section>
+</section>

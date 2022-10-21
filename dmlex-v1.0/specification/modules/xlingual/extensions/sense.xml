@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section>
+
+  <title>Extensions to <code>sense</code>
+  </title>
+  <para>Additional children:</para>
+  <programlisting>
+sense: ...
+    headwordExplanation: (0..n)
+    headwordTranslation: (0..n)
+</programlisting>
+  <section>
+    <title>XML</title>
+    <programlisting>
+&lt;sense ...&gt;
+    ...
+    &lt;headwordExplanation.../&gt;
+    &lt;headwordTranslation.../&gt;
+    ...
+&lt;/sense&gt;
+</programlisting>
+  </section>
+  <section>
+    <title>JSON</title>
+    <programlisting>
+{
+    ...
+    "headwordExplanations": [...],
+    "headwordTranslations": [...],
+    ...
+}
+</programlisting>
+  </section>
+  <section>
+    <title>SQL</title>
+    <para>No changes needed.</para>
+  </section>
+  
+</section>

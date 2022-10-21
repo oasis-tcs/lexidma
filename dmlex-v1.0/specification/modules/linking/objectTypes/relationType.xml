@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section>
+
+  <title>
+    <code>relationType</code>
+  </title>
+  <para>Represents one of possible values for <code>relation</code>.</para>
+  <programlisting>
+relationType: &lt;string&gt;
+    description: (0..1) &lt;string&gt;
+    scope: (0..1) &lt;symbol&gt;
+    sameAs: (0..n)
+    memberRole: &lt;0..n&gt;
+</programlisting>
+  <section>
+    <title>XML</title>
+    <programlisting>
+&lt;relationType type="..." scope="..."&gt;
+    &lt;description&gt;...&lt;/description&gt;
+    &lt;sameAs.../&gt;
+    &lt;memberRole.../&gt;
+&lt;/relationType&gt;
+</programlisting>
+  </section>
+  <section>
+    <title>JSON</title>
+    <programlisting>
+{
+    "type": "...",
+    "scope": "...",
+    "sameAs": ["..."],
+    "memberRoles": [...]
+}
+</programlisting>
+  </section>
+  <section>
+    <title>SQL</title>
+    <programlisting>
+create table relationTypes (
+    lexicographicResourceID int foreign key references lexicographicResources(id),
+    type varchar(10),
+    scope varcar(50),
+    id int primary key
+);
+alter table sameAs (
+    add relationTypeID int foreign key references relationTypes(id)
+)
+</programlisting>
+    <para>Comments</para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          <code>description</code> is a human-readable explanation of this relation type.</para>
+      </listitem>
+      <listitem>
+        <para>
+          <code>scope</code> specifies restrictions on member of relations of this type. The possible values are:</para>
+        <itemizedlist>
+          <listitem>
+            <para>
+              <code>sameEntry</code>: members must be within of the same <code>entry</code>
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              <code>sameResource</code>: members must be within the same <code>lexicographicResource</code>
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              <code>any</code>: no restriction</para>
+          </listitem>
+        </itemizedlist>
+      </listitem>
+      <listitem>
+        <para>
+          <code>memberRole</code> objects define roles for members of relations of this type.</para>
+      </listitem>
+    </itemizedlist>
+  </section>
+  
+</section>
