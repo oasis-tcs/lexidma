@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section id="ex19">
+
+                         <title>Using <code>placeholderMarker</code></title>
+                         <section>
+                                                  <title>NVH</title>
+                                                  <programlisting>
+entry: continue-studies
+    headword: continue your studies
+        placeholderMarker: your
+    sense: ...
+</programlisting>
+                         </section>
+                         <section>
+                                                  <title>XML</title>
+                                                  <programlisting>
+&lt;entry id="continue-studies"&gt;
+    &lt;headword&gt;
+        continue &lt;placeholderMarker&gt;your&lt;/placeholderMarker&gt; studies
+    &lt;/headword&gt;
+    &lt;sense.../&gt;
+&lt;/entry&gt;
+</programlisting>
+                         </section>
+                         <section>
+                                                  <title>JSON</title>
+                                                  <programlisting>
+{
+  "id": "continue-studies",
+  "headword": "continue your studies",
+  "placeholderMarkers": [
+     {"startIndex": 9, "endIndex": 13}
+  ],
+  "senses": [...]
+}
+</programlisting>
+                         </section>
+                         
+
+</section>

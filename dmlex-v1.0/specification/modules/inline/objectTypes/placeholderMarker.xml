@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section>
+
+  <title>
+    <code>placeholderMarker</code>
+  </title>
+  <para>Marks up a substring inside a headword or inside a headword translation which is not part of the expression itself but stands for things that can take its place. An application can use the inline markup to format the placeholders differently from the rest of the text, to ignore the placeholder in full-text search, and so on. Examples: <xref linkend="ex19"/>, <xref linkend="ex20"/>.</para>
+  <programlisting>
+placeholderMarker: &lt;string&gt;
+</programlisting>
+  <section>
+    <title>XML</title>
+    <programlisting>
+&lt;placeholderMarker&gt;...&lt;/placeholderMarker&gt;
+</programlisting>
+  </section>
+  <section>
+    <title>JSON</title>
+    <programlisting>
+{
+    "startIndex": ...,
+    "endIndex": ...
+}
+</programlisting>
+  </section>
+  <section>
+    <title>SQL</title>
+    <programlisting>
+create table placeholderMarkers (
+    entryID int foreign key references entries(id),
+    startIndex int,
+    endIndex int,
+    id int primary key
+)
+</programlisting>
+  </section>
+  
+</section>

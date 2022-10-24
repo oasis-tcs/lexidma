@@ -40,6 +40,15 @@
         <email>tomaz.erjavec@ijs.si</email>
       </othercredit>
       <editor>
+        <firstname>Michal</firstname>
+        <surname>Měchura</surname>
+        <affiliation>
+          <orgname><ulink url="https://www.muni.cz/">Masaryk University</ulink></orgname>
+          <address format="linespecific"><email>michmech@mail.muni.cz</email></address>
+        </affiliation>
+        <email>michmech@mail.muni.cz</email>
+      </editor>
+      <editor>
         <firstname>David</firstname>
         <surname>Filip</surname>
         <affiliation>
@@ -127,38 +136,23 @@
               >http://docs.oasis-open.org/lexidma/ns/dmlex-&cschversion;</ulink></para>
         </listitem>
       </itemizedlist>
-      <itemizedlist>
-        <title>Module namespaces:</title>
-        <listitem>
-          <para>TBD</para>
-        </listitem>
-        <listitem>
-          <para>TBD</para>
-        </listitem>
-      </itemizedlist>
     </legalnotice>
     <abstract>
-      <para>This document defines the 1st version of a data model in support of the high priority
+      <para>This document defines the 1st version of a data model in support of the high-priority
         technical goals described in the LEXIDMA TC's charter, including:</para>
       <para>
         <itemizedlist>
           <listitem>
-            <para>Serialization independent Data Model for Lexicography (DMLex)</para>
+            <para>A serialization-independent Data Model for Lexicography (DMLex)</para>
           </listitem>
           <listitem>
-            <para>XML serialization of DMLex</para>
+            <para>An XML serialization of DMLex</para>
           </listitem>
           <listitem>
-            <para>JSON serialization of DMLex</para>
+            <para>A JSON serialization of DMLex</para>
           </listitem>
           <listitem>
-            <para>RDF serialization of DMLex</para>
-          </listitem>
-          <listitem>
-            <para>Informative Ontolex-Lemon mapping</para>
-          </listitem>
-          <listitem>
-            <para>Informative TEI Lex-0 mapping</para>
+            <para>A relational database implementation of DMLex</para>
           </listitem>
         </itemizedlist>
       </para>
@@ -217,7 +211,7 @@
       <title>Citation format</title>
       <para>When referencing this specification the following citation format should be used:</para>
       <para><citation>DMLex-&version;</citation></para>
-      <para><emphasis>Data Model for Lexicography Version &version;</emphasis>. Edited by David
+      <para><emphasis>Data Model for Lexicography Version &version;</emphasis>. Edited by Michal Měchura, David
         Filip and Simon Krek. &pubdate;. OASIS &standard;. <ulink
           url="&this-loc;/&name;-&stage;.html">&this-loc;/&name;-&stage;.html</ulink>. Latest
         version: <ulink url="&latest-loc;/&name;.html">&latest-loc;/&name;.html</ulink>. </para>
@@ -282,222 +276,145 @@
         guidance.</para>
     </legalnotice>
   </articleinfo>
+
   <section id="Introduction">
     <title>Introduction</title>
-    <para>Data Model for Lexicography (DMLex) is a <emphasis>serialization independent Object
-        Model</emphasis> designed by a group of lexicographers, lexicographic software providers,
-      and researchers. It is intended to provide a simple, modular, and easy to adopt data model for
-      use by all lexicographic industry actors across companies and academia as well as geographic
-      locations. Adoption of this data model will facilitate exchange of lexicographic and
-      linguistic corpus data globally and enable effective interchange with adjacent industries such
-      as language services, terminology management, and technical writing. Semantic interoperability
-      of lexicographic data will help lexicographers to surpass linguistically and geographically
-      demarcated approaches and create a truly global market for lexicographic data across and among
-      languages and locales. </para>
-    <para><emphasis>All text is normative unless otherwise labeled.</emphasis> The following common
-      methods are used for labeling portions of this specification as informative and hence
-      non-normative: <simplelist>
-        <member> Appendices and sections marked as "(Informative)" or "Non-Normative" in
-          title,</member>
-        <member> Notes (sections with the "Note" title),</member>
-        <member> Warnings (sections with the "Warning" title),</member>
-        <member> Examples (mainly example code listings, tree diagrams, but also any inline examples
-          or illustrative exemplary lists in otherwise normative text),</member>
-        <member> Schema and other validation artifacts listings (the corresponding artifacts are
-          normative, not their listings).</member>
-      </simplelist>
-    </para>
-    <section id="terminology">
-      <title>Glossary</title>
-      <section id="definitions">
-        <title>Definitions</title>
-        <variablelist>
-          <varlistentry>
-            <term>Agent</term>
-            <listitem>
-              <para>any application or tool that generates (creates), reads, edits, writes,
-                processes, stores, renders or otherwise handles documents, messages, or any other
-                instantiations of the <firstterm>DMLex</firstterm>.</para>
-              <para><firstterm>Agent</firstterm> is the most general application conformance target
-                that subsumes all other specialized user agents disregarding whether they are
-                defined in this specification or not.</para>
-            </listitem>
-          </varlistentry>
-          <varlistentry>
-            <term>Enrich</term>
-            <term>Enriching</term>
-            <listitem>
-              <para> the process of associating metadata and resources with
-                  <firstterm>DMLex</firstterm> based lexicographic data. </para>
-            </listitem>
-          </varlistentry>
-          <varlistentry>
-            <term>Enricher</term>
-            <term>Enricher Agent</term>
-            <listitem>
-              <para>any <firstterm>Agent</firstterm> that performs the
-                  <firstterm>Enriching</firstterm> process. </para>
-            </listitem>
-          </varlistentry>
-          <varlistentry>
-            <term>Modify</term>
-            <term>Modification</term>
-            <listitem>
-              <para> the process of changing core and module <firstterm>DMLex</firstterm> based
-                structural and inline objects that were previously created by other
-                  <firstterm>Writers</firstterm>
-              </para>
-              <itemizedlist>
-                <title>Processing Requirements</title>
-                <listitem>
-                  <para> LIOM objects <glossterm>may</glossterm> be <firstterm>Modified</firstterm>
-                    and <firstterm>Enriched</firstterm> at the same time. </para>
-                </listitem>
-              </itemizedlist>
-            </listitem>
-          </varlistentry>
-          <varlistentry>
-            <term>Modifier</term>
-            <term>Modifier Agent</term>
-            <listitem>
-              <para>an <firstterm>Agent</firstterm> that performs the
-                  <firstterm>Modification</firstterm> process. </para>
-            </listitem>
-          </varlistentry>
-          <!-- The Reader defintion was not really needed, since such an Agent (that ONLY reads) practically does not exist and the PR for Redaers are well covered by the use of Agent
-          <varlistentry>
-            <term>Reader</term>
-            <term>Reader Agent</term>
-
-            <listitem>
-              <para>an <firstterm>Agent</firstterm> that only renders <firstterm>XLIFF Documents</firstterm> provided by other <firstterm>Writers</firstterm>.
-
-              </para>
-
-              <note><para> Since XLIFF is intended as an exchange format rather than a processing format, many
-              applications will need to generate <firstterm>XLIFF Documents</firstterm> from
-              their internal processing formats, even in cases when they are processing
-              <firstterm>XLIFF Documents</firstterm> created by another
-              <firstterm>Extractor</firstterm>. </para></note>
-
-             </listitem>
-
-          </varlistentry>
-          -->
-          <varlistentry>
-            <term>Writer</term>
-            <term>Writer Agent</term>
-            <listitem>
-              <para>an <firstterm>Agent</firstterm> that creates, generates, or otherwise writes a
-                  <firstterm>DMLex</firstterm> based document for whatever purpose, including but
-                not limited to <firstterm>Creator</firstterm>, <firstterm>Modifier</firstterm>, and
-                  <firstterm>Enricher</firstterm>
-                <firstterm>Agents</firstterm>. </para>
-              <note>
-                <para><firstterm>DMLex</firstterm> intends to define lossless interchange between
-                  and among different pipelines that can be based on arbitrary
-                    <firstterm>DMLex</firstterm> conformant specifications (public) or even private
-                  informally <firstterm>DMLex</firstterm> based formats (that could evolve into
-                    <firstterm>DMLex</firstterm> conformant public specifications over time).
-                  Details of interchange using a given serialization are to be found in this
-                  specifications normative and informative appendices on various serializations and
-                  mappings.</para>
-              </note>
-            </listitem>
-          </varlistentry>
-        </variablelist>
-      </section>
-      <section id="keyconcepts">
-        <title>Key concepts</title>
-        <variablelist>
-          <varlistentry>
-            <term>DMLex Core</term>
-            <listitem>
-              <para>The core of <firstterm>DMLex</firstterm> &version; consists of the minimum set
-                of data objects required to (a) create a <firstterm>DMLex</firstterm> Instance that
-                contains interoperable lexicographic data
-                ...<?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>[ELABORATE]<?oxy_custom_end?></para>
-              <para>The namespace that corresponds to the core subset of
-                  <firstterm>DMLex</firstterm> is <code><ulink
-                    url="http://docs.oasis-open.org/lexidma/ns/dmlex-&cschversion;"
-                    >http://docs.oasis-open.org/lexidma/ns/dmlex-&cschversion;</ulink></code>.</para>
-            </listitem>
-          </varlistentry>
-          <varlistentry>
-            <term>DMLex-defined (elements and attributes)</term>
-            <listitem>
-              <para>The following is the list of allowed schema URI prefixes for
-                  <firstterm>DMLex-defined</firstterm> elements and attributes:</para>
-              <simplelist>
-                <member><ulink url="http://docs.oasis-open.org/lexidma/ns/"/></member>
-              </simplelist>
-              <para>Elements and attributes from other namespaces are not
-                  <firstterm>DMLex-defined</firstterm>.</para>
-              <para> </para>
-              <para> </para>
-            </listitem>
-          </varlistentry>
-          <varlistentry>
-            <term>DMLex Conformant Specification</term>
-            <listitem>
-              <para>A publicly available specification that normatively defines a serialization
-                (document, fragment or message payload format) that conforms to the DMLex defined in
-                this specification.</para>
-              <para>Currently known conformant serializations and mappings are defined in appendices
-                to this standard: [olinks to appendices, including their normative status] </para>
-            </listitem>
-          </varlistentry>
-          <varlistentry>
-            <term>DMLex Instance</term>
-            <listitem>
-              <para>A document, fragment or message payload that is a valid instance of any
-                  <firstterm>DMLex Conformant Specification</firstterm>. <note>
-                  <para>Documents, fragments or message payloads cannot conform directly to DMLex,
-                    as DMLex itself doesn't define serializations and an <emphasis>ad hoc</emphasis>
-                    format cannot be reliably checked against the complex requirements of the DMLex.
-                    Currently known LIOM instances include: [Could define and register media tyoes
-                    based on some of the appendices].</para>
-                </note>
-              </para>
-            </listitem>
-          </varlistentry>
-          <varlistentry>
-            <term>DMLex Module</term>
-            <listitem>
-              <para>A module is an <glossterm>optional</glossterm> set of data and metadata
-                categories that were designed to store information about a process applied to a
-                  <firstterm>DMLex Instance</firstterm> and the data incorporated into a
-                  <firstterm>DMLex Instance</firstterm> as result of that process.</para>
-              <para>Each official module defined for DMLex Version &version; has its data categories
-                and structure defined within this specification and corresponds to at least one
-                dedicated namespace, see <olink targetptr="namespaces">Normatively Used
-                  Namespaces</olink>.</para>
-            </listitem>
-          </varlistentry>
-        </variablelist>
-      </section>
+    <para>DMLex is a data model for modelling dictionaries (here called <emphasis>lexicographic resources</emphasis>) in computer applications such as dictionary writing systems.</para>
+    <para>DMLex is a data model, not an encoding format. DMLex is abstract, independent of any markup language or formalism. At the same time, DMLex has been designed to be easily and straightforwardly implementable in XML, JSON, as a relational database, and as a Semantic Web triplestore.</para>
+    <section>
+      <title>Modular structure of DMLex</title>
+      <para>The DMLex specification is divided into a core with several optional modules.</para>
+      <itemizedlist>
+        <listitem>
+          <para>
+            <olink targetptr="core">DMLex Core</olink> allows you to model the basic entries-and-sense structure if a monolingual lexicographic resource.</para>
+        </listitem>
+        <listitem>
+          <para>
+            <olink targetptr="xlingual">DMLex Crosslingual Module</olink> extends DMLex Core to model bilingual and multilingual lexicographic resources.</para>
+        </listitem>
+        <listitem>
+          <para>
+            <olink targetptr="linking">DMLex Linking Module</olink> extends DMLex Core and allows you to model various kinds of relations between entries, senses and other objects, including semantic relations such as synonymy and antonymy and presentational relations such as subentries and subsenses, both within a single lexicographic resource and across multiple lexicographic resources.</para>
+        </listitem>
+        <listitem>
+          <para>
+            <olink targetptr="inline">DMLex Inline Markup Module</olink> extends DMLex Core to allow the modelling of inline markup on various objects such as example sentences, including the modelling of collocations and corpus patterns.</para>
+        </listitem>
+      </itemizedlist>
+    </section>
+    <section>
+      <title>Schema formalism</title>
+      <para>DMLex models a lexicographic resource as a <emphasis role="strong">hierarchical list of objects</emphasis>. Each object has a name, a value and an optional list of child objects, each of which can in turn also have a <emphasis role="strong">name</emphasis>, a <emphasis role="strong">value</emphasis> and an optional list of child objects.</para>
+      <para>The data model is defined in this standard through the means of a formalism which defines, for each object: (1) what its name is, (2) what its value is supposed to be (from a list of predefined primitive types) and (3) which child objects it may contain, with what arities.</para>
+      <para>The arities of child objects are indicated with the following codes:</para>
+      <itemizedlist>
+        <listitem>
+          <para>
+            <code>(0..1)</code> zero or one</para>
+        </listitem>
+        <listitem>
+          <para>
+            <code>(0..n)</code> zero or one or more</para>
+        </listitem>
+        <listitem>
+          <para>
+            <code>(1..1)</code> exactly one</para>
+        </listitem>
+        <listitem>
+          <para>
+            <code>(1..n)</code> one or more</para>
+        </listitem>
+        <listitem>
+          <para>
+            <code>(2..n)</code> two or more</para>
+        </listitem>
+      </itemizedlist>
+      <para>The primitive types of the values of objects are given with the following codes:</para>
+      <itemizedlist>
+        <listitem>
+          <para>
+            <code>&lt;string&gt;</code> a non-empty string</para>
+        </listitem>
+        <listitem>
+          <para>
+            <code>&lt;stringOrEmpty&gt;</code> a string which may be empty</para>
+        </listitem>
+        <listitem>
+          <para>
+            <code>&lt;number&gt;</code> a positive integer number</para>
+        </listitem>
+        <listitem>
+          <para>
+            <code>&lt;id&gt;</code> an alphanumeric identifier</para>
+        </listitem>
+        <listitem>
+          <para>
+            <code>&lt;idref&gt;</code> a reference to something through its alphanumeric identifier</para>
+        </listitem>
+        <listitem>
+          <para>
+            <code>&lt;uri&gt;</code> a URI</para>
+        </listitem>
+        <listitem>
+          <para>
+            <code>&lt;langCode&gt;</code> an IETF language code</para>
+        </listitem>
+        <listitem>
+          <para>
+            <code>&lt;empty&gt;</code> nothing: the object serves only as a container for child objects</para>
+        </listitem>
+        <listitem>
+          <para>
+            <code>&lt;symbol&gt;</code> one of a specified finite number of values</para>
+        </listitem>
+      </itemizedlist>
+      <para>When the primitive type of a child object is absent, this means that the schema for objects of that name is defined elsewhere in the code.</para>
+    </section>
+    <section>
+      <title>Implementing DMLex</title>
+      <para>
+        DMLex is an abstract data model which can be implemented in many different programming environments and serialization languages.
+        In this document, we give recommended implementations
+        in <olink targetptr="XML_implementation">XML</olink>,
+        in <olink targetptr="JSON_implementation">JSON</olink>
+        and as a <olink targetptr="RDB_implementation">relational database</olink>.
+      </para>
+      <itemizedlist>
+        <listitem>
+          <para>
+            The XML and JSON implementations are intended as serializations for <emphasis>data exchange</emphasis>:
+            for encoding lexicographic data while the data is in transit out of one software system into another.
+            Examples of what the two serializations look like with real-world data are given in <xref linkend="examples"/>.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            The relational database implementation is intended as a representation for lexicographic data
+            while the data is being edited and maintained inside a software system, such as Dictionary Writing System (DWS).
+          </para>
+        </listitem>
+      </itemizedlist>
     </section>
   </section>
+  
   <!--Conformance section should go last, but it seems to make better sense here -->
   <xi:include href="conformance/conformance.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <!--
-  Need to decide if fragid mechanism will be defined or reused and on what level
-  <xi:include href="fragments/fragments.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  -->
-
+  
   <!-- core and modules -->
   <xi:include href="core/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="modules/bilingual/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="modules/internal-linking/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="modules/external-linking/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="modules/inline-markup/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="modules/etymology/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="modules/xlingual/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="modules/linking/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="modules/inline/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   
-  <!--Serializations includes -->
-  <xi:include href="serializations/XML/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="serializations/JSON/specification.xml"
-    xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="serializations/RDF/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <!-- examples -->
+  <xi:include href="examples/examples.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  
+  <!-- implementations -->
+  <xi:include href="implementations/XML/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="implementations/JSON/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="implementations/RDB/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+
   <appendix role="normative" id="references">
     <title>References</title>
     <para>This appendix contains the normative and informative references that are used in this

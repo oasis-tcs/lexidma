@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section>
+
+  <title>
+    <code>headwordTranslation</code>
+  </title>
+    <para>Represents one of possibly multiple translations of a headword. Examples: <xref linkend="ex08"/>, <xref linkend="ex11"/>.</para>
+  <programlisting>
+headwordTranslation: &lt;string&gt;
+    language: (0..1) &lt;langCode&gt;
+    listingOrder: (1..1) &lt;number&gt;
+    partOfSpeech: (0..n) &lt;string&gt;
+    label: (0..n)
+    pronunciation: (0..n)
+    inflectedForm: (0..n)
+</programlisting>
+  <section>
+    <title>XML</title>
+    <programlisting>
+&lt;headwordTranslation language="..."&gt;
+    &lt;text&gt;...&lt;/text&gt;
+    &lt;partOfSpeech.../&gt;
+    &lt;label.../&gt;
+    &lt;pronunciation.../&gt;
+    &lt;inflectedForm.../&gt;
+&lt;/headwordTranslation&gt;
+</programlisting>
+  </section>
+  <section>
+    <title>JSON</title>
+    <programlisting>
+{
+    "language": "...",
+    "text": "...",
+    "partsOfSpeech": [...],
+    "labels": [...],
+    "pronunciations": [...],
+    "inflectedForms": [...]
+}
+</programlisting>
+  </section>
+  <section>
+    <title>SQL</title>
+    <programlisting>
+create table headwordTranslations (
+    senseID int foreign key references senses(id),
+    language nvarchar(10) foreign key references translationLanguage(langCode),
+    text nvarchar(255),
+    listingOrder int,
+    id int primary key
+);
+alter table partsOfSpeech (
+    add headwordTranslationID int foreign key references headwordTranslations(id)
+);
+alter table labels (
+    add headwordTranslationID int foreign key references headwordTranslations(id)
+);
+alter table pronunciations (
+    add headwordTranslationID int foreign key references headwordTranslations(id)
+);
+alter table inflectedForms (
+    add headwordTranslationID int foreign key references headwordTranslations(id)
+)
+</programlisting>
+    <para>Comments</para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          <code>language</code> indicates the language of this translation. You can use the <code>translationLanguage</code> datatype to explain the meaning of the language codes that appear here and/or to constrain which language codes are allowed.</para>
+      </listitem>
+      <listitem>
+        <para>If ony one translation language exists in your lexicographic resource, then <code>language</code> can be left out.</para>
+      </listitem>
+      <listitem>
+        <para>For more comments see comments under <code>headwordTranslation</code> in the Bilingual Module.</para>
+      </listitem>
+    </itemizedlist>
+  </section>
+
+</section>

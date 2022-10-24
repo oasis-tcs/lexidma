@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section id="ex00">
+  <title>A basic entry</title>
+  <para>This is a basic, beginner-level example of how to use DMLex to represent a simple monolingual lexicographic resource consisting of one entry with two senses. It demonstrates some of the basic features of DMLex Core: how to subdivide a entry into senses, how attach various data such as definition, part-of-speech labels to entries and senses, and how to add labels to various objects such as senses and examples.</para>
+  <section>
+    <title>NVH</title>
+    <programlisting>
+lexicographicResource: my-dictionary
+    entry: abandon-verb
+        headword: abandon
+        partOfSpeech: verb
+        sense: abandon-verb-1
+            definition: to suddenly leave a place or a person
+            example: I'm sorry I abandoned you like that.
+            example: Abandon ship!
+                label: idiom
+        sense: abandon-verb-2
+            label: mostly-passive
+            definition: to stop supporting an idea
+            example: That theory has been abandoned.
+</programlisting>
+  </section>
+  <section>
+    <title>XML</title>
+    <programlisting>
+&lt;lexicographicResource id="my-dictionary"&gt;
+    &lt;entry id="abandon-verb"&gt;
+        &lt;headword&gt;abandon&lt;/headword&gt;
+        &lt;partOfSpeech value="verb"/&gt;
+        &lt;sense id="abandon-verb-1"&gt;
+            &lt;definition&gt;to suddenly leave a place or a person&lt;/definition&gt;
+            &lt;example&gt;
+                &lt;text&gt;I'm sorry I abandoned you like that.&lt;/text&gt;
+            &lt;/example&gt;
+            &lt;example&gt;
+                &lt;text&gt;Abandon ship!&lt;/text&gt;
+                &lt;label value="idiom"/&gt;
+            &lt;/example&gt;
+        &lt;sense id="abandon-verb-2"&gt;
+            &lt;label value="mostly-passive"/&gt;
+            &lt;definition&gt;to stop supporting an idea&lt;/definition&gt;
+            &lt;example&gt;
+                &lt;text&gt;That theory has been abandoned.&lt;/text&gt;
+            &lt;/example&gt;
+        &lt;/sense&gt;
+    &lt;/entry&gt;
+&lt;lexicographicResource&gt;
+</programlisting>
+  </section>
+  <section>
+    <title>JSON</title>
+    <programlisting>
+{
+    "id": "my-dictionary",
+    "entry": {
+        "id": "abandon-verb",
+        "headword": "abandon",
+        "partsOfSpeech": ["verb"],
+        "senses": [{
+            "id": "abandon-verb-1",
+            "definitions": [{
+                "text": "to suddenly leave a place or a person"
+            }],
+            "examples": [{
+                "text": "I'm sorry I abandoned you like that."
+            }, {
+                "text": "Abandon ship!",
+                "labels": ["idiom"]
+            }]
+        }, {
+            "id": "abandon-verb-2",
+            "labels": ["mostly-passive"],
+            "definitions": ["to stop supporting an idea"],
+            "examples": [{
+                "text": "That theory has been abandoned."
+            }]
+        }]
+    }
+}
+</programlisting>
+  </section>
+</section>

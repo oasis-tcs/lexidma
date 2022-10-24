@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section>
+
+  <title>
+    <code>member</code>
+  </title>
+  <para>Represents the fact that an object is a member of a relation.</para>
+  <programlisting>
+member: &lt;idref&gt;
+    role: (0..1) &lt;string&gt;
+    listingOrder: (1..1) &lt;number&gt;
+    reverseListingOrder: (1..1) &lt;number&gt;
+</programlisting>
+  <section>
+    <title>XML</title>
+    <programlisting>
+&lt;member idref="..." role="..." reverseListingOrder="..."/&gt;
+</programlisting>
+  </section>
+  <section>
+    <title>JSON</title>
+    <programlisting>
+{
+    "idref": "...",
+    "role": "...",
+    "reverseListingOrder": "..."
+}
+</programlisting>
+  </section>
+  <section>
+    <title>SQL</title>
+    <programlisting>
+create table members (
+    lexicographicResourceID int foreign key references lexicographicResources(id),
+    relationID int foreign key references relations(id),
+    memberEntryID int foreign key references entries(id),
+    memberSenseID int foreign key references senses(id),
+    memberCollocateMarkerID int foreign key references collocateMarkers(id),
+    role nvarchar(50),
+    listingOrder int,
+    reverseListingOrder int,
+    id int primary key
+)
+</programlisting>
+    <para>Comments</para>
+    <itemizedlist>
+      <listitem>
+        <para>The value of <code>member</code> is the ID of an object, such as an entry or a sense.</para>
+      </listitem>
+      <listitem>
+        <para>
+          <code>role</code> is an indication of the role the member has in this relation: whether it is the hypernym or the hyponym (in a hyperonymy/hyponymy relation), or whether it is one of the synonyms (in a synonymy relation), and so on. You can use <code>membershipRole</code> objects to explain those roles and to constrain which relations are allowed to contain which roles, what their object types are allowed to be (eg. entries or senses) and how many members with this role each relation is allowed to have.</para>
+      </listitem>
+      <listitem>
+        <para>
+          <code>listingOrder</code> is the position of this member among other members of the same relation. It should be respected when showing members of the relation to human users. This can be implicit from the serialization.</para>
+      </listitem>
+      <listitem>
+        <para>
+          <code>reverseListingOrder</code> is the position of this relation among other relations this member is involved in. It should be respected when showing the relations of this member to a human user. This can be implicit from the serialization.</para>
+      </listitem>
+    </itemizedlist>
+  </section>
+  
+</section>

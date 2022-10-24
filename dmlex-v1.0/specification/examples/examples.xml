@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section id="examples">
+  <title>Examples</title>
+  <para>This section gives examples which show how to use DMLex to model lexicographic resources. The examples are shown in three formalisms: NVH, XML and JSON.</para>
+  <para>Each example is shown in NVH first. NVH (Name-Value Hierarchy)[^1] is a concise serialization language designed for lexicographic data. NVH encodes data as a hierarchical list of names, values and children, which corresponds exactly to DMLex’s own data model. We use NVH here in order to demonstrate the object model at an abstract level.</para>
+  <para>After that, each example is shown in XML and JSON, two popular serialization languages. The XML and JSON encoding shown here follows DMLex’s own implementation guidance for XML and JSON.</para>
+  <xi:include href="examples/00.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="examples/01.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="examples/02.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="examples/03.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="examples/04.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="examples/05.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="examples/06.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="examples/07.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="examples/10.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="examples/08.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="examples/11.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="examples/09.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="examples/12.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="examples/13.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="examples/14.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="examples/15.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="examples/16.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="examples/17.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="examples/18.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="examples/19.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="examples/20.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="examples/21.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="examples/22.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</section>

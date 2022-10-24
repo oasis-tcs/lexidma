@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+<!--the document properties were transferred to "dockbook/dbgenent.mod"-->
+                         ]>
+<section id="RDB_implementation" role="normative | informative">
+  <title>DMLex relational database implementation</title>
+  
+  <section>
+    <title>Implementation principles</title>
+    <para>The SQL implementation of DMLex shown in this document follows these priciples:</para>
+    <itemizedlist>
+      <listitem>
+        <para>The <code>lexicographicResource</code> object is implemented as table. (Alternatively, it can left unimplemented if the database is going to contain only one lexicographic resource.)</para>
+      </listitem>
+      <listitem>
+        <para>Other objects with an arity other than <code>(0..1)</code> and <code>(1..1)</code> are implemented as tables.</para>
+      </listitem>
+      <listitem>
+        <para>The values of objects, and objects with an arity of <code>(0..1)</code> or <code>(1..1)</code> are implemented as columns in those tables.</para>
+      </listitem>
+      <listitem>
+        <para>The parent-child relation is implemented as a one-to-many relation between tables.</para>
+      </listitem>
+    </itemizedlist>
+  </section>
+
+
+
+
+
+</section>

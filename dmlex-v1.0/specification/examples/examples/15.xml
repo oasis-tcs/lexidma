@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section id="ex15">
+
+                         <title>Modelling variants</title>
+                         <para>We have two entries in our lexicographic resource, one for the headword "colour" and one for the headword "color". We want to create a relation to represent the fact that these are spelling variants.</para>
+                         <section>
+                                                  <title>NVH</title>
+                                                  <programlisting>
+lexicographicResource: my-dictionary
+    language: en
+    entry: colour
+        headword: colour
+        partOfSpeech: n
+        label: europeanSpelling
+        sense: colour-1
+            definition: red, blue, yellow etc.
+            example: What is your favourite colour?
+    entry: color
+        headword: color
+        partOfSpeech: n
+        label: americanSpelling
+    relation: vars
+        member: colour
+        member: color
+    relationType: vars
+        description: variants, words which differ only in spelling
+        memberRole:
+            memberType: entry
+            min: 2
+            action: navigate
+</programlisting>
+                         </section>
+                         <section>
+                                                  <title>XML</title>
+                                                  <programlisting>
+&lt;lexicographicResource id="my-dictionary" language="en"&gt;
+    &lt;entry id="colour"&gt;
+        &lt;headword&gt;colour&lt;/headword&gt;
+        &lt;partOfSpeech value="n"/&gt;
+        &lt;label value="europeanSpelling"/&gt;
+        &lt;sense id="colour-1"&gt;
+            &lt;definition&gt;red, blue, yellow etc.&lt;/definition&gt;
+            &lt;example&gt;&lt;text&gt;What is your favourite colour?&lt;/text&gt;&lt;/example&gt;
+        &lt;/sense&gt;
+    &lt;/entry&gt;
+    &lt;entry id="color"&gt;
+        &lt;headword&gt;color&lt;/headword&gt;
+        &lt;partOfSpeech value="n"/&gt;
+        &lt;label value="americanSpelling"/&gt;
+    &lt;/entry&gt;
+    &lt;relation type="vars"&gt;
+        &lt;member idref="colour"/&gt;
+        &lt;member idref="color"/&gt;
+    &lt;/relation&gt;
+    &lt;relationType type="vars"&gt;
+        &lt;description&gt;variants, words which differ only in spelling&lt;/description&gt;
+        &lt;memberRole memberType="entry" min="2" action="navigate"/&gt;
+    &lt;/relationType&gt;
+&lt;/lexicographicResource&gt;
+</programlisting>
+                         </section>
+                         <section>
+                                                  <title>JSON</title>
+                                                  <programlisting>
+{
+    "id": "my-dictionary",
+    "language": "en",
+    "entries": [{
+        "id": "colour",
+        "headword": "colour",
+        "partsOfSpeech": ["n"],
+        "labels": ["europeanSpelling"],
+        "senses": [{
+            "id": "colour-1",
+            "definitions": [{"text": "red, blue, yellow etc."}],
+            "examples": [{"text": "What is your favourite colour?"}]
+        }]
+    }, {
+        "id": "color",
+        "headword": "color",
+        "partsOfSpeech": ["n"],
+        "labels": ["americanSpelling"]
+    }],
+    "relations": [{
+        "type": "vars",
+        "members": [
+          {"idref": "colour"},
+          {"idref": "color"}
+        ]
+    }],
+    "relationTypes": [{
+        "type": "vars",
+        "description": "variants, words which differ only in spelling",
+        "memberRoles": [{
+            "memberType": "entry",
+            "min": 2,
+            "action": "navigate"
+        }]
+    }]
+}
+</programlisting>
+                         </section>
+                         <section>
+                                                  <title>Suggested rendering for human users</title>
+                                                  <blockquote>
+                                                                           <para>
+                                                                                                    <emphasis role="strong">colour</emphasis>
+                                                                                                    <emphasis>noun, European spelling</emphasis>
+                                                                           </para>
+                                                                           <itemizedlist>
+                                                                                                    <listitem>
+                                                                                                                             <para>red, blue, yellow etc. <emphasis>What is your favourite colour?</emphasis>
+                                                                                                                             </para>
+                                                                                                    </listitem>
+                                                                           </itemizedlist>
+                                                                           <para>see also: color</para>
+                                                  </blockquote>
+                         </section>
+                         
+
+</section>

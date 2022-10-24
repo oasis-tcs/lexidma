@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section id="xlingual">
+  <title>DMLex Crosslingual Module</title>
+  <para>DMLex's Multilingual Module extends the Core and turns a monolingual lexicographic resource into a bilingual or multilingual one. A bilingual or multilingual lexicographic resource is a lexicographic resource with multiple (two or more) languages: the headwords and the examples are in one language (called the <emphasis>headword language</emphasis> in DMLex) and their translations are in one or more other languages (called the <emphasis>translation languages</emphasis> in DMLex).</para>
+  <xi:include href="extensions/lexicographicResource.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objectTypes/translationLanguage.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="extensions/sense.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objectTypes/headwordTranslation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objectTypes/headwordExplanation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="extensions/example.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objectTypes/exampleTranslation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="extensions/tag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</section>

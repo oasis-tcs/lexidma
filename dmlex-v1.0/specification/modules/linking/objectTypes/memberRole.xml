@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section>
+
+  <title>
+    <code>memberRole</code>
+  </title>
+  <programlisting>
+memberRole: &lt;stringOrEmpty&gt;
+    description: (1..1) &lt;string&gt;
+    memberType: (1..1) &lt;symbol&gt;
+    min: (0..1) &lt;number&gt;
+    max: (0..1) &lt;number&gt;
+    action: (1..1) &lt;symbol&gt;
+    sameAs: (0..n)
+</programlisting>
+  <section>
+    <title>XML</title>
+    <programlisting>
+&lt;memberRole role="..." memberType="..." min="..." max="..." action="..."&gt;
+    &lt;description&gt;&lt;/description&gt;
+    &lt;sameAs.../&gt;
+&lt;/memberRole&gt;
+</programlisting>
+  </section>
+  <section>
+    <title>JSON</title>
+    <programlisting>
+{
+    "role": "...",
+    "description": "...",
+    "memberType": "...",
+    "min": "...",
+    "max": "...",
+    "action": "...",
+    "sameAs": [...]
+}
+</programlisting>
+  </section>
+  <section>
+    <title>SQL</title>
+    <programlisting>
+create table memberRoles (
+    relationTypeID int foreign key references relationTypes(id),
+    role varchar(50),
+    description varchar(255),
+    memberType varchar(50),
+    min int,
+    max int,
+    action varchar(50)
+);
+alter table sameAs (
+    add memberRoleID int foreign key references memberRoles(id)
+)
+</programlisting>
+    <para>Comments</para>
+    <itemizedlist>
+      <listitem>
+        <para>If the value is empty, then members having this role do not need to have a <code>role</code> property.</para>
+      </listitem>
+      <listitem>
+        <para>
+          <code>description</code> is a human-readable explanation of this member role.</para>
+      </listitem>
+      <listitem>
+        <para>
+          <code>memberType</code> is a restrictions on the types of objects that can have this role. The possible values are:</para>
+        <itemizedlist>
+          <listitem>
+            <para>
+              <code>sense</code>: the object that has this role must be a <code>sense</code>.</para>
+          </listitem>
+          <listitem>
+            <para>
+              <code>entry</code>: the object that has this role must be an <code>entry</code>.</para>
+          </listitem>
+          <listitem>
+            <para>
+              <code>itemMarker</code>: the object that has this role must be a <code>itemMarker</code>.</para>
+          </listitem>
+        </itemizedlist>
+      </listitem>
+      <listitem>
+        <para>
+          <code>min</code> is a number which says that relations of this type must have at least this many members with this role. If omitted then there is no lower limit (effectively, zero).</para>
+      </listitem>
+      <listitem>
+        <para>
+          <code>max</code> is a number which says that relations of this type may have at most this many members with this role. If omitted then there is no upper limit.</para>
+      </listitem>
+      <listitem>
+        <para>
+          <code>action</code> gives instructions on what machine agents should do when showing this relation to a human user (either on its own or in the context of one of its members). The possibe values are:</para>
+        <itemizedlist>
+          <listitem>
+            <para>
+              <code>embed</code>: Members that have this role should be shown in their entirety, i.e. the entire entry or the entire sense. This is suitable for the relation between entries and subentries, or senses and subsenses.</para>
+          </listitem>
+          <listitem>
+            <para>
+              <code>navigate</code>: Members that have this role should not be shown in their entirety, but a navigable (e.g. clickable) link should be provided. This is suitable for the relation between synonyms, for example.</para>
+          </listitem>
+          <listitem>
+            <para>
+              <code>none</code>: Members that have this role should not shown.</para>
+          </listitem>
+        </itemizedlist>
+      </listitem>
+    </itemizedlist>
+  </section>
+  
+</section>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section id="ex05">
+                         <title>How to use <code>tag</code></title>
+                         <para>This is an entry from a hypothetical Irish dictionary for the headword "folúsghlantóir" ("vacuum cleaner"). The meaning of the various tags used in this entry is explained in the <code>tag</code> objects.</para>
+                         <section>
+                                                  <title>NVH</title>
+                                                  <programlisting>
+lexicographicResource: my-irish-dictionary
+    language: ga
+    entry: folúsghlantóir-n
+        headword: folúsghlantóir
+        partOfSpeech: n-masc
+        inflectedForm: folúsghlantóra
+            inflectedTag: sg-gen
+        inflectedForm: folúsghlantóirí
+            inflectedTag: pl
+        sense: ...
+    tag: n-masc
+        description: noun, masculine
+        target: partOfSpeech
+    tag: n-fem
+        description: noun, feminine
+        target: partOfSpeech
+    tag: sg-gen
+        description: singular genitive
+        target: inflectedTag
+        partOfSpeechConstraint: n-masc
+        partOfSpeechConstraint: n-fem
+    tag: pl
+        description: plural
+        target: inflectedTag
+        partOfSpeechConstraint: n-masc
+        partOfSpeechConstraint: n-fem
+</programlisting>
+                         </section>
+                         <section>
+                                                  <title>XML</title>
+                                                  <programlisting>
+&lt;lexicographicResource id="my-irish-dictionary" language="ga"&gt;
+    &lt;entry id="folúsghlantóir-n"&gt;
+        &lt;headword&gt;folúsghlantóir&lt;/headword&gt;
+        &lt;partOfSpeech value="n-masc"/&gt;
+        &lt;inflectedForm inflectedTag="sg-gen"&gt;folúsghlantóra&lt;/inflectedForm&gt;
+        &lt;inflectedForm inflectedTag="pl"&gt;folúsghlantóirí&lt;/inflectedForm&gt;
+        &lt;sense&gt;...&lt;/sense&gt;
+    &lt;/entry&gt;
+    &lt;tag value="n-masc"&gt;
+        &lt;description&gt;noun, masculine&lt;/description&gt;
+        &lt;target value="partOfSPeech"/&gt;
+    &lt;/tag&gt;
+    &lt;tag value="n-fem"&gt;
+        &lt;description&gt;noun, feminine&lt;/description&gt;
+        &lt;target value="partOfSPeech"/&gt;
+    &lt;/tag&gt;
+    &lt;tag value="sg-gen"&gt;
+        &lt;description&gt;singular genitive&lt;/description&gt;
+        &lt;target value="inflectedTag"/&gt;
+        &lt;partOfSpeechConstraint value="n-masc"/&gt;
+        &lt;partOfSpeechConstraint value="n-fem"/&gt;
+    &lt;/tag&gt;
+    &lt;tag value="pl"&gt;
+        &lt;description&gt;plural&lt;/description&gt;
+        &lt;target value="inflectedTag"/&gt;
+        &lt;partOfSpeechConstraint value="n-masc"/&gt;
+        &lt;partOfSpeechConstraint value="n-fem"/&gt;
+    &lt;/tag&gt;
+&lt;/lexicographicResource&gt;
+</programlisting>
+                         </section>
+                         <section>
+                                                  <title>JSON</title>
+                                                  <programlisting>
+{
+    "id": "my-irish-dictionary",
+    "language": "ga",
+    "entries": [{
+        "id": "folúsghlantóir-n",
+        "headword": "folúsghlantóir",
+        "partsOfSpeech": ["n-masc"],
+        "inflectedForms": [{
+            "text": "folúsghlantóra",
+            "inflectedTag": "sg-gen",
+        }, {
+            "text": "folúsghlantóirí",
+            "inflectedTag": "pl",
+        }],
+        "senses": [...]
+    }],
+    "tags": [{
+        "value": "n-masc",
+        "description": "noun, masculine",
+        "targets": ["partOfSpeech"]
+    }, {
+        "value": "n-fem",
+        "description": "noun, feminine",
+        "targets": ["partOfSpeech"]
+    }, {
+        "value": "sg-gen",
+        "description": "singular genitive",
+        "targets": ["inflectedTag"],
+        "partOfSpeechConstraints": ["n-masc", "n-fem"]
+    }, {
+        "value": "pl",
+        "description": "plural",
+        "targets": ["inflectedTag"],
+        "partOfSpeechConstraints": ["n-masc", "n-fem"]
+    }]
+}
+</programlisting>
+                         </section>
+                         
+</section>

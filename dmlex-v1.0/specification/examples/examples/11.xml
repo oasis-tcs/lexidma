@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section id="ex11">
+
+                         <title>How to use <code>headwordTranslation</code> in a multilingual lexicographic resource</title>
+                         <para>This is an entry from a hypothetical Irish-multilingual dictionary.</para>
+                         <section>
+                                                  <title>NVH</title>
+                                                  <programlisting>
+entry: fómhar-n
+    headword: fómhar
+    sense: fómhar-n-1
+        headwordTranslation: autumn
+            language: en
+        headwordTranslation: fall
+            language: en
+        headwordTranslation: Herbst
+            language: de
+        headwordTranslation: podzim
+            language: cs
+    sense: fómhar-n-2
+        headwordTranslation: harvest
+            language: en
+        headwordTranslation: Ernte
+            language: de
+        headwordTranslation: sklizeň
+            language: cs
+</programlisting>
+                         </section>
+                         <section>
+                                                  <title>XML</title>
+                                                  <programlisting>
+&lt;entry id="fómhar-n"&gt;
+    &lt;headword&gt;fómhar&lt;/headword&gt;
+    &lt;sense id="fómhar-n-1"&gt;
+        &lt;headwordTranslation language="en"&gt;
+            &lt;text&gt;autumn&lt;/text&gt;
+        &lt;/headwordTranslation&gt;
+        &lt;headwordTranslation language="en"&gt;
+            &lt;text&gt;fall&lt;/text&gt;
+        &lt;/headwordTranslation&gt;
+        &lt;headwordTranslation language="de"&gt;
+            &lt;text&gt;Herbst&lt;/text&gt;
+        &lt;/headwordTranslation&gt;
+        &lt;headwordTranslation language="cs"&gt;
+            &lt;text&gt;podzim&lt;/text&gt;
+        &lt;/headwordTranslation&gt;
+    &lt;/sense&gt;
+    &lt;sense id="fómhar-n-2"&gt;
+        &lt;headwordTranslation language="en"&gt;
+            &lt;text&gt;harvest&lt;/text&gt;
+        &lt;/headwordTranslation&gt;
+        &lt;headwordTranslation language="de"&gt;
+            &lt;text&gt;Ernte&lt;/text&gt;
+        &lt;/headwordTranslation&gt;
+        &lt;headwordTranslation language="cs"&gt;
+            &lt;text&gt;sklizeň&lt;/text&gt;
+        &lt;/headwordTranslation&gt;
+    &lt;/sense&gt;
+&lt;/entry&gt;
+</programlisting>
+                         </section>
+                         <section>
+                                                  <title>JSON</title>
+                                                  <programlisting>
+{
+    "id": "fómhar-n",
+    "headword": "fómhar",
+    "senses": [{
+        "id": "fómhar-n-1",
+        "headwordTranslations": [{
+            "language": "en",
+            "text": "autumn"
+        }, {
+            "language": "en",
+            "text": "fall"
+        }, {
+            "language": "de",
+            "text": "Herbst"
+        }, {
+            "language": "cs",
+            "text": "podzim"
+        }]
+    }, {
+        "id": "fómhar-n-2",
+        "headwordTranslations": [{
+            "language": "en",
+            "text": "harvest"
+        }, {
+            "language": "de",
+            "text": "Ernte"
+        }, {
+            "language": "cs",
+            "text": "sklizeň"
+        }]
+    },]
+}
+</programlisting>
+                         </section>
+                         
+</section>

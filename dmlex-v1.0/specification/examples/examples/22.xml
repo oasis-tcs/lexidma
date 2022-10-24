@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section id="ex22">
+
+                         <title>Using <code>itemMarker</code></title>
+                         <section>
+                                                  <title>NVH</title>
+                                                  <programlisting>
+entry: autopsy
+    headword: autopsy
+    sense: autopsy-1
+        headwordTranslation: pitva
+        example: The coroner performed an autopsy.
+            headwordMarker: autopsy
+            itemMarker: performed
+                lemma: perform
+            exampleTranslation: Koroner provedl pitvu.
+                headwordMarker: pitvu
+                itemMarker: provedl
+                    lemma: provést
+</programlisting>
+                         </section>
+                         <section>
+                                                  <title>XML</title>
+                                                  <programlisting>
+&lt;entry id="autopsy"&gt;
+    &lt;headword&gt;autopsy&lt;/headword&gt;
+    &lt;sense id="autopsy-1"&gt;
+        &lt;headwordTranslation&gt;&lt;text&gt;pitva&lt;/text&gt;&lt;/headwordTranslation&gt;
+        &lt;example&gt;
+            &lt;text&gt;
+                The coroner &lt;itemMarker lemma="perform"&gt;performed&lt;/itemMarker&gt;
+                an &lt;headwordMarker&gt;autopsy&lt;/headwordMarker&gt;.
+            &lt;/text&gt;
+            &lt;exampleTranslation&gt;
+                &lt;text&gt;
+                    Koroner &lt;itemMarker lemma="provést"&gt;provedl&lt;/itemMarker&gt;
+                    &lt;headwordMarker&gt;pitvu&lt;/headwordMarker&gt;.
+                &lt;/text&gt;
+            &lt;/exampleTranslation&gt;
+        &lt;/example&gt;
+    &lt;/sense&gt;
+&lt;/entry&gt;
+</programlisting>
+                         </section>
+                         <section>
+                                                  <title>JSON</title>
+                                                  <programlisting>
+{
+  "id": "autopsy",
+  "headword": "autopsy",
+  "senses": [{
+    "id": "autopsy-1",
+    "headwordTranslations": [{"text": "pitva"}],
+    "examples": [{
+      "text": "The coroner performed an autopsy.",
+      "headwordMarkers": [
+        {"startIndex": 25, "endIndex": 32}
+      ],
+      "itemMarkers": [
+        {"startIndex": 12, "endIndex": 21, "lemma": "perform"}
+      ],
+      "exampleTranslations": [{
+        "text": "Koroner provedl pitvu.",
+        "headwordMarkers": [
+          {"startIndex": 16, "endIndex": 21}
+        ],
+        "itemMarkers": [
+          {"startIndex": 8, "endIndex": 15, "lemma": "provést"}
+        ],
+      }]
+    }]
+  }]
+}
+</programlisting>
+                         </section>
+</section>

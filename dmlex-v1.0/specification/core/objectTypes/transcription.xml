@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section>
+
+  <title>
+    <code>transcription</code>
+  </title>
+  <para>Represents the transcription of a pronunciation in some notation such as IPA.</para>
+  <programlisting>
+transcription: &lt;string&gt;
+    scheme: (0..1) &lt;langCode&gt;
+    listingOrder: (1..1) &lt;number&gt;
+</programlisting>
+  <section>
+    <title>XML</title>
+    <programlisting>
+&lt;transcription scheme="..."&gt;...&lt;/transcription&gt;
+</programlisting>
+  </section>
+  <section>
+    <title>JSON</title>
+    <programlisting>
+{
+    "text": "...",
+    "scheme": "..."
+}
+</programlisting>
+  </section>
+  <section>
+    <title>SQL</title>
+    <programlisting>
+create table transcriptions (
+    pronunciationID int foreign key references pronunciation(id),
+    text varchar(255),
+    scheme varchar(10),
+    listingOrder int,
+    id int primary key
+)
+</programlisting>
+  </section>
+  <section>
+    <title>Comments</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          <code>scheme</code> object identifies the transcription scheme used here. Example: <code>en-fonipa</code> for English IPA. This can be implicit if the lexicographic resource uses only one transcription scheme throughout.</para>
+      </listitem>
+      <listitem>
+        <para>
+          <code>listingOrder</code> is the position of this <code>transcription</code> object among other <code>transcription</code> objects of the same pronunciation. This can be implicit from the serialization.</para>
+      </listitem>
+    </itemizedlist>
+  </section>
+  
+</section>
