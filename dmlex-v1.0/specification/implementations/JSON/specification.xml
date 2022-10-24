@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+<!--the document properties were transferred to "dockbook/dbgenent.mod"-->
+                         ]>
+<section id="JSON_implementation" role="normative | informative">
+  <title>DMLex JSON implementation</title>
+
+  <section>
+    <title>Implementation principles</title>
+    <para>The XML implementation of DMLex shown in this document follows these priciples:</para>
+    <itemizedlist>
+      <listitem>
+        <para>The top-level <code>lexicographicResource</code> object is implemented as a JSON object: <code>{...}</code>.</para>
+      </listitem>
+      <listitem>
+        <para>All other objects are implemented as JSON name-value pairs inside their parent JSON object: <code>{"name": ...}</code>.</para>
+      </listitem>
+      <listitem>
+        <para>The values of objects are implemented:</para>
+        <itemizedlist>
+          <listitem>
+            <para>If the object has an arity of <code>(0..1)</code> or <code>(1..1)</code>:</para>
+            <itemizedlist>
+              <listitem>
+                <para>If the object cannot have any child objects: as a string or number.</para>
+              </listitem>
+              <listitem>
+                <para>If the object can have child objects: as a JSON object.</para>
+              </listitem>
+            </itemizedlist>
+          </listitem>
+          <listitem>
+            <para>If the object has any other arity:</para>
+            <itemizedlist>
+              <listitem>
+                <para>If the object cannot have any child objects: as an array of strings or numbers.</para>
+              </listitem>
+              <listitem>
+                <para>If the object can have child objects: as an array of JSON objects.</para>
+              </listitem>
+            </itemizedlist>
+          </listitem>
+        </itemizedlist>
+      </listitem>
+    </itemizedlist>
+  </section>
+
+
+
+
+
+</section>

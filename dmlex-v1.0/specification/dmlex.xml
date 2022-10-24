@@ -276,6 +276,7 @@
         guidance.</para>
     </legalnotice>
   </articleinfo>
+
   <section id="Introduction">
     <title>Introduction</title>
     <para>DMLex is a data model for modelling dictionaries (here called <emphasis>lexicographic resources</emphasis>) in computer applications such as dictionary writing systems.</para>
@@ -372,99 +373,34 @@
     </section>
     <section>
       <title>Implementing DMLex</title>
-      <para>DMLex is an abstract data model which can be implemented in many different programming environments and serialization languages. In this document, we give recommended implementations in XML, JSON and SQL. Examples of what such implementations look like with real-world data are given in <xref linkend="examples"/>.</para>
-      <section>
-        <title>Implementing DMLex in XML</title>
-        <para>The XML implementation of DMLex shown in this document follows these priciples:</para>
-        <itemizedlist>
-          <listitem>
-            <para>The top-level <code>lexicographicResource</code> object is implemented as an XML element.</para>
-          </listitem>
-          <listitem>
-            <para>All other objects are implemented as XML attributes of their parents, unless:</para>
-            <itemizedlist>
-              <listitem>
-                <para>the object has an arity other than <code>(0..1)</code> and <code>(1..1)</code>
-                </para>
-              </listitem>
-              <listitem>
-                <para>or the object can have child objects</para>
-              </listitem>
-              <listitem>
-                <para>or the object's value is human-readable text, such as a headword or a definition.</para>
-                <para>In such cases the object is implemented as a child XML element of its parent.</para>
-              </listitem>
-            </itemizedlist>
-          </listitem>
-        </itemizedlist>
-      </section>
-      <section>
-        <title>Implementing DMLex in JSON</title>
-        <para>The XML implementation of DMLex shown in this document follows these priciples:</para>
-        <itemizedlist>
-          <listitem>
-            <para>The top-level <code>lexicographicResource</code> object is implemented as a JSON object: <code>{...}</code>.</para>
-          </listitem>
-          <listitem>
-            <para>All other objects are implemented as JSON name-value pairs inside their parent JSON object: <code>{"name": ...}</code>.</para>
-          </listitem>
-          <listitem>
-            <para>The values of objects are implemented:</para>
-            <itemizedlist>
-              <listitem>
-                <para>If the object has an arity of <code>(0..1)</code> or <code>(1..1)</code>:</para>
-                <itemizedlist>
-                  <listitem>
-                    <para>If the object cannot have any child objects: as a string or number.</para>
-                  </listitem>
-                  <listitem>
-                    <para>If the object can have child objects: as a JSON object.</para>
-                  </listitem>
-                </itemizedlist>
-              </listitem>
-              <listitem>
-                <para>If the object has any other arity:</para>
-                <itemizedlist>
-                  <listitem>
-                    <para>If the object cannot have any child objects: as an array of strings or numbers.</para>
-                  </listitem>
-                  <listitem>
-                    <para>If the object can have child objects: as an array of JSON objects.</para>
-                  </listitem>
-                </itemizedlist>
-              </listitem>
-            </itemizedlist>
-          </listitem>
-        </itemizedlist>
-      </section>
-      <section>
-        <title>Implementing DMLex as a relational database</title>
-        <para>The SQL implementation of DMLex shown in this document follows these priciples:</para>
-        <itemizedlist>
-          <listitem>
-            <para>The <code>lexicographicResource</code> object is implemented as table. (Alternatively, it can left unimplemented if the database is going to contain only one lexicographic resource.)</para>
-          </listitem>
-          <listitem>
-            <para>Other objects with an arity other than <code>(0..1)</code> and <code>(1..1)</code> are implemented as tables.</para>
-          </listitem>
-          <listitem>
-            <para>The values of objects, and objects with an arity of <code>(0..1)</code> or <code>(1..1)</code> are implemented as columns in those tables.</para>
-          </listitem>
-          <listitem>
-            <para>The parent-child relation is implemented as a one-to-many relation between tables.</para>
-          </listitem>
-        </itemizedlist>
-      </section>
+      <para>
+        DMLex is an abstract data model which can be implemented in many different programming environments and serialization languages.
+        In this document, we give recommended implementations
+        in <olink targetptr="XML_implementation">XML</olink>,
+        in <olink targetptr="JSON_implementation">JSON</olink>
+        and as a <olink targetptr="RDB_implementation">relational database</olink>.
+      </para>
+      <itemizedlist>
+        <listitem>
+          <para>
+            The XML and JSON implementations are intended as serializations for <emphasis>data exchange</emphasis>:
+            for encoding lexicographic data while the data is in transit out of one software system into another.
+            Examples of what the two serializations look like with real-world data are given in <xref linkend="examples"/>.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            The relational database implementation is intended as a representation for lexicographic data
+            while the data is being edited and maintained inside a software system, such as Dictionary Writing System (DWS).
+          </para>
+        </listitem>
+      </itemizedlist>
     </section>
   </section>
   
   <!--Conformance section should go last, but it seems to make better sense here -->
   <xi:include href="conformance/conformance.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <!--
-  Need to decide if fragid mechanism will be defined or reused and on what level
-  <xi:include href="fragments/fragments.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  -->
-
+  
   <!-- core and modules -->
   <xi:include href="core/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="modules/xlingual/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
@@ -474,10 +410,10 @@
   <!-- examples -->
   <xi:include href="examples/examples.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   
-  <!-- serializations -->
-  <xi:include href="serializations/XML/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="serializations/JSON/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="serializations/RDF/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <!-- implementations -->
+  <xi:include href="implementations/XML/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="implementations/JSON/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="implementations/RDB/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 
   <appendix role="normative" id="references">
     <title>References</title>

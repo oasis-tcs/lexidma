@@ -248,6 +248,7 @@
         guidance.</para>
     </legalnotice>
   </articleinfo>
+
   <section id="Introduction">
     <title>Introduction</title>
     <para>DMLex is a data model for modelling dictionaries (here called <emphasis>lexicographic resources</emphasis>) in computer applications such as dictionary writing systems.</para>
@@ -344,89 +345,28 @@
     </section>
     <section>
       <title>Implementing DMLex</title>
-      <para>DMLex is an abstract data model which can be implemented in many different programming environments and serialization languages. In this document, we give recommended implementations in XML, JSON and SQL. Examples of what such implementations look like with real-world data are given in <xref linkend="examples"/>.</para>
-      <section>
-        <title>Implementing DMLex in XML</title>
-        <para>The XML implementation of DMLex shown in this document follows these priciples:</para>
-        <itemizedlist>
-          <listitem>
-            <para>The top-level <code>lexicographicResource</code> object is implemented as an XML element.</para>
-          </listitem>
-          <listitem>
-            <para>All other objects are implemented as XML attributes of their parents, unless:</para>
-            <itemizedlist>
-              <listitem>
-                <para>the object has an arity other than <code>(0..1)</code> and <code>(1..1)</code>
-                </para>
-              </listitem>
-              <listitem>
-                <para>or the object can have child objects</para>
-              </listitem>
-              <listitem>
-                <para>or the object's value is human-readable text, such as a headword or a definition.</para>
-                <para>In such cases the object is implemented as a child XML element of its parent.</para>
-              </listitem>
-            </itemizedlist>
-          </listitem>
-        </itemizedlist>
-      </section>
-      <section>
-        <title>Implementing DMLex in JSON</title>
-        <para>The XML implementation of DMLex shown in this document follows these priciples:</para>
-        <itemizedlist>
-          <listitem>
-            <para>The top-level <code>lexicographicResource</code> object is implemented as a JSON object: <code>{...}</code>.</para>
-          </listitem>
-          <listitem>
-            <para>All other objects are implemented as JSON name-value pairs inside their parent JSON object: <code>{"name": ...}</code>.</para>
-          </listitem>
-          <listitem>
-            <para>The values of objects are implemented:</para>
-            <itemizedlist>
-              <listitem>
-                <para>If the object has an arity of <code>(0..1)</code> or <code>(1..1)</code>:</para>
-                <itemizedlist>
-                  <listitem>
-                    <para>If the object cannot have any child objects: as a string or number.</para>
-                  </listitem>
-                  <listitem>
-                    <para>If the object can have child objects: as a JSON object.</para>
-                  </listitem>
-                </itemizedlist>
-              </listitem>
-              <listitem>
-                <para>If the object has any other arity:</para>
-                <itemizedlist>
-                  <listitem>
-                    <para>If the object cannot have any child objects: as an array of strings or numbers.</para>
-                  </listitem>
-                  <listitem>
-                    <para>If the object can have child objects: as an array of JSON objects.</para>
-                  </listitem>
-                </itemizedlist>
-              </listitem>
-            </itemizedlist>
-          </listitem>
-        </itemizedlist>
-      </section>
-      <section>
-        <title>Implementing DMLex as a relational database</title>
-        <para>The SQL implementation of DMLex shown in this document follows these priciples:</para>
-        <itemizedlist>
-          <listitem>
-            <para>The <code>lexicographicResource</code> object is implemented as table. (Alternatively, it can left unimplemented if the database is going to contain only one lexicographic resource.)</para>
-          </listitem>
-          <listitem>
-            <para>Other objects with an arity other than <code>(0..1)</code> and <code>(1..1)</code> are implemented as tables.</para>
-          </listitem>
-          <listitem>
-            <para>The values of objects, and objects with an arity of <code>(0..1)</code> or <code>(1..1)</code> are implemented as columns in those tables.</para>
-          </listitem>
-          <listitem>
-            <para>The parent-child relation is implemented as a one-to-many relation between tables.</para>
-          </listitem>
-        </itemizedlist>
-      </section>
+      <para>
+        DMLex is an abstract data model which can be implemented in many different programming environments and serialization languages.
+        In this document, we give recommended implementations
+        in <link linkend="XML_implementation">XML</link>,
+        in <link linkend="JSON_implementation">JSON</link>
+        and as a <link linkend="RDB_implementation">relational database</link>.
+      </para>
+      <itemizedlist>
+        <listitem>
+          <para>
+            The XML and JSON implementations are intended as serializations for <emphasis>data exchange</emphasis>:
+            for encoding lexicographic data while the data is in transit out of one software system into another.
+            Examples of what the two serializations look like with real-world data are given in <xref linkend="examples"/>.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            The relational database implementation is intended as a representation for lexicographic data
+            while the data is being edited and maintained inside a software system, such as Dictionary Writing System (DWS).
+          </para>
+        </listitem>
+      </itemizedlist>
     </section>
   </section>
   
@@ -535,11 +475,7 @@
     <note><para><firstterm>DMLex Instances</firstterm> cannot be conformant to this specification w/o being
             conformant to a specific serialization. </para></note>
 </section>
-  <!-- 
-  Need to decide if fragid mechanism will be defined or reused and on what level
-  <xi:include href="fragments/fragments.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-   -->
-
+  
   <!--  core and modules  -->
   <section id="core">
   <title>DMLex Core</title>
@@ -4434,29 +4370,44 @@ entry: autopsy
 </section>
 </section>
   
-  <!--  serializations  -->
-  <section id="XML_serialization" role="normative | informative">
-  <title>DMLex XML serialization</title>
-  <section id="XML_Intro">
-    <title>Introduction</title>
-    <para>This serialization defines ... ELABORATE</para>
-    <note>
-      <para>This serialization specification chiefly describes how... ELABORATE</para>
-    </note>
-    <warning>
-      <para>There is an important difference or similar ELABORATE</para>
-      <para>However, … ELABORATE. </para>
-      <para>Implementers who wish to better access... ELABORATE.</para>
-    </warning>
+  <!--  implementations  -->
+  <section id="XML_implementation" role="normative | informative">
+  <title>DMLex XML implementation</title>
+
+  <section>
+    <title>Implementation principles</title>
+    <para>The XML implementation of DMLex shown in this document follows these priciples:</para>
+    <itemizedlist>
+      <listitem>
+        <para>The top-level <code>lexicographicResource</code> object is implemented as an XML element.</para>
+      </listitem>
+      <listitem>
+        <para>All other objects are implemented as XML attributes of their parents, unless:</para>
+        <itemizedlist>
+          <listitem>
+            <para>the object has an arity other than <code>(0..1)</code> and <code>(1..1)</code>
+            </para>
+          </listitem>
+          <listitem>
+            <para>or the object can have child objects</para>
+          </listitem>
+          <listitem>
+            <para>or the object's value is human-readable text, such as a headword or a definition.</para>
+          </listitem>
+        </itemizedlist>
+        <para>In such cases the object is implemented as a child XML element of its parent.</para>
+      </listitem>
+    </itemizedlist>
   </section>
-  <section id="XML_artifacts">
+  
+  <section>
     <title>DMLex namespaces and validation artifacts for its XML serialization</title>
     <para>This
       <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>normative/informative<?oxy_custom_end ?>
       XML serialization of DMLex Version 1.0 makes use of all DMLex namespaces (both core and
       modules) namespaces: <code><ulink url="http://docs.oasis-open.org/lexidma/ns/dmlex-1.0">http://docs.oasis-open.org/lexidma/ns/dmlex-1.0</ulink></code>, and
-        <code>urn:oasis:names:tc:lexidma:module_01:1.0</code>, and
-        <code><?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>other namespace
+      <code>urn:oasis:names:tc:lexidma:module_01:1.0</code>, and
+      <code><?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>other namespace
         identifiers as necessary<?oxy_custom_end ?></code>. NAMESPACE SUPPORT IN XML WILL NEED </para>
     <para>Validation artifacts
       <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>[specify type of
@@ -4469,420 +4420,87 @@ entry: autopsy
       <para>. </para>
     </note>
   </section>
-  <section id="XML_Conformance">
-    <title>Conformance to the XML serialization of DMLex Version 1.0</title>
-    <note>
-      <para>Some data categories.... Other data categories …. The below conformance
-        statement is relevant for all data categories expressible in the XML serialization.. There is no interrelation between data
-        categories/ data categories are related as explained in ....</para>
-    </note>
-    <!--   -->
-    <itemizedlist>
-      <title>Processing Requirements</title>
-      <listitem>
-        <para>Conformant Processors <glossterm>must</glossterm> be able to use and compute at least
-          all the <firstterm>DMLex Core</firstterm> data categories encoded in <firstterm>DMlex XML
-            Instances</firstterm> as per certain conformance clauses
-          <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>ELABORATE<?oxy_custom_end ?></para>
-        <itemizedlist>
-          <listitem>
-            <para>Subrequirement, ELABORATE.</para>
-          </listitem>
-        </itemizedlist>
-      </listitem>
-      <listitem>
-        <para>Conformant <firstterm>Agents</firstterm>
-          <glossterm>must</glossterm> be DMLex Conformant in the sense of DMLex <link linkend="ApplicationConformance">Application Conformance</link> and also
-          <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>ELABORATE<?oxy_custom_end ?>.</para>
-        <para>In particular:</para>
-        <itemizedlist>
-          <listitem>
-            <para>Conformant <firstterm>Creators</firstterm>
-              <glossterm>must</glossterm> be capable of <firstterm>Creating</firstterm>
-              <firstterm>DMlex XML Instances</firstterm>
-              <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>ELABORATE<?oxy_custom_end ?>. </para>
-          </listitem>
-          <listitem>
-            <para> Conformant <firstterm>Enrichers</firstterm>
-              <glossterm>must</glossterm> be capable of <firstterm>Enriching</firstterm>
-              <firstterm>DMlex XML Instances</firstterm> with at least ELABORATE.. .</para>
-          </listitem>
-          <listitem>
-            <para>Conformant <firstterm>Modifiers</firstterm>
-              <glossterm>must</glossterm> be capable of updating at least one data category according to its own Constraints and Processing Requirements
-              as specified in ELABORATE.</para>
-          </listitem>
-          <listitem>
-            <para>Etc. ELABORATE.</para>
-          </listitem>
-        </itemizedlist>
-      </listitem>
-    </itemizedlist>
-  </section>
-  <section>
-    <title>Other XML serialization provisions</title>
-    <para> Other provisions.
-      <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>ELABORATE<?oxy_custom_end ?></para>
-    <warning>
-      <para><?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>ELABORATE<?oxy_custom_end ?>. </para>
-    </warning>
-    <note>
-      <para><?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>ELABORATE<?oxy_custom_end ?></para>
-      <para>Another informative pointer.</para>
-    </note>
-    <itemizedlist>
-      <title>Processing Requirements</title>
-      <listitem>
-        <para><firstterm>Writers</firstterm>
-          <glossterm>must</glossterm>
-          <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>ELABORATE<?oxy_custom_end ?>
-          in <firstterm>DMLex XML Instances</firstterm>.</para>
-      </listitem>
-    </itemizedlist>
-  </section>
-  
 
-  <section id="XML_elements">
-    <title>XML serialization elements</title>
-    <para>DMLex XML serialization uses the following elements:</para>
-    <para><?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>[comma separated list
-      of element olinks]<?oxy_custom_end ?></para>
-    <para> </para>
-    <section id="XML_diagram">
-      <title>Diagram</title>
-      <para>Legend:</para>
-      <simplelist type="vert">
-        <member>1 = one</member>
-        <member>+ = one or more</member>
-        <member>? = zero or one</member>
-        <member>* = zero, one or more</member>
-      </simplelist>
-      <programlisting format="linespecific">
-programlisting code to display the diagram
-    </programlisting>
-    </section>
-<!--  XML object includes  --> 
-    </section>
-  <section id="XML_attributes">
-    <title>XML serialization attributes</title>
-    <para>The XML serialization uses the following attributes:</para>
-      <para><?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>[comma separated list
-        of attribute olinks]<?oxy_custom_end ?></para>
-      <para> </para>
-    <!--  XML attribute includes from all namespaces  -->
-    
-  </section>
-  <section id="XML_example">
-    <title>Example file</title>
-    <example>
-      <title>Example of a couple of DMLex entries RDF serialized</title>
-      <para>The following example file includes markup related to several <firstterm>DMLex Core and Module</firstterm> data
-        categories.</para>
-      <programlisting format="linespecific">&lt;!-- example file metadata --&gt;
 
-programlisting code</programlisting>
-    </example>
-  </section>
+
+
+
+
 </section>
-  <section id="JSON_serialization" role="normative | informative">
-  <title>DMLex JSON serialization</title>
-  <section id="JSON_Intro">
-    <title>Introduction</title>
-    <para>This serialization defines ... ELABORATE</para>
-    <note>
-      <para>This serialization specification chiefly describes how... ELABORATE</para>
-    </note>
-    <warning>
-      <para>There is an important difference or similar ELABORATE</para>
-      <para>However, … ELABORATE. </para>
-      <para>Implementers who wish to better access... ELABORATE.</para>
-    </warning>
-  </section>
-  <section id="JSON_artifacts">
-    <title>DMLex namespaces and validation artifacts for its JSON serialization</title>
-    <para>This
-      <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>normative/informative<?oxy_custom_end ?>
-      JSON serialization of DMLex Version 1.0 makes use of all DMLex namespaces (both core and
-      modules) namespaces: <code><ulink url="http://docs.oasis-open.org/lexidma/ns/dmlex-1.0">http://docs.oasis-open.org/lexidma/ns/dmlex-1.0</ulink></code>, and
-        <code>urn:oasis:names:tc:lexidma:module_01:1.0</code>, and
-        <code><?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>other namespace
-        identifiers as necessary<?oxy_custom_end ?></code>. NAMESPACE SUPPORT IN JSON WILL NEED </para>
-    <para>Validation artifacts
-      <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>[specify type of
-      artifacts if any available at all]<?oxy_custom_end ?> for this RDF serialization are available
-      at <ulink url="http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename1.filetype1">http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename1.filetype1</ulink>, <ulink url="http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename2.filetype1">http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename2.filetype1</ulink>,
-      and <ulink url="http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename1.filetype2">http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename1.filetype2</ulink>. </para>
-    <note>
-      <para><?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>[Potential note
-        content]<?oxy_custom_end ?></para>
-      <para>. </para>
-    </note>
-  </section>
-  <section id="JSON_Conformance">
-    <title>Conformance to the JSON serialization of DMLex Version 1.0</title>
-    <note>
-      <para>Some data categories.... Other data categories …. The below conformance
-        statement is relevant for all data categories expressible in the JSON serialization.. There is no interrelation between data
-        categories/ data categories are related as explained in ....</para>
-    </note>
-    <!--   -->
-    <itemizedlist>
-      <title>Processing Requirements</title>
-      <listitem>
-        <para>Conformant Processors <glossterm>must</glossterm> be able to use and compute at least
-          all the <firstterm>DMLex Core</firstterm> data categories encoded in <firstterm>DMlex JSON
-            Instances</firstterm> as per certain conformance clauses
-          <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>ELABORATE<?oxy_custom_end ?></para>
-        <itemizedlist>
-          <listitem>
-            <para>Subrequirement, ELABORATE.</para>
-          </listitem>
-        </itemizedlist>
-      </listitem>
-      <listitem>
-        <para>Conformant <firstterm>Agents</firstterm>
-          <glossterm>must</glossterm> be DMLex Conformant in the sense of DMLex <link linkend="ApplicationConformance">Application Conformance</link> and also
-          <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>ELABORATE<?oxy_custom_end ?>.</para>
-        <para>In particular:</para>
-        <itemizedlist>
-          <listitem>
-            <para>Conformant <firstterm>Creators</firstterm>
-              <glossterm>must</glossterm> be capable of <firstterm>Creating</firstterm>
-              <firstterm>DMlex JSON Instances</firstterm>
-              <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>ELABORATE<?oxy_custom_end ?>. </para>
-          </listitem>
-          <listitem>
-            <para> Conformant <firstterm>Enrichers</firstterm>
-              <glossterm>must</glossterm> be capable of <firstterm>Enriching</firstterm>
-              <firstterm>DMlex JSON Instances</firstterm> with at least ELABORATE.. .</para>
-          </listitem>
-          <listitem>
-            <para>Conformant <firstterm>Modifiers</firstterm>
-              <glossterm>must</glossterm> be capable of updating at least one data category according to its own Constraints and Processing Requirements
-              as specified in ELABORATE.</para>
-          </listitem>
-          <listitem>
-            <para>Etc. ELABORATE.</para>
-          </listitem>
-        </itemizedlist>
-      </listitem>
-    </itemizedlist>
-  </section>
+  <section id="JSON_implementation" role="normative | informative">
+  <title>DMLex JSON implementation</title>
+
   <section>
-    <title>Other JSON serialization provisions</title>
-    <para> Other provisions.
-      <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>ELABORATE<?oxy_custom_end ?></para>
-    <warning>
-      <para><?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>ELABORATE<?oxy_custom_end ?>. </para>
-    </warning>
-    <note>
-      <para><?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>ELABORATE<?oxy_custom_end ?></para>
-      <para>Another informative pointer.</para>
-    </note>
+    <title>Implementation principles</title>
+    <para>The XML implementation of DMLex shown in this document follows these priciples:</para>
     <itemizedlist>
-      <title>Processing Requirements</title>
       <listitem>
-        <para><firstterm>Writers</firstterm>
-          <glossterm>must</glossterm>
-          <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>ELABORATE<?oxy_custom_end ?>
-          in <firstterm>DMLex JSON Instances</firstterm>.</para>
+        <para>The top-level <code>lexicographicResource</code> object is implemented as a JSON object: <code>{...}</code>.</para>
+      </listitem>
+      <listitem>
+        <para>All other objects are implemented as JSON name-value pairs inside their parent JSON object: <code>{"name": ...}</code>.</para>
+      </listitem>
+      <listitem>
+        <para>The values of objects are implemented:</para>
+        <itemizedlist>
+          <listitem>
+            <para>If the object has an arity of <code>(0..1)</code> or <code>(1..1)</code>:</para>
+            <itemizedlist>
+              <listitem>
+                <para>If the object cannot have any child objects: as a string or number.</para>
+              </listitem>
+              <listitem>
+                <para>If the object can have child objects: as a JSON object.</para>
+              </listitem>
+            </itemizedlist>
+          </listitem>
+          <listitem>
+            <para>If the object has any other arity:</para>
+            <itemizedlist>
+              <listitem>
+                <para>If the object cannot have any child objects: as an array of strings or numbers.</para>
+              </listitem>
+              <listitem>
+                <para>If the object can have child objects: as an array of JSON objects.</para>
+              </listitem>
+            </itemizedlist>
+          </listitem>
+        </itemizedlist>
       </listitem>
     </itemizedlist>
   </section>
-  
 
-  <section id="JSON_objects">
-    <title>JSON serialization objects</title>
-    <para>DMLex JSON serialization uses the following objects:</para>
-    <para><?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>[comma separated list
-      of object olinks]<?oxy_custom_end ?></para>
-    <para> </para>
-    <section id="JSON_diagram">
-      <title>Diagram</title>
-      <para>Legend:</para>
-      <simplelist type="vert">
-        <member>1 = one</member>
-        <member>+ = one or more</member>
-        <member>? = zero or one</member>
-        <member>* = zero, one or more</member>
-      </simplelist>
-      <programlisting format="linespecific">
-programlisting code to display the diagram
-    </programlisting>
-    </section>
-<!--  JSON object includes  --> 
-    </section>
-  <section id="JSON_properties">
-    <title>JSON serialization properties</title>
-    <para>The JSON serialization uses the following properties:</para>
-      <para><?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>[comma separated list
-        of properties olinks]<?oxy_custom_end ?></para>
-      <para> </para>
-    <!--  JSON attribute includes from all namespaces  -->
-    
-  </section>
-  <section id="JSON_example">
-    <title>Example file</title>
-    <example>
-      <title>Example of a couple of DMLex entries RDF serialized</title>
-      <para>The following example file includes markup related to several <firstterm>DMLex Core and Module</firstterm> data
-        categories.</para>
-      <programlisting format="linespecific">&lt;!-- example file metadata --&gt;
 
-programlisting code</programlisting>
-    </example>
-  </section>
+
+
+
 </section>
-  <section id="RDF_serialization" role="normative | informative">
-  <title>DMLex RDF serialization</title>
-  <section id="RDF_Intro">
-    <title>Introduction</title>
-    <para>This serialization defines ... ELABORATE</para>
-    <note>
-      <para>This serialization specification chiefly describes how... ELABORATE</para>
-    </note>
-    <warning>
-      <para>There is an important difference or similar ELABORATE</para>
-      <para>However, … ELABORATE. </para>
-      <para>Implementers who wish to better access... ELABORATE.</para>
-    </warning>
-  </section>
-  <section id="RDF_artifacts">
-    <title>DMLex namespaces and validation artifacts for its RDF serialization</title>
-    <para>This
-      <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>normative/informative<?oxy_custom_end ?>
-      RDF serialization of DMLex Version 1.0 makes use of all DMLex namespaces (both core and
-      modules) namespaces: <code><ulink url="http://docs.oasis-open.org/lexidma/ns/dmlex-1.0">http://docs.oasis-open.org/lexidma/ns/dmlex-1.0</ulink></code>, and
-        <code>urn:oasis:names:tc:lexidma:module_01:1.0</code>, and
-        <code><?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>other namespace
-        identifiers as necessary<?oxy_custom_end ?></code>.</para>
-    <para>Validation artifacts
-      <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>[specify type of
-      artifacts if any available at all]<?oxy_custom_end ?> for this JSON serialization are available
-      at <ulink url="http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename1.filetype1">http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename1.filetype1</ulink>, <ulink url="http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename2.filetype1">http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename2.filetype1</ulink>,
-      and <ulink url="http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename1.filetype2">http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename1.filetype2</ulink>. </para>
-    <note>
-      <para><?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>[Potential note
-        content]<?oxy_custom_end ?></para>
-      <para>. </para>
-    </note>
-  </section>
-  <section id="RDF_Conformance">
-    <title>Conformance to the RDF serialization of DMLex Version 1.0</title>
-    <note>
-      <para>Some Module 01 data categories.... Other data categories …. The below conformance
-        statement is only relevant for data categories .. There is no interrelation between data
-        categories/ data categories are related as explained in ....</para>
-    </note>
-    <!--   -->
-    <itemizedlist>
-      <title>Processing Requirements</title>
-      <listitem>
-        <para>Conformant Processors <glossterm>must</glossterm> be able to use and compute at least
-          all the <firstterm>DMLex Core</firstterm> data categories encoded in <firstterm>DMlex RDF
-            Instances</firstterm> as per certain conformance clauses
-          <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>ELABORATE<?oxy_custom_end ?></para>
-        <itemizedlist>
-          <listitem>
-            <para>Subrequirement, ELABORATE.</para>
-          </listitem>
-        </itemizedlist>
-      </listitem>
-      <listitem>
-        <para>Conformant <firstterm>Agents</firstterm>
-          <glossterm>must</glossterm> be DMLex Conformant in the sense of DMLex <link linkend="ApplicationConformance">Application Conformance</link> and also
-          <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>ELABORATE<?oxy_custom_end ?>.</para>
-        <para>In particular:</para>
-        <itemizedlist>
-          <listitem>
-            <para>Conformant <firstterm>Creators</firstterm>
-              <glossterm>must</glossterm> be capable of <firstterm>Creating</firstterm>
-              <firstterm>DMlex RDF Instances</firstterm>
-              <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>ELABORATE<?oxy_custom_end ?>. </para>
-          </listitem>
-          <listitem>
-            <para> Conformant <firstterm>Enrichers</firstterm>
-              <glossterm>must</glossterm> be capable of <firstterm>Enriching</firstterm>
-              <firstterm>DMlex Instances</firstterm> with at least one of the above specified Module
-              01 data categories.</para>
-          </listitem>
-          <listitem>
-            <para>Conformant <firstterm>Modifiers</firstterm>
-              <glossterm>must</glossterm> be capable of updating at least one of the above specified
-              Module 01 data categories according to its own Constraints and Processing Requirements
-              as specified in the Module 01 Module.</para>
-          </listitem>
-          <listitem>
-            <para>Etc. ELABORATE.</para>
-          </listitem>
-        </itemizedlist>
-      </listitem>
-    </itemizedlist>
-  </section>
-  <section>
-    <title>Other RDF serialization provisions</title>
-    <para> Other provisions.
-      <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>ELABORATE<?oxy_custom_end ?></para>
-    <warning>
-      <para><?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>ELABORATE<?oxy_custom_end ?>. </para>
-    </warning>
-    <note>
-      <para><?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>ELABORATE<?oxy_custom_end ?></para>
-      <para>Another informative pointer.</para>
-    </note>
-    <itemizedlist>
-      <title>Processing Requirements</title>
-      <listitem>
-        <para><firstterm>Writers</firstterm>
-          <glossterm>must</glossterm>
-          <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>ELABORATE<?oxy_custom_end ?>
-          in <firstterm>DMLex RDF Instances</firstterm>.</para>
-      </listitem>
-    </itemizedlist>
-  </section>
+  <section id="RDB_implementation" role="normative | informative">
+  <title>DMLex relational database implementation</title>
   
-
-  <section id="RDF_objects">
-    <title>RDF serialization objects</title>
-    <para>DMLex RDF serialization uses the following objects:</para>
-    <para><?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>[comma separated list
-      of object olinks]<?oxy_custom_end ?></para>
-    <para> </para>
-    <section id="RDF_diagram">
-      <title>Diagram</title>
-      <para>Legend:</para>
-      <simplelist type="vert">
-        <member>1 = one</member>
-        <member>+ = one or more</member>
-        <member>? = zero or one</member>
-        <member>* = zero, one or more</member>
-      </simplelist>
-      <programlisting format="linespecific">
-programlisting code to display the diagram
-    </programlisting>
-    </section>
-<!--  RDF object includes  --> 
-    </section>
-  <section id="RDF_attributes">
-    <title>RDF serialization attributes</title>
-    <para>The RDF serialization uses the following attributes:</para>
-      <para><?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>[comma separated list
-        of object olinks]<?oxy_custom_end ?></para>
-      <para> </para>
-    <!--  RDF attribute includes from all namespaces  -->
-    
+  <section>
+    <title>Implementation principles</title>
+    <para>The SQL implementation of DMLex shown in this document follows these priciples:</para>
+    <itemizedlist>
+      <listitem>
+        <para>The <code>lexicographicResource</code> object is implemented as table. (Alternatively, it can left unimplemented if the database is going to contain only one lexicographic resource.)</para>
+      </listitem>
+      <listitem>
+        <para>Other objects with an arity other than <code>(0..1)</code> and <code>(1..1)</code> are implemented as tables.</para>
+      </listitem>
+      <listitem>
+        <para>The values of objects, and objects with an arity of <code>(0..1)</code> or <code>(1..1)</code> are implemented as columns in those tables.</para>
+      </listitem>
+      <listitem>
+        <para>The parent-child relation is implemented as a one-to-many relation between tables.</para>
+      </listitem>
+    </itemizedlist>
   </section>
-  <section id="RDF_example">
-    <title>Example file</title>
-    <example>
-      <title>Example of a couple of DMLex entries RDF serialized</title>
-      <para>The following example file includes markup related to several <firstterm>DMLex Core and Module</firstterm> data
-        categories.</para>
-      <programlisting format="linespecific">&lt;!-- example file metadata --&gt;
 
-programlisting code</programlisting>
-    </example>
-  </section>
+
+
+
+
 </section>
 
   <appendix role="normative" id="references">
