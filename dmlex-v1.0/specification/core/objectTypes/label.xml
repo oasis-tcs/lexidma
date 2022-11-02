@@ -29,6 +29,15 @@ label: &lt;string&gt;
 </programlisting>
   </section>
   <section>
+      <title>RDF</title>
+      <programlisting>
+&lt;entry&gt; dmlex:label [
+  a dmlex:Label ;
+  rdf:value "..." ;
+  dmlex:listingOrder 1 ] .
+      </programlisting>
+  </section>
+  <section>
     <title>SQL</title>
     <programlisting>
 create table labels (

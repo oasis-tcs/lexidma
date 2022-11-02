@@ -42,6 +42,19 @@ lexicographicResource: &lt;id&gt;
 </programlisting>
   </section>
   <section>
+      <title>RDF</title>
+      <programlisting>
+@prefix dmlex: &lt;http://www.oasis-open.org/to-be-confirmed/dmlex&gt; .
+
+&lt;id&gt; a dmlex:Lexicographic Resource ;
+  dmlex:title "..." ;
+  dmlex:uri "..." ;
+  dmlex:language "..." ;
+  dmlex:entry &lt;entry1&gt; , ... ;
+  dmlex:tag ... .
+      </programlisting>
+  </section>
+  <section>
     <title>SQL</title>
     <programlisting>
 create table lexicographicResources (

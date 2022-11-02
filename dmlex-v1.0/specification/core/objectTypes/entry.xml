@@ -49,6 +49,19 @@ entry: &lt;id&gt;
 </programlisting>
   </section>
   <section>
+      <title>RDF</title>
+      <programlisting>
+&lt;id&gt; a dmlex:Entry ;
+  dmlex:headword "..." ;
+  dmlex:homographNumber ... ;
+  dmlex:partOfSpeech ... ;
+  dmlex:label ... ;
+  dmlex:pronunciation ... ;
+  dmlex:inflectedForm ... ;
+  dmlex:sense ... .
+  </programlisting>
+  </section>
+  <section>
     <title>SQL</title>
     <programlisting>
 create table entries (
