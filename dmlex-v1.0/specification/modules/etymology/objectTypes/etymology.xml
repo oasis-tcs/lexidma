@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section>
+  <title><literal>etymology</literal></title>
+  <para>
+      An <literal>etymology</literal> represents the historical derivation of
+      a word.
+  </para>
+  <para>
+   Children:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">etymDescription</literal> (zero or more)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">etymon</literal> (zero or more)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">multiEtymon</literal> (zero or more)
+      </para>
+    </listitem>
+  </itemizedlist>
+</section> 
