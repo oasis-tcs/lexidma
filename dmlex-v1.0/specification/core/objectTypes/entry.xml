@@ -6,63 +6,23 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
 ]>
 
-<section id="core_entry">
+<section>
+
   <title>
     <code>entry</code>
   </title>
   <para>Represents a dictionary entry. An entry contains information about one headword.</para>
-
-  <bridgehead>Contents</bridgehead>
-  <itemizedlist>
-    <listitem>
-      <para><literal>id (1..1) &lt;id&gt;</literal> An identifier of the entry, unique among all
-        lexicographic resources in the implementation.</para>
-    </listitem>
-    <listitem>
-      <para><literal>headword: (1..1) &lt;string&gt;</literal> The entry's headword.</para>
-    </listitem>
-    <listitem>
-      <para><literal>homographNumber: (0..1) &lt;number&gt;</literal> The entry's homograph number,
-        as a guide for humans to distinguish entries with the same headword.</para>
-    </listitem>
-    <listitem>
-      <para><literal><olink targetptr="core_partOfSpeech">partOfSpeech</olink>:
-        (0..n)</literal></para>
-    </listitem>
-    <listitem>
-      <para><literal><olink targetptr="core_label">label</olink>: (0..n)</literal></para>
-    </listitem>
-    <listitem>
-      <para><literal><olink targetptr="core_pronunciation">pronunciation</olink>:
-        (0..n)</literal></para>
-    </listitem>
-    <listitem>
-      <para><literal><olink targetptr="core_inflectedForm">inflectedForm</olink>:
-        (0..n)</literal></para>
-    </listitem>
-    <listitem>
-      <para><literal><olink targetptr="core_sense">sense</olink>: (0..n)</literal></para>
-    </listitem>
-  </itemizedlist>
-
-  <bridgehead>Comments</bridgehead>
-  <itemizedlist>
-    <listitem>
-      <para> The headword can be a single word, a multi-word expression, or any expression in the
-        source language which is being described by the entry.</para>
-    </listitem>
-    <listitem>
-      <para>Entries in DMLex do not have an explicit listing order. An application can imply a
-        listing order from a combination of the headword and the homograph number.</para>
-    </listitem>
-    <listitem>
-      <para>DMLex Core does not have a concept of "subentry". To model subentries (ie. entries
-        inside entries) in a lexicographic resource, you <glossterm>must</glossterm> use object types
-        from the <olink targetptr="linking">Linking Module</olink> for that.</para>
-    </listitem>
-  </itemizedlist>
-
-  <example>
+  <programlisting>
+entry: &lt;id&gt;
+    headword: (1..1) &lt;string&gt;
+    homographNumber: (0..1) &lt;number&gt;
+    partOfSpeech: (0..n)
+    label: (0..n)
+    pronunciation: (0..n)
+    inflectedForm: (0..n)
+    sense: (0..n)
+</programlisting>
+  <section>
     <title>XML</title>
     <programlisting>
 &lt;entry id="..." homographNumber="..."&gt;
@@ -73,26 +33,22 @@
     &lt;inflectedForm.../&gt;
     &lt;sense.../&gt;
 &lt;/entry&gt;
-  </programlisting>
-  </example>
-
-  <example>
+</programlisting>
+  </section>
+  <section>
     <title>JSON</title>
     <programlisting>
 {
     "id": "...",
     "headword": "...",
-    "homographNumber": "...",
-    "partsOfSpeech": [...],
     "labels": [...],
     "pronunciations": [...],
     "inflectedForms": [...],
     "senses": [...]
 }
-  </programlisting>
-  </example>
-
-  <example>
+</programlisting>
+  </section>
+  <section>
     <title>SQL</title>
     <programlisting>
 create table entries (
@@ -101,7 +57,22 @@ create table entries (
     headword varchar(255),
     homographNumber int
 )
-    </programlisting>
-  </example>
+</programlisting>
+  </section>
+  <section>
+    <title>Comments</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          <code>headword</code> contains entry's headword. The headword can be a single word, a multi-word expression, or any expression in the source language which is being described by the entry.</para>
+      </listitem>
+      <listitem>
+        <para>Entries in DMLex do not have an explicit listing order. An application can imply a listing order from a combination of the headword and the homograph number.</para>
+      </listitem>
+      <listitem>
+        <para>DMLex Core does not have a concept of 'subentry'. If you wish to have subentries (ie. entries inside entries) in your lexicographic resource you can use types from the Linking Module for that.</para>
+      </listitem>
+    </itemizedlist>
+  </section>
 
 </section>

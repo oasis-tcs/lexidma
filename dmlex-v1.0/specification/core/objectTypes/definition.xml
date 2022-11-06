@@ -6,7 +6,7 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
 ]>
 
-<section id="core_definition">
+<section>
 
   <title>
     <code>definition</code>
