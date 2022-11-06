@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
+                         ]>
+<section id="xml_entry">
+    <title>Element: <literal>&lt;entry&gt;</literal></title>
+    <para>Implements the <olink targetptr="core_entry">entry</olink> data type.</para>
+
+    <bridgehead>Attributes:</bridgehead>
+    <itemizedlist>
+        <listitem>
+            <para><literal>@id</literal> <glossterm>required</glossterm></para>
+        </listitem>
+        <listitem>
+            <para><literal>@homographNumber</literal> <glossterm>optional</glossterm></para>
+        </listitem>
+    </itemizedlist>
+    
+    <bridgehead>Child elements</bridgehead>
+    <itemizedlist>
+        <listitem>
+            <para><literal>&lt;headword&gt;</literal> <glossterm>required</glossterm></para>
+        </listitem>
+        <listitem>
+            <para><literal><olink targetptr="xml_partOfSpeech">&lt;partOfSpeech&gt;</olink></literal> zero or more</para>
+        </listitem>
+        <listitem>
+            <para><literal><olink targetptr="xml_label">&lt;label&gt;</olink></literal> zero or more</para>
+        </listitem>
+        <listitem>
+            <para><literal><olink targetptr="xml_pronunciation">&lt;pronunciation&gt;</olink></literal> zero or more</para>
+        </listitem>
+        <listitem>
+            <para><literal><olink targetptr="xml_inflectedForm">&lt;inflectedForm&gt;</olink></literal> zero or more</para>
+        </listitem>
+        <listitem>
+            <para><literal><olink targetptr="xml_sense">&lt;sense&gt;</olink></literal> zero or more</para>
+        </listitem>
+    </itemizedlist>
+    
+    <bridgehead>Child elements if implementing the <olink targetptr="etymology">Etymology Module</olink></bridgehead>
+    <itemizedlist>
+        <listitem>
+            <para><literal><olink targetptr="xml_etymology">&lt;etymology&gt;</olink></literal> zero or more</para>
+        </listitem>
+    </itemizedlist>
+    
+</section>
