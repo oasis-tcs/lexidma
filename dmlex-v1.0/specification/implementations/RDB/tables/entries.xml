@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
+                         ]>
+<section id="rdb_entriez">
+    <title>Table: <literal>entries</literal></title>
+    <para>Implements the <olink targetptr="core_entry">entry</olink> data type.</para>
+
+    <bridgehead>Columns</bridgehead>
+    <itemizedlist>
+        <listitem>
+            <para><literal>lexicographicResourceID int foreign key references
+                    lexicographicResource(id)</literal></para>
+        </listitem>
+        <listitem>
+            <para><literal>id int</literal>, primary key</para>
+        </listitem>
+        <listitem>
+            <para><literal>headword varchar(255)</literal></para>
+        </listitem>
+        <listitem>
+            <para><literal>homographNumber int</literal></para>
+        </listitem>
+    </itemizedlist>
+
+    <bridgehead>Comment</bridgehead>
+    <para> If the implementation contains only one lexicographic resource, then the column
+            <literal>lexicographicResourceID</literal>
+        <glossterm>may</glossterm> remain unimplemented. </para>
+
+</section>

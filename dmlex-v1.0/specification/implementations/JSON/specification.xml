@@ -49,7 +49,9 @@
     </itemizedlist>
   </section>
 
-
+  <xi:include href="classes/lexicographicResource.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="classes/entry.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  
 
 
 
