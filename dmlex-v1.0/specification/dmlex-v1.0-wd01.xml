@@ -480,20 +480,64 @@
   <section id="core">
   <title>DMLex Core</title>
   <para>The DMLex Core provides data types for modelling monolingual dictionaries (called <emphasis>lexicographic resources</emphasis> in DMLex) where headwords, definitions and examples are all in one and the same language. DMLex Core gives you the tools you need to model simple dictionary entries which consist of headwords, part-of-speech labels, senses, definitions and so on.</para>
-  <section>
+  <section id="core_lexicographicResource">
   <title>
     <code>lexicographicResource</code>
   </title>
-  <para>Represents a dictionary. A lexicographic resource is a dataset which can be used, viewed and read by humans as a dictionary and – simultaneously – ingested, processed and understood by software agents as a machine-readable database. Note that the correct name of this data type in DMLex is <emphasis>lexicographic</emphasis>, not <emphasis>lexical</emphasis>, resource.</para>
-  <programlisting format="linespecific">
-lexicographicResource: &lt;id&gt;
-    title: (0..1) &lt;string&gt;
-    uri: (0..1) &lt;uri&gt;
-    language: (1..1) &lt;langCode&gt;
-    entry: (0..n)
-    tag: (0..n)
-</programlisting>
-  <section>
+  <para>Represents a dictionary. A lexicographic resource is a dataset which can be used, viewed and
+    read by humans as a dictionary and – simultaneously – ingested, processed and understood by
+    software agents as a machine-readable database. Note that the correct name of this data type in
+    DMLex is <emphasis>lexicographic</emphasis>, not <emphasis>lexical</emphasis>, resource.</para>
+
+  <bridgehead>Contents</bridgehead>
+  <itemizedlist>
+    <listitem>
+      <para><literal moreinfo="none">id (1..1) &lt;id&gt;</literal> An identifier of the lexicographic resource,
+        unique among all lexicographic resources in the implementation. If the implementation
+        contains only one lexicographic resource then <literal moreinfo="none">id</literal>
+        <glossterm>may</glossterm> be understood as implicit and <glossterm>may</glossterm> be left
+        unimplemented.</para>
+    </listitem>
+    <listitem>
+      <para><literal moreinfo="none">title: (0..1) &lt;string&gt;</literal> A human-readable title of the
+        lexicographic resource.</para>
+    </listitem>
+    <listitem>
+      <para><literal moreinfo="none">uri: (0..1) &lt;uri&gt;</literal> The URI of the lexicographic resource,
+        identifying it on the Web.</para>
+    </listitem>
+    <listitem>
+      <para><literal moreinfo="none">language: (1..1) &lt;langCode&gt;</literal> The language that this lexicographic
+        resource describes.</para>
+    </listitem>
+    <listitem>
+      <para><literal moreinfo="none"><link linkend="core_entry">entry</link>: (0..n)</literal></para>
+    </listitem>
+    <listitem>
+      <para><literal moreinfo="none"><link linkend="core_tag">tag</link>: (0..n)</literal></para>
+    </listitem>
+  </itemizedlist>
+
+  <bridgehead>Comments</bridgehead>
+  <itemizedlist>
+    <listitem>
+      <para>
+        <code>language</code> identifies the language of headwords, definitions and examples in
+        this dictionary. DMLex is based on the assumption that all headwords in a lexicographic
+        resource are in the same language, and that definitions and examples, if any occur in the
+        lexicographic resource, are in that language too. The <code>language</code> child object
+        of <code>lexicographicResource</code> informs potential users of the lexicographic
+        resource which language that is.</para>
+    </listitem>
+    <listitem>
+      <para>The main role of a lexicographic resource is to contain entries (<code>entry</code>
+        objects). The other object type that can optionally occur inside a
+        <code>lexicographicResource</code>, <code>tag</code>, is for lists of
+        look-up values such as part-of-speech labels.</para>
+    </listitem>
+  </itemizedlist>
+  
+  <example>
     <title>XML</title>
     <programlisting format="linespecific">
 &lt;lexicographicResource id="..." uri="..." language="..."&gt;
@@ -501,9 +545,10 @@ lexicographicResource: &lt;id&gt;
     &lt;entry.../&gt;
     &lt;tag.../&gt;
 &lt;/lexicographicResource&gt;
-</programlisting>
-  </section>
-  <section>
+    </programlisting>
+  </example>
+  
+  <example>
     <title>JSON</title>
     <programlisting format="linespecific">
 {
@@ -513,48 +558,79 @@ lexicographicResource: &lt;id&gt;
     "entries": [...],
     "tags": [...]
 }
-</programlisting>
-  </section>
-  <section>
+    </programlisting>
+  </example>
+  
+  <example>
     <title>SQL</title>
     <programlisting format="linespecific">
 create table lexicographicResources (
     id int primary key,
     title varchar(255),
+    uri varchar(255),
     language varchar(10)
 )
-</programlisting>
-  </section>
-  <section>
-    <title>Comments</title>
-    <itemizedlist>
-      <listitem>
-        <para>
-          <code>language</code> identifies the language of headwords, definitions and examples in this dictionary. DMLex is based on the assumption that all headwords in a lexicographic resource are in the same language, and that definitions and examples, if any occur in the lexicographic resource, are in that language too. The <code>language</code> child object of <code>lexicographicResource</code> informs potential users of the lexicographic resource which language that is.</para>
-      </listitem>
-      <listitem>
-        <para>The main role of a lexicographic resource is to contain entries (<code>entry</code> objects). The other two object types that can optionally occur as children of a <code>lexicographicResource</code>, especially <code>tag</code>, are for lists of look-up values such as part-of-speech labels.</para>
-      </listitem>
-    </itemizedlist>
-  </section>
-</section>
-  <section>
+    </programlisting>
+  </example>
 
+</section>
+  <section id="core_entry">
   <title>
     <code>entry</code>
   </title>
   <para>Represents a dictionary entry. An entry contains information about one headword.</para>
-  <programlisting format="linespecific">
-entry: &lt;id&gt;
-    headword: (1..1) &lt;string&gt;
-    homographNumber: (0..1) &lt;number&gt;
-    partOfSpeech: (0..n)
-    label: (0..n)
-    pronunciation: (0..n)
-    inflectedForm: (0..n)
-    sense: (0..n)
-</programlisting>
-  <section>
+
+  <bridgehead>Contents</bridgehead>
+  <itemizedlist>
+    <listitem>
+      <para><literal moreinfo="none">id (1..1) &lt;id&gt;</literal> An identifier of the entry, unique among all
+        lexicographic resources in the implementation.</para>
+    </listitem>
+    <listitem>
+      <para><literal moreinfo="none">headword: (1..1) &lt;string&gt;</literal> The entry's headword.</para>
+    </listitem>
+    <listitem>
+      <para><literal moreinfo="none">homographNumber: (0..1) &lt;number&gt;</literal> The entry's homograph number,
+        as a guide for humans to distinguish entries with the same headword.</para>
+    </listitem>
+    <listitem>
+      <para><literal moreinfo="none"><link linkend="core_partOfSpeech">partOfSpeech</link>:
+        (0..n)</literal></para>
+    </listitem>
+    <listitem>
+      <para><literal moreinfo="none"><link linkend="core_label">label</link>: (0..n)</literal></para>
+    </listitem>
+    <listitem>
+      <para><literal moreinfo="none"><link linkend="core_pronunciation">pronunciation</link>:
+        (0..n)</literal></para>
+    </listitem>
+    <listitem>
+      <para><literal moreinfo="none"><link linkend="core_inflectedForm">inflectedForm</link>:
+        (0..n)</literal></para>
+    </listitem>
+    <listitem>
+      <para><literal moreinfo="none"><link linkend="core_sense">sense</link>: (0..n)</literal></para>
+    </listitem>
+  </itemizedlist>
+
+  <bridgehead>Comments</bridgehead>
+  <itemizedlist>
+    <listitem>
+      <para> The headword can be a single word, a multi-word expression, or any expression in the
+        source language which is being described by the entry.</para>
+    </listitem>
+    <listitem>
+      <para>Entries in DMLex do not have an explicit listing order. An application can imply a
+        listing order from a combination of the headword and the homograph number.</para>
+    </listitem>
+    <listitem>
+      <para>DMLex Core does not have a concept of "subentry". To model subentries (ie. entries
+        inside entries) in a lexicographic resource, you <glossterm>must</glossterm> use object types
+        from the <link linkend="linking">Linking Module</link> for that.</para>
+    </listitem>
+  </itemizedlist>
+
+  <example>
     <title>XML</title>
     <programlisting format="linespecific">
 &lt;entry id="..." homographNumber="..."&gt;
@@ -565,22 +641,26 @@ entry: &lt;id&gt;
     &lt;inflectedForm.../&gt;
     &lt;sense.../&gt;
 &lt;/entry&gt;
-</programlisting>
-  </section>
-  <section>
+  </programlisting>
+  </example>
+
+  <example>
     <title>JSON</title>
     <programlisting format="linespecific">
 {
     "id": "...",
     "headword": "...",
+    "homographNumber": "...",
+    "partsOfSpeech": [...],
     "labels": [...],
     "pronunciations": [...],
     "inflectedForms": [...],
     "senses": [...]
 }
-</programlisting>
-  </section>
-  <section>
+  </programlisting>
+  </example>
+
+  <example>
     <title>SQL</title>
     <programlisting format="linespecific">
 create table entries (
@@ -589,26 +669,11 @@ create table entries (
     headword varchar(255),
     homographNumber int
 )
-</programlisting>
-  </section>
-  <section>
-    <title>Comments</title>
-    <itemizedlist>
-      <listitem>
-        <para>
-          <code>headword</code> contains entry's headword. The headword can be a single word, a multi-word expression, or any expression in the source language which is being described by the entry.</para>
-      </listitem>
-      <listitem>
-        <para>Entries in DMLex do not have an explicit listing order. An application can imply a listing order from a combination of the headword and the homograph number.</para>
-      </listitem>
-      <listitem>
-        <para>DMLex Core does not have a concept of 'subentry'. If you wish to have subentries (ie. entries inside entries) in your lexicographic resource you can use types from the Linking Module for that.</para>
-      </listitem>
-    </itemizedlist>
-  </section>
+    </programlisting>
+  </example>
 
 </section>
-  <section>
+  <section id="core_partOfSpeech">
 
   <title>
     <code>partOfSpeech</code>
@@ -659,7 +724,7 @@ create table partsOfSpeech (
   </section>
   
 </section>
-  <section>
+  <section id="core_sense">
 
   <title>
     <code>sense</code>
@@ -731,7 +796,7 @@ create table senses (
   
 
 </section>
-  <section>
+  <section id="core_definition">
 
   <title>
     <code>definition</code>
@@ -783,7 +848,7 @@ create table definitions (
   </section>
   
 </section>
-  <section>
+  <section id="core_inflectedForm">
 
   <title>
     <code>inflectedForm</code>
@@ -850,7 +915,7 @@ create table inflectedForms (
   </section>
   
 </section>
-  <section>
+  <section id="core_label">
 
   <title>
     <code>label</code>
@@ -904,7 +969,7 @@ create table labels (
   </section>
 
 </section>
-  <section>
+  <section id="core_pronunciation">
 
   <title>
     <code>pronunciation</code>
@@ -966,7 +1031,7 @@ create table pronunciations (
   </section>
   
 </section>
-  <section>
+  <section id="core_transcription">
 
   <title>
     <code>transcription</code>
@@ -1019,7 +1084,7 @@ create table transcriptions (
   </section>
   
 </section>
-  <section>
+  <section id="core_example">
 
   <title>
     <code>example</code>
@@ -1090,7 +1155,7 @@ create table examples (
   </section>
   
 </section>
-  <section>
+  <section id="core_tag">
 
   <title>
     <code>tag</code>
@@ -1191,7 +1256,7 @@ create table tags (
   </section>
   
 </section>
-  <section>
+  <section id="core_sameAs">
 
   <title>
     <code>sameAs</code>
@@ -4402,25 +4467,123 @@ entry: autopsy
   
   <section>
     <title>DMLex namespaces and validation artifacts for its XML serialization</title>
-    <para>This
-      <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>normative/informative<?oxy_custom_end ?>
-      XML serialization of DMLex Version 1.0 makes use of all DMLex namespaces (both core and
-      modules) namespaces: <code><ulink url="http://docs.oasis-open.org/lexidma/ns/dmlex-1.0">http://docs.oasis-open.org/lexidma/ns/dmlex-1.0</ulink></code>, and
+    <para>TBD...</para>
+    <!-- <para>This
+      <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>normative/informative<?oxy_custom_end?>
+      XML serialization of DMLex Version &version; makes use of all DMLex namespaces (both core and
+      modules) namespaces: <code><ulink
+        url="http://docs.oasis-open.org/lexidma/ns/dmlex-&cschversion;"
+        >http://docs.oasis-open.org/lexidma/ns/dmlex-&cschversion;</ulink></code>, and
       <code>urn:oasis:names:tc:lexidma:module_01:1.0</code>, and
       <code><?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>other namespace
-        identifiers as necessary<?oxy_custom_end ?></code>. NAMESPACE SUPPORT IN XML WILL NEED </para>
+        identifiers as necessary<?oxy_custom_end?></code>. NAMESPACE SUPPORT IN XML WILL NEED </para>
     <para>Validation artifacts
       <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>[specify type of
-      artifacts if any available at all]<?oxy_custom_end ?> for this RDF serialization are available
-      at <ulink url="http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename1.filetype1">http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename1.filetype1</ulink>, <ulink url="http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename2.filetype1">http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename2.filetype1</ulink>,
-      and <ulink url="http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename1.filetype2">http://docs.oasis-open.org/lexidma/dmlex/v1.0/wd01/schemas/filename1.filetype2</ulink>. </para>
+      artifacts if any available at all]<?oxy_custom_end?> for this RDF serialization are available
+      at <ulink url="&this-loc;/schemas/filename1.filetype1"
+        >&this-loc;/schemas/filename1.filetype1</ulink>, <ulink
+          url="&this-loc;/schemas/filename2.filetype1">&this-loc;/schemas/filename2.filetype1</ulink>,
+      and <ulink url="&this-loc;/schemas/filename1.filetype2"
+        >&this-loc;/schemas/filename1.filetype2</ulink>. </para>
     <note>
       <para><?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>[Potential note
-        content]<?oxy_custom_end ?></para>
+        content]<?oxy_custom_end?></para>
       <para>. </para>
-    </note>
+    </note> -->
   </section>
 
+  <section id="xml_lexicographicResource">
+    <title>Element: <literal moreinfo="none">&lt;lexicographicResource&gt;</literal></title>
+    <para>Implements the <link linkend="core_lexicographicResource">lexicographicResource</link> data type.</para>
+
+    <bridgehead>Attributes:</bridgehead>
+    <itemizedlist>
+        <listitem>
+            <para><literal moreinfo="none">@id</literal> <glossterm>required</glossterm></para>
+        </listitem>
+        <listitem>
+            <para><literal moreinfo="none">@title</literal> <glossterm>optional</glossterm></para>
+        </listitem>
+        <listitem>
+            <para><literal moreinfo="none">@uri</literal> <glossterm>optional</glossterm></para>
+        </listitem>
+        <listitem>
+            <para><literal moreinfo="none">@language</literal> <glossterm>required</glossterm></para>
+        </listitem>
+    </itemizedlist>
+    
+    <bridgehead>Child elements</bridgehead>
+    <itemizedlist>
+        <listitem>
+            <para><literal moreinfo="none"><link linkend="xml_entry">&lt;entry&gt;</link></literal> zero or more</para>
+        </listitem>
+        <listitem>
+            <para><literal moreinfo="none"><link linkend="xml_tag">&lt;tag&gt;</link></literal> zero or more</para>
+        </listitem>
+    </itemizedlist>
+    
+    <bridgehead>Child elements if implementing the <link linkend="xlingual">Crosslingual Module</link></bridgehead>
+    <itemizedlist>
+        <listitem>
+            <para><literal moreinfo="none"><link linkend="xml_translationLanguage">&lt;translationLanguage&gt;</link></literal> one or more</para>
+        </listitem>
+    </itemizedlist>
+            
+    <bridgehead>Child elements if implementing the <link linkend="linking">Linking Module</link></bridgehead>
+    <itemizedlist>
+        <listitem>
+            <para><literal moreinfo="none"><link linkend="xml_relation">&lt;relation&gt;</link></literal> zero or more </para>        </listitem>
+        <listitem>
+            <para><literal moreinfo="none"><link linkend="xml_relationType">&lt;relationType&gt;</link></literal> zero or more</para>
+        </listitem>
+    </itemizedlist>
+    
+</section>
+  <section id="xml_entry">
+    <title>Element: <literal moreinfo="none">&lt;entry&gt;</literal></title>
+    <para>Implements the <link linkend="core_entry">entry</link> data type.</para>
+
+    <bridgehead>Attributes:</bridgehead>
+    <itemizedlist>
+        <listitem>
+            <para><literal moreinfo="none">@id</literal> <glossterm>required</glossterm></para>
+        </listitem>
+        <listitem>
+            <para><literal moreinfo="none">@homographNumber</literal> <glossterm>optional</glossterm></para>
+        </listitem>
+    </itemizedlist>
+    
+    <bridgehead>Child elements</bridgehead>
+    <itemizedlist>
+        <listitem>
+            <para><literal moreinfo="none">&lt;headword&gt;</literal> <glossterm>required</glossterm></para>
+        </listitem>
+        <listitem>
+            <para><literal moreinfo="none"><link linkend="xml_partOfSpeech">&lt;partOfSpeech&gt;</link></literal> zero or more</para>
+        </listitem>
+        <listitem>
+            <para><literal moreinfo="none"><link linkend="xml_label">&lt;label&gt;</link></literal> zero or more</para>
+        </listitem>
+        <listitem>
+            <para><literal moreinfo="none"><link linkend="xml_pronunciation">&lt;pronunciation&gt;</link></literal> zero or more</para>
+        </listitem>
+        <listitem>
+            <para><literal moreinfo="none"><link linkend="xml_inflectedForm">&lt;inflectedForm&gt;</link></literal> zero or more</para>
+        </listitem>
+        <listitem>
+            <para><literal moreinfo="none"><link linkend="xml_sense">&lt;sense&gt;</link></literal> zero or more</para>
+        </listitem>
+    </itemizedlist>
+    
+    <bridgehead>Child elements if implementing the <link linkend="etymology">Etymology Module</link></bridgehead>
+    <itemizedlist>
+        <listitem>
+            <para><literal moreinfo="none"><link linkend="xml_etymology">&lt;etymology&gt;</link></literal> zero or more</para>
+        </listitem>
+    </itemizedlist>
+    
+</section>
+  
 
 
 
@@ -4470,7 +4633,97 @@ entry: autopsy
     </itemizedlist>
   </section>
 
+  <section id="json_lexicographicResource">
+    <title>Class: <literal moreinfo="none">lexicographicResource</literal></title>
+    <para>Implements the <link linkend="core_lexicographicResource">lexicographicResource</link> data type.</para>
 
+    <bridgehead>Type</bridgehead>
+    <para>JSON object: <literal moreinfo="none">{...}</literal></para>
+
+    <bridgehead>Members</bridgehead>
+    <itemizedlist>
+        <listitem>
+            <para><literal moreinfo="none">"id"</literal> string <glossterm>required</glossterm></para>
+        </listitem>
+        <listitem>
+            <para><literal moreinfo="none">"title"</literal> string <glossterm>optional</glossterm></para>
+        </listitem>
+        <listitem>
+            <para><literal moreinfo="none">"uri"</literal> string <glossterm>optional</glossterm></para>
+        </listitem>
+        <listitem>
+            <para><literal moreinfo="none">"language"</literal> string <glossterm>required</glossterm></para>
+        </listitem>
+        <listitem>
+            <para><literal moreinfo="none">"entries"</literal> array of zero or more <literal moreinfo="none"><link linkend="json_entry">entry</link></literal> objects, <glossterm>optional</glossterm></para>
+        </listitem>
+        <listitem>
+            <para><literal moreinfo="none">"tags"</literal> array of zero or more <literal moreinfo="none"><link linkend="json_tag">tag</link></literal> objects, <glossterm>optional</glossterm></para>
+        </listitem>
+    </itemizedlist>
+    
+    <bridgehead>Members if implementing the <link linkend="xlingual">Crosslingual Module</link></bridgehead>
+    <itemizedlist>
+        <listitem>
+            <para><literal moreinfo="none">"translationLanguages"</literal> array of one or more <literal moreinfo="none"><link linkend="json_translationLanguage">translationLanguage</link></literal> objects, <glossterm>required</glossterm></para>
+        </listitem>
+    </itemizedlist>
+    
+    <bridgehead>Members if implementing the <link linkend="linking">Linking Module</link></bridgehead>
+    <itemizedlist>
+        <listitem>
+            <para><literal moreinfo="none">"relations"</literal> array of zero or more <literal moreinfo="none"><link linkend="json_relation">relation</link></literal> objects, <glossterm>optional</glossterm></para>
+        </listitem>
+        <listitem>
+            <para><literal moreinfo="none">"relationTypes"</literal> array of zero or more <literal moreinfo="none"><link linkend="json_relationType">relationType</link></literal> objects, <glossterm>optional</glossterm></para>
+        </listitem>
+    </itemizedlist>
+    
+</section>
+  <section id="json_entry">
+    <title>Class: <literal moreinfo="none">entry</literal></title>
+    <para>Implements the <link linkend="core_entry">entry</link> data type.</para>
+
+    <bridgehead>Type</bridgehead>
+    <para>JSON object: <literal moreinfo="none">{...}</literal></para>
+
+    <bridgehead>Members</bridgehead>
+    <itemizedlist>
+        <listitem>
+            <para><literal moreinfo="none">"id"</literal> string <glossterm>required</glossterm></para>
+        </listitem>
+        <listitem>
+            <para><literal moreinfo="none">"headword"</literal> (string) <glossterm>required</glossterm></para>
+        </listitem>
+        <listitem>
+            <para><literal moreinfo="none">"homographNumber"</literal> string <glossterm>optional</glossterm></para>
+        </listitem>
+        <listitem>
+            <para><literal moreinfo="none">"partsOfSpeech"</literal> array of zero or more <literal moreinfo="none"><link linkend="json_partOfSpeech">partOfSpeech</link></literal> objects, <glossterm>optional</glossterm></para>
+        </listitem>
+        <listitem>
+            <para><literal moreinfo="none">"labels"</literal> array of zero or more <literal moreinfo="none"><link linkend="json_label">label</link></literal> objects, <glossterm>optional</glossterm></para>
+        </listitem>
+        <listitem>
+            <para><literal moreinfo="none">"pronunciations"</literal> array of zero or more <literal moreinfo="none"><link linkend="json_pronunciation">pronunciation</link></literal> objects, <glossterm>optional</glossterm></para>
+        </listitem>
+        <listitem>
+            <para><literal moreinfo="none">"inflectedForms"</literal> array of zero or more <literal moreinfo="none"><link linkend="json_inflectedForm">inflectedForm</link></literal> objects, <glossterm>optional</glossterm></para>
+        </listitem>
+        <listitem>
+            <para><literal moreinfo="none">"senses"</literal> array of zero or more <literal moreinfo="none"><link linkend="json_sense">sense</link></literal> objects, <glossterm>optional</glossterm></para>
+        </listitem>
+    </itemizedlist>
+    
+    <bridgehead>Members if implementing the <link linkend="etymology">Etymology Module</link></bridgehead>
+    <itemizedlist>
+        <listitem>
+            <para><literal moreinfo="none">"etymologies"</literal> array of zero or more <literal moreinfo="none"><link linkend="json_etymology">etymology</link></literal> objects, <glossterm>optional</glossterm></para>
+        </listitem>
+    </itemizedlist>
+    
+</section>
+  
 
 
 
@@ -4497,9 +4750,61 @@ entry: autopsy
     </itemizedlist>
   </section>
 
+  <section id="rdb_lexicographicResources">
+    <title>Table: <literal moreinfo="none">lexicographicResources</literal></title>
+    <para>Implements the <link linkend="core_lexicographicResource">lexicographicResource</link>
+        data type.</para>
 
+    <bridgehead>Columns</bridgehead>
+    <itemizedlist>
+        <listitem>
+            <para><literal moreinfo="none">id int primary key</literal></para>
+        </listitem>
+        <listitem>
+            <para><literal moreinfo="none">title varchar(255)</literal></para>
+        </listitem>
+        <listitem>
+            <para><literal moreinfo="none">uri varchar(255)</literal></para>
+        </listitem>
+        <listitem>
+            <para><literal moreinfo="none">language varchar(10)</literal></para>
+        </listitem>
+    </itemizedlist>
 
+    <bridgehead>Comment</bridgehead>
+    <para> If the implementation contains only one lexicographic resource, then the
+            <literal moreinfo="none">lexicographicResource</literal> table <glossterm>may</glossterm> remain
+        unimplemented. </para>
 
+</section>
+  <section id="rdb_entriez">
+    <title>Table: <literal moreinfo="none">entries</literal></title>
+    <para>Implements the <link linkend="core_entry">entry</link> data type.</para>
+
+    <bridgehead>Columns</bridgehead>
+    <itemizedlist>
+        <listitem>
+            <para><literal moreinfo="none">lexicographicResourceID int foreign key references
+                    lexicographicResource(id)</literal></para>
+        </listitem>
+        <listitem>
+            <para><literal moreinfo="none">id int</literal>, primary key</para>
+        </listitem>
+        <listitem>
+            <para><literal moreinfo="none">headword varchar(255)</literal></para>
+        </listitem>
+        <listitem>
+            <para><literal moreinfo="none">homographNumber int</literal></para>
+        </listitem>
+    </itemizedlist>
+
+    <bridgehead>Comment</bridgehead>
+    <para> If the implementation contains only one lexicographic resource, then the column
+            <literal moreinfo="none">lexicographicResourceID</literal>
+        <glossterm>may</glossterm> remain unimplemented. </para>
+
+</section>
+  
 
 </section>
 
