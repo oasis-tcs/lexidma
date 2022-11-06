@@ -6,20 +6,64 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
 ]>
 
-<section>
+<section id="core_lexicographicResource">
   <title>
     <code>lexicographicResource</code>
   </title>
-  <para>Represents a dictionary. A lexicographic resource is a dataset which can be used, viewed and read by humans as a dictionary and – simultaneously – ingested, processed and understood by software agents as a machine-readable database. Note that the correct name of this data type in DMLex is <emphasis>lexicographic</emphasis>, not <emphasis>lexical</emphasis>, resource.</para>
-  <programlisting>
-lexicographicResource: &lt;id&gt;
-    title: (0..1) &lt;string&gt;
-    uri: (0..1) &lt;uri&gt;
-    language: (1..1) &lt;langCode&gt;
-    entry: (0..n)
-    tag: (0..n)
-</programlisting>
-  <section>
+  <para>Represents a dictionary. A lexicographic resource is a dataset which can be used, viewed and
+    read by humans as a dictionary and – simultaneously – ingested, processed and understood by
+    software agents as a machine-readable database. Note that the correct name of this data type in
+    DMLex is <emphasis>lexicographic</emphasis>, not <emphasis>lexical</emphasis>, resource.</para>
+
+  <bridgehead>Contents</bridgehead>
+  <itemizedlist>
+    <listitem>
+      <para><literal>id (1..1) &lt;id&gt;</literal> An identifier of the lexicographic resource,
+        unique among all lexicographic resources in the implementation. If the implementation
+        contains only one lexicographic resource then <literal>id</literal>
+        <glossterm>may</glossterm> be understood as implicit and <glossterm>may</glossterm> be left
+        unimplemented.</para>
+    </listitem>
+    <listitem>
+      <para><literal>title: (0..1) &lt;string&gt;</literal> A human-readable title of the
+        lexicographic resource.</para>
+    </listitem>
+    <listitem>
+      <para><literal>uri: (0..1) &lt;uri&gt;</literal> The URI of the lexicographic resource,
+        identifying it on the Web.</para>
+    </listitem>
+    <listitem>
+      <para><literal>language: (1..1) &lt;langCode&gt;</literal> The language that this lexicographic
+        resource describes.</para>
+    </listitem>
+    <listitem>
+      <para><literal><olink targetptr="core_entry">entry</olink>: (0..n)</literal></para>
+    </listitem>
+    <listitem>
+      <para><literal><olink targetptr="core_tag">tag</olink>: (0..n)</literal></para>
+    </listitem>
+  </itemizedlist>
+
+  <bridgehead>Comments</bridgehead>
+  <itemizedlist>
+    <listitem>
+      <para>
+        <code>language</code> identifies the language of headwords, definitions and examples in
+        this dictionary. DMLex is based on the assumption that all headwords in a lexicographic
+        resource are in the same language, and that definitions and examples, if any occur in the
+        lexicographic resource, are in that language too. The <code>language</code> child object
+        of <code>lexicographicResource</code> informs potential users of the lexicographic
+        resource which language that is.</para>
+    </listitem>
+    <listitem>
+      <para>The main role of a lexicographic resource is to contain entries (<code>entry</code>
+        objects). The other object type that can optionally occur inside a
+        <code>lexicographicResource</code>, <code>tag</code>, is for lists of
+        look-up values such as part-of-speech labels.</para>
+    </listitem>
+  </itemizedlist>
+  
+  <example>
     <title>XML</title>
     <programlisting>
 &lt;lexicographicResource id="..." uri="..." language="..."&gt;
@@ -27,9 +71,10 @@ lexicographicResource: &lt;id&gt;
     &lt;entry.../&gt;
     &lt;tag.../&gt;
 &lt;/lexicographicResource&gt;
-</programlisting>
-  </section>
-  <section>
+    </programlisting>
+  </example>
+  
+  <example>
     <title>JSON</title>
     <programlisting>
 {
@@ -39,28 +84,19 @@ lexicographicResource: &lt;id&gt;
     "entries": [...],
     "tags": [...]
 }
-</programlisting>
-  </section>
-  <section>
+    </programlisting>
+  </example>
+  
+  <example>
     <title>SQL</title>
     <programlisting>
 create table lexicographicResources (
     id int primary key,
     title varchar(255),
+    uri varchar(255),
     language varchar(10)
 )
-</programlisting>
-  </section>
-  <section>
-    <title>Comments</title>
-    <itemizedlist>
-      <listitem>
-        <para>
-          <code>language</code> identifies the language of headwords, definitions and examples in this dictionary. DMLex is based on the assumption that all headwords in a lexicographic resource are in the same language, and that definitions and examples, if any occur in the lexicographic resource, are in that language too. The <code>language</code> child object of <code>lexicographicResource</code> informs potential users of the lexicographic resource which language that is.</para>
-      </listitem>
-      <listitem>
-        <para>The main role of a lexicographic resource is to contain entries (<code>entry</code> objects). The other two object types that can optionally occur as children of a <code>lexicographicResource</code>, especially <code>tag</code>, are for lists of look-up values such as part-of-speech labels.</para>
-      </listitem>
-    </itemizedlist>
-  </section>
+    </programlisting>
+  </example>
+
 </section>
