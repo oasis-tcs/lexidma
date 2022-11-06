@@ -28,8 +28,8 @@
     </itemizedlist>
   </section>
 
-  <xi:include href="tables/lexicographicResources.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="tables/entries.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  
+
+
+
 
 </section>
