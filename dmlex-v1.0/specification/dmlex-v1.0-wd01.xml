@@ -273,6 +273,10 @@
           <para>
             <link linkend="inline">DMLex Inline Markup Module</link> extends DMLex Core to allow the modelling of inline markup on various objects such as example sentences, including the modelling of collocations and corpus patterns.</para>
         </listitem>
+        <listitem>
+          <para>
+            <link linkend="etymology">DMLex Etymology Module</link> extends DMLex Core to allow the modelling of etymological information in dictionaries.</para>
+        </listitem>
       </itemizedlist>
     </section>
     <section>
@@ -2400,6 +2404,340 @@ create table itemMarkerRoles (
   </section>
   
 </section>
+</section>
+  <section id="etymology">
+  <title>Etymology Module</title>
+  <para>
+    Extends DMLex Core to support the modelling of etymological information in dictionaries.
+  </para> 
+  <section>
+  <title>Extensions to <literal moreinfo="none">entry</literal></title>
+  <para>
+    Additional children:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">etymology</literal> (zero or more)
+      </para>
+    </listitem>
+  </itemizedlist>
+</section> 
+  <section>
+  <title><literal moreinfo="none">etymology</literal></title>
+  <para>
+      An <literal moreinfo="none">etymology</literal> represents the historical derivation of
+      a word.
+  </para>
+  <para>
+   Children:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">etymDescription</literal> (zero or more)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">etymon</literal> (zero or more)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">multiEtymon</literal> (zero or more)
+      </para>
+    </listitem>
+  </itemizedlist>
+</section> 
+  <section>
+  <title><literal moreinfo="none">etymDescription</literal> </title>
+  <para>
+      A plain text form of the etymology, which may contain notes about the
+      etymology. This may be used instead or alongside a structured set of
+      <literal moreinfo="none">etymon</literal> objects.
+  </para>
+  <para>
+      Child of:
+  </para>
+  <itemizedlist spacing="compact">
+      <listitem>
+          <para>
+              <literal moreinfo="none">etymology</literal>
+          </para>
+      </listitem>
+  </itemizedlist>
+  <para>
+      Properties:
+  </para>
+  <itemizedlist spacing="compact">
+      <listitem>
+          <para>
+              <literal moreinfo="none">text</literal> (non-empty string, required) the text of the etymological description
+          </para>
+      </listitem>
+  </itemizedlist>
+</section> 
+  <section>
+    <title><literal moreinfo="none">etymon</literal>
+    </title>
+    <para> Represents a form (ypically: a word) which is the etymological origin of the entry or another etymologically
+        related form </para>
+    <para> Child of: </para>
+    <itemizedlist spacing="compact">
+        <listitem>
+            <para>
+                <literal moreinfo="none">etymology</literal>
+            </para>
+        </listitem>
+        <listitem>
+            <para>
+                <literal moreinfo="none">multiEtymon</literal>
+            </para>
+        </listitem>
+    </itemizedlist>
+    <para> Properties: </para>
+    <itemizedlist spacing="compact">
+        <listitem>
+            <para>
+                <literal moreinfo="none">id</literal> to allow etymons to be members of relations</para>
+        </listitem>
+        <listitem>
+            <para>
+                <literal moreinfo="none">text</literal> (non-empty string, required) the etymological form </para>
+        </listitem>
+        <listitem>
+            <para>
+                <literal moreinfo="none">type</literal> (non-empty string, optional) the type of the etymology.
+                Typical values include <literal moreinfo="none">derivation</literal>, <literal moreinfo="none">cognate</literal> or
+                    <literal moreinfo="none">borrowing</literal>. Values can be specified using
+                    <literal moreinfo="none">tag</literal> objects. </para>
+        </listitem>
+        <listitem>
+            <para>
+                <literal moreinfo="none">language</literal> (string, required) the language of the origin form.
+                Values for languages should be specified with a <literal moreinfo="none">EtymonLanguage</literal>
+                mapping. </para>
+        </listitem>
+        <listitem>
+            <para>
+                <literal moreinfo="none">note</literal> (non-empty string, optional) extra information about the
+                language, for example the precise time (e.g., 16th century) or geographical variants
+            </para>
+        </listitem>
+        <listitem>
+            <para>
+                <literal moreinfo="none">reconstructed</literal> (boolean, optional) indicates that the form is
+                reconstructed and not attested in any corpus </para>
+        </listitem>
+        <listitem>
+            <para>
+                <literal moreinfo="none">gramLabel</literal> (string, optional) a label that indicates the
+                grammatical category of the etymon. Values
+                can be specified using <literal moreinfo="none">tag</literal> objects. </para>
+        </listitem>
+        <listitem>
+            <para>
+                <literal moreinfo="none">href</literal> (url, optional) a reference to a source for this etymology
+                in an external resource </para>
+        </listitem>
+        <listitem>
+            <para>
+                <literal moreinfo="none">listingOrder</literal> (non-negative integer) If this etymon is part of a multietymon
+                (a child of <literal moreinfo="none">MultiEtymon</literal>) this indicates the order of this etymon.
+                If this etymon is not part of a multietymon, then indicates its position among other etymons amd multietymons
+                in the entry.
+                This value may be implicit in some serializations. </para>
+        </listitem>
+    </itemizedlist>
+    <para> Children: </para>
+    <itemizedlist>
+        <listitem>
+            <para>
+                <literal moreinfo="none">etymTranslation</literal> (zero or more) </para>
+        </listitem>
+        <listitem>
+            <para>
+                <literal moreinfo="none">etymDate</literal> (zero or more) </para>
+        </listitem>
+        <listitem>
+            <para>
+                <literal moreinfo="none">etymRelation</literal> (zero or more) </para>
+        </listitem>
+    </itemizedlist>
+</section> 
+  <section>
+  <title><literal moreinfo="none">multiEtymon</literal> </title>
+  <para>
+      Indicates a combination of multiple historical or borrowed forms that have
+      been combined to make this entry.
+  </para>
+  <para>
+      Child of:
+  </para>
+  <itemizedlist spacing="compact">
+      <listitem>
+          <para>
+              <literal moreinfo="none">etymology</literal>
+          </para>
+      </listitem>
+  </itemizedlist>
+  <para>
+      Children:
+  </para>
+  <itemizedlist spacing="compact">
+      <listitem>
+          <para>
+              <literal moreinfo="none">etymon</literal> (two or more)
+          </para>
+      </listitem>
+  </itemizedlist>
+    <para> Properties: </para>
+    <itemizedlist spacing="compact">
+        <listitem>
+            <para>
+                <literal moreinfo="none">listingOrder</literal> (non-negative integer) Indicates its position among other etymons amd multietymons
+                in the entry.
+                This value may be implicit in some serializations. </para>
+        </listitem>
+    </itemizedlist>
+</section> 
+  <section>
+  <title><literal moreinfo="none">etymTranslation</literal> </title>
+  <para>
+      Gives a translation of a historical or borrowed form in the language of the dictionary
+  </para>
+  <para>
+      Child of:
+  </para>
+  <itemizedlist spacing="compact">
+      <listitem>
+          <para>
+              <literal moreinfo="none">etymon</literal>
+          </para>
+      </listitem>
+  </itemizedlist>
+  <para>
+      Properties:
+  </para>
+  <itemizedlist spacing="compact">
+      <listitem>
+          <para>
+              <literal moreinfo="none">text</literal> (non-empty string, required) the 
+              translation of the etymological form in the language of the 
+              dictionary
+          </para>
+      </listitem>
+  </itemizedlist>
+</section> 
+  <section>
+  <title><literal moreinfo="none">etymDate</literal> </title>
+  <para>
+      Gives a period of time for which an etymology was valid
+  </para>
+  <para>
+      Child of:
+  </para>
+  <itemizedlist spacing="compact">
+      <listitem>
+          <para>
+              <literal moreinfo="none">etymon</literal>
+          </para>
+      </listitem>
+  </itemizedlist>
+  <para>
+      Properties:
+  </para>
+  <itemizedlist spacing="compact">
+      <listitem>
+          <para>
+              <literal moreinfo="none">start</literal> (non-empty string, optional)
+                the start date of when this etymon was used. This can be a 
+              year in the Gregorian calendar or an approximate value.
+          </para>
+      </listitem>
+      <listitem>
+          <para>
+              <literal moreinfo="none">end</literal> (non-empty string, optional)
+                the end date of when this etymon was used. This can be a 
+              year in the Gregorian calendar or an approximate value.
+          </para>
+      </listitem>
+  </itemizedlist>
+</section> 
+  <section>
+  <title>Extensions to <literal moreinfo="none">tag</literal></title>
+  <para> Additional allowed values for the <literal moreinfo="none">target</literal> property: </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">etymonType</literal> (can be the value of the <literal moreinfo="none">type</literal> property of
+          <literal moreinfo="none">etymon</literal> objects) </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">etymonGramLabel</literal> (can be the value of the <literal moreinfo="none">gramLabel</literal>
+        property of <literal moreinfo="none">etymon</literal> objects) </para>
+    </listitem>
+  </itemizedlist>
+</section> 
+  <section>
+  <title><literal moreinfo="none">etymonLanguage</literal></title>
+  <para> Represents one of several allowed values for the <literal moreinfo="none">language</literal> property of
+  <literal moreinfo="none">etymon</literal> objects. Note that as etymologies frequently
+  refer to languages that are not covered by ISO standards it is necessary to 
+  define codes for all languages used in definitions.</para> 
+  <para>
+    Properties:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">value</literal> (non-empty string)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+          <literal moreinfo="none">iso639-1</literal> (non-empty string) the code in the ISO 639-1
+          standard if it exists
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+          <literal moreinfo="none">iso639-3</literal> (non-empty string) the code in the ISO
+          639-3 standard if it exists
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal moreinfo="none">displayValue</literal> (optional)
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Children:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">mapping</literal> (zero or more) </para>
+    </listitem>
+  </itemizedlist>
+</section> 
+  <section>
+  <title>Extensions to <literal moreinfo="none">memberRole</literal></title>
+  <para>This extension makes it possible for etymons to be linked (through
+      <literal moreinfo="none">relation</literal> objects from the Linking module) to other entities such as other
+    etymons or entries in other dictionaries.</para>
+  <para> Additional allowed values for the <literal moreinfo="none">memberType</literal> property: </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <literal moreinfo="none">etymon</literal>:the object that has this role must be an
+        <literal moreinfo="none">etymon</literal>.</para>
+    </listitem>
+  </itemizedlist>
+</section> 
 </section>
   
   <!--  examples  -->
