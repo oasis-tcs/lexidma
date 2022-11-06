@@ -301,10 +301,6 @@
           <para>
             <olink targetptr="inline">DMLex Inline Markup Module</olink> extends DMLex Core to allow the modelling of inline markup on various objects such as example sentences, including the modelling of collocations and corpus patterns.</para>
         </listitem>
-        <listitem>
-          <para>
-            <olink targetptr="etymology">DMLex Etymology Module</olink> extends DMLex Core to allow the modelling of etymological information in dictionaries.</para>
-        </listitem>
       </itemizedlist>
     </section>
     <section>
@@ -410,7 +406,6 @@
   <xi:include href="modules/xlingual/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="modules/linking/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="modules/inline/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="modules/etymology/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   
   <!-- examples -->
   <xi:include href="examples/examples.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
