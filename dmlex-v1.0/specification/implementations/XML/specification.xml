@@ -37,7 +37,8 @@
   
   <section>
     <title>DMLex namespaces and validation artifacts for its XML serialization</title>
-    <para>This
+    <para>TBD...</para>
+    <!--<para>This
       <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>normative/informative<?oxy_custom_end?>
       XML serialization of DMLex Version &version; makes use of all DMLex namespaces (both core and
       modules) namespaces: <code><ulink
@@ -58,9 +59,12 @@
       <para><?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>[Potential note
         content]<?oxy_custom_end?></para>
       <para>. </para>
-    </note>
+    </note>-->
   </section>
 
+  <xi:include href="elements/lexicographicResource.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/entry.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  
 
 
 
