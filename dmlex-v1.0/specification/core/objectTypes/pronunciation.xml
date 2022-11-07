@@ -39,6 +39,17 @@ pronunciation: &lt;empty&gt;
 </programlisting>
   </section>
   <section>
+      <title>RDF</title>
+      <programlisting>
+&lt;entry&gt; dmlex:pronunciation [
+  a dmlex:Pronunicaton ;
+  dmlex:soundFile &lt;...&gt; ;
+  dmlex:transcription ... ;
+  dmlex:listingOrder 1 ;
+  dmlex:label ...  ] .
+      </programlisting>
+  </section>
+  <section>
     <title>SQL</title>
     <programlisting>
 create table pronunciations (

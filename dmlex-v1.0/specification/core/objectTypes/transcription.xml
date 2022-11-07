@@ -33,6 +33,15 @@ transcription: &lt;string&gt;
 </programlisting>
   </section>
   <section>
+      <title>RDF</title>
+      <programlisting>
+&lt;pronunciation&gt; dmlex:transcription [
+  a dmlex:Transcription ;
+  dmlex:scheme "..." ;
+  dmlex:listingOrder 1 ] .
+  </programlisting>
+  </section>
+  <section>
     <title>SQL</title>
     <programlisting>
 create table transcriptions (

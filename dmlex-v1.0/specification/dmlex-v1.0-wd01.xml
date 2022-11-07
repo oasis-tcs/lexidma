@@ -516,6 +516,19 @@ lexicographicResource: &lt;id&gt;
 </programlisting>
   </section>
   <section>
+      <title>RDF</title>
+      <programlisting format="linespecific">
+@prefix dmlex: &lt;http://www.oasis-open.org/to-be-confirmed/dmlex&gt; .
+
+&lt;id&gt; a dmlex:Lexicographic Resource ;
+  dmlex:title "..." ;
+  dmlex:uri "..." ;
+  dmlex:language "..." ;
+  dmlex:entry &lt;entry1&gt; , ... ;
+  dmlex:tag ... .
+      </programlisting>
+  </section>
+  <section>
     <title>SQL</title>
     <programlisting format="linespecific">
 create table lexicographicResources (
@@ -581,6 +594,19 @@ entry: &lt;id&gt;
 </programlisting>
   </section>
   <section>
+      <title>RDF</title>
+      <programlisting format="linespecific">
+&lt;id&gt; a dmlex:Entry ;
+  dmlex:headword "..." ;
+  dmlex:homographNumber ... ;
+  dmlex:partOfSpeech ... ;
+  dmlex:label ... ;
+  dmlex:pronunciation ... ;
+  dmlex:inflectedForm ... ;
+  dmlex:sense ... .
+  </programlisting>
+  </section>
+  <section>
     <title>SQL</title>
     <programlisting format="linespecific">
 create table entries (
@@ -629,6 +655,15 @@ partOfSpeech: &lt;string&gt;
     <programlisting format="linespecific">
 "..."
 </programlisting>
+  </section>
+  <section>
+      <title>RDF</title>
+      <programlisting format="linespecific">
+&lt;entry&gt; dmlex:partOfSpeech [ 
+  a dmlex:PartOfSpeech ;
+  rdf:value "..." ;
+  dmlex:listingOrder 1 ] .
+      </programlisting>
   </section>
   <section>
     <title>SQL</title>
@@ -697,6 +732,17 @@ sense: &lt;id&gt;
 </programlisting>
   </section>
   <section>
+      <title>RDF</title>
+      <programlisting format="linespecific">
+&lt;id&gt; a dmlex:Sense ;
+  dmlex:listingOrder 1 ;
+  dmlex:indicator "..." ;
+  dmlex:label ... ;
+  dmlex:definition ... ;
+  dmlex:example ... .
+      </programlisting>
+  </section>
+  <section>
     <title>SQL</title>
     <programlisting format="linespecific">
 create table senses (
@@ -756,6 +802,16 @@ definition: &lt;string&gt;
     "definitionType": "..."
 }
 </programlisting>
+  </section>
+  <section>
+      <title>RDF</title>
+      <programlisting format="linespecific">
+&lt;entry&gt; dmlex:definition [
+  a dmlex:Definition ;
+  rdf:value "..." ;
+  dmlex:definitionType "..." ;
+  dmlex:listingOrder 1 ] .
+      </programlisting>
   </section>
   <section>
     <title>SQL</title>
@@ -818,6 +874,17 @@ inflectedForm: &lt;string&gt;
 </programlisting>
   </section>
   <section>
+      <title>RDF</title>
+      <programlisting format="linespecific">
+&lt;entry&gt; dmlex:inflectedForm [
+  a dmlex:InflectedForm ;
+  dmlex:inflectedTag "..." ;
+  dmlex:listingOrder 1 ;
+  dmlex:label ... ;
+  dmlex:pronunciation ... .
+  </programlisting>
+  </section>
+  <section>
     <title>SQL</title>
     <programlisting format="linespecific">
 create table inflectedForms (
@@ -871,6 +938,15 @@ label: &lt;string&gt;
     <programlisting format="linespecific">
 "..."
 </programlisting>
+  </section>
+  <section>
+      <title>RDF</title>
+      <programlisting format="linespecific">
+&lt;entry&gt; dmlex:label [
+  a dmlex:Label ;
+  rdf:value "..." ;
+  dmlex:listingOrder 1 ] .
+      </programlisting>
   </section>
   <section>
     <title>SQL</title>
@@ -937,6 +1013,17 @@ pronunciation: &lt;empty&gt;
 </programlisting>
   </section>
   <section>
+      <title>RDF</title>
+      <programlisting format="linespecific">
+&lt;entry&gt; dmlex:pronunciation [
+  a dmlex:Pronunicaton ;
+  dmlex:soundFile &lt;...&gt; ;
+  dmlex:transcription ... ;
+  dmlex:listingOrder 1 ;
+  dmlex:label ...  ] .
+      </programlisting>
+  </section>
+  <section>
     <title>SQL</title>
     <programlisting format="linespecific">
 create table pronunciations (
@@ -991,6 +1078,15 @@ transcription: &lt;string&gt;
     "scheme": "..."
 }
 </programlisting>
+  </section>
+  <section>
+      <title>RDF</title>
+      <programlisting format="linespecific">
+&lt;pronunciation&gt; dmlex:transcription [
+  a dmlex:Transcription ;
+  dmlex:scheme "..." ;
+  dmlex:listingOrder 1 ] .
+  </programlisting>
   </section>
   <section>
     <title>SQL</title>
@@ -1054,6 +1150,18 @@ example: &lt;string&gt;
 }
 </programlisting>
   </section>
+  <section>
+      <title>RDF</title>
+      <programlisting format="linespecific">
+&lt;entry&gt; dmlex:example [
+  a dmlex:Example ;
+  rdf:value "..." ;
+  dmlex:sourceIdentity "..." ;
+  dmlex:sourceElaboration "..." ;
+  dmlex:label ... ;
+  dmlex:soundFile &lt;...&gt; ;
+  dmlex:listingOrder 1 ] .
+  </programlisting></section>
   <section>
     <title>SQL</title>
     <programlisting format="linespecific">
@@ -1125,6 +1233,17 @@ tag: &lt;string&gt;
     "sameAs": [...]
 }
 </programlisting>
+  </section>
+  <section>
+      <title>RDF</title>
+      <programlisting format="linespecific">
+&lt;entry&gt; dmlex:tag [
+  a dmlex:Tag ;
+  dmlex:description "..." ;
+  dmlex:target "..." ;
+  dmlex:partOfSpeechConstraints "..." ;
+  dmlex:sameAs ... ] .
+      </programlisting>
   </section>
   <section>
     <title>SQL</title>
