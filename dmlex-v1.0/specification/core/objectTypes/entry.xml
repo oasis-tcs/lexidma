@@ -93,6 +93,20 @@
   </example>
 
   <example>
+      <title>RDF</title>
+      <programlisting>
+&lt;id&gt; a dmlex:Entry ;
+  dmlex:headword "..." ;
+  dmlex:homographNumber ... ;
+  dmlex:partOfSpeech ... ;
+  dmlex:label ... ;
+  dmlex:pronunciation ... ;
+  dmlex:inflectedForm ... ;
+  dmlex:sense ... .
+    </programlisting>
+  </examle>
+  
+  <example>
     <title>SQL</title>
     <programlisting>
 create table entries (

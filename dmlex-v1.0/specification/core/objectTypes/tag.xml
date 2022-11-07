@@ -43,6 +43,17 @@ tag: &lt;string&gt;
 </programlisting>
   </section>
   <section>
+      <title>RDF</title>
+      <programlisting>
+&lt;entry&gt; dmlex:tag [
+  a dmlex:Tag ;
+  dmlex:description "..." ;
+  dmlex:target "..." ;
+  dmlex:partOfSpeechConstraints "..." ;
+  dmlex:sameAs ... ] .
+      </programlisting>
+  </section>
+  <section>
     <title>SQL</title>
     <programlisting>
 create table tags (

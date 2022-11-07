@@ -35,21 +35,14 @@ jobs:
           sudo apt-get install xsltproc fop xmlstarlet
       - name: Make XML, HTML and PDF
         run: make html pdf
-      - name: Commit files
-        id: commit
-        run: |
-          git config --local user.email "lexidma@lists.oasis-open.org"
-          git config --local user.name "autorebuild"
-          git add dmlex-v1.0-wd01.xml dmlex-v1.0-wd01.html dmlex-v1.0-wd01.pdf
-          if [ -z "$(git status --porcelain)" ]; then
-             echo "::set-output name=push::false"
-          else
-            git commit -m "Rebuilt XML, HTML and PDF spec files"
-            echo "::set-output name=push::true"
-          fi
-      - name: Push changes
-        if: steps.commit.outputs.push == 'true'
-        uses: ad-m/github-push-action@master
+      - name: Update Automatic Release
+        uses: marvinpinto/action-automatic-releases@latest
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+          repo_token: "${{ secrets.GITHUB_TOKEN}}"
+          automatic_release_tag: "dev-latest"
+          prerelease: true
+          title: "Latest Version"
+          files: |
+            dmlex-v1.0/specification/dmlex-v1.0-wd01.html
+            dmlex-v1.0/specification/dmlex-v1.0-wd01.pdf
+            dmlex-v1.0/specification/dmlex-v1.0-wd01.xml

@@ -42,6 +42,18 @@ example: &lt;string&gt;
 </programlisting>
   </section>
   <section>
+      <title>RDF</title>
+      <programlisting>
+&lt;entry&gt; dmlex:example [
+  a dmlex:Example ;
+  rdf:value "..." ;
+  dmlex:sourceIdentity "..." ;
+  dmlex:sourceElaboration "..." ;
+  dmlex:label ... ;
+  dmlex:soundFile &lt;...&gt; ;
+  dmlex:listingOrder 1 ] .
+  </programlisting></section>
+  <section>
     <title>SQL</title>
     <programlisting>
 create table examples (

@@ -41,6 +41,17 @@ inflectedForm: &lt;string&gt;
 </programlisting>
   </section>
   <section>
+      <title>RDF</title>
+      <programlisting>
+&lt;entry&gt; dmlex:inflectedForm [
+  a dmlex:InflectedForm ;
+  dmlex:inflectedTag "..." ;
+  dmlex:listingOrder 1 ;
+  dmlex:label ... ;
+  dmlex:pronunciation ... .
+  </programlisting>
+  </section>
+  <section>
     <title>SQL</title>
     <programlisting>
 create table inflectedForms (

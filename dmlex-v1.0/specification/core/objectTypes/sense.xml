@@ -44,6 +44,17 @@ sense: &lt;id&gt;
 </programlisting>
   </section>
   <section>
+      <title>RDF</title>
+      <programlisting>
+&lt;id&gt; a dmlex:Sense ;
+  dmlex:listingOrder 1 ;
+  dmlex:indicator "..." ;
+  dmlex:label ... ;
+  dmlex:definition ... ;
+  dmlex:example ... .
+      </programlisting>
+  </section>
+  <section>
     <title>SQL</title>
     <programlisting>
 create table senses (

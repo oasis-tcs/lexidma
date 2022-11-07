@@ -33,6 +33,16 @@ definition: &lt;string&gt;
 </programlisting>
   </section>
   <section>
+      <title>RDF</title>
+      <programlisting>
+&lt;entry&gt; dmlex:definition [
+  a dmlex:Definition ;
+  rdf:value "..." ;
+  dmlex:definitionType "..." ;
+  dmlex:listingOrder 1 ] .
+      </programlisting>
+  </section>
+  <section>
     <title>SQL</title>
     <programlisting>
 create table definitions (
