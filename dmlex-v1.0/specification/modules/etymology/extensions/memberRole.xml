@@ -12,11 +12,27 @@
       <literal>relation</literal> objects from the Linking module) to other entities such as other
     etymons or entries in other dictionaries.</para>
   <para> Additional allowed values for the <literal>memberType</literal> property: </para>
-  <itemizedlist spacing="compact">
-    <listitem>
-      <para>
-        <literal>etymon</literal>:the object that has this role must be an
-        <literal>etymon</literal>.</para>
-    </listitem>
-  </itemizedlist>
+  <programlisting>
+memberRole: "etymon"
+  </programlisting>
+  <section>
+      <title>XML</title>
+      <programlisting>
+&lt;memberRole role="etymon"...&gt;
+      </programlisting>
+  </section>
+  <section>
+      <title>JSON</title>
+      <programlisting>
+{
+  "memberRole": "etymon"
+}
+      </programlisting>
+  </section>
+  <section>
+      <title>RDF</title>
+      <programlisting>
+&lt;relationType&gt; dmlex:memberRole dmlex:etymonRole .
+      </programlisting>
+  </section>
 </section>

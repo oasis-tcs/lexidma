@@ -13,26 +13,30 @@
       etymology. This may be used instead or alongside a structured set of
       <literal>etymon</literal> objects.
   </para>
-  <para>
-      Child of:
-  </para>
-  <itemizedlist spacing="compact">
-      <listitem>
-          <para>
-              <literal>etymology</literal>
-          </para>
-      </listitem>
-  </itemizedlist>
-  <para>
-      Properties:
-  </para>
-  <itemizedlist spacing="compact">
-      <listitem>
-          <para>
-              <literal>text</literal> (non-empty string, required) the text of the etymological description
-          </para>
-      </listitem>
-  </itemizedlist>
+  <programlisting>
+etymDecscription: &lt;string&gt;
+  </programlisting>
+  <section>
+      <title>XML</title>
+      <programlisting>
+&lt;etymDescription&gt;...&lt;/etymDescription&gt;
+      </programlisting>
+   </section>
+   <section>
+       <title>JSON</title>
+       <programlisting>
+{
+  "value": "..."
+}
+       </programlisting>
+   </section>
+   <section>
+       <title>RDF</title>
+       <programlisting>
+&lt;etymololgy&gt; dmlex:etymDescription [
+  dmlex:value "..." ] .
+       </programlisting>
+   </section>
 </section>
  
  

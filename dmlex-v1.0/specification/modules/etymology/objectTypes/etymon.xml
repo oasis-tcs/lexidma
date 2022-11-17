@@ -9,88 +9,121 @@
 <section>
     <title><literal>etymon</literal>
     </title>
-    <para> Represents a form (ypically: a word) which is the etymological origin of the entry or another etymologically
+    <para> Represents a form (typically a word) which is the etymological origin of the entry or another etymologically
         related form </para>
-    <para> Child of: </para>
+    <programlisting>
+etymon: &lt;id&gt;
+  text: (1..1) &lt;string&gt;
+  type: (0..1) &lt;string&gt;
+  language: (1..1) &lt;string&gt;
+  note: (0..1) &lt;string&gt;
+  reconstructed: (0..1) &lt;boolean&gt;
+  label: (0..1) &lt;string&gt;
+  href: (0..1) &lt;url&gt;
+  listingOrder: (1..1) &lt;number&gt;
+  etymTranslation: (0..n)
+  etymDate: (0..1)
+    </programlisting>
+    <section>
+        <title>XML</title>
+        <programlisting>
+&lt;etymon id="..." href="..."&gt;
+  &lt;text&gt;...&lt;/text&gt;
+  &lt;type&gt;...&lt;/type&gt;
+  &lt;language&gt;...&lt;/language&gt;
+  &lt;note&gt;...&lt;/note&gt;
+  &lt;reconstructed&gt;...&lt;/reconstructed&gt;
+  &lt;label&gt;...&lt;/label&gt;
+  &lt;etymTranslation&gt;...&lt;/etymTranslation&gt;
+  &lt;etymDate&gt;...&lt;/etymDate&gt;
+&lt;/etymon&gt;
+</programlisting>
+    </section>
+    <section>
+        <title>JSON</title>
+        <programlisting>
+{
+  "text": "..." ,
+  "type": "..." ,
+  "language": "..." ,
+  "note": "..." ,
+  "reconstructed": true ,
+  "label": "..." ,
+  "etymTranslation": [...] ,
+  "etymDate": ... ,
+}
+</programlisting>
+    </section>
+    <section>
+        <title>RDF</title>
+        <programlisting>
+&lt;etymon&gt; 
+  dmlex:text "..." ;
+  dmlex:type "..." ;
+  dmlex:language "..." ;
+  dmlex:note "..." ;
+  dmlex:reconstructed true ;
+  dmlex:etymonLabel "..." ;
+  dmlex:listingOrder 0 ;
+  dmlex:etymTranslation ... ;
+  dmlex:etymDate ... .
+</programlisting>
+    </section>
+    <para>Comments</para>
     <itemizedlist spacing="compact">
         <listitem>
             <para>
-                <literal>etymology</literal>
-            </para>
+                Etymons have <literal>id</literal>s to allow etymons to be members of relations</para>
         </listitem>
         <listitem>
             <para>
-                <literal>multiEtymon</literal>
-            </para>
-        </listitem>
-    </itemizedlist>
-    <para> Properties: </para>
-    <itemizedlist spacing="compact">
-        <listitem>
-            <para>
-                <literal>id</literal> to allow etymons to be members of relations</para>
-        </listitem>
-        <listitem>
-            <para>
-                <literal>text</literal> (non-empty string, required) the etymological form </para>
-        </listitem>
-        <listitem>
-            <para>
-                <literal>type</literal> (non-empty string, optional) the type of the etymology.
-                Typical values include <literal>derivation</literal>, <literal>cognate</literal> or
+                The <literal>type</literal> of the etymology may have typical values 
+			including <literal>derivation</literal>, <literal>cognate</literal> or
                     <literal>borrowing</literal>. Values can be specified using
                     <literal>tag</literal> objects. </para>
         </listitem>
         <listitem>
             <para>
-                <literal>language</literal> (string, required) the language of the origin form.
-                Values for languages should be specified with a <literal>EtymonLanguage</literal>
+                The <literal>language</literal>  of the origin form
+                should be specified with a <literal>EtymonLanguage</literal>
                 mapping. </para>
         </listitem>
         <listitem>
             <para>
-                <literal>note</literal> (non-empty string, optional) extra information about the
-                language, for example the precise time (e.g., 16th century) or geographical variants
+                The <literal>note</literal> conatins extra information about the
+                language, for example the approximate time (e.g., 16th century) or geographical variants
             </para>
         </listitem>
         <listitem>
             <para>
-                <literal>reconstructed</literal> (boolean, optional) indicates that the form is
+                <literal>reconstructed</literal>  indicates that the form is
                 reconstructed and not attested in any corpus </para>
         </listitem>
         <listitem>
             <para>
-                <literal>gramLabel</literal> (string, optional) a label that indicates the
+                The <literal>label</literal>  indicates the
                 grammatical category of the etymon. Values
                 can be specified using <literal>tag</literal> objects. </para>
         </listitem>
         <listitem>
             <para>
-                <literal>href</literal> (url, optional) a reference to a source for this etymology
+                The <literal>href</literal>  a reference to a source for this etymology
                 in an external resource </para>
         </listitem>
         <listitem>
             <para>
-                <literal>listingOrder</literal> (non-negative integer) If this etymon is part of a multietymon
-                (a child of <literal>MultiEtymon</literal>) this indicates the order of this etymon.
+                If this etymon is part of a multietymon
+                (a child of <literal>MultiEtymon</literal>) the <literal>listingOrder</literal> indicates the order of this etymon.
                 If this etymon is not part of a multietymon, then indicates its position among other etymons amd multietymons
                 in the entry.
                 This value may be implicit in some serializations. </para>
         </listitem>
-    </itemizedlist>
-    <para> Children: </para>
-    <itemizedlist>
         <listitem>
-            <para>
-                <literal>etymTranslation</literal> (zero or more) </para>
+            <para>The <literal>etymDate</literal> indicates the time period the 
+            etymological word was used in. For multi-etymons there SHOULD be
+            no dates.
+        </para>
         </listitem>
-        <listitem>
-            <para>
-                <literal>etymDate</literal> (zero or more) </para>
-        </listitem>
-        <listitem>
-            <para>
-                <literal>etymRelation</literal> (zero or more) </para>
-        </listitem>
+	
     </itemizedlist>
 </section>
