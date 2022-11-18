@@ -7,35 +7,35 @@
 ]>
 
 <section>
-  <title>Extensions to <literal>tag</literal></title>
-  <para> Additional allowed values for the <literal>target</literal> property, allows
-  the specification of values for the <literal>etymonType</literal> and
-  <literal>etymonLabel</literal> properties of <literal>etymon</literal></para>
+  <title>Extensions to <literal>lexicographicResource</literal></title>
+  <para>
+    Additional children:
+  </para>
   <programlisting>
-tag:
-  target: etymonType/etymonLabel
-    </programlisting>
+lexicographicResource ...
+  etymonLanguage: (0..n)
+  </programlisting>
     <section>
         <title>XML</title>
         <programlisting>
-&lt;tag&gt; 
-  &lt;target value="etymonType"/&gt;
-  &lt;target value="etymonLabel"/&gt;
-&lt;/tag&gt;
+&lt;lexicographicResource&gt; 
+  &lt;etymonLanguage&gt;...&lt;etymonLanguage/&gt;
+&lt;/lexicographicResource&gt;
         </programlisting>
     </section>
     <section>
         <title>JSON</title>
         <programlisting>
 {
-  "targets": ["etymonType", "etymonLabel"]
+  ...
+  "etymonLanguage": [...]
 }
         </programlisting>
     </section>
     <section>
         <title>RDF</title>
         <programlisting>
-&lt;tag&gt; dmlex:target dmlex:etymonType, dmlex:etymonLabel .
+&lt;lexicographicResource&gt; dmlex:etymonLanguage ... .
         </programlisting>
     </section>
 </section>

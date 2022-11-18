@@ -12,24 +12,40 @@
       An <literal>etymology</literal> represents the historical derivation of
       a word.
   </para>
-  <para>
-   Children:
-  </para>
-  <itemizedlist spacing="compact">
-    <listitem>
-      <para>
-        <literal moreinfo="none">etymDescription</literal> (zero or more)
-      </para>
-    </listitem>
-    <listitem>
-      <para>
-        <literal moreinfo="none">etymon</literal> (zero or more)
-      </para>
-    </listitem>
-    <listitem>
-      <para>
-        <literal moreinfo="none">multiEtymon</literal> (zero or more)
-      </para>
-    </listitem>
-  </itemizedlist>
+  <programlisting>
+etymology:
+  etymDescription: (0..n)
+  etymon: (0..n)
+  multiEtymon: (0..n)
+  </programlisting>
+
+  <section>
+      <title>XML</title>
+      <programlisting>
+&lt;etymology&gt;
+  &lt;etymDescription&gt;...&lt;/etymDescription&gt;
+  &lt;etymon&gt;...&lt;/etymon&gt;
+  &lt;multiEtymon&gt;...&lt;/multiEtymon&gt;
+&lt;/etymology&gt; 
+  </programlisting>
+  </section>
+  <section>
+      <title>JSON</title>
+      <programlisting>
+{
+  "etymDescription": ... ,
+  "etymon": ... ,
+  "multiEtymon": ...
+}
+      </programlisting>
+  </section>
+  <section>
+      <title>RDF</title>
+      <programlisting>
+&lt;entry&gt; dmlex:etymology [
+  dmlex:etymDescription "..." ;
+  dmlex:etymon ... ,
+  dmlex:multiEtymon ... ] .
+      </programlisting>
+  </section>
 </section> 

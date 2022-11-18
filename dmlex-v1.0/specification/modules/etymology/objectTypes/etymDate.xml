@@ -11,33 +11,41 @@
   <para>
       Gives a period of time for which an etymology was valid
   </para>
-  <para>
-      Child of:
-  </para>
-  <itemizedlist spacing="compact">
+  <programlisting>
+etymDate:
+  start: (0..1) &lt;string&gt;
+  end: (0..1) &lt;string&gt;
+  </programlisting>
+  <section>
+      <title>XML</title>
+      <programlisting>
+&lt;etymDate start="..." end="..."/&gt;
+      </programlisting>
+  </section>
+  <section>
+      <title>JSON</title>
+      <programlisting>
+{
+  "start": "..."
+  "end": "..."
+}
+      </programlisting>  
+  </section>
+  <section>
+      <title>RDF</title>
+      <programlisting>
+&lt;etymon&gt; dmlex:etymDate [
+  dmlex:start "..." ;
+  dmlex:end "..." ].
+      </programlisting>
+  </section>
+  <para>Comments</para>
+  <itemizedlist>
       <listitem>
-          <para>
-              <literal>etymon</literal>
-          </para>
-      </listitem>
-  </itemizedlist>
-  <para>
-      Properties:
-  </para>
-  <itemizedlist spacing="compact">
-      <listitem>
-          <para>
-              <literal>start</literal> (non-empty string, optional)
-                the start date of when this etymon was used. This can be a 
+          <para><literal>start</literal> and <literal>end</literal> indicate 
+                the date of when this etymon was used. This can be a 
               year in the Gregorian calendar or an approximate value.
-          </para>
-      </listitem>
-      <listitem>
-          <para>
-              <literal>end</literal> (non-empty string, optional)
-                the end date of when this etymon was used. This can be a 
-              year in the Gregorian calendar or an approximate value.
-          </para>
+      </para>
       </listitem>
   </itemizedlist>
 </section>

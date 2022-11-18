@@ -11,27 +11,29 @@
   <para>
       Gives a translation of a historical or borrowed form in the language of the dictionary
   </para>
-  <para>
-      Child of:
-  </para>
-  <itemizedlist spacing="compact">
-      <listitem>
-          <para>
-              <literal>etymon</literal>
-          </para>
-      </listitem>
-  </itemizedlist>
-  <para>
-      Properties:
-  </para>
-  <itemizedlist spacing="compact">
-      <listitem>
-          <para>
-              <literal>text</literal> (non-empty string, required) the 
-              translation of the etymological form in the language of the 
-              dictionary
-          </para>
-      </listitem>
-  </itemizedlist>
+  <programlisting>
+etymTranslation: &lt;value&gt;
+  </programlisting>
+    <section>
+        <title>XML</title>
+        <programlisting>
+&lt;etymTranslation&gt;...&lt;/etymTranslation&gt;
+	</programlisting>
+    </section>
+    <section>
+        <title>JSON</title>
+        <programlisting>
+{
+  "value": "..."
+}
+    </programlisting>
+    </section>
+    <section>
+        <title>RDF</title>
+        <programlisting>
+&lt;etymon&gt; dmlex:etymTranslation [
+  dmlex:value "..." ] .
+	</programlisting>
+    </section>
 </section>
  

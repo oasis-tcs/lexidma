@@ -12,40 +12,57 @@
   <literal>etymon</literal> objects. Note that as etymologies frequently
   refer to languages that are not covered by ISO standards it is necessary to 
   define codes for all languages used in definitions.</para> 
-  <para>
-    Properties:
-  </para>
+  <programlisting>
+etymonLanguage: &lt;value&gt;
+  iso639-1: (0..1) &lt;string of 2 lowercase letters&gt;
+  iso639-3: (0..1) &lt;string of 3 uppercase letters&gt;
+  displayValue: (0..1) &lt;string&gt;
+  </programlisting> 
+    <section>
+        <title>XML</title>
+        <programlisting>
+&lt;etymonLanguage value="..."&gt;
+  &lt;iso639-1&gt;...&lt;/iso639-1&gt;
+  &lt;iso639-3&gt;...&lt;/iso639-3&gt;
+  &lt;displayValue&gt;...&lt;displayValue&gt;
+&lt;/etymonLanguage&gt;
+</programlisting>
+    </section>
+    <section>
+        <title>JSON</title>
+        <programlisting>
+{
+  "value": "..." ,
+  "iso639-1": "..." ,
+  "iso639-3": "..." ,
+  "displayValue": "..."
+}
+</programlisting>
+    </section>
+    <section>
+        <title>RDF</title>
+        <programlisting>
+&lt;etymonLanguage&gt; dmlex:value "..." ;
+  dmlex:iso639-1 "..." ;
+  dmlex:iso639-3 "..." ;
+  dmlex:displayValue "... "  .
+</programlisting>
+    </section>
+    <para>Comments</para>
   <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <literal>value</literal> (non-empty string)
-      </para>
-    </listitem>
-    <listitem>
-      <para>
-          <literal>iso639-1</literal> (non-empty string) the code in the ISO 639-1
+          The language may be specified with either <literal>iso639-1</literal> 
+          and/or <literal>iso639-3</literal> code in the ISO 639
           standard if it exists
       </para>
     </listitem>
     <listitem>
       <para>
-          <literal>iso639-3</literal> (non-empty string) the code in the ISO
-          639-3 standard if it exists
+        <literal>value</literal> indicates value used by the <literal>language</literal>
+        property of a <literal>etymon</literal> (e.g. <literal>ger</literal>). <literal>displayValue</literal>
+        indicates a natural language name for the language, e.g., &ldquo;Modern High German&rdquo;
       </para>
-    </listitem>
-    <listitem>
-      <para>
-        <literal>displayValue</literal> (optional)
-      </para>
-    </listitem>
-  </itemizedlist>
-  <para>
-    Children:
-  </para>
-  <itemizedlist spacing="compact">
-    <listitem>
-      <para>
-        <literal>mapping</literal> (zero or more) </para>
     </listitem>
   </itemizedlist>
 </section>
