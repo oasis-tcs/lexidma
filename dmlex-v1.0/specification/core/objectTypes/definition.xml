@@ -12,59 +12,69 @@
     <code>definition</code>
   </title>
   <para>Represents one of possibly several definitions of a sense.</para>
-  <programlisting>
-definition: &lt;string&gt;
-    definitionType: (0..1) &lt;string&gt;
-    listingOrder: (1..1) &lt;number&gt;
-</programlisting>
-  <section>
+
+  <itemizedlist>
+    <title>Child of</title>
+    <listitem>
+      <para><literal><olink targetptr="core_sense">sense</olink></literal></para>
+    </listitem>
+  </itemizedlist>
+  
+  <itemizedlist>
+    <title>Contents</title>
+    <listitem>
+      <para><literal>value</literal>
+        <glossterm>required</glossterm> (exactly one). Non-empty string. A statement, in the same
+        language as the headword, that describes and/or explains the meaning of a sense. In DMLex,
+        the term definition encompasses not only formal definitions, but also less formal
+        explanations.</para>
+    </listitem>
+    <listitem>
+      <para><literal>definitionType</literal>
+        <glossterm>optional</glossterm> (zero or one). If a sense contains multiple definitions,
+        indicates the difference between them, for example that they are intended for different
+        audiences. The <code><olink targetptr="core_tag">tag</olink></code> object type can be used
+        to constrain and/or explain the definition types that occur in the lexicographic
+        resource.</para>
+    </listitem>
+    <listitem>
+      <para><literal>listingOrder</literal>
+        <glossterm>required</glossterm> (exactly one). Number. The position of this definition among
+        other definitions of the same sense. This can be implicit from the serialization.</para>
+    </listitem>
+  </itemizedlist>
+
+  <example>
     <title>XML</title>
     <programlisting>
 &lt;definition definitionType="..."&gt;...&lt;/definition&gt;
-</programlisting>
-  </section>
-  <section>
+    </programlisting>
+  </example>
+  
+  <example>
     <title>JSON</title>
     <programlisting>
 {
     "text": "....",
     "definitionType": "..."
 }
-</programlisting>
-  </section>
-  <section>
-      <title>RDF</title>
-      <programlisting>
+    </programlisting>
+  </example>
+  
+  <example>
+    <title>RDF</title>
+    <programlisting>
 &lt;entry&gt; dmlex:definition [
   a dmlex:Definition ;
   rdf:value "..." ;
   dmlex:definitionType "..." ;
   dmlex:listingOrder 1 ] .
-      </programlisting>
-  </section>
-  <section>
-    <title>SQL</title>
-    <programlisting>
-create table definitions (
-    senseID int foreign key references sense(id),
-    text nvarchar(255),
-    definitionType nvarchar(10),
-    listingOrder int,
-    id int primary key
-)
-</programlisting>
-  </section>
-  <section>
-    <title>Comments</title>
-    <itemizedlist>
-      <listitem>
-        <para>If you have multiple definitions inside a single sense, you can use <code>definitionType</code> to indicate the difference between them, for example that they are intended for different audiences. Optionally, you can use the <code>tag</code> data type to constrain and/or explain the definition types that occur in your lexicographic resource.</para>
-      </listitem>
-      <listitem>
-        <para>
-          <code>listingOrder</code> is the position of this definition among other definitions of the same sense. This can be implicit from the serialization.</para>
-      </listitem>
-    </itemizedlist>
-  </section>
+    </programlisting>
+  </example>
+  
+  <example>
+    <title>Relational database</title>
+    <graphic fileref="core/databaseDiagrams/definition.svg" contentwidth="16cm"/>
+  </example>
   
 </section>

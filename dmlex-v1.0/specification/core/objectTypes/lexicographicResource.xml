@@ -15,54 +15,62 @@
     software agents as a machine-readable database. Note that the correct name of this data type in
     DMLex is <emphasis>lexicographic</emphasis>, not <emphasis>lexical</emphasis>, resource.</para>
 
-  <bridgehead>Contents</bridgehead>
   <itemizedlist>
+    <title>Contents</title>
     <listitem>
-      <para><literal>id (1..1) &lt;id&gt;</literal> An identifier of the lexicographic resource,
+      <para><literal>id</literal>
+        <glossterm>required</glossterm> (exactly one). An identifier of the lexicographic resource,
         unique among all lexicographic resources in the implementation. If the implementation
         contains only one lexicographic resource then <literal>id</literal>
         <glossterm>may</glossterm> be understood as implicit and <glossterm>may</glossterm> be left
         unimplemented.</para>
     </listitem>
     <listitem>
-      <para><literal>title: (0..1) &lt;string&gt;</literal> A human-readable title of the
-        lexicographic resource.</para>
+      <para><literal>title</literal>
+        <glossterm>optional</glossterm> (zero or one). Non-empty string. A human-readable title of
+        the lexicographic resource.</para>
     </listitem>
     <listitem>
-      <para><literal>uri: (0..1) &lt;uri&gt;</literal> The URI of the lexicographic resource,
+      <para><literal>uri</literal>
+        <glossterm>optional</glossterm> (zero or one). The URI of the lexicographic resource,
         identifying it on the Web.</para>
     </listitem>
     <listitem>
-      <para><literal>language: (1..1) &lt;langCode&gt;</literal> The language that this lexicographic
-        resource describes.</para>
+      <para><literal>language</literal>
+        <glossterm>required</glossterm> (exactly one). The IETF language code of the language that
+        this lexicographic resource describes.</para>
     </listitem>
     <listitem>
-      <para><literal><olink targetptr="core_entry">entry</olink>: (0..n)</literal></para>
+      <para><literal><olink targetptr="core_entry">entry</olink></literal>
+        <glossterm>optional</glossterm> (zero, one or more)
+      </para>
     </listitem>
     <listitem>
-      <para><literal><olink targetptr="core_tag">tag</olink>: (0..n)</literal></para>
+      <para><literal><olink targetptr="core_tag">tag</olink></literal>
+        <glossterm>optional</glossterm> (zero, one or more)
+      </para>
     </listitem>
   </itemizedlist>
 
-  <bridgehead>Comments</bridgehead>
   <itemizedlist>
+    <title>Comments</title>
     <listitem>
       <para>
-        <code>language</code> identifies the language of headwords, definitions and examples in
-        this dictionary. DMLex is based on the assumption that all headwords in a lexicographic
-        resource are in the same language, and that definitions and examples, if any occur in the
-        lexicographic resource, are in that language too. The <code>language</code> child object
-        of <code>lexicographicResource</code> informs potential users of the lexicographic
-        resource which language that is.</para>
+        <code>language</code> identifies the language of headwords, definitions and examples in this
+        dictionary. DMLex is based on the assumption that all headwords in a lexicographic resource
+        are in the same language, and that definitions and examples, if any occur in the
+        lexicographic resource, are in that language too. The <code>language</code> child object of
+          <code>lexicographicResource</code> informs potential users of the lexicographic resource
+        which language that is.</para>
     </listitem>
     <listitem>
       <para>The main role of a lexicographic resource is to contain entries (<code>entry</code>
         objects). The other object type that can optionally occur inside a
-        <code>lexicographicResource</code>, <code>tag</code>, is for lists of
-        look-up values such as part-of-speech labels.</para>
+          <code>lexicographicResource</code>, <code>tag</code>, is for lists of look-up values such
+        as part-of-speech labels.</para>
     </listitem>
   </itemizedlist>
-  
+
   <example>
     <title>XML</title>
     <programlisting>
@@ -73,7 +81,7 @@
 &lt;/lexicographicResource&gt;
     </programlisting>
   </example>
-  
+
   <example>
     <title>JSON</title>
     <programlisting>
@@ -87,9 +95,9 @@
 </programlisting>
   </example>
 
-<example>
-      <title>RDF</title>
-      <programlisting>
+  <example>
+    <title>RDF</title>
+    <programlisting>
 @prefix dmlex: &lt;http://www.oasis-open.org/to-be-confirmed/dmlex&gt; .
 
 &lt;id&gt; a dmlex:Lexicographic Resource ;
@@ -102,15 +110,8 @@
   </example>
 
   <example>
-    <title>SQL</title>
-    <programlisting>
-create table lexicographicResources (
-    id int primary key,
-    title varchar(255),
-    uri varchar(255),
-    language varchar(10)
-)
-    </programlisting>
+    <title>Relational database</title>
+    <graphic fileref="core/databaseDiagrams/lexicographicResource.svg" contentwidth="16cm"/>
   </example>
 
 </section>

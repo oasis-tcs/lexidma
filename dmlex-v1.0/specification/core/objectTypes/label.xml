@@ -11,61 +11,89 @@
   <title>
     <code>label</code>
   </title>
-  <para>Represents a restriction on its parent such as temporal (old-fashioned, neologism), regional (dialect), register (formal, colloquial), domain (medicine, politics) or grammar (singular-only).</para>
-  <programlisting>
-label: &lt;string&gt;
-    listingOrder: (1..1) &lt;number&gt;
-</programlisting>
-  <section>
+  <para>Represents a restriction on its parent such as temporal (old-fashioned, neologism), regional
+    (dialect), register (formal, colloquial), domain (medicine, politics) or grammar
+    (singular-only).</para>
+
+  <itemizedlist>
+    <title>Child of</title>
+    <listitem>
+      <para><literal><olink targetptr="core_entry">entry</olink></literal></para>
+    </listitem>
+    <listitem>
+      <para><literal><olink targetptr="core_sense">sense</olink></literal></para>
+    </listitem>
+    <listitem>
+      <para><literal><olink targetptr="core_inflectedForm">inflectedForm</olink></literal></para>
+    </listitem>
+    <listitem>
+      <para><literal><olink targetptr="core_pronunciation">pronunciation</olink></literal></para>
+    </listitem>
+    <listitem>
+      <para><literal><olink targetptr="core_example">example</olink></literal></para>
+    </listitem>
+  </itemizedlist>
+
+  <itemizedlist>
+    <title>Contents</title>
+    <listitem>
+      <para><literal>value</literal>
+        <glossterm>required</glossterm> (exactly one). Non-empty string. An abbreviation, a code or
+        some other string of text which identifies the label, for example <code>neo</code> for
+        neologism, <code>colloq</code> for colloquial, <code>polit</code> for politics. The
+            <code><olink targetptr="core_tag">tag</olink></code> object type can be used to explain
+        the meaning of the labels, to constrain which labels are allowed to occur in the
+        lexicographic resource, and to map them onto external inventories and ontologies.</para>
+    </listitem>
+    <listitem>
+      <para><literal>listingOrder</literal>
+        <glossterm>required</glossterm> (exactly one). Number. The position of this label among
+        other labels of the same entry. This can be implicit from the serialization.</para>
+    </listitem>
+  </itemizedlist>
+
+  <itemizedlist>
+    <title>Comments</title>
+    <listitem>
+      <para>A label applies to the object that it is a child of. When the label is a child of
+        <code><olink targetptr="core_entry">entry</olink></code>, then it applies to the headword in all its senses. When the label is
+        a child of <olink targetptr="core_sense">sense</olink>, then it applies to the headword in that sense only
+        (<emphasis role="strong">not</emphasis> including any subsenses linked to it using the
+        <olink targetptr="linking">Linking Module</olink>).
+        When the label is a child of <olink targetptr="core_inflectedForm">inflectedForm</olink>, then it applies
+        only to that inflected form of the headword (in all senses). When the label is a child of
+        <olink targetptr="core_pronunciation">pronunciation</olink>, then it applies only to that pronuciation of the headword
+        (in all senses).</para>
+    </listitem>
+  </itemizedlist>
+
+  <example>
     <title>XML</title>
     <programlisting>
 &lt;label value="..."/&gt;
-</programlisting>
-  </section>
-  <section>
+    </programlisting>
+  </example>
+  
+  <example>
     <title>JSON</title>
     <programlisting>
 "..."
-</programlisting>
-  </section>
-  <section>
-      <title>RDF</title>
-      <programlisting>
+    </programlisting>
+  </example>
+  
+  <example>
+    <title>RDF</title>
+    <programlisting>
 &lt;entry&gt; dmlex:label [
   a dmlex:Label ;
   rdf:value "..." ;
   dmlex:listingOrder 1 ] .
-      </programlisting>
-  </section>
-  <section>
-    <title>SQL</title>
-    <programlisting>
-create table labels (
-    entryID int foreign key references entries(id),
-    senseID int foreign key references senses(id),
-    inflectedFormID int foreign key references inflectedForms(id),
-    pronunciationID int foreign key references pronunciations(id),
-    exampleID int foreign key references examples(id),
-    value varchar(10),
-    listingOrder int,
-    id int primary key
-)
-</programlisting>
-  </section>
-  <section>
-    <title>Comments</title>
-    <itemizedlist>
-      <listitem>
-        <para>The value of the label object is an abbreviation, a code or some other string of text which identifies the label, for example <code>neo</code> for neologism,  <code>colloq</code> for colloquial, <code>polit</code> for politics. You can use the <code>tag</code> datatype to explain the meaning of the label tags, to constrain which label tags are allowed to occur in your lexicographic resource, and to map them onto external inventories and ontologies.</para>
-      </listitem>
-      <listitem>
-        <para>
-          <code>listingOrder</code> is the position of this label among other labels of the same entry. This can be implicit from the serialization.</para>
-      </listitem>
-      <listitem>
-        <para>A label applies to the object that it is a child of. When the label is a child of <code>entry</code>, then it applies to the headword in all its senses. When the label is a child of <code>sense</code>, then it applies to the headword in that sense only (<emphasis role="strong">not</emphasis> including any subsenses linked to it using the Linking Module). When the label is a child of <code>inlectedForm</code>, then it applies only to that inflected form of the headword (in all senses). When the label is a child of <code>pronunciation</code>, then it applies only to that pronuciation of the headword (in all senses).</para>
-      </listitem>
-    </itemizedlist>
-  </section>
-
+    </programlisting>
+  </example>
+  
+  <example>
+    <title>Relational database</title>
+    <graphic fileref="core/databaseDiagrams/label.svg" contentwidth="16cm"/>
+  </example>
+  
 </section>

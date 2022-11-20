@@ -11,39 +11,40 @@
   <title>
     <code>sameAs</code>
   </title>
-  <para>Represents the fact that the parent object is equivalent to an item available from an external authority. Example: <xref linkend="x06"/>.</para>
-  <programlisting>
-sameAs: &lt;uri&gt;
-</programlisting>
-  <section>
+  <para>Represents the fact that the parent object is equivalent to an item available from an external authority. Example: <xref linkend="ex06"/>.</para>
+
+  <itemizedlist>
+    <title>Child of</title>
+    <listitem>
+      <para><literal><olink targetptr="core_tag">tag</olink></literal></para>
+    </listitem>
+  </itemizedlist>
+
+  <itemizedlist>
+    <title>Contents</title>
+    <listitem>
+      <para><literal>value</literal>
+        <glossterm>required</glossterm> (exactly one). The URI of an item in an external inventory.</para>
+    </listitem>
+  </itemizedlist>
+    
+  <example>
     <title>XML</title>
     <programlisting>
 &lt;sameAs uri="..."/&gt;
-</programlisting>
-  </section>
-  <section>
+    </programlisting>
+  </example>
+  
+  <example>
     <title>JSON</title>
     <programlisting>
 "..."
-</programlisting>
-  </section>
-  <section>
-    <title>SQL</title>
-    <programlisting>
-create table sameAs (
-    tagID int foreign key references tags(id),
-    uri varchar(255),
-    id int primary key
-)
-</programlisting>
-  </section>
-  <section>
-    <title>Comments</title>
-    <itemizedlist>
-      <listitem>
-        <para>The value is the URI of an item in an external inventory.</para>
-      </listitem>
-    </itemizedlist>
-  </section>
+    </programlisting>
+  </example>
+  
+  <example>
+    <title>Relational database</title>
+    <graphic fileref="core/databaseDiagrams/sameAs.svg" contentwidth="16cm"/>
+  </example>
   
 </section>

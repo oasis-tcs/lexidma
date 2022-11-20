@@ -12,59 +12,66 @@
     <code>transcription</code>
   </title>
   <para>Represents the transcription of a pronunciation in some notation such as IPA.</para>
-  <programlisting>
-transcription: &lt;string&gt;
-    scheme: (0..1) &lt;langCode&gt;
-    listingOrder: (1..1) &lt;number&gt;
-</programlisting>
-  <section>
+
+  <itemizedlist>
+    <title>Child of</title>
+    <listitem>
+      <para><literal><olink targetptr="core_pronunciation">pronunciation</olink></literal></para>
+    </listitem>
+  </itemizedlist>
+
+  <itemizedlist>
+    <title>Contents</title>
+    <listitem>
+      <para><literal>text</literal>
+        <glossterm>required</glossterm> (exactly one). Non-empty string. The actual
+        transcription.</para>
+    </listitem>
+    <listitem>
+      <para><literal>scheme</literal>
+        <glossterm>optional</glossterm> (zero or one). IETF language tag. Identifies the
+        transcription scheme used here. Example: <code>en-fonipa</code> for English IPA. This can be
+        implicit if the lexicographic resource uses only one transcription scheme throughout.
+      </para>
+    </listitem>
+    <listitem>
+      <para><literal>listingOrder</literal>
+        <glossterm>required</glossterm> (exactly one). Number. The position of this transcription
+        object among transcriptions of the same pronunciations. This can be implicit from the
+        serialization.</para>
+    </listitem>
+  </itemizedlist>
+
+  <example>
     <title>XML</title>
     <programlisting>
 &lt;transcription scheme="..."&gt;...&lt;/transcription&gt;
-</programlisting>
-  </section>
-  <section>
+    </programlisting>
+  </example>
+
+  <example>
     <title>JSON</title>
     <programlisting>
 {
     "text": "...",
     "scheme": "..."
 }
-</programlisting>
-  </section>
-  <section>
-      <title>RDF</title>
-      <programlisting>
+    </programlisting>
+  </example>
+
+  <example>
+    <title>RDF</title>
+    <programlisting>
 &lt;pronunciation&gt; dmlex:transcription [
   a dmlex:Transcription ;
   dmlex:scheme "..." ;
   dmlex:listingOrder 1 ] .
-  </programlisting>
-  </section>
-  <section>
-    <title>SQL</title>
-    <programlisting>
-create table transcriptions (
-    pronunciationID int foreign key references pronunciation(id),
-    text varchar(255),
-    scheme varchar(10),
-    listingOrder int,
-    id int primary key
-)
-</programlisting>
-  </section>
-  <section>
-    <title>Comments</title>
-    <itemizedlist>
-      <listitem>
-        <para>
-          <code>scheme</code> object identifies the transcription scheme used here. Example: <code>en-fonipa</code> for English IPA. This can be implicit if the lexicographic resource uses only one transcription scheme throughout.</para>
-      </listitem>
-      <listitem>
-        <para>
-          <code>listingOrder</code> is the position of this <code>transcription</code> object among other <code>transcription</code> objects of the same pronunciation. This can be implicit from the serialization.</para>
-      </listitem>
-    </itemizedlist>
-  </section>
-  
+    </programlisting>
+  </example>
+
+  <example>
+    <title>Relational database</title>
+    <graphic fileref="core/databaseDiagrams/transcription.svg" contentwidth="16cm"/>
+  </example>
+
 </section>
