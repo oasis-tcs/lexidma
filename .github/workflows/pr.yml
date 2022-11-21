@@ -5,7 +5,7 @@ name: CI
 # Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
-  push:
+  pull_request:
     branches: [ master ]
 
   # Allows you to run this workflow manually from the Actions tab
@@ -33,14 +33,3 @@ jobs:
           sudo apt-get install xsltproc fop xmlstarlet
       - name: Make XML, HTML and PDF
         run: make html pdf
-      - name: Update Automatic Release
-        uses: marvinpinto/action-automatic-releases@latest
-        with:
-          repo_token: "${{ secrets.GITHUB_TOKEN}}"
-          automatic_release_tag: "dev-latest"
-          prerelease: true
-          title: "Latest Version"
-          files: |
-            dmlex-v1.0/specification/dmlex-v1.0-wd01.html
-            dmlex-v1.0/specification/dmlex-v1.0-wd01.pdf
-            dmlex-v1.0/specification/dmlex-v1.0-wd01.xml
