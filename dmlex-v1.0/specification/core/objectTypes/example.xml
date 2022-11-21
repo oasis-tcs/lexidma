@@ -11,25 +11,65 @@
   <title>
     <code>example</code>
   </title>
-  <para>Represents a sentence or other text fragment which illustrates the headword being used.</para>
-  <programlisting>
-example: &lt;string&gt;
-    sourceIdentity: (0..1) &lt;string&gt;
-    sourceElaboration: (0..1) &lt;string&gt;
-    label: (0..n)
-    soundFile: (0..1) &lt;uri&gt;
-    listingOrder: (1..1) &lt;number&gt;
-</programlisting>
-  <section>
+  <para>Represents a sentence or other text fragment which illustrates the headword being
+    used.</para>
+
+  <itemizedlist>
+    <title>Child of</title>
+    <listitem>
+      <para><literal><olink targetptr="core_sense">sense</olink></literal></para>
+    </listitem>
+  </itemizedlist>
+
+  <itemizedlist>
+    <title>Contents</title>
+    <listitem>
+      <para><literal>text</literal>
+        <glossterm>required</glossterm> (exactly one). Non-empty string. The example itself.</para>
+    </listitem>
+    <listitem>
+      <para><literal>sourceIdentity</literal>
+        <glossterm>optional</glossterm> (zero or one). An abbreviation, a code or some other string
+        of text which identifies the source. The <code><olink targetptr="core_tag"
+          >tag</olink></code> object type can be used to explain the meaning of the source
+        identifiers, to constrain which source identifiers are allowed to occur in the lexicographic
+        resource, and to map them onto external inventories and ontologies.</para>
+    </listitem>
+    <listitem>
+      <para><literal>sourceElaboration</literal>
+        <glossterm>optional</glossterm> (zero or one). Non-empty string. A free-form statement about
+        the source of the example. If <code>source</code> is present, then
+          <code>sourceElaboration</code> can be used for information where in the source the example
+        can be found: page number, chapter and so on. If <code>sourceIdentity</code> is absent then
+          <code>sourceElaboration</code> can be used to fully name the source.</para>
+    </listitem>
+    <listitem>
+      <para><literal><olink targetptr="core_label">label</olink></literal>
+        <glossterm>optional</glossterm> (zero, one or more).</para>
+    </listitem>
+    <listitem>
+      <para><literal>soundFile</literal>
+        <glossterm>optional</glossterm> (zero or one). A pointer to a file, such as a filename or a URI, containing a sound recording of the
+        example.</para>
+    </listitem>
+    <listitem>
+      <para><literal>listingOrder</literal>
+        <glossterm>required</glossterm> (exactly one). Number. The position of this example object
+        among examples of the same sense. This can be implicit from the serialization.</para>
+    </listitem>
+  </itemizedlist>
+
+  <example>
     <title>XML</title>
     <programlisting>
 &lt;example sourceIdentity="..." sourceElaboration="..." soundFile="..."&gt;
     &lt;text&gt;...&lt;/text&gt;
     &lt;label.../&gt;
 &lt;/example&gt;
-</programlisting>
-  </section>
-  <section>
+    </programlisting>
+  </example>
+
+  <example>
     <title>JSON</title>
     <programlisting>
 {
@@ -39,11 +79,12 @@ example: &lt;string&gt;
     "labels": [...],
     "soundFile": "..."
 }
-</programlisting>
-  </section>
-  <section>
-      <title>RDF</title>
-      <programlisting>
+    </programlisting>
+  </example>
+
+  <example>
+    <title>RDF</title>
+    <programlisting>
 &lt;entry&gt; dmlex:example [
   a dmlex:Example ;
   rdf:value "..." ;
@@ -52,40 +93,12 @@ example: &lt;string&gt;
   dmlex:label ... ;
   dmlex:soundFile &lt;...&gt; ;
   dmlex:listingOrder 1 ] .
-  </programlisting></section>
-  <section>
-    <title>SQL</title>
-    <programlisting>
-create table examples (
-    senseID int foreign key references senses(id),
-    text varchar(255),
-    sourceIdentity varchar(50),
-    sourceElaboration varchar(255),
-    soundFile varchar(255),
-    id int primary key
-)
-</programlisting>
-  </section>
-  <section>
-    <title>Comments</title>
-    <itemizedlist>
-      <listitem>
-        <para>
-          <code>sourceIdentity</code> is an abbreviation, a code or some other string of text which identifies the source. You can use the <code>tag</code> datatype to explain the meaning of the source identifiers and to constrain which source identifiers are allowed to occur in your lexicographic resource.</para>
-      </listitem>
-      <listitem>
-        <para>
-          <code>sourceElaboration</code> is a free-form statement about the source of the example. If <code>source</code> is present, then <code>sourceElaboration</code> can be used for information where in the source the example can be found: page number, chapter and so on. If <code>sourceIdentity</code> is absent then <code>sourceElaboration</code> can be used to fully name the source.</para>
-      </listitem>
-      <listitem>
-        <para>
-          <code>soundFile</code> is a pointer to a file containing a sound recording of the example.</para>
-      </listitem>
-      <listitem>
-        <para>
-          <code>listingOrder</code> is the position of this example among other examples in the same sense. This can be implicit from the serialization.</para>
-      </listitem>
-    </itemizedlist>
-  </section>
-  
+    </programlisting>
+  </example>
+
+  <example>
+    <title>Relational database</title>
+    <graphic fileref="core/databaseDiagrams/example.svg" contentwidth="16cm"/>
+  </example>
+
 </section>

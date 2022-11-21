@@ -11,15 +11,79 @@
   <title>
     <code>tag</code>
   </title>
-  <para>Represents one (of many) possible values for <code>partOfSpeech</code>, <code>inflectedTag</code>, <code>label</code>, and <code>source</code>. Example: <xref linkend="ex05"/>.</para>
-  <programlisting>
-tag: &lt;string&gt;
-    description: (0..1) &lt;string&gt;
-    target: (0..n) &lt;symbol&gt;
-    partOfSpeechConstraint: (0..n) &lt;string&gt;
-    sameAs: (0..n)
-</programlisting>
-  <section>
+  <para>Represents one (of many) possible values for
+    <code>value</code> of <code><olink targetptr="core_partOfSpeech">partOfSpeech</olink></code>,
+    <code>inflectedTag</code> of <code><olink targetptr="core_inflectedForm">inflectedForm</olink></code>,
+    <code>definitionType</code> of <code><olink targetptr="core_definition">definition</olink></code>,
+    <code>value</code> of <code><olink targetptr="core_label">label</olink></code> or
+    <code>sourceIndentity</code> of <code><olink targetptr="core_example">example</olink></code>.
+    Example: <xref linkend="ex05"/>.
+  </para>
+
+  <itemizedlist>
+    <title>Child of</title>
+    <listitem>
+      <para><literal><olink targetptr="core_lexicographicResource">lexicographicResource</olink></literal></para>
+    </listitem>
+  </itemizedlist>
+
+  <itemizedlist>
+    <title>Contents</title>
+    <listitem>
+      <para><literal>value</literal>
+        <glossterm>required</glossterm> (exactly one). Non-empty string.
+        An abbreviation, a code or some other string of text.</para>
+    </listitem>
+    <listitem>
+      <para><literal>description</literal>
+        <glossterm>optional</glossterm> (zero or one). Non-empty string.
+        A human-readable description of what the tag means.</para>
+    </listitem>
+    <listitem>
+      <para><literal>target</literal>
+        <glossterm>optional</glossterm> (zero, one or more).
+        Indicates how the value of this tag can be used in this lexicographic resource.
+        One of:
+        <code>partOfSpeech</code>,
+        <code>inflectedTag</code>,
+        <code>definitionType</code>,
+        <code>label</code>,
+        <code>sourceIndentity</code>.
+        If omitted, then all.
+      </para>
+    </listitem>
+    <listitem>
+      <para><literal>partOfSpeechConstraint</literal>
+        <glossterm>optional</glossterm> (zero, one or more). If present, says that this tag
+        is only intended to be used inside entries that are labelled with this part of speech.
+        This can be used to constrain that, for example, only nouns and adjectives can have plurals
+        but other parts of speech cannot.</para>
+    </listitem>
+    <listitem>
+      <para><literal><olink targetptr="core_sameAs">sameAs</olink></literal>
+        <glossterm>optional</glossterm> (zero, one or more).</para>
+    </listitem>
+  </itemizedlist>
+
+  <itemizedlist>
+    <title>Comments</title>
+    <listitem>
+      <para>
+        In a lexicographic resource, <code>tag</code> objects can used to define
+        controlled vocabularies (inventories of part-of-speech tags, labels etc.) and constrains
+        on where they are expected to be used (e.g. part-of-speech tags are expected to be used
+        as <code>value</code> of <code>partOfSpeech</code> objects).
+      </para>
+      <para>
+        Enforcing these constraints in an implementation of DMLex, for example as business rules 
+        in a dictionary-writing system, is <glossterm>optional</glossterm>: an implementation of
+        DMLex is compliant regardless of whether it
+        enforces the constraints defined by <code>tag</code> objects or not.
+      </para>
+    </listitem>
+  </itemizedlist>
+  
+  <example>
     <title>XML</title>
     <programlisting>
 &lt;tag value="..."&gt;
@@ -28,9 +92,10 @@ tag: &lt;string&gt;
     &lt;partOfSpeechConstraint value="..."/&gt;
     &lt;sameAs.../&gt;
 &lt;/tag&gt;
-</programlisting>
-  </section>
-  <section>
+  </programlisting>
+  </example>
+  
+  <example>
     <title>JSON</title>
     <programlisting>
 {
@@ -40,81 +105,24 @@ tag: &lt;string&gt;
     "partOfSpeechConstraints": ["..."],
     "sameAs": [...]
 }
-</programlisting>
-  </section>
-  <section>
-      <title>RDF</title>
-      <programlisting>
+    </programlisting>
+  </example>
+  
+  <example>
+    <title>RDF</title>
+    <programlisting>
 &lt;entry&gt; dmlex:tag [
   a dmlex:Tag ;
   dmlex:description "..." ;
   dmlex:target "..." ;
   dmlex:partOfSpeechConstraints "..." ;
   dmlex:sameAs ... ] .
-      </programlisting>
-  </section>
-  <section>
-    <title>SQL</title>
-    <programlisting>
-create table tags (
-    lexicographicResourceID int foreign key references lexicographicResource(id),
-    value varchar(10),
-    description varchar(255),
-    targets varchar(255), --comma-separated list
-    partOfSpeechConstraints varchar(255), --comma-separated list
-    id int primary key
-)
-</programlisting>
-  </section>
-  <section>
-    <title>Comments</title>
-    <itemizedlist>
-      <listitem>
-        <para>The value is an abbreviation, a code or some other string of text which identifies the source. If you want, you can design your implementation to enforce referential integrity between <code>tag</code> values on the one hand and  <code>partOfSpeech</code>, <code>inflectedTag</code> etc. objects on the other hand. In other words, you can make it so that the tags you define in <code>tag</code> objects are the only values allowed for <code>partOfSpeech</code>, <code>inflectedTag</code> etc. However, doing this is optional in DMLex. An implementation of DMLex is compliant regardless of whether it enforces referential integrity on <code>tag</code> values.</para>
-      </listitem>
-      <listitem>
-        <para>
-          <code>description</code> is a human-readable description of what the tag means.</para>
-      </listitem>
-      <listitem>
-        <para>
-          <code>target</code> tells us where exactly the tag is expected to be used. If omitted, then all four. The possible values are:</para>
-        <itemizedlist>
-          <listitem>
-            <para>
-              <code>partOfSpeech</code>: as the value of a <code>partOfSpeech</code> object</para>
-          </listitem>
-          <listitem>
-            <para>
-              <code>inflectedTag</code>: as the value of an <code>inflectedTag</code> object</para>
-          </listitem>
-          <listitem>
-            <para>
-              <code>sourceIdentity</code>: as the value of a <code>sourceIdentity</code> object</para>
-          </listitem>
-          <listitem>
-            <para>
-              <code>label</code>: as the value of a <code>label</code> object</para>
-          </listitem>
-          <listitem>
-            <para>
-              <code>definitionType</code>: as the value of a <code>definitionType</code> object</para>
-          </listitem>
-          <listitem>
-            <para>
-              <code>collocateRole</code>: as the value of a <code>collocateRole</code> object</para>
-          </listitem>
-        </itemizedlist>
-      </listitem>
-      <listitem>
-        <para>
-          <code>partOfSpeechConstraint</code>, if present, says that this tag is only intended to be used inside entries that are labelled with this part of speech. You can us this to constrain that, for example, only nouns and adjectives can have plurals but other parts of speech cannot.</para>
-      </listitem>
-      <listitem>
-        <para>
-          <code>target</code> and <code>partOfSpeechConstraint</code> allow you to specify constraints on which tags are expected to appear where throughout the lexicographic resource. Enforcing these constraints in your implementation is optional.</para>
-      </listitem>
-    </itemizedlist>
-  </section>
+    </programlisting>
+  </example>
+  
+  <example>
+    <title>Relational database</title>
+    <graphic fileref="core/databaseDiagrams/tag.svg" contentwidth="16cm"/>
+  </example>
   
 </section>

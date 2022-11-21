@@ -12,23 +12,49 @@
     <code>pronunciation</code>
   </title>
   <para>Represents the pronunciation of its parent. Examples: <xref linkend="ex02"/>, <xref linkend="ex03"/>, <xref linkend="ex04"/>.</para>
-  <programlisting>
-pronunciation: &lt;empty&gt;
-    soundFile: (0..1) &lt;uri&gt;
-    transcription: (0..n)
-    listingOrder: (1..1) &lt;number&gt;
-    label: (0..n)
-</programlisting>
-  <section>
+
+  <itemizedlist>
+    <title>Child of</title>
+    <listitem>
+      <para><literal><olink targetptr="core_entry">entry</olink></literal></para>
+    </listitem>
+    <listitem>
+      <para><literal><olink targetptr="core_inflectedForm">inflectedForm</olink></literal></para>
+    </listitem>
+  </itemizedlist>
+
+  <itemizedlist>
+    <title>Contents</title>
+    <listitem>
+      <para><literal>soundFile</literal>
+        <glossterm>optional</glossterm> (zero or one). A pointer to a file, such as a filename or a URI, containing a sound recording of the pronunciation</para>
+    </listitem>
+    <listitem>
+      <para><literal><olink targetptr="core_transcription">transcription</olink></literal>
+        <glossterm>optional</glossterm> (zero, one or more).</para>
+    </listitem>
+    <listitem>
+      <para><literal>listingOrder</literal>
+        <glossterm>required</glossterm> (exactly one). Number. The position of this pronuciation object among
+        other pronuciation objects of the same entry. This can be implicit from the serialization.</para>
+    </listitem>
+    <listitem>
+      <para><literal><olink targetptr="core_label">label</olink></literal>
+        <glossterm>optional</glossterm> (zero, one or more).</para>
+    </listitem>
+  </itemizedlist>
+
+  <example>
     <title>XML</title>
     <programlisting>
 &lt;pronunciation soundFile="..."&gt;
     &lt;transcription.../&gt;
     &lt;label.../&gt;
 &lt;/pronunciation&gt;
-</programlisting>
-  </section>
-  <section>
+    </programlisting>
+  </example>
+  
+  <example>
     <title>JSON</title>
     <programlisting>
 {
@@ -36,46 +62,24 @@ pronunciation: &lt;empty&gt;
     "transcriptions": [...],
     "labels": [...]
 }
-</programlisting>
-  </section>
-  <section>
-      <title>RDF</title>
-      <programlisting>
+    </programlisting>
+  </example>
+  
+  <example>
+    <title>RDF</title>
+    <programlisting>
 &lt;entry&gt; dmlex:pronunciation [
   a dmlex:Pronunicaton ;
   dmlex:soundFile &lt;...&gt; ;
   dmlex:transcription ... ;
   dmlex:listingOrder 1 ;
   dmlex:label ...  ] .
-      </programlisting>
-  </section>
-  <section>
-    <title>SQL</title>
-    <programlisting>
-create table pronunciations (
-    entryID int foreign key references entries(id),
-    soundFile varchar(255),
-    listingOrder int,
-    id int primary key
-)
-</programlisting>
-  </section>
-  <section>
-    <title>Comments</title>
-    <itemizedlist>
-      <listitem>
-        <para>
-          <code>transcription</code> is the  transcription of the pronuciation in some notation, such as IPA. If more than transcription is present in a single pronuncuation object, then they must be different transcriptions (in different schemes) of the same pronunciation, eg. one in IPA and one in SAMPA.</para>
-      </listitem>
-      <listitem>
-        <para>
-          <code>soundFile</code> is a pointer to a file containing a sound recording of the pronunciation.</para>
-      </listitem>
-      <listitem>
-        <para>
-          <code>listingOrder</code> is the position of this <code>pronunciation</code> object among other <code>pronunciation</code> objects of the same parent. This can be implicit from the serialization.</para>
-      </listitem>
-    </itemizedlist>
-  </section>
+    </programlisting>
+  </example>
+
+  <example>
+    <title>Relational database</title>
+    <graphic fileref="core/databaseDiagrams/pronunciation.svg" contentwidth="16cm"/>
+  </example>
   
 </section>

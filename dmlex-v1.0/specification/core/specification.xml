@@ -12,9 +12,9 @@
   <xi:include href="objectTypes/lexicographicResource.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objectTypes/entry.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objectTypes/partOfSpeech.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objectTypes/inflectedForm.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objectTypes/sense.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objectTypes/definition.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="objectTypes/inflectedForm.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objectTypes/label.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objectTypes/pronunciation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objectTypes/transcription.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>

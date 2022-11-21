@@ -12,41 +12,54 @@
   </title>
   <para>Represents a dictionary entry. An entry contains information about one headword.</para>
 
-  <bridgehead>Contents</bridgehead>
   <itemizedlist>
+    <title>Child of</title>
     <listitem>
-      <para><literal>id (1..1) &lt;id&gt;</literal> An identifier of the entry, unique among all
-        lexicographic resources in the implementation.</para>
-    </listitem>
-    <listitem>
-      <para><literal>headword: (1..1) &lt;string&gt;</literal> The entry's headword.</para>
-    </listitem>
-    <listitem>
-      <para><literal>homographNumber: (0..1) &lt;number&gt;</literal> The entry's homograph number,
-        as a guide for humans to distinguish entries with the same headword.</para>
-    </listitem>
-    <listitem>
-      <para><literal><olink targetptr="core_partOfSpeech">partOfSpeech</olink>:
-        (0..n)</literal></para>
-    </listitem>
-    <listitem>
-      <para><literal><olink targetptr="core_label">label</olink>: (0..n)</literal></para>
-    </listitem>
-    <listitem>
-      <para><literal><olink targetptr="core_pronunciation">pronunciation</olink>:
-        (0..n)</literal></para>
-    </listitem>
-    <listitem>
-      <para><literal><olink targetptr="core_inflectedForm">inflectedForm</olink>:
-        (0..n)</literal></para>
-    </listitem>
-    <listitem>
-      <para><literal><olink targetptr="core_sense">sense</olink>: (0..n)</literal></para>
+      <para><literal><olink targetptr="core_lexicographicResource">lexicographicResource</olink></literal></para>
     </listitem>
   </itemizedlist>
 
-  <bridgehead>Comments</bridgehead>
   <itemizedlist>
+    <title>Contents</title>
+    <listitem>
+      <para><literal>id</literal>
+        <glossterm>required</glossterm> (exactly one). An identifier of the entry, unique among all
+        lexicographic resources in the implementation.</para>
+    </listitem>
+    <listitem>
+      <para><literal>headword</literal>
+        <glossterm>required</glossterm> (exactly one). Non-empty string. The entry's
+        headword.</para>
+    </listitem>
+    <listitem>
+      <para><literal>homographNumber</literal>
+        <glossterm>optional</glossterm> (zero or one). The entry's homograph number, as a guide for
+        humans to distinguish entries with the same headword.</para>
+    </listitem>
+    <listitem>
+      <para><literal><olink targetptr="core_partOfSpeech">partOfSpeech</olink></literal>
+        <glossterm>optional</glossterm> (zero, one or more). </para>
+    </listitem>
+    <listitem>
+      <para><literal><olink targetptr="core_label">label</olink></literal>
+        <glossterm>optional</glossterm> (zero, one or more).</para>
+    </listitem>
+    <listitem>
+      <para><literal><olink targetptr="core_pronunciation">pronunciation</olink></literal>
+        <glossterm>optional</glossterm> (zero, one or more). </para>
+    </listitem>
+    <listitem>
+      <para><literal><olink targetptr="core_inflectedForm">inflectedForm</olink></literal>
+        <glossterm>optional</glossterm> (zero, one or more). </para>
+    </listitem>
+    <listitem>
+      <para><literal><olink targetptr="core_sense">sense</olink></literal>
+        <glossterm>optional</glossterm> (zero, one or more). </para>
+    </listitem>
+  </itemizedlist>
+
+  <itemizedlist>
+    <title>Comments</title>
     <listitem>
       <para> The headword can be a single word, a multi-word expression, or any expression in the
         source language which is being described by the entry.</para>
@@ -57,8 +70,8 @@
     </listitem>
     <listitem>
       <para>DMLex Core does not have a concept of "subentry". To model subentries (ie. entries
-        inside entries) in a lexicographic resource, you <glossterm>must</glossterm> use object types
-        from the <olink targetptr="linking">Linking Module</olink> for that.</para>
+        inside entries) in a lexicographic resource, you should use object
+        types from the <olink targetptr="linking">Linking Module</olink> for that.</para>
     </listitem>
   </itemizedlist>
 
@@ -93,8 +106,8 @@
   </example>
 
   <example>
-      <title>RDF</title>
-      <programlisting>
+    <title>RDF</title>
+    <programlisting>
 &lt;id&gt; a dmlex:Entry ;
   dmlex:headword "..." ;
   dmlex:homographNumber ... ;
@@ -104,18 +117,11 @@
   dmlex:inflectedForm ... ;
   dmlex:sense ... .
     </programlisting>
-  </examle>
-  
+  </example>
+
   <example>
-    <title>SQL</title>
-    <programlisting>
-create table entries (
-    lexicographicResourceID int foreign key references lexicographicResource(id),
-    id int primary key,
-    headword varchar(255),
-    homographNumber int
-)
-    </programlisting>
+    <title>Relational database</title>
+    <graphic fileref="core/databaseDiagrams/entry.svg" contentwidth="16cm"/>
   </example>
 
 </section>

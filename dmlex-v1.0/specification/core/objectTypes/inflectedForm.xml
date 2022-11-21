@@ -11,15 +11,50 @@
   <title>
     <code>inflectedForm</code>
   </title>
-  <para>Represents one (of possibly many) inflected forms of the headword. Example: <xref linkend="ex01"/>.</para>
-  <programlisting>
-inflectedForm: &lt;string&gt;
-    inflectedTag: (0..1) &lt;string&gt;
-    listingOrder: (1..1) &lt;number&gt;
-    label: (0..n)
-    pronunciation: (0..n)
-</programlisting>
-  <section>
+  <para>Represents one (of possibly many) inflected forms of the headword. Example: <xref
+      linkend="ex01"/>.</para>
+
+  <itemizedlist>
+    <title>Child of</title>
+    <listitem>
+      <para><literal><olink targetptr="core_entry">entry</olink></literal></para>
+    </listitem>
+  </itemizedlist>
+
+  <itemizedlist>
+    <title>Contents</title>
+    <listitem>
+      <para><literal>inflectedTag</literal>
+        <glossterm>optional</glossterm> (zero or one). Non-empty string. an abbreviation, a code or
+        some other string of text which identifies the inflected form, for example <code>pl</code>
+        for plural, <code>gs</code> for genitive singular, <code>com</code> for comparative. The
+            <code><olink targetptr="core_tag">tag</olink></code> object type can be used to explain
+        the meaning of the inflection tags, to constrain which inflection tags are allowed to occur
+        in the lexicographic resource, and to map them onto external inventories and
+        ontologies.</para>
+    </listitem>
+    <listitem>
+      <para><literal>text</literal>
+        <glossterm>required</glossterm> (exactly one). Non-empty string. The text of the inflected
+        form.</para>
+    </listitem>
+    <listitem>
+      <para><literal><olink targetptr="core_label">label</olink></literal>
+        <glossterm>optional</glossterm> (zero, one or more).</para>
+    </listitem>
+    <listitem>
+      <para><literal><olink targetptr="core_pronunciation">pronunciation</olink></literal>
+        <glossterm>optional</glossterm> (zero, one or more). </para>
+    </listitem>
+    <listitem>
+      <para><literal>listingOrder</literal>
+        <glossterm>required</glossterm> (exactly one). Number. The position of this inflected form
+        among other inflected forms of the same entry. This can be implicit from the
+        serialization.</para>
+    </listitem>
+  </itemizedlist>
+
+  <example>
     <title>XML</title>
     <programlisting>
 &lt;inflectedForm inflectedTag="..."&gt;
@@ -27,9 +62,10 @@ inflectedForm: &lt;string&gt;
     &lt;label.../&gt;
     &lt;pronunciation.../&gt;
 &lt;/inflectedTag&gt;
-</programlisting>
-  </section>
-  <section>
+    </programlisting>
+  </example>
+
+  <example>
     <title>JSON</title>
     <programlisting>
 {
@@ -38,49 +74,34 @@ inflectedForm: &lt;string&gt;
     "labels": [...],
     "pronunciations": [...]
 }
-</programlisting>
-  </section>
-  <section>
-      <title>RDF</title>
-      <programlisting>
+    </programlisting>
+  </example>
+  
+  <example>
+    <title>RDF</title>
+    <programlisting>
 &lt;entry&gt; dmlex:inflectedForm [
   a dmlex:InflectedForm ;
   dmlex:inflectedTag "..." ;
   dmlex:listingOrder 1 ;
   dmlex:label ... ;
   dmlex:pronunciation ... .
-  </programlisting>
-  </section>
-  <section>
-    <title>SQL</title>
-    <programlisting>
-create table inflectedForms (
-    entryID int foreign key references entries(id),
-    inflectedTag varchar(10),
-    text varchar(255),
-    listingOrder int,
-    id int primary key
-)
-</programlisting>
-  </section>
-  <section>
-    <title>Comments</title>
-    <itemizedlist>
-      <listitem>
-        <para>
-          <code>inflectedTag</code> is an abbreviation, a code or some other string of text which identifies the inflected form, for example <code>pl</code> for plural,  <code>gs</code> for genitive singular, <code>com</code> for comparative. You can use the <code>tag</code> datatype to explain the meaning of the inflection tags, to constrain which inflection tags are allowed to occur in your lexicographic resource, and to map them onto external inventories and ontologies.</para>
-      </listitem>
-      <listitem>
-        <para>The value of the <code>inflectedForm</code> object is the text of the inflected word itself.</para>
-      </listitem>
-      <listitem>
-        <para>
-          <code>listingOrder</code> is the position of this inflected form among other inflected forms of the same entry. This can be implicit from the serialization.</para>
-      </listitem>
-      <listitem>
-        <para>The <code>inflectedForm</code> object is intended to model the <emphasis role="strong">inflectional morphology</emphasis> of a headword. To model derivational morphology, for example feminine forms of maculine nouns, the recommended way to do that in DMLex is to create separate entries for the two words, and link them using the Linking Module.</para>
-      </listitem>
-    </itemizedlist>
-  </section>
+    </programlisting>
+  </example>
   
+  <example>
+    <title>Relational database</title>
+    <graphic fileref="core/databaseDiagrams/inflectedForm.svg" contentwidth="16cm"/>
+  </example>
+  
+  <itemizedlist>
+    <title>Comments</title>
+    <listitem>
+      <para>The <code>inflectedForm</code> object is intended to model the <emphasis role="strong"
+          >inflectional morphology</emphasis> of a headword. To model derivational morphology, for
+        example feminine forms of maculine nouns, the recommended way to do that in DMLex is to
+        create separate entries for the two words, and link them using the <olink targetptr="linking">Linking Module</olink>.</para>
+    </listitem>
+  </itemizedlist>
+
 </section>

@@ -12,15 +12,62 @@
     <code>sense</code>
   </title>
   <para>Represents one of possibly many meanings (or meaning potentials) of the headword.</para>
-  <programlisting>
-sense: &lt;id&gt;
-    listingOrder: (1..1) &lt;number&gt;
-    indicator: (0..1) &lt;string&gt;
-    label: (0..n)
-    definition: (0..n)
-    example: (0..n)
-</programlisting>
-  <section>
+
+  <itemizedlist>
+    <title>Child of</title>
+    <listitem>
+      <para><literal><olink targetptr="core_entry">entry</olink></literal></para>
+    </listitem>
+  </itemizedlist>
+
+  <itemizedlist>
+    <title>Contents</title>
+    <listitem>
+      <para><literal>id</literal>
+        <glossterm>required</glossterm> (exactly one). An identifier of the entry, unique among all
+        lexicographic resources in the implementation.</para>
+    </listitem>
+    <listitem>
+      <para><literal>listingOrder</literal>
+        <glossterm>required</glossterm> (exactly one). Number. The position of this sense among
+        other senses of the same entry. Can be implicit from the serialization.</para>
+    </listitem>
+    <listitem>
+      <para><literal>indicator</literal>
+        <glossterm>optional</glossterm> (zero or one). A short statement, in the same language as
+        the headword, that gives an indication of the meaning of a sense and permits its
+        differentiation from other senses in the entry. Indicators are sometimes used in
+        dictionaries instead of or in addition to definitions.</para>
+    </listitem>
+    <listitem>
+      <para><literal><olink targetptr="core_label">label</olink></literal>
+        <glossterm>optional</glossterm> (zero, one or more). </para>
+    </listitem>
+    <listitem>
+      <para><literal><olink targetptr="core_definition">definition</olink></literal>
+        <glossterm>optional</glossterm> (zero, one or more). </para>
+    </listitem>
+    <listitem>
+      <para><literal><olink targetptr="core_example">example</olink></literal>
+        <glossterm>optional</glossterm> (zero, one or more). </para>
+    </listitem>
+  </itemizedlist>
+
+  <itemizedlist>
+    <title>Comments</title>
+    <listitem>
+      <para>An <emphasis role="strong">entry</emphasis> is a container for formal properties of the
+        headword such as orthography, morphology, syntax and pronunciation. A <emphasis role="strong"
+          >sense</emphasis> is a container for statements about the headword's semantics. DMLex
+        deliberately makes it impossible to include morphological information at sense level. If you
+        have an entry where each sense has slightly different morphological properties (eg. a noun has
+        a weak plural in one sense and a strong plural in another) then, in DMLex, you need to treat
+        it as two entries (homographs), and you can use the Linking Module two link the two entries
+        together and to make sure they are always shown together to human users.</para>
+    </listitem>
+  </itemizedlist>
+  
+  <example>
     <title>XML</title>
     <programlisting>
 &lt;sense id="..."&gt;
@@ -29,9 +76,10 @@ sense: &lt;id&gt;
     &lt;definition.../&gt;
     &lt;example.../&gt;
 &lt;/sense&gt;
-</programlisting>
-  </section>
-  <section>
+    </programlisting>
+  </example>
+  
+  <example>
     <title>JSON</title>
     <programlisting>
 {
@@ -41,51 +89,24 @@ sense: &lt;id&gt;
     "definitions": [...],
     "examples": [...]
 }
-</programlisting>
-  </section>
-  <section>
-      <title>RDF</title>
-      <programlisting>
+    </programlisting>
+  </example>
+  
+  <example>
+    <title>RDF</title>
+    <programlisting>
 &lt;id&gt; a dmlex:Sense ;
   dmlex:listingOrder 1 ;
   dmlex:indicator "..." ;
   dmlex:label ... ;
   dmlex:definition ... ;
   dmlex:example ... .
-      </programlisting>
-  </section>
-  <section>
-    <title>SQL</title>
-    <programlisting>
-create table senses (
-    entryID int foreign key references entries(id),
-    id int primary key,
-    indicator nvarchar(50),
-    listingOrder int
-)
-</programlisting>
-  </section>
-  <section>
-    <title>Comments</title>
-    <itemizedlist>
-      <listitem>
-        <para>
-          <code>listingOrder</code> represents the position of this sense among other senses of the same entry. Can be implicit from the serialization.</para>
-      </listitem>
-      <listitem>
-        <para>
-          <code>indicator</code> is a short statement, in the same language as the headword, that gives an indication of the meaning of a sense and permits its differentiation from other senses in the entry. Indicators are sometimes used in dictionaries instead of or in addition to definitions.</para>
-      </listitem>
-      <listitem>
-        <para>
-          <code>definition</code> is a statement, in the same language as the headword, that describes and/or explains the meaning of a sense. In DMLex, the term definition encompasses not only formal definitions, but also less formal explanations.</para>
-      </listitem>
-    </itemizedlist>
-  </section>
-  <section>
-    <title>Note</title>
-    <para>An <emphasis role="strong">entry</emphasis> is a container for formal properties of the headword such as orthography, morphology, syntax and pronunciation. A <emphasis role="strong">sense</emphasis> is a container for statements about the headword's semantics. DMLex deliberately makes it impossible to include morphological information at sense level. If you have an entry where each sense has slightly different morphological properties (eg. a noun has a weak plural in one sense and a strong plural in another) then, in DMLex, you need to treat it as two entries (homographs), and you can use the Linking Module two link the two entries together and to make sure they are always shown together to human users.</para>
-  </section>
+    </programlisting>
+  </example>
   
-
+  <example>
+    <title>Relational database</title>
+    <graphic fileref="core/databaseDiagrams/sense.svg" contentwidth="16cm"/>
+  </example>
+  
 </section>
