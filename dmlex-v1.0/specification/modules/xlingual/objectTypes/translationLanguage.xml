@@ -6,45 +6,62 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
 ]>
 
-<section>
-
+<section id="xlingual_translationLanguage">
   <title>
     <code>translationLanguage</code>
   </title>
-  <para>Represents one of the languages in which translations are given in this lexicographic resource. Examples: <xref linkend="ex07"/>, <xref linkend="ex10"/>.</para>
-  <programlisting>
-translationLanguage: &lt;langCode&gt;
-    listingOrder: (1..1) &lt;number&gt;
-</programlisting>
-  <section>
+  <para>Represents one of the languages in which translations are given in this lexicographic
+    resource. Examples: <xref linkend="ex07"/>, <xref linkend="ex10"/>.</para>
+
+  <itemizedlist>
+    <title>Child of</title>
+    <listitem>
+      <para><literal><olink targetptr="core_lexicographicResource">lexicographicResource</olink></literal></para>
+    </listitem>
+  </itemizedlist>
+
+  <itemizedlist>
+    <title>Contents</title>
+    <listitem>
+      <para><literal>value</literal>
+        <glossterm>required</glossterm> (exactly one). The IETF language code of the
+        language.</para>
+    </listitem>
+    <listitem>
+      <para><literal>listingOrder</literal>
+        <glossterm>required</glossterm> (exactly one). Number. sets the order in which translations
+        (of headwords and examples) should be shown. It outranks the listing order given in
+        <code><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></code>,
+        <code><olink targetptr="xlingual_headwordExplanation">headwordExplanation</olink></code>
+        and <code><olink targetptr="xlingual_exampleTranslation">exampleTranslation</olink></code>
+        objects.</para>
+    </listitem>
+  </itemizedlist>
+
+  <example>
     <title>XML</title>
     <programlisting>
 &lt;translationLanguage langCode=""/&gt;
-</programlisting>
-  </section>
-  <section>
+    </programlisting>
+  </example>
+  
+  <example>
     <title>JSON</title>
     <programlisting>
 "..."
-</programlisting>
-  </section>
-  <section>
-    <title>SQL</title>
+    </programlisting>
+  </example>
+
+  <example>
+    <title>Relational database</title>
     <programlisting>
 create table translationLanguage (
     lexicographicResourceID int foreign key references lexicographicResources(id),
     langCode varchar(10) primary key,
     listingOrder int,
 )
-</programlisting>
-    <para>Comments</para>
-    <itemizedlist>
-      <listitem>
-        <para>
-          <code>listingOrder</code> sets the order in which translations (of headwords and examples) should be shown. It outranks the listing order given in <code>headwordTranslation</code>, <code>headwordExplanation</code> and <code>exampleTranslation</code> objects.</para>
-      </listitem>
-    </itemizedlist>
-  </section>
-  
+    </programlisting>
+  </example>
+
 
 </section>

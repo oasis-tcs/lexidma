@@ -6,28 +6,57 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
 ]>
 
-<section>
-
+<section id="xlingual_exampleTranslation">
     <title>
         <code>exampleTranslation</code>
     </title>
     <para>Represents the translation of an example.</para>
-    <programlisting>
-exampleTranslation: &lt;string&gt;
-    language: (1..1) &lt;langCode&gt;
-    soundFile: (0..1) &lt;uri&gt;
-    listingOrder: (1..1) &lt;number&gt;
-</programlisting>
-    <section>
+
+    <itemizedlist>
+        <title>Child of</title>
+        <listitem>
+            <para><literal><olink targetptr="xlingual_example">example</olink></literal></para>
+        </listitem>
+    </itemizedlist>
+
+    <itemizedlist>
+        <title>Contents</title>
+        <listitem>
+            <para><literal>text</literal>
+                <glossterm>required</glossterm> (exactly one). Non-empty string.</para>
+        </listitem>
+        <listitem>
+            <para><literal>language</literal>
+                <glossterm>optional</glossterm> (zero or one) if only one translation language exists in thelexicographic resource,
+                <glossterm>required</glossterm> (one or more) otherwise.
+                IETF language tag. Indicates the language of
+                this translation. The <code><olink targetptr="xlingual_translation"
+                    >translationLanguage</olink></code> datatype can be used to explain the meaning of the
+                language codes that appear here and/or to constrain which language codes are allowed.</para>
+        </listitem>
+        <listitem>
+            <para><literal>soundFile</literal>
+                <glossterm>optional</glossterm> (zero or one). A pointer to a file, such as a filename or a URI, containing a sound recording of the translation.</para>
+        </listitem>
+        <listitem>
+            <para><literal>listingOrder</literal>
+                <glossterm>required</glossterm> (exactly one). Number. The position of this translation
+                among other translations of the same example in the same language. Can be implicit from the
+                serialization.</para>
+        </listitem>
+    </itemizedlist>
+    
+    <example>
         <title>XML</title>
         <programlisting>
 &lt;exampleTranslation language="..." soundFile="..."&gt;
     &lt;text&gt;...&lt;/text&gt;
     &lt;label.../&gt;
 &lt;/exampleTranslation&gt;
-</programlisting>
-    </section>
-    <section>
+        </programlisting>
+    </example>
+    
+    <example>
         <title>JSON</title>
         <programlisting>
 {
@@ -36,10 +65,11 @@ exampleTranslation: &lt;string&gt;
     "labels": [...],
     "soundFile": "..."
 }
-</programlisting>
-    </section>
-    <section>
-        <title>SQL</title>
+        </programlisting>
+    </example>
+    
+    <example>
+        <title>Relational database</title>
         <programlisting>
 create table exampleTranslations (
     exampleID int foreign key references examples(id),
@@ -52,20 +82,7 @@ create table exampleTranslations (
 alter table labels (
     add exampleTranslationID foreign key references exampleTranslations(id)
 )
-</programlisting>
-        <para>Comments</para>
-        <itemizedlist>
-            <listitem>
-                <para>
-                    <code>language</code> indicates the language of this translation. You can use the <code>translationLanguage</code> datatype to explain the meaning of the language codes that appear here and/or to constrain which language codes are allowed.</para>
-            </listitem>
-            <listitem>
-                <para>If ony one translation language exists in your lexicographic resource, then <code>language</code> can be left out.</para>
-            </listitem>
-            <listitem>
-                <para>For more comments see commens under <code>exampleTranslation</code> in the Bilingual Module.</para>
-            </listitem>
-        </itemizedlist>
-    </section>
+        </programlisting>
+    </example>
     
 </section>
