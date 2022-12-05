@@ -6,34 +6,108 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
 ]>
 
-<section>
+<section id="linking_memberRole">
+  <title><code>memberRole</code></title>
+  <para>Represents one of possible values for the <code>role</code> of <code><olink
+        targetptr="linking_member">member</olink></code>, as well as various restrictions on
+    relation member having this role.</para>
 
-  <title>
-    <code>memberRole</code>
-  </title>
-  <programlisting>
-memberRole: &lt;stringOrEmpty&gt;
-    description: (1..1) &lt;string&gt;
-    memberType: (1..1) &lt;symbol&gt;
-    min: (0..1) &lt;number&gt;
-    max: (0..1) &lt;number&gt;
-    action: (1..1) &lt;symbol&gt;
-    sameAs: (0..n)
-</programlisting>
-  <section>
+  <itemizedlist>
+    <title>Child of</title>
+    <listitem>
+      <para><literal><olink targetptr="linking_relationType">relationType</olink></literal></para>
+    </listitem>
+  </itemizedlist>
+
+  <itemizedlist>
+    <title>Contents</title>
+    <listitem>
+      <para><literal>value</literal>
+        <glossterm>required</glossterm> (exactly one). String. If the value is empty, then members
+        having this role do not need to have a <code>role</code> property.</para>
+    </listitem>
+    <listitem>
+      <para><literal>description</literal>
+        <glossterm>optional</glossterm> (zero or one). Non-empty string. A human-readable
+        explanation of this member role.</para>
+    </listitem>
+    <listitem>
+      <para><literal>memberType</literal>
+        <glossterm>required</glossterm> (exactly one). Non-empty string. A restrictions on the types
+        of objects that can have this role. The possible values are:</para>
+      <itemizedlist>
+        <listitem>
+          <para>
+            <code>sense</code>: the object that has this role must be a <code>sense</code>.</para>
+        </listitem>
+        <listitem>
+          <para>
+            <code>entry</code>: the object that has this role must be an <code>entry</code>.</para>
+        </listitem>
+        <listitem>
+          <para>
+            <code>itemMarker</code>: the object that has this role must be a
+            <code>itemMarker</code>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+    <listitem>
+      <para><literal>min</literal>
+        <glossterm>optional</glossterm> (zero or one). Number. Says that relations of this type must
+        have at least this many members with this role. If omitted then there is no lower limit
+        (effectively, zero).</para>
+    </listitem>
+    <listitem>
+      <para><literal>max</literal>
+        <glossterm>optional</glossterm> (zero or one). Number. Says that relations of this type may
+        have at most this many members with this role. If omitted then there is no upper
+        limit.</para>
+    </listitem>
+    <listitem>
+      <para><literal>action</literal>
+        <glossterm>required</glossterm> (exactly one). Non-empty string. Gives instructions on what
+        machine agents should do when showing this relation to a human user (either on its own or in
+        the context of one of its members). The possibe values are:</para>
+      <itemizedlist>
+        <listitem>
+          <para>
+            <code>embed</code>: Members that have this role should be shown in their entirety, i.e.
+            the entire entry or the entire sense. This is suitable for the relation between entries
+            and subentries, or senses and subsenses.</para>
+        </listitem>
+        <listitem>
+          <para>
+            <code>navigate</code>: Members that have this role should not be shown in their
+            entirety, but a navigable (e.g. clickable) link should be provided. This is suitable for
+            the relation between synonyms, for example.</para>
+        </listitem>
+        <listitem>
+          <para>
+            <code>none</code>: Members that have this role should not shown.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+    <listitem>
+      <para><literal><olink targetptr="core_sameAs">sameAs</olink></literal>
+        <glossterm>optional</glossterm> (zero or more).</para>
+    </listitem>
+  </itemizedlist>
+
+  <example>
     <title>XML</title>
     <programlisting>
-&lt;memberRole role="..." memberType="..." min="..." max="..." action="..."&gt;
+&lt;memberRole value="..." memberType="..." min="..." max="..." action="..."&gt;
     &lt;description&gt;&lt;/description&gt;
     &lt;sameAs.../&gt;
 &lt;/memberRole&gt;
-</programlisting>
-  </section>
-  <section>
+    </programlisting>
+  </example>
+
+  <example>
     <title>JSON</title>
     <programlisting>
 {
-    "role": "...",
+    "value": "...",
     "description": "...",
     "memberType": "...",
     "min": "...",
@@ -41,10 +115,11 @@ memberRole: &lt;stringOrEmpty&gt;
     "action": "...",
     "sameAs": [...]
 }
-</programlisting>
-  </section>
-  <section>
-    <title>SQL</title>
+    </programlisting>
+  </example>
+
+  <example>
+    <title>Relational database</title>
     <programlisting>
 create table memberRoles (
     relationTypeID int foreign key references relationTypes(id),
@@ -58,61 +133,7 @@ create table memberRoles (
 alter table sameAs (
     add memberRoleID int foreign key references memberRoles(id)
 )
-</programlisting>
-    <para>Comments</para>
-    <itemizedlist>
-      <listitem>
-        <para>If the value is empty, then members having this role do not need to have a <code>role</code> property.</para>
-      </listitem>
-      <listitem>
-        <para>
-          <code>description</code> is a human-readable explanation of this member role.</para>
-      </listitem>
-      <listitem>
-        <para>
-          <code>memberType</code> is a restrictions on the types of objects that can have this role. The possible values are:</para>
-        <itemizedlist>
-          <listitem>
-            <para>
-              <code>sense</code>: the object that has this role must be a <code>sense</code>.</para>
-          </listitem>
-          <listitem>
-            <para>
-              <code>entry</code>: the object that has this role must be an <code>entry</code>.</para>
-          </listitem>
-          <listitem>
-            <para>
-              <code>itemMarker</code>: the object that has this role must be a <code>itemMarker</code>.</para>
-          </listitem>
-        </itemizedlist>
-      </listitem>
-      <listitem>
-        <para>
-          <code>min</code> is a number which says that relations of this type must have at least this many members with this role. If omitted then there is no lower limit (effectively, zero).</para>
-      </listitem>
-      <listitem>
-        <para>
-          <code>max</code> is a number which says that relations of this type may have at most this many members with this role. If omitted then there is no upper limit.</para>
-      </listitem>
-      <listitem>
-        <para>
-          <code>action</code> gives instructions on what machine agents should do when showing this relation to a human user (either on its own or in the context of one of its members). The possibe values are:</para>
-        <itemizedlist>
-          <listitem>
-            <para>
-              <code>embed</code>: Members that have this role should be shown in their entirety, i.e. the entire entry or the entire sense. This is suitable for the relation between entries and subentries, or senses and subsenses.</para>
-          </listitem>
-          <listitem>
-            <para>
-              <code>navigate</code>: Members that have this role should not be shown in their entirety, but a navigable (e.g. clickable) link should be provided. This is suitable for the relation between synonyms, for example.</para>
-          </listitem>
-          <listitem>
-            <para>
-              <code>none</code>: Members that have this role should not shown.</para>
-          </listitem>
-        </itemizedlist>
-      </listitem>
-    </itemizedlist>
-  </section>
-  
+    </programlisting>
+  </example>
+
 </section>

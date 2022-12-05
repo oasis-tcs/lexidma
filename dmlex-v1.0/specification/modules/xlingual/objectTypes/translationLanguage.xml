@@ -16,7 +16,7 @@
   <itemizedlist>
     <title>Child of</title>
     <listitem>
-      <para><literal><olink targetptr="core_lexicographicResource">lexicographicResource</olink></literal></para>
+      <para><literal><olink targetptr="xlingual_lexicographicResource">lexicographicResource</olink></literal></para>
     </listitem>
   </itemizedlist>
 

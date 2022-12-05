@@ -6,25 +6,58 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
 ]>
 
-<section>
+<section id="linking_member">
+  <title><code>member</code></title>
+  <para>Represents the fact that an object, such as an entry or a sense, is a member of a
+    relation.</para>
 
-  <title>
-    <code>member</code>
-  </title>
-  <para>Represents the fact that an object is a member of a relation.</para>
-  <programlisting>
-member: &lt;idref&gt;
-    role: (0..1) &lt;string&gt;
-    listingOrder: (1..1) &lt;number&gt;
-    reverseListingOrder: (1..1) &lt;number&gt;
-</programlisting>
-  <section>
+  <itemizedlist>
+    <title>Child of</title>
+    <listitem>
+      <para><literal><olink targetptr="linking_relation">relation</olink></literal></para>
+    </listitem>
+  </itemizedlist>
+
+  <itemizedlist>
+    <title>Contents</title>
+    <listitem>
+      <para><literal>idref</literal>
+        <glossterm>required</glossterm> (exactly one). The ID of an object, such as an entry or a
+        sense.</para>
+    </listitem>
+    <listitem>
+      <para><literal>role</literal>
+        <glossterm>optional</glossterm> (zero or one). Non-empty string. An indication of the role
+        the member has in this relation: whether it is the hypernym or the hyponym (in a
+        hyperonymy/hyponymy relation), or whether it is one of the synonyms (in a synonymy
+        relation), and so on. You can use <code><olink targetptr="linking_memberRole"
+            >memberRole</olink></code> objects to explain those roles and to constrain which
+        relations are allowed to contain which roles, what their object types are allowed to be (eg.
+        entries or senses) and how many members with this role each relation is allowed to
+        have.</para>
+    </listitem>
+    <listitem>
+      <para><literal>listingOrder</literal>
+        <glossterm>required</glossterm> (exactly one). Number. The position of this member among other members of the same
+        relation. It should be respected when showing members of the relation to human users. This
+        can be implicit from the serialization.</para>
+    </listitem>
+    <listitem>
+      <para><literal>reverseListingOrder</literal>
+        <glossterm>required</glossterm> (exactly one). Number. The position of this relation among other relations
+        this member is involved in. It should be respected when showing the relations of this
+        member to a human user. This can be implicit from the serialization.</para>
+    </listitem>
+  </itemizedlist>
+
+  <example>
     <title>XML</title>
     <programlisting>
 &lt;member idref="..." role="..." reverseListingOrder="..."/&gt;
 </programlisting>
-  </section>
-  <section>
+  </example>
+
+  <example>
     <title>JSON</title>
     <programlisting>
 {
@@ -33,9 +66,10 @@ member: &lt;idref&gt;
     "reverseListingOrder": "..."
 }
 </programlisting>
-  </section>
-  <section>
-    <title>SQL</title>
+  </example>
+
+  <example>
+    <title>Relational database</title>
     <programlisting>
 create table members (
     lexicographicResourceID int foreign key references lexicographicResources(id),
@@ -48,25 +82,7 @@ create table members (
     reverseListingOrder int,
     id int primary key
 )
-</programlisting>
-    <para>Comments</para>
-    <itemizedlist>
-      <listitem>
-        <para>The value of <code>member</code> is the ID of an object, such as an entry or a sense.</para>
-      </listitem>
-      <listitem>
-        <para>
-          <code>role</code> is an indication of the role the member has in this relation: whether it is the hypernym or the hyponym (in a hyperonymy/hyponymy relation), or whether it is one of the synonyms (in a synonymy relation), and so on. You can use <code>membershipRole</code> objects to explain those roles and to constrain which relations are allowed to contain which roles, what their object types are allowed to be (eg. entries or senses) and how many members with this role each relation is allowed to have.</para>
-      </listitem>
-      <listitem>
-        <para>
-          <code>listingOrder</code> is the position of this member among other members of the same relation. It should be respected when showing members of the relation to human users. This can be implicit from the serialization.</para>
-      </listitem>
-      <listitem>
-        <para>
-          <code>reverseListingOrder</code> is the position of this relation among other relations this member is involved in. It should be respected when showing the relations of this member to a human user. This can be implicit from the serialization.</para>
-      </listitem>
-    </itemizedlist>
-  </section>
-  
+    </programlisting>
+  </example>
+
 </section>

@@ -6,17 +6,26 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
 ]>
 
-<section>
-
-  <title>Extensions to <code>lexicographicResource</code>
-  </title>
-  <para>Additional children:</para>
-  <programlisting>
-lexicographicResource: ...
-    relation: (0..n)
-    relationType: (0..n)
-</programlisting>
-  <section>
+<section id="linking_lexicographicResource">
+  <title>Extensions to <code>lexicographicResource</code></title>
+  <para>
+    Extends the <code><olink targetptr="core_lexicographicResource">lexicographicResource</olink></code> object type
+    from the <olink targetptr="core">Core</olink>.
+  </para>
+  
+  <itemizedlist>
+    <title>Additional contents</title>
+    <listitem>
+      <para><literal><olink targetptr="linking_relation">relation</olink></literal>
+        <glossterm>optional</glossterm> (zero, one or more)</para>
+    </listitem>
+    <listitem>
+      <para><literal><olink targetptr="linking_relationType">relationType</olink></literal>
+        <glossterm>optional</glossterm> (zero, one or more)</para>
+    </listitem>
+  </itemizedlist>
+  
+  <example>
     <title>XML</title>
     <programlisting>
 &lt;lexicographicResource ...&gt;
@@ -25,8 +34,9 @@ lexicographicResource: ...
     &lt;relationType.../&gt;
 &lt;/lexicographicResource&gt;
 </programlisting>
-  </section>
-  <section>
+  </example>
+  
+  <example>
     <title>JSON</title>
     <programlisting>
 {
@@ -35,10 +45,11 @@ lexicographicResource: ...
     "relationTypes": [...]
 }
 </programlisting>
-  </section>
-  <section>
-    <title>SQL</title>
+  </example>
+  
+  <example>
+    <title>Relational database</title>
     <para>No changes needed.</para>
-  </section>
+  </example>
   
 </section>
