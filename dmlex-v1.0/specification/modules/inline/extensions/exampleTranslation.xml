@@ -6,20 +6,29 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
 ]>
 
-<section>
-
-  <title>Extensions to <code>example</code>
-  </title>
-  <para>Additional children:</para>
-  <programlisting>
-example: ...
-    headwordMarker: (0..n)
-    itemMarker: (0..n)
-</programlisting>
-  <section>
+<section id="inline_exampleTranslation">
+  <title>Extensions to <code>exampleTranslation</code></title>
+  <para>
+    Extends the <code><olink targetptr="xlingual_headword">exampleTranslation</olink></code> object type
+    from the <olink targetptr="xlingual">Crosslingual module</olink>.
+  </para>
+  
+  <itemizedlist>
+    <title>Additional contents</title>
+    <listitem>
+      <para><literal><olink targetptr="inline_headwordMarker">headwordMarker</olink></literal>
+        <glossterm>optional</glossterm> (zero, one or more)</para>
+    </listitem>
+    <listitem>
+      <para><literal><olink targetptr="inline_itemMarker">itemMarker</olink></literal>
+        <glossterm>optional</glossterm> (zero, one or more)</para>
+    </listitem>
+  </itemizedlist>
+  
+  <example>
     <title>XML</title>
     <programlisting>
-&lt;example&gt;
+&lt;exampleTranslation&gt;
     &lt;text&gt;
         ...
         &lt;headwordMarker&gt;...&lt;/headwordMarker&gt;
@@ -27,10 +36,11 @@ example: ...
         &lt;itemMarker...&gt;...&lt;/itemMarker&gt;
         ...
     &lt;/text&gt;
-&lt;/example&gt;
-</programlisting>
-  </section>
-  <section>
+&lt;/exampleTranslation&gt;
+        </programlisting>
+  </example>
+  
+  <example>
     <title>JSON</title>
     <programlisting>
 {
@@ -39,11 +49,12 @@ example: ...
     "itemMarkers": [...],
     ...
 }
-</programlisting>
-  </section>
-  <section>
-    <title>SQL</title>
+        </programlisting>
+  </example>
+  
+  <example>
+    <title>Relational databases</title>
     <para>No changes needed.</para>
-  </section>
+  </example>
   
 </section>

@@ -6,27 +6,59 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
 ]>
 
-<section>
+<section id="inline_itemMarker">
+  <title><code>itemMarker</code></title>
+  <para>Marks up a substring other than the headword inside an example, inside an example
+    translation or inside a definition. An application can use the inline markup to highlight
+    collocates or constituents. Example: <xref linkend="ex22"/>.</para>
 
-  <title>
-    <code>itemMarker</code>
-  </title>
-  <para>Marks up a substring other than the headword inside an example, inside an example translation or inside a definition. An application can use the inline markup to highlight collocates or constituents. Example: <xref linkend="ex22"/>.</para>
-  <programlisting>
-itemMarker: &lt;string&gt;
-    lemma: (0..1) &lt;string&gt;
-    itemRole: (0..n) &lt;string&gt;
-</programlisting>
-  <section>
+  <itemizedlist>
+    <title>Child of</title>
+    <listitem>
+      <para><literal><olink targetptr="inline_definition">definition</olink></literal></para>
+    </listitem>
+    <listitem>
+      <para><literal><olink targetptr="inline_example">example</olink></literal></para>
+    </listitem>
+    <listitem>
+      <para><literal><olink targetptr="inline_exampleTranslation"
+          >exampleTranslation</olink></literal></para>
+    </listitem>
+  </itemizedlist>
+
+  <itemizedlist>
+    <title>Contents</title>
+    <listitem>
+      <para><literal>lemma</literal>
+        <glossterm>optional</glossterm> (zero or one). Non-empty string. The lemmatized form of the
+        collocate. An application can use it to provide a clickable link for the user to search for
+        the lemma in the rest of the lexicographic resource or on the web. (If you want to link the
+        collocate explicitly to a specific entry or to a specific sense in your lexicographic
+        resource, or even in an external lexicographic resource, you can use the Linking Module for
+        that.)</para>
+    </listitem>
+    <listitem>
+      <para><literal>itemRole</literal>
+        <glossterm>optional</glossterm> (zero, one or more). Non-empty string. Can be used to
+        communicate facts about the role of the item in the sentence, for example its syntactic role
+        (subject, direct object etc.), its semantic role (agent, affected etc) or its semantic type
+        (human, institution etc.) The <code><olink targetptr="core_tag">tag</olink></code> object
+        type can be used to explain and/or constrain the item types that are allowed to appear in
+        the lexicographic resource.</para>
+    </listitem>
+  </itemizedlist>
+
+  <example>
     <title>XML</title>
     <programlisting>
 &lt;itemMarker lemma="..."&gt;
     ...
     &lt;itemRole value="..."/&gt;
 &lt;/itemMarker&gt;
-</programlisting>
-  </section>
-  <section>
+    </programlisting>
+  </example>
+
+  <example>
     <title>JSON</title>
     <programlisting>
 {
@@ -35,9 +67,10 @@ itemMarker: &lt;string&gt;
     lemma: "...",
     itemRoles: ["..."]
 }
-</programlisting>
-  </section>
-  <section>
+    </programlisting>
+  </example>
+
+  <example>
     <title>SQL</title>
     <programlisting>
 create table itemMarkers (
@@ -54,20 +87,7 @@ create table itemMarkerRoles (
     role: "...",
     id int primary key
 )
-</programlisting>
-  </section>
-  <section>
-    <title>Comments</title>
-    <itemizedlist>
-      <listitem>
-        <para>
-          <code>lemma</code> is the lemmatized form of the collocate. An application can use it to provide a clickable link for the user to search for the lemma in the rest of the lexicographic resource or on the web. (If you want to link the collocate explicitly to a specific entry or to a specific sense in your lexicographic resource, or even in an external lexicographic resource, you can use the Linking Module for that.)</para>
-      </listitem>
-      <listitem>
-        <para>
-          <code>itemRole</code> can be used to communicate facts about the role of the item in the sentence, for example its syntactic role (subject, direct object etc.), its semantic role (agent, affected etc) or its semantic type (human, institution etc.) Optionally, you use the <code>tag</code> datatype to explain and/or constrain the item types that are allowed to appear in your lexicographic resource.</para>
-      </listitem>
-    </itemizedlist>
-  </section>
-  
+    </programlisting>
+  </example>
+
 </section>
