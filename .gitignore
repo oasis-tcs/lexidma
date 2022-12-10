@@ -5,3 +5,6 @@ dmlex-v1.0/specification/dmlex-v1.0-wd01.fo
 dmlex-v1.0/specification/core/objectTypes/.label.xml.swp
 
 .github/workflows/.main.yml.swp
+
+*.drawio.bkp
+*.drawio.dtmp
