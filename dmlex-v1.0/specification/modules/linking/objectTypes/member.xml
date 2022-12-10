@@ -70,19 +70,7 @@
 
   <example>
     <title>Relational database</title>
-    <programlisting>
-create table members (
-    lexicographicResourceID int foreign key references lexicographicResources(id),
-    relationID int foreign key references relations(id),
-    memberEntryID int foreign key references entries(id),
-    memberSenseID int foreign key references senses(id),
-    memberCollocateMarkerID int foreign key references collocateMarkers(id),
-    role nvarchar(50),
-    listingOrder int,
-    reverseListingOrder int,
-    id int primary key
-)
-    </programlisting>
+    <graphic fileref="modules/linking/databaseDiagrams/member.svg" contentwidth="16cm"/>
   </example>
 
 </section>

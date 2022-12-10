@@ -26,4 +26,5 @@
   <xi:include href="objectTypes/member.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objectTypes/relationType.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objectTypes/memberRole.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="extensions/sameAs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 </section>

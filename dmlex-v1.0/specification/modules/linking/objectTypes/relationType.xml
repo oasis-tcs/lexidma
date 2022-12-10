@@ -62,8 +62,8 @@
     <programlisting>
 &lt;relationType value="..." scope="..."&gt;
     &lt;description&gt;...&lt;/description&gt;
-    &lt;sameAs.../&gt;
     &lt;memberRole.../&gt;
+    &lt;sameAs.../&gt;
 &lt;/relationType&gt;
 </programlisting>
   </example>
@@ -74,25 +74,15 @@
 {
     "value": "...",
     "scope": "...",
-    "sameAs": ["..."],
-    "memberRoles": [...]
+    "memberRoles": [...],
+    "sameAs": ["..."]
 }
     </programlisting>
   </example>
   
   <example>
     <title>Relational database</title>
-    <programlisting>
-create table relationTypes (
-    lexicographicResourceID int foreign key references lexicographicResources(id),
-    value varchar(10),
-    scope varcar(50),
-    id int primary key
-);
-alter table sameAs (
-    add relationTypeID int foreign key references relationTypes(id)
-)
-    </programlisting>
+    <graphic fileref="modules/linking/databaseDiagrams/relationType.svg" contentwidth="16cm"/>
   </example>
   
 </section>

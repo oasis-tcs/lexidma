@@ -44,11 +44,6 @@
           <para>
             <code>entry</code>: the object that has this role must be an <code>entry</code>.</para>
         </listitem>
-        <listitem>
-          <para>
-            <code>itemMarker</code>: the object that has this role must be a
-            <code>itemMarker</code>.</para>
-        </listitem>
       </itemizedlist>
     </listitem>
     <listitem>
@@ -120,20 +115,7 @@
 
   <example>
     <title>Relational database</title>
-    <programlisting>
-create table memberRoles (
-    relationTypeID int foreign key references relationTypes(id),
-    role varchar(50),
-    description varchar(255),
-    memberType varchar(50),
-    min int,
-    max int,
-    action varchar(50)
-);
-alter table sameAs (
-    add memberRoleID int foreign key references memberRoles(id)
-)
-    </programlisting>
+    <graphic fileref="modules/linking/databaseDiagrams/memberRole.svg" contentwidth="16cm"/>
   </example>
 
 </section>

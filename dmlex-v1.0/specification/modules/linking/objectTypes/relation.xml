@@ -62,13 +62,7 @@
 
   <example>
     <title>Relational database</title>
-    <programlisting>
-create table relations (
-    id int primary key,
-    type varchar(10),
-    description nvarchar(255)
-)
-</programlisting>
+    <graphic fileref="modules/linking/databaseDiagrams/relation.svg" contentwidth="16cm"/>
   </example>
 
 </section>
