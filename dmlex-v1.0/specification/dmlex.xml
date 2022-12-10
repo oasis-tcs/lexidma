@@ -347,10 +347,10 @@
   <!-- examples -->
   <xi:include href="examples/examples.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   
-  <!-- implementations -->
-  <xi:include href="implementations/XML/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="implementations/JSON/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="implementations/RDB/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <!-- serialisations -->
+  <xi:include href="serializations/XML/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="serializations/JSON/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="serializations/RDB/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 
   <appendix role="normative" id="references">
     <title>References</title>

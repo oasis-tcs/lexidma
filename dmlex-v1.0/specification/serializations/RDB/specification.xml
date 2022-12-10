@@ -6,12 +6,12 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
 <!--the document properties were transferred to "dockbook/dbgenent.mod"-->
                          ]>
-<section id="RDB_implementation" role="normative | informative">
-  <title>DMLex relational database implementation</title>
+<section id="rdb" role="normative | informative">
+  <title>DMLex relational database serialization</title>
   
   <section>
-    <title>Implementation principles</title>
-    <para>The SQL implementation of DMLex shown in this document follows these priciples:</para>
+    <title>Design principles</title>
+    <para>The relational database serialization of DMLex shown in this document follows these priciples:</para>
     <itemizedlist>
       <listitem>
         <para>The <code>lexicographicResource</code> object is implemented as table. (Alternatively, it can left unimplemented if the database is going to contain only one lexicographic resource.)</para>

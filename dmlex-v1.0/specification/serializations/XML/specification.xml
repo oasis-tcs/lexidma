@@ -6,12 +6,12 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
 <!--the document properties were transferred to "dockbook/dbgenent.mod"-->
                          ]>
-<section id="XML_implementation" role="normative | informative">
-  <title>DMLex XML implementation</title>
+<section id="xml" role="normative | informative">
+  <title>DMLex XML serialization</title>
 
   <section>
-    <title>Implementation principles</title>
-    <para>The XML implementation of DMLex shown in this document follows these priciples:</para>
+    <title>Design principles</title>
+    <para>The XML serialization of DMLex shown in this document follows these priciples:</para>
     <itemizedlist>
       <listitem>
         <para>The top-level <code>lexicographicResource</code> object is implemented as an XML element.</para>
