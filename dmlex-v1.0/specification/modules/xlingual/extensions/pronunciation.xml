@@ -22,9 +22,7 @@
 
   <example>
     <title>Relational database</title>
-    <programlisting>
-      ...  
-    </programlisting>
+    <graphic fileref="modules/xlingual/databaseDiagrams/pronunciation.svg" contentwidth="16cm"/>
   </example>
 
 </section>

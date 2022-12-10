@@ -20,4 +20,5 @@
   <xi:include href="extensions/label.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="extensions/pronunciation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="extensions/inflectedForm.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="extensions/tag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 </section>

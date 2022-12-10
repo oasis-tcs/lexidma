@@ -64,14 +64,7 @@
     
     <example>
         <title>Relational database</title>
-        <programlisting>
-create table headwordExplanations (
-    senseID int foreign key references senses(id),
-    language nvarchar(10) foreign key references translationLanguage(langCode),
-    text nvarchar(255),
-    id int primary key
-)
-      </programlisting>
+        <graphic fileref="modules/xlingual/databaseDiagrams/headwordExplanation.svg" contentwidth="16cm"/>
     </example>
 
 </section>

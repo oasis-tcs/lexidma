@@ -88,27 +88,7 @@
   
   <example>
     <title>Relational database</title>
-    <programlisting>
-create table headwordTranslations (
-    senseID int foreign key references senses(id),
-    language nvarchar(10) foreign key references translationLanguage(langCode),
-    text nvarchar(255),
-    listingOrder int,
-    id int primary key
-);
-alter table partsOfSpeech (
-    add headwordTranslationID int foreign key references headwordTranslations(id)
-);
-alter table labels (
-    add headwordTranslationID int foreign key references headwordTranslations(id)
-);
-alter table pronunciations (
-    add headwordTranslationID int foreign key references headwordTranslations(id)
-);
-alter table inflectedForms (
-    add headwordTranslationID int foreign key references headwordTranslations(id)
-)
-    </programlisting>
+    <graphic fileref="modules/xlingual/databaseDiagrams/headwordTranslation.svg" contentwidth="16cm"/>
   </example>
 
 </section>

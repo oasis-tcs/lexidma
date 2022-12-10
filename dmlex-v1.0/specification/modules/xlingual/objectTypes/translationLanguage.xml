@@ -54,14 +54,7 @@
 
   <example>
     <title>Relational database</title>
-    <programlisting>
-create table translationLanguage (
-    lexicographicResourceID int foreign key references lexicographicResources(id),
-    langCode varchar(10) primary key,
-    listingOrder int,
-)
-    </programlisting>
+    <graphic fileref="modules/xlingual/databaseDiagrams/translationLanguage.svg" contentwidth="16cm"/>
   </example>
-
 
 </section>

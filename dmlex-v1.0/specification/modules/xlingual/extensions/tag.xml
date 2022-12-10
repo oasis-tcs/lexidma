@@ -16,10 +16,25 @@
   <itemizedlist>
     <title>Additional contents</title>
     <listitem>
+      <para><literal>sideConstraint</literal>
+        <glossterm>optional</glossterm> (zero or one). If present, indicates whether this tag is intended to be used on the
+        headword side or on the translation side of the lexicographic resource. One of:</para>
+      <itemizedlist>
+        <listitem>
+          <para><literal>headwordSide</literal> This tag is supposed to be used on the headword side of the lexicographic resource:
+            anywhere except inside a <code><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></code> object.</para>
+        </listitem>
+        <listitem>
+          <para><literal>translationSide</literal> This tag is supposed to be used on the translation side of the lexicographic resource:
+            inside a <code><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></code> object only.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+    <listitem>
       <para><literal>translationLanguageConstraint</literal>
         <glossterm>optional</glossterm> (zero, one or more). If present, says that if this tag is
         being used inside a <code><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></code> object,
-        then it is intended to be used only inside a <code>headwordTranslation</code> object labelled with this language. </para>
+        then it is intended to be used only inside a <code>headwordTranslation</code> object labelled with this language.</para>
     </listitem>
   </itemizedlist>
 
@@ -40,12 +55,11 @@
       </itemizedlist>
     </listitem>
   </itemizedlist>
-  <para>Additional child:</para>
 
   <example>
     <title>XML</title>
     <programlisting>
-&lt;tag ...&gt;
+&lt;tag ... sideConstraint="..."&gt;
     ...
     &lt;translationLanguageConstraint langCode="..."/&gt;
 &lt;/tag&gt;
@@ -57,6 +71,7 @@
     <programlisting>
 {
     ...,
+    "sideConstraint": "...",
     "translationLanguageConstraint": ["..."]
 }
     </programlisting>
@@ -64,11 +79,8 @@
   
   <example>
     <title>Relational database</title>
-    <programlisting>
-alter table tags (
-    add translationLanguageConstraints varchar(255), --comma-separated list
-)
-    </programlisting>
+    <graphic fileref="modules/xlingual/databaseDiagrams/tag.svg" contentwidth="16cm"/>
+    <para>The <code>translationLanguageConstraints</code> column is a comma-delimited list of language codes.</para>
   </example>
 
 </section>

@@ -70,19 +70,7 @@
     
     <example>
         <title>Relational database</title>
-        <programlisting>
-create table exampleTranslations (
-    exampleID int foreign key references examples(id),
-    language varchar(10) foreign key references translationLanguage(langCode),
-    text varchar(255),
-    soundFile varchar(255),
-    listingOrder int,
-    id int primary key
-);
-alter table labels (
-    add exampleTranslationID foreign key references exampleTranslations(id)
-)
-        </programlisting>
+        <graphic fileref="modules/xlingual/databaseDiagrams/exampleTranslation.svg" contentwidth="16cm"/>
     </example>
     
 </section>
