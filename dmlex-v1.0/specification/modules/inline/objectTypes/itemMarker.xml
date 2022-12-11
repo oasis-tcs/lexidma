@@ -29,6 +29,12 @@
   <itemizedlist>
     <title>Contents</title>
     <listitem>
+      <para><literal>id</literal>
+        <glossterm>optional</glossterm> (zero or one). A unique identifier of the marker.
+        Markers which have idenfitiers are capable of being involved in relations created with the
+        <olink targetptr="linking">Linking module</olink>.</para>
+    </listitem>
+    <listitem>
       <para><literal>lemma</literal>
         <glossterm>optional</glossterm> (zero or one). Non-empty string. The lemmatized form of the
         collocate. An application can use it to provide a clickable link for the user to search for
@@ -51,7 +57,7 @@
   <example>
     <title>XML</title>
     <programlisting>
-&lt;itemMarker lemma="..."&gt;
+&lt;itemMarker id="..." lemma="..."&gt;
     ...
     &lt;itemRole value="..."/&gt;
 &lt;/itemMarker&gt;
@@ -62,6 +68,7 @@
     <title>JSON</title>
     <programlisting>
 {
+    "id": "...",
     "startIndex": ...,
     "endIndex": ...,
     lemma: "...",
@@ -72,22 +79,7 @@
 
   <example>
     <title>SQL</title>
-    <programlisting>
-create table itemMarkers (
-    entryID int foreign key references entries(id),
-    headwordTranslationID int foreign key references headwordTranslations(id),
-    definitionID int foreign key references definitions(id),
-    startIndex int,
-    endIndex int,
-    lemma varchar(50),
-    id int primary key
-);
-create table itemMarkerRoles (
-    itemMarkerID int foreign key references itemMarkers(id),
-    role: "...",
-    id int primary key
-)
-    </programlisting>
+    <graphic fileref="modules/inline/databaseDiagrams/itemMarker.svg" contentwidth="16cm"/>
   </example>
 
 </section>

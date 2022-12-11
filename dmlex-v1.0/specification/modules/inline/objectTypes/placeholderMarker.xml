@@ -43,14 +43,7 @@
   
   <example>
     <title>Relational databases</title>
-    <programlisting>
-create table placeholderMarkers (
-    entryID int foreign key references entries(id),
-    startIndex int,
-    endIndex int,
-    id int primary key
-)
-    </programlisting>
+    <graphic fileref="modules/inline/databaseDiagrams/placeholderMarker.svg" contentwidth="16cm"/>
   </example>
 
 </section>

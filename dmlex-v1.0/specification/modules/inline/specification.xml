@@ -21,5 +21,4 @@
   <xi:include href="extensions/exampleTranslation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objectTypes/headwordMarker.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objectTypes/itemMarker.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="extensions/tag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 </section>

@@ -38,11 +38,15 @@
       <itemizedlist>
         <listitem>
           <para>
-            <code>sense</code>: the object that has this role must be a <code>sense</code>.</para>
+            <code>sense</code>: the object that has this role must be a <olink targetptr="core_sense"><code>sense</code></olink>.</para>
         </listitem>
         <listitem>
           <para>
-            <code>entry</code>: the object that has this role must be an <code>entry</code>.</para>
+            <code>entry</code>: the object that has this role must be an <olink targetptr="core_entry"><code>entry</code></olink>.</para>
+        </listitem>
+        <listitem>
+          <para>
+            <code>itemMarker</code>: the object that has this role must be an <olink targetptr="inline_sense"><code>itemMarker</code></olink> (from the <olink targetptr="linking">Linking module</olink>).</para>
         </listitem>
       </itemizedlist>
     </listitem>

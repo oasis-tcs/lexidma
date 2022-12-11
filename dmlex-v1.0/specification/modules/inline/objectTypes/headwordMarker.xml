@@ -45,16 +45,7 @@
   
   <example>
     <title>Relational databases</title>
-    <programlisting>
-create table headwordMarkers (
-    entryID int foreign key references entries(id),
-    headwordTranslationID int foreign key references headwordTranslations(id),
-    definitionID int foreign key references definitions(id),
-    startIndex int,
-    endIndex int,
-    id int primary key
-)
-    </programlisting>
+    <graphic fileref="modules/inline/databaseDiagrams/headwordMarker.svg" contentwidth="16cm"/>
   </example>
 
 </section>
