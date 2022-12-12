@@ -59,22 +59,31 @@
     </listitem>
   </itemizedlist>
 
-  <itemizedlist>
-    <title>Comments</title>
+  <!--  <itemizedlist>
+    <title>Processing requirements</title>
     <listitem>
-      <para> The headword can be a single word, a multi-word expression, or any expression in the
-        source language which is being described by the entry.</para>
+      <para> </para>
     </listitem>
-    <listitem>
-      <para>Entries in DMLex do not have an explicit listing order. An application can imply a
-        listing order from a combination of the headword and the homograph number.</para>
-    </listitem>
-    <listitem>
-      <para>DMLex Core does not have a concept of "subentry". To model subentries (ie. entries
-        inside entries) in a lexicographic resource, you should use object
-        types from the <olink targetptr="linking">Linking Module</olink> for that.</para>
-    </listitem>
-  </itemizedlist>
+  </itemizedlist>-->
+  
+  <note>
+    <para>DMLex Core does not have a concept of "subentry". To model subentries (ie. entries inside entries) in a lexicographic resource, you should use object types from the Linking Module for that.</para>
+   
+  </note>
+  
+  <note>
+    <para>The headword can be a single word, a multi-word expression, or any expression in the
+      source language which is being described by the entry. Entries in DMLex do not have an
+      explicit listing order.</para>
+  
+  
+  </note>
+  
+  <note>
+    <para>An application can imply a listing order from a combination of the
+      headword and the homograph number.</para>
+    
+  </note>
 
   <example>
     <title>XML</title>

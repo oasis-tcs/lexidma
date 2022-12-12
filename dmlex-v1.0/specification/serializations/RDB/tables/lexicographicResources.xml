@@ -26,9 +26,14 @@
         </listitem>
     </itemizedlist>
 
-    <bridgehead>Comment</bridgehead>
-    <para> If the implementation contains only one lexicographic resource, then the
-            <literal>lexicographicResource</literal> table <glossterm>may</glossterm> remain
-        unimplemented. </para>
-
+    
+    <itemizedlist>
+        <title>Processing Requiremnts</title>
+        <listitem>
+            <para>If the implementation contains only one lexicographic resource, then the <olink
+                    targetptr="core_lexicographicResource">lexicographicResource</olink> table is
+                not <glossterm>required</glossterm> to be unimplemented.</para>
+        </listitem>
+    </itemizedlist>
+    
 </section>
