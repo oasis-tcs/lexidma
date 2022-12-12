@@ -6,61 +6,81 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
 ]>
 
-<section>
+<section id="xlingual_tag">
+  <title>Extensions to <code>tag</code></title>
+  <para>
+    Extends the <code><olink targetptr="core_tag">tag</olink></code> object type
+    from the <olink targetptr="core">Core</olink>.
+  </para>
 
-  <title>Extensions to <code>tag</code>
-  </title>
-  <para>Redefinition of  <code>partOfSpeechConstraint</code>:</para>
   <itemizedlist>
+    <title>Additional contents</title>
+    <listitem>
+      <para><literal>sideConstraint</literal>
+        <glossterm>optional</glossterm> (zero or one). If present, indicates whether this tag is intended to be used on the
+        headword side or on the translation side of the lexicographic resource. One of:</para>
+      <itemizedlist>
+        <listitem>
+          <para><literal>headwordSide</literal> This tag is supposed to be used on the headword side of the lexicographic resource:
+            anywhere except inside a <code><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></code> object.</para>
+        </listitem>
+        <listitem>
+          <para><literal>translationSide</literal> This tag is supposed to be used on the translation side of the lexicographic resource:
+            inside a <code><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></code> object only.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+    <listitem>
+      <para><literal>translationLanguageConstraint</literal>
+        <glossterm>optional</glossterm> (zero, one or more). If present, says that if this tag is
+        being used inside a <code><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></code> object,
+        then it is intended to be used only inside a <code>headwordTranslation</code> object labelled with this language.</para>
+    </listitem>
+  </itemizedlist>
+
+  <itemizedlist>
+    <title>Redefinition of <code>partOfSpeechConstraint</code>:</title>
     <listitem>
       <para>If present, says that:</para>
       <itemizedlist>
         <listitem>
-          <para>If this tag is used inside a <code>headwordTranslation</code>, then it is intended to be used only inside a <code>headwordTranslation</code> labelled with this part of speech.</para>
+          <para>If this tag is used inside a <code>headwordTranslation</code>, then it is intended
+            to be used only inside a <code>headwordTranslation</code> labelled with this part of
+            speech.</para>
         </listitem>
         <listitem>
-          <para>If this tag is used outside a <code>headwordTranslation</code>, then it is intended to be used only inside entries that are labelled with this part of speech.</para>
+          <para>If this tag is used outside a <code>headwordTranslation</code>, then it is intended
+            to be used only inside entries that are labelled with this part of speech.</para>
         </listitem>
       </itemizedlist>
     </listitem>
   </itemizedlist>
-  <para>Additional child:</para>
-  <programlisting>
-tag: ...
-    translationLanguageConstraint: (0..n) &lt;langCode&gt;
-</programlisting>
-  <section>
+
+  <example>
     <title>XML</title>
     <programlisting>
-&lt;tag ...&gt;
+&lt;tag ... sideConstraint="..."&gt;
     ...
     &lt;translationLanguageConstraint langCode="..."/&gt;
 &lt;/tag&gt;
-</programlisting>
-  </section>
-  <section>
+    </programlisting>
+  </example>
+  
+  <example>
     <title>JSON</title>
     <programlisting>
 {
     ...,
+    "sideConstraint": "...",
     "translationLanguageConstraint": ["..."]
 }
-</programlisting>
-  </section>
-  <section>
-    <title>SQL</title>
-    <programlisting>
-alter table tags (
-    add translationLanguageConstraints varchar(255), --comma-separated list
-)
-</programlisting>
-    <para>Comments</para>
-    <itemizedlist>
-      <listitem>
-        <para>
-          <code>translationLanguageConstraint</code>, if present, says that if this tag is being used inside a <code>headwordTranslation</code> or an <code>exampleTranslation</code>, then it is intended to be used only inside <code>headwordTranslation</code> and <code>exampleTranslation</code> objects labelled with this language.</para>
-      </listitem>
-    </itemizedlist>
-  </section>
+    </programlisting>
+  </example>
   
+  <example>
+    <title>Relational database</title>
+    <graphic fileref="modules/xlingual/databaseDiagrams/tag.svg" contentwidth="16cm"/>
+    <para>The <code>translationLanguageConstraints</code> column is a comma-delimited list of language codes.</para>
+  </example>
+
 </section>

@@ -44,11 +44,33 @@
         <glossterm>optional</glossterm> (zero, one or more).
         Indicates how the value of this tag can be used in this lexicographic resource.
         One of:
-        <code>partOfSpeech</code>,
-        <code>inflectedTag</code>,
-        <code>definitionType</code>,
-        <code>label</code>,
-        <code>sourceIndentity</code>.
+        <itemizedlist>
+          <listitem>
+            <para><literal>partOfSpeech</literal> The tag value can be used in
+              <code>value</code> of <olink targetptr="core_partOfSpeech"
+                ><code>partOfSpeech</code></olink>.</para>
+          </listitem>
+          <listitem>
+            <para><literal>inflectedTag</literal> The tag value can be used in
+              <code>inflectedTag</code> of <olink targetptr="core_inflectedForm"
+                ><code>inflectedForm</code></olink>.</para>
+          </listitem>
+          <listitem>
+            <para><literal>definitionType</literal> The tag value can be used in
+              <code>definitionType</code> of <olink targetptr="core_definition"
+                ><code>definition</code></olink>.</para>
+          </listitem>
+          <listitem>
+            <para><literal>label</literal> The tag value can be used in
+              <code>value</code> of <olink targetptr="core_label"
+                ><code>label</code></olink>.</para>
+          </listitem>
+          <listitem>
+            <para><literal>sourceIndentity</literal> The tag value can be used in
+              <code>sourceIdentity</code> of <olink targetptr="core_example"
+                ><code>example</code></olink>.</para>
+          </listitem>
+        </itemizedlist>
         If omitted, then all.
       </para>
     </listitem>
@@ -115,7 +137,7 @@
   a dmlex:Tag ;
   dmlex:description "..." ;
   dmlex:target "..." ;
-  dmlex:partOfSpeechConstraints "..." ;
+  dmlex:partOfSpeechConstraint "..." ;
   dmlex:sameAs ... ] .
     </programlisting>
   </example>
@@ -123,6 +145,7 @@
   <example>
     <title>Relational database</title>
     <graphic fileref="core/databaseDiagrams/tag.svg" contentwidth="16cm"/>
+    <para>The <code>partOfSpeechConstraints</code> column is a comma-delimited list of part-of-speech labels.</para>
   </example>
   
 </section>

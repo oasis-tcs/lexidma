@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section id="xlingual_pronunciation">
+  <title>Extensions to <code>pronunciation</code></title>
+  <para>
+    Extends the <code><olink targetptr="core_pronunciation">pronunciation</olink></code> object type
+    from the <olink targetptr="core">Core</olink>.
+  </para>
+
+  <itemizedlist>
+    <title>Can additionally be a child of</title>
+    <listitem>
+      <para><literal><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></literal></para>
+    </listitem>
+  </itemizedlist>
+
+  <example>
+    <title>Relational database</title>
+    <graphic fileref="modules/xlingual/databaseDiagrams/pronunciation.svg" contentwidth="16cm"/>
+  </example>
+
+</section>

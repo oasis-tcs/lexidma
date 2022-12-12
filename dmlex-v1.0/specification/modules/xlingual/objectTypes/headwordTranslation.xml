@@ -6,22 +6,60 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
 ]>
 
-<section>
-
+<section id="xlingual_headwordTranslation">
   <title>
     <code>headwordTranslation</code>
   </title>
-    <para>Represents one of possibly multiple translations of a headword. Examples: <xref linkend="ex08"/>, <xref linkend="ex11"/>.</para>
-  <programlisting>
-headwordTranslation: &lt;string&gt;
-    language: (0..1) &lt;langCode&gt;
-    listingOrder: (1..1) &lt;number&gt;
-    partOfSpeech: (0..n) &lt;string&gt;
-    label: (0..n)
-    pronunciation: (0..n)
-    inflectedForm: (0..n)
-</programlisting>
-  <section>
+  <para>Represents one of possibly multiple translations of a headword. Examples: <xref
+      linkend="ex08"/>, <xref linkend="ex11"/>.</para>
+
+  <itemizedlist>
+    <title>Child of</title>
+    <listitem>
+      <para><literal><olink targetptr="xlingual_sense">sense</olink></literal></para>
+    </listitem>
+  </itemizedlist>
+
+  <itemizedlist>
+    <title>Contents</title>
+    <listitem>
+      <para><literal>text</literal>
+        <glossterm>required</glossterm> (exactly one). Non-empty string.</para>
+    </listitem>
+    <listitem>
+      <para><literal>language</literal>
+        <glossterm>optional</glossterm> (zero or one) if only one translation language exists in thelexicographic resource,
+        <glossterm>required</glossterm> (one or more) otherwise.
+        IETF language tag. Indicates the language of
+        this translation. The <code><olink targetptr="xlingual_translation"
+            >translationLanguage</olink></code> datatype can be used to explain the meaning of the
+        language codes that appear here and/or to constrain which language codes are allowed.</para>
+    </listitem>
+    <listitem>
+      <para><literal>listingOrder</literal>
+        <glossterm>required</glossterm> (exactly one). Number. The position of this translation
+        among other translations of the same sense in the same language. Can be implicit from the
+        serialization.</para>
+    </listitem>
+    <listitem>
+      <para><literal><olink targetptr="xlingual_partOfSpeech">partOfSpeech</olink></literal>
+        <glossterm>optional</glossterm> (zero, one or more). </para>
+    </listitem>
+    <listitem>
+        <para><literal><olink targetptr="xlingual_label">label</olink></literal>
+        <glossterm>optional</glossterm> (zero, one or more). </para>
+    </listitem>
+    <listitem>
+        <para><literal><olink targetptr="xlingual_pronunciation">pronunciation</olink></literal>
+        <glossterm>optional</glossterm> (zero, one or more). </para>
+    </listitem>
+    <listitem>
+        <para><literal><olink targetptr="xlingual_inflectedForm">inflectedForm</olink></literal>
+        <glossterm>optional</glossterm> (zero, one or more). </para>
+    </listitem>
+  </itemizedlist>
+
+  <example>
     <title>XML</title>
     <programlisting>
 &lt;headwordTranslation language="..."&gt;
@@ -31,9 +69,10 @@ headwordTranslation: &lt;string&gt;
     &lt;pronunciation.../&gt;
     &lt;inflectedForm.../&gt;
 &lt;/headwordTranslation&gt;
-</programlisting>
-  </section>
-  <section>
+    </programlisting>
+  </example>
+  
+  <example>
     <title>JSON</title>
     <programlisting>
 {
@@ -44,44 +83,12 @@ headwordTranslation: &lt;string&gt;
     "pronunciations": [...],
     "inflectedForms": [...]
 }
-</programlisting>
-  </section>
-  <section>
-    <title>SQL</title>
-    <programlisting>
-create table headwordTranslations (
-    senseID int foreign key references senses(id),
-    language nvarchar(10) foreign key references translationLanguage(langCode),
-    text nvarchar(255),
-    listingOrder int,
-    id int primary key
-);
-alter table partsOfSpeech (
-    add headwordTranslationID int foreign key references headwordTranslations(id)
-);
-alter table labels (
-    add headwordTranslationID int foreign key references headwordTranslations(id)
-);
-alter table pronunciations (
-    add headwordTranslationID int foreign key references headwordTranslations(id)
-);
-alter table inflectedForms (
-    add headwordTranslationID int foreign key references headwordTranslations(id)
-)
-</programlisting>
-    <para>Comments</para>
-    <itemizedlist>
-      <listitem>
-        <para>
-          <code>language</code> indicates the language of this translation. You can use the <code>translationLanguage</code> datatype to explain the meaning of the language codes that appear here and/or to constrain which language codes are allowed.</para>
-      </listitem>
-      <listitem>
-        <para>If ony one translation language exists in your lexicographic resource, then <code>language</code> can be left out.</para>
-      </listitem>
-      <listitem>
-        <para>For more comments see comments under <code>headwordTranslation</code> in the Bilingual Module.</para>
-      </listitem>
-    </itemizedlist>
-  </section>
+    </programlisting>
+  </example>
+  
+  <example>
+    <title>Relational database</title>
+    <graphic fileref="modules/xlingual/databaseDiagrams/headwordTranslation.svg" contentwidth="16cm"/>
+  </example>
 
 </section>

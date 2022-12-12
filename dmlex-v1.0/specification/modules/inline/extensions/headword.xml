@@ -6,24 +6,31 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
 ]>
 
-<section>
+<section id="inline_headword">
+  <title>Extensions to <code>headword</code></title>
+  <para>
+    Extends the <code><olink targetptr="core_headword">headword</olink></code> object type
+    from the <olink targetptr="core">Core</olink>.
+  </para>
 
-  <title>Extensions to <code>headword</code>
-  </title>
-  <para>Additional children:</para>
-  <programlisting>
-headword: ...
-    placeholderMarker: (0..n)
-</programlisting>
-  <section>
+  <itemizedlist>
+    <title>Additional contents</title>
+    <listitem>
+      <para><literal><olink targetptr="inline_placeholderMarker">placeholderMarker</olink></literal>
+        <glossterm>optional</glossterm> (zero, one or more)</para>
+    </listitem>
+  </itemizedlist>
+  
+  <example>
     <title>XML</title>
     <programlisting>
 &lt;headword&gt;
     ...&lt;placeholderMarker&gt;...&lt;/placeholderMarker&gt;...
 &lt;/headword&gt;
-</programlisting>
-  </section>
-  <section>
+    </programlisting>
+  </example>
+  
+  <example>
     <title>JSON</title>
     <programlisting>
 {
@@ -32,11 +39,7 @@ headword: ...
     "placeholderMarkers": [...],
     ...
 }
-</programlisting>
-  </section>
-  <section>
-    <title>SQL</title>
-    <para>No changes needed.</para>
-  </section>
+    </programlisting>
+  </example>
   
 </section>

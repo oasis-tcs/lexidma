@@ -6,42 +6,46 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
 ]>
 
-<section>
+<section id="inline_headwordMarker">
+  <title><code>headwordMarker</code></title>
+  <para>Marks up a substring inside an example, inside an example translation or inside a definition
+    which corresponds to the headword (or to a translation of the headword). An application can use
+    the inline markup to highlight the occurence of the headword for human readers through
+    formatting. Example: <xref linkend="ex21"/>.</para>
 
-  <title>
-    <code>headwordMarker</code>
-  </title>
-  <para>Marks up a substring inside an example, inside an example translation or inside a definition which corresponds to the headword (or to a translation of the headword). An application can use the inline markup to highlight the occurence of the headword for human readers through formatting. Example: <xref linkend="ex21"/>.</para>
-  <programlisting>
-headwordMarker: &lt;string&gt;
-</programlisting>
-  <section>
+  <itemizedlist>
+    <title>Child of</title>
+    <listitem>
+      <para><literal><olink targetptr="inline_definition">definition</olink></literal></para>
+    </listitem>
+    <listitem>
+      <para><literal><olink targetptr="inline_example">example</olink></literal></para>
+    </listitem>
+    <listitem>
+      <para><literal><olink targetptr="inline_exampleTranslation">exampleTranslation</olink></literal></para>
+    </listitem>
+  </itemizedlist>
+  
+  <example>
     <title>XML</title>
     <programlisting>
 &lt;headwordMarker&gt;...&lt;/headwordMarker&gt;
-</programlisting>
-  </section>
-  <section>
+    </programlisting>
+  </example>
+  
+  <example>
     <title>JSON</title>
     <programlisting>
 {
     "startIndex": ...,
     "endIndex": ...
 }
-</programlisting>
-  </section>
-  <section>
-    <title>SQL</title>
-    <programlisting>
-create table headwordMarkers (
-    entryID int foreign key references entries(id),
-    headwordTranslationID int foreign key references headwordTranslations(id),
-    definitionID int foreign key references definitions(id),
-    startIndex int,
-    endIndex int,
-    id int primary key
-)
-</programlisting>
-  </section>
+    </programlisting>
+  </example>
   
+  <example>
+    <title>Relational databases</title>
+    <graphic fileref="modules/inline/databaseDiagrams/headwordMarker.svg" contentwidth="16cm"/>
+  </example>
+
 </section>

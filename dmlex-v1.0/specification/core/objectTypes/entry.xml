@@ -23,8 +23,9 @@
     <title>Contents</title>
     <listitem>
       <para><literal>id</literal>
-        <glossterm>required</glossterm> (exactly one). An identifier of the entry, unique among all
-        lexicographic resources in the implementation.</para>
+        <glossterm>optional</glossterm> (zero or one). An unique identifier of the entry.
+        Entries which have idenfitiers are capable of being involved in relations created with the
+        <olink targetptr="linking">Linking module</olink>.</para>
     </listitem>
     <listitem>
       <para><literal>headword</literal>
