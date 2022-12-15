@@ -40,5 +40,11 @@
 }
     </programlisting>
   </example>
+  <example>
+      <title>RDF</title>
+      <programlisting>
+&lt;#lexicographicResource&gt; dmlex:translationLanguage ...
+      </programlisting>
+  </example>
   
 </section>

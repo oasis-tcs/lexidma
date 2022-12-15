@@ -67,7 +67,16 @@
 }
 </programlisting>
   </example>
-
+  <example>
+      <title>RDF</title>
+      <programlisting>
+&lt;#relation&gt; dmlex:member [
+  dmlex:idref "..." ;
+  dmlex:role "..." ;
+  dmlex:listingOrder 0 ;
+  dmlex:reverseListingOrder 0 ] .
+      </programlisting>
+  </example>
   <example>
     <title>Relational database</title>
     <graphic fileref="modules/linking/databaseDiagrams/member.svg" contentwidth="16cm"/>

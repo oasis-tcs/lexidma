@@ -64,9 +64,9 @@
   <example>
     <title>RDF</title>
     <programlisting>
-&lt;entry&gt; dmlex:definition [
+&lt;sense&gt; dmlex:definition [
   a dmlex:Definition ;
-  rdf:value "..." ;
+  dmlex:text "..." ;
   dmlex:definitionType "..." ;
   dmlex:listingOrder 1 ] .
     </programlisting>

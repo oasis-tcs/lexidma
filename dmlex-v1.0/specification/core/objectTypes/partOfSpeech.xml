@@ -70,7 +70,7 @@
     <programlisting>
 &lt;entry&gt; dmlex:partOfSpeech [ 
   a dmlex:PartOfSpeech ;
-  rdf:value "..." ;
+  dmlex:value "..." ;
   dmlex:listingOrder 1 ] .
     </programlisting>
   </example>

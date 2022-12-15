@@ -1,0 +1,88 @@
+## The ontology for DMLex - Inline Markup module
+## Author: John P. McCrae
+
+@prefix dmlex: <http://www.oasis-open.org/to-be-confirmed/dmlex#> .
+@prefix lime: <http://www.w3.org/ns/lemon/lime#> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dmlex:placeholderMarker a owl:ObjectProperty ;
+  rdfs:label "Placeholder Marker"@en ;
+  rdfs:domain [ a owl:Class ;
+    owl:unionOf ( dmlex:Headword dmlex:HeadwordTranslation ) ] ;
+  rdfs:range dmlex:PlaceholderMarker .
+
+dmlex:PlaceholderMarker a owl:Class ;
+  rdfs:label "Placeholder Marker"@en ;
+  rdfs:subClassOf  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:startIndex ;
+    owl:cardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:endIndex ;
+    owl:cardinality 1 ] .
+
+dmlex:startIndex a owl:DatatypeProperty ;
+  rdfs:label "Start Index"@en ;
+  rdfs:domain [ a owl:Class ;
+    owl:unionOf ( dmlex:PlaceholderMarker dmlex:HeadwordMarker ) ] ;
+  rdfs:range xsd:string .
+
+dmlex:endIndex a owl:DatatypeProperty ;
+  rdfs:label "End Index"@en ;
+  rdfs:domain [ a owl:Class ;
+    owl:unionOf ( dmlex:PlaceholderMarker dmlex:HeadwordMarker ) ] ;
+  rdfs:range xsd:string .
+
+dmlex:headwordMarker a owl:ObjectProperty ;
+  rdfs:label "Headword Marker"@en ;
+  rdfs:domain [ a owl:Class ;
+    owl:unionOf ( dmlex:Definition dmlex:Example dmlex:ExampleTranslation ) ] ;
+  rdfs:range dmlex:HeadwordMarker .
+
+dmlex:itemMarker a owl:ObjectProperty ;
+  rdfs:label "Item Marker"@en ;
+  rdfs:domain [ a owl:Class ;
+    owl:unionOf ( dmlex:Definition dmlex:Example dmlex:ExampleTranslation ) ] ;
+  rdfs:range dmlex:ItemMarker .
+
+dmlex:HeadwordMarker a owl:Class ;
+  rdfs:label "HeadwordMarker"@en ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty dmlex:startIndex ;
+    owl:cardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:endIndex ;
+    owl:cardinality 1 ] .
+
+dmlex:ItemMarker a owl:Class ;
+  rdfs:label "ItemMarker"@en ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty dmlex:startIndex ;
+    owl:cardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:endIndex ;
+    owl:cardinality 1 ] .
+
+dmlex:lemma a owl:DatatypeProperty ;
+  rdfs:label "Lemma"@en ;
+  rdfs:domain dmlex:ItemMarker ;
+  rdfs:range xsd:string .
+
+dmlex:itemRole a owl:ObjectProperty ;
+  rdfs:label "ItemRole"@en ;
+  rdfs:domain dmlex:ItemMark ;
+  rdfs:range dmlex:ItemRole .
+
+dmlex:ItemRole a owl:Class ;
+  rdfs:label "ItemRole"@en ;
+  rdfs:subClassOf  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:value ;
+    owl:cardinality 1 ] .
+

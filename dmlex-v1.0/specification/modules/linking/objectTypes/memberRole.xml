@@ -116,7 +116,19 @@
 }
     </programlisting>
   </example>
-
+  <example>
+      <title>RDF</title>
+      <programlisting>
+&lt;#relationType&gt; dmlex:memberRole [
+  dmlex:value "..." ;
+  dmlex:description "..." ;
+  dmlex:memberType "..." ;
+  dmlex:min 0 ;
+  dmlex:max 0 ;
+  dmlex:action "..." ;
+  dmlex:sameAs ... ] .
+      </programlisting>
+  </example>
   <example>
     <title>Relational database</title>
     <graphic fileref="modules/linking/databaseDiagrams/memberRole.svg" contentwidth="16cm"/>

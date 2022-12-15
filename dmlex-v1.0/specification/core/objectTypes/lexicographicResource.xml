@@ -91,7 +91,7 @@
     <programlisting>
 @prefix dmlex: &lt;http://www.oasis-open.org/to-be-confirmed/dmlex&gt; .
 
-&lt;id&gt; a dmlex:Lexicographic Resource ;
+&lt;#id&gt; a dmlex:LexicographicResource ;
   dmlex:title "..." ;
   dmlex:uri "..." ;
   dmlex:language "..." ;

@@ -40,5 +40,10 @@
 }
     </programlisting>
   </example>
-  
+  <example>
+      <title>RDF</title>
+      <programlisting>
+&lt;#example&gt; dmlex:exampleTranslation ... .
+      </programlisting>
+  </example> 
 </section>

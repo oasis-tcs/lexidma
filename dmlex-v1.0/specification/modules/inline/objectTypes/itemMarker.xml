@@ -71,12 +71,22 @@
     "id": "...",
     "startIndex": ...,
     "endIndex": ...,
-    lemma: "...",
-    itemRoles: ["..."]
+    "lemma": "...",
+    "itemRoles": ["..."]
 }
     </programlisting>
   </example>
-
+  <example>
+      <title>RDF</title>
+      <programlisting>
+&lt;#definition&gt; dmlex:itemMarker [
+  dmlex:id "..." ;
+  dmlex:startIndex 0 ;
+  dmlex:endIndex 0 ;
+  dmlex:lemma "..." ;
+  dmlex:itemRole ... ] .
+      </programlisting>
+  </example>
   <example>
     <title>SQL</title>
     <graphic fileref="modules/inline/databaseDiagrams/itemMarker.svg" contentwidth="16cm"/>

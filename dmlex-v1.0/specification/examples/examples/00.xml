@@ -86,4 +86,30 @@ lexicographicResource: my-dictionary
 }
 </programlisting>
   </section>
+  <example>
+      <title>RDF</title>
+      <programlisting>
+&lt;#my-dictionary&gt; dmlex:entry &lt;#abandon-verb&gt; .
+
+&lt;abandon-verb&gt; dmlex:headword "abandon" ;
+  dmlex:partOfSpeech "verb" ;
+  dmlex:sense &lt;#abandon-verb-1"&gt; , &lt;#abandon-verb-2&gt; .
+
+&lt;#abandon-verb-1&lt; dmlex:definition [
+     dmlex:text "to suddenly leave a place or a person" ] ;
+   dmlex:example [
+     dmlex:text "I'm sorry I abandoned you like that."
+   ] , [
+     dmlex:text "Abandon ship!" ;
+     dmlex:labels "idiom" ] .
+
+
+&lt;#abandon-verb-2"&gt; 
+  dmlex:label "mostly-passive" ;
+  dmlex:definition [
+    dmlex:text "to stop supporting an idea" ] ;
+  dmlex:example [
+    dmlex:text "That theory has been abandoned." ] .
+      </programlisting>
+  </example>
 </section>

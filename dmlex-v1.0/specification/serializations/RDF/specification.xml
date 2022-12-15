@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+<!--the document properties were transferred to "dockbook/dbgenent.mod"-->
+                         ]>
+<section id="rdf" role="normative | informative">
+  <title>DMLex RDF serialization</title>
+
+  <section>
+      <title>Design principles</title>
+      <para>The RDF serialization used in this document follows the following principles</para>
+      <itemizedlist>
+          <listitem>
+              <para>The <code>lexicographicResource</code> object is an individual of type <code>dmlex:LexicographicResource</code></para>
+          </listitem>
+          <listitem>
+              <para>All other objects are implemented as individuals</para>
+          </listitem>
+          <listitem>
+              <para>Each other object type is associated with a property (with a lowercase intiial letter) and a class (with an uppercase initial letter. In all case the range of this property is the class</para>
+          </listitem>
+          <listitem>
+              <para>Arity of properties is implemented by means of OWL class restrictions. 
+          </listitem>
+          <listitem>
+              <para>Listing order can be specified with the property <code>dmlex:listingOrder</code> with values starting from 1 and ascending</para>
+          </listitem>
+          <listitem>
+              <para>The implementation is not aware of which modules are in use, to enable publishing on the web. As such cardinality constraints that are only required in a module are not implemented.</para>
+          </listitem>
+      </itemizedlist>
+
+  </section>
+
+  <section>
+      <title>Interoperability with OntoLex-lemon</title>
+      <para>The ontology provides rules to infer an OntoLex-lemon model from DMLex data. This is achieved by means of subclass and subproperty axioms and so conversion can be performed by an OWL reasoner.</para>
+  </section>
+</section>
+

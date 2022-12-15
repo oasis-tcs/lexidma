@@ -76,7 +76,14 @@
 }
     </programlisting>
   </example>
-  
+  <example>
+      <title>RDF</title>
+      <programlisting>
+&lt;#tag&gt;
+  dmlex:sideConstraint "..." ;
+  dmlex:translationLanguageConstraint "..." .
+      </programlisting>
+  </example> 
   <example>
     <title>Relational database</title>
     <graphic fileref="modules/xlingual/databaseDiagrams/tag.svg" contentwidth="16cm"/>

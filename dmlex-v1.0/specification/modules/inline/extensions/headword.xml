@@ -41,5 +41,13 @@
 }
     </programlisting>
   </example>
+  <example>
+      <title>RDF</title>
+      <programlisting>
+&lt;#entry&gt; dmlex:headword [
+  dmlex:value "..." ;
+  dmlex:placeholderMarkers ... ] .
+      </programlisting>
+  </example> 
   
 </section>

@@ -40,7 +40,14 @@
 }
     </programlisting>
   </example>
-  
+  <example>
+      <title>RDF</title>
+      <programlisting>
+&lt;#headword&gt; dmlex:placeholderMarker [
+  dmlex:startIndex 0 ;
+  dmlex:endIndex 1 ] .
+      </programlisting>
+  </example> 
   <example>
     <title>Relational databases</title>
     <graphic fileref="modules/inline/databaseDiagrams/placeholderMarker.svg" contentwidth="16cm"/>

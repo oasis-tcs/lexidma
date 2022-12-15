@@ -79,7 +79,16 @@
 }
     </programlisting>
   </example>
-  
+  <example>
+      <title>RDF</title>
+      <programlisting>
+&lt;#lexicographicResource&gt; dmlex:relationType [
+  dmlex:value "..." ;
+  dmlex:scope "..." ;
+  dmlex:memberRole ... ;
+  dmlex:sameAs ... ] .
+      </programlisting>
+  </example> 
   <example>
     <title>Relational database</title>
     <graphic fileref="modules/linking/databaseDiagrams/relationType.svg" contentwidth="16cm"/>

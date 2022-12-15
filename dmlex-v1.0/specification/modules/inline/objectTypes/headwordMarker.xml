@@ -42,7 +42,14 @@
 }
     </programlisting>
   </example>
-  
+  <example>
+      <title>RDF</title>
+      <programlisting>
+&lt;#definition&gt; dmlex:headwordMarker [
+  dmlex:startIndex 0 ;
+  dmlex:endIndex 0 ] .
+      </programlisting>
+  </example> 
   <example>
     <title>Relational databases</title>
     <graphic fileref="modules/inline/databaseDiagrams/headwordMarker.svg" contentwidth="16cm"/>

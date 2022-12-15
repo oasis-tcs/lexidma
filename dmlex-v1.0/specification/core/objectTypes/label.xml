@@ -86,7 +86,7 @@
     <programlisting>
 &lt;entry&gt; dmlex:label [
   a dmlex:Label ;
-  rdf:value "..." ;
+  dmlex:value "..." ;
   dmlex:listingOrder 1 ] .
     </programlisting>
   </example>
