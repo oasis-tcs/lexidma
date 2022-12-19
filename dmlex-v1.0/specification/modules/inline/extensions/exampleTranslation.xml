@@ -51,5 +51,13 @@
 }
         </programlisting>
   </example>
-  
+  <example>
+      <title>RDF</title>
+      <programlisting>
+&lt;#example&gt; dmlex:exampleTranslation [
+  dmlex:text "..." ;
+  dmlex:headwordMarker ... ;
+  dmlex:itemMarker ... ] .
+      </programlisting>
+  </example> 
 </section>

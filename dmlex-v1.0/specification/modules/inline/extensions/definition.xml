@@ -49,5 +49,14 @@
 }
     </programlisting>
   </example>
+  <example>
+      <title>RDF</title>
+      <programlisting>
+&lt;#sense&gt; dmlex:definition [
+  dmlex:text "..." ;
+  dmlex:headwordMarker ... ;
+  dmlex:itemMarker ... ] .
+      </programlisting>
+  </example> 
   
 </section>

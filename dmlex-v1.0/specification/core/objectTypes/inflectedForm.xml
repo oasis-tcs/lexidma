@@ -81,7 +81,7 @@
     <title>RDF</title>
     <programlisting>
 &lt;entry&gt; dmlex:inflectedForm [
-  a dmlex:InflectedForm ;
+  dmlex:text "..." ;
   dmlex:inflectedTag "..." ;
   dmlex:listingOrder 1 ;
   dmlex:label ... ;

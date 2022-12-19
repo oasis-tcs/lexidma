@@ -59,7 +59,15 @@
 }
 </programlisting>
   </example>
-
+  <example>
+      <title>RDF</title>
+      <programlisting>
+&lt;#lexicographicResource&gt; dmlex:relation [
+  dmlex:type "..." ;
+  dmlex:description "..." ;
+  dmlex:member ... ] .
+      </programlisting>
+  </example>
   <example>
     <title>Relational database</title>
     <graphic fileref="modules/linking/databaseDiagrams/relation.svg" contentwidth="16cm"/>

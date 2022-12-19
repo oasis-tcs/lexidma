@@ -1,0 +1,76 @@
+## The ontology for DMLex - Crosslingual module
+## Author: John P. McCrae
+
+@prefix dmlex: <http://www.oasis-open.org/to-be-confirmed/dmlex#> .
+@prefix lime: <http://www.w3.org/ns/lemon/lime#> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dmlex:translationLanguage a owl:ObjectProperty ;
+  rdfs:label "Translation Language"@en ;
+  rdfs:domain dmlex:LexicographicResource ;
+  rdfs:range dmlex:TranslationLanguage .
+
+dmlex:TranslationLanguage a owl:Class ;
+  rdfs:label "TranslationLanguage"@en ;
+  rdfs:subClassOf  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:value ;
+    owl:cardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:listingOrder ;
+    owl:cardinality 1 ] .
+
+dmlex:headwordExplanation a owl:ObjectProperty ;
+  rdfs:label "Headword Explanation"@en ;
+  rdfs:domain dmlex:Sense ;
+  rdfs:range dmlex:HeadwordExplanation .
+
+dmlex:headwordTranslation a owl:ObjectProperty ;
+  rdfs:label "Headword Translation"@en ;
+  rdfs:domain [ a owl:Class ;
+    owl:unionOf ( dmlex:Sense dmlex:PartOfSpeech dmlex:Label dmlex:Pronunciation dmlex:InflectedForm) ] ;
+  rdfs:range dmlex:HeadwordTranslation .
+
+dmlex:HeadwordTranslation a owl:Class ;
+  rdfs:label "Headword Translation"@en ;
+  rdfs:subClassOf  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:text ;
+    owl:cardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:listingOrder ;
+    owl:cardinality 1 ] .
+
+dmlex:HeadwordExplanation a owl:Class ;
+  rdfs:label "Headword Explanation"@en ;
+  rdfs:subClassOf  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:text ;
+    owl:cardinality 1 ] .
+
+dmlex:exampleTranslation a owl:ObjectProperty ;
+  rdfs:label "Example Translation"@en ;
+  rdfs:domain dmlex:Example ;
+  rdfs:range dmlex:ExampleTranslation .
+
+dmlex:ExampleTranslation a owl:Class ;
+  rdfs:label "Example Translation"@en ;
+  rdfs:subClassOf  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:text ;
+    owl:cardinality 1 ] . 
+
+dmlex:sideConstraint a owl:DatatypeProperty ;
+  rdfs:label "Side Constraint"@en ;
+  rdfs:domain dmlex:Tag .
+
+dmlex:translationLanguageConstraint a owl:DatatypeProperty ;
+  rdfs:label "Translation Language Constraint"@en ;
+  rdfs:domain dmlex:Tag ;
+  rdfs:range xsd:string .
+
+

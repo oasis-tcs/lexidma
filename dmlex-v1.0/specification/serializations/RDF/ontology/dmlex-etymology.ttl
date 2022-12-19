@@ -1,0 +1,194 @@
+## The ontology for DMLex - Etymology module
+## Author: John P. McCrae
+
+@prefix dmlex: <http://www.oasis-open.org/to-be-confirmed/dmlex#> .
+@prefix lime: <http://www.w3.org/ns/lemon/lime#> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dmlex:etymology a owl:ObjectProperty ;
+  rdfs:label "Etymology"@en ;
+  rdfs:domain dmlex:Entry ;
+  rdfs:range dmlex:Etymology .
+
+dmlex:Etymology a owl:Class ;
+  rdfs:label "Etymology"@en .
+
+dmlex:etymDescription a owl:DatatypeProperty ;
+  rdfs:label "EtymDescription"@en ;
+  rdfs:domain dmlex:Etymology ;
+  rdfs:range xsd:string .
+
+dmlex:etymon a owl:ObjectProperty ;
+  rdfs:label "Etymon"@en ;
+  rdfs:domain dmlex:Etymology ;
+  rdfs:range dmlex:Etymon .
+
+dmlex:multiEtymon a owl:ObjectProperty ;
+  rdfs:label "MultiEtymon"@en ;
+  rdfs:domain dmlex:Etymology ;
+  rdfs:range dmlex:MultiEtymon .
+
+dmlex:Etymon a owl:Class ;
+  rdfs:label "Etymon"@en ;
+  rdfs:subClassOf  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:text ;
+    owl:cardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:type ;
+    owl:maxCardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:language ;
+    owl:cardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:note ;
+    owl:maxCardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:reconstructed ;
+    owl:maxCardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:label ;
+    owl:maxCardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:href ;
+    owl:maxCardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:listingOrder ;
+    owl:cardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:etymDate ;
+    owl:maxCardinality 1 ] .
+
+dmlex:type a owl:DatatypeProperty ;
+  rdfs:label "Type"@en ;
+  rdfs:domain [ a owl:Class ;
+    owl:unionOf ( dmlex:Relation dmlex:Etymon dmlex:MultiEtymon ) ] ;
+  rdfs:range xsd:string .
+
+dmlex:note a owl:DatatypeProperty ;
+  rdfs:label "Note"@en ;
+  rdfs:domain [ a owl:Class ;
+    owl:unionOf ( dmlex:Etymon dmlex:MultiEtymon ) ] ;
+  rdfs:range xsd:string .
+
+dmlex:reconstructed a owl:DatatypeProperty ;
+  rdfs:label "Reconstructed"@en ;
+  rdfs:domain [ a owl:Class ;
+    owl:unionOf ( dmlex:Etymon dmlex:MultiEtymon ) ] ;
+  rdfs:range xsd:boolean .
+
+dmlex:href a owl:DatatypeProperty ;
+  rdfs:label "HREF"@en ;
+  rdfs:domain [ a owl:Class ;
+    owl:unionOf ( dmlex:Etymon dmlex:MultiEtymon ) ] ;
+  rdfs:range xsd:anyURI .
+
+dmlex:etymTranslation a owl:ObjectProperty ;
+  rdfs:label "Etymology Translation"@en ;
+  rdfs:domain [ a owl:Class ;
+    owl:unionOf ( dmlex:Etymon dmlex:MultiEtymon ) ] ;
+  rdfs:range dmlex:EtymTranslation .
+
+dmlex:etymDate a owl:ObjectProperty ;
+  rdfs:label "Etymology Date"@en ;
+  rdfs:domain [ a owl:Class ;
+    owl:unionOf ( dmlex:Etymon dmlex:MultiEtymon ) ] ;
+  rdfs:range dmlex:EtymDate .
+
+dmlex:MultiEtymon a owl:Class ;
+  rdfs:label "Etymon"@en ;
+  rdfs:subClassOf   [
+    a owl:Restriction ;
+    owl:onProperty dmlex:etymon ;
+    owl:minCardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:type ;
+    owl:maxCardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:language ;
+    owl:cardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:note ;
+    owl:maxCardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:reconstructed ;
+    owl:maxCardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:label ;
+    owl:maxCardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:href ;
+    owl:maxCardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:listingOrder ;
+    owl:cardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:etymDate ;
+    owl:maxCardinality 1 ] .
+
+dmlex:EtymTranslation a owl:Class ;
+  rdfs:label "EtymTranslation"@en ;
+  rdfs:subClassOf  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:value ;
+    owl:cardinality 1 ] .
+
+dmlex:EtymDate a owl:Class ;
+  rdfs:label "Etymology Date"@en ;
+  rdfs:subClassOf  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:start ;
+    owl:maxCardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:end ;
+    owl:maxCardinality 1 ] .
+
+dmlex:start a owl:DatatypeProperty ;
+  rdfs:label "Start"@en ;
+  rdfs:domain dmlex:EtymDate .
+
+
+dmlex:end a owl:DatatypeProperty ;
+  rdfs:label "End"@en ;
+  rdfs:domain dmlex:EtymDate .
+
+dmlex:etymonLanguage a owl:ObjectProperty ;
+  rdfs:label "Etymon Language"@en ;
+  rdfs:domain dmlex:LexicographicResource ;
+  rdfs:range dmlex:EtymonLanguage .
+
+dmlex:EtymonLanguage a owl:Class ;
+  rdfs:label "Etymon Language"@en ;
+  rdfs:subClassOf  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:value ;
+    owl:cardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:iso639-1 ;
+    owl:maxCardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:iso639-3 ;
+    owl:maxCardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:displayValue ;
+    owl:maxCardinality 1 ] .
+
+dmlex:iso639-1 a owl:DatatypeProperty ;
+  rdfs:label "ISO 639-1 code"@en ;
+  rdfs:domain dmlex:EtymonLanguage ;
+  rdfs:range xsd:string .
+
+dmlex:iso639-3 a owl:DatatypeProperty ;
+  rdfs:label "ISO 639-3 code"@en ;
+  rdfs:domain dmlex:EtymonLanguage ;
+  rdfs:range xsd:string .
+
+dmlex:displayValue a owl:DatatypeProperty ;
+  rdfs:label "Display Value"@en ;
+  rdfs:domain dmlex:EtymonLanguage ;
+  rdfs:range xsd:string .
+

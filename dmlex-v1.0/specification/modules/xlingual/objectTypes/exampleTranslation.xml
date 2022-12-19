@@ -67,7 +67,16 @@
 }
         </programlisting>
     </example>
-    
+    <example>
+        <title>RDF</title>
+        <programlisting>
+&lt;#example&gt; dmlex:exampleTranslation [
+  dmlex:language "..." ;
+  dmlex:text "..." ;
+  dmlex:label ... ;
+  dmlex:soundFile "..." ] .
+        </programlisting>
+    </example> 
     <example>
         <title>Relational database</title>
         <graphic fileref="modules/xlingual/databaseDiagrams/exampleTranslation.svg" contentwidth="16cm"/>

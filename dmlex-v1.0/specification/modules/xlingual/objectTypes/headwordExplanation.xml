@@ -61,6 +61,14 @@
 }
         </programlisting>
     </example>
+    <example>
+        <title>RDF</title>
+        <programlisting>
+&lt;#sense&gt; dmlex:headwordExplanation [
+  dmlex:language "..." ;
+  dmlex:text "..." ] .
+        </programlisting>
+    </example>
     
     <example>
         <title>Relational database</title>

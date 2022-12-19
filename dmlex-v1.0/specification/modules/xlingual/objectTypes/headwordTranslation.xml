@@ -85,7 +85,20 @@
 }
     </programlisting>
   </example>
-  
+
+  <example>
+      <title>RDF</title>
+      <programlisting>
+&lt;#sense&gt; dmlex:headwordTranslation [
+  dmlex:language "..." ;
+  dmlex:text "..." ;
+  dmlex:partOfSpeech ... ;
+  dmlex:label ... ;
+  dmlex:pronunciation ... ;
+  dmlex:inflectedForm ... ] .
+      </programlisting>
+  </example>
+
   <example>
     <title>Relational database</title>
     <graphic fileref="modules/xlingual/databaseDiagrams/headwordTranslation.svg" contentwidth="16cm"/>

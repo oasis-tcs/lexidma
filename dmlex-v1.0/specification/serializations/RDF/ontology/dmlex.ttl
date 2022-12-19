@@ -1,0 +1,746 @@
+## The ontology for DMLex
+## Author: John P. McCrae
+
+@prefix dmlex: <http://www.oasis-open.org/to-be-confirmed/dmlex#> .
+@prefix lime: <http://www.w3.org/ns/lemon/lime#> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dmlex:LexicographicResource a owl:Class ;
+  rdfs:label "Lexicographic resource"@en ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty dmlex:language ;
+    owl:cardinality 1 ] , lime:Lexicon .
+
+dmlex:title a owl:DatatypeProperty ;
+  rdfs:label "Title"@en ;
+  rdfs:domain dmlex:LexicographicResource ;
+  rdfs:range rdfs:Literal .
+
+dmlex:uri a owl:DatatypeProperty ;
+  rdfs:label "URI"@en ;
+  rdfs:domain dmlex:LexicographicResource ;
+  rdfs:range xsd:anyURI .
+
+dmlex:language a owl:DatatypeProperty ;
+  rdfs:label "Language"@en ;
+  rdfs:subPropertyOf lime:language .
+
+dmlex:entry a owl:ObjectProperty ;
+  rdfs:label "Entry"@en ;
+  rdfs:domain dmlex:LexicographicResource ;
+  rdfs:range dmlex:Entry ;
+  rdfs:subPropertyOf lime:entry .
+
+dmlex:tag a owl:ObjectProperty ;
+  rdfs:label "Tag"@en ;
+  rdfs:domain dmlex:LexicographicResource ;
+  rdfs:range dmlex:Tag .
+
+dmlex:Entry a owl:Class ;
+  rdfs:label "Entry"@en ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty dmlex:headword ;
+    owl:cardinality 1 ] , ontolex:LexicalEntry .
+
+dmlex:headword a owl:DatatypeProperty ;
+  rdfs:label "Headword"@en ;
+  rdfs:domain dmlex:Entry ;
+  rdfs:range rdfs:Literal .
+
+dmlex:homographNumber a owl:DatatypeProperty ;
+  rdfs:label "Homograph Number"@en ;
+  rdfs:domain dmlex:Entry ;
+  rdfs:range xsd:nonNegativeInteger .
+
+dmlex:partOfSpeech a owl:ObjectProperty ;
+  rdfs:label "Part of Speech"@en ;
+  rdfs:domain [ a owl:Class ; 
+    owl:unionOf ( dmlex:Entry dmlex:HeadwordTranslation ) ] ;
+  rdfs:range dmlex:PartOfSpeech .
+
+dmlex:label a owl:ObjectProperty ;
+  rdfs:label "Label"@en ;
+  rdfs:domain [ a owl:Class ; 
+  owl:unionOf ( dmlex:Entry dmlex:InflectedForm dmlex:Sense dmlex:Pronunciation dmlex:Example dmlex:HeadwordTranslation dmlex:Etymon) ] ;
+  rdfs:range dmlex:Label .
+
+dmlex:pronunciation a owl:ObjectProperty ;
+  rdfs:label "Pronunciation"@en ;
+  rdfs:domain [ a owl:Class ; 
+    owl:unionOf ( dmlex:Entry dmlex:InflectedForm dmlex:HeadwordTranslation) ] ;
+  rdfs:range dmlex:Pronunciation .
+
+dmlex:inflectedForm a owl:ObjectProperty ;
+  rdfs:label "Inflected Form"@en ;
+  rdfs:domain [ a owl:Class ;
+    owl:unionOf ( dmlex:Entry dmlex:HeadwordTranslation ) ] ;
+  rdfs:range dmlex:InflectedForm .
+
+dmlex:sense a owl:ObjectProperty ;
+  rdfs:label "Sense"@en ;
+  rdfs:domain dmlex:Entry ;
+  rdfs:range dmlex:Sense ;
+  rdfs:subPropertyOf ontolex:evokes .
+
+dmlex:PartOfSpeech a owl:Class ;
+  rdfs:label "Part of Speech"@en ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty dmlex:value ;
+    owl:cardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:listingOrder ;
+    owl:cardinality 1 ] .
+
+dmlex:listingOrder a owl:DatatypeProperty ;
+  rdfs:label "Listing Order"@en ;
+  rdfs:range xsd:nonNegativeInteger .
+
+dmlex:value a owl:DatatypeProperty ;
+  rdfs:label "Value"@en .
+
+dmlex:InflectedForm a owl:Class ;
+  rdfs:label "Inflected Form"@en ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty dmlex:inflectedTag ;
+    owl:maxCardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:text ;
+    owl:cardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:listingOrder ;
+    owl:cardinality 1 ] , ontolex:Form .
+
+dmlex:text a owl:DatatypeProperty ;
+  rdfs:label "Text"@en ;
+  rdfs:range rdfs:Literal .
+
+dmlex:inflectedTag a owl:DatatypeProperty ;
+  rdfs:label "Inflected Tag"@en ;
+  rdfs:domain dmlex:InflectedForm ;
+  rdfs:range rdfs:Literal .
+
+dmlex:Sense a owl:Class ;
+  rdfs:label "Sense"@en ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty dmlex:listingOrder ;
+    owl:cardinality 1 ] , ontolex:LexicalConcept .
+
+dmlex:indicator a owl:ObjectProperty ;
+  rdfs:label "Indicator"@en ;
+  rdfs:domain dmlex:Sense ;
+  rdfs:range dmlex:Indicator .
+
+dmlex:definition a owl:ObjectProperty ;
+  rdfs:label "Definition"@en ;
+  rdfs:domain dmlex:Sense ;
+  rdfs:range dmlex:Definition .
+
+dmlex:example a owl:ObjectProperty ;
+  rdfs:label "Example"@en ;
+  rdfs:domain dmlex:Sense ;
+  rdfs:range dmlex:Example .
+
+dmlex:Definition a owl:Class ;
+  rdfs:label "Definition"@en ;
+  rdfs:subClassOf  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:value ;
+    owl:cardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:definitionType ;
+    owl:maxCardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:listingOrder ;
+    owl:cardinality 1 ] .
+
+dmlex:definitionType a owl:ObjectProperty ;
+  rdfs:label "Definition Type"@en ;
+  rdfs:domain dmlex:Definition ;
+  rdfs:range dmlex:DefinitionType .
+
+dmlex:Label a owl:Class ;
+  rdfs:label "Label"@en ;
+  rdfs:subClassOf  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:value ;
+    owl:cardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:listingOrder ;
+    owl:cardinality 1 ] .
+
+dmlex:Pronunciation a owl:Class ;
+  rdfs:label "Pronunciation"@en ;
+  rdfs:subClassOf  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:soundFile ;
+    owl:maxCardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:listingOrder ;
+    owl:cardinality 1 ] .
+
+dmlex:soundFile a owl:DatatypeProperty ;
+  rdfs:label "Sound File"@en ;
+  rdfs:domain [ a owl:Class ; 
+    owl:unionOf ( dmlex:Pronunciation dmlex:Example dmlex:ExampleTranslation) ] ;
+  rdfs:range xsd:anyURI .
+
+dmlex:transcription a owl:ObjectProperty ;
+  rdfs:label "Transcription"@en ;
+  rdfs:domain dmlex:Pronunciation ;
+  rdfs:range dmlex:Transcription .
+
+dmlex:Transcription a owl:Class ;
+  rdfs:label "Transcription"@en ;
+  rdfs:subClassOf  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:text ;
+    owl:cardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:listingOrder ;
+    owl:cardinality 1 ] .
+
+dmlex:Example a owl:Class ;
+  rdfs:label "Example"@en ;
+  rdfs:subClassOf  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:text ;
+    owl:cardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:sourceIdentity ;
+    owl:maxCardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:sourceElaboration ;
+    owl:maxCardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:listingOrder ;
+    owl:cardinality 1 ] .
+
+dmlex:sourceIdentity a owl:DatatypeProperty ;
+  rdfs:label "Source Identity"@en ;
+  rdfs:domain dmlex:Example ;
+  rdfs:range rdfs:Literal .
+
+dmlex:sourceElaboration a owl:DatatypeProperty ;
+  rdfs:label "Source Elaboration"@en ;
+  rdfs:domain dmlex:Example ;
+  rdfs:range rdfs:Literal .
+
+dmlex:Tag a owl:Class ;
+  rdfs:label "Tag"@en ;
+  rdfs:subClassOf  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:value ;
+    owl:cardinality 1 ] .
+
+dmlex:description a owl:DatatypeProperty ;
+  rdfs:label "Description"@en ;
+  rdfs:range rdfs:Literal .
+
+dmlex:target a owl:DatatypeProperty ;
+  rdfs:label "Target"@en ;
+  rdfs:domain dmlex:Tag ;
+  rdfs:range xsd:string .
+
+dmlex:partOfSpeechConstraint a owl:ObjectProperty ;
+  rdfs:label "Part of Speech Constraint"@en ;
+  rdfs:domain dmlex:Tag ;
+  rdfs:range dmlex:PartOfSpeechConstraint .
+
+dmlex:sameAs a owl:ObjectProperty ;
+  rdfs:label "Same As"@en ;
+  rdfs:domain [ a owl:Class ;
+    owl:unionOf ( dmlex:Tag dmlex:RelationType dmlex:MemberRole ) ] ;
+  rdfs:range dmlex:SameAs .
+
+dmlex:SameAs a owl:Class ;
+  rdfs:label "SameAs"@en ;
+  rdfs:subClassOf  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:value ;
+    owl:cardinality 1 ] .
+## The ontology for DMLex - Etymology module
+## Author: John P. McCrae
+
+@prefix dmlex: <http://www.oasis-open.org/to-be-confirmed/dmlex#> .
+@prefix lime: <http://www.w3.org/ns/lemon/lime#> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dmlex:etymology a owl:ObjectProperty ;
+  rdfs:label "Etymology"@en ;
+  rdfs:domain dmlex:Entry ;
+  rdfs:range dmlex:Etymology .
+
+dmlex:Etymology a owl:Class ;
+  rdfs:label "Etymology"@en .
+
+dmlex:etymDescription a owl:DatatypeProperty ;
+  rdfs:label "EtymDescription"@en ;
+  rdfs:domain dmlex:Etymology ;
+  rdfs:range xsd:string .
+
+dmlex:etymon a owl:ObjectProperty ;
+  rdfs:label "Etymon"@en ;
+  rdfs:domain dmlex:Etymology ;
+  rdfs:range dmlex:Etymon .
+
+dmlex:multiEtymon a owl:ObjectProperty ;
+  rdfs:label "MultiEtymon"@en ;
+  rdfs:domain dmlex:Etymology ;
+  rdfs:range dmlex:MultiEtymon .
+
+dmlex:Etymon a owl:Class ;
+  rdfs:label "Etymon"@en ;
+  rdfs:subClassOf  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:text ;
+    owl:cardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:type ;
+    owl:maxCardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:language ;
+    owl:cardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:note ;
+    owl:maxCardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:reconstructed ;
+    owl:maxCardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:label ;
+    owl:maxCardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:href ;
+    owl:maxCardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:listingOrder ;
+    owl:cardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:etymDate ;
+    owl:maxCardinality 1 ] .
+
+dmlex:type a owl:DatatypeProperty ;
+  rdfs:label "Type"@en ;
+  rdfs:domain [ a owl:Class ;
+    owl:unionOf ( dmlex:Relation dmlex:Etymon dmlex:MultiEtymon ) ] ;
+  rdfs:range xsd:string .
+
+dmlex:note a owl:DatatypeProperty ;
+  rdfs:label "Note"@en ;
+  rdfs:domain [ a owl:Class ;
+    owl:unionOf ( dmlex:Etymon dmlex:MultiEtymon ) ] ;
+  rdfs:range xsd:string .
+
+dmlex:reconstructed a owl:DatatypeProperty ;
+  rdfs:label "Reconstructed"@en ;
+  rdfs:domain [ a owl:Class ;
+    owl:unionOf ( dmlex:Etymon dmlex:MultiEtymon ) ] ;
+  rdfs:range xsd:boolean .
+
+dmlex:href a owl:DatatypeProperty ;
+  rdfs:label "HREF"@en ;
+  rdfs:domain [ a owl:Class ;
+    owl:unionOf ( dmlex:Etymon dmlex:MultiEtymon ) ] ;
+  rdfs:range xsd:anyURI .
+
+dmlex:etymTranslation a owl:ObjectProperty ;
+  rdfs:label "Etymology Translation"@en ;
+  rdfs:domain [ a owl:Class ;
+    owl:unionOf ( dmlex:Etymon dmlex:MultiEtymon ) ] ;
+  rdfs:range dmlex:EtymTranslation .
+
+dmlex:etymDate a owl:ObjectProperty ;
+  rdfs:label "Etymology Date"@en ;
+  rdfs:domain [ a owl:Class ;
+    owl:unionOf ( dmlex:Etymon dmlex:MultiEtymon ) ] ;
+  rdfs:range dmlex:EtymDate .
+
+dmlex:MultiEtymon a owl:Class ;
+  rdfs:label "Etymon"@en ;
+  rdfs:subClassOf   [
+    a owl:Restriction ;
+    owl:onProperty dmlex:etymon ;
+    owl:minCardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:type ;
+    owl:maxCardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:language ;
+    owl:cardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:note ;
+    owl:maxCardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:reconstructed ;
+    owl:maxCardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:label ;
+    owl:maxCardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:href ;
+    owl:maxCardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:listingOrder ;
+    owl:cardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:etymDate ;
+    owl:maxCardinality 1 ] .
+
+dmlex:EtymTranslation a owl:Class ;
+  rdfs:label "EtymTranslation"@en ;
+  rdfs:subClassOf  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:value ;
+    owl:cardinality 1 ] .
+
+dmlex:EtymDate a owl:Class ;
+  rdfs:label "Etymology Date"@en ;
+  rdfs:subClassOf  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:start ;
+    owl:maxCardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:end ;
+    owl:maxCardinality 1 ] .
+
+dmlex:start a owl:DatatypeProperty ;
+  rdfs:label "Start"@en ;
+  rdfs:domain dmlex:EtymDate .
+
+
+dmlex:end a owl:DatatypeProperty ;
+  rdfs:label "End"@en ;
+  rdfs:domain dmlex:EtymDate .
+
+dmlex:etymonLanguage a owl:ObjectProperty ;
+  rdfs:label "Etymon Language"@en ;
+  rdfs:domain dmlex:LexicographicResource ;
+  rdfs:range dmlex:EtymonLanguage .
+
+dmlex:EtymonLanguage a owl:Class ;
+  rdfs:label "Etymon Language"@en ;
+  rdfs:subClassOf  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:value ;
+    owl:cardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:iso639-1 ;
+    owl:maxCardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:iso639-3 ;
+    owl:maxCardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:displayValue ;
+    owl:maxCardinality 1 ] .
+
+dmlex:iso639-1 a owl:DatatypeProperty ;
+  rdfs:label "ISO 639-1 code"@en ;
+  rdfs:domain dmlex:EtymonLanguage ;
+  rdfs:range xsd:string .
+
+dmlex:iso639-3 a owl:DatatypeProperty ;
+  rdfs:label "ISO 639-3 code"@en ;
+  rdfs:domain dmlex:EtymonLanguage ;
+  rdfs:range xsd:string .
+
+dmlex:displayValue a owl:DatatypeProperty ;
+  rdfs:label "Display Value"@en ;
+  rdfs:domain dmlex:EtymonLanguage ;
+  rdfs:range xsd:string .
+
+## The ontology for DMLex - Inline Markup module
+## Author: John P. McCrae
+
+@prefix dmlex: <http://www.oasis-open.org/to-be-confirmed/dmlex#> .
+@prefix lime: <http://www.w3.org/ns/lemon/lime#> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dmlex:placeholderMarker a owl:ObjectProperty ;
+  rdfs:label "Placeholder Marker"@en ;
+  rdfs:domain [ a owl:Class ;
+    owl:unionOf ( dmlex:Headword dmlex:HeadwordTranslation ) ] ;
+  rdfs:range dmlex:PlaceholderMarker .
+
+dmlex:PlaceholderMarker a owl:Class ;
+  rdfs:label "Placeholder Marker"@en ;
+  rdfs:subClassOf  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:startIndex ;
+    owl:cardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:endIndex ;
+    owl:cardinality 1 ] .
+
+dmlex:startIndex a owl:DatatypeProperty ;
+  rdfs:label "Start Index"@en ;
+  rdfs:domain [ a owl:Class ;
+    owl:unionOf ( dmlex:PlaceholderMarker dmlex:HeadwordMarker ) ] ;
+  rdfs:range xsd:string .
+
+dmlex:endIndex a owl:DatatypeProperty ;
+  rdfs:label "End Index"@en ;
+  rdfs:domain [ a owl:Class ;
+    owl:unionOf ( dmlex:PlaceholderMarker dmlex:HeadwordMarker ) ] ;
+  rdfs:range xsd:string .
+
+dmlex:headwordMarker a owl:ObjectProperty ;
+  rdfs:label "Headword Marker"@en ;
+  rdfs:domain [ a owl:Class ;
+    owl:unionOf ( dmlex:Definition dmlex:Example dmlex:ExampleTranslation ) ] ;
+  rdfs:range dmlex:HeadwordMarker .
+
+dmlex:itemMarker a owl:ObjectProperty ;
+  rdfs:label "Item Marker"@en ;
+  rdfs:domain [ a owl:Class ;
+    owl:unionOf ( dmlex:Definition dmlex:Example dmlex:ExampleTranslation ) ] ;
+  rdfs:range dmlex:ItemMarker .
+
+dmlex:HeadwordMarker a owl:Class ;
+  rdfs:label "HeadwordMarker"@en ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty dmlex:startIndex ;
+    owl:cardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:endIndex ;
+    owl:cardinality 1 ] .
+
+dmlex:ItemMarker a owl:Class ;
+  rdfs:label "ItemMarker"@en ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty dmlex:startIndex ;
+    owl:cardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:endIndex ;
+    owl:cardinality 1 ] .
+
+dmlex:lemma a owl:DatatypeProperty ;
+  rdfs:label "Lemma"@en ;
+  rdfs:domain dmlex:ItemMarker ;
+  rdfs:range xsd:string .
+
+dmlex:itemRole a owl:ObjectProperty ;
+  rdfs:label "ItemRole"@en ;
+  rdfs:domain dmlex:ItemMark ;
+  rdfs:range dmlex:ItemRole .
+
+dmlex:ItemRole a owl:Class ;
+  rdfs:label "ItemRole"@en ;
+  rdfs:subClassOf  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:value ;
+    owl:cardinality 1 ] .
+
+## The ontology for DMLex - Linking Module
+## Author: John P. McCrae
+
+@prefix dmlex: <http://www.oasis-open.org/to-be-confirmed/dmlex#> .
+@prefix lime: <http://www.w3.org/ns/lemon/lime#> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dmlex:relation a owl:ObjectProperty ;
+  rdfs:label "Relation"@en ;
+  rdfs:domain dmlex:LexicographicResource ;
+  rdfs:range dmlex:Relation .
+
+dmlex:relationType a owl:ObjectProperty ;
+  rdfs:label "RelationType"@en ;
+  rdfs:domain dmlex:LexicographicResource ;
+  rdfs:range dmlex:RelationType .
+
+dmlex:Relation a owl:Class ;
+  rdfs:label "Relation"@en ;
+  rdfs:subClassOf  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:type ;
+    owl:cardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:member ;
+    owl:minCardinality 2 ] .
+
+dmlex:type a owl:DatatypeProperty ;
+  rdfs:label "Type"@en ;
+  rdfs:domain [ a owl:Class ;
+    owl:unionOf ( dmlex:Relation dmlex:Etymon dmlex:MultiEtymon ) ] ;
+  rdfs:range xsd:string .
+
+dmlex:member a owl:ObjectProperty ;
+  rdfs:label "Member"@en ;
+  rdfs:domain dmlex:Relation ;
+  rdfs:range dmlex:Member .
+
+dmlex:Member a owl:Class ;
+  rdfs:label "Member"@en ;
+  rdfs:subClassOf  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:idref ;
+    owl:cardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:listingOrder ;
+    owl:cardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:reverseListingOrder ;
+    owl:cardinality 1 ] .
+
+dmlex:idref a owl:DatatypeProperty ;
+  rdfs:label "ID ref"@en ;
+  rdfs:domain dmlex:Member ;
+  rdfs:range xsd:string .
+
+dmlex:role a owl:DatatypeProperty ;
+  rdfs:label "Role"@en ;
+  rdfs:domain dmlex:Member ;
+  rdfs:range xsd:string .
+
+dmlex:reverseListingOrder a owl:DatatypeProperty ;
+  rdfs:label "Reverse Listing Order"@en ;
+  rdfs:range xsd:nonNegativeInteger .
+
+dmlex:RelationType a owl:Class ;
+  rdfs:label "Relation Type"@en ;
+  rdfs:subClassOf  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:value ;
+    owl:cardinality 1 ] .
+
+dmlex:scope a owl:DatatypeProperty ;
+  rdfs:label "Scope"@en ;
+  rdfs:domain dmlex:RelationType ;
+  rdfs:range xsd:string .
+
+dmlex:memberRole a owl:ObjectProperty ;
+  rdfs:label "Member Role"@en ;
+  rdfs:domain dmlex:RelationType ;
+  rdfs:range dmlex:MemberRole .
+
+dmlex:MemberRole a owl:Class ;
+  rdfs:label "Member Role"@en ;
+  rdfs:subClassOf  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:value ;
+    owl:cardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:memberType ;
+    owl:cardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:action ;
+    owl:cardinality 1 ] .
+
+dmlex:memberType a owl:DatatypeProperty ;
+  rdfs:label "MemberType"@en ;
+  rdfs:domain dmlex:MemberRole ;
+  rdfs:range xsd:string .
+
+dmlex:min a owl:DatatypeProperty ;
+  rdfs:label "Min"@en ;
+  rdfs:domain dmlex:MemberType ;
+  rdfs:range xsd:nonNegativeInteger .
+
+dmlex:max a owl:DatatypeProperty ;
+  rdfs:label "Max"@en ;
+  rdfs:domain dmlex:MemberType ;
+  rdfs:range xsd:nonNegativeInteger .
+
+dmlex:action a owl:DatatypeProperty ;
+  rdfs:label "Action"@en ;
+  rdfs:domain dmlex:MemberType ;
+  rdfs:range xsd:string .
+
+## The ontology for DMLex - Crosslingual module
+## Author: John P. McCrae
+
+@prefix dmlex: <http://www.oasis-open.org/to-be-confirmed/dmlex#> .
+@prefix lime: <http://www.w3.org/ns/lemon/lime#> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dmlex:translationLanguage a owl:ObjectProperty ;
+  rdfs:label "Translation Language"@en ;
+  rdfs:domain dmlex:LexicographicResource ;
+  rdfs:range dmlex:TranslationLanguage .
+
+dmlex:TranslationLanguage a owl:Class ;
+  rdfs:label "TranslationLanguage"@en ;
+  rdfs:subClassOf  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:value ;
+    owl:cardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:listingOrder ;
+    owl:cardinality 1 ] .
+
+dmlex:headwordExplanation a owl:ObjectProperty ;
+  rdfs:label "Headword Explanation"@en ;
+  rdfs:domain dmlex:Sense ;
+  rdfs:range dmlex:HeadwordExplanation .
+
+dmlex:headwordTranslation a owl:ObjectProperty ;
+  rdfs:label "Headword Translation"@en ;
+  rdfs:domain [ a owl:Class ;
+    owl:unionOf ( dmlex:Sense dmlex:PartOfSpeech dmlex:Label dmlex:Pronunciation dmlex:InflectedForm) ] ;
+  rdfs:range dmlex:HeadwordTranslation .
+
+dmlex:HeadwordTranslation a owl:Class ;
+  rdfs:label "Headword Translation"@en ;
+  rdfs:subClassOf  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:text ;
+    owl:cardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:listingOrder ;
+    owl:cardinality 1 ] .
+
+dmlex:HeadwordExplanation a owl:Class ;
+  rdfs:label "Headword Explanation"@en ;
+  rdfs:subClassOf  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:text ;
+    owl:cardinality 1 ] .
+
+dmlex:exampleTranslation a owl:ObjectProperty ;
+  rdfs:label "Example Translation"@en ;
+  rdfs:domain dmlex:Example ;
+  rdfs:range dmlex:ExampleTranslation .
+
+dmlex:ExampleTranslation a owl:Class ;
+  rdfs:label "Example Translation"@en ;
+  rdfs:subClassOf  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:text ;
+    owl:cardinality 1 ] . 
+
+dmlex:sideConstraint a owl:DatatypeProperty ;
+  rdfs:label "Side Constraint"@en ;
+  rdfs:domain dmlex:Tag .
+
+dmlex:translationLanguageConstraint a owl:DatatypeProperty ;
+  rdfs:label "Translation Language Constraint"@en ;
+  rdfs:domain dmlex:Tag ;
+  rdfs:range xsd:string .
+
+

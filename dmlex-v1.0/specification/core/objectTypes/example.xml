@@ -85,9 +85,9 @@
   <example>
     <title>RDF</title>
     <programlisting>
-&lt;entry&gt; dmlex:example [
+&lt;sense&gt; dmlex:example [
   a dmlex:Example ;
-  rdf:value "..." ;
+  dmlex:text "..." ;
   dmlex:sourceIdentity "..." ;
   dmlex:sourceElaboration "..." ;
   dmlex:label ... ;

@@ -48,5 +48,11 @@
 }
     </programlisting>
   </example>
+  <example>
+      <title>RDF</title>
+&lt;#sense&gt;
+  dmlex:headwordExplanation ... ;
+  dmlex:headwordTranslation ... .
+  </example>
 
 </section>

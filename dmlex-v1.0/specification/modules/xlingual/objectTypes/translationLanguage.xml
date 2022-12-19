@@ -44,12 +44,20 @@
 &lt;translationLanguage langCode=""/&gt;
     </programlisting>
   </example>
-  
+  John: shouldn't the XML attribute be value?? 
   <example>
     <title>JSON</title>
     <programlisting>
 "..."
     </programlisting>
+  </example>
+  <example>
+      <title>RDF</title>
+      <programlisting>
+&lt;#lexicographicResource&gt; dmlex:translationLanguage [
+  dmlex:value ... ;
+  dmlex:listingOrder 0 ] .
+      </programlisting>
   </example>
 
   <example>
