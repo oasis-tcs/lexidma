@@ -17,7 +17,7 @@
   <itemizedlist>
     <title>Child of</title>
     <listitem>
-      <para><literal><olink targetptr="inline_headword">headword</olink></literal></para>
+      <para><literal><olink targetptr="inline_entry">entry</olink></literal></para>
     </listitem>
     <listitem>
       <para><literal><olink targetptr="inline_headwordTranslation">headwordTranslation</olink></literal></para>

@@ -71,14 +71,14 @@
         <listitem>
           <para>
             <code>embed</code>: Members that have this role should be shown in their entirety, i.e.
-            the entire entry or the entire sense. This is suitable for the relation between entries
+            the entire entry or the entire sense. This is suitable for relations between entries
             and subentries, or senses and subsenses.</para>
         </listitem>
         <listitem>
           <para>
             <code>navigate</code>: Members that have this role should not be shown in their
-            entirety, but a navigable (e.g. clickable) link should be provided. This is suitable for
-            the relation between synonyms, for example.</para>
+            entirety. A navigable (e.g. clickable) link should be provided instead. This is suitable for
+            relations between synonyms, antonyms, holonyms/heteronyms and similar.</para>
         </listitem>
         <listitem>
           <para>

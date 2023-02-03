@@ -39,21 +39,23 @@
     <listitem>
       <para><literal>listingOrder</literal>
         <glossterm>required</glossterm> (exactly one). Number. The position of this member among other members of the same
-        relation. It should be respected when showing members of the relation to human users. This
-        can be implicit from the serialization.</para>
+        relation. When showing members of the relation to human users (for example: when listing the synonyms in a synonymy relation),
+        the members should be listed in this order. This can be implicit from the serialization.</para>
     </listitem>
     <listitem>
-      <para><literal>reverseListingOrder</literal>
+      <para><literal>obverseListingOrder</literal>
         <glossterm>required</glossterm> (exactly one). Number. The position of this relation among other relations
-        this member is involved in. It should be respected when showing the relations of this
-        member to a human user. This can be implicit from the serialization.</para>
+        this member is involved in. When an object - such as an entry or a sense - is a member os several relations 
+        (for example: when a sense is a member of a synonymy relation and also of a antonymy relation) then,
+        when showing the object (the entry or the sense) to humans users, the relations should be listed in this order
+        (for example: the synonyms first, the antonyms second).</para>
     </listitem>
   </itemizedlist>
 
   <example>
     <title>XML</title>
     <programlisting>
-&lt;member idref="..." role="..." reverseListingOrder="..."/&gt;
+&lt;member idref="..." role="..." obverseListingOrder="..."/&gt;
 </programlisting>
   </example>
 
@@ -63,7 +65,7 @@
 {
     "idref": "...",
     "role": "...",
-    "reverseListingOrder": "..."
+    "obverseListingOrder": "..."
 }
 </programlisting>
   </example>
@@ -74,7 +76,7 @@
   dmlex:idref "..." ;
   dmlex:role "..." ;
   dmlex:listingOrder 0 ;
-  dmlex:reverseListingOrder 0 ] .
+  dmlex:obverseListingOrder 0 ] .
       </programlisting>
   </example>
   <example>
