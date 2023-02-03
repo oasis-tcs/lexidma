@@ -12,8 +12,12 @@
   </title>
   <para>Represents a dictionary. A lexicographic resource is a dataset which can be used, viewed and
     read by humans as a dictionary and – simultaneously – ingested, processed and understood by
-    software agents as a machine-readable database. Note that the correct name of this data type in
-    DMLex is <emphasis>lexicographic</emphasis>, not <emphasis>lexical</emphasis>, resource.</para>
+    software agents as a machine-readable database.</para>
+  
+  <note>
+    <para>The correct name of this data type in
+      DMLex is <emphasis>lexicographic</emphasis>, not <emphasis>lexical</emphasis>, resource.</para>
+  </note>
 
   <itemizedlist>
     <title>Contents</title>
@@ -60,6 +64,18 @@
         objects). The other object type that can optionally occur inside a
           <code>lexicographicResource</code>, <code>tag</code>, is for lists of look-up values such
         as part-of-speech labels.</para>
+    </listitem>
+    <listitem>
+      <para>Ideally, a lexicograpphic resouce should include at least one entry. However, DMLex specifies that
+      <code>entry</code> is optional in <code>lexicographicResouce</code> to allow for the existence of
+      lexicographic resouces which are not yet complete.
+      </para>
+    </listitem>
+    <listitem>
+      <para>The <code>lexicographicResource</code> data type does not contain fields for detailed metadata
+      about the lexicographic resource, such as author, editor, publisher, copyright status or publication year.
+      Describing these properties of lexicographic resources is outside the scope of DMLex. DMLex is a formalism
+      for modelling the internal structure of a lexicographic resource, not its metadata.</para>
     </listitem>
   </itemizedlist>
 

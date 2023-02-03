@@ -15,7 +15,8 @@
   <itemizedlist>
     <title>Child of</title>
     <listitem>
-      <para><literal><olink targetptr="core_lexicographicResource">lexicographicResource</olink></literal></para>
+      <para><literal><olink targetptr="core_lexicographicResource"
+          >lexicographicResource</olink></literal></para>
     </listitem>
   </itemizedlist>
 
@@ -23,9 +24,9 @@
     <title>Contents</title>
     <listitem>
       <para><literal>id</literal>
-        <glossterm>optional</glossterm> (zero or one). An unique identifier of the entry.
-        Entries which have idenfitiers are capable of being involved in relations created with the
-        <olink targetptr="linking">Linking module</olink>.</para>
+        <glossterm>optional</glossterm> (zero or one). An unique identifier of the entry. Entries
+        which have idenfitiers are capable of being involved in relations created with the <olink
+          targetptr="linking">Linking module</olink>.</para>
     </listitem>
     <listitem>
       <para><literal>headword</literal>
@@ -65,25 +66,31 @@
       <para> </para>
     </listitem>
   </itemizedlist>-->
-  
+
   <note>
-    <para>DMLex Core does not have a concept of "subentry". To model subentries (ie. entries inside entries) in a lexicographic resource, you should use object types from the Linking Module for that.</para>
-   
+    <para>DMLex Core does not have a concept of "subentry". To model subentries (ie. entries inside
+      entries) in a lexicographic resource, you should use object types from the Linking Module for
+      that.</para>
   </note>
-  
+
   <note>
     <para>The headword can be a single word, a multi-word expression, or any expression in the
-      source language which is being described by the entry. Entries in DMLex do not have an
-      explicit listing order.</para>
-  
-  
+      source language which is being described by the entry.</para>
   </note>
-  
+
   <note>
-    <para>An application can imply a listing order from a combination of the
-      headword and the homograph number.</para>
-    
+    <para>Entries in DMLex do not have an explicit listing order. An application can imply a listing
+      order from a combination of the headword and the homograph number.</para>
   </note>
+
+  <note>
+    <para> Ideally, each entry should have exactly one part-of-speech label. However, DMLex allows
+      more than one <code>partOfSpeech</code> in <code>entry</code> in order to allow for
+      exceptional cases when the lexicographer multiple part-of-speech readings of a headword in a
+      single entry. Example: English words which denote nationalities ("Czech", "German") and which
+      can function both as nouns and as adjectives. </para>
+  </note>
+
 
   <example>
     <title>XML</title>
