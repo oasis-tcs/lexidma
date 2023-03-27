@@ -24,11 +24,11 @@
   <itemizedlist>
     <title>Contents</title>
     <listitem>
-      <para><literal>inflectedTag</literal>
+      <para><literal>tag</literal>
         <glossterm>optional</glossterm> (zero or one). Non-empty string. an abbreviation, a code or
         some other string of text which identifies the inflected form, for example <code>pl</code>
         for plural, <code>gs</code> for genitive singular, <code>com</code> for comparative. The
-            <code><olink targetptr="core_tag">tag</olink></code> object type can be used to explain
+        <code><olink targetptr="values_inflectedFormTag">inflectedFormTag</olink></code> object type can be used to explain
         the meaning of the inflection tags, to constrain which inflection tags are allowed to occur
         in the lexicographic resource, and to map them onto external inventories and
         ontologies.</para>
@@ -57,7 +57,7 @@
   <example>
     <title>XML</title>
     <programlisting>
-&lt;inflectedForm inflectedTag="..."&gt;
+&lt;inflectedForm tag="..."&gt;
     &lt;text&gt;...&lt;/text&gt;
     &lt;label.../&gt;
     &lt;pronunciation.../&gt;
@@ -69,7 +69,7 @@
     <title>JSON</title>
     <programlisting>
 {
-    "inflectedTag": "...",
+    "tag": "...",
     "text": "...",
     "labels": [...],
     "pronunciations": [...]
@@ -82,7 +82,7 @@
     <programlisting>
 &lt;entry&gt; dmlex:inflectedForm [
   dmlex:text "..." ;
-  dmlex:inflectedTag "..." ;
+  dmlex:tag "..." ;
   dmlex:listingOrder 1 ;
   dmlex:label ... ;
   dmlex:pronunciation ... .

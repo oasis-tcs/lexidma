@@ -41,11 +41,6 @@
         <glossterm>optional</glossterm> (zero, one or more)
       </para>
     </listitem>
-    <listitem>
-      <para><literal><olink targetptr="core_tag">tag</olink></literal>
-        <glossterm>optional</glossterm> (zero, one or more)
-      </para>
-    </listitem>
   </itemizedlist>
 
   <itemizedlist>

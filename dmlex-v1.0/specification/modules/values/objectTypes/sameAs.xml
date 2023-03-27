@@ -6,7 +6,7 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
 ]>
 
-<section id="core_sameAs">
+<section id="values_sameAs">
 
   <title>
     <code>sameAs</code>
@@ -16,7 +16,19 @@
   <itemizedlist>
     <title>Child of</title>
     <listitem>
-      <para><literal><olink targetptr="core_tag">tag</olink></literal></para>
+      <para><literal><olink targetptr="values_definitionTypeTag">definitionTypeTag</olink></literal></para>
+    </listitem>
+    <listitem>
+      <para><literal><olink targetptr="values_inflectedFormTag">inflectedFormTag</olink></literal></para>
+    </listitem>
+    <listitem>
+      <para><literal><olink targetptr="values_labelTag">labelTag</olink></literal></para>
+    </listitem>
+    <listitem>
+      <para><literal><olink targetptr="values_partOfSpeechTag">partOfSpeechTag</olink></literal></para>
+    </listitem>
+    <listitem>
+      <para><literal><olink targetptr="values_sourceIdentityTag">sourceIdentityTag</olink></literal></para>
     </listitem>
   </itemizedlist>
 
@@ -44,7 +56,7 @@
   
   <example>
     <title>Relational database</title>
-    <graphic fileref="core/databaseDiagrams/sameAs.svg" contentwidth="16cm"/>
+    <graphic fileref="modules/values/databaseDiagrams/sameAs.svg" contentwidth="16cm"/>
   </example>
   
 </section>

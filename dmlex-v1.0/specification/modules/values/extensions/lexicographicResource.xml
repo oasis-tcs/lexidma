@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section id="values_lexicographicResource">
+  <title>Extensions to <code>lexicographicResource</code></title>
+  <para>
+    Extends the <code><olink targetptr="core_lexicographicResource">lexicographicResource</olink></code> object type
+    from the <olink targetptr="core">Core</olink>.
+  </para>
+  
+  <itemizedlist>
+    <title>Additional contents</title>
+    <listitem>
+      <para><literal><olink targetptr="values_definitionTypeTag">definitionTypeTag</olink></literal>
+        <glossterm>optional</glossterm> (zero or more)</para>
+    </listitem>
+    <listitem>
+      <para><literal><olink targetptr="values_inflectedFormTag">inflectedFormTag</olink></literal>
+        <glossterm>optional</glossterm> (zero or more)</para>
+    </listitem>
+    <listitem>
+      <para><literal><olink targetptr="values_labelTag">labelTag</olink></literal>
+        <glossterm>optional</glossterm> (zero or more)</para>
+    </listitem>
+    <listitem>
+      <para><literal><olink targetptr="values_partOfSpeechTag">partOfSpeechTag</olink></literal>
+        <glossterm>optional</glossterm> (zero or more)</para>
+    </listitem>
+    <listitem>
+      <para><literal><olink targetptr="values_sourceIdentityTag">sourceIdentityTag</olink></literal>
+        <glossterm>optional</glossterm> (zero or more)</para>
+    </listitem>
+  </itemizedlist>
+
+  <example>
+    <title>XML</title>
+    <programlisting>
+&lt;lexicographicResource ...&gt;
+    ...
+    &lt;definitionTypeTag.../&gt;
+    &lt;inflectedFormTag.../&gt;
+    &lt;labelTag.../&gt;
+    &lt;partOfSpeechTag.../&gt;
+    &lt;sourceIdentityTag.../&gt;
+&lt;/lexicographicResource&gt;
+    </programlisting>
+  </example>
+  
+  <example>
+    <title>JSON</title>
+    <programlisting>
+{
+    ...,
+    "definitionTypeTags": [...],
+    "inflectedFormTags": [...],
+    "labelTags": [...],
+    "partOfSpeechTags": [...],
+    "sourceIdentityTags": [...]
+}
+    </programlisting>
+  </example>
+  <example>
+      <title>RDF</title>
+      <programlisting>
+&lt;#lexicographicResource&gt;
+  dmlex:definitionTypeTag ...
+  dmlex:inflectedFormTag ...
+  dmlex:labelTag ...
+  dmlex:partOfSpeechTag ...
+  dmlex:sourceIdentityTag ...
+      </programlisting>
+  </example>
+  
+</section>

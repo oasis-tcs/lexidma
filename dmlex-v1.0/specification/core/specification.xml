@@ -19,6 +19,4 @@
   <xi:include href="objectTypes/pronunciation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objectTypes/transcription.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objectTypes/example.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="objectTypes/tag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="objectTypes/sameAs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 </section>

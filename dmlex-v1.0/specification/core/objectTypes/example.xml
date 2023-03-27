@@ -30,8 +30,8 @@
     <listitem>
       <para><literal>sourceIdentity</literal>
         <glossterm>optional</glossterm> (zero or one). An abbreviation, a code or some other string
-        of text which identifies the source. The <code><olink targetptr="core_tag"
-          >tag</olink></code> object type can be used to explain the meaning of the source
+        of text which identifies the source. The <code><olink targetptr="values_sourceIdentityTag"
+          >sourceIdentityTag</olink></code> object type can be used to explain the meaning of the source
         identifiers, to constrain which source identifiers are allowed to occur in the lexicographic
         resource, and to map them onto external inventories and ontologies.</para>
     </listitem>

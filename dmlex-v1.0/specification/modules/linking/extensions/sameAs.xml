@@ -9,8 +9,8 @@
 <section id="linking_sameAs">
   <title>Extensions to <code>sameAs</code></title>
   <para>
-    Extends the <code><olink targetptr="core_sameAs">sameAs</olink></code> object type
-    from the <olink targetptr="core">Core</olink>.
+    Extends the <code><olink targetptr="values_sameAs">sameAs</olink></code> object type
+    from the <olink targetptr="values">Controlled Values Module</olink>.
   </para>
   
   <itemizedlist>

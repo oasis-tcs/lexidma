@@ -295,6 +295,10 @@
         </listitem>
         <listitem>
           <para>
+            <olink targetptr="values">DMLex Controlled Values Module</olink> extends DMLex Core to represent inventories of look-up values to be used as part-of-speech tags, usage label tags and others.</para>
+        </listitem>
+        <listitem>
+          <para>
             <olink targetptr="linking">DMLex Linking Module</olink> extends DMLex Core and allows you to model various kinds of relations between entries, senses and other objects, including semantic relations such as synonymy and antonymy and presentational relations such as subentries and subsenses, both within a single lexicographic resource and across multiple lexicographic resources.</para>
         </listitem>
         <listitem>
@@ -340,6 +344,7 @@
   <!-- core and modules -->
   <xi:include href="core/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="modules/xlingual/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="modules/values/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="modules/linking/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="modules/annotation/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="modules/etymology/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
