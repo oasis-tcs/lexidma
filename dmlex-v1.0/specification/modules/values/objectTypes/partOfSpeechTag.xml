@@ -1,20 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
                          "http://www.docbook.org/xml/4.5/docbookx.dtd" [
-                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         <!ENTITY % xinclude SYSTEM "../../docbook/xinclude.mod" >
                          %xinclude;
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
 ]>
 
-<section id="xlingual_tag">
-  <title>Extensions to <code>tag</code></title>
-  <para>
-    Extends the <code><olink targetptr="core_tag">tag</olink></code> object type
-    from the <olink targetptr="core">Core</olink>.
+<section id="values_partOfSpeechTag">
+
+  <title>
+    <code>partOfSpeechTag</code>
+  </title>
+  <para>Represents one (of many) possible values for
+    <code>tag</code> of <code><olink targetptr="core_partOfSpeech">partOfSpeech</olink></code>.
+    Example: <xref linkend="ex05"/>.
   </para>
 
   <itemizedlist>
-    <title>Additional contents</title>
+    <title>Child of</title>
+    <listitem>
+      <para><literal><olink targetptr="core_lexicographicResource">lexicographicResource</olink></literal></para>
+    </listitem>
+  </itemizedlist>
+
+  <itemizedlist>
+    <title>Contents</title>
+    <listitem>
+      <para><literal>value</literal>
+        <glossterm>required</glossterm> (exactly one). Non-empty string.
+        An abbreviation, a code or some other string of text.</para>
+    </listitem>
+    <listitem>
+      <para><literal>description</literal>
+        <glossterm>optional</glossterm> (zero or one). Non-empty string.
+        A human-readable description of what the tag means.</para>
+    </listitem>
+
     <listitem>
       <para><literal>sideConstraint</literal>
         <glossterm>optional</glossterm> (zero or one). If present, indicates whether this tag is intended to be used on the
@@ -36,58 +57,54 @@
         being used inside a <code><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></code> object,
         then it is intended to be used only inside a <code>headwordTranslation</code> object labelled with this language.</para>
     </listitem>
-  </itemizedlist>
+    
 
-  <itemizedlist>
-    <title>Redefinition of <code>partOfSpeechConstraint</code>:</title>
     <listitem>
-      <para>If present, says that:</para>
-      <itemizedlist>
-        <listitem>
-          <para>If this tag is used inside a <code>headwordTranslation</code>, then it is intended
-            to be used only inside a <code>headwordTranslation</code> labelled with this part of
-            speech.</para>
-        </listitem>
-        <listitem>
-          <para>If this tag is used outside a <code>headwordTranslation</code>, then it is intended
-            to be used only inside entries that are labelled with this part of speech.</para>
-        </listitem>
-      </itemizedlist>
+      <para><literal><olink targetptr="values_sameAs">sameAs</olink></literal>
+        <glossterm>optional</glossterm> (zero, one or more).</para>
     </listitem>
   </itemizedlist>
 
   <example>
     <title>XML</title>
     <programlisting>
-&lt;tag ... sideConstraint="..."&gt;
-    ...
+&lt;partOfSpeechTag value="..." sideConstraint="..."&gt;
+    &lt;description&gt;...&lt;/description&gt;
     &lt;translationLanguageConstraint langCode="..."/&gt;
+    &lt;sameAs.../&gt;
 &lt;/tag&gt;
-    </programlisting>
+  </programlisting>
   </example>
   
   <example>
     <title>JSON</title>
     <programlisting>
 {
-    ...,
+    "value": "...",
+    "description": "...",
     "sideConstraint": "...",
     "translationLanguageConstraint": ["..."]
+    "sameAs": [...]
 }
     </programlisting>
   </example>
+  
   <example>
-      <title>RDF</title>
-      <programlisting>
-&lt;#tag&gt;
+    <title>RDF</title>
+    <programlisting>
+&lt;entry&gt; dmlex:partOfSpeechTag [
+  a dmlex:PartOfSpeechTag ;
+  dmlex:description "..." ;
   dmlex:sideConstraint "..." ;
   dmlex:translationLanguageConstraint "..." .
-      </programlisting>
-  </example> 
+  dmlex:sameAs ... ] .
+    </programlisting>
+  </example>
+  
   <example>
     <title>Relational database</title>
-    <graphic fileref="modules/xlingual/databaseDiagrams/tag.svg" contentwidth="16cm"/>
+    <graphic fileref="modules/values/databaseDiagrams/partOfSpeechTag.svg" contentwidth="16cm"/>
     <para>The <code>translationLanguageConstraints</code> column is a comma-delimited list of language codes.</para>
   </example>
-
+  
 </section>

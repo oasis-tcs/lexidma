@@ -37,11 +37,11 @@
   <itemizedlist>
     <title>Contents</title>
     <listitem>
-      <para><literal>value</literal>
+      <para><literal>tag</literal>
         <glossterm>required</glossterm> (exactly one). Non-empty string. An abbreviation, a code or
         some other string of text which identifies the label, for example <code>neo</code> for
         neologism, <code>colloq</code> for colloquial, <code>polit</code> for politics. The
-            <code><olink targetptr="core_tag">tag</olink></code> object type can be used to explain
+            <code><olink targetptr="values_labelTag">labelTag</olink></code> object type can be used to explain
         the meaning of the labels, to constrain which labels are allowed to occur in the
         lexicographic resource, and to map them onto external inventories and ontologies.</para>
     </listitem>
@@ -70,7 +70,7 @@
   <example>
     <title>XML</title>
     <programlisting>
-&lt;label value="..."/&gt;
+&lt;label tag="..."/&gt;
     </programlisting>
   </example>
   
@@ -86,7 +86,7 @@
     <programlisting>
 &lt;entry&gt; dmlex:label [
   a dmlex:Label ;
-  dmlex:value "..." ;
+  dmlex:tag "..." ;
   dmlex:listingOrder 1 ] .
     </programlisting>
   </example>

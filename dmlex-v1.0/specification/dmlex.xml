@@ -295,11 +295,15 @@
         </listitem>
         <listitem>
           <para>
+            <olink targetptr="values">DMLex Controlled Values Module</olink> extends DMLex Core to represent inventories of look-up values to be used as part-of-speech tags, usage label tags and others.</para>
+        </listitem>
+        <listitem>
+          <para>
             <olink targetptr="linking">DMLex Linking Module</olink> extends DMLex Core and allows you to model various kinds of relations between entries, senses and other objects, including semantic relations such as synonymy and antonymy and presentational relations such as subentries and subsenses, both within a single lexicographic resource and across multiple lexicographic resources.</para>
         </listitem>
         <listitem>
           <para>
-            <olink targetptr="inline">DMLex Inline Markup Module</olink> extends DMLex Core to allow the modelling of inline markup on various objects such as example sentences, including the modelling of collocations and corpus patterns.</para>
+            <olink targetptr="annotation">DMLex Annotation Module</olink> extends DMLex Core to allow the modelling of inline markup on various objects such as example sentences, including the modelling of collocations and corpus patterns.</para>
         </listitem>
         <listitem>
           <para>
@@ -327,7 +331,7 @@
         <listitem>
           <para>
             The relational database implementation is intended as a representation for lexicographic data
-            while the data is being edited and maintained inside a software system, such as Dictionary Writing System (DWS).
+            while the data is being edited and maintained inside a software system, such as a Dictionary Writing System (DWS).
           </para>
         </listitem>
       </itemizedlist>
@@ -340,8 +344,9 @@
   <!-- core and modules -->
   <xi:include href="core/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="modules/xlingual/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="modules/values/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="modules/linking/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="modules/inline/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="modules/annotation/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="modules/etymology/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   
   <!-- examples -->

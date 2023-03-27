@@ -33,7 +33,7 @@
       <para><literal>definitionType</literal>
         <glossterm>optional</glossterm> (zero or one). If a sense contains multiple definitions,
         indicates the difference between them, for example that they are intended for different
-        audiences. The <code><olink targetptr="core_tag">tag</olink></code> object type can be used
+        audiences. The <code><olink targetptr="values_definitionTypeTag">definitionTypeTag</olink></code> object type can be used
         to constrain and/or explain the definition types that occur in the lexicographic
         resource.</para>
     </listitem>

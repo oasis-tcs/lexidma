@@ -8,11 +8,15 @@
 
 <section id="ex15">
 
-                         <title>Modelling variants</title>
-                         <para>We have two entries in our lexicographic resource, one for the headword "colour" and one for the headword "color". We want to create a relation to represent the fact that these are spelling variants.</para>
-                         <section>
-                                                  <title>NVH</title>
-                                                  <programlisting>
+    <title>Modelling variants</title>
+    <para>We have two entries in our lexicographic resource, one for the headword "colour" and one
+        for the headword "color". We want to create a relation to represent the fact that these are
+        spelling variants. One of the entries is fully fleshed-out (has a sense with a definition, an example etc)
+        while the other one os only skeletal: its only purpose is to serve as the origin of a navigable link to the other entry.
+    </para>
+    <section>
+        <title>NVH</title>
+        <programlisting>
 lexicographicResource: my-dictionary
     language: en
     entry: colour
@@ -36,10 +40,10 @@ lexicographicResource: my-dictionary
             min: 2
             action: navigate
 </programlisting>
-                         </section>
-                         <section>
-                                                  <title>XML</title>
-                                                  <programlisting>
+    </section>
+    <section>
+        <title>XML</title>
+        <programlisting>
 &lt;lexicographicResource id="my-dictionary" language="en"&gt;
     &lt;entry id="colour"&gt;
         &lt;headword&gt;colour&lt;/headword&gt;
@@ -65,10 +69,10 @@ lexicographicResource: my-dictionary
     &lt;/relationType&gt;
 &lt;/lexicographicResource&gt;
 </programlisting>
-                         </section>
-                         <section>
-                                                  <title>JSON</title>
-                                                  <programlisting>
+    </section>
+    <section>
+        <title>JSON</title>
+        <programlisting>
 {
     "id": "my-dictionary",
     "language": "en",
@@ -106,23 +110,23 @@ lexicographicResource: my-dictionary
     }]
 }
 </programlisting>
-                         </section>
-                         <section>
-                                                  <title>Suggested rendering for human users</title>
-                                                  <blockquote>
-                                                                           <para>
-                                                                                                    <emphasis role="strong">colour</emphasis>
-                                                                                                    <emphasis>noun, European spelling</emphasis>
-                                                                           </para>
-                                                                           <itemizedlist>
-                                                                                                    <listitem>
-                                                                                                                             <para>red, blue, yellow etc. <emphasis>What is your favourite colour?</emphasis>
-                                                                                                                             </para>
-                                                                                                    </listitem>
-                                                                           </itemizedlist>
-                                                                           <para>see also: color</para>
-                                                  </blockquote>
-                         </section>
-                         
+    </section>
+    <section>
+        <title>Suggested rendering for human users</title>
+        <blockquote>
+            <para>
+                <emphasis role="strong">colour</emphasis>
+                <emphasis>noun, European spelling</emphasis>
+            </para>
+            <itemizedlist>
+                <listitem>
+                    <para>red, blue, yellow etc. <emphasis>What is your favourite colour?</emphasis>
+                    </para>
+                </listitem>
+            </itemizedlist>
+            <para>see also: color</para>
+        </blockquote>
+    </section>
+
 
 </section>

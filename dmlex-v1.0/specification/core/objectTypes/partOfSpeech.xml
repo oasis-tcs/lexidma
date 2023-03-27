@@ -23,11 +23,11 @@
   <itemizedlist>
     <title>Contents</title>
     <listitem>
-      <para><literal>value</literal>
+      <para><literal>tag</literal>
         <glossterm>required</glossterm> (exactly one). Non-empty string. An abbreviation, a code or
         some other string of text which identifies the part-of-speech label, for example
           <code>n</code> for noun, <code>v</code> for verb, <code>adj</code> for adjective. The
-            <code><olink targetptr="core_tag">tag</olink></code> object type can be used to explain
+        <code><olink targetptr="values_partOfSpeechTag">partOfSpeechTag</olink></code> object type can be used to explain
         the meaning of the part-of-speech tags, to constrain which part-of-speech tags are allowed
         to occur in the lexicographic resource, and to map them onto external inventories and
         ontologies.</para>
@@ -45,7 +45,7 @@
     <listitem>
       <para>If you want to model other grammatical properties of the headword besides part of
         speech, such as gender (of nouns) or aspect (of verbs), the way to do that in DMLex is to
-        conflate them to the part-of-speech label, for example <code>noun-masc</code> and
+        combine them with the part of speech into a single part-of-speech label, for example <code>noun-masc</code> and
         <code>noun-fem</code>, or <code>v-perf</code> and <code>v-imperf</code>.</para>
     </listitem>
   </itemizedlist>
@@ -53,7 +53,7 @@
   <example>
     <title>XML</title>
     <programlisting>
-&lt;partOfSpeech value="..."/&gt;
+&lt;partOfSpeech tag="..."/&gt;
     </programlisting>
   </example>
   
@@ -70,7 +70,7 @@
     <programlisting>
 &lt;entry&gt; dmlex:partOfSpeech [ 
   a dmlex:PartOfSpeech ;
-  dmlex:value "..." ;
+  dmlex:tag "..." ;
   dmlex:listingOrder 1 ] .
     </programlisting>
   </example>

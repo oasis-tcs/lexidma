@@ -60,9 +60,9 @@
 <!ENTITY previous-loc "http://docs.oasis-open.org/lexidma/dmlex/v&version;/&pstage;">
 <!ENTITY latest-loc "http://docs.oasis-open.org/lexidma/dmlex/v&version;">
 
-<!ENTITY pubdate "21 October &pubyear;">
+<!ENTITY pubdate "27 March &pubyear;">
 
-<!ENTITY pubyear "2022">
+<!ENTITY pubyear "2023">
 <!ENTITY releaseinfo "Standards Track Work Product">
 <!-- End of DMLex V1.0 publishing entities -->
 

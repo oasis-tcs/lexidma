@@ -6,14 +6,14 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
 ]>
 
-<section id="inline">
-  <title>DMLex Inline Markup Module</title>
+<section id="annotation">
+  <title>DMLex Annotation Module</title>
   <para>This module makes it possible to mark up substrings inside the string values of certain
     objects and to attach properties to them.</para>
-  <para>It is up to the implementer to decide how to implement inline markup in an implementation of
-    the DMLex Inline Markup module, whether <emphasis>in-place</emphasis> (as XML) or as
-      <emphasis>stand-off</emphasis> markup (for example through start and end indexes).</para>
-  <xi:include href="extensions/headword.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <para>It is up to the implementer to decide how to implement annotations in an implementation of
+    the DMLex Annotation module, whether as <emphasis>inline markup</emphasis> (as XML) or as
+      <emphasis>stand-off annotations</emphasis> (for example through start and end indexes).</para>
+  <xi:include href="extensions/entry.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="extensions/headwordTranslation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objectTypes/placeholderMarker.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="extensions/definition.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>

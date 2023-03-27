@@ -57,7 +57,7 @@
   <itemizedlist>
     <title>Comments</title>
     <listitem>
-      <para>An <emphasis role="strong">entry</emphasis> is a container for formal properties of the
+      <para>The contents of <emphasis role="strong">entry</emphasis> are, apert from <code>sense</code>, formal properties of the
         headword such as orthography, morphology, syntax and pronunciation. A <emphasis role="strong"
           >sense</emphasis> is a container for statements about the headword's semantics. DMLex
         deliberately makes it impossible to include morphological information at sense level. If you
