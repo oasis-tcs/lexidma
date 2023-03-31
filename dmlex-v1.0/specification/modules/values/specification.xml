@@ -16,20 +16,10 @@
     and others.</para>
   
   <itemizedlist>
-    <title>Comments</title>
+    <title>Comment</title>
     <listitem>
-      <para>
-        In a lexicographic resource, <code>tag</code> objects can used to define
-        controlled vocabularies (inventories of part-of-speech tags, labels etc.) and constrains
-        on where they are expected to be used (e.g. part-of-speech tags are expected to be used
-        as <code>value</code> of <code>partOfSpeech</code> objects).
-      </para>
-      <para>
-        Enforcing these constraints in an implementation of DMLex, for example as business rules 
-        in a dictionary-writing system, is <glossterm>optional</glossterm>: an implementation of
-        DMLex is compliant regardless of whether it
-        enforces the constraints defined by <code>tag</code> objects or not.
-      </para>
+      <para>Treating controlled values as constraints in an implementation of DMLex, for example as
+        business rules in a dictionary-writing system, is <glossterm>optional</glossterm>. </para>
     </listitem>
   </itemizedlist>
   
@@ -40,6 +30,7 @@
   <xi:include href="objectTypes/definitionTypeTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objectTypes/labelTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objectTypes/sourceIdentityTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objectTypes/transcriptionSchemeTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   
   <xi:include href="objectTypes/sameAs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 </section>

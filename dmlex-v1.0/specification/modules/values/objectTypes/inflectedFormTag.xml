@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
                          "http://www.docbook.org/xml/4.5/docbookx.dtd" [
-                         <!ENTITY % xinclude SYSTEM "../../docbook/xinclude.mod" >
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
                          %xinclude;
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
 ]>
@@ -26,9 +26,9 @@
   <itemizedlist>
     <title>Contents</title>
     <listitem>
-      <para><literal>value</literal>
-        <glossterm>required</glossterm> (exactly one). Non-empty string.
-        An abbreviation, a code or some other string of text.</para>
+      <para><literal>tag</literal>
+        <glossterm>required</glossterm> (exactly one). Non-empty string. An abbreviation, a code or
+        some other string of text.</para>
     </listitem>
     <listitem>
       <para><literal>description</literal>
@@ -83,7 +83,7 @@
   <example>
     <title>XML</title>
     <programlisting>
-&lt;inflectedFormTag value="..." sideConstraint="..."&gt;
+&lt;inflectedFormTag tag="..." sideConstraint="..."&gt;
     &lt;description&gt;...&lt;/description&gt;
     &lt;translationLanguageConstraint langCode="..."/&gt;
     &lt;partOfSpeechConstraint value="..."/&gt;
@@ -96,7 +96,7 @@
     <title>JSON</title>
     <programlisting>
 {
-    "value": "...",
+    "tag": "...",
     "description": "...",
     "sideConstraint": "...",
     "translationLanguageConstraint": ["..."]
@@ -111,6 +111,7 @@
     <programlisting>
 &lt;entry&gt; dmlex:inflectedFormTag [
   a dmlex:InflectedFormTag ;
+  dmlex:tag "..." ;
   dmlex:description "..." ;
   dmlex:sideConstraint "..." ;
   dmlex:translationLanguageConstraint "..." .

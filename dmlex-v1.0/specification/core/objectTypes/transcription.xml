@@ -31,7 +31,9 @@
       <para><literal>scheme</literal>
         <glossterm>optional</glossterm> (zero or one). IETF language tag. Identifies the
         transcription scheme used here. Example: <code>en-fonipa</code> for English IPA. This can be
-        implicit if the lexicographic resource uses only one transcription scheme throughout.
+        implicit if the lexicographic resource uses only one transcription scheme throughout. The
+        <code><olink targetptr="values_transcriptionSchemeTag">transcriptionSchemeTag</olink></code> object type can be used to define
+        which transcription schemes are allowed in the lexicographic resource.
       </para>
     </listitem>
     <listitem>

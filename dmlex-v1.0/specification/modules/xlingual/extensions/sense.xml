@@ -49,10 +49,12 @@
     </programlisting>
   </example>
   <example>
-      <title>RDF</title>
+    <title>RDF</title>
+    <programlisting>
 &lt;#sense&gt;
   dmlex:headwordExplanation ... ;
   dmlex:headwordTranslation ... .
+    </programlisting>
   </example>
 
 </section>

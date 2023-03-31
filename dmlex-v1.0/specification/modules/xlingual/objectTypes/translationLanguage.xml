@@ -12,39 +12,37 @@
   </title>
   <para>Represents one of the languages in which translations are given in this lexicographic
     resource. Examples: <xref linkend="ex07"/>, <xref linkend="ex10"/>.</para>
-
   <itemizedlist>
     <title>Child of</title>
     <listitem>
-      <para><literal><olink targetptr="xlingual_lexicographicResource">lexicographicResource</olink></literal></para>
+      <para><literal><olink targetptr="xlingual_lexicographicResource"
+          >lexicographicResource</olink></literal></para>
     </listitem>
   </itemizedlist>
-
   <itemizedlist>
     <title>Contents</title>
     <listitem>
-      <para><literal>value</literal>
+      <para><literal>langCode</literal>
         <glossterm>required</glossterm> (exactly one). The IETF language code of the
         language.</para>
     </listitem>
     <listitem>
       <para><literal>listingOrder</literal>
-        <glossterm>required</glossterm> (exactly one). Number. sets the order in which translations
+        <glossterm>required</glossterm> (exactly one). Number. Sets the order in which translations
         (of headwords and examples) should be shown. It outranks the listing order given in
-        <code><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></code>,
-        <code><olink targetptr="xlingual_headwordExplanation">headwordExplanation</olink></code>
-        and <code><olink targetptr="xlingual_exampleTranslation">exampleTranslation</olink></code>
+            <code><olink targetptr="xlingual_headwordTranslation"
+        >headwordTranslation</olink></code>, <code><olink targetptr="xlingual_headwordExplanation"
+            >headwordExplanation</olink></code> and <code><olink
+            targetptr="xlingual_exampleTranslation">exampleTranslation</olink></code>
         objects.</para>
     </listitem>
   </itemizedlist>
-
   <example>
     <title>XML</title>
     <programlisting>
 &lt;translationLanguage langCode=""/&gt;
     </programlisting>
   </example>
-  John: shouldn't the XML attribute be value?? 
   <example>
     <title>JSON</title>
     <programlisting>
@@ -52,17 +50,16 @@
     </programlisting>
   </example>
   <example>
-      <title>RDF</title>
-      <programlisting>
+    <title>RDF</title>
+    <programlisting>
 &lt;#lexicographicResource&gt; dmlex:translationLanguage [
-  dmlex:value ... ;
+  dmlex:langCode ... ;
   dmlex:listingOrder 0 ] .
       </programlisting>
   </example>
-
   <example>
     <title>Relational database</title>
-    <graphic fileref="modules/xlingual/databaseDiagrams/translationLanguage.svg" contentwidth="16cm"/>
+    <graphic fileref="modules/xlingual/databaseDiagrams/translationLanguage.svg" contentwidth="16cm"
+    />
   </example>
-
 </section>
