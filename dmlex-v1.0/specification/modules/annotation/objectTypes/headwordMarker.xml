@@ -6,7 +6,7 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
 ]>
 
-<section id="inline_headwordMarker">
+<section id="annotation_headwordMarker">
   <title><code>headwordMarker</code></title>
   <para>Marks up a substring inside an example, inside an example translation or inside a definition
     which corresponds to the headword (or to a translation of the headword). An application can use
@@ -16,13 +16,13 @@
   <itemizedlist>
     <title>Child of</title>
     <listitem>
-      <para><literal><olink targetptr="inline_definition">definition</olink></literal></para>
+      <para><literal><olink targetptr="annotation_definition">definition</olink></literal></para>
     </listitem>
     <listitem>
-      <para><literal><olink targetptr="inline_example">example</olink></literal></para>
+      <para><literal><olink targetptr="annotation_example">example</olink></literal></para>
     </listitem>
     <listitem>
-      <para><literal><olink targetptr="inline_exampleTranslation">exampleTranslation</olink></literal></para>
+      <para><literal><olink targetptr="annotation_exampleTranslation">exampleTranslation</olink></literal></para>
     </listitem>
   </itemizedlist>
   
@@ -52,7 +52,7 @@
   </example> 
   <example>
     <title>Relational databases</title>
-    <graphic fileref="modules/inline/databaseDiagrams/headwordMarker.svg" contentwidth="16cm"/>
+    <graphic fileref="modules/annotation/databaseDiagrams/headwordMarker.svg" contentwidth="16cm"/>
   </example>
 
 </section>

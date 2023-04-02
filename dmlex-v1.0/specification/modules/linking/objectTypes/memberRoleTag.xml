@@ -6,23 +6,23 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
 ]>
 
-<section id="linking_memberRole">
-  <title><code>memberRole</code></title>
+<section id="linking_memberRoleTag">
+  <title><code>memberRoleTag</code></title>
   <para>Represents one of possible values for the <code>role</code> of <code><olink
         targetptr="linking_member">member</olink></code>, as well as various restrictions on
-    relation member having this role.</para>
+    members having this role.</para>
 
   <itemizedlist>
     <title>Child of</title>
     <listitem>
-      <para><literal><olink targetptr="linking_relationType">relationType</olink></literal></para>
+      <para><literal><olink targetptr="linking_relationTypeTag">relationTypeTag</olink></literal></para>
     </listitem>
   </itemizedlist>
 
   <itemizedlist>
     <title>Contents</title>
     <listitem>
-      <para><literal>value</literal>
+      <para><literal>tag</literal>
         <glossterm>required</glossterm> (exactly one). String. If the value is empty, then members
         having this role do not need to have a <code>role</code> property.</para>
     </listitem>
@@ -95,7 +95,7 @@
   <example>
     <title>XML</title>
     <programlisting>
-&lt;memberRole value="..." memberType="..." min="..." max="..." action="..."&gt;
+&lt;memberRoleTag tag="..." memberType="..." min="..." max="..." action="..."&gt;
     &lt;description&gt;&lt;/description&gt;
     &lt;sameAs.../&gt;
 &lt;/memberRole&gt;
@@ -106,7 +106,7 @@
     <title>JSON</title>
     <programlisting>
 {
-    "value": "...",
+    "tag": "...",
     "description": "...",
     "memberType": "...",
     "min": "...",
@@ -120,7 +120,7 @@
       <title>RDF</title>
       <programlisting>
 &lt;#relationType&gt; dmlex:memberRole [
-  dmlex:value "..." ;
+  dmlex:tag "..." ;
   dmlex:description "..." ;
   dmlex:memberType "..." ;
   dmlex:min 0 ;
@@ -131,7 +131,7 @@
   </example>
   <example>
     <title>Relational database</title>
-    <graphic fileref="modules/linking/databaseDiagrams/memberRole.svg" contentwidth="16cm"/>
+    <graphic fileref="modules/linking/databaseDiagrams/memberRoleTag.svg" contentwidth="16cm"/>
   </example>
 
 </section>

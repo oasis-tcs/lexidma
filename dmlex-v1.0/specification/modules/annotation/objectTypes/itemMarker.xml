@@ -6,7 +6,7 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
 ]>
 
-<section id="inline_itemMarker">
+<section id="annotation_itemMarker">
   <title><code>itemMarker</code></title>
   <para>Marks up a substring other than the headword inside an example, inside an example
     translation or inside a definition. An application can use the inline markup to highlight
@@ -15,13 +15,13 @@
   <itemizedlist>
     <title>Child of</title>
     <listitem>
-      <para><literal><olink targetptr="inline_definition">definition</olink></literal></para>
+      <para><literal><olink targetptr="annotation_definition">definition</olink></literal></para>
     </listitem>
     <listitem>
-      <para><literal><olink targetptr="inline_example">example</olink></literal></para>
+      <para><literal><olink targetptr="annotation_example">example</olink></literal></para>
     </listitem>
     <listitem>
-      <para><literal><olink targetptr="inline_exampleTranslation"
+      <para><literal><olink targetptr="annotation_exampleTranslation"
           >exampleTranslation</olink></literal></para>
     </listitem>
   </itemizedlist>
@@ -44,11 +44,11 @@
         that.)</para>
     </listitem>
     <listitem>
-      <para><literal>itemRole</literal>
+      <para><literal>role</literal>
         <glossterm>optional</glossterm> (zero, one or more). Non-empty string. Can be used to
         communicate facts about the role of the item in the sentence, for example its syntactic role
         (subject, direct object etc.), its semantic role (agent, affected etc) or its semantic type
-        (human, institution etc.) The <code><olink targetptr="core_tag">tag</olink></code> object
+        (human, institution etc.) The <code><olink targetptr="annotation_itemMarkerRoleTag">itemMarkerRoleTag</olink></code> object
         type can be used to explain and/or constrain the item types that are allowed to appear in
         the lexicographic resource.</para>
     </listitem>
@@ -59,7 +59,7 @@
     <programlisting>
 &lt;itemMarker id="..." lemma="..."&gt;
     ...
-    &lt;itemRole value="..."/&gt;
+    &lt;role tag="..."/&gt;
 &lt;/itemMarker&gt;
     </programlisting>
   </example>
@@ -72,7 +72,7 @@
     "startIndex": ...,
     "endIndex": ...,
     "lemma": "...",
-    "itemRoles": ["..."]
+    "roles": ["..."]
 }
     </programlisting>
   </example>
@@ -84,12 +84,12 @@
   dmlex:startIndex 0 ;
   dmlex:endIndex 0 ;
   dmlex:lemma "..." ;
-  dmlex:itemRole ... ] .
+  dmlex:role ... ] .
       </programlisting>
   </example>
   <example>
     <title>SQL</title>
-    <graphic fileref="modules/inline/databaseDiagrams/itemMarker.svg" contentwidth="16cm"/>
+    <graphic fileref="modules/annotation/databaseDiagrams/itemMarker.svg" contentwidth="16cm"/>
   </example>
 
 </section>

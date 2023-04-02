@@ -21,7 +21,7 @@
   <itemizedlist>
     <title>Contents</title>
     <listitem>
-      <para><literal>idref</literal>
+      <para><literal>memberID</literal>
         <glossterm>required</glossterm> (exactly one). The ID of an object, such as an entry or a
         sense.</para>
     </listitem>
@@ -30,8 +30,8 @@
         <glossterm>optional</glossterm> (zero or one). Non-empty string. An indication of the role
         the member has in this relation: whether it is the hypernym or the hyponym (in a
         hyperonymy/hyponymy relation), or whether it is one of the synonyms (in a synonymy
-        relation), and so on. You can use <code><olink targetptr="linking_memberRole"
-            >memberRole</olink></code> objects to explain those roles and to constrain which
+        relation), and so on. You can use <code><olink targetptr="linking_memberRoleTag"
+            >memberRoleTag</olink></code> objects to explain those roles and to constrain which
         relations are allowed to contain which roles, what their object types are allowed to be (eg.
         entries or senses) and how many members with this role each relation is allowed to
         have.</para>
@@ -44,18 +44,19 @@
     </listitem>
     <listitem>
       <para><literal>obverseListingOrder</literal>
-        <glossterm>required</glossterm> (exactly one). Number. The position of this relation among other relations
-        this member is involved in. When an object - such as an entry or a sense - is a member os several relations 
-        (for example: when a sense is a member of a synonymy relation and also of a antonymy relation) then,
-        when showing the object (the entry or the sense) to humans users, the relations should be listed in this order
-        (for example: the synonyms first, the antonyms second).</para>
+        <glossterm>required</glossterm> (exactly one). Number. The position of this relation among
+        other relations this member is involved in. When an object - such as an entry or a sense -
+        is a member of several relations (for example: when a sense is a member of a synonymy
+        relation and also of an antonymy relation) then, when showing the object (the entry or the
+        sense) to human users, the relations should be listed in this order (for example: the
+        synonyms first, the antonyms second).</para>
     </listitem>
   </itemizedlist>
 
   <example>
     <title>XML</title>
     <programlisting>
-&lt;member idref="..." role="..." obverseListingOrder="..."/&gt;
+&lt;member memberID="..." role="..." obverseListingOrder="..."/&gt;
 </programlisting>
   </example>
 
@@ -63,7 +64,7 @@
     <title>JSON</title>
     <programlisting>
 {
-    "idref": "...",
+    "memberID": "...",
     "role": "...",
     "obverseListingOrder": "..."
 }
@@ -73,7 +74,7 @@
       <title>RDF</title>
       <programlisting>
 &lt;#relation&gt; dmlex:member [
-  dmlex:idref "..." ;
+  dmlex:memberID "..." ;
   dmlex:role "..." ;
   dmlex:listingOrder 0 ;
   dmlex:obverseListingOrder 0 ] .
