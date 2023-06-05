@@ -20,7 +20,7 @@
         <glossterm>optional</glossterm> (zero, one or more)</para>
     </listitem>
     <listitem>
-      <para><literal><olink targetptr="linking_relationType">relationType</olink></literal>
+      <para><literal><olink targetptr="linking_relationTypeTag">relationTypeTag</olink></literal>
         <glossterm>optional</glossterm> (zero, one or more)</para>
     </listitem>
   </itemizedlist>

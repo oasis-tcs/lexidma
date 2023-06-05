@@ -23,7 +23,7 @@
   <itemizedlist>
     <title>Contents</title>
     <listitem>
-      <para><literal>value</literal>
+      <para><literal>text</literal>
         <glossterm>required</glossterm> (exactly one). Non-empty string. A statement, in the same
         language as the headword, that describes and/or explains the meaning of a sense. In DMLex,
         the term definition encompasses not only formal definitions, but also less formal

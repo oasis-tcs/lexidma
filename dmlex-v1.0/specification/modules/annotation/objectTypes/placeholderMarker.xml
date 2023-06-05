@@ -6,7 +6,7 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
 ]>
 
-<section id="inline_placeholderMarker">
+<section id="annotation_placeholderMarker">
   <title><code>placeholderMarker</code></title>
   <para>Marks up a substring inside a headword or inside a headword translation which is not part of
     the expression itself but stands for things that can take its place. An application can use the
@@ -17,10 +17,10 @@
   <itemizedlist>
     <title>Child of</title>
     <listitem>
-      <para><literal><olink targetptr="inline_entry">entry</olink></literal></para>
+      <para><literal><olink targetptr="annotation_entry">entry</olink></literal></para>
     </listitem>
     <listitem>
-      <para><literal><olink targetptr="inline_headwordTranslation">headwordTranslation</olink></literal></para>
+      <para><literal><olink targetptr="annotation_headwordTranslation">headwordTranslation</olink></literal></para>
     </listitem>
   </itemizedlist>
   
@@ -50,7 +50,7 @@
   </example> 
   <example>
     <title>Relational databases</title>
-    <graphic fileref="modules/inline/databaseDiagrams/placeholderMarker.svg" contentwidth="16cm"/>
+    <graphic fileref="modules/annotation/databaseDiagrams/placeholderMarker.svg" contentwidth="16cm"/>
   </example>
 
 </section>

@@ -38,10 +38,10 @@
     <listitem>
       <para><literal>sourceElaboration</literal>
         <glossterm>optional</glossterm> (zero or one). Non-empty string. A free-form statement about
-        the source of the example. If <code>source</code> is present, then
-          <code>sourceElaboration</code> can be used for information where in the source the example
-        can be found: page number, chapter and so on. If <code>sourceIdentity</code> is absent then
-          <code>sourceElaboration</code> can be used to fully name the source.</para>
+        the source of the example. If <code>sourceIdentity</code> is present, then
+          <code>sourceElaboration</code> can be used for information about where in the source the
+        example can be found: page number, chapter and so on. If <code>sourceIdentity</code> is
+        absent then <code>sourceElaboration</code> can be used to fully name the source.</para>
     </listitem>
     <listitem>
       <para><literal><olink targetptr="core_label">label</olink></literal>

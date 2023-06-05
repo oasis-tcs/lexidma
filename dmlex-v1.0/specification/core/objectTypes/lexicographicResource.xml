@@ -80,7 +80,6 @@
 &lt;lexicographicResource uri="..." language="..."&gt;
     &lt;title&gt;...&lt;/title&gt;
     &lt;entry.../&gt;
-    &lt;tag.../&gt;
 &lt;/lexicographicResource&gt;
     </programlisting>
   </example>
@@ -91,8 +90,7 @@
 {
     "title": "...",
     "language": "...",
-    "entries": [...],
-    "tags": [...]
+    "entries": [...]
 }
 </programlisting>
   </example>
@@ -106,8 +104,7 @@
   dmlex:title "..." ;
   dmlex:uri "..." ;
   dmlex:language "..." ;
-  dmlex:entry &lt;entry1&gt; , ... ;
-  dmlex:tag ... .
+  dmlex:entry &lt;entry1&gt; , ... .
       </programlisting>
   </example>
 

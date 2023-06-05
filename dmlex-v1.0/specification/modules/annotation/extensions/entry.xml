@@ -6,7 +6,7 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
 ]>
 
-<section id="inline_entry">
+<section id="annotation_entry">
   <title>Extensions to <code>entry</code></title>
   <para>
     Extends the <code><olink targetptr="core_entry">entry</olink></code> object type
@@ -16,7 +16,7 @@
   <itemizedlist>
     <title>Additional contents</title>
     <listitem>
-      <para><literal><olink targetptr="inline_placeholderMarker">placeholderMarker</olink></literal>
+      <para><literal><olink targetptr="annotation_placeholderMarker">placeholderMarker</olink></literal>
         <glossterm>optional</glossterm> (zero, one or more)</para>
     </listitem>
   </itemizedlist>
@@ -44,9 +44,9 @@
   <example>
       <title>RDF</title>
       <programlisting>
-&lt;#entry&gt; dmlex:headword [
-  dmlex:value "..." ;
-  dmlex:placeholderMarkers ... ] .
+&lt;id&gt; a dmlex:Entry ;
+  dmlex:headword "..." ;
+  dmlex:placeholderMarker ... .
       </programlisting>
   </example> 
   

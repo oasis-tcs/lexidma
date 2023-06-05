@@ -11,7 +11,6 @@
   <para>DMLex's Linking Module can be used to construct <emphasis>relations</emphasis> between objects which "break out" of the tree-like parent-and-child hierarchy constructed from datatypes from the Core and from other modules. The Linking Module can be used to create relations between senses which are synonyms or antonyms, between entries whose headwords are homonyms or spelling variants, between senses which represent superordinate and subordinate concepts (eg. hypernyms and hyponyms, holonyms and meronyms), between entries and subentries, between senses and subsenses, and many others.</para>
   <para>Each relation is represented in DMLex by an instance of the <code>relation</code> datatype. A relation brings two or more <emphasis>members</emphasis> together. The fact that an object (such as a sense or an entry) is a member of a relation is represented in DMLex by an instance of the <code>member</code> datatype.</para>
   <para>The Linking Module can be used to set up relations between objects inside the same lexicographic resource, or between objects residing in different lexicographic resources.</para>
-  <para>Relations themselves can be members of other relations.</para>
   <para>Examples:
     <xref linkend="ex12"/>,
     <xref linkend="ex13"/>,
@@ -24,7 +23,7 @@
   <xi:include href="extensions/lexicographicResource.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objectTypes/relation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objectTypes/member.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="objectTypes/relationType.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="objectTypes/memberRole.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objectTypes/relationTypeTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objectTypes/memberRoleTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="extensions/sameAs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 </section>

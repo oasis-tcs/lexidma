@@ -35,6 +35,10 @@
                 language codes that appear here and/or to constrain which language codes are allowed.</para>
         </listitem>
         <listitem>
+            <para><literal><olink targetptr="xlingual_label">label</olink></literal>
+                <glossterm>optional</glossterm> (zero, one or more).</para>
+        </listitem>
+        <listitem>
             <para><literal>soundFile</literal>
                 <glossterm>optional</glossterm> (zero or one). A pointer to a file, such as a filename or a URI, containing a sound recording of the translation.</para>
         </listitem>

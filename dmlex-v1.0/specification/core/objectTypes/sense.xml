@@ -57,14 +57,15 @@
   <itemizedlist>
     <title>Comments</title>
     <listitem>
-      <para>The contents of <emphasis role="strong">entry</emphasis> are, apert from <code>sense</code>, formal properties of the
-        headword such as orthography, morphology, syntax and pronunciation. A <emphasis role="strong"
-          >sense</emphasis> is a container for statements about the headword's semantics. DMLex
-        deliberately makes it impossible to include morphological information at sense level. If you
-        have an entry where each sense has slightly different morphological properties (eg. a noun has
-        a weak plural in one sense and a strong plural in another) then, in DMLex, you need to treat
-        it as two entries (homographs), and you can use the Linking Module two link the two entries
-        together and to make sure they are always shown together to human users.</para>
+      <para>The contents of <emphasis role="strong">entry</emphasis> are, apart from
+          <code>sense</code>, formal properties of the headword such as orthography, morphology,
+        syntax and pronunciation. A <emphasis role="strong">sense</emphasis> is a container for
+        statements about the headword's semantics. DMLex deliberately makes it impossible to include
+        morphological information at sense level. If you have an entry where each sense has slightly
+        different morphological properties (eg. a noun has a weak plural in one sense and a strong
+        plural in another) then, in DMLex, you need to treat it as two entries (homographs), and you
+        can use the Linking Module two link the two entries together and to make sure they are
+        always shown together to human users.</para>
     </listitem>
   </itemizedlist>
   

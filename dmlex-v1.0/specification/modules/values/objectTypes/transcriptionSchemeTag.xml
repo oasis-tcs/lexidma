@@ -6,14 +6,13 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
 ]>
 
-<section id="values_partOfSpeechTag">
+<section id="values_transcriptionSchemeTag">
 
   <title>
-    <code>partOfSpeechTag</code>
+    <code>transcriptionSchemeTag</code>
   </title>
   <para>Represents one (of many) possible values for
-    <code>tag</code> of <code><olink targetptr="core_partOfSpeech">partOfSpeech</olink></code>.
-    Example: <xref linkend="ex05"/>.
+    <code>scheme</code> of <code><olink targetptr="core_transcription">transcription</olink></code>.
   </para>
 
   <itemizedlist>
@@ -27,8 +26,7 @@
     <title>Contents</title>
     <listitem>
       <para><literal>tag</literal>
-        <glossterm>required</glossterm> (exactly one). Non-empty string. An abbreviation, a code or
-        some other string of text.</para>
+        <glossterm>required</glossterm> (exactly one). An IETF language tag.</para>
     </listitem>
     <listitem>
       <para><literal>description</literal>
@@ -59,19 +57,27 @@
     </listitem>
     
 
-    <listitem>
+    <!--<listitem>
       <para><literal><olink targetptr="values_sameAs">sameAs</olink></literal>
         <glossterm>optional</glossterm> (zero, one or more).</para>
+    </listitem>-->
+  </itemizedlist>
+  
+  <itemizedlist>
+    <title>Comment</title>
+    <listitem>
+      <para>The <code>transcriptionSchemeTag</code> does not have a <code>sameAs</code> property
+      because the tag itself - which is an IETF language tag - defines fully what the tag means.</para>
     </listitem>
   </itemizedlist>
+  
 
   <example>
     <title>XML</title>
     <programlisting>
-&lt;partOfSpeechTag tag="..." sideConstraint="..."&gt;
+&lt;transcriptionSchemeTag tag="..." sideConstraint="..."&gt;
     &lt;description&gt;...&lt;/description&gt;
     &lt;translationLanguageConstraint langCode="..."/&gt;
-    &lt;sameAs.../&gt;
 &lt;/tag&gt;
   </programlisting>
   </example>
@@ -84,7 +90,6 @@
     "description": "...",
     "sideConstraint": "...",
     "translationLanguageConstraint": ["..."]
-    "sameAs": [...]
 }
     </programlisting>
   </example>
@@ -92,19 +97,18 @@
   <example>
     <title>RDF</title>
     <programlisting>
-&lt;entry&gt; dmlex:partOfSpeechTag [
+&lt;entry&gt; dmlex:transcriptionSchemeTag [
   a dmlex:PartOfSpeechTag ;
   dmlex:tag "..." ;
   dmlex:description "..." ;
   dmlex:sideConstraint "..." ;
   dmlex:translationLanguageConstraint "..." .
-  dmlex:sameAs ... ] .
     </programlisting>
   </example>
   
   <example>
     <title>Relational database</title>
-    <graphic fileref="modules/values/databaseDiagrams/partOfSpeechTag.svg" contentwidth="16cm"/>
+    <graphic fileref="modules/values/databaseDiagrams/transcriptionSchemeTag.svg" contentwidth="16cm"/>
     <para>The <code>translationLanguageConstraints</code> column is a comma-delimited list of language codes.</para>
   </example>
   

@@ -287,7 +287,8 @@
       <itemizedlist>
         <listitem>
           <para>
-            <olink targetptr="core">DMLex Core</olink> allows you to model the basic entries-and-sense structure if a monolingual lexicographic resource.</para>
+            <olink targetptr="core">DMLex Core</olink> allows you to model the basic
+            entries-and-sense structure of a monolingual lexicographic resource.</para>
         </listitem>
         <listitem>
           <para>
