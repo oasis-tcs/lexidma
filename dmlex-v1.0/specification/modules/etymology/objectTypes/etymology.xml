@@ -6,46 +6,73 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
 ]>
 
-<section>
+<section id="etymology_etymology">
   <title><literal>etymology</literal></title>
-  <para>
-      An <literal>etymology</literal> represents the historical derivation of
-      a word.
-  </para>
-  <programlisting>
-etymology:
-  etymDescription: (0..n)
-  etymon: (0..n)
-  multiEtymon: (0..n)
-  </programlisting>
+  <para> Represents a chain of historical derivations of a word. </para>
 
-  <section>
-      <title>XML</title>
-      <programlisting>
+  <itemizedlist>
+    <title>Child of</title>
+    <listitem>
+      <para><literal><olink targetptr="etymoloogy_entry">entry</olink></literal></para>
+    </listitem>
+  </itemizedlist>
+
+  <itemizedlist>
+    <title>Contents</title>
+    <listitem>
+      <para><literal>description</literal>
+        <glossterm>optional</glossterm> (zero or one). A plain-text form of the etymology, which may
+        contain notes about the etymology. This may be used instead of or alongside a structured list of
+        origin and etymon objects.</para>
+    </listitem>
+    <listitem>
+      <para><literal><olink targetptr="etymology_origin">origin</olink></literal>
+        <glossterm>optional</glossterm> (zero, one or more).</para>
+    </listitem>
+    <listitem>
+      <para><literal>listingOrder</literal>
+        <glossterm>required</glossterm> (exactly one). Number. The position of this etymology
+        among other etymologiers of the same entry. Can be implicit from the
+        serialization.</para>
+    </listitem>
+  </itemizedlist>
+
+  <example>
+    <title>XML</title>
+    <programlisting>
 &lt;etymology&gt;
-  &lt;etymDescription&gt;...&lt;/etymDescription&gt;
-  &lt;etymon&gt;...&lt;/etymon&gt;
-  &lt;multiEtymon&gt;...&lt;/multiEtymon&gt;
+  &lt;description&gt;...&lt;/description&gt;
+  &lt;origin&gt;...&lt;/origin&gt;
+  &lt;origin&gt;...&lt;/origin&gt;
+  &lt;origin&gt;...&lt;/origin&gt;
+  ...
 &lt;/etymology&gt; 
   </programlisting>
-  </section>
-  <section>
-      <title>JSON</title>
-      <programlisting>
+  </example>
+  
+  <example>
+    <title>JSON</title>
+    <programlisting>
 {
-  "etymDescription": ... ,
-  "etymon": ... ,
-  "multiEtymon": ...
+  "description": ... ,
+  "origins": [...]
 }
       </programlisting>
-  </section>
-  <section>
-      <title>RDF</title>
-      <programlisting>
+  </example>
+  
+  <example>
+    <title>RDF</title>
+    <programlisting>
 &lt;entry&gt; dmlex:etymology [
-  dmlex:etymDescription "..." ;
-  dmlex:etymon ... ,
-  dmlex:multiEtymon ... ] .
+  dmlex:description "..." ;
+  dmlex:origin ... ;
+  dmlex:listingOrder: ...] .
       </programlisting>
-  </section>
-</section> 
+  </example>
+
+  <example>
+    <title>Relational database</title>
+    <graphic fileref="modules/etymology/databaseDiagrams/etymology.svg" contentwidth="16cm"/>
+  </example>
+  
+</section>

@@ -6,63 +6,72 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
 ]>
 
-<section>
+<section id="etymology_etymonLanguage">
   <title><literal>etymonLanguage</literal></title>
+
   <para> Represents one of several allowed values for the <literal>language</literal> property of
-  <literal>etymon</literal> objects. Note that as etymologies frequently
-  refer to languages that are not covered by ISO standards it is necessary to 
-  define codes for all languages used in definitions.</para> 
-  <programlisting>
-etymonLanguage: &lt;value&gt;
-  iso639-1: (0..1) &lt;string of 2 lowercase letters&gt;
-  iso639-3: (0..1) &lt;string of 3 uppercase letters&gt;
-  displayValue: (0..1) &lt;string&gt;
-  </programlisting> 
-    <section>
+  <literal>etymon</literal> objects.</para>
+  
+  <itemizedlist>
+    <title>Child of</title>
+    <listitem>
+      <para><literal><olink targetptr="etymology_lexicographicResource"
+        >lexicographicResource</olink></literal></para>
+    </listitem>
+  </itemizedlist>
+  
+  <itemizedlist>
+    <title>Contents</title>
+    <listitem>
+      <para><literal>langCode</literal>
+        <glossterm>required</glossterm> (exactly one). The IETF language code of the
+        language.</para>
+    </listitem>
+    <listitem>
+      <para><literal>displayName</literal>
+        <glossterm>optional</glossterm> (zero or one). The name of the etymon language, in the language of the lexicographic resource.</para>
+    </listitem>
+  </itemizedlist>
+  
+  <note>
+    <para>
+      Etymologies frequently
+      refer to languages that are not covered by ISO standards. It may be necessary to 
+      avail of private-use subtags when composing IETF language tags for etymology,
+      and to explain their meaning in the <literal>displayName</literal>.
+    </para>
+  </note>
+    
+    <example>
         <title>XML</title>
         <programlisting>
-&lt;etymonLanguage value="..."&gt;
-  &lt;iso639-1&gt;...&lt;/iso639-1&gt;
-  &lt;iso639-3&gt;...&lt;/iso639-3&gt;
-  &lt;displayValue&gt;...&lt;displayValue&gt;
+&lt;etymonLanguage langCode="..."&gt;
+  &lt;displayName&gt;...&lt;displayName&gt;
 &lt;/etymonLanguage&gt;
 </programlisting>
-    </section>
-    <section>
+    </example>
+
+  <example>
         <title>JSON</title>
         <programlisting>
 {
-  "value": "..." ,
-  "iso639-1": "..." ,
-  "iso639-3": "..." ,
-  "displayValue": "..."
+  "langCode": "..." ,
+  "displayName": "..."
 }
 </programlisting>
-    </section>
-    <section>
+    </example>
+
+  <example>
         <title>RDF</title>
         <programlisting>
-&lt;etymonLanguage&gt; dmlex:value "..." ;
-  dmlex:iso639-1 "..." ;
-  dmlex:iso639-3 "..." ;
-  dmlex:displayValue "... "  .
+&lt;etymonLanguage&gt; dmlex:langCode "..." ;
+  dmlex:displayName "... "  .
 </programlisting>
-    </section>
-    <para>Comments</para>
-  <itemizedlist spacing="compact">
-    <listitem>
-      <para>
-          The language may be specified with either <literal>iso639-1</literal> 
-          and/or <literal>iso639-3</literal> code in the ISO 639
-          standard if it exists
-      </para>
-    </listitem>
-    <listitem>
-      <para>
-        <literal>value</literal> indicates value used by the <literal>language</literal>
-        property of a <literal>etymon</literal> (e.g. <literal>ger</literal>). <literal>displayValue</literal>
-        indicates a natural language name for the language, e.g., &ldquo;Modern High German&rdquo;
-      </para>
-    </listitem>
-  </itemizedlist>
+    </example>
+
+  <example>
+    <title>Relational database</title>
+    <graphic fileref="modules/etymology/databaseDiagrams/etymonLanguage.svg" contentwidth="16cm"/>
+  </example>
+  
 </section>
