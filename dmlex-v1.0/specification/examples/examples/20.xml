@@ -8,21 +8,18 @@
 
 <section id="ex20">
 
-                         <title>Using <code>placeholderMarker</code> in a bilingual lexicographic resource</title>
-                         <section>
-                                                  <title>NVH</title>
-                                                  <programlisting>
-entry: beat-up
-    headword: beat sb. up
-        placeholderMarker: sb.
-    sense: beat-up-1
-        headwordTranslation: jemanden verprügeln
-            placeholderMarker: jemanden
+    <title>Using <code>placeholderMarker</code> in a bilingual lexicographic resource</title>
+    <example>
+        <title>Pseudocode</title>
+        <programlisting>
+- entry (id: beat-up, headword: beat sb. up, placeholderMarker: "sb.")
+    - sense (id: beat-up-1)
+        headwordTranslation (text: jemanden verprügeln, placeholderMarker: "jemanden")
 </programlisting>
-                         </section>
-                         <section>
-                                                  <title>XML</title>
-                                                  <programlisting>
+    </example>
+    <example>
+        <title>XML</title>
+        <programlisting>
 &lt;entry id="beat-up"&gt;
     &lt;headword&gt;
         beat &lt;placeholderMarker&gt;sb.&lt;/placeholderMarker&gt; up
@@ -36,10 +33,10 @@ entry: beat-up
     &lt;/sense&gt;
 &lt;/entry&gt;
 </programlisting>
-                         </section>
-                         <section>
-                                                  <title>JSON</title>
-                                                  <programlisting>
+    </example>
+    <example>
+        <title>JSON</title>
+        <programlisting>
 {
   "id": "beat-up",
   "headword": "beat sb. up",
@@ -57,6 +54,6 @@ entry: beat-up
   }]
 }
 </programlisting>
-                         </section>
+    </example>
 
 </section>

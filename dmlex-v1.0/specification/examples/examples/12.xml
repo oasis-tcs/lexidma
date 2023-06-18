@@ -8,55 +8,38 @@
 
 <section id="ex12">
 
-                         <title>Modelling parts and wholes</title>
-                         <para>We have three entries with one sense each: "glasses", "microscope" and "lens". We want to represent the fact that "lens" is a meronym of both "glasses" and "microscope", and simultanously that "glasses" and "microscope" are both holonyms of "lens".</para>
-                         <section>
-                                                  <title>NVH</title>
-                                                  <programlisting>
-lexicographicResource: my-dictionary
-    language: en
-    entry: glasses
-        headword: glasses
-        sense: glasses-1
-            definition: an optical seeing aid
-    entry: microscope
-        headword: microscope
-        sense: microscope-1
-            definition: equipment for looking at very small things
-    entry: lens
-        headword: lens
-        sense: lens-1
-            definition: curved glass that makes things seem bigger
-    relation: meronymy
-        member: glasses-1
-            role: whole
-        member: lens-1
-            role: part
-    relation: meronymy
-        member: microscrope-1
-            role: whole
-        member: lens-1
-            role: part
-    relationType: meronomy
-        description: used for modelling part-whole relationships
-        memberRole: whole
-            description: the whole
-            memberType: sense
-            min: 1
-            max: 1
-            action: navigate
-        memberRole: part
-            description: the part
-            memberType: sense
-            min: 1
-            max: 1
-            action: navigate
+    <title>Modelling parts and wholes</title>
+    <para>We have three entries with one sense each: "glasses", "microscope" and "lens". We want to
+        represent the fact that "lens" is a meronym of both "glasses" and "microscope", and
+        simultanously that "glasses" and "microscope" are both holonyms of "lens".</para>
+    <example>
+        <title>Pseudocode</title>
+        <programlisting>
+- lexicographicResource (language: en)
+    - entry (id: glasses, headword: glasses)
+        - sense (id: glasses-1)
+            - definition (text: an optical seeing aid)
+    - entry (id: microscope, headword: microscope)
+        - sense (id: microscope-1)
+            - definition (text: equipment for looking at very small things)
+    - entry (id: lens, headword: lens)
+        - sense (id: lens-1)
+            - definition (text: curved glass that makes things seem bigger)
+    - relation (type: meronymy)
+        - member (memberID: glasses-1, role: whole)
+        - member (memberID: lens-1, role: part)
+    - relation (type: meronymy)
+        - member (memberID: microscrope-1, role: whole)
+        - member (memberID: lens-1, role: part)
+    - relationType (type: meronomy, description: part-whole relationship)
+        - memberType (role: whole, memberType: sense, min: 1, max: 1, action: navigate)
+        - memberType (role: part, memberType: sense, min: 1, max: 1, action: navigate)
 </programlisting>
-                         </section>
-                         <section>
-                                                  <title>XML</title>
-                                                  <programlisting>
-&lt;lexicographicResource id="my-dictionary" language="en"&gt;
+    </example>
+    <example>
+        <title>XML</title>
+        <programlisting>
+&lt;lexicographicResource language="en"&gt;
     &lt;entry id="glasses"&gt;
         &lt;headword&gt;glasses&lt;/headword&gt;
         &lt;sense id="glasses-1"&gt;
@@ -76,83 +59,76 @@ lexicographicResource: my-dictionary
         &lt;/sense&gt;
     &lt;/entry&gt;
     &lt;relation type="meronymy"&gt;
-        &lt;member idref="glasses-1" role="whole"/&gt;
-        &lt;member idref="lens-1" role="part"/&gt;
+        &lt;member memberID="glasses-1" role="whole"/&gt;
+        &lt;member memberID="lens-1" role="part"/&gt;
     &lt;/relation&gt;
     &lt;relation type="meronymy"&gt;
-        &lt;member idref="microscrope-1" role="whole"/&gt;
-        &lt;member idref="lens-1" role="part"/&gt;
+        &lt;member memberID="microscrope-1" role="whole"/&gt;
+        &lt;member memberID="lens-1" role="part"/&gt;
     &lt;/relation&gt;
     &lt;relationType type="meronomy"&gt;
-        &lt;description&gt;used for modelling part-whole relationships&lt;/description&gt;
-        &lt;memberRole role="whole" memberType="sense"  min="1" max="1" action="navigate"&gt;
-            &lt;description&gt;the whole&lt;/description&gt;
-        &lt;/memberRole&gt;
-        &lt;memberRole role="part" memberType="sense" min="1" max="1" action="navigate"&gt;
-            &lt;description&gt;the part&lt;/description&gt;
-        &lt;/memberRole&gt;
-    &lt;/relationType&gt;
+        &lt;description&gt;part-whole relationship&lt;/description&gt;
+        &lt;memberType role="whole" memberType="sense" min="1" max="1" action="navigate"/&gt;
+        &lt;memberType role="part" memberType="sense" min="1" max="1" action="navigate"/&gt;
+    &lt;/relationType
 &lt;/lexicographicResource&gt;
 </programlisting>
-                         </section>
-                         <section>
-                                                  <title>JSON</title>
-                                                  <programlisting>
+    </example>
+    <example>
+        <title>JSON</title>
+        <programlisting>
 {
-    "id": "my-dictionary",
     "language": "en",
     "entries": [{
         "id": "glasses",
         "headword": "glasses",
         "senses": [{
             "id": "glasses-1",
-            "definition": "an optical seeing aid"
+            "definitions": [{"text": "an optical seeing aid"}]
         }, {
         "id": "microscope",
         "headword": "microscope",
         "senses": [{
             "id": "microscope-1",
-            "definition": "equipment for looking at very small things"
+            "definitions": [{"text": "equipment for looking at very small things"}]
         }, {
         "id": "lens",
         "headword": "lens",
         "senses": [{
             "id": "lens-1",
-            "definition": "curved glass that makes things seem bigger"
+            "definitions": [{"text": "curved glass that makes things seem bigger"}]
         }]
     }],
     "relations": [{
         "type": "meronymy",
         "members": [{
-            "idref": "glasses-1",
+            "memberID": "glasses-1",
             "role": "whole"
         }, {
-            "idref": "lens-1",
+            "memberID": "lens-1",
             "role": "part"
         }]
     }, {
         "type": "meronymy",
         "members": [{
-            "idref": "microscope-1",
+            "memberID": "microscope-1",
             "role": "whole"
         }, {
-            "idref": "lens-1",
+            "memberId": "lens-1",
             "role": "part"
         }]
     }],
     "relationTypes": [{
         "type": "meronymy",
-        "description": "used for modelling part-whole relationships",
-        "memberRoles": [{
+        "description": "part-whole relationship",
+        "memberTypes": [{
             "role": "whole",
-            "description": "the whole",
             "memberType": "sense",
             "min": 1,
             "max": 1,
             "action": "navigate"
         }, {
             "role": "part",
-            "description": "the part",
             "memberType": "sense",
             "min": 1,
             "max": 1,
@@ -161,22 +137,22 @@ lexicographicResource: my-dictionary
     }]
 }
 </programlisting>
-                         </section>
-                         <section>
-                                                  <title>Suggested rendering for human users</title>
-                                                  <blockquote>
-                                                                           <para>
-                                                                                                    <emphasis role="strong">lens</emphasis>
-                                                                           </para>
-                                                                           <itemizedlist>
-                                                                                                    <listitem>
-                                                                                                                             <para>curved glass that makes things seem bigger <emphasis>things that contain lens:</emphasis>
-                                                                                                                                                      <emphasis role="strong">glasses</emphasis>, <emphasis role="strong">microscope</emphasis>
-                                                                                                                             </para>
-                                                                                                    </listitem>
-                                                                           </itemizedlist>
-                                                  </blockquote>
-                         </section>
-                         
+    </example>
+    <example>
+        <title>Suggested rendering for human users</title>
+        <programlisting>glasses
+  - an optical seeing aid
+    contains: lens
+
+microsocope
+  - equipment for looking at very small things
+    contains: lens
+
+lens
+  - curved glass that makes things seem bigger
+    thinks that contain lens: glasses, microscope
+        </programlisting>
+    </example>
+
 
 </section>

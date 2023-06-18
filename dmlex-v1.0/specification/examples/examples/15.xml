@@ -11,44 +11,37 @@
     <title>Modelling variants</title>
     <para>We have two entries in our lexicographic resource, one for the headword "colour" and one
         for the headword "color". We want to create a relation to represent the fact that these are
-        spelling variants. One of the entries is fully fleshed-out (has a sense with a definition, an example etc)
-        while the other one os only skeletal: its only purpose is to serve as the origin of a navigable link to the other entry.
-    </para>
-    <section>
-        <title>NVH</title>
+        spelling variants. One of the entries is fully fleshed-out (has a sense with a definition,
+        an example etc) while the other one os only skeletal: its only purpose is to serve as the
+        origin of a navigable link to the other entry. </para>
+    <example>
+        <title>Pseudocode</title>
         <programlisting>
-lexicographicResource: my-dictionary
-    language: en
-    entry: colour
-        headword: colour
-        partOfSpeech: n
-        label: europeanSpelling
-        sense: colour-1
-            definition: red, blue, yellow etc.
-            example: What is your favourite colour?
-    entry: color
-        headword: color
-        partOfSpeech: n
-        label: americanSpelling
-    relation: vars
-        member: colour
-        member: color
-    relationType: vars
-        description: variants, words which differ only in spelling
-        memberRole:
-            memberType: entry
-            min: 2
-            action: navigate
+- lexicographicResource (language: en)
+    - entry (id: colour, headword: colour)
+        - partOfSpeech (tag: n)
+        - label (tag: europeanSpelling)
+        - sense (id: colour-1)
+            - definition (text: red, blue, yellow etc.)
+            - example (text: What is your favourite colour?)
+    - entry (id: color, headword: color)
+        - partOfSpeech (tag: n)
+        - label (tag: americanSpelling)
+    - relation (type: variants)
+        - member (memberID: colour)
+        - member (memberID: color)
+    - relationType (type: variants, description: words which differ only in spelling)
+        - memberType (memberType: entry, min: 2, action: navigate)
 </programlisting>
-    </section>
-    <section>
+    </example>
+    <example>
         <title>XML</title>
         <programlisting>
-&lt;lexicographicResource id="my-dictionary" language="en"&gt;
+&lt;lexicographicResource language="en"&gt;
     &lt;entry id="colour"&gt;
         &lt;headword&gt;colour&lt;/headword&gt;
-        &lt;partOfSpeech value="n"/&gt;
-        &lt;label value="europeanSpelling"/&gt;
+        &lt;partOfSpeech tag="n"/&gt;
+        &lt;label tag="europeanSpelling"/&gt;
         &lt;sense id="colour-1"&gt;
             &lt;definition&gt;red, blue, yellow etc.&lt;/definition&gt;
             &lt;example&gt;&lt;text&gt;What is your favourite colour?&lt;/text&gt;&lt;/example&gt;
@@ -56,25 +49,24 @@ lexicographicResource: my-dictionary
     &lt;/entry&gt;
     &lt;entry id="color"&gt;
         &lt;headword&gt;color&lt;/headword&gt;
-        &lt;partOfSpeech value="n"/&gt;
-        &lt;label value="americanSpelling"/&gt;
+        &lt;partOfSpeech tag="n"/&gt;
+        &lt;label tag="americanSpelling"/&gt;
     &lt;/entry&gt;
-    &lt;relation type="vars"&gt;
-        &lt;member idref="colour"/&gt;
-        &lt;member idref="color"/&gt;
+    &lt;relation type="variants"&gt;
+        &lt;member memberID="colour"/&gt;
+        &lt;member memberID="color"/&gt;
     &lt;/relation&gt;
-    &lt;relationType type="vars"&gt;
-        &lt;description&gt;variants, words which differ only in spelling&lt;/description&gt;
-        &lt;memberRole memberType="entry" min="2" action="navigate"/&gt;
+    &lt;relationType type="variants"&gt;
+        &lt;description&gt;words which differ only in spelling&lt;/description&gt;
+        &lt;memberType memberType="entry" min="2" action="navigate"/&gt;
     &lt;/relationType&gt;
 &lt;/lexicographicResource&gt;
 </programlisting>
-    </section>
-    <section>
+    </example>
+    <example>
         <title>JSON</title>
         <programlisting>
 {
-    "id": "my-dictionary",
     "language": "en",
     "entries": [{
         "id": "colour",
@@ -93,16 +85,16 @@ lexicographicResource: my-dictionary
         "labels": ["americanSpelling"]
     }],
     "relations": [{
-        "type": "vars",
+        "type": "variants",
         "members": [
-          {"idref": "colour"},
-          {"idref": "color"}
+          {"memberID": "colour"},
+          {"memberID": "color"}
         ]
     }],
     "relationTypes": [{
-        "type": "vars",
-        "description": "variants, words which differ only in spelling",
-        "memberRoles": [{
+        "type": "variants",
+        "description": "words which differ only in spelling",
+        "memberTypes": [{
             "memberType": "entry",
             "min": 2,
             "action": "navigate"
@@ -110,23 +102,17 @@ lexicographicResource: my-dictionary
     }]
 }
 </programlisting>
-    </section>
-    <section>
+    </example>
+    <example>
         <title>Suggested rendering for human users</title>
-        <blockquote>
-            <para>
-                <emphasis role="strong">colour</emphasis>
-                <emphasis>noun, European spelling</emphasis>
-            </para>
-            <itemizedlist>
-                <listitem>
-                    <para>red, blue, yellow etc. <emphasis>What is your favourite colour?</emphasis>
-                    </para>
-                </listitem>
-            </itemizedlist>
-            <para>see also: color</para>
-        </blockquote>
-    </section>
+        <programlisting>
+colour (noun, European spelling), variant: color
+  - red, blue, yellow etc.
+    "What is your favourite colour?"
+
+color (noun, American spelling), see: colour
+        </programlisting>
+    </example>
 
 
 </section>

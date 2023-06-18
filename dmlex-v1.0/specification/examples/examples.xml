@@ -8,9 +8,10 @@
 
 <section id="examples">
   <title>Examples</title>
-  <para>This section gives examples which show how to use DMLex to model lexicographic resources. The examples are shown in three formalisms: NVH, XML and JSON.</para>
-  <para>Each example is shown in NVH first. NVH (Name-Value Hierarchy)[^1] is a concise serialization language designed for lexicographic data. NVH encodes data as a hierarchical list of names, values and children, which corresponds exactly to DMLex’s own data model. We use NVH here in order to demonstrate the object model at an abstract level.</para>
-  <para>After that, each example is shown in XML and JSON, two popular serialization languages. The XML and JSON encoding shown here follows DMLex’s own implementation guidance for XML and JSON.</para>
+  <para>This section gives examples which show how to use DMLex to model lexicographic resources.
+    Each example is shown in pseudocode first to demonstrate the object model at an abstract level.
+    After that, each example is shown in XML and JSON. The XML and JSON encoding shown here follows
+    DMLex’s own implementation guidance for XML and JSON.</para>
   <xi:include href="examples/00.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="examples/01.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="examples/02.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>

@@ -8,19 +8,17 @@
 
 <section id="ex19">
 
-                         <title>Using <code>placeholderMarker</code></title>
-                         <section>
-                                                  <title>NVH</title>
-                                                  <programlisting>
-entry: continue-studies
-    headword: continue your studies
-        placeholderMarker: your
-    sense: ...
+    <title>Using <code>placeholderMarker</code></title>
+    <example>
+        <title>Pseudocode</title>
+        <programlisting>
+- entry (id: continue-studies, headword: continue your studies, placeholderMarker: "your")
+    - sense ...
 </programlisting>
-                         </section>
-                         <section>
-                                                  <title>XML</title>
-                                                  <programlisting>
+    </example>
+    <example>
+        <title>XML</title>
+        <programlisting>
 &lt;entry id="continue-studies"&gt;
     &lt;headword&gt;
         continue &lt;placeholderMarker&gt;your&lt;/placeholderMarker&gt; studies
@@ -28,10 +26,10 @@ entry: continue-studies
     &lt;sense.../&gt;
 &lt;/entry&gt;
 </programlisting>
-                         </section>
-                         <section>
-                                                  <title>JSON</title>
-                                                  <programlisting>
+    </example>
+    <example>
+        <title>JSON</title>
+        <programlisting>
 {
   "id": "continue-studies",
   "headword": "continue your studies",
@@ -41,7 +39,7 @@ entry: continue-studies
   "senses": [...]
 }
 </programlisting>
-                         </section>
-                         
+    </example>
+
 
 </section>

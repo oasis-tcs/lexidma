@@ -8,56 +8,42 @@
 
 <section id="ex16">
 
-                         <title>Modelling subsenses</title>
-                         <para>We have an entry for the noun "colour" with four senses. We want to express the fact that senses number two and three are subsenses of sense number one, and should be displayed as such to human users.</para>
-                         <section>
-                                                  <title>NVH</title>
-                                                  <programlisting>
-lexicographicResource: my-dictionary
-    language: en
-    entry: colour
-        headword: colour
-            sense: colour-1
-                definition: red, blue, yellow etc.
-                example: What is your favourite colour?
-            sense: colour-2
-                definition: not being black and white
-                example: Back then owning a colour TV meant you were rich.
-            sense: colour-3
-                definition: a sign of a person's race
-                example: We welcome people of all creeds and colours.
-            sense: colour-4
-                definition: interest or excitement
-                example: Examples add colour to your writing.
-    relation: subsensing
-        member: colour-1
-            role: supersense
-        member: colour-2
-            role: subsense
-    relation: subsensing
-        member: colour-1
-            role: supersense
-        member: colour-3
-            role: subsense
-    relationType: subsensing
-        description: expresses the fact that a sense is a subsense of another sense
-        scope: sameEntry
-        memberRole: supersense
-            memberType: sense
-            min: 1
-            max: 1
-            action: none
-        memberRole: subsense
-            memberType: sense
-            min: 1
-            max: 1
-            action: embed
+    <title>Modelling subsenses</title>
+    <para>We have an entry for the noun "colour" with four senses. We want to express the fact that
+        senses number two and three are subsenses of sense number one, and should be displayed as
+        such to human users.</para>
+    <example>
+        <title>Pseudocode</title>
+        <programlisting>
+- lexicographicResource (language: en)
+    - entry (id: colour, headword: colour)
+        - sense (id: colour-1)
+            - definition (text: red, blue, yellow etc.)
+            - example (text: What is your favourite colour?)
+        - sense (id: colour-2)
+            - definition (text: not being black and white)
+            - example (text: Owning a colour TV meant you were rich.)
+        - sense (id: colour-3)
+            - definition (text: a sign of a person's race)
+            - example (text: People of all creeds and colours.)
+        - sense (id: colour-4)
+            - definition (text: interest or excitement)
+            - example (text: Examples add colour to your writing.)
+    - relation (type: subsensing)
+        - member (memberID: colour-1, role: super)
+        - member (memberID: colour-2, role: sub)
+    - relation (type: subsensing)
+        - member (memberID: colour-1, role: super)
+        - member (memberID: colour-3, role: sub)
+    - relationType (type: subsensing, scope: sameEntry)
+        - memberType (role: super, memberType: sense, min: 1, max: 1 action: none)
+        - memberRole (role: sub, memberType: sense, min: 1, max: 1, action: embed)
 </programlisting>
-                         </section>
-                         <section>
-                                                  <title>XML</title>
-                                                  <programlisting>
-&lt;lexicographicResource id="my-dictionary" language="en"&gt;
+    </example>
+    <example>
+        <title>XML</title>
+        <programlisting>
+&lt;lexicographicResource language="en"&gt;
     &lt;entry id="colour"&gt;
         &lt;headword&gt;colour&lt;/headword&gt;
         &lt;sense id="colour-1"&gt;
@@ -66,11 +52,11 @@ lexicographicResource: my-dictionary
         &lt;/sense&gt;
         &lt;sense id="colour-2"&gt;
             &lt;definition&gt;not being black and white&lt;/definition&gt;
-            &lt;example&gt;&lt;text&gt;Back then owning a colour TV meant you were rich.&lt;/text&gt;&lt;/example&gt;
+            &lt;example&gt;&lt;text&gt;Owning a colour TV meant you were rich.&lt;/text&gt;&lt;/example&gt;
         &lt;/sense&gt;
         &lt;sense id="colour-3"&gt;
             &lt;definition&gt;a sign of a person's race&lt;/definition&gt;
-            &lt;example&gt;&lt;text&gt;We welcome people of all creeds and colours.&lt;/text&gt;&lt;/example&gt;
+            &lt;example&gt;&lt;text&gt;People of all creeds and colours.&lt;/text&gt;&lt;/example&gt;
         &lt;/sense&gt;
         &lt;sense id="colour-4"&gt;
             &lt;definition&gt;interest or excitement&lt;/definition&gt;
@@ -78,30 +64,24 @@ lexicographicResource: my-dictionary
         &lt;/sense&gt;
     &lt;/entry&gt;
     &lt;relation type="subsensing"&gt;
-        &lt;member idref="colour-1" role="supersense"/&gt;
-        &lt;member idref="colour-2" role="subsense"/&gt;
+        &lt;member memberID="colour-1" role="super"/&gt;
+        &lt;member memberID="colour-2" role="sub"/&gt;
     &lt;/relation&gt;
     &lt;relation type="subsensing"&gt;
-        &lt;member idref="colour-1" role="supersense"/&gt;
-        &lt;member idref="colour-3" role="subsense"/&gt;
+        &lt;member memberID="colour-1" role="super"/&gt;
+        &lt;member memberID="colour-3" role="sub"/&gt;
     &lt;/relation&gt;
     &lt;relationType type="subsensing" scope="sameEntry"&gt;
-        &lt;description&gt;
-            expresses the fact that a sense is a subsense of another sense
-        &lt;/description&gt;
-        &lt;memberRole role="supersense" memberType="sense" min="1" max="1"
-                    action="none"/&gt;
-        &lt;memberRole role="subsense" memberType="sense" min="1" max="1"
-                    action="embed"/&gt;
+        &lt;memberType role="super" memberType="sense" min="1" max="1" action="none"/&gt;
+        &lt;memberType role="subs" memberType="sense" min="1" max="1" action="embed"/&gt;
     &lt;/relationType&gt;
 &lt;/lexicographicResource&gt;
 </programlisting>
-                         </section>
-                         <section>
-                                                  <title>JSON</title>
-                                                  <programlisting>
+    </example>
+    <example>
+        <title>JSON</title>
+        <programlisting>
 {
-    "id": "my-dictionary",
     "language": "en",
     "entries": [{
         "id": "colour",
@@ -113,11 +93,11 @@ lexicographicResource: my-dictionary
         }, {
             "id": "colour-2",
             "definitions": [{"text": "not being black and white"}],
-            "examples": [{"text": "Back then owning a colour TV meant you were rich."}]
+            "examples": [{"text": "Owning a colour TV meant you were rich."}]
         }, {
             "id": "colour-3",
             "definitions": [{"text": "a sign of a person's race"}],
-            "examples": [{"text": "We welcome people of all creeds and colours."}]
+            "examples": [{"text": "People of all creeds and colours."}]
         }, {
             "id": "colour-4",
             "definitions": [{"text": "interest or excitement"}],
@@ -127,28 +107,27 @@ lexicographicResource: my-dictionary
     "relations": [{
         "type": "subsensing",
         "members": [
-          {"role": "supersense", "idref": "colour-1"},
-          {"role": "subsense", "idref": "colour-2"}
+          {"role": "super", "memberID": "colour-1"},
+          {"role": "sub", "memberID": "colour-2"}
         ]
     }, {
         "type": "subsensing",
         "members": [
-          {"role": "supersense", "idref": "colour-1"},
-          {"role": "subsense", "idref": "colour-3"}
+          {"role": "super", "memberID": "colour-1"},
+          {"role": "sub", "memberID": "colour-3"}
         ]
     }],
     "relationTypes": [{
         "type": "subsensing",
-        "description": "expresses the fact that a sense is a subsense of another sense",
         "scope": "sameEntry",
-        "memberRoles": [{
-            "role": "supersense",
+        "memberTypes": [{
+            "role": "super",
             "memberType": "sense",
             "min": 1,
             "max": 1,
             "action": "none"
         }, {
-            "role": "subsense",
+            "role": "sub",
             "memberType": "sense",
             "min": 1,
             "max": 1,
@@ -157,29 +136,17 @@ lexicographicResource: my-dictionary
     }]
 }
 </programlisting>
-    </section>
-    <section>
+    </example>
+    <example>
         <title>Suggested rendering for human users</title>
-        <blockquote>
-           <para><emphasis role="strong">colour</emphasis></para>
-           <orderedlist numeration="arabic">
-                <listitem>
-                    <para>red, blue, yellow etc.<emphasis>What is your favourite colour?</emphasis></para>
-                    <orderedlist numeration="loweralpha">
-                        <listitem>
-                            <para>not being black and white <emphasis>Back then owning a colour TV meant you were rich.</emphasis></para>
-                        </listitem>
-                        <listitem>
-                            <para>a sign of a person's race <emphasis>We welcome people of all creeds and colours.</emphasis></para>
-                        </listitem>
-                    </orderedlist>
-                </listitem>
-                <listitem>
-                     <para>interest or excitement <emphasis>Examples add colour to your writing.</emphasis></para>
-                </listitem>
-           </orderedlist>
-        </blockquote>
-    </section>
-                         
+        <programlisting>
+colour
+  1. red, blue, yellow etc. "What is your favourite colour?"
+     (a) not being black and white "Owning a colour TV meant you were rich."
+     (b) a sign of a person's race "People of all creeds and colours.."
+  2. interest or excitement "Examples add colour to your writing."
+        </programlisting>
+    </example>
+
 
 </section>

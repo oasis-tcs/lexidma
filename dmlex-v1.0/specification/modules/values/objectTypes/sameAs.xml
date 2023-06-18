@@ -35,7 +35,7 @@
   <itemizedlist>
     <title>Contents</title>
     <listitem>
-      <para><literal>value</literal>
+      <para><literal>uri</literal>
         <glossterm>required</glossterm> (exactly one). The URI of an item in an external inventory.</para>
     </listitem>
   </itemizedlist>

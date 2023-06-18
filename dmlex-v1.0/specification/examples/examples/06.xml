@@ -8,56 +8,49 @@
 
 <section id="ex06">
 
-                         <title>Mapping <code>tag</code> to external inventories</title>
-                         <para>This shows how to map the value of a tag such as <code>n-masc</code> and <code>n-fem</code> to items in an external inventory such as LexInfo.</para>
-                         <section>
-                                                  <title>NVH</title>
-                                                  <programlisting>
-tag: n-masc
-    description: noun, masculine
-    target: partOfSpeech
-    sameAs: http://www.lexinfo.net/ontology/3.0/lexinfo#noun
-    sameAs: http://www.lexinfo.net/ontology/3.0/lexinfo#masculine
-tag: n-fem
-    description: noun, feminine
-    target: partOfSpeech
-    sameAs: http://www.lexinfo.net/ontology/3.0/lexinfo#noun
-    sameAs: http://www.lexinfo.net/ontology/3.0/lexinfo#feminine
+    <title>Mapping controlled values to external inventories</title>
+    <para>This shows how to map the value of a tag such as <code>n-masc</code> and
+            <code>n-fem</code> to items in an external inventory such as LexInfo.</para>
+    <example>
+        <title>Pseudocode</title>
+        <programlisting>
+- partOfSpeechTag (tag: n-masc, description: masculine noun)
+    - sameAs (uri: http://www.lexinfo.net/ontology/3.0/lexinfo#noun)
+    - sameAs (uri: http://www.lexinfo.net/ontology/3.0/lexinfo#masculine)
+- partOfSpeechTag (tag: n-fem, description: feminine noun)
+    - sameAs (uri: http://www.lexinfo.net/ontology/3.0/lexinfo#noun)
+    - sameAs (uri: http://www.lexinfo.net/ontology/3.0/lexinfo#feminine)
 </programlisting>
-                         </section>
-                         <section>
-                                                  <title>XML</title>
-                                                  <programlisting>
-&lt;tag value="n-masc"&gt;
-    &lt;description&gt;noun, masculine&lt;/description&gt;
-    &lt;target value="partOfSPeech"/&gt;
+    </example>
+    <example>
+        <title>XML</title>
+        <programlisting>
+&lt;partOfSpeechTag tag="n-masc"&gt;
+    &lt;description&gt;masculine noun&lt;/description&gt;
     &lt;sameAs uri="http://www.lexinfo.net/ontology/3.0/lexinfo#noun"/&gt;
     &lt;sameAs uri="http://www.lexinfo.net/ontology/3.0/lexinfo#masculine"/&gt;
-&lt;/tag&gt;
-&lt;tag value="n-fem"&gt;
-    &lt;description&gt;noun, feminine&lt;/description&gt;
-    &lt;target value="partOfSPeech"/&gt;
+&lt;/partOfSpeechTag&gt;
+&lt;partOfSpeechTag tag="n-fem"&gt;
+    &lt;description&gt;feminine noun&lt;/description&gt;
     &lt;sameAs uri="http://www.lexinfo.net/ontology/3.0/lexinfo#noun"/&gt;
     &lt;sameAs uri="http://www.lexinfo.net/ontology/3.0/lexinfo#feminine"/&gt;
-&lt;/tag&gt;
+&lt;/partOfSpeechTag&gt;
 </programlisting>
-                         </section>
-                         <section>
-                                                  <title>JSON</title>
-                                                  <programlisting>
+    </example>
+    <example>
+        <title>JSON</title>
+        <programlisting>
 {
-    "tags": [{
-        "value": "n-masc",
-        "description": "noun, masculine",
-        "targets": ["partOfSpeech"],
+    "partOfSpeechTags": [{
+        "tag": "n-masc",
+        "description": "masculine noun",
         "sameAs": [
             "http://www.lexinfo.net/ontology/3.0/lexinfo#noun",
             "http://www.lexinfo.net/ontology/3.0/lexinfo#masculine"
         ]
     }, {
-        "value": "n-fem",
-        "description": "noun, feminine",
-        "targets": ["partOfSpeech"],
+        "tag": "n-fem",
+        "description": "feminine noun",
         "sameAs": [
             "http://www.lexinfo.net/ontology/3.0/lexinfo#noun",
             "http://www.lexinfo.net/ontology/3.0/lexinfo#feminine"
@@ -65,7 +58,7 @@ tag: n-fem
     }]
 }
 </programlisting>
-                         </section>
-                         
+    </example>
+
 
 </section>

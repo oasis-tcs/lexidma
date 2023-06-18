@@ -8,48 +8,34 @@
 
 <section id="ex17">
 
-                         <title>Modelling subentries (at subsense level)</title>
-                         <para>We have an entry for the adjective "safe" with two senses, and an entry for the multi-word expression "better safe than sorry" with one sense. We want to express the fact that the multi-word entry should appear under the first sense of "safe" as a subentry.</para>
-                         <section>
-                                                  <title>NVH</title>
-                                                  <programlisting>
-lexicographicResource: my-dictionary
-    language: en
-    entry: safe
-        headword: safe
-        sense: safe-1
-            indicator: protected from harm
-            example: It isn't safe to park here.
-        sense: safe-2
-            indicator: not likely to cause harm
-            example: Is the ride safe for a small child?
-    entry: better-safe
-        headword: better safe than sorry
-        sense: better-safe-1
-            definition: you should be careful even if it seems unnecessary
-    relation: subentrying
-        membership: safe-1
-            role: container
-        membership: better-safe
-            role: subentry
-    relationType: subentrying
-        scope: sameResource
-        memberRole: container
-            memberType: sense
-            min: 1
-            max: 1
-            action: navigate
-        memberRole: subentry
-            memberType: entry
-            min: 1
-            max: 1
-            action: embed
+    <title>Modelling subentries (at subsense level)</title>
+    <para>We have an entry for the adjective "safe" with two senses, and an entry for the multi-word
+        expression "better safe than sorry" with one sense. We want to express the fact that the
+        multi-word entry should appear under the first sense of "safe" as a subentry.</para>
+    <example>
+        <title>Pseudocode</title>
+        <programlisting>
+- lexicographicResource (language: en)
+    - entry (id: safe, headword: safe)
+        - sense (id: safe-1, indicator: protected from harm)
+            - example (text: It isn't safe to park here.)
+        - sense (id: safe-2, indicator: not likely to cause harm)
+            - example (text: Is the ride safe for a small child?)
+    - entry (id: better-safe, headword: better safe than sorry)
+        - sense (id: better-safe-1)
+            - definition (text: you should be careful even if it seems unnecessary)
+    - relation (type: subentrying)
+        member (memberID: safe-1, role: container)
+        member (memberID: better-safe, role: subentry)
+    - relationType (type: subentrying, scope: sameResource)
+        - memberType (role: container, memberType: sense, min: 1, max: 1, action: navigate)
+        - memberType (role: subentry, memberType: entry, min: 1, max: 1, action: embed)
 </programlisting>
-                         </section>
-                         <section>
-                                                  <title>XML</title>
-                                                  <programlisting>
-&lt;lexicographicResource id="my-dictionary" language="en"&gt;
+    </example>
+    <example>
+        <title>XML</title>
+        <programlisting>
+&lt;lexicographicResource language="en"&gt;
     &lt;entry id="safe"&gt;
         &lt;headword&gt;safe&lt;/headword&gt;
         &lt;sense id="safe-1"&gt;
@@ -70,23 +56,20 @@ lexicographicResource: my-dictionary
         &lt;/sense&gt;
     &lt;/entry&gt;
     &lt;relation type="subentrying"&gt;
-        &lt;member idref="safe-1" role="container"/&gt;
-        &lt;member idref="better-safe" role="subentry"/&gt;
+        &lt;member memberID="safe-1" role="container"/&gt;
+        &lt;member memberID="better-safe" role="subentry"/&gt;
     &lt;/relation&gt;
     &lt;relationType type="subentrying" scope="sameResource"&gt;
-        &lt;memberRole role="container" memberType="sense" min="1" max="1"
-                    action="navigate"/&gt;
-        &lt;memberRole role="subentry" memberType="entry" min="1" max="1"
-                    action="embed"/&gt;
+        &lt;memberType role="container" memberType="sense" min="1" max="1" action="navigate"/&gt;
+        &lt;memberType role="subentry" memberType="entry" min="1" max="1" action="embed"/&gt;
     &lt;/relationType&gt;
 &lt;/lexicographicResource&gt;
 </programlisting>
-                         </section>
-                         <section>
-                                                  <title>JSON</title>
-                                                  <programlisting>
+    </example>
+    <example>
+        <title>JSON</title>
+        <programlisting>
 {
-    "id": "my-dictionary",
     "language": "en",
     "entries": [{
         "id": "safe",
@@ -113,14 +96,14 @@ lexicographicResource: my-dictionary
     "relations": [{
         "type": "subentrying",
         "members": [
-          {"role": "container", "idref": "safe-1"},
-          {"role": "subentry", "idref": "better-safe"}
+          {"role": "container", "memberID": "safe-1"},
+          {"role": "subentry", "memberID": "better-safe"}
         ]
     }],
     "relationTypes": [{
         "type": "subentrying",
         "scope": "sameResource",
-        "memberRoles": [{
+        "memberTypes": [{
             "role": "container",
             "memberType": "sense",
             "min": 1,
@@ -136,40 +119,21 @@ lexicographicResource: my-dictionary
     }]
 }
 </programlisting>
-                         </section>
-                         <section>
-                                                  <title>Suggested rendering for human users</title>
-                                                  <blockquote>
-                                                                           <para>
-                                                                                                    <emphasis role="strong">safe</emphasis>
-                                                                           </para>
-                                                                           <itemizedlist>
-                                                                                                    <listitem>
-                                                                                                                             <para>protected from harm: <emphasis>It isn't safe to park here.</emphasis>
-                                                                                                                             </para>
-                                                                                                                             <itemizedlist>
-                                                                                                                                                      <listitem>
-                                                                                                                                                                               <para>
-                                                                                                                                                                                                        <emphasis role="strong">better safe than sorry</emphasis> you should be careful even if it seems unnecessary</para>
-                                                                                                                                                      </listitem>
-                                                                                                                             </itemizedlist>
-                                                                                                    </listitem>
-                                                                                                    <listitem>
-                                                                                                                             <para>not likely to cause harm:  <emphasis>Is the ride safe for a small child?</emphasis>
-                                                                                                                             </para>
-                                                                                                    </listitem>
-                                                                           </itemizedlist>
-                                                                           <para>
-                                                                                                    <emphasis role="strong">better safe than sorry</emphasis>
-                                                                           </para>
-                                                                           <itemizedlist>
-                                                                                                    <listitem>
-                                                                                                                             <para>you should be careful even if it seems unnecessary</para>
-                                                                                                    </listitem>
-                                                                           </itemizedlist>
-                                                                           <para>see also: safe</para>
-                                                  </blockquote>
-                         </section>
-                         
+    </example>
+    <example>
+        <title>Suggested rendering for human users</title>
+        <programlisting>
+safe
+  - protected from harm "It isn't safe to park here."
+    better safe than sorry
+      - you should be careful even if it seems unnecessary
+  - not likely to cause harm "Is the ride safe for a small child?"
+
+better safe than sorry
+  - you should be careful even if it seems unnecessary
+    see also: safe
+        </programlisting>
+    </example>
+
 
 </section>

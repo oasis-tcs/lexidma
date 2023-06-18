@@ -7,30 +7,28 @@
 ]>
 
 <section id="ex03">
-                         <title>Pronunciation given as a sound file</title>
-                         <section>
-                                                  <title>NVH</title>
-                                                  <programlisting>
-entry: aardvark-noun
-    headword: aardvark
-    pronunciation:
-        soundFile: aardvark.mp3
-    sense: ...
+    <title>Pronunciation given as a sound file</title>
+    <example>
+        <title>Pseudocode</title>
+        <programlisting>
+- entry (id: aardvark-noun, headword: aardvark)
+    - pronunciation (soundFile: aardvark.mp3)
+    - sense: ...
 </programlisting>
-                         </section>
-                         <section>
-                                                  <title>XML</title>
-                                                  <programlisting>
+    </example>
+    <example>
+        <title>XML</title>
+        <programlisting>
 &lt;entry id="aardvark-noun"&gt;
     &lt;headword&gt;aardvark&lt;/headword&gt;
     &lt;pronunciation soundFile="aardvark.mp3"/&gt;
     &lt;sense&gt;...&lt;/sense&gt;
 &lt;/entry&gt;
 </programlisting>
-                         </section>
-                         <section>
-                                                  <title>JSON</title>
-                                                  <programlisting>
+    </example>
+    <example>
+        <title>JSON</title>
+        <programlisting>
 {
     "id": "aardvark-noun",
     "headword": "aardvark",
@@ -40,6 +38,6 @@ entry: aardvark-noun
     "senses": [...]
 }
 </programlisting>
-                         </section>
-                         
+    </example>
+
 </section>

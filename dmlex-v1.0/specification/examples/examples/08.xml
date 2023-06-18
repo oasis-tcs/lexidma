@@ -8,61 +8,58 @@
 
 <section id="ex08">
 
-                         <title>How to use <code>headwordTranslation</code> in a bilingual lexicographic resource</title>
-                         <para>This is an entry from a hypothetical English-German dictionary for English-speaking learners of German.</para>
-                         <section>
-                                                  <title>NVH</title>
-                                                  <programlisting>
-entry: doctor-n
-    headword: doctor
-    sense: doctor-n-1
-        indicator: medical doctor
-        headwordTranslation: Arzt
-            partOfSpeech: n-masc
-        headwordTranslation: Ärztin
-            partOfSpeech: n-fem
-    sense: doctor-n-2
-        indicator: academic title
-        headwordTranslation: Doktor
-            partOfSpeech: n-masc
-        headwordTranslation: Doktorin
-            partOfSpeech: n-fem
-            label: rare
+    <title>How to use <code>headwordTranslation</code> in a bilingual lexicographic resource</title>
+    <para>This is an entry from a hypothetical English-German dictionary for English-speaking
+        learners of German.</para>
+    <example>
+        <title>Pseudocode</title>
+        <programlisting>
+- entry (id: doctor-n, headword: doctor)
+    - sense (id: doctor-n-1, indicator: medical doctor)
+        - headwordTranslation (text: Arzt)
+            - partOfSpeech (tag: n-masc)
+        - headwordTranslation (text: Ärztin)
+            - partOfSpeech (tag: n-fem)
+    - sense (id: doctor-n-2, indicator: academic title)
+        - headwordTranslation (text: Doktor)
+            - partOfSpeech (tag: n-masc)
+        - headwordTranslation (text: Doktorin)
+            - partOfSpeech (tag: n-fem)
 </programlisting>
-                         </section>
-                         <section>
-                                                  <title>XML</title>
-                                                  <programlisting>
+    </example>
+    <example>
+        <title>XML</title>
+        <programlisting>
 &lt;entry id="doctor-n"&gt;
     &lt;headword&gt;doctor&lt;/headword&gt;
     &lt;sense id="doctor-n-1"&gt;
         &lt;indicator&gt;medical doctor&lt;/indicator&gt;
         &lt;headwordTranslation&gt;
             &lt;text&gt;Arzt&lt;/text&gt;
-            &lt;partOfSpeech value="n-masc"/&gt;
+            &lt;partOfSpeech tag="n-masc"/&gt;
         &lt;/headwordTranslation&gt;
         &lt;headwordTranslation&gt;
             &lt;text&gt;Ärztin&lt;/text&gt;
-            &lt;partOfSpeech value="n-fem"/&gt;
+            &lt;partOfSpeech tag="n-fem"/&gt;
         &lt;/headwordTranslation&gt;
     &lt;/sense&gt;
     &lt;sense id="doctor-n-2"&gt;
         &lt;indicator&gt;academic title&lt;/indicator&gt;
         &lt;headwordTranslation&gt;
             &lt;text&gt;Doktor&lt;/text&gt;
-            &lt;partOfSpeech value="n-masc"/&gt;
+            &lt;partOfSpeech tag="n-masc"/&gt;
         &lt;/headwordTranslation&gt;
         &lt;headwordTranslation&gt;
             &lt;text&gt;Doktorin&lt;/text&gt;
-            &lt;partOfSpeech value="n-fem"/&gt;
+            &lt;partOfSpeech tag="n-fem"/&gt;
         &lt;/headwordTranslation&gt;
     &lt;/sense&gt;
 &lt;/entry&gt;
 </programlisting>
-                         </section>
-                         <section>
-                                                  <title>JSON</title>
-                                                  <programlisting>
+    </example>
+    <example>
+        <title>JSON</title>
+        <programlisting>
 {
     "id": "doctor-n",
     "headword": "doctor",
@@ -89,6 +86,6 @@ entry: doctor-n
     }]
 }
 </programlisting>
-                         </section>
+    </example>
 
 </section>

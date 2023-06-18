@@ -8,27 +8,24 @@
 
 <section id="ex22">
 
-                         <title>Using <code>itemMarker</code></title>
-                         <section>
-                                                  <title>NVH</title>
-                                                  <programlisting>
-entry: autopsy
-    headword: autopsy
-    sense: autopsy-1
-        headwordTranslation: pitva
-        example: The coroner performed an autopsy.
-            headwordMarker: autopsy
-            itemMarker: performed
-                lemma: perform
-            exampleTranslation: Koroner provedl pitvu.
-                headwordMarker: pitvu
-                itemMarker: provedl
-                    lemma: provést
+    <title>Using <code>itemMarker</code></title>
+    <example>
+        <title>Pseudocode</title>
+        <programlisting>
+- entry (id: autopsy, headword: autopsy)
+    - sense id: autopsy-1)
+        - headwordTranslation (text: pitva)
+        - example (text: The coroner performed an autopsy.)
+            - headwordMarker: "autopsy"
+            - itemMarker: "performed" (lemma: perform)
+            - exampleTranslation (text: Koroner provedl pitvu.)
+                - headwordMarker: "pitvu"
+                - itemMarker: "provedl" (lemma: provést)
 </programlisting>
-                         </section>
-                         <section>
-                                                  <title>XML</title>
-                                                  <programlisting>
+    </example>
+    <example>
+        <title>XML</title>
+        <programlisting>
 &lt;entry id="autopsy"&gt;
     &lt;headword&gt;autopsy&lt;/headword&gt;
     &lt;sense id="autopsy-1"&gt;
@@ -48,10 +45,10 @@ entry: autopsy
     &lt;/sense&gt;
 &lt;/entry&gt;
 </programlisting>
-                         </section>
-                         <section>
-                                                  <title>JSON</title>
-                                                  <programlisting>
+    </example>
+    <example>
+        <title>JSON</title>
+        <programlisting>
 {
   "id": "autopsy",
   "headword": "autopsy",
@@ -79,5 +76,5 @@ entry: autopsy
   }]
 }
 </programlisting>
-                         </section>
+    </example>
 </section>

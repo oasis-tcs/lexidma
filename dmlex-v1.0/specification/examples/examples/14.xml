@@ -8,46 +8,39 @@
 
 <section id="ex14">
 
-                         <title>Modelling synonyms</title>
-                         <para>We have three German entries with one sense each, two which mean "sea" and one which means "ocean". We want to set up a relation which brings these three sense together as near-synonyms.</para>
-                         <section>
-                                                  <title>NVH</title>
-                                                  <programlisting>
-lexicographicResource: my-dictionary
-    language: de
-    translationLanguage: en
-    entry: die-see
-        headword: See
-        partOfSpeech: n-fem
-        sense: die-see-1
-            headwordTranslation: sea
-    entry: das-meer
-        headword: Meer
-        partOfSpeech: n-neut
-        sense: das-meer-1
-            headwordTranslation: sea
-    entry: der-ozean
-        headword: Ozean
-        partOfSpeech: n-masc
-        sense: der-ozean-1
-            translation: ocean
-    relation: syns
-        description: words that mean sea and ocean
-        member: die-see-1
-        member: das-meer-1
-        member: der-ozean-1
-    relationType: syns
-        description: synonyms and near synonyms
-        memberRole:
-            memberType: sense
-            min: 2
-            action: navigate
+    <title>Modelling synonyms</title>
+    <para>We have three German entries with one sense each, two which mean "sea" and one which means
+        "ocean". We want to set up a relation which brings these three sense together as
+        near-synonyms.</para>
+    <example>
+        <title>Pseudocode</title>
+        <programlisting>
+- lexicographicResource (language: de)
+    - translationLanguage (langCode: en)
+    - entry (id: die-see, headword: See)
+        - partOfSpeech (tag: n-fem)
+        - sense (id: die-see-1)
+            - headwordTranslation (text: sea)
+    - entry (id: das-meer, headword: Meer)
+        - partOfSpeech (tag: n-neut)
+        - sense (id: das-meer-1)
+            - headwordTranslation (text: sea)
+    - entry (id: der-ozean, headword: Ozean)
+        - partOfSpeech (tag: n-masc)
+        - sense (id: der-ozean-1)
+            - headwordTranslation (text: ocean)
+    - relation (type: synonyms, description: words that mean sea and ocean)
+        - member (memberID: die-see-1)
+        - member (memberID: das-meer-1)
+        - member (memberID: der-ozean-1)
+    - relationType (type: synonyms, description: synonyms and near synonyms)
+        memberType (memberType: sense, min: 2, action: navigate)
 </programlisting>
-                         </section>
-                         <section>
-                                                  <title>XML</title>
-                                                  <programlisting>
-&lt;lexicographicResource id="my-dictionary" language="en"&gt;
+    </example>
+    <example>
+        <title>XML</title>
+        <programlisting>
+&lt;lexicographicResource language="en"&gt;
     &lt;translationLanguage langCode="de"/&gt;
     &lt;entry id="die-see"&gt;
         &lt;headword&gt;See&lt;/headword&gt;
@@ -70,24 +63,23 @@ lexicographicResource: my-dictionary
             &lt;headwordTranslation&gt;&lt;text&gt;ocean&lt;/text&gt;&lt;/headwordTranslation&gt;
         &lt;/sense&gt;
     &lt;/entry&gt;
-    &lt;relation type="syns"&gt;
+    &lt;relation type="synonyms"&gt;
         &lt;description&gt;words that mean sea and ocean&lt;/description&gt;
-        &lt;member idref="die-see-1"/&gt;
-        &lt;member idref="das-meer-1"/&gt;
-        &lt;member idref="der-ozean-1"/&gt;
+        &lt;member memberID="die-see-1"/&gt;
+        &lt;member memberID="das-meer-1"/&gt;
+        &lt;member memberID="der-ozean-1"/&gt;
     &lt;/relation&gt;
-    &lt;relationType type="syns"&gt;
+    &lt;relationType type="synonyms"&gt;
         &lt;description&gt;synonyms and near synonyms&lt;/description&gt;
-        &lt;memberRole memberType="sense" min="2" action="navigate"/&gt;
+        &lt;memberType memberType="sense" min="2" action="navigate"/&gt;
     &lt;/relationType&gt;
 &lt;/lexicographicResource&gt;
 </programlisting>
-                         </section>
-                         <section>
-                                                  <title>JSON</title>
-                                                  <programlisting>
+    </example>
+    <example>
+        <title>JSON</title>
+        <programlisting>
 {
-    "id": "my-dictionary",
     "language": "de",
     "translationLanguages": ["en"],
     "entries": [{
@@ -116,18 +108,18 @@ lexicographicResource: my-dictionary
         }]
     }],
     "relations": [{
-        "type": "syns",
+        "type": "synonyms",
         "description": "words that mean sea and ocean",
         "members": [
-          {"idref": "die-see-1"},
-          {"idref": "das-meer-1"},
-          {"idref": "der-ozean-1"}
+          {"memberID": "die-see-1"},
+          {"memberID": "das-meer-1"},
+          {"memberID": "der-ozean-1"}
         ]
     }],
     "relationTypes": [{
-        "type": "syns",
+        "type": "synonyms",
         "description": "synonyms and near synonyms",
-        "memberRoles": [{
+        "memberTypes": [{
             "memberType": "sense",
             "min": 2,
             "action": "navigate"
@@ -135,23 +127,23 @@ lexicographicResource: my-dictionary
     }]
 }
 </programlisting>
-                         </section>
-                         <section>
-                                                  <title>Suggested rendering for human users</title>
-                                                  <blockquote>
-                                                                           <para>
-                                                                                                    <emphasis role="strong">See</emphasis>
-                                                                                                    <emphasis>feminine noun</emphasis>
-                                                                           </para>
-                                                                           <itemizedlist>
-                                                                                                    <listitem>
-                                                                                                                             <para>sea <emphasis>same or similar meaning:</emphasis>
-                                                                                                                                                      <emphasis role="strong">Meer</emphasis>, <emphasis role="strong">Ozean</emphasis>
-                                                                                                                             </para>
-                                                                                                    </listitem>
-                                                                           </itemizedlist>
-                                                  </blockquote>
-                         </section>
-                         
+    </example>
+    <example>
+        <title>Suggested rendering for human users</title>
+        <programlisting>
+See, feminine noun
+  - see
+    same or similar meaning: Meer, Ozean
+    
+Meer, neuter noun
+  - see
+    same or similar meaning: See, Ozean
+
+Ozean, masculine noun
+  - ocean
+    same or similar meaning: See, Meer
+        </programlisting>
+    </example>
+
 
 </section>

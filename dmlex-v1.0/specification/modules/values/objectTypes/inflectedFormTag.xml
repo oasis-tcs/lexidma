@@ -86,7 +86,7 @@
 &lt;inflectedFormTag tag="..." sideConstraint="..."&gt;
     &lt;description&gt;...&lt;/description&gt;
     &lt;translationLanguageConstraint langCode="..."/&gt;
-    &lt;partOfSpeechConstraint value="..."/&gt;
+    &lt;partOfSpeechConstraint tag="..."/&gt;
     &lt;sameAs.../&gt;
 &lt;/tag&gt;
   </programlisting>

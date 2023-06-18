@@ -6,8 +6,8 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
 ]>
 
-<section id="linking_memberRoleTag">
-  <title><code>memberRoleTag</code></title>
+<section id="linking_memberType">
+  <title><code>memberType</code></title>
   <para>Represents one of possible values for the <code>role</code> of <code><olink
         targetptr="linking_member">member</olink></code>, as well as various restrictions on
     members having this role.</para>
@@ -15,14 +15,14 @@
   <itemizedlist>
     <title>Child of</title>
     <listitem>
-      <para><literal><olink targetptr="linking_relationTypeTag">relationTypeTag</olink></literal></para>
+      <para><literal><olink targetptr="linking_relationType">relationType</olink></literal></para>
     </listitem>
   </itemizedlist>
 
   <itemizedlist>
     <title>Contents</title>
     <listitem>
-      <para><literal>tag</literal>
+      <para><literal>role</literal>
         <glossterm>required</glossterm> (exactly one). String. If the value is empty, then members
         having this role do not need to have a <code>role</code> property.</para>
     </listitem>
@@ -95,10 +95,10 @@
   <example>
     <title>XML</title>
     <programlisting>
-&lt;memberRoleTag tag="..." memberType="..." min="..." max="..." action="..."&gt;
+&lt;memberType role="..." memberType="..." min="..." max="..." action="..."&gt;
     &lt;description&gt;&lt;/description&gt;
     &lt;sameAs.../&gt;
-&lt;/memberRole&gt;
+&lt;/memberType&gt;
     </programlisting>
   </example>
 
@@ -106,7 +106,7 @@
     <title>JSON</title>
     <programlisting>
 {
-    "tag": "...",
+    "role": "...",
     "description": "...",
     "memberType": "...",
     "min": "...",
@@ -119,8 +119,8 @@
   <example>
       <title>RDF</title>
       <programlisting>
-&lt;#relationType&gt; dmlex:memberRole [
-  dmlex:tag "..." ;
+&lt;#relationType&gt; dmlex:memberType [
+  dmlex:role "..." ;
   dmlex:description "..." ;
   dmlex:memberType "..." ;
   dmlex:min 0 ;
@@ -131,7 +131,7 @@
   </example>
   <example>
     <title>Relational database</title>
-    <graphic fileref="modules/linking/databaseDiagrams/memberRoleTag.svg" contentwidth="16cm"/>
+    <graphic fileref="modules/linking/databaseDiagrams/memberType.svg" contentwidth="16cm"/>
   </example>
 
 </section>
