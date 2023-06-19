@@ -68,9 +68,9 @@
   </itemizedlist>-->
 
   <note>
-    <para>DMLex Core does not have a concept of "subentry". To model subentries (ie. entries inside
-      entries) in a lexicographic resource, you should use object types from the Linking Module for
-      that.</para>
+    <para>DMLex Core does not have a concept of "subentry". To model subentries (i.e. entries inside
+      entries) in a lexicographic resource, object types from the Linking Module should be
+      used.</para>
   </note>
 
   <note>
@@ -79,27 +79,27 @@
   </note>
   
   <note>
-    <para>
-      DMLex allows only one headword per entry. Things like variant headwords and co-headwords
-      do not exist in DMLex. However, the <olink targetptr="linking">DMLex Linking Module</olink>
-      does make it possible to represent the existence of variants by treating them as separate headwords of seperate entries,
-      and linking the entries using a type of link which will cause the entries to be displayed together when shown to human users.
-      See <xref linkend="ex15"/> for an example using the English words "colour" and "color".
-    </para>
+    <para> DMLex allows only one headword per entry. Things like variant headwords do not exist in
+      DMLex. However, the <olink targetptr="linking">DMLex Linking Module</olink> does make it
+      possible to represent the existence of variants by treating them as separate headwords of
+      separate entries, and linking the entries using a type of link which will cause the entries to
+      be placed together when shown to human users. See <xref linkend="ex15"/> for an example using
+      the English words "colour" and "color". </para>
   </note>
 
   <note>
     <para>Entries in DMLex do not have an explicit listing order. An application can imply a listing
-      order from a combination of the headword and the homograph number such that the headword is the primary sorting key
-      and the homograph number (for entries that have) is the secondary sorting key.</para>
+      order from a combination of the headword and the homograph number such that the headword is
+      the primary sorting key and the homograph number (for entries that have one) is the secondary
+      sorting key.</para>
   </note>
 
   <note>
     <para> Ideally, each entry should have exactly one part-of-speech label. However, DMLex allows
       more than one <code>partOfSpeech</code> in <code>entry</code> in order to allow for
-      exceptional cases when the lexicographer multiple part-of-speech readings of a headword in a
-      single entry. Example: English words which denote nationalities ("Czech", "German") and which
-      can function both as nouns and as adjectives. </para>
+      exceptional cases when the lexicographer has decided to treat multiple part-of-speech readings
+      of a headword in a single entry. Example: English words which denote nationalities ("Czech",
+      "German") and which can function both as nouns and as adjectives. </para>
   </note>
 
 

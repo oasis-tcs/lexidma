@@ -318,7 +318,8 @@
         DMLex is an abstract data model which can be implemented in many different programming environments and serialization languages.
         In this document, we give recommended implementations
         in <olink targetptr="XML_implementation">XML</olink>,
-        in <olink targetptr="JSON_implementation">JSON</olink>
+        in <olink targetptr="JSON_implementation">JSON</olink>,
+        in <olink targetptr="RDF_implementation">RDF</olink>,
         and as a <olink targetptr="RDB_implementation">relational database</olink>.
       </para>
       <itemizedlist>
@@ -648,7 +649,7 @@
         <para>McCrae, John - National University of Ireland Galway </para>
       </listitem>
       <listitem>
-        <para>Měchura, Milan - JSI </para>
+        <para>Měchura, Michal - Masary kUniversity </para>
       </listitem>
     </itemizedlist>
   </appendix>

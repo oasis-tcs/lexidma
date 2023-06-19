@@ -24,9 +24,9 @@
     <title>Contents</title>
     <listitem>
       <para><literal>id</literal>
-        <glossterm>optional</glossterm> (zero or one). A unique identifier of the sense.
-        Senses which have idenfitiers are capable of being involved in relations created with the
-        <olink targetptr="linking">Linking module</olink>.</para>
+        <glossterm>optional</glossterm> (zero or one). A unique identifier of the sense. Senses
+        which have idenfitiers can be involved in relations created with the <olink
+          targetptr="linking">Linking module</olink>.</para>
     </listitem>
     <listitem>
       <para><literal>listingOrder</literal>
@@ -61,11 +61,11 @@
           <code>sense</code>, formal properties of the headword such as orthography, morphology,
         syntax and pronunciation. A <emphasis role="strong">sense</emphasis> is a container for
         statements about the headword's semantics. DMLex deliberately makes it impossible to include
-        morphological information at sense level. If you have an entry where each sense has slightly
-        different morphological properties (eg. a noun has a weak plural in one sense and a strong
-        plural in another) then, in DMLex, you need to treat it as two entries (homographs), and you
-        can use the Linking Module two link the two entries together and to make sure they are
-        always shown together to human users.</para>
+        morphological information at sense level. It is impossible inm DMLex to model an entry where
+        each sense has slightly different morphological properties (eg. a noun has a weak plural in
+        one sense and a strong plural in another). Such phenomena need to be treatedas two entries
+        (homographs) and can be linked using the Linking Module to make sure they are always shown
+        together to human users.</para>
     </listitem>
   </itemizedlist>
   

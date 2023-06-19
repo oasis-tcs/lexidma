@@ -39,7 +39,7 @@
     <listitem>
       <para><literal>listingOrder</literal>
         <glossterm>required</glossterm> (exactly one). Number. The position of this transcription
-        object among transcriptions of the same pronunciations. This can be implicit from the
+        object among transcriptions of the same pronunciation. This can be implicit from the
         serialization.</para>
     </listitem>
   </itemizedlist>
