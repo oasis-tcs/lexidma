@@ -6,124 +6,93 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
 ]>
 
-<section>
+<section id="etymology_etymon">
     <title><literal>etymon</literal>
     </title>
-    <para> Represents a form (typically a word) which is the etymological origin of the entry or another etymologically
-        related form </para>
-    <programlisting>
-etymon: &lt;id&gt;
-  text: (1..1) &lt;string&gt;
-  type: (0..1) &lt;string&gt;
-  language: (1..1) &lt;string&gt;
-  note: (0..1) &lt;string&gt;
-  reconstructed: (0..1) &lt;boolean&gt;
-  label: (0..1) &lt;string&gt;
-  href: (0..1) &lt;url&gt;
-  listingOrder: (1..1) &lt;number&gt;
-  etymTranslation: (0..n)
-  etymDate: (0..1)
-    </programlisting>
-    <section>
+    <para> Represents a form (typically a word) which is the etymological origin of the headword, or
+        another etymologically related form.</para>
+
+    <itemizedlist>
+        <title>Child of</title>
+        <listitem>
+            <para><literal><olink targetptr="etymology_origin">origin</olink></literal></para>
+        </listitem>
+    </itemizedlist>
+
+    <itemizedlist>
+        <title>Contents</title>
+        <listitem>
+            <para><literal>language</literal>
+                <glossterm>required</glossterm> (exactly one). An IETF tag. The tags can be
+                explained and constrained using the <literal><olink
+                        targetptr="etymology_etymonLanguage">etymonLanguage</olink></literal> object
+                type.</para>
+        </listitem>
+        <listitem>
+            <para><literal>text</literal>
+                <glossterm>required</glossterm> (exactly one). The written form of the
+                etymon.</para>
+        </listitem>
+        <listitem>
+            <para><literal>reconstructed</literal>
+                <glossterm>optional</glossterm> (zero or one). Boolean. If present and set to true,
+                indicates that the form is reconstructed and not attested in any corpus.</para>
+        </listitem>
+        <listitem>
+            <para><literal><olink targetptr="etymology_partOfSpeech">partOfSpeech</olink></literal>
+                <glossterm>optional</glossterm> (zero or one).</para>
+        </listitem>
+        <listitem>
+            <para><literal>translation</literal>
+                <glossterm>optional</glossterm> (zero or one). A translation or gloss of the etymon in the language of the lexicographic resource.</para>
+        </listitem>
+        <listitem>
+            <para><literal>listingOrder</literal>
+                <glossterm>required</glossterm> (exactly one). Number. The position of this etymon
+                among other etymons of the origin. Can be implicit from the
+                serialization.</para>
+        </listitem>
+    </itemizedlist>
+
+    <example>
         <title>XML</title>
         <programlisting>
-&lt;etymon id="..." href="..."&gt;
+&lt;etymon language="..." reconstructed="true" partOfSpeech="..."&gt;
   &lt;text&gt;...&lt;/text&gt;
-  &lt;type&gt;...&lt;/type&gt;
-  &lt;language&gt;...&lt;/language&gt;
-  &lt;note&gt;...&lt;/note&gt;
-  &lt;reconstructed&gt;...&lt;/reconstructed&gt;
-  &lt;label&gt;...&lt;/label&gt;
-  &lt;etymTranslation&gt;...&lt;/etymTranslation&gt;
-  &lt;etymDate&gt;...&lt;/etymDate&gt;
+  &lt;translation&gt;...&lt;/translation&gt;
 &lt;/etymon&gt;
 </programlisting>
-    </section>
-    <section>
+    </example>
+    
+    <example>
         <title>JSON</title>
         <programlisting>
 {
-  "text": "..." ,
-  "type": "..." ,
-  "language": "..." ,
-  "note": "..." ,
-  "reconstructed": true ,
-  "label": "..." ,
-  "etymTranslation": [...] ,
-  "etymDate": ... ,
+  "language": "...",
+  "text": "...",
+  "reconstructed": true,
+  "partOfSpeech": "...",
+  "translation": "..."
 }
 </programlisting>
-    </section>
-    <section>
+    </example>
+    
+    <example>
         <title>RDF</title>
         <programlisting>
 &lt;etymon&gt; 
-  dmlex:text "..." ;
-  dmlex:type "..." ;
   dmlex:language "..." ;
-  dmlex:note "..." ;
+  dmlex:text "..." ;
   dmlex:reconstructed true ;
-  dmlex:etymonLabel "..." ;
-  dmlex:listingOrder 0 ;
-  dmlex:etymTranslation ... ;
-  dmlex:etymDate ... .
-</programlisting>
-    </section>
-    <para>Comments</para>
-    <itemizedlist spacing="compact">
-        <listitem>
-            <para>
-                Etymons have <literal>id</literal>s to allow etymons to be members of relations</para>
-        </listitem>
-        <listitem>
-            <para>
-                The <literal>type</literal> of the etymology may have typical values 
-			including <literal>derivation</literal>, <literal>cognate</literal> or
-                    <literal>borrowing</literal>. Values can be specified using
-                    <literal>tag</literal> objects. </para>
-        </listitem>
-        <listitem>
-            <para>
-                The <literal>language</literal>  of the origin form
-                should be specified with a <literal>EtymonLanguage</literal>
-                mapping. </para>
-        </listitem>
-        <listitem>
-            <para>
-                The <literal>note</literal> conatins extra information about the
-                language, for example the approximate time (e.g., 16th century) or geographical variants
-            </para>
-        </listitem>
-        <listitem>
-            <para>
-                <literal>reconstructed</literal>  indicates that the form is
-                reconstructed and not attested in any corpus </para>
-        </listitem>
-        <listitem>
-            <para>
-                The <literal>label</literal>  indicates the
-                grammatical category of the etymon. Values
-                can be specified using <literal>tag</literal> objects. </para>
-        </listitem>
-        <listitem>
-            <para>
-                The <literal>href</literal>  a reference to a source for this etymology
-                in an external resource </para>
-        </listitem>
-        <listitem>
-            <para>
-                If this etymon is part of a multietymon
-                (a child of <literal>MultiEtymon</literal>) the <literal>listingOrder</literal> indicates the order of this etymon.
-                If this etymon is not part of a multietymon, then indicates its position among other etymons amd multietymons
-                in the entry.
-                This value may be implicit in some serializations. </para>
-        </listitem>
-        <listitem>
-            <para>The <literal>etymDate</literal> indicates the time period the 
-            etymological word was used in. For multi-etymons there SHOULD be
-            no dates.
-        </para>
-        </listitem>
-	
-    </itemizedlist>
+  dmlex:partOfSpeech "..." ;
+  dmlex:translation ... ;
+  dmlex:listingOrder 0 .
+        </programlisting>
+    </example>
+    
+    <example>
+        <title>Relational database</title>
+        <graphic fileref="modules/etymology/databaseDiagrams/etymon.svg" contentwidth="16cm"/>
+    </example>
+
 </section>

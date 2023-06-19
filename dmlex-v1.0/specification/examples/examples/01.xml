@@ -8,51 +8,54 @@
 
 <section id="ex01">
 
-                         <title>How to use <code>inflectedForm</code></title>
-                         <para>This is an entry from a hypothetical Irish dictionary for the headword "folúsghlantóir" ("vacuum cleaner") which gives its two inflected forms, the singular genitive and the plural.</para>
-                         <section>
-                                                  <title>NVH</title>
-                                                  <programlisting>
-entry: folúsghlantóir-n
-    headword: folúsghlantóir
-    partOfSpeech: n-masc
-    inflectedForm: folúsghlantóra
-        inflectedTag: sg-gen
-    inflectedForm: folúsghlantóirí
-        inflectedTag: pl
-    sense: ...
+    <title>How to use <code>inflectedForm</code></title>
+    <para>This is an entry from a hypothetical Irish dictionary for the headword "folúsghlantóir"
+        ("vacuum cleaner") which gives its two inflected forms, the singular genitive and the
+        plural.</para>
+    <example>
+        <title>Pseudocode</title>
+        <programlisting>
+- entry (id: folúsghlantóir-n, headword: folúsghlantóir)
+    - partOfSpeech (tag: n-masc)
+    - inflectedForm (tag: sg-gen, text: folúsghlantóra)
+    - inflectedForm (tag: pl, text: folúsghlantóirí)
+    - sense...
 </programlisting>
-                         </section>
-                         <section>
-                                                  <title>XML</title>
-                                                  <programlisting>
+    </example>
+    <example>
+        <title>XML</title>
+        <programlisting>
 &lt;entry id="folúsghlantóir-n"&gt;
     &lt;headword&gt;folúsghlantóir&lt;/headword&gt;
-    &lt;partOfSpeech value="n-masc"/&gt;
-    &lt;inflectedForm inflectedTag="sg-gen"&gt;folúsghlantóra&lt;/inflectedForm&gt;
-    &lt;inflectedForm inflectedTag="pl"&gt;folúsghlantóirí&lt;/inflectedForm&gt;
+    &lt;partOfSpeech tag="n-masc"/&gt;
+    &lt;inflectedForm tag="sg-gen"&gt;
+        &lt;text>folúsghlantóra&lt;/text>
+    &lt;/inflectedForm&gt;
+    &lt;inflectedForm tag="pl"&gt;
+        &lt;text>folúsghlantóirí&lt;/text>
+    &lt;/inflectedForm&gt;
     &lt;sense&gt;...&lt;/sense&gt;
 &lt;/entry&gt;
 </programlisting>
-                         </section>
-                         <section>
-                                                  <title>JSON</title>
-                                                  <programlisting>
+    </example>
+    <example>
+        <title>JSON</title>
+        <programlisting>
 {
     "id": "folúsghlantóir-n",
     "headword": "folúsghlantóir",
     "partsOfSpeech": ["n-masc"],
     "inflectedForms": [{
-        "text": "folúsghlantóra",
-        "inflectedTag": "sg-gen",
+        "tag": "sg-gen",
+        "text": "folúsghlantóra"
     }, {
-        "text": "folúsghlantóirí",
-        "inflectedTag": "pl",
+        "tag": "pl",
+        "text": "folúsghlantóirí"
     }],
     "senses": [...]
 }
 </programlisting>
-                         </section>
-                         
+    </example>
+
 
 </section>

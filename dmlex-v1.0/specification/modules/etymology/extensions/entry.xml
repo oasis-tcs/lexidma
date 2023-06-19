@@ -6,16 +6,32 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
 ]>
 
-<section>
+<section id="etymology_entry">
   <title>Extensions to <literal>entry</literal></title>
   <para>
-    Additional children:
+    Extends the <code><olink targetptr="core_entry">entry</olink></code> object type
+    from the <olink targetptr="core">Core</olink>.
   </para>
-  <programlisting>
-entry: ...
-  etymology: (0..n)
-  </programlisting>
-  <section>
+
+  <itemizedlist>
+    <title>Additional contents</title>
+    <listitem>
+      <para><literal><olink targetptr="etymology_etymology">etymology</olink></literal>
+        <glossterm>optional</glossterm> (zero, one or more)
+        Represents a chain of historical derivations of the entry's headdword.
+      </para>
+    </listitem>
+  </itemizedlist>
+  
+  <note>
+    <para>
+      If an entry can contains more than one etymology object,
+      then the different etymology objects represent different hypotheses
+      about the origin of the headword.
+    </para>
+  </note>
+  
+  <example>
       <title>XML</title>
       <programlisting>
 &lt;entry&gt;
@@ -23,19 +39,23 @@ entry: ...
   &lt;etymology&gt;...&lt;/etymology&gt;
 &lt;/entry&gt;
       </programlisting>
-  </section>
-  <section>
+  </example>
+  
+  <example>
       <title>JSON</title>
       <programlisting>
 {
-  "etymology": ...
+  ...,
+  "etymology": {...}
 }
       </programlisting>
-  </section>
-  <section>
+  </example>
+  
+  <example>
       <title>RDF</title>
       <programlisting>
 &lt;Entry&gt; dmlex:etymology ... .
       </programlisting>
-  </section>
+  </example>
+  
 </section>

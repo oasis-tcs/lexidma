@@ -8,23 +8,22 @@
 
 <section id="ex10">
 
-                         <title>Defining a multilingual lexicographic resource</title>
-                         <para>This defines a lexicographic resource where the source language is Irish and the translation languages are English, German and Czech.</para>
-                         <section>
-                                                  <title>NVH</title>
-                                                  <programlisting>
-lexicographicResource: irish-multilingual
-    description: My Irish-Multilingual Dictionary
-    language: ga
-    translationLanguage: en
-    translationLanguage: de
-    translationLanguage: cs
+    <title>Defining a multilingual lexicographic resource</title>
+    <para>This defines a lexicographic resource where the source language is Irish and the
+        translation languages are English, German and Czech.</para>
+    <example>
+        <title>Pseudocode</title>
+        <programlisting>
+- lexicographicResource (title: My Irish-Multilingual Dictionary, language: ga)
+    - translationLanguage (langCode: en)
+    - translationLanguage (langCode: de)
+    - translationLanguage (langCode: cs)
 </programlisting>
-                         </section>
-                         <section>
-                                                  <title>XML</title>
-                                                  <programlisting>
-&lt;lexicographicResource id="irish-multilingual" language="ga"&gt;
+    </example>
+    <example>
+        <title>XML</title>
+        <programlisting>
+&lt;lexicographicResource language="ga"&gt;
     &lt;title&gt;My Irish-Multilingual Dictionary&lt;/title&gt;
     &lt;translationLanguage langCode="en"/&gt;
     &lt;translationLanguage langCode="de"/&gt;
@@ -32,18 +31,17 @@ lexicographicResource: irish-multilingual
     ...
 &lt;/lexicographicResource&gt;
 </programlisting>
-                         </section>
-                         <section>
-                                                  <title>JSON</title>
-                                                  <programlisting>
+    </example>
+    <example>
+        <title>JSON</title>
+        <programlisting>
 {
-    "id": "irish-multilingual",
     "title": "My Irish-Multilingual Dictionary",
     "language": "ga",
     "translationLanguages": ["en", "de", "cs"],
     ...
 }
 </programlisting>
-                         </section>
+    </example>
 
 </section>

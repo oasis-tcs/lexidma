@@ -8,45 +8,33 @@
 
 <section id="ex18">
 
-                         <title>Modelling subentries (at sense level)</title>
-                         <para>We have an entry for the word "bible" and another entry for the expression "the Bible". We want to make sure that, when a human user is viewing the entry for "bible", the entry for "the Bible" is shown as a subentry of it, as if it were its first sense.</para>
-                         <section>
-                                                  <title>NVH</title>
-                                                  <programlisting>
-lexicographicResource: my-dictionary
-    language: en
-    entry: the-bible
-        headword: the Bible
-        Sense: the-bible-1
-            definition: the book considered holy by Christians
-    entry: bible
-        headword: bible
-        sense: bible-1
-        sense: bible-2
-            definition: a book considered important for a subject
-    relation: subentrying
-        member: bible-1
-            role: container
-        member: the-bible
-            role: subentry
-    relationType: subentrying
-        scope: sameResource
-        memberRole: container
-            memberType: sense
-            min: 1
-            max: 1
-            action: navigate
-        memberRole: subentry
-            memberType: entry
-            min: 1
-            max: 1
-            action: embed
-</programlisting>
-                         </section>
-                         <section>
-                                                  <title>XML</title>
-                                                  <programlisting>
-&lt;lexicographicResource id="my-dictionary" language="en"&gt;
+    <title>Modelling subentries (at sense level)</title>
+    <para>We have an entry for the word "bible" and another entry for the expression "the Bible". We
+        want to make sure that, when a human user is viewing the entry for "bible", the entry for
+        "the Bible" is shown as a subentry of it, as if it were its first sense.</para>
+    <example>
+        <title>Pseudocode</title>
+        <programlisting>
+- lexicographicResource (language: en)
+    - entry (id: the-bible, headword: the Bible)
+        - sense (id: the-bible-1)
+            - definition (text: the book considered holy by Christians)
+    - entry (id: bible, headword: bible)
+        - sense (id: bible-1)
+        - sense (id: bible-2)
+            - definition (text: a book considered important for a subject)
+    - relation (type: subentrying)
+        - member (memberID: bible-1, role: container)
+        - member (memberID: the-bible, role: subentry)
+    - relationType (type: subentrying, scope: sameResource)
+        - memberType (role: container, memberType: sense, min: 1, max: 1, action: navigate)
+        - memberRole (role: subentry, memberType: entry, min: 1, max: 1, action: embed)
+        </programlisting>
+    </example>
+    <example>
+        <title>XML</title>
+        <programlisting>
+&lt;lexicographicResource language="en"&gt;
     &lt;entry id="the-bible"&gt;
         &lt;headword&gt;the Bible&lt;/headword&gt;
         &lt;sense id="the-bible-1"&gt;
@@ -65,23 +53,20 @@ lexicographicResource: my-dictionary
         &lt;/sense&gt;
     &lt;/entry&gt;
     &lt;relation type="subentrying"&gt;
-        &lt;member idref="bible-1" role="container"/&gt;
-        &lt;member idref="the-bible" role="subentry"/&gt;
+        &lt;member memberID="bible-1" role="container"/&gt;
+        &lt;member memberID="the-bible" role="subentry"/&gt;
     &lt;/relation&gt;
     &lt;relationType type="subentrying" scope="sameResource"&gt;
-        &lt;memberRole role="container" memberType="sense" min="1" max="1"
-                    action="navigate"/&gt;
-        &lt;memberRole role="subentry" memberType="entry" min="1" max="1"
-                    action="embed"/&gt;
+        &lt;memberType role="container" memberType="sense" min="1" max="1" action="navigate"/&gt;
+        &lt;memberType role="subentry" memberType="entry" min="1" max="1" action="embed"/&gt;
     &lt;/relationType&gt;
 &lt;/lexicographicResource&gt;
 </programlisting>
-                         </section>
-                         <section>
-                                                  <title>JSON</title>
-                                                  <programlisting>
+    </example>
+    <example>
+        <title>JSON</title>
+        <programlisting>
 {
-    "id": "my-dictionary",
     "language": "en",
     "entries": [{
         "id": "the-bible",
@@ -103,14 +88,14 @@ lexicographicResource: my-dictionary
     "relations": [{
         "type": "subentrying",
         "members": [
-          {"role": "container", "idref": "bible-1"},
-          {"role": "subentry", "idref": "the-bible"}
+          {"role": "container", "memberID": "bible-1"},
+          {"role": "subentry", "memberID": "the-bible"}
         ]
     }],
     "relationTypes": [{
         "type": "subentrying",
         "scope": "sameResource",
-        "memberRoles": [{
+        "memberTypes": [{
             "role": "container",
             "memberType": "sense",
             "min": 1,
@@ -126,36 +111,19 @@ lexicographicResource: my-dictionary
     }]
 }
 </programlisting>
-                         </section>
-                         <section>
-                                                  <title>Suggested rendering for human users</title>
-                                                  <blockquote>
-                                                                           <para>
-                                                                                                    <emphasis role="strong">bible</emphasis>
-                                                                           </para>
-                                                                           <orderedlist numeration="arabic">
-                                                                                                    <listitem>
-                                                                                                                             <para>
-                                                                                                                                                      <emphasis role="strong">the Bible</emphasis> the book considered holy by Christians</para>
-                                                                                                    </listitem>
-                                                                                                    <listitem>
-                                                                                                                             <para>a book considered important for a subject</para>
-                                                                                                    </listitem>
-                                                                           </orderedlist>
-                                                  </blockquote>
-                                                  <para>Suggeted rendering of the entry "the Bible" for human users:</para>
-                                                  <blockquote>
-                                                                           <para>
-                                                                                                    <emphasis role="strong">the Bible</emphasis>
-                                                                           </para>
-                                                                           <itemizedlist>
-                                                                                                    <listitem>
-                                                                                                                             <para>the book considered holy by Christians</para>
-                                                                                                    </listitem>
-                                                                           </itemizedlist>
-                                                                           <para>see also: bible</para>
-                                                  </blockquote>
-                         </section>
-                         
+    </example>
+    <example>
+        <title>Suggested rendering for human users</title>
+        <programlisting>
+bible
+  - the Bible
+      - the book considered holy by Christians
+  - a book considered important for a subject
+  
+the Bible
+  - the book considered holy by Christians
+    see also: bible
+        </programlisting>
+    </example>
 
 </section>

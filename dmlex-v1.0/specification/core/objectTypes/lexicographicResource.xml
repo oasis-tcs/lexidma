@@ -49,7 +49,7 @@
       <para>
         <code>language</code> identifies the language of headwords, definitions and examples in this
         dictionary. DMLex is based on the assumption that all headwords in a lexicographic resource
-        are in the same language, and that definitions and examples, if any occur in the
+        are in the same language, and that definitions and examples, if any are included in the
         lexicographic resource, are in that language too. The <code>language</code> child object of
           <code>lexicographicResource</code> informs potential users of the lexicographic resource
         which language that is.</para>
@@ -61,10 +61,9 @@
         as part-of-speech labels.</para>
     </listitem>
     <listitem>
-      <para>Ideally, a lexicograpphic resouce should include at least one entry. However, DMLex specifies that
-      <code>entry</code> is optional in <code>lexicographicResouce</code> to allow for the existence of
-      lexicographic resouces which are not yet complete.
-      </para>
+      <para>Ideally, a lexicographic resouce should include at least one entry. However, DMLex
+        specifies that <code>entry</code> is optional in <code>lexicographicResouce</code> to allow
+        for the existence of lexicographic resources which are not yet complete. </para>
     </listitem>
     <listitem>
       <para>The <code>lexicographicResource</code> data type does not contain fields for detailed metadata

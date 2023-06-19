@@ -9,11 +9,10 @@
 <section id="values">
   <title>DMLex Controlled Values Module</title>
   <para>DMLex's Controlled Values Module extends the Core and makes it possible to represent
-    inventories from which the values of various properties come from, such as
-    <olink targetptr="core_partOfSpeech">parts of speech</olink>,
-    <olink targetptr="core_label">labels</olink>,
-    <olink targetptr="core_inflectedForm">inlected form tags</olink>
-    and others.</para>
+    inventories from which the values of various properties come from, such as <olink
+      targetptr="core_partOfSpeech">parts of speech</olink>, <olink targetptr="core_label"
+      >labels</olink>, <olink targetptr="core_inflectedForm">inflected form tags</olink> and
+    others.</para>
   
   <itemizedlist>
     <title>Comment</title>

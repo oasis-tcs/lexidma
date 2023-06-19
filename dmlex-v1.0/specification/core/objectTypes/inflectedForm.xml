@@ -25,13 +25,13 @@
     <title>Contents</title>
     <listitem>
       <para><literal>tag</literal>
-        <glossterm>optional</glossterm> (zero or one). Non-empty string. an abbreviation, a code or
+        <glossterm>optional</glossterm> (zero or one). Non-empty string. An abbreviation, a code or
         some other string of text which identifies the inflected form, for example <code>pl</code>
         for plural, <code>gs</code> for genitive singular, <code>com</code> for comparative. The
-        <code><olink targetptr="values_inflectedFormTag">inflectedFormTag</olink></code> object type can be used to explain
-        the meaning of the inflection tags, to constrain which inflection tags are allowed to occur
-        in the lexicographic resource, and to map them onto external inventories and
-        ontologies.</para>
+            <code><olink targetptr="values_inflectedFormTag">inflectedFormTag</olink></code> object
+        type can be used to explain the meaning of the inflection tags, to constrain which
+        inflection tags are allowed to occur in the lexicographic resource, and to map them onto
+        external inventories and ontologies.</para>
     </listitem>
     <listitem>
       <para><literal>text</literal>

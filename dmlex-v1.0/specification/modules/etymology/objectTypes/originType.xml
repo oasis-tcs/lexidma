@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section id="etymology_originType">
+    <title><code>originType</code></title>
+    <para>Represents one of possible values for the <code>type</code> of <code><olink
+        targetptr="etymology_origin">origin</olink></code>.</para>
+    
+    <itemizedlist>
+        <title>Child of</title>
+        <listitem>
+            <para><literal><olink targetptr="etymology_lexicographicResource"
+                >lexicographicResource</olink></literal></para>
+        </listitem>
+    </itemizedlist>
+    
+    <itemizedlist>
+        <title>Contents</title>
+        <listitem>
+            <para><literal>type</literal>
+                <glossterm>required</glossterm> (exactly one). Non-empty string.</para>
+        </listitem>
+        <listitem>
+            <para><literal>description</literal>
+                <glossterm>optional</glossterm> (zero or one). Non-empty string. A human-readable
+                explanation of this type.</para>
+        </listitem>
+    </itemizedlist>
+    
+    <example>
+        <title>XML</title>
+        <programlisting>
+&lt;originType type="..."&gt;
+    &lt;description&gt;...&lt;/description&gt;
+&lt;/originType&gt;
+</programlisting>
+    </example>
+    
+    <example>
+        <title>JSON</title>
+        <programlisting>
+{
+    "type": "...",
+    "description": "..."
+}
+    </programlisting>
+    </example>
+    <example>
+        <title>RDF</title>
+        <programlisting>
+&lt;#lexicographicResource&gt; dmlex:originType [
+  dmlex:type "..." ;
+  dmlex:description "..." ] .
+      </programlisting>
+    </example>
+    <example>
+        <title>Relational database</title>
+        <graphic fileref="modules/etymology/databaseDiagrams/originType.svg" contentwidth="16cm"/>
+    </example>
+    
+</section>

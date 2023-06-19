@@ -8,7 +8,12 @@
 
 <section id="xlingual">
   <title>DMLex Crosslingual Module</title>
-  <para>DMLex's Multilingual Module extends the Core and turns a monolingual lexicographic resource into a bilingual or multilingual one. A bilingual or multilingual lexicographic resource is a lexicographic resource with multiple (two or more) languages: the headwords and the examples are in one language (called the <emphasis>headword language</emphasis> in DMLex) and their translations are in one or more other languages (called the <emphasis>translation languages</emphasis> in DMLex).</para>
+  <para>DMLex's Multilingual Module extends the Core and turns a monolingual lexicographic resource
+    into a bilingual or multilingual one. A bilingual or multilingual lexicographic resource is a
+    lexicographic resource with multiple (two or more) languages: the headwords and the examples are
+    in one language (called the "the language of the lexicographic resource" in DMLex) and their
+    translations are in one or more other languages (called the <emphasis>translation
+      languages</emphasis> in DMLex).</para>
   <xi:include href="extensions/lexicographicResource.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objectTypes/translationLanguage.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="extensions/sense.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>

@@ -8,21 +8,20 @@
 
 <section id="ex09">
 
-                         <title>How to use <code>headwordExplanation</code></title>
-                         <section>
-                                                  <title>NVH</title>
-                                                  <programlisting>
-entry: treppenwitz
-    headword: Treppenwitz
-    partOfSpeech: n-masc
-    sense: treppenwitz-1
-        headwordExplanation: belated realisation of what one could have said
-        headwordTranslation: staircase wit
+    <title>How to use <code>headwordExplanation</code></title>
+    <example>
+        <title>Pseudocode</title>
+        <programlisting>
+- entry (id: treppenwitz, headword: Treppenwitz)
+    - partOfSpeech (tag: n-masc)
+    - sense (id: treppenwitz-1)
+        - headwordExplanation (text: belated realisation of what one could have said)
+        - headwordTranslation (text: staircase wit)
 </programlisting>
-                         </section>
-                         <section>
-                                                  <title>XML</title>
-                                                  <programlisting>
+    </example>
+    <example>
+        <title>XML</title>
+        <programlisting>
 &lt;entry id="treppenwitz"&gt;
     &lt;headword&gt;Treppenwitz&lt;/headword&gt;
     &lt;partOfSpeech value="n-masc"/&gt;
@@ -35,10 +34,10 @@ entry: treppenwitz
         &lt;/headwordTranslation&gt;
     &lt;/sense&gt;
 </programlisting>
-                         </section>
-                         <section>
-                                                  <title>JSON</title>
-                                                  <programlisting>
+    </example>
+    <example>
+        <title>JSON</title>
+        <programlisting>
 {
     "id": "treppenwitz",
     "headword": "Treppenwitz",
@@ -54,6 +53,6 @@ entry: treppenwitz
     }]
 }
 </programlisting>
-                         </section>
+    </example>
 
 </section>

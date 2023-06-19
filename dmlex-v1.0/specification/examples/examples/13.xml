@@ -8,37 +8,30 @@
 
 <section id="ex13">
 
-                         <title>Modelling antonyms</title>
-                         <para>We have two entries for the verbs "buy" and "sell" with one sense each. We want to express the fact that the senses are antonyms.</para>
-                         <section>
-                                                  <title>NVH</title>
-                                                  <programlisting>
-lexicographicResource: my-dictionary
-    language: en
-    entry: buy
-        headword: buy
-        sense: buy-1
-            definition: get something by paying money for it
-    entry: sell
-        headword: sell
-        sense: sell-1
-            definition: exchange something for money
-    relation: ants
-        member: buy-1
-        member: sell-1
-    relationType: ants
-        description: antonyms
-        memberRole:
-            memberType: sense
-            min: 2
-            max: 2
-            action: navigate
+    <title>Modelling antonyms</title>
+    <para>We have two entries for the verbs "buy" and "sell" with one sense each. We want to express
+        the fact that the senses are antonyms.</para>
+    <example>
+        <title>Pseudocode</title>
+        <programlisting>
+- lexicographicResource (language: en)
+    - entry (id: buy, headword: buy)
+        - sense (id: buy-1)
+            - definition (text: get something by paying money for it)
+    - entry (id: sell, headword: sell)
+        - sense (id: sell-1)
+            - definition (text: exchange something for money)
+    - relation (type: antonyms)
+        - member (memberID: buy-1)
+        - member (memberID: sell-1)
+    - relationType: (type: antonyms)
+        - memberType (memberType: sense, min: 2, max: 2, action: navigate)
 </programlisting>
-                         </section>
-                         <section>
-                                                  <title>XML</title>
-                                                  <programlisting>
-&lt;lexicographicResource id="my-dictionary" language="en"&gt;
+    </example>
+    <example>
+        <title>XML</title>
+        <programlisting>
+&lt;lexicographicResource language="en"&gt;
     &lt;entry id="buy"&gt;
         &lt;headword&gt;buy&lt;/headword&gt;
         &lt;sense id="buy-1"&gt;
@@ -51,48 +44,45 @@ lexicographicResource: my-dictionary
             &lt;definition&gt;exchange something for money&lt;/definition&gt;
         &lt;/sense&gt;
     &lt;/entry&gt;
-    &lt;relation type="ants"&gt;
-        &lt;member idref="buy-1"/&gt;
-        &lt;member idref="sell-1"/&gt;
+    &lt;relation type="antonyms"&gt;
+        &lt;member memberID="buy-1"/&gt;
+        &lt;member memberID="sell-1"/&gt;
     &lt;/relation&gt;
-    &lt;relationType type="ants"&gt;
-        &lt;description&gt;antonyms&lt;/description&gt;
-        &lt;memberRole memberType="sense" min="2" max="2" action="navigate"/&gt;
+    &lt;relationType type="antonyms"&gt;
+        &lt;memberType memberType="sense" min="2" max="2" action="navigate"/&gt;
     &lt;/relationType&gt;
 &lt;/lexicographicResource&gt;
 </programlisting>
-                         </section>
-                         <section>
-                                                  <title>JSON</title>
-                                                  <programlisting>
+    </example>
+    <example>
+        <title>JSON</title>
+        <programlisting>
 {
-    "id": "my-dictionary",
     "language": "en",
     "entries": [{
         "id": "buy",
         "headword": "buy",
         "senses": [{
             "id": "buy-1",
-            "definition": "get something by paying money for it"
+            "definitions": [{"text": "get something by paying money for it"}]
         }, {
         "id": "sell",
         "headword": "sell",
         "senses": [{
             "id": "sell-1",
-            "definition": "exchange something for money"
+            "definitions": [{"text": "exchange something for money"}]
         }]
     }],
     "relations": [{
-        "type": "ants",
+        "type": "antonyms",
         "members": [
-            {"idref": "buy-1"},
-            {"idref": "sell-1"}
+            {"memberID": "buy-1"},
+            {"memberID": "sell-1"}
         ]
     }],
     "relationTypes": [{
-        "type": "ants",
-        "description": "antonyms",
-        "memberRoles": [{
+        "type": "antonyms",
+        "memberTypes": [{
             "memberType": "sense",
             "min": 2,
             "max": 2,
@@ -101,21 +91,18 @@ lexicographicResource: my-dictionary
     }]
 }
 </programlisting>
-                         </section>
-                         <section>
-                                                  <title>Suggested rendering for human users</title>
-                                                  <blockquote>
-                                                                           <para>
-                                                                                                    <emphasis role="strong">buy</emphasis>
-                                                                           </para>
-                                                                           <itemizedlist>
-                                                                                                    <listitem>
-                                                                                                                             <para>get something by paying money for it <emphasis>opposite meaning:</emphasis>
-                                                                                                                                                      <emphasis role="strong">sell</emphasis>
-                                                                                                                             </para>
-                                                                                                    </listitem>
-                                                                           </itemizedlist>
-                                                  </blockquote>
-                         </section>
+    </example>
+    <example>
+        <title>Suggested rendering for human users</title>
+        <programlisting>
+buy
+  - get something by paying money for it
+    opposite meaning: sell
+    
+sell
+  - exchange something for money
+    opposite meaning: buy
+        </programlisting>
+    </example>
 
 </section>

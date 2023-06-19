@@ -37,17 +37,18 @@
     </listitem>
 
     <listitem>
-      <para><literal>sideConstraint</literal>
-        <glossterm>optional</glossterm> (zero or one). If present, indicates whether this tag is intended to be used on the
-        headword side or on the translation side of the lexicographic resource. One of:</para>
+      <para><literal>locationConstraint</literal>
+        <glossterm>optional</glossterm> (zero or one). If present, indicates whether this tag is
+        intended to be used on the headword side or on the translation side of the lexicographic
+        resource. One of:</para>
       <itemizedlist>
         <listitem>
-          <para><literal>headwordSide</literal> This tag is supposed to be used on the headword side of the lexicographic resource:
-            anywhere except inside a <code><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></code> object.</para>
+          <para><literal>headword</literal> This tag is supposed to be used only on the headword
+            side of the lexicographic resource: as <literal>inflectedForm</literal> of <literal>entry</literal>.</para>
         </listitem>
         <listitem>
-          <para><literal>translationSide</literal> This tag is supposed to be used on the translation side of the lexicographic resource:
-            inside a <code><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></code> object only.</para>
+          <para><literal>translationSide</literal> This tag is supposed to be used only on the translation side of the lexicographic resource:
+            as <literal>inflectedForm</literal> of <literal>headwordTranslation</literal>.</para>
         </listitem>
       </itemizedlist>
     </listitem>
@@ -64,13 +65,13 @@
         <glossterm>optional</glossterm> (zero, one or more). If present, says that:</para>
       <itemizedlist>
         <listitem>
-          <para>If this tag is used inside a <code>headwordTranslation</code>, then it is intended
-            to be used only inside a <code>headwordTranslation</code> labelled with this part of
+          <para>If this tag is used as a <code>inflectedForm</code> of a <code>headwordTranslation</code>, then
+            the <code>headwordTranslation</code> must have this part of
             speech.</para>
         </listitem>
         <listitem>
-          <para>If this tag is used outside a <code>headwordTranslation</code>, then it is intended
-            to be used only inside entries that are labelled with this part of speech.</para>
+          <para>If this tag is used as a <code>inflectedForm</code> of a <code>entry</code>, then 
+            the <code>entry</code> must have this part of speech.</para>
         </listitem>
       </itemizedlist>
     </listitem>
@@ -83,10 +84,10 @@
   <example>
     <title>XML</title>
     <programlisting>
-&lt;inflectedFormTag tag="..." sideConstraint="..."&gt;
+&lt;inflectedFormTag tag="..." locationConstraint="..."&gt;
     &lt;description&gt;...&lt;/description&gt;
     &lt;translationLanguageConstraint langCode="..."/&gt;
-    &lt;partOfSpeechConstraint value="..."/&gt;
+    &lt;partOfSpeechConstraint tag="..."/&gt;
     &lt;sameAs.../&gt;
 &lt;/tag&gt;
   </programlisting>
@@ -98,7 +99,7 @@
 {
     "tag": "...",
     "description": "...",
-    "sideConstraint": "...",
+    "locationConstraint": "...",
     "translationLanguageConstraint": ["..."]
     "partOfSpeechConstraints": ["..."],
     "sameAs": [...]
@@ -113,7 +114,7 @@
   a dmlex:InflectedFormTag ;
   dmlex:tag "..." ;
   dmlex:description "..." ;
-  dmlex:sideConstraint "..." ;
+  dmlex:locationConstraint "..." ;
   dmlex:translationLanguageConstraint "..." .
   dmlex:partOfSpeechConstraint "..." ;
   dmlex:sameAs ... ] .

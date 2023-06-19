@@ -10,7 +10,8 @@
     <title>
         <code>headwordExplanation</code>
     </title>
-    <para>Represents a statement in the target language which explains (but does not translate) the meaning of the headword. Example: <xref linkend="ex09"/>.</para>
+    <para>Represents a statement in the translation language which explains (but does not translate)
+        the meaning of the headword. Example: <xref linkend="ex09"/>.</para>
 
     <itemizedlist>
         <title>Child of</title>
@@ -27,12 +28,13 @@
         </listitem>
         <listitem>
             <para><literal>language</literal>
-                <glossterm>optional</glossterm> (zero or one) if only one translation language exists in thelexicographic resource,
-                <glossterm>required</glossterm> (one or more) otherwise.
-                IETF language tag. Indicates the language in which
-                this explanation is written. The <code><olink targetptr="xlingual_translation"
-                    >translationLanguage</olink></code> datatype can be used to explain the meaning of the
-                language codes that appear here and/or to constrain which language codes are allowed.</para>
+                <glossterm>optional</glossterm> (zero or one) if only one translation language
+                exists in the lexicographic resource, <glossterm>required</glossterm> (one or more)
+                otherwise. IETF language tag. Indicates the language in which this explanation is
+                written. The <code><olink targetptr="xlingual_translation"
+                        >translationLanguage</olink></code> datatype can be used to explain the
+                meaning of the language codes that appear here and/or to constrain which language
+                codes are allowed.</para>
         </listitem>
     </itemizedlist>
     
