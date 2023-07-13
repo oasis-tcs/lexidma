@@ -67,7 +67,8 @@
   <xi:include href="elements/relationType.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="elements/memberType.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   
-
-
+  <xi:include href="elements/placeholderMarker.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/headwordMarker.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/collocateMarker.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 
 </section>
