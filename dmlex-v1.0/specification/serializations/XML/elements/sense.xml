@@ -31,5 +31,15 @@
             <para><literal><olink targetptr="xml_example">&lt;example&gt;</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
         </listitem>
     </itemizedlist>
-    
+
+    <itemizedlist>
+        <title>Child elements if implementing the Crosslingual Module</title>
+        <listitem>
+            <para><literal><olink targetptr="xml_headwordExplanation">&lt;headwordExplanation&gt;</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
+        </listitem>
+        <listitem>
+            <para><literal><olink targetptr="xml_headwordTranslation">&lt;headwordTranslation&gt;</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
+        </listitem>
+    </itemizedlist>
+
 </section>

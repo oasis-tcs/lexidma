@@ -28,7 +28,7 @@
         <listitem>
             <para><literal>language</literal>
                 <glossterm>optional</glossterm> (zero or one) if only one translation language exists in thelexicographic resource,
-                <glossterm>required</glossterm> (one or more) otherwise.
+                <glossterm>required</glossterm> (exactly one) otherwise.
                 IETF language tag. Indicates the language of
                 this translation. The <code><olink targetptr="xlingual_translation"
                     >translationLanguage</olink></code> datatype can be used to explain the meaning of the

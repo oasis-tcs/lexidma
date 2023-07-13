@@ -45,6 +45,11 @@
   <xi:include href="elements/pronunciation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="elements/transcription.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="elements/example.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+
+  <xi:include href="elements/translationLanguage.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/headwordTranslation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/headwordExplanation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/exampleTranslation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   
 
 

@@ -5,20 +5,20 @@
                          %xinclude;
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
                          ]>
-<section id="xml_example">
-    <title>Element: <literal>&lt;example&gt;</literal></title>
-    <para>Implements the <olink targetptr="core_example">example</olink> object type.</para>
+<section id="xml_exampleTranslation">
+    <title>Element: <literal>&lt;exampleTranslation&gt;</literal></title>
+    <para>Implements the <olink targetptr="xlingual_exampleTranslation">exampleTranslation</olink> object type from the Crosslingual Module.</para>
 
     <itemizedlist>
         <title>Attributes</title>
         <listitem>
-            <para><literal>@sourceIdentity</literal> <glossterm>optional</glossterm></para>
+            <para><literal>@language</literal> <glossterm>optional</glossterm></para>
         </listitem>
         <listitem>
-            <para><literal>@sourceElaboration</literal> <glossterm>optional</glossterm></para>
-        </listitem>
-        <listitem>
-            <para><literal>@soundFile</literal> <glossterm>optional</glossterm></para>
+            <para><literal>@soundFile</literal>
+                <glossterm>optional</glossterm> if the ancestor <literal>&lt;lexicographicResource&gt;</literal>
+                contains exactly one <literal>&lt;translationLanguage&gt;</literal>,
+                <glossterm>required</glossterm> otherwise</para>
         </listitem>
     </itemizedlist>
     
@@ -32,11 +32,5 @@
         </listitem>
     </itemizedlist>
     
-    <itemizedlist>
-        <title>Child elements if implementing the Crosslingual Module</title>
-        <listitem>
-            <para><literal><olink targetptr="xml_exampleTranslation">&lt;exampleTranslation&gt;</olink></literal> <glossterm>optional</glossterm> (one or more)</para>
-        </listitem>
-    </itemizedlist>
     
 </section>
