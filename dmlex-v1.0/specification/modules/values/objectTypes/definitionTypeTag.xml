@@ -64,7 +64,7 @@
   <example>
     <title>RDF</title>
     <programlisting>
-&lt;entry&gt; dmlex:definitionTypeTag [
+&lt;lexicographicResource&gt; dmlex:definitionTypeTag [
   a dmlex:DefinitionTypeTag ;
   dmlex:tag "..." ;
   dmlex:description "..." ;

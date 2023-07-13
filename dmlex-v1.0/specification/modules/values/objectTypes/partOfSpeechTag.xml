@@ -93,7 +93,7 @@
   <example>
     <title>RDF</title>
     <programlisting>
-&lt;entry&gt; dmlex:partOfSpeechTag [
+&lt;lexicographicResource&gt; dmlex:partOfSpeechTag [
   a dmlex:PartOfSpeechTag ;
   dmlex:tag "..." ;
   dmlex:description "..." ;

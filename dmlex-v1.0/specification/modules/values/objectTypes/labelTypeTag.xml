@@ -64,7 +64,7 @@
   <example>
     <title>RDF</title>
     <programlisting>
-&lt;lexicograpgicResource&gt; dmlex:labelTypeTag [
+&lt;lexicographicResource&gt; dmlex:labelTypeTag [
   a dmlex:LabelTypeTag ;
   dmlex:tag "..." ;
   dmlex:description "..." ;

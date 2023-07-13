@@ -110,7 +110,7 @@
   <example>
     <title>RDF</title>
     <programlisting>
-&lt;entry&gt; dmlex:inflectedFormTag [
+&lt;lexicographicResource&gt; dmlex:inflectedFormTag [
   a dmlex:InflectedFormTag ;
   dmlex:tag "..." ;
   dmlex:description "..." ;

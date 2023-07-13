@@ -119,7 +119,7 @@
   <example>
     <title>RDF</title>
     <programlisting>
-&lt;entry&gt; dmlex:labelTag [
+&lt;lexicographicResource&gt; dmlex:labelTag [
   a dmlex:LabelTag ;
   dmlex:tag "..." ;
   dmlex:description "..." ;
