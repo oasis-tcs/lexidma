@@ -28,6 +28,7 @@
   <xi:include href="objectTypes/inflectedFormTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objectTypes/definitionTypeTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objectTypes/labelTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objectTypes/labelTypeTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objectTypes/sourceIdentityTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objectTypes/transcriptionSchemeTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   

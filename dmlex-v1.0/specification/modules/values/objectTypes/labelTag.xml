@@ -34,7 +34,17 @@
         <glossterm>optional</glossterm> (zero or one). Non-empty string.
         A human-readable description of what the tag means.</para>
     </listitem>
-
+    <listitem>
+      <para><literal>typeTag</literal>
+        <glossterm>optional</glossterm> (zero or one).
+        Non-empty string. An abbreviation, a code or
+        some other string of text which identifies the type of the label, for example <code>temporal</code> for
+        temporal labels (archaic, neologism etc) or <code>dialect</code> for labels of dialects. The
+        <code><olink targetptr="values_labelTypeTag">labelTypeTag</olink></code> object type can be used to explain
+        the meaning of the type tags, to constrain which type tags are allowed to occur in the
+        lexicographic resource, and to map them onto external inventories and ontologies.</para>
+    </listitem>
+    
     <listitem>
       <para><literal>sideConstraint</literal>
         <glossterm>optional</glossterm> (zero or one). If present, indicates whether this tag is intended to be used on the
@@ -82,7 +92,7 @@
   <example>
     <title>XML</title>
     <programlisting>
-&lt;labelTag tag="..." sideConstraint="..."&gt;
+&lt;labelTag tag="..." typeTag="..." sideConstraint="..."&gt;
     &lt;description&gt;...&lt;/description&gt;
     &lt;translationLanguageConstraint langCode="..."/&gt;
     &lt;partOfSpeechConstraint value="..."/&gt;
@@ -97,6 +107,7 @@
 {
     "tag": "...",
     "description": "...",
+    "typeTag": "...",
     "sideConstraint": "...",
     "translationLanguageConstraint": ["..."]
     "partOfSpeechConstraints": ["..."],
@@ -112,6 +123,7 @@
   a dmlex:LabelTag ;
   dmlex:tag "..." ;
   dmlex:description "..." ;
+  dmlex:typeTag "..." ;
   dmlex:sideConstraint "..." ;
   dmlex:translationLanguageConstraint "..." .
   dmlex:partOfSpeechConstraint "..." ;
