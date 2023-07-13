@@ -33,7 +33,7 @@
     </listitem>
     <listitem>
       <para><literal>memberType</literal>
-        <glossterm>required</glossterm> (exactly one). Non-empty string. A restrictions on the types
+        <glossterm>required</glossterm> (exactly one). Non-empty string. A restriction on the types
         of objects that can have this role. The possible values are:</para>
       <itemizedlist>
         <listitem>
@@ -82,12 +82,12 @@
         </listitem>
         <listitem>
           <para>
-            <code>none</code>: Members that have this role should not shown.</para>
+            <code>none</code>: Members that have this role should not be shown.</para>
         </listitem>
       </itemizedlist>
     </listitem>
     <listitem>
-      <para><literal><olink targetptr="core_sameAs">sameAs</olink></literal>
+      <para><literal><olink targetptr="linking_sameAs">sameAs</olink></literal>
         <glossterm>optional</glossterm> (zero or more).</para>
     </listitem>
   </itemizedlist>

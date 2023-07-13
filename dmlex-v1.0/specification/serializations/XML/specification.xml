@@ -62,7 +62,11 @@
   <xi:include href="elements/partOfSpeechConstraint.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="elements/sameAs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   
-
+  <xi:include href="elements/relation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/member.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/relationType.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/memberType.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  
 
 
 
