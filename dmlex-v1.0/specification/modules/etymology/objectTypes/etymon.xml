@@ -40,7 +40,7 @@
         </listitem>
         <listitem>
             <para><literal><olink targetptr="etymology_partOfSpeech">partOfSpeech</olink></literal>
-                <glossterm>optional</glossterm> (zero or one).</para>
+                <glossterm>optional</glossterm> (zero or more).</para>
         </listitem>
         <listitem>
             <para><literal>translation</literal>
@@ -57,8 +57,9 @@
     <example>
         <title>XML</title>
         <programlisting>
-&lt;etymon language="..." reconstructed="true" partOfSpeech="..."&gt;
+&lt;etymon language="..." reconstructed="true"&gt;
   &lt;text&gt;...&lt;/text&gt;
+  &lt;partOfSpeech tag="..."/&gt;
   &lt;translation&gt;...&lt;/translation&gt;
 &lt;/etymon&gt;
 </programlisting>
@@ -71,7 +72,7 @@
   "language": "...",
   "text": "...",
   "reconstructed": true,
-  "partOfSpeech": "...",
+  "partsOfSpeech": [...],
   "translation": "..."
 }
 </programlisting>

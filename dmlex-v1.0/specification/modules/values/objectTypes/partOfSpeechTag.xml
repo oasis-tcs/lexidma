@@ -44,11 +44,15 @@
       <itemizedlist>
         <listitem>
           <para><literal>headword</literal> This tag is supposed to be used only on the headword
-            side of the lexicographic resource: as <literal>partOfSpeech</literal> of <literal>entry</literal>.</para>
+            side of the lexicographic resource: as <literal>partOfSpeech</literal> of <literal><olink targetptr="core_entry">entry</olink></literal>.</para>
         </listitem>
         <listitem>
           <para><literal>translation</literal> This tag is supposed to be used only on the translation side of the lexicographic resource:
-            as <literal>partOfSpeech</literal> of <literal>headwordTranslation</literal>.</para>
+            as <literal>partOfSpeech</literal> of <literal><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></literal>.</para>
+        </listitem>
+        <listitem>
+          <para><literal>etymology</literal> This tag is supposed to be used only to describe etymolgy:
+            as <literal>partOfSpeech</literal> of <literal><olink targetptr="etymology_etymon">etymon</olink></literal>.</para>
         </listitem>
       </itemizedlist>
     </listitem>

@@ -19,6 +19,6 @@
   <xi:include href="extensions/lexicographicResource.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> 
   <xi:include href="objectTypes/originType.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> 
   <xi:include href="objectTypes/etymonLanguage.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> 
-  <xi:include href="extensions/partOfSpeechTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> 
+  <xi:include href="extensions/partOfSpeech.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> 
   
 </section>
