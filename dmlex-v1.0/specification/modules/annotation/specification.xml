@@ -20,6 +20,6 @@
   <xi:include href="extensions/example.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="extensions/exampleTranslation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objectTypes/headwordMarker.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="objectTypes/itemMarker.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="objectTypes/itemMarkerRoleTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="objectTypes/collocateMarker.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="extensions/label.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 </section>

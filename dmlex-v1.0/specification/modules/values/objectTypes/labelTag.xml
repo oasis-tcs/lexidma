@@ -52,11 +52,16 @@
       <itemizedlist>
         <listitem>
           <para><literal>headword</literal> This tag is supposed to be used on the headword side of the lexicographic resource:
-            anywhere except inside a <code><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></code> object.</para>
+            anywhere except inside a <code><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></code> object
+            or a <code><olink targetptr="annotation_collocateMarker">collocateMarker</olink></code> object.</para>
         </listitem>
         <listitem>
           <para><literal>translation</literal> This tag is supposed to be used on the translation side of the lexicographic resource:
             inside a <code><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></code> object only.</para>
+        </listitem>
+        <listitem>
+          <para><literal>collocate</literal> This tag is supposed to be used on the collocates annotated inside examples:
+            inside a <code><olink targetptr="annotation_collocateMarker">collocateMarker</olink></code> object only.</para>
         </listitem>
       </itemizedlist>
     </listitem>

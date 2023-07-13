@@ -8,7 +8,7 @@
 
 <section id="ex22">
 
-    <title>Using <code>itemMarker</code></title>
+    <title>Using <code>collocateMarker</code></title>
     <example>
         <title>Pseudocode</title>
         <programlisting>
@@ -17,10 +17,10 @@
         - headwordTranslation (text: pitva)
         - example (text: The coroner performed an autopsy.)
             - headwordMarker: "autopsy"
-            - itemMarker: "performed" (lemma: perform)
+            - collocateMarker: "performed" (lemma: perform)
             - exampleTranslation (text: Koroner provedl pitvu.)
                 - headwordMarker: "pitvu"
-                - itemMarker: "provedl" (lemma: provést)
+                - collocateMarker: "provedl" (lemma: provést)
 </programlisting>
     </example>
     <example>
@@ -32,12 +32,12 @@
         &lt;headwordTranslation&gt;&lt;text&gt;pitva&lt;/text&gt;&lt;/headwordTranslation&gt;
         &lt;example&gt;
             &lt;text&gt;
-                The coroner &lt;itemMarker lemma="perform"&gt;performed&lt;/itemMarker&gt;
+                The coroner &lt;collocateMarker lemma="perform"&gt;performed&lt;/collocateMarker&gt;
                 an &lt;headwordMarker&gt;autopsy&lt;/headwordMarker&gt;.
             &lt;/text&gt;
             &lt;exampleTranslation&gt;
                 &lt;text&gt;
-                    Koroner &lt;itemMarker lemma="provést"&gt;provedl&lt;/itemMarker&gt;
+                    Koroner &lt;collocateMarker lemma="provést"&gt;provedl&lt;/collocateMarker&gt;
                     &lt;headwordMarker&gt;pitvu&lt;/headwordMarker&gt;.
                 &lt;/text&gt;
             &lt;/exampleTranslation&gt;
@@ -60,7 +60,7 @@
       "headwordMarkers": [
         {"startIndex": 25, "endIndex": 32}
       ],
-      "itemMarkers": [
+      "collocateMarkers": [
         {"startIndex": 12, "endIndex": 21, "lemma": "perform"}
       ],
       "exampleTranslations": [{
@@ -68,7 +68,7 @@
         "headwordMarkers": [
           {"startIndex": 16, "endIndex": 21}
         ],
-        "itemMarkers": [
+        "collocateMarkers": [
           {"startIndex": 8, "endIndex": 15, "lemma": "provést"}
         ],
       }]

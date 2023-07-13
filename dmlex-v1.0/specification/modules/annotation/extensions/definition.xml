@@ -20,7 +20,7 @@
         <glossterm>optional</glossterm> (zero, one or more)</para>
     </listitem>
     <listitem>
-      <para><literal><olink targetptr="annotation_itemMarker">itemMarker</olink></literal>
+      <para><literal><olink targetptr="annotation_collocateMarker">collocateMarker</olink></literal>
         <glossterm>optional</glossterm> (zero, one or more)</para>
     </listitem>
   </itemizedlist>
@@ -32,7 +32,7 @@
     ...
     &lt;headwordMarker&gt;...&lt;/headwordMarker&gt;
     ...
-    &lt;itemMarker...&gt;...&lt;/itemMarker&gt;
+    &lt;collocateMarker...&gt;...&lt;/collocateMarker&gt;
     ...
 &lt;/definition&gt;
     </programlisting>
@@ -44,7 +44,7 @@
 {
     "text": "...",
     "headwordMarkers": [...],
-    "itemMarkers": [...],
+    "collocateMarkers": [...],
     ...
 }
     </programlisting>
@@ -55,7 +55,7 @@
 &lt;#sense&gt; dmlex:definition [
   dmlex:text "..." ;
   dmlex:headwordMarker ... ;
-  dmlex:itemMarker ... ] .
+  dmlex:collocateMarker ... ] .
       </programlisting>
   </example> 
   

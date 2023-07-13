@@ -46,7 +46,7 @@
         </listitem>
         <listitem>
           <para>
-            <code>itemMarker</code>: the object that has this role must be an <olink targetptr="inline_sense"><code>itemMarker</code></olink> (from the <olink targetptr="linking">Linking module</olink>).</para>
+            <code>collocate</code>: the object that has this role must be an <olink targetptr="annotation_collocateMarker"><code>collocateMarker</code></olink> (from the <olink targetptr="linking">Linking module</olink>).</para>
         </listitem>
       </itemizedlist>
     </listitem>
