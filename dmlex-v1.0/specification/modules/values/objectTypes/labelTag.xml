@@ -46,16 +46,16 @@
     </listitem>
     
     <listitem>
-      <para><literal>sideConstraint</literal>
+      <para><literal>locationConstraint</literal>
         <glossterm>optional</glossterm> (zero or one). If present, indicates whether this tag is intended to be used on the
         headword side or on the translation side of the lexicographic resource. One of:</para>
       <itemizedlist>
         <listitem>
-          <para><literal>headwordSide</literal> This tag is supposed to be used on the headword side of the lexicographic resource:
+          <para><literal>headword</literal> This tag is supposed to be used on the headword side of the lexicographic resource:
             anywhere except inside a <code><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></code> object.</para>
         </listitem>
         <listitem>
-          <para><literal>translationSide</literal> This tag is supposed to be used on the translation side of the lexicographic resource:
+          <para><literal>translation</literal> This tag is supposed to be used on the translation side of the lexicographic resource:
             inside a <code><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></code> object only.</para>
         </listitem>
       </itemizedlist>
@@ -92,7 +92,7 @@
   <example>
     <title>XML</title>
     <programlisting>
-&lt;labelTag tag="..." typeTag="..." sideConstraint="..."&gt;
+&lt;labelTag tag="..." typeTag="..." locationConstraint="..."&gt;
     &lt;description&gt;...&lt;/description&gt;
     &lt;translationLanguageConstraint langCode="..."/&gt;
     &lt;partOfSpeechConstraint value="..."/&gt;
@@ -108,7 +108,7 @@
     "tag": "...",
     "description": "...",
     "typeTag": "...",
-    "sideConstraint": "...",
+    "locationConstraint": "...",
     "translationLanguageConstraint": ["..."]
     "partOfSpeechConstraints": ["..."],
     "sameAs": [...]
@@ -124,7 +124,7 @@
   dmlex:tag "..." ;
   dmlex:description "..." ;
   dmlex:typeTag "..." ;
-  dmlex:sideConstraint "..." ;
+  dmlex:locationConstraint "..." ;
   dmlex:translationLanguageConstraint "..." .
   dmlex:partOfSpeechConstraint "..." ;
   dmlex:sameAs ... ] .

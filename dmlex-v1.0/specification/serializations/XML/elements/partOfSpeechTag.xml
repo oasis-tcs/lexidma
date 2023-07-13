@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
+                         ]>
+<section id="xml_partOfSpeechTag">
+    <title>Element: <literal>&lt;partOfSpeechTag&gt;</literal></title>
+    <para>Implements the <olink targetptr="values_partOfSpeechTag">partOfSpeechTag</olink> object type from the Controlled Values Module.</para>
+
+    <itemizedlist>
+        <title>Attributes</title>
+        <listitem>
+            <para><literal>@tag</literal> <glossterm>required</glossterm></para>
+        </listitem>
+        <listitem>
+            <para><literal>@locationConstraint</literal> <glossterm>optional</glossterm></para>
+        </listitem>
+    </itemizedlist>
+    
+    <itemizedlist>
+        <title>Child elements</title>
+        <listitem>
+            <para><literal>&lt;description&gt;</literal> <glossterm>optional</glossterm> (zero or one)</para>
+        </listitem>
+        <listitem>
+            <para><literal><olink targetptr="xml_translationLanguageConstraint">&lt;translationLanguageConstraint&gt;</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
+        </listitem>
+        <listitem>
+            <para><literal><olink targetptr="xml_sameAs">&lt;sameAs&gt;</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
+        </listitem>
+    </itemizedlist>
+
+</section>

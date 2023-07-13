@@ -39,7 +39,22 @@
     <itemizedlist>
         <title>Child elements if implementing the Controlled Values Module</title>
         <listitem>
-            <para><literal><olink targetptr="xml_tag">&lt;tag&gt;</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
+            <para><literal><olink targetptr="xml_definitionTypeTag">&lt;definitionTypeTag&gt;</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
+        </listitem>
+        <listitem>
+            <para><literal><olink targetptr="xml_inflectedFormTag">&lt;inflectedFormTag&gt;</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
+        </listitem>
+        <listitem>
+            <para><literal><olink targetptr="xml_labelTag">&lt;labelTag&gt;</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
+        </listitem>
+        <listitem>
+            <para><literal><olink targetptr="xml_labelTypeTag">&lt;labelTypeTag&gt;</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
+        </listitem>
+        <listitem>
+            <para><literal><olink targetptr="xml_partOfSpeechTag">&lt;partOfSpeechTag&gt;</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
+        </listitem>
+        <listitem>
+            <para><literal><olink targetptr="xml_sourceIdentityTag">&lt;sourceIdentityTag&gt;</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
         </listitem>
     </itemizedlist>
     

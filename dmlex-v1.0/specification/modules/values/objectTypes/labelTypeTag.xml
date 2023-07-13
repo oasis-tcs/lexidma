@@ -12,7 +12,7 @@
     <code>labelTypeTag</code>
   </title>
   <para>Represents one (of many) possible values for
-    <code>typeTag</code> of <code><olink targetptr="values_label">labelTag</olink></code>.
+    <code>typeTag</code> of <code><olink targetptr="values_labelTag">labelTag</olink></code>.
   </para>
 
   <itemizedlist>
@@ -34,10 +34,6 @@
         <glossterm>optional</glossterm> (zero or one). Non-empty string.
         A human-readable description of what the type tag means.</para>
     </listitem>
-    <listitem>
-      <para><literal><olink targetptr="values_sameAs">sameAs</olink></literal>
-        <glossterm>optional</glossterm> (zero, one or more).</para>
-    </listitem>
   </itemizedlist>
 
   <example>
@@ -45,7 +41,6 @@
     <programlisting>
 &lt;labelTypeTag tag="..."&gt;
     &lt;description&gt;...&lt;/description&gt;
-    &lt;sameAs.../&gt;
 &lt;/labelTypeTag&gt;
   </programlisting>
   </example>
@@ -55,8 +50,7 @@
     <programlisting>
 {
     "tag": "...",
-    "description": "...",
-    "sameAs": [...]
+    "description": "..."
 }
     </programlisting>
   </example>
@@ -67,8 +61,7 @@
 &lt;lexicographicResource&gt; dmlex:labelTypeTag [
   a dmlex:LabelTypeTag ;
   dmlex:tag "..." ;
-  dmlex:description "..." ;
-  dmlex:sameAs ... ] .
+  dmlex:description "..." .
     </programlisting>
   </example>
   

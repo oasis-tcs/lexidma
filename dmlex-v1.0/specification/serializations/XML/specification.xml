@@ -51,7 +51,17 @@
   <xi:include href="elements/headwordExplanation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="elements/exampleTranslation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   
-
+  <xi:include href="elements/partOfSpeechTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/inflectedFormTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/definitionTypeTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/labelTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/labelTypeTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/sourceIdentityTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/transcriptionSchemeTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/translationLanguageConstraint.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/partOfSpeechConstraint.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/sameAs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  
 
 
 

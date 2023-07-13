@@ -47,7 +47,7 @@
             side of the lexicographic resource: as <literal>inflectedForm</literal> of <literal>entry</literal>.</para>
         </listitem>
         <listitem>
-          <para><literal>translationSide</literal> This tag is supposed to be used only on the translation side of the lexicographic resource:
+          <para><literal>translation</literal> This tag is supposed to be used only on the translation side of the lexicographic resource:
             as <literal>inflectedForm</literal> of <literal>headwordTranslation</literal>.</para>
         </listitem>
       </itemizedlist>
