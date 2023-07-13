@@ -35,35 +35,16 @@
     </itemizedlist>
   </section>
   
-  <section>
-    <title>DMLex namespaces and validation artifacts for its XML serialization</title>
-    <para>TBD...</para>
-    <!--<para>This
-      <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>normative/informative<?oxy_custom_end?>
-      XML serialization of DMLex Version &version; makes use of all DMLex namespaces (both core and
-      modules) namespaces: <code><ulink
-        url="http://docs.oasis-open.org/lexidma/ns/dmlex-&cschversion;"
-        >http://docs.oasis-open.org/lexidma/ns/dmlex-&cschversion;</ulink></code>, and
-      <code>urn:oasis:names:tc:lexidma:module_01:1.0</code>, and
-      <code><?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>other namespace
-        identifiers as necessary<?oxy_custom_end?></code>. NAMESPACE SUPPORT IN XML WILL NEED </para>
-    <para>Validation artifacts
-      <?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>[specify type of
-      artifacts if any available at all]<?oxy_custom_end?> for this RDF serialization are available
-      at <ulink url="&this-loc;/schemas/filename1.filetype1"
-        >&this-loc;/schemas/filename1.filetype1</ulink>, <ulink
-          url="&this-loc;/schemas/filename2.filetype1">&this-loc;/schemas/filename2.filetype1</ulink>,
-      and <ulink url="&this-loc;/schemas/filename1.filetype2"
-        >&this-loc;/schemas/filename1.filetype2</ulink>. </para>
-    <note>
-      <para><?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>[Potential note
-        content]<?oxy_custom_end?></para>
-      <para>. </para>
-    </note>-->
-  </section>
-
   <xi:include href="elements/lexicographicResource.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="elements/entry.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/partOfSpeech.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/inflectedForm.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/sense.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/definition.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/label.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/pronunciation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/transcription.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/example.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   
 
 

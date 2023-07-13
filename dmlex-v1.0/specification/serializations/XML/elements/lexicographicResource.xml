@@ -7,13 +7,10 @@
                          ]>
 <section id="xml_lexicographicResource">
     <title>Element: <literal>&lt;lexicographicResource&gt;</literal></title>
-    <para>Implements the <olink targetptr="core_lexicographicResource">lexicographicResource</olink> data type.</para>
+    <para>Implements the <olink targetptr="core_lexicographicResource">lexicographicResource</olink> object type.</para>
 
-    <bridgehead>Attributes:</bridgehead>
     <itemizedlist>
-        <listitem>
-            <para><literal>@id</literal> <glossterm>required</glossterm></para>
-        </listitem>
+        <title>Attributes</title>
         <listitem>
             <para><literal>@title</literal> <glossterm>optional</glossterm></para>
         </listitem>
@@ -25,29 +22,34 @@
         </listitem>
     </itemizedlist>
     
-    <bridgehead>Child elements</bridgehead>
     <itemizedlist>
+        <title>Child elements</title>
         <listitem>
-            <para><literal><olink targetptr="xml_entry">&lt;entry&gt;</olink></literal> zero or more</para>
-        </listitem>
-        <listitem>
-            <para><literal><olink targetptr="xml_tag">&lt;tag&gt;</olink></literal> zero or more</para>
+            <para><literal><olink targetptr="xml_entry">&lt;entry&gt;</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
         </listitem>
     </itemizedlist>
     
-    <bridgehead>Child elements if implementing the <olink targetptr="xlingual">Crosslingual Module</olink></bridgehead>
     <itemizedlist>
+        <title>Child elements if implementing the <olink targetptr="values">Controlled Values Module</olink></title>
         <listitem>
-            <para><literal><olink targetptr="xml_translationLanguage">&lt;translationLanguage&gt;</olink></literal> one or more</para>
+            <para><literal><olink targetptr="xml_tag">&lt;tag&gt;</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
+        </listitem>
+    </itemizedlist>
+    
+    <itemizedlist>
+        <title>Child elements if implementing the <olink targetptr="xlingual">Crosslingual Module</olink></title>
+        <listitem>
+            <para><literal><olink targetptr="xml_translationLanguage">&lt;translationLanguage&gt;</olink></literal> <glossterm>required</glossterm> (one or more)</para>
         </listitem>
     </itemizedlist>
             
-    <bridgehead>Child elements if implementing the <olink targetptr="linking">Linking Module</olink></bridgehead>
     <itemizedlist>
+        <title>Child elements if implementing the <olink targetptr="linking">Linking Module</olink></title>
         <listitem>
-            <para><literal><olink targetptr="xml_relation">&lt;relation&gt;</olink></literal> zero or more </para>        </listitem>
+            <para><literal><olink targetptr="xml_relation">&lt;relation&gt;</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
+        </listitem>
         <listitem>
-            <para><literal><olink targetptr="xml_relationType">&lt;relationType&gt;</olink></literal> zero or more</para>
+            <para><literal><olink targetptr="xml_relationType">&lt;relationType&gt;</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
         </listitem>
     </itemizedlist>
     
