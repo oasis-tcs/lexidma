@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section id="ex23">
+
+    <title>Modelling etymology</title>
+    <example>
+        <title>Pseudocode</title>
+        <programlisting>
+- entry (id: cat-n, headword: cat)
+    - sense ...
+    - etymology
+        - origin
+            - etymon (language: enm, text: catte)
+        - origin
+            - etymon (language: ang, text: catt, translation: male cat)
+            - etymon (language: ang, text: catte, translation: female cat)
+        - origin
+            - etymon (language: gem-x-proto, text: kattuz, reconstructed: true)
+</programlisting>
+    </example>
+    <example>
+        <title>XML</title>
+        <programlisting>
+&lt;entry id="cat-n"&gt;
+    &lt;headword&gt;cat&lt;/headword&gt;
+    &lt;sense&gt;...&lt;/sense>
+    &lt;etymology>
+        &lt;origin>
+            &lt;etymon language="enm">
+                &lt;text>catte&lt;/text>
+            &lt;/etymon>
+        &lt;/origin>
+        &lt;origin>
+            &lt;etymon language="ang">
+                &lt;text>catt&lt;/text>
+                &lt;translation>male cat&lt;/translation>
+            &lt;/etymon>
+            &lt;etymon language="ang">
+                &lt;text>catte&lt;/text>
+                &lt;translation>female cat&lt;/translation>
+            &lt;/etymon>
+        &lt;/origin>
+        &lt;origin>
+            &lt;etymon language="gem-x-proto" reconstructed="true">
+                &lt;text>kattuz&lt;/text>
+            &lt;/etymon>
+        &lt;/origin>
+    &lt;/etymology>
+&lt;/entry&gt;
+</programlisting>
+    </example>
+    <example>
+        <title>JSON</title>
+        <programlisting>
+{
+  "id": "cat-n",
+  "headword": "cat",
+  "senses": [...],
+  "etymology": {
+    "origins" [{
+      "etymons": [
+        {"language": "enm", "text": "catte"}
+      ]
+    }, {
+      "etymons": [
+        {"language": "ang", "text": "catt", "translation": "male cat"},
+        {"language": "ang", "text": "catte", "translation": "female cat"}
+      ]
+    }, {
+      "etymons": [
+        {"language": "gem-x-proto", "text": "kattuz", "reconstructed": true}
+      ]
+    }]
+  }
+}
+</programlisting>
+    </example>
+</section>

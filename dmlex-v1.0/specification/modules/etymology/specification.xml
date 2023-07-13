@@ -11,6 +11,7 @@
   <para>
     Extends DMLex Core to support the modelling of etymological information in lexicographic resources.
   </para> 
+  <para>Example: <xref linkend="ex23"/>.</para>
   <xi:include href="extensions/entry.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> 
   <xi:include href="objectTypes/etymology.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> 
   <xi:include href="objectTypes/origin.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> 
