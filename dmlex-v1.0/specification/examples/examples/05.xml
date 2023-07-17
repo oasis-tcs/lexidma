@@ -23,11 +23,11 @@
     - partOfSpeechTag (tag: n-masc, description: masculine noun)
     - partOfSpeechTag (tag: n-fem, description: feminine noun)
     - inflectedFormTag (tag: sg-gen, description: singular genitive)
-        - partOfSpeechConstraint: n-masc
-        - partOfSpeechConstraint: n-fem
+        - forPartOfSpeech: n-masc
+        - forPartOfSpeech: n-fem
     - inflectedFormTag (tag: pl, description: plural)
-        - partOfSpeechConstraint: n-masc
-        - partOfSpeechConstraint: n-fem
+        - forPartOfSpeech: n-masc
+        - forPartOfSpeech: n-fem
 </programlisting>
     </example>
     <example>
@@ -53,14 +53,14 @@
     &lt;/partOfSpeechTag&gt;
     &lt;inflectedFormTag tag="sg-gen"&gt;
         &lt;description&gt;singular genitive&lt;/description&gt;
-        &lt;partOfSpeechConstraint tag="n-masc"/&gt;
-        &lt;partOfSpeechConstraint tag="n-fem"/&gt;
+        &lt;forPartOfSpeech tag="n-masc"/&gt;
+        &lt;forPartOfSpeech tag="n-fem"/&gt;
     &lt;/tag&gt;
     &lt;tag value="pl"&gt;
         &lt;description&gt;plural&lt;/description&gt;
         &lt;target value="inflectedTag"/&gt;
-        &lt;partOfSpeechConstraint tag="n-masc"/&gt;
-        &lt;partOfSpeechConstraint tag="n-fem"/&gt;
+        &lt;forPartOfSpeech tag="n-masc"/&gt;
+        &lt;forPartOfSpeech tag="n-fem"/&gt;
     &lt;/tag&gt;
 &lt;/lexicographicResource&gt;
 </programlisting>
@@ -93,11 +93,11 @@
     "inflectedFormTags": [{
         "tag": "sg-gen",
         "description": "singular genitive"
-        "partOfSpeechConstraints": ["n-masc", "n-fem"]
+        "forPartsOfSpeech": ["n-masc", "n-fem"]
     }, {
         "tag": "pl",
         "description": "plural",
-        "partOfSpeechConstraints": ["n-masc", "n-fem"]
+        "forPartsOfSpeech": ["n-masc", "n-fem"]
     }]
 }
 </programlisting>

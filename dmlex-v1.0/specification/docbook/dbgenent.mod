@@ -60,7 +60,7 @@
 <!ENTITY previous-loc "http://docs.oasis-open.org/lexidma/dmlex/v&version;/&pstage;">
 <!ENTITY latest-loc "http://docs.oasis-open.org/lexidma/dmlex/v&version;">
 
-<!ENTITY pubdate "13 July &pubyear;">
+<!ENTITY pubdate "17 July &pubyear;">
 
 <!ENTITY pubyear "2023">
 <!ENTITY releaseinfo "Standards Track Work Product">

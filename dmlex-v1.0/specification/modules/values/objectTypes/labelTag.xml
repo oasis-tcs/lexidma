@@ -46,35 +46,33 @@
     </listitem>
     
     <listitem>
-      <para><literal>locationConstraint</literal>
-        <glossterm>optional</glossterm> (zero or one). If present, indicates whether this tag is intended to be used on the
-        headword side or on the translation side of the lexicographic resource. One of:</para>
-      <itemizedlist>
-        <listitem>
-          <para><literal>headword</literal> This tag is supposed to be used on the headword side of the lexicographic resource:
-            anywhere except inside a <code><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></code> object
-            or a <code><olink targetptr="annotation_collocateMarker">collocateMarker</olink></code> object.</para>
-        </listitem>
-        <listitem>
-          <para><literal>translation</literal> This tag is supposed to be used on the translation side of the lexicographic resource:
-            inside a <code><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></code> object only.</para>
-        </listitem>
-        <listitem>
-          <para><literal>collocate</literal> This tag is supposed to be used on the collocates annotated inside examples:
-            inside a <code><olink targetptr="annotation_collocateMarker">collocateMarker</olink></code> object only.</para>
-        </listitem>
-      </itemizedlist>
+      <para><literal>forHeadwords</literal>
+        <glossterm>optional</glossterm> (zero ore one). Boolean. If present, indicates whether this tag is
+        intended to be used on the headword
+        side of the lexicographic resource: as <literal>inflectedForm</literal> of <literal><olink targetptr="core_entry">entry</olink></literal>.</para>
     </listitem>
     <listitem>
-      <para><literal>translationLanguageConstraint</literal>
+      <para><literal>forTranslations</literal>
+        <glossterm>optional</glossterm> (zero ore one). Boolean. If present, indicates whether this tag is
+        intended to be used on the translation side of the lexicographic resource:
+        as <literal>headwordTranslation</literal> of <literal><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></literal>.</para>
+    </listitem>
+    <listitem>
+      <para><literal>forCollocates</literal>
+        <glossterm>optional</glossterm> (zero ore one). Boolean. If present, indicates whether this tag is
+        intended to be used on the collocates annotated inside examples:
+        inside a <code><olink targetptr="annotation_collocateMarker">collocateMarker</olink></code> object.</para>
+    </listitem>
+    
+    <listitem>
+      <para><literal>forLanguage</literal>
         <glossterm>optional</glossterm> (zero, one or more). If present, says that if this tag is
         being used inside a <code><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></code> object,
         then it is intended to be used only inside a <code>headwordTranslation</code> object labelled with this language.</para>
     </listitem>
     
-
     <listitem>
-      <para><literal>partOfSpeechConstraint</literal>
+      <para><literal>forPartOfSpeech</literal>
         <glossterm>optional</glossterm> (zero, one or more). If present, says that:</para>
       <itemizedlist>
         <listitem>
@@ -97,10 +95,10 @@
   <example>
     <title>XML</title>
     <programlisting>
-&lt;labelTag tag="..." typeTag="..." locationConstraint="..."&gt;
+&lt;labelTag tag="..." typeTag="..." forHeadwords="true" forTranslations="true" forCollocates="true"&gt;
     &lt;description&gt;...&lt;/description&gt;
-    &lt;translationLanguageConstraint langCode="..."/&gt;
-    &lt;partOfSpeechConstraint value="..."/&gt;
+    &lt;forLanguage langCode="..."/&gt;
+    &lt;forPartOfSpeech tag="..."/&gt;
     &lt;sameAs.../&gt;
 &lt;/tag&gt;
   </programlisting>
@@ -113,9 +111,11 @@
     "tag": "...",
     "description": "...",
     "typeTag": "...",
-    "locationConstraint": "...",
-    "translationLanguageConstraint": ["..."]
-    "partOfSpeechConstraints": ["..."],
+    "forHeadwords": true,
+    "forTranslations": true,
+    "forCollocates": true,
+    "forLanguages": ["..."]
+    "forPartsOfSpeech": ["..."],
     "sameAs": [...]
 }
     </programlisting>
@@ -129,9 +129,11 @@
   dmlex:tag "..." ;
   dmlex:description "..." ;
   dmlex:typeTag "..." ;
-  dmlex:locationConstraint "..." ;
-  dmlex:translationLanguageConstraint "..." .
-  dmlex:partOfSpeechConstraint "..." ;
+  dmlex:forHeadwords "..." ;
+  dmlex:forTranslations "..." ;
+  dmlex:forCollocates "..." ;
+  dmlex:forLanguage "..." .
+  dmlex:forPartOfSpeech "..." ;
   dmlex:sameAs ... ] .
     </programlisting>
   </example>

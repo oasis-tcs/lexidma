@@ -5,18 +5,17 @@
                          %xinclude;
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
                          ]>
-<section id="xml_translationLanguageConstraint">
-    <title>Element: <literal>&lt;translationLanguageConstraint&gt;</literal></title>
-    <para>Implements the <literal>translationLanguageConstraint</literal> property of the
-        <olink targetptr="values_partOfSpeechTag">partOfSpeechTag</olink>,
+<section id="xml_forPartOfSpeech">
+    <title>Element: <literal>&lt;forPartOfSpeech&gt;</literal></title>
+    <para>Implements the <literal>forPartOfSpeech</literal> property of the
         <olink targetptr="values_inflectedFormTag">inflectedFormTag</olink>
-        and <olink targetptr="values_labelTag">labelTag</olink>
+        and and <olink targetptr="values_labelTag">labelTag</olink>
         object types from the Controlled Values Module.</para>
 
     <itemizedlist>
         <title>Attributes</title>
         <listitem>
-            <para><literal>@langCode</literal> <glossterm>required</glossterm></para>
+            <para><literal>@tag</literal> <glossterm>required</glossterm></para>
         </listitem>
     </itemizedlist>
     
