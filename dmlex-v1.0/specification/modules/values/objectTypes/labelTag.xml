@@ -141,8 +141,6 @@
   <example>
     <title>Relational database</title>
     <graphic fileref="modules/values/databaseDiagrams/labelTag.svg" contentwidth="16cm"/>
-    <para>The <code>partOfSpeechConstraints</code> column is a comma-delimited list of part-of-speech labels.</para>
-    <para>The <code>translationLanguageConstraints</code> column is a comma-delimited list of language codes.</para>
   </example>
   
 </section>

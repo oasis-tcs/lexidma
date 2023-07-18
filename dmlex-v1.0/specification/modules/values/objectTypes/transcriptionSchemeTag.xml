@@ -104,7 +104,6 @@
   <example>
     <title>Relational database</title>
     <graphic fileref="modules/values/databaseDiagrams/transcriptionSchemeTag.svg" contentwidth="16cm"/>
-    <para>The <code>forLanguages</code> column is a comma-delimited list of language codes.</para>
   </example>
   
 </section>

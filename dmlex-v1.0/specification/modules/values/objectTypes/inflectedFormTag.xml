@@ -127,8 +127,6 @@
   <example>
     <title>Relational database</title>
     <graphic fileref="modules/values/databaseDiagrams/inflectedFormTag.svg" contentwidth="16cm"/>
-    <para>The <code>forPartsOfSpeech</code> column is a comma-delimited list of part-of-speech labels.</para>
-    <para>The <code>forLanguages</code> column is a comma-delimited list of language codes.</para>
   </example>
   
 </section>
