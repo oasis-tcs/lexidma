@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
+                         ]>
+<section id="xml_definition">
+    <title>Element: <literal>&lt;definition&gt;</literal></title>
+    <para>Implements the <olink targetptr="core_definition">definition</olink> object type.</para>
+
+    <itemizedlist>
+        <title>Attributes</title>
+        <listitem>
+            <para><literal>@definitionType</literal> <glossterm>optional</glossterm></para>
+        </listitem>
+    </itemizedlist>
+    
+    <itemizedlist>
+        <title>Text content</title>
+        <listitem>
+            <para><glossterm>Required</glossterm>, implements the <literal>text</literal> property. If implementing the Annotation Module
+                <literal>&lt;definition&gt;</literal> can contain a mixture of plain text, 
+                <literal><olink targetptr="xml_headwordMarker">&lt;headwordMarker&gt;</olink></literal> elements
+                and <literal><olink targetptr="xml_collocateMarker">&lt;collocateMarker&gt;</olink></literal> elements.
+            </para>
+        </listitem>
+    </itemizedlist>
+    
+    
+</section>

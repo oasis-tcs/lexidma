@@ -35,4 +35,5 @@
   <xi:include href="examples/20.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="examples/21.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="examples/22.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="examples/23.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 </section>

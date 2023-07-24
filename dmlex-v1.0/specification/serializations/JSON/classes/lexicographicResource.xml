@@ -7,47 +7,45 @@
                          ]>
 <section id="json_lexicographicResource">
     <title>Class: <literal>lexicographicResource</literal></title>
-    <para>Implements the <olink targetptr="core_lexicographicResource">lexicographicResource</olink> data type.</para>
+    <para>Implements the <olink targetptr="core_lexicographicResource">lexicographicResource</olink> object type.</para>
 
-    <bridgehead>Type</bridgehead>
-    <para>JSON object: <literal>{...}</literal></para>
-
-    <bridgehead>Members</bridgehead>
     <itemizedlist>
+        <title>Members</title>
         <listitem>
-            <para><literal>"id"</literal> string <glossterm>required</glossterm></para>
+            <para><literal>"title"</literal> <glossterm>optional</glossterm>, string</para>
         </listitem>
         <listitem>
-            <para><literal>"title"</literal> string <glossterm>optional</glossterm></para>
+            <para><literal>"uri"</literal> <glossterm>optional</glossterm>, string</para>
         </listitem>
         <listitem>
-            <para><literal>"uri"</literal> string <glossterm>optional</glossterm></para>
+            <para><literal>"language"</literal> <glossterm>required</glossterm>, string</para>
         </listitem>
         <listitem>
-            <para><literal>"language"</literal> string <glossterm>required</glossterm></para>
-        </listitem>
-        <listitem>
-            <para><literal>"entries"</literal> array of zero or more <literal><olink targetptr="json_entry">entry</olink></literal> objects, <glossterm>optional</glossterm></para>
-        </listitem>
-        <listitem>
-            <para><literal>"tags"</literal> array of zero or more <literal><olink targetptr="json_tag">tag</olink></literal> objects, <glossterm>optional</glossterm></para>
+            <para><literal>"entries"</literal> <glossterm>optional</glossterm>, array of zero or more <literal><olink targetptr="json_entry">entry</olink></literal> objects</para>
         </listitem>
     </itemizedlist>
     
-    <bridgehead>Members if implementing the <olink targetptr="xlingual">Crosslingual Module</olink></bridgehead>
     <itemizedlist>
+        <title>Members if implementing the <olink targetptr="values">Controlled Values Module</olink></title>
         <listitem>
-            <para><literal>"translationLanguages"</literal> array of one or more <literal><olink targetptr="json_translationLanguage">translationLanguage</olink></literal> objects, <glossterm>required</glossterm></para>
+            <para><literal>"tags"</literal> <glossterm>optional</glossterm>, array of zero or more <literal><olink targetptr="json_tag">tag</olink></literal> objects</para>
+        </listitem>
+    </itemizedlist>
+
+    <itemizedlist>
+        <title>Members if implementing the <olink targetptr="xlingual">Crosslingual Module</olink></title>
+        <listitem>
+            <para><literal>"translationLanguages"</literal> <glossterm>required</glossterm>, array of one or more <literal><olink targetptr="json_translationLanguage">translationLanguage</olink></literal> objects</para>
         </listitem>
     </itemizedlist>
     
-    <bridgehead>Members if implementing the <olink targetptr="linking">Linking Module</olink></bridgehead>
     <itemizedlist>
+        <title>Members if implementing the <olink targetptr="linking">Linking Module</olink></title>
         <listitem>
-            <para><literal>"relations"</literal> array of zero or more <literal><olink targetptr="json_relation">relation</olink></literal> objects, <glossterm>optional</glossterm></para>
+            <para><literal>"relations"</literal> <glossterm>optional</glossterm>, array of zero or more <literal><olink targetptr="json_relation">relation</olink></literal> objects</para>
         </listitem>
         <listitem>
-            <para><literal>"relationTypes"</literal> array of zero or more <literal><olink targetptr="json_relationType">relationType</olink></literal> objects, <glossterm>optional</glossterm></para>
+            <para><literal>"relationTypes"</literal> <glossterm>optional</glossterm>, array of zero or more <literal><olink targetptr="json_relationType">relationType</olink></literal> objects</para>
         </listitem>
     </itemizedlist>
     

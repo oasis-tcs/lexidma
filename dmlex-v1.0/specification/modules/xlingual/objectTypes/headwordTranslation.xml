@@ -28,12 +28,12 @@
     </listitem>
     <listitem>
       <para><literal>language</literal>
-        <glossterm>optional</glossterm> (zero or one) if only one translation language exists in the lexicographic resource,
-        <glossterm>required</glossterm> (one or more) otherwise.
-        IETF language tag. Indicates the language of
-        this translation. The <code><olink targetptr="xlingual_translation"
-            >translationLanguage</olink></code> datatype can be used to explain the meaning of the
-        language codes that appear here and/or to constrain which language codes are allowed.</para>
+        <glossterm>optional</glossterm> (zero or one) if only one translation language exists in the
+        lexicographic resource, <glossterm>required</glossterm> (exactly one) otherwise. IETF
+        language tag. Indicates the language of this translation. The <code><olink
+            targetptr="xlingual_translation">translationLanguage</olink></code> datatype can be used
+        to explain the meaning of the language codes that appear here and/or to constrain which
+        language codes are allowed.</para>
     </listitem>
     <listitem>
       <para><literal>listingOrder</literal>

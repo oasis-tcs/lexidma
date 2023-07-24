@@ -30,8 +30,8 @@
         <glossterm>optional</glossterm> (zero or one). Non-empty string. An indication of the role
         the member has in this relation: whether it is the hypernym or the hyponym (in a
         hyperonymy/hyponymy relation), or whether it is one of the synonyms (in a synonymy
-        relation), and so on. You can use <code><olink targetptr="linking_memberRoleTag"
-            >memberRoleTag</olink></code> objects to explain those roles and to constrain which
+        relation), and so on. You can use <code><olink targetptr="linking_memberType"
+            >memberType</olink></code> objects to explain those roles and to constrain which
         relations are allowed to contain which roles, what their object types are allowed to be (eg.
         entries or senses) and how many members with this role each relation is allowed to
         have.</para>

@@ -34,32 +34,45 @@
         <glossterm>optional</glossterm> (zero or one). Non-empty string.
         A human-readable description of what the tag means.</para>
     </listitem>
-
     <listitem>
-      <para><literal>sideConstraint</literal>
-        <glossterm>optional</glossterm> (zero or one). If present, indicates whether this tag is intended to be used on the
-        headword side or on the translation side of the lexicographic resource. One of:</para>
-      <itemizedlist>
-        <listitem>
-          <para><literal>headwordSide</literal> This tag is supposed to be used on the headword side of the lexicographic resource:
-            anywhere except inside a <code><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></code> object.</para>
-        </listitem>
-        <listitem>
-          <para><literal>translationSide</literal> This tag is supposed to be used on the translation side of the lexicographic resource:
-            inside a <code><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></code> object only.</para>
-        </listitem>
-      </itemizedlist>
+      <para><literal>typeTag</literal>
+        <glossterm>optional</glossterm> (zero or one).
+        Non-empty string. An abbreviation, a code or
+        some other string of text which identifies the type of the label, for example <code>temporal</code> for
+        temporal labels (archaic, neologism etc) or <code>dialect</code> for labels of dialects. The
+        <code><olink targetptr="values_labelTypeTag">labelTypeTag</olink></code> object type can be used to explain
+        the meaning of the type tags, to constrain which type tags are allowed to occur in the
+        lexicographic resource, and to map them onto external inventories and ontologies.</para>
+    </listitem>
+    
+    <listitem>
+      <para><literal>forHeadwords</literal>
+        <glossterm>optional</glossterm> (zero ore one). Boolean. If present, indicates whether this tag is
+        intended to be used on the headword
+        side of the lexicographic resource: as <literal>inflectedForm</literal> of <literal><olink targetptr="core_entry">entry</olink></literal>.</para>
     </listitem>
     <listitem>
-      <para><literal>translationLanguageConstraint</literal>
+      <para><literal>forTranslations</literal>
+        <glossterm>optional</glossterm> (zero ore one). Boolean. If present, indicates whether this tag is
+        intended to be used on the translation side of the lexicographic resource:
+        as <literal>headwordTranslation</literal> of <literal><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></literal>.</para>
+    </listitem>
+    <listitem>
+      <para><literal>forCollocates</literal>
+        <glossterm>optional</glossterm> (zero ore one). Boolean. If present, indicates whether this tag is
+        intended to be used on the collocates annotated inside examples:
+        inside a <code><olink targetptr="annotation_collocateMarker">collocateMarker</olink></code> object.</para>
+    </listitem>
+    
+    <listitem>
+      <para><literal>forLanguage</literal>
         <glossterm>optional</glossterm> (zero, one or more). If present, says that if this tag is
         being used inside a <code><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></code> object,
         then it is intended to be used only inside a <code>headwordTranslation</code> object labelled with this language.</para>
     </listitem>
     
-
     <listitem>
-      <para><literal>partOfSpeechConstraint</literal>
+      <para><literal>forPartOfSpeech</literal>
         <glossterm>optional</glossterm> (zero, one or more). If present, says that:</para>
       <itemizedlist>
         <listitem>
@@ -82,10 +95,10 @@
   <example>
     <title>XML</title>
     <programlisting>
-&lt;labelTag tag="..." sideConstraint="..."&gt;
+&lt;labelTag tag="..." typeTag="..." forHeadwords="true" forTranslations="true" forCollocates="true"&gt;
     &lt;description&gt;...&lt;/description&gt;
-    &lt;translationLanguageConstraint langCode="..."/&gt;
-    &lt;partOfSpeechConstraint value="..."/&gt;
+    &lt;forLanguage langCode="..."/&gt;
+    &lt;forPartOfSpeech tag="..."/&gt;
     &lt;sameAs.../&gt;
 &lt;/tag&gt;
   </programlisting>
@@ -97,9 +110,12 @@
 {
     "tag": "...",
     "description": "...",
-    "sideConstraint": "...",
-    "translationLanguageConstraint": ["..."]
-    "partOfSpeechConstraints": ["..."],
+    "typeTag": "...",
+    "forHeadwords": true,
+    "forTranslations": true,
+    "forCollocates": true,
+    "forLanguages": ["..."]
+    "forPartsOfSpeech": ["..."],
     "sameAs": [...]
 }
     </programlisting>
@@ -108,13 +124,16 @@
   <example>
     <title>RDF</title>
     <programlisting>
-&lt;entry&gt; dmlex:labelTag [
+&lt;lexicographicResource&gt; dmlex:labelTag [
   a dmlex:LabelTag ;
   dmlex:tag "..." ;
   dmlex:description "..." ;
-  dmlex:sideConstraint "..." ;
-  dmlex:translationLanguageConstraint "..." .
-  dmlex:partOfSpeechConstraint "..." ;
+  dmlex:typeTag "..." ;
+  dmlex:forHeadwords "..." ;
+  dmlex:forTranslations "..." ;
+  dmlex:forCollocates "..." ;
+  dmlex:forLanguage "..." .
+  dmlex:forPartOfSpeech "..." ;
   dmlex:sameAs ... ] .
     </programlisting>
   </example>
@@ -122,8 +141,6 @@
   <example>
     <title>Relational database</title>
     <graphic fileref="modules/values/databaseDiagrams/labelTag.svg" contentwidth="16cm"/>
-    <para>The <code>partOfSpeechConstraints</code> column is a comma-delimited list of part-of-speech labels.</para>
-    <para>The <code>translationLanguageConstraints</code> column is a comma-delimited list of language codes.</para>
   </example>
   
 </section>

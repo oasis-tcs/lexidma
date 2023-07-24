@@ -35,32 +35,25 @@
     </listitem>
 
     <listitem>
-      <para><literal>sideConstraint</literal>
-        <glossterm>optional</glossterm> (zero or one). If present, indicates whether this tag is intended to be used on the
-        headword side or on the translation side of the lexicographic resource. One of:</para>
-      <itemizedlist>
-        <listitem>
-          <para><literal>headwordSide</literal> This tag is supposed to be used on the headword side of the lexicographic resource:
-            anywhere except inside a <code><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></code> object.</para>
-        </listitem>
-        <listitem>
-          <para><literal>translationSide</literal> This tag is supposed to be used on the translation side of the lexicographic resource:
-            inside a <code><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></code> object only.</para>
-        </listitem>
-      </itemizedlist>
+      <para><literal>forHeadwords</literal>
+        <glossterm>optional</glossterm> (zero ore one). Boolean. If present, indicates whether this tag is
+        intended to be used on the headword
+        side of the lexicographic resource: inside a <literal>pronunciation</literal> of <literal><olink targetptr="core_entry">entry</olink></literal>.</para>
     </listitem>
     <listitem>
-      <para><literal>translationLanguageConstraint</literal>
+      <para><literal>forTranslations</literal>
+        <glossterm>optional</glossterm> (zero ore one). Boolean. If present, indicates whether this tag is
+        intended to be used on the translation side of the lexicographic resource:
+        inside a <literal>pronunciation</literal> of <literal><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></literal>.</para>
+    </listitem>
+
+    <listitem>
+      <para><literal>forLanguage</literal>
         <glossterm>optional</glossterm> (zero, one or more). If present, says that if this tag is
         being used inside a <code><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></code> object,
         then it is intended to be used only inside a <code>headwordTranslation</code> object labelled with this language.</para>
     </listitem>
     
-
-    <!--<listitem>
-      <para><literal><olink targetptr="values_sameAs">sameAs</olink></literal>
-        <glossterm>optional</glossterm> (zero, one or more).</para>
-    </listitem>-->
   </itemizedlist>
   
   <itemizedlist>
@@ -75,9 +68,9 @@
   <example>
     <title>XML</title>
     <programlisting>
-&lt;transcriptionSchemeTag tag="..." sideConstraint="..."&gt;
+&lt;transcriptionSchemeTag tag="..." forHeadwords="true" forTranslations="true"&gt;
     &lt;description&gt;...&lt;/description&gt;
-    &lt;translationLanguageConstraint langCode="..."/&gt;
+    &lt;forLanguage langCode="..."/&gt;
 &lt;/tag&gt;
   </programlisting>
   </example>
@@ -88,8 +81,9 @@
 {
     "tag": "...",
     "description": "...",
-    "sideConstraint": "...",
-    "translationLanguageConstraint": ["..."]
+    "forHeadwords": true,
+    "forTranslations": true,
+    "forLanguages": ["..."]
 }
     </programlisting>
   </example>
@@ -97,19 +91,19 @@
   <example>
     <title>RDF</title>
     <programlisting>
-&lt;entry&gt; dmlex:transcriptionSchemeTag [
+&lt;lexicographicResource&gt; dmlex:transcriptionSchemeTag [
   a dmlex:PartOfSpeechTag ;
   dmlex:tag "..." ;
   dmlex:description "..." ;
-  dmlex:sideConstraint "..." ;
-  dmlex:translationLanguageConstraint "..." .
+  dmlex:forHeadwords "..." ;
+  dmlex:forTranslations "..." ;
+  dmlex:forLanguage "..." .
     </programlisting>
   </example>
   
   <example>
     <title>Relational database</title>
     <graphic fileref="modules/values/databaseDiagrams/transcriptionSchemeTag.svg" contentwidth="16cm"/>
-    <para>The <code>translationLanguageConstraints</code> column is a comma-delimited list of language codes.</para>
   </example>
   
 </section>

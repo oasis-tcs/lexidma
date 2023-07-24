@@ -6,8 +6,8 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
 ]>
 
-<section id="annotation_itemMarker">
-  <title><code>itemMarker</code></title>
+<section id="annotation_collocateMarker">
+  <title><code>collocateMarker</code></title>
   <para>Marks up a substring other than the headword inside an example, inside an example
     translation or inside a definition. An application can use the inline markup to highlight
     collocates or constituents. Example: <xref linkend="ex22"/>.</para>
@@ -44,12 +44,12 @@
         that.)</para>
     </listitem>
     <listitem>
-      <para><literal>role</literal>
-        <glossterm>optional</glossterm> (zero, one or more). Non-empty string. Can be used to
-        communicate facts about the role of the item in the sentence, for example its syntactic role
+      <para><literal><olink targetptr="annotation_label">label</olink></literal>
+        <glossterm>optional</glossterm> (zero, one or more).
+        Can be used to communicate facts about the role or type of the item in the sentence, for example its syntactic role
         (subject, direct object etc.), its semantic role (agent, affected etc) or its semantic type
-        (human, institution etc.) The <code><olink targetptr="annotation_itemMarkerRoleTag">itemMarkerRoleTag</olink></code> object
-        type can be used to explain and/or constrain the item types that are allowed to appear in
+        (human, institution etc.) The <code><olink targetptr="values_labelTag">labelTag</olink></code> object
+        type can be used to explain and/or constrain the collocate labels that are allowed to appear in
         the lexicographic resource.</para>
     </listitem>
   </itemizedlist>
@@ -59,7 +59,7 @@
     <programlisting>
 &lt;itemMarker id="..." lemma="..."&gt;
     ...
-    &lt;role tag="..."/&gt;
+    &lt;label tag="..."/&gt;
 &lt;/itemMarker&gt;
     </programlisting>
   </example>
@@ -72,7 +72,7 @@
     "startIndex": ...,
     "endIndex": ...,
     "lemma": "...",
-    "roles": ["..."]
+    "labels": ["..."]
 }
     </programlisting>
   </example>
@@ -84,12 +84,12 @@
   dmlex:startIndex 0 ;
   dmlex:endIndex 0 ;
   dmlex:lemma "..." ;
-  dmlex:role ... ] .
+  dmlex:label ... ] .
       </programlisting>
   </example>
   <example>
     <title>SQL</title>
-    <graphic fileref="modules/annotation/databaseDiagrams/itemMarker.svg" contentwidth="16cm"/>
+    <graphic fileref="modules/annotation/databaseDiagrams/collocateMarker.svg" contentwidth="16cm"/>
   </example>
 
 </section>

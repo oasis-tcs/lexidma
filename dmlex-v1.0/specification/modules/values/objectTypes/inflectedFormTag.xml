@@ -37,31 +37,32 @@
     </listitem>
 
     <listitem>
-      <para><literal>locationConstraint</literal>
-        <glossterm>optional</glossterm> (zero or one). If present, indicates whether this tag is
-        intended to be used on the headword side or on the translation side of the lexicographic
-        resource. One of:</para>
+      <para><literal>forHeadwords</literal>
+        <glossterm>optional</glossterm> (zero ore one). Boolean. If present, indicates whether this tag is
+        intended to be used on the headword
+        side of the lexicographic resource: as <literal>inflectedForm</literal> of <literal><olink targetptr="core_entry">entry</olink></literal>.</para>
+    </listitem>
+    <listitem>
+      <para><literal>forTranslations</literal>
+        <glossterm>optional</glossterm> (zero ore one). Boolean. If present, indicates whether this tag is
+        intended to be used on the translation side of the lexicographic resource:
+        as <literal>headwordTranslation</literal> of <literal><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></literal>.</para>
+    </listitem>
+
+    <listitem>
+      <para><literal>forLanguage</literal>
+        <glossterm>optional</glossterm> (zero, one or more). If present, says that:</para>
       <itemizedlist>
         <listitem>
-          <para><literal>headword</literal> This tag is supposed to be used only on the headword
-            side of the lexicographic resource: as <literal>inflectedForm</literal> of <literal>entry</literal>.</para>
-        </listitem>
-        <listitem>
-          <para><literal>translationSide</literal> This tag is supposed to be used only on the translation side of the lexicographic resource:
-            as <literal>inflectedForm</literal> of <literal>headwordTranslation</literal>.</para>
+          <para>If this tag is
+            being used inside a <code><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></code> object,
+            then it is intended to be used only inside a <code>headwordTranslation</code> object labelled with this language.</para>
         </listitem>
       </itemizedlist>
     </listitem>
-    <listitem>
-      <para><literal>translationLanguageConstraint</literal>
-        <glossterm>optional</glossterm> (zero, one or more). If present, says that if this tag is
-        being used inside a <code><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></code> object,
-        then it is intended to be used only inside a <code>headwordTranslation</code> object labelled with this language.</para>
-    </listitem>
-    
 
     <listitem>
-      <para><literal>partOfSpeechConstraint</literal>
+      <para><literal>forPartOfSpeech</literal>
         <glossterm>optional</glossterm> (zero, one or more). If present, says that:</para>
       <itemizedlist>
         <listitem>
@@ -70,7 +71,7 @@
             speech.</para>
         </listitem>
         <listitem>
-          <para>If this tag is used as a <code>inflectedForm</code> of a <code>entry</code>, then 
+          <para>If this tag is used as a <code>inflectedForm</code> of an <code>entry</code>, then 
             the <code>entry</code> must have this part of speech.</para>
         </listitem>
       </itemizedlist>
@@ -84,10 +85,10 @@
   <example>
     <title>XML</title>
     <programlisting>
-&lt;inflectedFormTag tag="..." locationConstraint="..."&gt;
+&lt;inflectedFormTag tag="..." forHeadwords="true" forTranslations="true"&gt;
     &lt;description&gt;...&lt;/description&gt;
-    &lt;translationLanguageConstraint langCode="..."/&gt;
-    &lt;partOfSpeechConstraint tag="..."/&gt;
+    &lt;forLanguage langCode="..."/&gt;
+    &lt;forPartOfSpeech tag="..."/&gt;
     &lt;sameAs.../&gt;
 &lt;/tag&gt;
   </programlisting>
@@ -99,9 +100,10 @@
 {
     "tag": "...",
     "description": "...",
-    "locationConstraint": "...",
-    "translationLanguageConstraint": ["..."]
-    "partOfSpeechConstraints": ["..."],
+    "forHeadwords": true,
+    "forTranslations": true,
+    "forLanguages": ["..."]
+    "forPartsOfSpeech": ["..."],
     "sameAs": [...]
 }
     </programlisting>
@@ -110,13 +112,14 @@
   <example>
     <title>RDF</title>
     <programlisting>
-&lt;entry&gt; dmlex:inflectedFormTag [
+&lt;lexicographicResource&gt; dmlex:inflectedFormTag [
   a dmlex:InflectedFormTag ;
   dmlex:tag "..." ;
   dmlex:description "..." ;
-  dmlex:locationConstraint "..." ;
-  dmlex:translationLanguageConstraint "..." .
-  dmlex:partOfSpeechConstraint "..." ;
+  dmlex:forHeadwods "..." ;
+  dmlex:forTranslations "..." ;
+  dmlex:forLanguage "..." .
+  dmlex:forPartOfSpeech "..." ;
   dmlex:sameAs ... ] .
     </programlisting>
   </example>
@@ -124,8 +127,6 @@
   <example>
     <title>Relational database</title>
     <graphic fileref="modules/values/databaseDiagrams/inflectedFormTag.svg" contentwidth="16cm"/>
-    <para>The <code>partOfSpeechConstraints</code> column is a comma-delimited list of part-of-speech labels.</para>
-    <para>The <code>translationLanguageConstraints</code> column is a comma-delimited list of language codes.</para>
   </example>
   
 </section>

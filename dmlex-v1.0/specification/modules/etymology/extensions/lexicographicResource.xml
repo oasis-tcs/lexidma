@@ -16,11 +16,11 @@
   <itemizedlist>
     <title>Additional contents</title>
     <listitem>
-      <para><literal><olink targetptr="linking_etymonLanguage">etymonLanguage</olink></literal>
+      <para><literal><olink targetptr="etymology_etymonLanguage">etymonLanguage</olink></literal>
         <glossterm>optional</glossterm> (zero, one or more)</para>
     </listitem>
     <listitem>
-      <para><literal><olink targetptr="linking_originType">originType</olink></literal>
+      <para><literal><olink targetptr="etymology_originType">originType</olink></literal>
         <glossterm>optional</glossterm> (zero, one or more)</para>
     </listitem>
   </itemizedlist>

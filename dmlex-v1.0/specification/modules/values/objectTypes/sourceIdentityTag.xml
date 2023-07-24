@@ -65,7 +65,7 @@
   <example>
     <title>RDF</title>
     <programlisting>
-&lt;entry&gt; dmlex:sourceIdentityTag [
+&lt;lexicographicResource&gt; dmlex:sourceIdentityTag [
   a dmlex:SourceIdentityTag ;
   dmlex:tag "..." ;
   dmlex:description "..." ;

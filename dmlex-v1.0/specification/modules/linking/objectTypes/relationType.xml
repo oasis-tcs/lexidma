@@ -57,7 +57,7 @@
         <glossterm>optional</glossterm> (zero or more).</para>
     </listitem>
     <listitem>
-      <para><literal><olink targetptr="core_sameAs">sameAs</olink></literal>
+      <para><literal><olink targetptr="linking_sameAs">sameAs</olink></literal>
         <glossterm>optional</glossterm> (zero or more).</para>
     </listitem>
   </itemizedlist>
@@ -67,7 +67,7 @@
     <programlisting>
 &lt;relationType type="..." scope="..."&gt;
     &lt;description&gt;...&lt;/description&gt;
-    &lt;memberRole.../&gt;
+    &lt;memberType.../&gt;
     &lt;sameAs.../&gt;
 &lt;/relationType&gt;
 </programlisting>
@@ -79,7 +79,7 @@
 {
     "type": "...",
     "scope": "...",
-    "memberRoles": [...],
+    "memberTypes": [...],
     "sameAs": ["..."]
 }
     </programlisting>
@@ -90,7 +90,7 @@
 &lt;#lexicographicResource&gt; dmlex:relationType [
   dmlex:type "..." ;
   dmlex:scope "..." ;
-  dmlex:memberRole ... ;
+  dmlex:memberType ... ;
   dmlex:sameAs ... ] .
       </programlisting>
   </example>

@@ -24,8 +24,8 @@
       <para><literal>type</literal>
         <glossterm>required</glossterm> (exactly one). Non-empty string. Specifies what type of
         relation it is, for example a relation between synonyms or a relation between a sense and a
-        subsense. Optionally, <code><olink targetptr="linking_relationTypeTag"
-          >relationTypeTag</olink></code> objects can be used to explain those types and to constrain
+        subsense. Optionally, <code><olink targetptr="linking_relationType"
+          >relationType</olink></code> objects can be used to explain those types and to constrain
         which types of relations are allowed to exist in the lexicographic resource.</para>
     </listitem>
     <listitem>

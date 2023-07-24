@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
+                         ]>
+<section id="xml_example">
+    <title>Element: <literal>&lt;example&gt;</literal></title>
+    <para>Implements the <olink targetptr="core_example">example</olink> object type.</para>
+
+    <itemizedlist>
+        <title>Attributes</title>
+        <listitem>
+            <para><literal>@sourceIdentity</literal> <glossterm>optional</glossterm></para>
+        </listitem>
+        <listitem>
+            <para><literal>@sourceElaboration</literal> <glossterm>optional</glossterm></para>
+        </listitem>
+        <listitem>
+            <para><literal>@soundFile</literal> <glossterm>optional</glossterm></para>
+        </listitem>
+    </itemizedlist>
+    
+    <itemizedlist>
+        <title>Child elements</title>
+        <listitem>
+            <para><literal>&lt;text&gt;</literal> <glossterm>required</glossterm> (exactly one). If implementing the Annotation Module
+                <literal>&lt;text&gt;</literal> can contain a mixture of plain text, 
+                <literal><olink targetptr="xml_headwordMarker">&lt;headwordMarker&gt;</olink></literal> elements
+                and <literal><olink targetptr="xml_collocateMarker">&lt;collocateMarker&gt;</olink></literal> elements.</para>
+        </listitem>
+        <listitem>
+            <para><literal><olink targetptr="xml_label">&lt;label&gt;</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
+        </listitem>
+    </itemizedlist>
+    
+    <itemizedlist>
+        <title>Child elements if implementing the Crosslingual Module</title>
+        <listitem>
+            <para><literal><olink targetptr="xml_exampleTranslation">&lt;exampleTranslation&gt;</olink></literal> <glossterm>optional</glossterm> (one or more)</para>
+        </listitem>
+    </itemizedlist>
+    
+</section>

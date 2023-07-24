@@ -28,6 +28,10 @@
         <glossterm>optional</glossterm> (zero or more)</para>
     </listitem>
     <listitem>
+      <para><literal><olink targetptr="values_labelTypeTag">labelTypeTag</olink></literal>
+        <glossterm>optional</glossterm> (zero or more)</para>
+    </listitem>
+    <listitem>
       <para><literal><olink targetptr="values_partOfSpeechTag">partOfSpeechTag</olink></literal>
         <glossterm>optional</glossterm> (zero or more)</para>
     </listitem>
@@ -45,6 +49,7 @@
     &lt;definitionTypeTag.../&gt;
     &lt;inflectedFormTag.../&gt;
     &lt;labelTag.../&gt;
+    &lt;labelTypeTag.../&gt;
     &lt;partOfSpeechTag.../&gt;
     &lt;sourceIdentityTag.../&gt;
 &lt;/lexicographicResource&gt;
@@ -59,6 +64,7 @@
     "definitionTypeTags": [...],
     "inflectedFormTags": [...],
     "labelTags": [...],
+    "labelTypeTags": [...],
     "partOfSpeechTags": [...],
     "sourceIdentityTags": [...]
 }
@@ -71,6 +77,7 @@
   dmlex:definitionTypeTag ...
   dmlex:inflectedFormTag ...
   dmlex:labelTag ...
+  dmlex:labelTypeTag ...
   dmlex:partOfSpeechTag ...
   dmlex:sourceIdentityTag ...
       </programlisting>
