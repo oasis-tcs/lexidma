@@ -10,7 +10,7 @@
   <title><literal>etymonLanguage</literal></title>
 
   <para> Represents one of several allowed values for the <literal>language</literal> property of
-  <literal>etymon</literal> objects.</para>
+  <literal>etymonUnit</literal> objects.</para>
   
   <itemizedlist>
     <title>Child of</title>

@@ -6,10 +6,10 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
 ]>
 
-<section id="etymology_originType">
-    <title><code>originType</code></title>
+<section id="etymology_etymonType">
+    <title><code>etymonType</code></title>
     <para>Represents one of possible values for the <code>type</code> of <code><olink
-        targetptr="etymology_origin">origin</olink></code>.</para>
+        targetptr="etymology_etymon">etymon</olink></code>.</para>
     
     <itemizedlist>
         <title>Child of</title>
@@ -35,9 +35,9 @@
     <example>
         <title>XML</title>
         <programlisting>
-&lt;originType type="..."&gt;
+&lt;etymonType type="..."&gt;
     &lt;description&gt;...&lt;/description&gt;
-&lt;/originType&gt;
+&lt;/etymonType&gt;
 </programlisting>
     </example>
     
@@ -53,14 +53,14 @@
     <example>
         <title>RDF</title>
         <programlisting>
-&lt;#lexicographicResource&gt; dmlex:originType [
+&lt;#lexicographicResource&gt; dmlex:etymonType [
   dmlex:type "..." ;
   dmlex:description "..." ] .
       </programlisting>
     </example>
     <example>
         <title>Relational database</title>
-        <graphic fileref="modules/etymology/databaseDiagrams/originType.svg" contentwidth="16cm"/>
+        <graphic fileref="modules/etymology/databaseDiagrams/etymonType.svg" contentwidth="16cm"/>
     </example>
     
 </section>

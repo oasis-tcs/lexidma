@@ -72,9 +72,9 @@
   <xi:include href="elements/collocateMarker.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   
   <xi:include href="elements/etymology.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="elements/origin.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="elements/etymon.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="elements/originType.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/etymonUnit.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/etymonType.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="elements/etymonLanguage.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   
 

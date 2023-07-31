@@ -14,10 +14,10 @@
   <para>Example: <xref linkend="ex23"/>.</para>
   <xi:include href="extensions/entry.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> 
   <xi:include href="objectTypes/etymology.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> 
-  <xi:include href="objectTypes/origin.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> 
   <xi:include href="objectTypes/etymon.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> 
+  <xi:include href="objectTypes/etymonUnit.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> 
   <xi:include href="extensions/lexicographicResource.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> 
-  <xi:include href="objectTypes/originType.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> 
+  <xi:include href="objectTypes/etymonType.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> 
   <xi:include href="objectTypes/etymonLanguage.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> 
   <xi:include href="extensions/partOfSpeech.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> 
   
