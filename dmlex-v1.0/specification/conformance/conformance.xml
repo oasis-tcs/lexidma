@@ -28,11 +28,13 @@
                </listitem>
                <listitem>
                 <para><firstterm>DMLex Instances</firstterm>
-                        <glossterm>may</glossterm> contain custom extensions, as defined in the
-                            <olink targetdoc="../extensions/extensions.xml" targetptr="extensions"
-                            >Extension Mechanisms</olink> section. Extensions
-                            <glossterm>must</glossterm> be serialized in a way conformant with the
-                        pertaining DMLex Serialization Specifications. </para>
+                        <glossterm>may</glossterm> contain custom extensions, provided that those
+                        extensions do not provide features or parts of features that are provided by
+                        the <olink targetdoc="../core/specification.xml" targetptr="core">DMLex
+                            Core</olink> or any of the <olink targetdoc="../dmlex.xml"
+                            targetptr="modules">DMLex Modules</olink>. Extensions
+                            <glossterm>must</glossterm> be serialized in a way conformant and
+                        compatible with the pertaining DMLex Serialization Specifications. </para>
                </listitem> 
            </orderedlist>
        </listitem>

@@ -154,6 +154,9 @@
           <listitem>
             <para>A relational database implementation of DMLex</para>
           </listitem>
+          <listitem>
+            <para>An RDF serialization of DMLex</para>
+          </listitem>
         </itemizedlist>
       </para>
     </abstract>
@@ -314,14 +317,18 @@
     </section>
     <section>
       <title>Implementing DMLex</title>
-      <para>
-        DMLex is an abstract data model which can be implemented in many different programming environments and serialization languages.
-        In this document, we give recommended implementations
-        in <olink targetptr="XML_implementation">XML</olink>,
-        in <olink targetptr="JSON_implementation">JSON</olink>,
-        in <olink targetptr="RDF_implementation">RDF</olink>,
-        and as a <olink targetptr="RDB_implementation">relational database</olink>.
-      </para>
+      <para>DMLex is an abstract data model which can be implemented in many different programming
+        environments and serialization languages. In this document, we specify
+          <glossterm>recommended</glossterm> implementations for: <simplelist>
+          <member><olink targetptr="XML_implementation">XML</olink>,</member>
+          <member><olink targetptr="JSON_implementation">JSON</olink>,</member>
+          <member><olink targetptr="RDF_implementation">RDF</olink>,</member>
+          <member>and <olink targetptr="RDB_implementation">relational databases</olink>.</member>
+        </simplelist> We also provide an informative serialization as VHF [to link appendix when
+        available]. </para>
+         
+        
+      
       <itemizedlist>
         <listitem>
           <para>
@@ -345,21 +352,30 @@
   
   <!-- core and modules -->
   <xi:include href="core/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <section id="modules" role="normative">
+    <title>DMLex Optional Modules</title>
+  
   <xi:include href="modules/xlingual/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="modules/values/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="modules/linking/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="modules/annotation/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="modules/etymology/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  </section>
   
-  <!-- examples -->
-  <xi:include href="examples/examples.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  
+  <section id="serializations" role="normative">
+    <title>DMLEX Recommended Serializations</title>
+ 
   <!-- serialisations -->
   <xi:include href="serializations/XML/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="serializations/JSON/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="serializations/RDF/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="serializations/RDB/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-
+</section>
+  <appendix role="informative">
+    <!-- examples -->
+    <xi:include href="examples/examples.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    
+  </appendix>
   <appendix role="normative" id="references">
     <title>References</title>
     <para>This appendix contains the normative and informative references that are used in this
@@ -631,7 +647,7 @@
         <para>Erjavec, Tomaž - JSI </para>
       </listitem>
       <listitem>
-        <para>Filip, David - TCD, ADAPT Centre </para>
+        <para>Filip, David - Masaryk University (previously TCD, ADAPT Centre) </para>
       </listitem>
       <listitem>
         <para>Jakubíček, Miloš - Lexical Computing </para>
@@ -649,7 +665,7 @@
         <para>McCrae, John - National University of Ireland Galway </para>
       </listitem>
       <listitem>
-        <para>Měchura, Michal - Masary kUniversity </para>
+        <para>Měchura, Michal - Masaryk University </para>
       </listitem>
     </itemizedlist>
   </appendix>
