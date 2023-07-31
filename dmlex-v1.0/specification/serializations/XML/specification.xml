@@ -6,11 +6,11 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
 <!--the document properties were transferred to "dockbook/dbgenent.mod"-->
                          ]>
-<section id="xml" role="normative | informative">
+<section id="xml" role="normative">
   <title>DMLex XML serialization</title>
 
-  <section>
-    <title>Design principles</title>
+  <section id="XMLDesignPrinciples" role="informative">
+    <title>Design Principles </title>
     <para>The XML serialization of DMLex shown in this document follows these priciples:</para>
     <itemizedlist>
       <listitem>
@@ -34,6 +34,8 @@
       </listitem>
     </itemizedlist>
   </section>
+  <section id="XMLElements" role="normative">
+    <title>DMLex XML Serialization Elements</title>
   
   <xi:include href="elements/lexicographicResource.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="elements/entry.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
@@ -77,5 +79,5 @@
   <xi:include href="elements/originType.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="elements/etymonLanguage.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   
-
+  </section>
 </section>
