@@ -20,7 +20,7 @@
         <glossterm>optional</glossterm> (zero, one or more)</para>
     </listitem>
     <listitem>
-      <para><literal><olink targetptr="etymology_originType">originType</olink></literal>
+      <para><literal><olink targetptr="etymology_etymonType">etymonType</olink></literal>
         <glossterm>optional</glossterm> (zero, one or more)</para>
     </listitem>
   </itemizedlist>

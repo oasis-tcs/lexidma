@@ -15,13 +15,13 @@
 - entry (id: cat-n, headword: cat)
     - sense ...
     - etymology
-        - origin
-            - etymon (language: enm, text: catte)
-        - origin
-            - etymon (language: ang, text: catt, translation: male cat)
-            - etymon (language: ang, text: catte, translation: female cat)
-        - origin
-            - etymon (language: gem-x-proto, text: kattuz, reconstructed: true)
+        - etymon
+            - etymonUnit (language: enm, text: catte)
+        - etymon
+            - etymonUnit (language: ang, text: catt, translation: male cat)
+            - etymonUnit (language: ang, text: catte, translation: female cat)
+        - etymon
+            - etymonUnit (language: gem-x-proto, text: kattuz, reconstructed: true)
 </programlisting>
     </example>
     <example>
@@ -31,26 +31,26 @@
     &lt;headword&gt;cat&lt;/headword&gt;
     &lt;sense&gt;...&lt;/sense>
     &lt;etymology>
-        &lt;origin>
-            &lt;etymon language="enm">
+        &lt;etymon>
+            &lt;etymonUnit language="enm">
                 &lt;text>catte&lt;/text>
-            &lt;/etymon>
-        &lt;/origin>
-        &lt;origin>
-            &lt;etymon language="ang">
+            &lt;/etymonUnit>
+        &lt;/etymon>
+        &lt;etymon>
+            &lt;etymonUnit language="ang">
                 &lt;text>catt&lt;/text>
                 &lt;translation>male cat&lt;/translation>
-            &lt;/etymon>
-            &lt;etymon language="ang">
+            &lt;/etymonUnit>
+            &lt;etymonUnit language="ang">
                 &lt;text>catte&lt;/text>
                 &lt;translation>female cat&lt;/translation>
-            &lt;/etymon>
-        &lt;/origin>
-        &lt;origin>
-            &lt;etymon language="gem-x-proto" reconstructed="true">
+            &lt;/etymonUnit>
+        &lt;/etymon>
+        &lt;etymon>
+            &lt;etymonUnit language="gem-x-proto" reconstructed="true">
                 &lt;text>kattuz&lt;/text>
-            &lt;/etymon>
-        &lt;/origin>
+            &lt;/etymonUnit>
+        &lt;/etymon>
     &lt;/etymology>
 &lt;/entry&gt;
 </programlisting>
@@ -63,17 +63,17 @@
   "headword": "cat",
   "senses": [...],
   "etymology": {
-    "origins" [{
-      "etymons": [
+    "etymons" [{
+      "etymonUnits": [
         {"language": "enm", "text": "catte"}
       ]
     }, {
-      "etymons": [
+      "etymonUnits": [
         {"language": "ang", "text": "catt", "translation": "male cat"},
         {"language": "ang", "text": "catte", "translation": "female cat"}
       ]
     }, {
-      "etymons": [
+      "etymonUnits": [
         {"language": "gem-x-proto", "text": "kattuz", "reconstructed": true}
       ]
     }]

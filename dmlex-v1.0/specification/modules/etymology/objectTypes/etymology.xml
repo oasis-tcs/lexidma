@@ -26,7 +26,7 @@
         origin and etymon objects.</para>
     </listitem>
     <listitem>
-      <para><literal><olink targetptr="etymology_origin">origin</olink></literal>
+      <para><literal><olink targetptr="etymology_etymon">etymon</olink></literal>
         <glossterm>optional</glossterm> (zero, one or more).</para>
     </listitem>
     <listitem>
@@ -42,9 +42,9 @@
     <programlisting>
 &lt;etymology&gt;
   &lt;description&gt;...&lt;/description&gt;
-  &lt;origin&gt;...&lt;/origin&gt;
-  &lt;origin&gt;...&lt;/origin&gt;
-  &lt;origin&gt;...&lt;/origin&gt;
+  &lt;etymon&gt;...&lt;/etymon&gt;
+  &lt;etymon&gt;...&lt;/etymon&gt;
+  &lt;etymon&gt;...&lt;/etymon&gt;
   ...
 &lt;/etymology&gt; 
   </programlisting>
@@ -55,7 +55,7 @@
     <programlisting>
 {
   "description": ... ,
-  "origins": [...]
+  "etymons": [...]
 }
       </programlisting>
   </example>
@@ -65,7 +65,7 @@
     <programlisting>
 &lt;entry&gt; dmlex:etymology [
   dmlex:description "..." ;
-  dmlex:origin ... ;
+  dmlex:etymon ... ;
   dmlex:listingOrder: ...] .
       </programlisting>
   </example>

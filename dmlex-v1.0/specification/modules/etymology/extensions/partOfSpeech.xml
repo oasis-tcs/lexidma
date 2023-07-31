@@ -16,7 +16,7 @@
   <itemizedlist>
     <title>Can additionally be a child of</title>
     <listitem>
-      <para><literal><olink targetptr="etymology_etymon">etymon</olink></literal></para>
+      <para><literal><olink targetptr="etymology_etymonUnit">etymonUnit</olink></literal></para>
     </listitem>
   </itemizedlist>
   

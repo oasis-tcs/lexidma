@@ -9,38 +9,40 @@
 <section id="etymology_etymon">
     <title><literal>etymon</literal>
     </title>
-    <para> Represents a form (typically a word) which is the etymological origin of the headword, or
-        another etymologically related form.</para>
+    <para> Represents one stage (of possibly several) in the etymological history of the
+        headword.</para>
 
     <itemizedlist>
         <title>Child of</title>
         <listitem>
-            <para><literal><olink targetptr="etymology_origin">origin</olink></literal></para>
+            <para><literal><olink targetptr="etymology_etymology">etymology</olink></literal></para>
         </listitem>
     </itemizedlist>
 
     <itemizedlist>
         <title>Contents</title>
         <listitem>
-            <para><literal>language</literal>
-                <glossterm>required</glossterm> (exactly one). An IETF tag. The tags can be
-                explained and constrained using the <literal><olink
-                        targetptr="etymology_etymonLanguage">etymonLanguage</olink></literal> object
-                type.</para>
+            <para><literal>when</literal>
+                <glossterm>optional</glossterm> (zero or one). Indicates the time period during which this etymological origin is valid.
+                The value is an open-text indication of the time period, in the language of the dictionary.
+            </para>
         </listitem>
         <listitem>
-            <para><literal>text</literal>
-                <glossterm>required</glossterm> (exactly one). The written form of the
-                etymon.</para>
+            <para><literal>type</literal>
+                <glossterm>optional</glossterm> (zero or one). The type of the etymological process
+                that occured at this stage of the headword's etymological history such as
+                derivation, cognate, borrowing. The values can be explained and constrained using
+                the <literal><olink targetptr="etymology_etymonType">etymonType</olink></literal>
+                object type.</para>
         </listitem>
         <listitem>
-            <para><literal>reconstructed</literal>
-                <glossterm>optional</glossterm> (zero or one). Boolean. If present and set to true,
-                indicates that the form is reconstructed and not attested in any corpus.</para>
+            <para><literal>note</literal>
+                <glossterm>optional</glossterm> (zero or one). Any additional information about this stage
+                of the headword's etymological history.</para>
         </listitem>
         <listitem>
-            <para><literal><olink targetptr="etymology_partOfSpeech">partOfSpeech</olink></literal>
-                <glossterm>optional</glossterm> (zero or more).</para>
+            <para><literal><olink targetptr="etymology_etymonUnit">etymonUnit</olink></literal>
+                <glossterm>required</glossterm> (one or more).</para>
         </listitem>
         <listitem>
             <para><literal>translation</literal>
@@ -48,49 +50,51 @@
         </listitem>
         <listitem>
             <para><literal>listingOrder</literal>
-                <glossterm>required</glossterm> (exactly one). Number. The position of this etymon
-                among other etymons of the origin. Can be implicit from the
+                <glossterm>required</glossterm> (exactly one). Number. The position of this origin
+                among other origins listed in the etymology. Can be implicit from the
                 serialization.</para>
         </listitem>
     </itemizedlist>
-
+    
     <example>
         <title>XML</title>
         <programlisting>
-&lt;etymon language="..." reconstructed="true"&gt;
-  &lt;text&gt;...&lt;/text&gt;
-  &lt;partOfSpeech tag="..."/&gt;
+&lt;etymon when="..." type="..."&gt;
+  &lt;note&gt;...&lt;/note&gt;
+  &lt;etymonUnit&gt;...&lt;/etymonUnit&gt;
+  &lt;etymonUnit&gt;...&lt;/etymonUnit&gt;
   &lt;translation&gt;...&lt;/translation&gt;
+  ...
 &lt;/etymon&gt;
 </programlisting>
     </example>
-    
+
     <example>
         <title>JSON</title>
         <programlisting>
 {
-  "language": "...",
-  "text": "...",
-  "reconstructed": true,
-  "partsOfSpeech": [...],
+  "when": "...",
+  "type": "...",
+  "note": "...",
+  "etymonUnits": [...],
   "translation": "..."
 }
 </programlisting>
     </example>
-    
+
     <example>
         <title>RDF</title>
         <programlisting>
 &lt;etymon&gt; 
-  dmlex:language "..." ;
-  dmlex:text "..." ;
-  dmlex:reconstructed true ;
-  dmlex:partOfSpeech "..." ;
+  dmlex:when "..." ;
+  dmlex:type "..." ;
+  dmlex:note "..." ;
+  dmlex:etymonUnit ... ;
   dmlex:translation ... ;
   dmlex:listingOrder 0 .
         </programlisting>
     </example>
-    
+
     <example>
         <title>Relational database</title>
         <graphic fileref="modules/etymology/databaseDiagrams/etymon.svg" contentwidth="16cm"/>
