@@ -12,13 +12,13 @@
     <itemizedlist>
         <title>Attributes</title>
         <listitem>
-            <para><literal>@language</literal> <glossterm>optional</glossterm></para>
+            <para><literal>@language</literal> <glossterm>optional</glossterm> if the ancestor <literal>&lt;lexicographicResource&gt;</literal>
+                contains exactly one <literal>&lt;translationLanguage&gt;</literal>,
+                <glossterm>required</glossterm> otherwise</para>
         </listitem>
         <listitem>
             <para><literal>@soundFile</literal>
-                <glossterm>optional</glossterm> if the ancestor <literal>&lt;lexicographicResource&gt;</literal>
-                contains exactly one <literal>&lt;translationLanguage&gt;</literal>,
-                <glossterm>required</glossterm> otherwise</para>
+                <glossterm>optional</glossterm></para>
         </listitem>
     </itemizedlist>
     

@@ -74,7 +74,7 @@
             <para><literal><olink targetptr="etymology_etymonLanguage">&lt;etymonLanguage&gt;</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
         </listitem>
         <listitem>
-            <para><literal><olink targetptr="etymology_originType">&lt;originType&gt;</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
+            <para><literal><olink targetptr="etymology_etymonType">&lt;etymonType&gt;</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
         </listitem>
     </itemizedlist>
 
