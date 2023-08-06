@@ -6,7 +6,7 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
 <!--the document properties were transferred to "dockbook/dbgenent.mod"-->
                          ]>
-<section id="json" role="normative | informative">
+<section id="json" role="informative">
   <title>DMLex JSON serialization</title>
 
   <section>
@@ -48,11 +48,20 @@
       </listitem>
     </itemizedlist>
   </section>
-
-  <xi:include href="classes/lexicographicResource.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="classes/entry.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   
-
+  <section id="JSONClasses" role="normative">
+    <title>DMLex JSON Serialization Classes</title>
+    
+    <xi:include href="classes/lexicographicResource.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes/entry.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes/inflectedForm.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes/sense.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes/definition.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes/pronunciation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes/transcription.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes/example.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    
+  </section>
 
 
 </section>

@@ -8,40 +8,64 @@
 <section id="json_entry">
     <title>Class: <literal>entry</literal></title>
     <para>Implements the <olink targetptr="core_entry">entry</olink> data type.</para>
-    
+
     <itemizedlist>
         <title>Members</title>
         <listitem>
-            <para><literal>"id"</literal> <glossterm>required</glossterm>, string</para>
+            <para><literal>"id"</literal>
+                <glossterm>required</glossterm>, string</para>
         </listitem>
         <listitem>
-            <para><literal>"headword"</literal> <glossterm>required</glossterm>, string</para>
+            <para><literal>"headword"</literal>
+                <glossterm>required</glossterm>, string</para>
         </listitem>
         <listitem>
-            <para><literal>"homographNumber"</literal> <glossterm>optional</glossterm>, string</para>
+            <para><literal>"homographNumber"</literal>
+                <glossterm>optional</glossterm>, string</para>
         </listitem>
         <listitem>
-            <para><literal>"partsOfSpeech"</literal> <glossterm>optional</glossterm>, array of zero or more <literal><olink targetptr="json_partOfSpeech">partOfSpeech</olink></literal> objects</para>
+            <para><literal>"partsOfSpeech"</literal>
+                <glossterm>optional</glossterm>, array of zero or more strings
+                implementing the <olink targetptr="core_partOfSpeech">partOfSpeech</olink> data type</para>
         </listitem>
         <listitem>
-            <para><literal>"labels"</literal> <glossterm>optional</glossterm> array of zero or more <literal><olink targetptr="json_label">label</olink></literal> objects</para>
+            <para><literal>"labels"</literal>
+                <glossterm>optional</glossterm>, array of zero or more strings
+                implementing the <olink targetptr="core_label">label</olink> data type</para>
         </listitem>
         <listitem>
-            <para><literal>"pronunciations"</literal> <glossterm>optional</glossterm>, array of zero or more <literal><olink targetptr="json_pronunciation">pronunciation</olink></literal> objects</para>
+            <para><literal>"pronunciations"</literal>
+                <glossterm>optional</glossterm>, array of zero or more <literal><olink
+                    targetptr="json_pronunciation">pronunciation</olink></literal> instances</para>
         </listitem>
         <listitem>
-            <para><literal>"inflectedForms"</literal> <glossterm>optional</glossterm>, array of zero or more <literal><olink targetptr="json_inflectedForm">inflectedForm</olink></literal> objects</para>
+            <para><literal>"inflectedForms"</literal>
+                <glossterm>optional</glossterm>, array of zero or more <literal><olink
+                    targetptr="json_inflectedForm">inflectedForm</olink></literal> instances</para>
         </listitem>
         <listitem>
-            <para><literal>"senses"</literal> <glossterm>optional</glossterm>, array of zero or more <literal><olink targetptr="json_sense">sense</olink></literal> objects</para>
+            <para><literal>"senses"</literal>
+                <glossterm>optional</glossterm>, array of zero or more <literal><olink
+                        targetptr="json_sense">sense</olink></literal> instances</para>
         </listitem>
     </itemizedlist>
-    
+
     <itemizedlist>
-        <title>Members if implementing the <olink targetptr="etymology">Etymology Module</olink></title>
+        <title>Members if implementing the Annotation Module</title>
         <listitem>
-            <para><literal>"etymologies"</literal> <glossterm>optional</glossterm>, array of zero or more <literal><olink targetptr="json_etymology">etymology</olink></literal> objects</para>
+            <para><literal>"placeholderMarkers"</literal>
+                <glossterm>optional</glossterm>, array of zero or more <literal><olink
+                    targetptr="json_placeholderMarkers">placeholderMarker</olink></literal> instances</para>
         </listitem>
     </itemizedlist>
-    
+
+    <itemizedlist>
+        <title>Members if implementing the Etymology Module</title>
+        <listitem>
+            <para><literal>"etymologies"</literal>
+                <glossterm>optional</glossterm>, array of zero or more <literal><olink
+                        targetptr="json_etymology">etymology</olink></literal> instances</para>
+        </listitem>
+    </itemizedlist>
+
 </section>
