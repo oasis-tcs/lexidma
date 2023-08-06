@@ -25,12 +25,12 @@
         <listitem>
             <para><literal>"partsOfSpeech"</literal>
                 <glossterm>optional</glossterm>, array of zero or more strings implementing the
-                    <olink targetptr="core_partOfSpeech">partOfSpeech</olink> data type</para>
+                    <olink targetptr="core_partOfSpeech">partOfSpeech</olink> object type</para>
         </listitem>
         <listitem>
             <para><literal>"labels"</literal>
                 <glossterm>optional</glossterm>, array of zero or more strings implementing the
-                    <olink targetptr="core_label">label</olink> data type</para>
+                    <olink targetptr="core_label">label</olink> object type</para>
         </listitem>
         <listitem>
             <para><literal>"pronunciations"</literal>

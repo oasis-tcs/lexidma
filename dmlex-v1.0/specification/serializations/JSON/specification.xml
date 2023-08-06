@@ -65,6 +65,14 @@
     <xi:include href="classes/headwordExplanation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="classes/exampleTranslation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     
+    <xi:include href="classes/partOfSpeechTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes/inflectedFormTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes/definitionTypeTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes/labelTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes/labelTypeTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes/sourceIdentityTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes/transcriptionSchemeTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    
   </section>
 
 
