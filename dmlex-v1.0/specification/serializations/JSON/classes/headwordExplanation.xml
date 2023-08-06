@@ -5,15 +5,18 @@
                          %xinclude;
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
                          ]>
-<section id="json_transcription">
-    <title>Class: <literal>transcription</literal></title>
-    <para>Implements the <olink targetptr="core_transcription">transcription</olink> object type.</para>
+<section id="json_headwordExplanation">
+    <title>Class: <literal>headwordExplanation</literal></title>
+    <para>Implements the <olink targetptr="xlingual_headwordExplanation">headwordExplanation</olink>
+        object type from the Crosslingual Module.</para>
 
     <itemizedlist>
         <title>Members</title>
         <listitem>
-            <para><literal>"scheme"</literal>
-                <glossterm>optional</glossterm>, string</para>
+            <para><literal>"language"</literal>
+                <glossterm>optional</glossterm> if the <literal>lexicographicResource</literal>
+                contains exactly one <literal>translationLanguage</literal>,
+                <glossterm>required</glossterm> otherwise; string</para>
         </listitem>
         <listitem>
             <para><literal>"text"</literal>

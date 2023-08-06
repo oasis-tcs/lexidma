@@ -60,6 +60,10 @@
     <xi:include href="classes/pronunciation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="classes/transcription.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="classes/example.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+
+    <xi:include href="classes/headwordTranslation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes/headwordExplanation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes/exampleTranslation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     
   </section>
 
