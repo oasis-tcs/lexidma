@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
+                         ]>
+<section id="json_etymology">
+    <title>Class: <literal>etymology</literal></title>
+    <para>Implements the <olink targetptr="etymology_etymology">etymology</olink> object type
+        from the Etymology Module.</para>
+
+    <itemizedlist>
+        <title>Members</title>
+        <listitem>
+            <para><literal>"description"</literal>
+                <glossterm>optional</glossterm>, string</para>
+        </listitem>
+        <listitem>
+            <para><literal>"etymons"</literal>
+                <glossterm>optional</glossterm>, array of zero or more <literal><olink
+                    targetptr="json_etymon">etymon</olink></literal> instances</para>
+        </listitem>
+    </itemizedlist>
+
+</section>

@@ -81,8 +81,13 @@
     <xi:include href="classes/placeholderMarker.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="classes/headwordMarker.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="classes/collocateMarker.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+
+    <xi:include href="classes/etymology.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes/etymon.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes/etymonUnit.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes/etymonType.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes/etymonLanguage.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     
   </section>
-
 
 </section>
