@@ -73,6 +73,11 @@
     <xi:include href="classes/sourceIdentityTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="classes/transcriptionSchemeTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     
+    <xi:include href="classes/relation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes/member.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes/relationType.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes/memberType.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    
   </section>
 
 
