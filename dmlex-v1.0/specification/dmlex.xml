@@ -157,6 +157,9 @@
           <listitem>
             <para>An RDF serialization of DMLex</para>
           </listitem>
+          <listitem>
+            <para>An NVH serialization of DMLex</para>
+          </listitem>
         </itemizedlist>
       </para>
     </abstract>
@@ -283,7 +286,7 @@
   <section id="Introduction">
     <title>Introduction</title>
     <para>DMLex is a data model for modelling dictionaries (here called <emphasis>lexicographic resources</emphasis>) in computer applications such as dictionary writing systems.</para>
-    <para>DMLex is a data model, not an encoding format. DMLex is abstract, independent of any markup language or formalism. At the same time, DMLex has been designed to be easily and straightforwardly implementable in XML, JSON, as a relational database, and as a Semantic Web triplestore.</para>
+    <para>DMLex is a data model, not an encoding format. DMLex is abstract, independent of any markup language or formalism. At the same time, DMLex has been designed to be easily and straightforwardly implementable in XML, JSON, NVH, as a relational database, and as a Semantic Web triplestore.</para>
     <section>
       <title>Modular structure of DMLex</title>
       <para>The DMLex specification is divided into a core with several optional modules.</para>
@@ -323,6 +326,7 @@
           <member><olink targetptr="XML_implementation">XML</olink>,</member>
           <member><olink targetptr="JSON_implementation">JSON</olink>,</member>
           <member><olink targetptr="RDF_implementation">RDF</olink>,</member>
+          <member><olink targetptr="NVH_implementation">NVH</olink>,</member>
           <member>and <olink targetptr="RDB_implementation">relational databases</olink>.</member>
         </simplelist> We also provide an informative serialization as NVH [to link appendix when
         available]. </para>
@@ -335,6 +339,13 @@
             The XML and JSON implementations are intended as serializations for <emphasis>data exchange</emphasis>:
             for encoding lexicographic data while the data is in transit out of one software system into another.
             Examples of what the two serializations look like with real-world data are given in <xref linkend="examples"/>.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+   		    The NVH implementation is intended for <emphasis>human and machine viewing and editing</emphasis>:
+            it makes it easy for humans to understand or change the content as well as quickly develop programs that read or modify it.
+            Examples of what the serialization looks like with real-world data are given in <xref linkend="examples"/>.
           </para>
         </listitem>
         <listitem>
@@ -370,6 +381,7 @@
   <xi:include href="serializations/JSON/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="serializations/RDF/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="serializations/RDB/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="serializations/NVH/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 </section>
   <appendix role="informative">
     <!-- examples -->

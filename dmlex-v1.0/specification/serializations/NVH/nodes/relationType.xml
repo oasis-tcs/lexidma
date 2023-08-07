@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
+                         ]>
+<section id="nvh_relationType">
+    <title>Node: <literal>relationType</literal></title>
+    <para>Implements the <olink targetptr="linking_relationType">relationType</olink> object type from the Linking Module.</para>
+
+    <itemizedlist>
+        <title>Value</title>
+        <listitem>
+            <para><literal>type</literal> <glossterm>required</glossterm></para>
+        </listitem>
+    </itemizedlist>
+    
+    <itemizedlist>
+        <title>Child nodes</title>
+        <listitem>
+            <para><literal>scope</literal> <glossterm>required</glossterm> (exactly one)</para>
+        </listitem>
+        <listitem>
+            <para><literal>description</literal> <glossterm>optional</glossterm> (exactly one)</para>
+        </listitem>
+        <listitem>
+            <para><literal><olink targetptr="nvh_memberType">memberType</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
+        </listitem>
+        <listitem>
+            <para><literal><olink targetptr="nvh_sameAs">sameAs</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
+        </listitem>
+    </itemizedlist>
+
+</section>

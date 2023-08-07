@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
+                         ]>
+<section id="nvh_definition">
+    <title>Node: <literal>definition</literal></title>
+    <para>Implements the <olink targetptr="core_definition">definition</olink> object type.</para>
+
+    <itemizedlist>
+        <title>Value</title>
+        <listitem>
+			<para><glossterm>Required</glossterm>, implements the <literal>text</literal> property.</para>
+        </listitem>
+	</itemizedlist>
+
+	<itemizedlist>
+        <title>Child nodes</title>
+        <listitem>
+            <para><literal>definitionType</literal> <glossterm>optional</glossterm> (zero or one)</para>
+        </listitem>
+    </itemizedlist>
+
+    <itemizedlist>
+        <title>Child nodes if implementing the Annotation Module</title>
+		<listitem>
+			<para><literal><olink targetptr="nvh_headwordMarker">headwordMarker</olink></literal> node <glossterm>optional</glossterm> (zero or more)</para>
+			<para><literal><olink targetptr="nvh_collocateMarker">collocateMarker</olink></literal> node <glossterm>optional</glossterm> (zero or more)</para>
+		</listitem>
+    </itemizedlist>
+    
+    
+</section>
