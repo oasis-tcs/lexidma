@@ -66,14 +66,14 @@
     
     <listitem>
       <para><literal>forLanguage</literal>
-        <glossterm>optional</glossterm> (zero, one or more). If present, says that if this tag is
+        <glossterm>optional</glossterm> (zero or more). If present, says that if this tag is
         being used inside a <code><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></code> object,
         then it is intended to be used only inside a <code>headwordTranslation</code> object labelled with this language.</para>
     </listitem>
     
     <listitem>
       <para><literal>forPartOfSpeech</literal>
-        <glossterm>optional</glossterm> (zero, one or more). If present, says that:</para>
+        <glossterm>optional</glossterm> (zero or more). If present, says that:</para>
       <itemizedlist>
         <listitem>
           <para>If this tag is used inside a <code>headwordTranslation</code>, then it is intended
@@ -88,7 +88,7 @@
     </listitem>
     <listitem>
       <para><literal><olink targetptr="values_sameAs">sameAs</olink></literal>
-        <glossterm>optional</glossterm> (zero, one or more).</para>
+        <glossterm>optional</glossterm> (zero or more).</para>
     </listitem>
   </itemizedlist>
 

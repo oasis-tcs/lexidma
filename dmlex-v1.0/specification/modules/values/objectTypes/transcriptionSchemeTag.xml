@@ -49,7 +49,7 @@
 
     <listitem>
       <para><literal>forLanguage</literal>
-        <glossterm>optional</glossterm> (zero, one or more). If present, says that if this tag is
+        <glossterm>optional</glossterm> (zero or more). If present, says that if this tag is
         being used inside a <code><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></code> object,
         then it is intended to be used only inside a <code>headwordTranslation</code> object labelled with this language.</para>
     </listitem>

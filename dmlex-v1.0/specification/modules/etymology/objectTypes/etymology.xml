@@ -27,7 +27,7 @@
     </listitem>
     <listitem>
       <para><literal><olink targetptr="etymology_etymon">etymon</olink></literal>
-        <glossterm>optional</glossterm> (zero, one or more).</para>
+        <glossterm>optional</glossterm> (zero or more).</para>
     </listitem>
     <listitem>
       <para><literal>listingOrder</literal>

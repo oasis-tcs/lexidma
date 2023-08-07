@@ -38,7 +38,7 @@
     </listitem>
     <listitem>
       <para><literal><olink targetptr="core_entry">entry</olink></literal>
-        <glossterm>optional</glossterm> (zero, one or more)
+        <glossterm>optional</glossterm> (zero or more)
       </para>
     </listitem>
   </itemizedlist>

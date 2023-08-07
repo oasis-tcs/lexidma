@@ -45,7 +45,7 @@
     </listitem>
     <listitem>
       <para><literal><olink targetptr="core_label">label</olink></literal>
-        <glossterm>optional</glossterm> (zero, one or more).</para>
+        <glossterm>optional</glossterm> (zero or more).</para>
     </listitem>
     <listitem>
       <para><literal>soundFile</literal>
