@@ -7,45 +7,98 @@
                          ]>
 <section id="json_lexicographicResource">
     <title>Class: <literal>lexicographicResource</literal></title>
-    <para>Implements the <olink targetptr="core_lexicographicResource">lexicographicResource</olink> object type.</para>
+    <para>Implements the <olink targetptr="core_lexicographicResource">lexicographicResource</olink>
+        object type.</para>
 
     <itemizedlist>
         <title>Members</title>
         <listitem>
-            <para><literal>"title"</literal> <glossterm>optional</glossterm>, string</para>
+            <para><literal>"title"</literal>
+                <glossterm>optional</glossterm>, string</para>
         </listitem>
         <listitem>
-            <para><literal>"uri"</literal> <glossterm>optional</glossterm>, string</para>
+            <para><literal>"uri"</literal>
+                <glossterm>optional</glossterm>, string</para>
         </listitem>
         <listitem>
-            <para><literal>"language"</literal> <glossterm>required</glossterm>, string</para>
+            <para><literal>"language"</literal>
+                <glossterm>required</glossterm>, string</para>
         </listitem>
         <listitem>
-            <para><literal>"entries"</literal> <glossterm>optional</glossterm>, array of zero or more <literal><olink targetptr="json_entry">entry</olink></literal> objects</para>
-        </listitem>
-    </itemizedlist>
-    
-    <itemizedlist>
-        <title>Members if implementing the <olink targetptr="values">Controlled Values Module</olink></title>
-        <listitem>
-            <para><literal>"tags"</literal> <glossterm>optional</glossterm>, array of zero or more <literal><olink targetptr="json_tag">tag</olink></literal> objects</para>
+            <para><literal>"entries"</literal>
+                <glossterm>optional</glossterm>, array of zero or more <literal><olink
+                        targetptr="json_entry">entry</olink></literal> instances</para>
         </listitem>
     </itemizedlist>
 
     <itemizedlist>
-        <title>Members if implementing the <olink targetptr="xlingual">Crosslingual Module</olink></title>
+        <title>Members if implementing the Crosslingual Module</title>
         <listitem>
-            <para><literal>"translationLanguages"</literal> <glossterm>required</glossterm>, array of one or more <literal><olink targetptr="json_translationLanguage">translationLanguage</olink></literal> objects</para>
+            <para><literal>"translationLanguages"</literal>
+                <glossterm>required</glossterm>, array of one or more strings implementing
+                the <olink targetptr="xlingual_translationLanguage">translationLanguage</olink> object type</para> 
         </listitem>
     </itemizedlist>
-    
+
     <itemizedlist>
-        <title>Members if implementing the <olink targetptr="linking">Linking Module</olink></title>
+        <title>Members if implementing the Controlled Values Module</title>
         <listitem>
-            <para><literal>"relations"</literal> <glossterm>optional</glossterm>, array of zero or more <literal><olink targetptr="json_relation">relation</olink></literal> objects</para>
+            <para><literal>"definitionTypeTags"</literal>
+                <glossterm>optional</glossterm>, array of zero or more <literal><olink
+                    targetptr="json_definitionTypeTag">definitionTypeTag</olink></literal> instances</para>
         </listitem>
         <listitem>
-            <para><literal>"relationTypes"</literal> <glossterm>optional</glossterm>, array of zero or more <literal><olink targetptr="json_relationType">relationType</olink></literal> objects</para>
+            <para><literal>"inflectedFormTags"</literal>
+                <glossterm>optional</glossterm>, array of zero or more <literal><olink
+                    targetptr="json_inflectedFormTag">inflectedFormTag</olink></literal> instances</para>
+        </listitem>
+        <listitem>
+            <para><literal>"labelTags"</literal>
+                <glossterm>optional</glossterm>, array of zero or more <literal><olink
+                    targetptr="json_labelTag">labelTag</olink></literal> instances</para>
+        </listitem>
+        <listitem>
+            <para><literal>"labelTypeTags"</literal>
+                <glossterm>optional</glossterm>, array of zero or more <literal><olink
+                    targetptr="json_labelTypeTag">labelTypeTag</olink></literal> instances</para>
+        </listitem>
+        <listitem>
+            <para><literal>"partOfSpeechTags"</literal>
+                <glossterm>optional</glossterm>, array of zero or more <literal><olink
+                    targetptr="json_partOfSpeechTag">partOfSpeechTag</olink></literal> instances</para>
+        </listitem>
+        <listitem>
+            <para><literal>"sourceIdentityTags"</literal>
+                <glossterm>optional</glossterm>, array of zero or more <literal><olink
+                    targetptr="json_sourceIdentityTag">sourceIdentityTag</olink></literal> instances</para>
+        </listitem>
+    </itemizedlist>
+
+    <itemizedlist>
+        <title>Members if implementing the Linking Module</title>
+        <listitem>
+            <para><literal>"relations"</literal>
+                <glossterm>optional</glossterm>, array of zero or more <literal><olink
+                    targetptr="json_relation">relation</olink></literal> instances</para>
+        </listitem>
+        <listitem>
+            <para><literal>"relationTypes"</literal>
+                <glossterm>optional</glossterm>, array of zero or more <literal><olink
+                    targetptr="json_relationType">relationType</olink></literal> instances</para>
+        </listitem>
+    </itemizedlist>
+
+    <itemizedlist>
+        <title>Members if implementing the Etymology Module</title>
+        <listitem>
+            <para><literal>"etymonLanguage"</literal>
+                <glossterm>optional</glossterm>, array of zero or more <literal><olink
+                    targetptr="json_etymonLanguage">etymonLanguage</olink></literal> instances</para>
+        </listitem>
+        <listitem>
+            <para><literal>"etymonTypes"</literal>
+                <glossterm>optional</glossterm>, array of zero or more <literal><olink
+                    targetptr="json_etymonType">etymonType</olink></literal> instances</para>
         </listitem>
     </itemizedlist>
     

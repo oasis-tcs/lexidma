@@ -324,7 +324,7 @@
           <member><olink targetptr="JSON_implementation">JSON</olink>,</member>
           <member><olink targetptr="RDF_implementation">RDF</olink>,</member>
           <member>and <olink targetptr="RDB_implementation">relational databases</olink>.</member>
-        </simplelist> We also provide an informative serialization as VHF [to link appendix when
+        </simplelist> We also provide an informative serialization as NVH [to link appendix when
         available]. </para>
          
         
@@ -666,6 +666,9 @@
       </listitem>
       <listitem>
         <para>Měchura, Michal - Masaryk University </para>
+      </listitem>
+      <listitem>
+        <para>Tiberius, Carole - Institute of the Dutch Language</para>
       </listitem>
     </itemizedlist>
   </appendix>

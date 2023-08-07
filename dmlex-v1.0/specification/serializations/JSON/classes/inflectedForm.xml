@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
+                         ]>
+<section id="json_inflectedForm">
+    <title>Class: <literal>inflectedForm</literal></title>
+    <para>Implements the <olink targetptr="core_inflectedForm">inflectedForm</olink> object type.</para>
+
+    <itemizedlist>
+        <title>Members</title>
+        <listitem>
+            <para><literal>"tag"</literal>
+                <glossterm>optional</glossterm>, string</para>
+        </listitem>
+        <listitem>
+            <para><literal>"text"</literal>
+                <glossterm>required</glossterm>, string</para>
+        </listitem>
+        <listitem>
+            <para><literal>"labels"</literal>
+                <glossterm>optional</glossterm>, array of zero or more strings
+                implementing the <olink targetptr="core_label">label</olink> object type</para>
+        </listitem>
+        <listitem>
+            <para><literal>"pronunciations"</literal>
+                <glossterm>optional</glossterm>, array of zero or more <literal><olink
+                    targetptr="json_pronunciation">pronunciation</olink></literal> instances</para>
+        </listitem>
+    </itemizedlist>
+
+</section>
