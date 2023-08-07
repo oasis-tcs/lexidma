@@ -43,7 +43,7 @@
     <itemizedlist>
         <title>Child nodes if implementing the Crosslingual Module</title>
         <listitem>
-            <para><literal><olink targetptr="nvh_exampleTranslation">exampleTranslation</olink></literal> <glossterm>optional</glossterm> (one or more)</para>
+			<para><literal><olink targetptr="nvh_exampleTranslation">exampleTranslation</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
         </listitem>
     </itemizedlist>
     
