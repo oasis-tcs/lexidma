@@ -99,7 +99,7 @@
     <listitem>
       <para>The <code>inflectedForm</code> object type is intended to model the <emphasis
           role="strong">inflectional morphology</emphasis> of a headword. To model derivational
-        morphology, for example feminine forms of maculine nouns, the recommended way to do that in
+        morphology, for example feminine forms of masculine nouns, the recommended way to do that in
         DMLex is to create separate entries for the two words, and link them using the <olink
           targetptr="linking">Linking Module</olink>.</para>
     </listitem>

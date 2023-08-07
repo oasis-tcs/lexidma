@@ -30,7 +30,7 @@
         <listitem>
             <para><literal>type</literal>
                 <glossterm>optional</glossterm> (zero or one). The type of the etymological process
-                that occured at this stage of the headword's etymological history such as
+                that occurred at this stage of the headword's etymological history such as
                 derivation, cognate, borrowing. The values can be explained and constrained using
                 the <literal><olink targetptr="etymology_etymonType">etymonType</olink></literal>
                 object type.</para>

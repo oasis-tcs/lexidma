@@ -11,7 +11,7 @@
 
   <section id="NVHDesignPrinciples" role="informative">
     <title>Design Principles </title>
-    <para>The NVH serialization of DMLex shown in this document follows these priciples:</para>
+    <para>The NVH serialization of DMLex shown in this document follows these principles:</para>
     <itemizedlist>
       <listitem>
         <para>The value of the node is the text property of the object, if defined, otherwise it is one of the required object properties of maximum arity 1.</para>

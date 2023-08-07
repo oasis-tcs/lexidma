@@ -55,8 +55,8 @@
         which language that is.</para>
     </listitem>
     <listitem>
-      <para>Ideally, a lexicographic resouce should include at least one entry. However, DMLex
-        specifies that <code>entry</code> is optional in <code>lexicographicResouce</code> to allow
+      <para>Ideally, a lexicographic resource should include at least one entry. However, DMLex
+        specifies that <code>entry</code> is optional in <code>lexicographicResource</code> to allow
         for the existence of lexicographic resources which are not yet complete. </para>
     </listitem>
     <listitem>

@@ -18,7 +18,7 @@
     <listitem>
       <para><literal><olink targetptr="etymology_etymology">etymology</olink></literal>
         <glossterm>optional</glossterm> (zero or more)
-        Represents a chain of historical derivations of the entry's headdword.
+        Represents a chain of historical derivations of the entry's headword.
       </para>
     </listitem>
   </itemizedlist>

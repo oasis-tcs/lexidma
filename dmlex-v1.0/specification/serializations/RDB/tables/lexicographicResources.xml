@@ -28,7 +28,7 @@
 
     
     <itemizedlist>
-        <title>Processing Requiremnts</title>
+        <title>Processing Requirements</title>
         <listitem>
             <para>If the implementation contains only one lexicographic resource, then the <olink
                     targetptr="core_lexicographicResource">lexicographicResource</olink> table is

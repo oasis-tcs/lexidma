@@ -47,7 +47,7 @@
 &lt;sourceIdentityTag tag="..."
     &lt;description&gt;...&lt;/description&gt;
     &lt;sameAs.../&gt;
-&lt;/tag&gt;
+&lt;/sourceIdentityTag&gt;
   </programlisting>
   </example>
   

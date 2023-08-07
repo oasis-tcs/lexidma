@@ -36,13 +36,13 @@
 
     <listitem>
       <para><literal>forHeadwords</literal>
-        <glossterm>optional</glossterm> (zero ore one). Boolean. If present, indicates whether this tag is
+        <glossterm>optional</glossterm> (zero or one). Boolean. If present, indicates whether this tag is
         intended to be used on the headword
         side of the lexicographic resource: inside a <literal>pronunciation</literal> of <literal><olink targetptr="core_entry">entry</olink></literal>.</para>
     </listitem>
     <listitem>
       <para><literal>forTranslations</literal>
-        <glossterm>optional</glossterm> (zero ore one). Boolean. If present, indicates whether this tag is
+        <glossterm>optional</glossterm> (zero or one). Boolean. If present, indicates whether this tag is
         intended to be used on the translation side of the lexicographic resource:
         inside a <literal>pronunciation</literal> of <literal><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></literal>.</para>
     </listitem>
@@ -71,7 +71,7 @@
 &lt;transcriptionSchemeTag tag="..." forHeadwords="true" forTranslations="true"&gt;
     &lt;description&gt;...&lt;/description&gt;
     &lt;forLanguage langCode="..."/&gt;
-&lt;/tag&gt;
+&lt;/transcriptionSchemeTag&gt;
   </programlisting>
   </example>
   

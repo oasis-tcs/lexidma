@@ -46,7 +46,7 @@
 &lt;definitionTypeTag tag="..."
     &lt;description&gt;...&lt;/description&gt;
     &lt;sameAs.../&gt;
-&lt;/tag&gt;
+&lt;/definitionTypeTag&gt;
   </programlisting>
   </example>
   

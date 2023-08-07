@@ -11,7 +11,7 @@
     <title>Modelling parts and wholes</title>
     <para>We have three entries with one sense each: "glasses", "microscope" and "lens". We want to
         represent the fact that "lens" is a meronym of both "glasses" and "microscope", and
-        simultanously that "glasses" and "microscope" are both holonyms of "lens".</para>
+        simultaneously that "glasses" and "microscope" are both holonyms of "lens".</para>
     <example>
         <title>Pseudocode</title>
         <programlisting>

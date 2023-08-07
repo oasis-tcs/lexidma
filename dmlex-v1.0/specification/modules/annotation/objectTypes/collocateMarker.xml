@@ -31,7 +31,7 @@
     <listitem>
       <para><literal>id</literal>
         <glossterm>optional</glossterm> (zero or one). A unique identifier of the marker.
-        Markers which have idenfitiers are capable of being involved in relations created with the
+        Markers which have identifiers are capable of being involved in relations created with the
         <olink targetptr="linking">Linking module</olink>.</para>
     </listitem>
     <listitem>

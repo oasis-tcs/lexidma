@@ -447,7 +447,7 @@
   </section>
 
   <section id="serializations" role="normative">
-    <title>DMLEX Recommended Serializations</title>
+    <title>DMLex Recommended Serializations</title>
 
     <!-- serialisations -->
     <xi:include href="serializations/XML/specification.xml"
@@ -626,7 +626,7 @@
   <appendix role="informative" id="coreValidation">
     <title>Machine Readable Validation Artifacts</title>
     <para>CURRENTLY NO VALIDATION ARTIFACTS FORESEEN FOR THE OM.. JUST FOR SERIALIZATIONS</para>
-    <para> MAY LIST CONFORMANT ARTIFACTS FOR SPECIFIC SERILIZATIONS AT A LATER STAGE </para>
+    <para> MAY LIST CONFORMANT ARTIFACTS FOR SPECIFIC SERIALIZATIONS AT A LATER STAGE </para>
     <!--
       <orderedlist>
         <listitem id="CoreSchema">

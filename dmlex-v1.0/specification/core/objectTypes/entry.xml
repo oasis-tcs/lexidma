@@ -25,7 +25,7 @@
     <listitem>
       <para><literal>id</literal>
         <glossterm>optional</glossterm> (zero or one). An unique identifier of the entry. Entries
-        which have idenfitiers are capable of being involved in relations created with the <olink
+        which have identifiers are capable of being involved in relations created with the <olink
           targetptr="linking">Linking module</olink>.</para>
     </listitem>
     <listitem>

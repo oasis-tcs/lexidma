@@ -11,7 +11,7 @@
   
   <section role="informative">
     <title>Design principles</title>
-    <para>The relational database serialization of DMLex shown in this document follows these priciples:</para>
+    <para>The relational database serialization of DMLex shown in this document follows these principles:</para>
     <itemizedlist>
       <listitem>
         <para>The <code>lexicographicResource</code> object is implemented as table. (Alternatively, it can left unimplemented if the database is going to contain only one lexicographic resource.)</para>

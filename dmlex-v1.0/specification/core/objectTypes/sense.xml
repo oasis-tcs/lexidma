@@ -25,7 +25,7 @@
     <listitem>
       <para><literal>id</literal>
         <glossterm>optional</glossterm> (zero or one). A unique identifier of the sense. Senses
-        which have idenfitiers can be involved in relations created with the <olink
+        which have identifiers can be involved in relations created with the <olink
           targetptr="linking">Linking module</olink>.</para>
     </listitem>
     <listitem>
@@ -62,7 +62,7 @@
         syntax and pronunciation. A <emphasis role="strong">sense</emphasis> is a container for
         statements about the headword's semantics. DMLex deliberately makes it impossible to include
         morphological information at sense level. It is impossible in DMLex to model an entry where
-        each sense has slightly different morphological properties (eg. a noun has a weak plural in
+        each sense has slightly different morphological properties (e.g. a noun has a weak plural in
         one sense and a strong plural in another). Such phenomena need to be treated as two entries
         (homographs) and can be linked using the Linking Module to make sure they are always shown
         together to human users.</para>

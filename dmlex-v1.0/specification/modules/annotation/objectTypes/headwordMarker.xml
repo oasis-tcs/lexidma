@@ -10,7 +10,7 @@
   <title><code>headwordMarker</code></title>
   <para>Marks up a substring inside an example, inside an example translation or inside a definition
     which corresponds to the headword (or to a translation of the headword). An application can use
-    the inline markup to highlight the occurence of the headword for human readers through
+    the inline markup to highlight the occurrence of the headword for human readers through
     formatting. Example: <xref linkend="ex21"/>.</para>
 
   <itemizedlist>
