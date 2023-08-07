@@ -22,7 +22,7 @@
             <para><literal>scope</literal> <glossterm>required</glossterm> (exactly one)</para>
         </listitem>
         <listitem>
-            <para><literal>description</literal> <glossterm>optional</glossterm> (exactly one)</para>
+            <para><literal>description</literal> <glossterm>optional</glossterm> (zero or one)</para>
         </listitem>
         <listitem>
             <para><literal><olink targetptr="nvh_memberType">memberType</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
