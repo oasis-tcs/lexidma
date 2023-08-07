@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+<!--the document properties were transferred to "dockbook/dbgenent.mod"-->
+                         ]>
+<section id="nvh" role="normative">
+  <title>DMLex NVH serialization</title>
+
+  <section id="NVHDesignPrinciples" role="informative">
+    <title>Design Principles </title>
+    <para>The NVH serialization of DMLex shown in this document follows these priciples:</para>
+    <itemizedlist>
+      <listitem>
+        <para>The value of the node is the text property of the object, if defined, otherwise it is one of the required object properties of maximum arity 1.</para>
+      </listitem>
+      <listitem>
+        <para>All other objects properties are implemented as NVH nodes.</para>
+      </listitem>
+	</itemizedlist>
+	<para>See <ulink url="https://namevaluehierarchy.org">namevaluehierarchy.org</ulink> for details about the NVH file format and processing libraries.</para>
+  </section>
+  <section id="NVHNodes" role="normative">
+    <title>DMLex NVH Serialization Nodes</title>
+  
+  <xi:include href="nodes/lexicographicResource.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="nodes/entry.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="nodes/partOfSpeech.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="nodes/inflectedForm.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="nodes/sense.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="nodes/definition.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="nodes/label.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="nodes/pronunciation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="nodes/transcription.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="nodes/example.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+
+  <xi:include href="nodes/translationLanguage.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="nodes/headwordTranslation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="nodes/headwordExplanation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="nodes/exampleTranslation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  
+  <xi:include href="nodes/partOfSpeechTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="nodes/inflectedFormTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="nodes/definitionTypeTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="nodes/labelTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="nodes/labelTypeTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="nodes/sourceIdentityTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="nodes/transcriptionSchemeTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="nodes/forLanguage.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="nodes/forPartOfSpeech.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="nodes/sameAs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  
+  <xi:include href="nodes/relation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="nodes/member.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="nodes/relationType.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="nodes/memberType.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  
+  <xi:include href="nodes/placeholderMarker.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="nodes/headwordMarker.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="nodes/collocateMarker.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  
+  <xi:include href="nodes/etymology.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="nodes/etymon.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="nodes/etymonUnit.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="nodes/etymonType.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="nodes/etymonLanguage.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  
+  </section>
+</section>

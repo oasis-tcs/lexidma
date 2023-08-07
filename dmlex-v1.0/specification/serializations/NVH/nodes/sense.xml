@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
+                         ]>
+<section id="nvh_sense">
+    <title>Node: <literal>sense</literal></title>
+    <para>Implements the <olink targetptr="core_sense">sense</olink> object type.</para>
+
+    <itemizedlist>
+        <title>Value</title>
+        <listitem>
+            <para><literal>id</literal> <glossterm>required</glossterm></para>
+        </listitem>
+    </itemizedlist>
+    
+    <itemizedlist>
+        <title>Child nodes</title>
+        <listitem>
+            <para><literal>indicator</literal> <glossterm>optional</glossterm> (zero or one)</para>
+        </listitem>
+        <listitem>
+            <para><literal><olink targetptr="nvh_label">label</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
+        </listitem>
+        <listitem>
+            <para><literal><olink targetptr="nvh_definition">definition</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
+        </listitem>
+        <listitem>
+            <para><literal><olink targetptr="nvh_example">example</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
+        </listitem>
+    </itemizedlist>
+
+    <itemizedlist>
+        <title>Child nodes if implementing the Crosslingual Module</title>
+        <listitem>
+            <para><literal><olink targetptr="nvh_headwordExplanation">headwordExplanation</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
+        </listitem>
+        <listitem>
+            <para><literal><olink targetptr="nvh_headwordTranslation">headwordTranslation</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
+        </listitem>
+    </itemizedlist>
+
+</section>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
+                         ]>
+<section id="nvh_member">
+    <title>Node: <literal>member</literal></title>
+    <para>Implements the <olink targetptr="linking_member">member</olink> object type from the Linking Module.</para>
+
+    <itemizedlist>
+        <title>Value</title>
+        <listitem>
+            <para><literal>memberID</literal> <glossterm>required</glossterm></para>
+        </listitem>
+	</itemizedlist>
+
+    <itemizedlist>
+        <title>Child nodes</title>
+        <listitem>
+            <para><literal>role</literal> <glossterm>optional</glossterm> (exactly one)</para>
+        </listitem>
+        <listitem>
+            <para><literal>obverseListingOrder</literal> <glossterm>required</glossterm> (exactly one)</para>
+        </listitem>
+    </itemizedlist>
+    
+</section>

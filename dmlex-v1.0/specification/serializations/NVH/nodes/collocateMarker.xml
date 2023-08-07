@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
+                         ]>
+<section id="nvh_collocateMarker">
+    <title>Node: <literal>collocateMarker</literal></title>
+    <para>Implements the <olink targetptr="annotation_collocateMarker">collocateMarker</olink> object type from the Annotation module.
+        Contains the text which it marks up and optional child nodes.</para>
+
+	<itemizedlist>
+        <title>Value</title>
+        <listitem>
+            <para><glossterm>Required</glossterm>, implements the <literal>text</literal> property.</para>
+        </listitem>
+    </itemizedlist>
+
+    <itemizedlist>
+        <title>Child nodes</title>
+        <listitem>
+            <para><literal>id</literal> <glossterm>optional</glossterm> (zero or one)</para>
+        </listitem>
+        <listitem>
+            <para><literal>lemma</literal> <glossterm>optional</glossterm> (zero or one)</para>
+        </listitem>
+        <listitem>
+            <para><literal><olink targetptr="nvh_label">label</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
+        </listitem>
+    </itemizedlist>
+    
+    
+</section>
