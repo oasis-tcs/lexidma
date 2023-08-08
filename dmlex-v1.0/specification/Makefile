@@ -3,7 +3,7 @@ html: dmlex-v1.0-wd01.html
 pdf: dmlex-v1.0-wd01.pdf
 
 dmlex-v1.0-wd01.pdf: dmlex-v1.0-wd01.fo
-	fop -pdf $@ -fo $<
+	fop -c stylesheets/fop.xconf -pdf $@ -fo $<
 
 dmlex-v1.0-wd01.fo: dmlex-v1.0-wd01.xml
 	xsltproc --xinclude -o $@ stylesheets/oasis-specification-fo-a4.xsl $<
