@@ -11,5 +11,5 @@ dmlex-v1.0-wd01.fo: dmlex-v1.0-wd01.xml
 dmlex-v1.0-wd01.html: dmlex-v1.0-wd01.xml
 	xsltproc --xinclude -o $@ stylesheets/oasis-specification-html.xsl $<
 
-dmlex-v1.0-wd01.xml: dmlex.xml $(shell xmlstarlet sel -T -t -m //xi:include/@href -v . -n dmlex.xml)
+dmlex-v1.0-wd01.xml: dmlex.xml $(shell ./makedep.sh)
 	./merge.sh
