@@ -28,7 +28,8 @@
       >&latest-loc;/&name;.html</releaseinfo>
     <releaseinfo role="OASIS-specification-latest">&latest-loc;/&name;.pdf</releaseinfo>
     <releaseinfo role="OASIS-specification-latest">&latest-loc;/&name;.xml</releaseinfo>
-    <releaseinfo role="committee"><ulink url="http://www.oasis-open.org/committees/lexidma/">OASIS Lexicographic Infrastructure Data Model and API (LEXIDMA) TC</ulink></releaseinfo>
+    <releaseinfo role="committee"><ulink url="http://www.oasis-open.org/committees/lexidma/">OASIS
+        Lexicographic Infrastructure Data Model and API (LEXIDMA) TC</ulink></releaseinfo>
     <authorgroup>
       <othercredit role="chair">
         <firstname>Tomaž</firstname>
@@ -217,8 +218,8 @@
       <title>Citation format</title>
       <para>When referencing this specification the following citation format should be used:</para>
       <para><citation>DMLex-&version;</citation></para>
-      <para><emphasis>Data Model for Lexicography Version &version;</emphasis>. Edited by Michal Měchura, David
-        Filip and Simon Krek. &pubdate;. OASIS &standard;. <ulink
+      <para><emphasis>Data Model for Lexicography Version &version;</emphasis>. Edited by Michal
+        Měchura, David Filip and Simon Krek. &pubdate;. OASIS &standard;. <ulink
           url="&this-loc;/&name;-&stage;.html">&this-loc;/&name;-&stage;.html</ulink>. Latest
         version: <ulink url="&latest-loc;/&name;.html">&latest-loc;/&name;.html</ulink>. </para>
       <!--
@@ -285,8 +286,12 @@
 
   <section id="Introduction">
     <title>Introduction</title>
-    <para>DMLex is a data model for modelling dictionaries (here called <emphasis>lexicographic resources</emphasis>) in computer applications such as dictionary writing systems.</para>
-    <para>DMLex is a data model, not an encoding format. DMLex is abstract, independent of any markup language or formalism. At the same time, DMLex has been designed to be easily and straightforwardly implementable in XML, JSON, NVH, as a relational database, and as a Semantic Web triplestore.</para>
+    <para>DMLex is a data model for modelling dictionaries (here called <emphasis>lexicographic
+        resources</emphasis>) in computer applications such as dictionary writing systems.</para>
+    <para>DMLex is a data model, not an encoding format. DMLex is abstract, independent of any
+      markup language or formalism. At the same time, DMLex has been designed to be easily and
+      straightforwardly implementable in XML, JSON, NVH, as a relational database, and as a Semantic
+      Web triplestore.</para>
     <section>
       <title>Modular structure of DMLex</title>
       <para>The DMLex specification is divided into a core with several optional modules.</para>
@@ -298,23 +303,33 @@
         </listitem>
         <listitem>
           <para>
-            <olink targetptr="xlingual">DMLex Crosslingual Module</olink> extends DMLex Core to model bilingual and multilingual lexicographic resources.</para>
+            <olink targetptr="xlingual">DMLex Crosslingual Module</olink> extends DMLex Core to
+            model bilingual and multilingual lexicographic resources.</para>
         </listitem>
         <listitem>
           <para>
-            <olink targetptr="values">DMLex Controlled Values Module</olink> extends DMLex Core to represent inventories of look-up values to be used as part-of-speech tags, usage label tags and others.</para>
+            <olink targetptr="values">DMLex Controlled Values Module</olink> extends DMLex Core to
+            represent inventories of look-up values to be used as part-of-speech tags, usage label
+            tags and others.</para>
         </listitem>
         <listitem>
           <para>
-            <olink targetptr="linking">DMLex Linking Module</olink> extends DMLex Core and allows you to model various kinds of relations between entries, senses and other objects, including semantic relations such as synonymy and antonymy and presentational relations such as subentries and subsenses, both within a single lexicographic resource and across multiple lexicographic resources.</para>
+            <olink targetptr="linking">DMLex Linking Module</olink> extends DMLex Core and allows
+            you to model various kinds of relations between entries, senses and other objects,
+            including semantic relations such as synonymy and antonymy and presentational relations
+            such as subentries and subsenses, both within a single lexicographic resource and across
+            multiple lexicographic resources.</para>
         </listitem>
         <listitem>
           <para>
-            <olink targetptr="annotation">DMLex Annotation Module</olink> extends DMLex Core to allow the modelling of inline markup on various objects such as example sentences, including the modelling of collocations and corpus patterns.</para>
+            <olink targetptr="annotation">DMLex Annotation Module</olink> extends DMLex Core to
+            allow the modelling of inline markup on various objects such as example sentences,
+            including the modelling of collocations and corpus patterns.</para>
         </listitem>
         <listitem>
           <para>
-            <olink targetptr="etymology">DMLex Etymology Module</olink> extends DMLex Core to allow the modelling of etymological information in dictionaries.</para>
+            <olink targetptr="etymology">DMLex Etymology Module</olink> extends DMLex Core to allow
+            the modelling of etymological information in dictionaries.</para>
         </listitem>
       </itemizedlist>
     </section>
@@ -328,65 +343,128 @@
           <member><olink targetptr="RDF_implementation">RDF</olink>,</member>
           <member><olink targetptr="NVH_implementation">NVH</olink>,</member>
           <member>and <olink targetptr="RDB_implementation">relational databases</olink>.</member>
-        </simplelist> We also provide an informative serialization as NVH [to link appendix when
-        available]. </para>
-         
-        
-      
-      <itemizedlist>
-        <listitem>
-          <para>
-            The XML and JSON implementations are intended as serializations for <emphasis>data exchange</emphasis>:
-            for encoding lexicographic data while the data is in transit out of one software system into another.
-            Examples of what the two serializations look like with real-world data are given in <xref linkend="examples"/>.
-          </para>
-        </listitem>
-        <listitem>
-          <para>
-   		    The NVH implementation is intended for <emphasis>human and machine viewing and editing</emphasis>:
-            it makes it easy for humans to understand or change the content as well as quickly develop programs that read or modify it.
-            Examples of what the serialization looks like with real-world data are given in <xref linkend="examples"/>.
-          </para>
-        </listitem>
-        <listitem>
-          <para>
-            The relational database implementation is intended as a representation for lexicographic data
-            while the data is being edited and maintained inside a software system, such as a Dictionary Writing System (DWS).
-          </para>
-        </listitem>
-      </itemizedlist>
+        </simplelist></para>
+    </section>
+    <section>
+      <title>The metamodel behind DMLex</title>
+      <para>The DMLex data model is defined in this document through the following concepts.</para>
+      <section>
+        <title>Object types</title>
+        <para>DMLex defines the existence of certain <emphasis>object types</emphasis> such as
+            <code>entry</code> and <code>definition</code>. In every DMLex-conformant data set, each
+          “object” (for example each XML element or each database table) must be an instance of one
+          of these object types.</para>
+        <para>The names of object types are unique within the scope of the entire data model,
+          including all the modules. An object type defined in one module is guaranteed not to
+          name-conflict with another object type in another module.</para>
+      </section>
+      <section>
+        <title>Properties</title>
+        <para>For every object type, DMLex defines which properties it can have, whether the properties
+          are required or optional, what their arities are (for example “zero or more”), and what
+          kinds of values it can contains.</para>
+        <para>There are two kinds of properties: those can contain literal values and those that
+          contain objects.</para>
+        <para>Some properties are defined to contain literal values such as strings and numbers. The
+          following types of literal values are used in DMLex: <simplelist>
+            <member>non-empty string,</member>
+            <member>number,</member>
+            <member>unique identifier</member>
+            <member>and reference to a unique identifier</member>
+          </simplelist>
+        </para>
+        <para>Some properties are defined to contain objects (of types defined in DMLex), for
+          example an object of type <code>entry</code> can contain objects of type
+            <code>sense</code>. In such cases, the name of the property is the same as the name of
+          the object type. For example, the <code>entry</code> object type has a property called
+            <code>sense</code> which (with an arity of “zero or more”) contains <code>sense</code>
+          objects.</para>
+        <para>The names of properties are unique within the scope of the object type they belong to
+          but not necessarily outside it.</para>
+      </section>
+      <section>
+        <title>Tree structures</title>
+        <para>The mechanics of objects which (through their properties) contain other objects mimics
+          the tree-like structure commonly used in lexicography to represent dictionary entries,
+          typicaly using XML.</para>
+        <para>Because of this, this document sometimes refers to objects being the “children”,
+          “parents”, “descendants” or “ancestors” of other objects, or objects “belonging to” other
+          objects. This is to be understood as follows.</para>
+        <itemizedlist>
+          <listitem>
+            <para>“Object A is the parent of object B” and “object B is a child of object A” both
+              mean that object A has a property whose value is object B.</para>
+          </listitem>
+          <listitem>
+            <para>“Object A is an ancestor of object B” and “object B is a descendant of object A”
+              means that there is a chain of parent-child links between object A and object
+              B.</para>
+          </listitem>
+          <listitem>
+            <para>“Object B belongs to object A” is the same as “object B is a descendant of object
+              A” and “object A is an ancestor of object B”.</para>
+          </listitem>
+        </itemizedlist>
+        <para>The tree structures created by DMLex are guaranteed to have similar properties as in
+          XML and many other tree-structured formalisms, including importantly the constraint that
+          every object has no more than one parent.</para>
+        <para>Additionally, tree structures created by DMLex are guaranteed to be non-recursive: an
+          object can never be an ancestor of another object of the same type.</para>
+      </section>
+      <section>
+        <title>Relational structures</title>
+        <para>In addition to tree structures, which are used in DMLex to model the basic
+          entries-and-senses skeleton of a lexicographic resource, DMLex also allows (through the
+          <code>relation</code> object type defined in the Linking Module) the modelling of non-tree relations
+          between objects, that is, relations connecting objects which belong to different
+          parents.</para>
+        <para>Non-tree relations are used in DMLex to model cross-references betwen entries and
+          senses, both within a single lexicographic resource and across multiple lexicographic
+          resources. Non-tree relations are also used in DMLex to model certain things which have
+          traditionally been modelled with tree structures in lexicography, such as the hierarchical
+          arrangement of entries and subentries, or senses and subsenses. In DMLex, these phenomena
+          are modelled as non-tree relations in order in order to avoid recusion in the tree
+          structures and to minimize the number of object types in the data model.</para>
+      </section>
     </section>
   </section>
-  
+
   <!--Conformance section should go last, but it seems to make better sense here -->
   <xi:include href="conformance/conformance.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  
+
   <!-- core and modules -->
   <xi:include href="core/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <section id="modules" role="normative">
     <title>DMLex Optional Modules</title>
-  
-  <xi:include href="modules/xlingual/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="modules/values/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="modules/linking/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="modules/annotation/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="modules/etymology/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+
+    <xi:include href="modules/xlingual/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="modules/values/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="modules/linking/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="modules/annotation/specification.xml"
+      xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="modules/etymology/specification.xml"
+      xmlns:xi="http://www.w3.org/2001/XInclude"/>
   </section>
-  
+
   <section id="serializations" role="normative">
     <title>DMLEX Recommended Serializations</title>
- 
-  <!-- serialisations -->
-  <xi:include href="serializations/XML/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="serializations/JSON/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="serializations/RDF/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="serializations/RDB/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="serializations/NVH/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-</section>
+
+    <!-- serialisations -->
+    <xi:include href="serializations/XML/specification.xml"
+      xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="serializations/JSON/specification.xml"
+      xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="serializations/RDF/specification.xml"
+      xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="serializations/RDB/specification.xml"
+      xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="serializations/NVH/specification.xml"
+      xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  </section>
   <appendix role="informative">
     <!-- examples -->
     <xi:include href="examples/examples.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    
+
   </appendix>
   <appendix role="normative" id="references">
     <title>References</title>
@@ -420,7 +498,8 @@
             Languages</title>, <citetitle>
             <ulink url="http://tools.ietf.org/html/bcp47">http://tools.ietf.org/html/bcp47</ulink>
           </citetitle> IETF (Internet Engineering Task Force).</bibliomixed>
-        <bibliomixed id="rfc3552"><abbrev>RFC 3552</abbrev> R. Escrola, B. Korver, <title>Guidelines for Writing RFC Text on Security Considerations</title>, <citetitle>
+        <bibliomixed id="rfc3552"><abbrev>RFC 3552</abbrev> R. Escrola, B. Korver, <title>Guidelines
+            for Writing RFC Text on Security Considerations</title>, <citetitle>
             <ulink url="https://www.tools.ietf.org/rfc/rfc3552.txt"
               >https://www.tools.ietf.org/rfc/rfc3552.txt</ulink>
           </citetitle> IETF (Internet Engineering Task Force) RFC 3552, July 2003.</bibliomixed>
