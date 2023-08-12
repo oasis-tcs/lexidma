@@ -14,7 +14,7 @@
     formatting. Example: <xref linkend="ex21"/>.</para>
 
   <itemizedlist>
-    <title>Child of</title>
+    <title>Property of</title>
     <listitem>
       <para><literal><olink targetptr="annotation_definition">definition</olink></literal></para>
     </listitem>

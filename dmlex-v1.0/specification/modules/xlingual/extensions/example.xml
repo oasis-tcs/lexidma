@@ -14,7 +14,7 @@
   </para>
   
   <itemizedlist>
-    <title>Additional contents</title>
+    <title>Additional properties</title>
     <listitem>
       <para><literal><olink targetptr="xlingual_exampleTranslation">exampleTranslation</olink></literal>
         <glossterm>optional</glossterm> (zero, one or more)</para>

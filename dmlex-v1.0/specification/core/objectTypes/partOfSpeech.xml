@@ -14,14 +14,14 @@
   <para>Represents a part-of-speech label.</para>
 
   <itemizedlist>
-    <title>Child of</title>
+    <title>Property of</title>
     <listitem>
       <para><literal><olink targetptr="core_entry">entry</olink></literal></para>
     </listitem>
   </itemizedlist>
 
   <itemizedlist>
-    <title>Contents</title>
+    <title>Properties</title>
     <listitem>
       <para><literal>tag</literal>
         <glossterm>required</glossterm> (exactly one). Non-empty string. An abbreviation, a code or
@@ -45,7 +45,7 @@
     <listitem>
       <para>The way to model other grammatical properties of the headword besides part of speech,
         such as gender (of nouns) or aspect (of verbs) in DMLex is to combine them with the part of
-        speech into a single part-of-speech label, for example <code>noun-masc</code> and
+        speech into a single part-of-speech tag, for example <code>noun-masc</code> and
           <code>noun-fem</code>, or <code>v-perf</code> and <code>v-imperf</code>.</para>
     </listitem>
   </itemizedlist>

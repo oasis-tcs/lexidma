@@ -13,14 +13,14 @@
         another etymologically related form.</para>
 
     <itemizedlist>
-        <title>Child of</title>
+        <title>Property of</title>
         <listitem>
             <para><literal><olink targetptr="etymology_etymon">etymon</olink></literal></para>
         </listitem>
     </itemizedlist>
 
     <itemizedlist>
-        <title>Contents</title>
+        <title>Properties</title>
         <listitem>
             <para><literal>language</literal>
                 <glossterm>required</glossterm> (exactly one). An IETF tag. The tags can be

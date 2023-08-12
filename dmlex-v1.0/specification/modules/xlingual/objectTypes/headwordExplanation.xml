@@ -14,14 +14,14 @@
         the meaning of the headword. Example: <xref linkend="ex09"/>.</para>
 
     <itemizedlist>
-        <title>Child of</title>
+        <title>Property of</title>
         <listitem>
             <para><literal><olink targetptr="xlingual_sense">sense</olink></literal></para>
         </listitem>
     </itemizedlist>
 
     <itemizedlist>
-        <title>Contents</title>
+        <title>Properties</title>
         <listitem>
             <para><literal>text</literal>
                 <glossterm>required</glossterm> (exactly one). Non-empty string.</para>

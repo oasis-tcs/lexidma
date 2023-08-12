@@ -14,7 +14,7 @@
   <para>Represents the pronunciation of its parent. Examples: <xref linkend="ex02"/>, <xref linkend="ex03"/>, <xref linkend="ex04"/>.</para>
 
   <itemizedlist>
-    <title>Child of</title>
+    <title>Property of</title>
     <listitem>
       <para><literal><olink targetptr="core_entry">entry</olink></literal></para>
     </listitem>
@@ -24,7 +24,7 @@
   </itemizedlist>
 
   <itemizedlist>
-    <title>Contents</title>
+    <title>Properties</title>
     <listitem>
       <para>At least one of:</para>
       <itemizedlist>

@@ -13,7 +13,7 @@
   <para>Represents a dictionary entry. An entry contains information about one headword.</para>
 
   <itemizedlist>
-    <title>Child of</title>
+    <title>Property of</title>
     <listitem>
       <para><literal><olink targetptr="core_lexicographicResource"
           >lexicographicResource</olink></literal></para>
@@ -21,7 +21,7 @@
   </itemizedlist>
 
   <itemizedlist>
-    <title>Contents</title>
+    <title>Properties</title>
     <listitem>
       <para><literal>id</literal>
         <glossterm>optional</glossterm> (zero or one). An unique identifier of the entry. Entries
@@ -79,8 +79,8 @@
   </note>
   
   <note>
-    <para> DMLex allows only one headword per entry. Things like variant headwords do not exist in
-      DMLex. However, the <olink targetptr="linking">DMLex Linking Module</olink> does make it
+    <para> DMLex allows only one headword per entry. Things such as  variant headwords do not exist
+      in DMLex. However, the <olink targetptr="linking">DMLex Linking Module</olink> does make it
       possible to represent the existence of variants by treating them as separate headwords of
       separate entries, and linking the entries using a type of link which will cause the entries to
       be placed together when shown to human users. See <xref linkend="ex15"/> for an example using
@@ -89,7 +89,7 @@
 
   <note>
     <para>Entries in DMLex do not have an explicit listing order. An application can imply a listing
-      order from a combination of the headword and the homograph number such that the headword is
+      order from a combination of the headword and the homograph number, such that the headword is
       the primary sorting key and the homograph number (for entries that have one) is the secondary
       sorting key.</para>
   </note>

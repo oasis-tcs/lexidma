@@ -11,14 +11,14 @@
   <para> Represents a chain of historical derivations of a word. </para>
 
   <itemizedlist>
-    <title>Child of</title>
+    <title>Property of</title>
     <listitem>
       <para><literal><olink targetptr="etymoloogy_entry">entry</olink></literal></para>
     </listitem>
   </itemizedlist>
 
   <itemizedlist>
-    <title>Contents</title>
+    <title>Properties</title>
     <listitem>
       <para><literal>description</literal>
         <glossterm>optional</glossterm> (zero or one). A plain-text form of the etymology, which may

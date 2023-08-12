@@ -13,14 +13,14 @@
     members having this role.</para>
 
   <itemizedlist>
-    <title>Child of</title>
+    <title>Property of</title>
     <listitem>
       <para><literal><olink targetptr="linking_relationType">relationType</olink></literal></para>
     </listitem>
   </itemizedlist>
 
   <itemizedlist>
-    <title>Contents</title>
+    <title>Properties</title>
     <listitem>
       <para><literal>role</literal>
         <glossterm>required</glossterm> (exactly one). String. If the value is empty, then members

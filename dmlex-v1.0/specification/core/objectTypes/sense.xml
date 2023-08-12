@@ -14,14 +14,14 @@
   <para>Represents one of possibly many meanings (or meaning potentials) of the headword.</para>
 
   <itemizedlist>
-    <title>Child of</title>
+    <title>Property of</title>
     <listitem>
       <para><literal><olink targetptr="core_entry">entry</olink></literal></para>
     </listitem>
   </itemizedlist>
 
   <itemizedlist>
-    <title>Contents</title>
+    <title>Properties</title>
     <listitem>
       <para><literal>id</literal>
         <glossterm>optional</glossterm> (zero or one). A unique identifier of the sense. Senses
@@ -57,13 +57,13 @@
   <itemizedlist>
     <title>Comments</title>
     <listitem>
-      <para>The contents of <emphasis role="strong">entry</emphasis> are, apart from
+      <para>The properties of <emphasis role="strong">entry</emphasis> are, apart from
           <code>sense</code>, formal properties of the headword such as orthography, morphology,
         syntax and pronunciation. A <emphasis role="strong">sense</emphasis> is a container for
         statements about the headword's semantics. DMLex deliberately makes it impossible to include
-        morphological information at sense level. It is impossible inm DMLex to model an entry where
+        morphological information at sense level. It is impossible in DMLex to model an entry where
         each sense has slightly different morphological properties (eg. a noun has a weak plural in
-        one sense and a strong plural in another). Such phenomena need to be treatedas two entries
+        one sense and a strong plural in another). Such phenomena need to be treated as two entries
         (homographs) and can be linked using the Linking Module to make sure they are always shown
         together to human users.</para>
     </listitem>

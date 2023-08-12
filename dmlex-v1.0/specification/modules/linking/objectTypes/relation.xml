@@ -11,7 +11,7 @@
   <para>Represents the fact that a relation exists between two or more objects.</para>
 
   <itemizedlist>
-    <title>Child of</title>
+    <title>Property of</title>
     <listitem>
       <para><literal><olink targetptr="linking_lexicographicResource"
           >lexicographicResource</olink></literal></para>
@@ -19,7 +19,7 @@
   </itemizedlist>
 
   <itemizedlist>
-    <title>Contents</title>
+    <title>Properties</title>
     <listitem>
       <para><literal>type</literal>
         <glossterm>required</glossterm> (exactly one). Non-empty string. Specifies what type of

@@ -12,7 +12,7 @@
         targetptr="etymology_etymon">etymon</olink></code>.</para>
     
     <itemizedlist>
-        <title>Child of</title>
+        <title>Property of</title>
         <listitem>
             <para><literal><olink targetptr="etymology_lexicographicResource"
                 >lexicographicResource</olink></literal></para>
@@ -20,7 +20,7 @@
     </itemizedlist>
     
     <itemizedlist>
-        <title>Contents</title>
+        <title>Properties</title>
         <listitem>
             <para><literal>type</literal>
                 <glossterm>required</glossterm> (exactly one). Non-empty string.</para>
