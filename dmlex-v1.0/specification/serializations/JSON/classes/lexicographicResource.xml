@@ -18,7 +18,7 @@
         </listitem>
         <listitem>
             <para><literal>"uri"</literal>
-                <glossterm>optional</glossterm>, string</para>
+                <glossterm>required</glossterm>, string</para>
         </listitem>
         <listitem>
             <para><literal>"language"</literal>

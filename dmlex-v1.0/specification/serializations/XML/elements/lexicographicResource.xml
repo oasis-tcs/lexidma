@@ -15,7 +15,7 @@
             <para><literal>@title</literal> <glossterm>optional</glossterm></para>
         </listitem>
         <listitem>
-            <para><literal>@uri</literal> <glossterm>optional</glossterm></para>
+            <para><literal>@uri</literal> <glossterm>required</glossterm></para>
         </listitem>
         <listitem>
             <para><literal>@language</literal> <glossterm>required</glossterm></para>

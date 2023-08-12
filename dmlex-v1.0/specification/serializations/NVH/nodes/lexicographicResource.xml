@@ -22,7 +22,7 @@
             <para><literal><olink targetptr="nvh_entry">entry</olink></literal> <glossterm>optional</glossterm> (exactly one)</para>
         </listitem>
         <listitem>
-            <para><literal>uri</literal> <glossterm>optional</glossterm> (exactly one)</para>
+            <para><literal>uri</literal> <glossterm>required</glossterm> (exactly one)</para>
         </listitem>
         <listitem>
             <para><literal>language</literal> <glossterm>required</glossterm> (exactly one)</para>
