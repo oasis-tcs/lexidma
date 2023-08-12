@@ -6,7 +6,7 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
                          ]>
 <section id="nvh_sourceIdentityTag">
-    <title>Node: <literal>sourceIdentityTag</literal></title>
+    <title>NVH node: <literal>sourceIdentityTag</literal></title>
     <para>Implements the <olink targetptr="values_sourceIdentityTag">sourceIdentityTag</olink> object type from the Controlled Values Module.</para>
 
     <itemizedlist>

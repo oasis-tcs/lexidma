@@ -5,25 +5,20 @@
                          %xinclude;
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
                          ]>
-<section id="json_relation">
-    <title>Class: <literal>relation</literal></title>
-    <para>Implements the <olink targetptr="linking_relation">relation</olink>
-        object type from the Linking Module.</para>
+<section id="json_etymonLanguage">
+    <title>JSON object: <literal>etymonLanguage</literal></title>
+    <para>Implements the <olink targetptr="etymology_etymonLanguage">etymonLanguage</olink> object type
+        from the Etymology Module.</para>
 
     <itemizedlist>
         <title>Members</title>
         <listitem>
-            <para><literal>"type"</literal>
+            <para><literal>"langCode"</literal>
                 <glossterm>required</glossterm>, string</para>
         </listitem>
         <listitem>
-            <para><literal>"description"</literal>
+            <para><literal>"displayName"</literal>
                 <glossterm>optional</glossterm>, string</para>
-        </listitem>
-        <listitem>
-            <para><literal>"members"</literal>
-                <glossterm>optional</glossterm>, array of two or more <literal><olink
-                    targetptr="json_member">member</olink></literal> instances</para>
         </listitem>
     </itemizedlist>
 

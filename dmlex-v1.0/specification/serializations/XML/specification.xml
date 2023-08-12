@@ -35,7 +35,7 @@
     </itemizedlist>
   </section>
   <section id="XMLElements" role="normative">
-    <title>DMLex XML Serialization Elements</title>
+    <title>DMLex XML serialization elements</title>
   
   <xi:include href="elements/lexicographicResource.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="elements/entry.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>

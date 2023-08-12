@@ -6,7 +6,7 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
                          ]>
 <section id="xml_example">
-    <title>Element: <literal>&lt;example&gt;</literal></title>
+    <title>XML element: <literal>&lt;example&gt;</literal></title>
     <para>Implements the <olink targetptr="core_example">example</olink> object type.</para>
 
     <itemizedlist>

@@ -5,19 +5,23 @@
                          %xinclude;
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
                          ]>
-<section id="json_headwordMarker">
-    <title>Class: <literal>headwordMarker</literal></title>
-    <para>Implements the <olink targetptr="annotation_headwordMarker">headwordMarker</olink>
-        object type from the Annotation Module.</para>
+<section id="json_member">
+    <title>JSON object: <literal>member</literal></title>
+    <para>Implements the <olink targetptr="linking_member">member</olink>
+        object type from the Linking Module.</para>
 
     <itemizedlist>
         <title>Members</title>
         <listitem>
-            <para><literal>"startIndex"</literal>
-                <glossterm>required</glossterm>, number</para>
+            <para><literal>"memberID"</literal>
+                <glossterm>required</glossterm>, string</para>
         </listitem>
         <listitem>
-            <para><literal>"endIndex"</literal>
+            <para><literal>"role"</literal>
+                <glossterm>optional</glossterm>, string</para>
+        </listitem>
+        <listitem>
+            <para><literal>"obverseListingOrder"</literal>
                 <glossterm>required</glossterm>, number</para>
         </listitem>
     </itemizedlist>

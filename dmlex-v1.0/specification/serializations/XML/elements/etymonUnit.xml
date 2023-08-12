@@ -6,7 +6,7 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
                          ]>
 <section id="xml_etymonUnit">
-    <title>Element: <literal>&lt;etymonUnit&gt;</literal></title>
+    <title>XML element: <literal>&lt;etymonUnit&gt;</literal></title>
     <para>Implements the <olink targetptr="etymology_etymonUnit">etymonUnit</olink> object type from the Etymology Module.</para>
 
     <itemizedlist>

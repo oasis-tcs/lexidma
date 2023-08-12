@@ -6,7 +6,7 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
                          ]>
 <section id="json_entry">
-    <title>Class: <literal>entry</literal></title>
+    <title>JSON object: <literal>entry</literal></title>
     <para>Implements the <olink targetptr="core_entry">entry</olink> object type.</para>
 
     <itemizedlist>

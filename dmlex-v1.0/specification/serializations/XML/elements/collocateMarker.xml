@@ -6,7 +6,7 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
                          ]>
 <section id="xml_collocateMarker">
-    <title>Element: <literal>&lt;collocateMarker&gt;</literal></title>
+    <title>XML element: <literal>&lt;collocateMarker&gt;</literal></title>
     <para>Implements the <olink targetptr="annotation_collocateMarker">collocateMarker</olink> object type from the Annotation module.
         Contains the text which it marks up, optionally followed by one or more <literal><olink targetptr="xml_label">&lt;label&gt;</olink></literal> elements.</para>
     

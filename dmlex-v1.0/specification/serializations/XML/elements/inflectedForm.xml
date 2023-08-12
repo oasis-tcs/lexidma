@@ -6,7 +6,7 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
                          ]>
 <section id="xml_inflectedForm">
-    <title>Element: <literal>&lt;inflectedForm&gt;</literal></title>
+    <title>XML element: <literal>&lt;inflectedForm&gt;</literal></title>
     <para>Implements the <olink targetptr="core_inflectedForm">inflectedForm</olink> object type.</para>
 
     <itemizedlist>

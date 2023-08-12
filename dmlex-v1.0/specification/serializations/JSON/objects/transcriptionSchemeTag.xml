@@ -5,9 +5,9 @@
                          %xinclude;
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
                          ]>
-<section id="json_inflectedFormTag">
-    <title>Class: <literal>inflectedFormTag</literal></title>
-    <para>Implements the <olink targetptr="values_inflectedFormTag">inflectedFormTag</olink>
+<section id="json_transcriptionSchemeTag">
+    <title>JSON object: <literal>transcriptionSchemeTag</literal></title>
+    <para>Implements the <olink targetptr="values_transcriptionSchemeTag">transcriptionSchemeTag</olink>
         object type from the Controlled Values Module.</para>
 
     <itemizedlist>
@@ -32,16 +32,6 @@
             <para><literal>"forLanguages"</literal>
                 <glossterm>optional</glossterm>, array of zero or more strings implementing the
                     <olink targetptr="values_forLanguage">forLanguage</olink> object type</para>
-        </listitem>
-        <listitem>
-            <para><literal>"forPartsOfSpeech"</literal>
-                <glossterm>optional</glossterm>, array of zero or more strings implementing the
-                <olink targetptr="values_forPartOfSpeech">forPartOfSpeech</olink> object type</para>
-        </listitem>
-        <listitem>
-            <para><literal>"sameAs"</literal>
-                <glossterm>optional</glossterm>, array of zero or more strings implementing the
-                <olink targetptr="values_sameAs">sameAs</olink> object type</para>
         </listitem>
     </itemizedlist>
 

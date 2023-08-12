@@ -5,24 +5,25 @@
                          %xinclude;
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
                          ]>
-<section id="json_member">
-    <title>Class: <literal>member</literal></title>
-    <para>Implements the <olink targetptr="linking_member">member</olink>
-        object type from the Linking Module.</para>
+<section id="json_sourceIdentityTag">
+    <title>JSON object: <literal>sourceIdentityTag</literal></title>
+    <para>Implements the <olink targetptr="values_sourceIdentityTag">sourceIdentityTag</olink>
+        object type from the Controlled Values Module.</para>
 
     <itemizedlist>
         <title>Members</title>
         <listitem>
-            <para><literal>"memberID"</literal>
+            <para><literal>"tag"</literal>
                 <glossterm>required</glossterm>, string</para>
         </listitem>
         <listitem>
-            <para><literal>"role"</literal>
+            <para><literal>"description"</literal>
                 <glossterm>optional</glossterm>, string</para>
         </listitem>
         <listitem>
-            <para><literal>"obverseListingOrder"</literal>
-                <glossterm>required</glossterm>, number</para>
+            <para><literal>"sameAs"</literal>
+                <glossterm>optional</glossterm>, array of zero or more strings implementing the
+                <olink targetptr="values_sameAs">sameAs</olink> object type</para>
         </listitem>
     </itemizedlist>
 

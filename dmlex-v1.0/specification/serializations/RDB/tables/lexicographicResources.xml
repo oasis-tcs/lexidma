@@ -6,7 +6,7 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
                          ]>
 <section id="rdb_lexicographicResources">
-    <title>Table: <literal>lexicographicResources</literal></title>
+    <title>Database table: <literal>lexicographicResources</literal></title>
     <para>Implements the <olink targetptr="core_lexicographicResource">lexicographicResource</olink>
         data type.</para>
 

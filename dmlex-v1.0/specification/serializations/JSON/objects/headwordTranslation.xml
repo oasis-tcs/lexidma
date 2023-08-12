@@ -5,9 +5,9 @@
                          %xinclude;
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
                          ]>
-<section id="json_exampleTranslation">
-    <title>Class: <literal>exampleTranslation</literal></title>
-    <para>Implements the <olink targetptr="xlingual_exampleTranslation">exampleTranslation</olink>
+<section id="json_headwordTranslation">
+    <title>JSON object: <literal>headwordTranslation</literal></title>
+    <para>Implements the <olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink>
         object type from the Crosslingual Module.</para>
 
     <itemizedlist>
@@ -23,23 +23,36 @@
                 <glossterm>required</glossterm>, string</para>
         </listitem>
         <listitem>
+            <para><literal>"partsOfSpeech"</literal>
+                <glossterm>optional</glossterm>, array of zero or more strings implementing the
+                    <olink targetptr="core_partOfSpeech">partOfSpeech</olink> object type</para>
+        </listitem>
+        <listitem>
             <para><literal>"labels"</literal>
                 <glossterm>optional</glossterm>, array of zero or more strings implementing the
                     <olink targetptr="core_label">label</olink> object type</para>
+        </listitem>
+        <listitem>
+            <para><literal>"pronunciations"</literal>
+                <glossterm>optional</glossterm>, array of zero or more <literal><olink
+                        targetptr="json_pronunciation">pronunciation</olink></literal>
+                instances</para>
+        </listitem>
+        <listitem>
+            <para><literal>"inflectedForms"</literal>
+                <glossterm>optional</glossterm>, array of zero or more <literal><olink
+                        targetptr="json_inflectedForm">inflectedForm</olink></literal>
+                instances</para>
         </listitem>
     </itemizedlist>
 
     <itemizedlist>
         <title>Members if implementing the Annotation Module</title>
         <listitem>
-            <para><literal>"headwordMarkers"</literal>
+            <para><literal>"placeholderMarkers"</literal>
                 <glossterm>optional</glossterm>, array of zero or more <literal><olink
-                    targetptr="json_headwordMarkers">headwordMarker</olink></literal> instances</para>
-        </listitem>
-        <listitem>
-            <para><literal>"collocateMarkers"</literal>
-                <glossterm>optional</glossterm>, array of zero or more <literal><olink
-                    targetptr="json_collocateMarkers">collocateMarker</olink></literal> instances</para>
+                        targetptr="json_placeholderMarkers">placeholderMarker</olink></literal>
+                instances</para>
         </listitem>
     </itemizedlist>
 
