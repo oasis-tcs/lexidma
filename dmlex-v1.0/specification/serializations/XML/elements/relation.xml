@@ -6,7 +6,7 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
                          ]>
 <section id="xml_relation">
-    <title>Element: <literal>&lt;relation&gt;</literal></title>
+    <title>XML element: <literal>&lt;relation&gt;</literal></title>
     <para>Implements the <olink targetptr="linking_relation">relation</olink> object type from the Linking Module.</para>
 
     <itemizedlist>

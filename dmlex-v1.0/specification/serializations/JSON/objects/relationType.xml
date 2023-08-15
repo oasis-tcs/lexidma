@@ -5,37 +5,29 @@
                          %xinclude;
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
                          ]>
-<section id="json_partOfSpeechTag">
-    <title>Class: <literal>partOfSpeechTag</literal></title>
-    <para>Implements the <olink targetptr="values_partOfSpeechTag">partOfSpeechTag</olink>
-        object type from the Controlled Values Module.</para>
+<section id="json_relationType">
+    <title>JSON object: <literal>relationType</literal></title>
+    <para>Implements the <olink targetptr="linking_relationType">relationType</olink>
+        object type from the Linking Module.</para>
 
     <itemizedlist>
         <title>Members</title>
         <listitem>
-            <para><literal>"tag"</literal>
+            <para><literal>"type"</literal>
                 <glossterm>required</glossterm>, string</para>
         </listitem>
         <listitem>
-            <para><literal>"forHeadwords"</literal>
-                <glossterm>optional</glossterm>, boolean</para>
+            <para><literal>"scope"</literal>
+                <glossterm>optional</glossterm>, string</para>
         </listitem>
-        <listitem>
-            <para><literal>"forTranslations"</literal>
-                <glossterm>optional</glossterm>, boolean</para>
-        </listitem>        
-        <listitem>
-            <para><literal>"forEtymology"</literal>
-                <glossterm>optional</glossterm>, boolean</para>
-        </listitem>        
         <listitem>
             <para><literal>"description"</literal>
                 <glossterm>optional</glossterm>, string</para>
         </listitem>
         <listitem>
-            <para><literal>"forLanguages"</literal>
-                <glossterm>optional</glossterm>, array of zero or more strings implementing the
-                    <olink targetptr="values_forLanguage">forLanguage</olink> object type</para>
+            <para><literal>"memberTypes"</literal>
+                <glossterm>optional</glossterm>, array of zero or more <literal><olink
+                    targetptr="json_memberType">memberType</olink></literal> instances</para>
         </listitem>
         <listitem>
             <para><literal>"sameAs"</literal>

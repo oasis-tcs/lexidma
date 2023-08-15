@@ -14,7 +14,7 @@
     </para>
 
     <itemizedlist>
-        <title>Additional contents</title>
+        <title>Additional properties</title>
         <listitem>
             <para><literal><olink targetptr="annotation_placeholderMarker">placeholderMarker</olink></literal>
                 <glossterm>optional</glossterm> (zero, one or more)</para>

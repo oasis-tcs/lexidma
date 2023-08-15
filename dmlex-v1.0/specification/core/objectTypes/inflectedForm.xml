@@ -15,14 +15,14 @@
       linkend="ex01"/>.</para>
 
   <itemizedlist>
-    <title>Child of</title>
+    <title>Property of</title>
     <listitem>
       <para><literal><olink targetptr="core_entry">entry</olink></literal></para>
     </listitem>
   </itemizedlist>
 
   <itemizedlist>
-    <title>Contents</title>
+    <title>Properties</title>
     <listitem>
       <para><literal>tag</literal>
         <glossterm>optional</glossterm> (zero or one). Non-empty string. An abbreviation, a code or
@@ -97,10 +97,11 @@
   <itemizedlist>
     <title>Comments</title>
     <listitem>
-      <para>The <code>inflectedForm</code> object is intended to model the <emphasis role="strong"
-          >inflectional morphology</emphasis> of a headword. To model derivational morphology, for
-        example feminine forms of maculine nouns, the recommended way to do that in DMLex is to
-        create separate entries for the two words, and link them using the <olink targetptr="linking">Linking Module</olink>.</para>
+      <para>The <code>inflectedForm</code> object type is intended to model the <emphasis
+          role="strong">inflectional morphology</emphasis> of a headword. To model derivational
+        morphology, for example feminine forms of maculine nouns, the recommended way to do that in
+        DMLex is to create separate entries for the two words, and link them using the <olink
+          targetptr="linking">Linking Module</olink>.</para>
     </listitem>
   </itemizedlist>
 

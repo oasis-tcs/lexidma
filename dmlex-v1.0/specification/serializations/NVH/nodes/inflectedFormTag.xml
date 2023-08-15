@@ -6,7 +6,7 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
                          ]>
 <section id="nvh_inflectedFormTag">
-    <title>Node: <literal>inflectedFormTag</literal></title>
+    <title>NVH node: <literal>inflectedFormTag</literal></title>
     <para>Implements the <olink targetptr="values_inflectedFormTag">inflectedFormTag</olink> object type from the Controlled Values Module.</para>
 
     <itemizedlist>

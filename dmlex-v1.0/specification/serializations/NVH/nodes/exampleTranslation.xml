@@ -6,7 +6,7 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
                          ]>
 <section id="nvh_exampleTranslation">
-    <title>Node: <literal>exampleTranslation</literal></title>
+    <title>NVH node: <literal>exampleTranslation</literal></title>
     <para>Implements the <olink targetptr="xlingual_exampleTranslation">exampleTranslation</olink> object type from the Crosslingual Module.</para>
 
     <itemizedlist>

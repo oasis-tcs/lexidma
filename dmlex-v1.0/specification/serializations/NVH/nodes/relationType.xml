@@ -6,7 +6,7 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
                          ]>
 <section id="nvh_relationType">
-    <title>Node: <literal>relationType</literal></title>
+    <title>NVH node: <literal>relationType</literal></title>
     <para>Implements the <olink targetptr="linking_relationType">relationType</olink> object type from the Linking Module.</para>
 
     <itemizedlist>

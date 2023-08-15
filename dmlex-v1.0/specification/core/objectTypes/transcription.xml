@@ -14,14 +14,14 @@
   <para>Represents the transcription of a pronunciation in some notation such as IPA.</para>
 
   <itemizedlist>
-    <title>Child of</title>
+    <title>Property of</title>
     <listitem>
       <para><literal><olink targetptr="core_pronunciation">pronunciation</olink></literal></para>
     </listitem>
   </itemizedlist>
 
   <itemizedlist>
-    <title>Contents</title>
+    <title>Properties</title>
     <listitem>
       <para><literal>text</literal>
         <glossterm>required</glossterm> (exactly one). Non-empty string. The actual

@@ -6,7 +6,7 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
                          ]>
 <section id="nvh_forLanguage">
-    <title>Node: <literal>forLanguage</literal></title>
+    <title>NVH node: <literal>forLanguage</literal></title>
     <para>Implements the <literal>forLanguage</literal> property of the
         <olink targetptr="values_partOfSpeechTag">partOfSpeechTag</olink>,
         <olink targetptr="values_inflectedFormTag">inflectedFormTag</olink>,

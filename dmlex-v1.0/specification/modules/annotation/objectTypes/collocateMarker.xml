@@ -13,7 +13,7 @@
     collocates or constituents. Example: <xref linkend="ex22"/>.</para>
 
   <itemizedlist>
-    <title>Child of</title>
+    <title>Property of</title>
     <listitem>
       <para><literal><olink targetptr="annotation_definition">definition</olink></literal></para>
     </listitem>
@@ -27,7 +27,7 @@
   </itemizedlist>
 
   <itemizedlist>
-    <title>Contents</title>
+    <title>Properties</title>
     <listitem>
       <para><literal>id</literal>
         <glossterm>optional</glossterm> (zero or one). A unique identifier of the marker.

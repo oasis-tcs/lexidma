@@ -6,7 +6,7 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
                          ]>
 <section id="xml_inflectedFormTag">
-    <title>Element: <literal>&lt;inflectedFormTag&gt;</literal></title>
+    <title>XML element: <literal>&lt;inflectedFormTag&gt;</literal></title>
     <para>Implements the <olink targetptr="values_inflectedFormTag">inflectedFormTag</olink> object type from the Controlled Values Module.</para>
 
     <itemizedlist>

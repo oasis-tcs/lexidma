@@ -6,7 +6,7 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
                          ]>
 <section id="nvh_lexicographicResource">
-    <title>Node: <literal>lexicographicResource</literal></title>
+    <title>NVH node: <literal>lexicographicResource</literal></title>
     <para>Implements the <olink targetptr="core_lexicographicResource">lexicographicResource</olink> object type.</para>
 
 	<itemizedlist>
@@ -22,7 +22,7 @@
             <para><literal><olink targetptr="nvh_entry">entry</olink></literal> <glossterm>optional</glossterm> (exactly one)</para>
         </listitem>
         <listitem>
-            <para><literal>uri</literal> <glossterm>optional</glossterm> (exactly one)</para>
+            <para><literal>uri</literal> <glossterm>required</glossterm> (exactly one)</para>
         </listitem>
         <listitem>
             <para><literal>language</literal> <glossterm>required</glossterm> (exactly one)</para>

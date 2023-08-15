@@ -6,7 +6,7 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
                          ]>
 <section id="nvh_transcriptionSchemeTag">
-    <title>Node: <literal>transcriptionSchemeTag</literal></title>
+    <title>NVH node: <literal>transcriptionSchemeTag</literal></title>
     <para>Implements the <olink targetptr="values_transcriptionSchemeTag">transcriptionSchemeTag</olink> object type from the Controlled Values Module.</para>
 
     <itemizedlist>

@@ -5,21 +5,19 @@
                          %xinclude;
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
                          ]>
-<section id="json_etymology">
-    <title>Class: <literal>etymology</literal></title>
-    <para>Implements the <olink targetptr="etymology_etymology">etymology</olink> object type
-        from the Etymology Module.</para>
+<section id="json_transcription">
+    <title>JSON object: <literal>transcription</literal></title>
+    <para>Implements the <olink targetptr="core_transcription">transcription</olink> object type.</para>
 
     <itemizedlist>
         <title>Members</title>
         <listitem>
-            <para><literal>"description"</literal>
+            <para><literal>"scheme"</literal>
                 <glossterm>optional</glossterm>, string</para>
         </listitem>
         <listitem>
-            <para><literal>"etymons"</literal>
-                <glossterm>optional</glossterm>, array of zero or more <literal><olink
-                    targetptr="json_etymon">etymon</olink></literal> instances</para>
+            <para><literal>"text"</literal>
+                <glossterm>required</glossterm>, string</para>
         </listitem>
     </itemizedlist>
 

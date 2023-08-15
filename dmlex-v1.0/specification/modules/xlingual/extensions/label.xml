@@ -14,7 +14,7 @@
   </para>
 
   <itemizedlist>
-    <title>Can additionally be a child of</title>
+    <title>Can additionally be a property of</title>
     <listitem>
       <para><literal><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></literal></para>
     </listitem>

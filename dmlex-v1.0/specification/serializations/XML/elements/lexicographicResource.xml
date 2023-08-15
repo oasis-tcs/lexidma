@@ -6,7 +6,7 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
                          ]>
 <section id="xml_lexicographicResource">
-    <title>Element: <literal>&lt;lexicographicResource&gt;</literal></title>
+    <title>XML element: <literal>&lt;lexicographicResource&gt;</literal></title>
     <para>Implements the <olink targetptr="core_lexicographicResource">lexicographicResource</olink> object type.</para>
 
     <itemizedlist>
@@ -15,7 +15,7 @@
             <para><literal>@title</literal> <glossterm>optional</glossterm></para>
         </listitem>
         <listitem>
-            <para><literal>@uri</literal> <glossterm>optional</glossterm></para>
+            <para><literal>@uri</literal> <glossterm>required</glossterm></para>
         </listitem>
         <listitem>
             <para><literal>@language</literal> <glossterm>required</glossterm></para>

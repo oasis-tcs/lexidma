@@ -6,7 +6,7 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
                          ]>
 <section id="xml_translationLanguage">
-    <title>Element: <literal>&lt;translationLanguage&gt;</literal></title>
+    <title>XML element: <literal>&lt;translationLanguage&gt;</literal></title>
     <para>Implements the <olink targetptr="xlingual_translationLanguage">translationLanguage</olink> object type from the Crosslingual Module.</para>
 
     <itemizedlist>

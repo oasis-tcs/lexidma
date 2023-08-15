@@ -6,7 +6,7 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
                          ]>
 <section id="nvh_headwordMarker">
-    <title>Node: <literal>headwordMarker</literal></title>
+    <title>NVH node: <literal>headwordMarker</literal></title>
     <para>Implements the <olink targetptr="annotation_headwordMarker">headwordMarker</olink> object type from the Annotation module.
 	Contains the text which it marks up.</para>
 

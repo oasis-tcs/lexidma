@@ -6,7 +6,7 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
                          ]>
 <section id="nvh_sense">
-    <title>Node: <literal>sense</literal></title>
+    <title>NVH node: <literal>sense</literal></title>
     <para>Implements the <olink targetptr="core_sense">sense</olink> object type.</para>
 
     <itemizedlist>

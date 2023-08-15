@@ -6,7 +6,7 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
                          ]>
 <section id="nvh_collocateMarker">
-    <title>Node: <literal>collocateMarker</literal></title>
+    <title>NVH node: <literal>collocateMarker</literal></title>
     <para>Implements the <olink targetptr="annotation_collocateMarker">collocateMarker</olink> object type from the Annotation module.
         Contains the text which it marks up and optional child nodes.</para>
 

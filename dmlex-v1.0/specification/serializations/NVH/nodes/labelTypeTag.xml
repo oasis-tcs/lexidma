@@ -6,7 +6,7 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
                          ]>
 <section id="nvh_labelTypeTag">
-    <title>Node: <literal>labelTypeTag</literal></title>
+    <title>NVH node: <literal>labelTypeTag</literal></title>
     <para>Implements the <olink targetptr="values_labelTypeTag">labelTypeTag</olink> object type from the Controlled Values Module.</para>
 
     <itemizedlist>

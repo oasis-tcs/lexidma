@@ -50,43 +50,43 @@
   </section>
   
   <section id="JSONClasses" role="normative">
-    <title>DMLex JSON Serialization Classes</title>
+    <title>DMLex JSON serialization objects</title>
     
-    <xi:include href="classes/lexicographicResource.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="classes/entry.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="classes/inflectedForm.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="classes/sense.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="classes/definition.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="classes/pronunciation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="classes/transcription.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="classes/example.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="objects/lexicographicResource.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="objects/entry.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="objects/inflectedForm.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="objects/sense.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="objects/definition.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="objects/pronunciation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="objects/transcription.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="objects/example.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 
-    <xi:include href="classes/headwordTranslation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="classes/headwordExplanation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="classes/exampleTranslation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="objects/headwordTranslation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="objects/headwordExplanation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="objects/exampleTranslation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     
-    <xi:include href="classes/partOfSpeechTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="classes/inflectedFormTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="classes/definitionTypeTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="classes/labelTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="classes/labelTypeTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="classes/sourceIdentityTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="classes/transcriptionSchemeTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="objects/partOfSpeechTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="objects/inflectedFormTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="objects/definitionTypeTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="objects/labelTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="objects/labelTypeTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="objects/sourceIdentityTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="objects/transcriptionSchemeTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     
-    <xi:include href="classes/relation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="classes/member.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="classes/relationType.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="classes/memberType.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="objects/relation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="objects/member.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="objects/relationType.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="objects/memberType.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 
-    <xi:include href="classes/placeholderMarker.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="classes/headwordMarker.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="classes/collocateMarker.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="objects/placeholderMarker.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="objects/headwordMarker.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="objects/collocateMarker.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 
-    <xi:include href="classes/etymology.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="classes/etymon.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="classes/etymonUnit.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="classes/etymonType.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="classes/etymonLanguage.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="objects/etymology.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="objects/etymon.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="objects/etymonUnit.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="objects/etymonType.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="objects/etymonLanguage.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     
   </section>
 

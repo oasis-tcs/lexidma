@@ -16,14 +16,14 @@
   </para>
 
   <itemizedlist>
-    <title>Child of</title>
+    <title>Property of</title>
     <listitem>
       <para><literal><olink targetptr="core_lexicographicResource">lexicographicResource</olink></literal></para>
     </listitem>
   </itemizedlist>
 
   <itemizedlist>
-    <title>Contents</title>
+    <title>Properties</title>
     <listitem>
       <para><literal>tag</literal>
         <glossterm>required</glossterm> (exactly one). Non-empty string. An abbreviation, a code or

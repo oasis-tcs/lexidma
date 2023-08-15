@@ -15,7 +15,7 @@
       linkend="ex20"/>.</para>
 
   <itemizedlist>
-    <title>Child of</title>
+    <title>Property of</title>
     <listitem>
       <para><literal><olink targetptr="annotation_entry">entry</olink></literal></para>
     </listitem>
