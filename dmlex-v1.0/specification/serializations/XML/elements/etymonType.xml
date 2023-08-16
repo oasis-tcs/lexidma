@@ -19,7 +19,7 @@
     <itemizedlist>
         <title>Child elements</title>
         <listitem>
-            <para><literal>&lt;description&gt;</literal> <glossterm>optional</glossterm> (exactly one)</para>
+            <para><literal>&lt;description&gt;</literal> <glossterm>optional</glossterm> (zero or one)</para>
         </listitem>
     </itemizedlist>
     

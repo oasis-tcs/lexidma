@@ -20,8 +20,8 @@ Please see the [LICENSE file](https://github.com/oasis-tcs/lexidma/blob/master/L
 
 Current working draft versions in this repository:
 
-* [WD01 HTML](https://htmlpreview.github.io/?https://github.com/oasis-tcs/lexidma/blob/master/dmlex-v1.0/specification/dmlex-v1.0-wd01.html)
-* [WD01 PDF](dmlex-v1.0/specification/dmlex-v1.0-wd01.pdf)
+* [WD01 HTML](../../releases/download/dev-latest/dmlex-v1.0-wd01.html)
+* [WD01 PDF](../../releases/download/dev-latest/dmlex-v1.0-wd01.pdf)
 
 ## Contact
 

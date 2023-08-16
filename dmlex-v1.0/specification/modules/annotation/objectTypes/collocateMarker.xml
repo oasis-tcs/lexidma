@@ -31,7 +31,7 @@
     <listitem>
       <para><literal>id</literal>
         <glossterm>optional</glossterm> (zero or one). A unique identifier of the marker.
-        Markers which have idenfitiers are capable of being involved in relations created with the
+        Markers which have identifiers are capable of being involved in relations created with the
         <olink targetptr="linking">Linking module</olink>.</para>
     </listitem>
     <listitem>
@@ -45,7 +45,7 @@
     </listitem>
     <listitem>
       <para><literal><olink targetptr="annotation_label">label</olink></literal>
-        <glossterm>optional</glossterm> (zero, one or more).
+        <glossterm>optional</glossterm> (zero or more).
         Can be used to communicate facts about the role or type of the item in the sentence, for example its syntactic role
         (subject, direct object etc.), its semantic role (agent, affected etc) or its semantic type
         (human, institution etc.) The <code><olink targetptr="values_labelTag">labelTag</olink></code> object

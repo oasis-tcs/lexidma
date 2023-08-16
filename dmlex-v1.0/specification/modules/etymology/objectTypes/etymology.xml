@@ -27,12 +27,12 @@
     </listitem>
     <listitem>
       <para><literal><olink targetptr="etymology_etymon">etymon</olink></literal>
-        <glossterm>optional</glossterm> (zero, one or more).</para>
+        <glossterm>optional</glossterm> (zero or more).</para>
     </listitem>
     <listitem>
       <para><literal>listingOrder</literal>
         <glossterm>required</glossterm> (exactly one). Number. The position of this etymology
-        among other etymologiers of the same entry. Can be implicit from the
+        among other etymologies of the same entry. Can be implicit from the
         serialization.</para>
     </listitem>
   </itemizedlist>

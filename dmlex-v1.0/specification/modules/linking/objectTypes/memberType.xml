@@ -66,7 +66,7 @@
       <para><literal>action</literal>
         <glossterm>required</glossterm> (exactly one). Non-empty string. Gives instructions on what
         machine agents should do when showing this relation to a human user (either on its own or in
-        the context of one of its members). The possibe values are:</para>
+        the context of one of its members). The possible values are:</para>
       <itemizedlist>
         <listitem>
           <para>

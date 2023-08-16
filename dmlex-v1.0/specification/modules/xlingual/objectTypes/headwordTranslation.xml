@@ -43,19 +43,19 @@
     </listitem>
     <listitem>
       <para><literal><olink targetptr="xlingual_partOfSpeech">partOfSpeech</olink></literal>
-        <glossterm>optional</glossterm> (zero, one or more). </para>
+        <glossterm>optional</glossterm> (zero or more). </para>
     </listitem>
     <listitem>
         <para><literal><olink targetptr="xlingual_label">label</olink></literal>
-        <glossterm>optional</glossterm> (zero, one or more). </para>
+        <glossterm>optional</glossterm> (zero or more). </para>
     </listitem>
     <listitem>
         <para><literal><olink targetptr="xlingual_pronunciation">pronunciation</olink></literal>
-        <glossterm>optional</glossterm> (zero, one or more). </para>
+        <glossterm>optional</glossterm> (zero or more). </para>
     </listitem>
     <listitem>
         <para><literal><olink targetptr="xlingual_inflectedForm">inflectedForm</olink></literal>
-        <glossterm>optional</glossterm> (zero, one or more). </para>
+        <glossterm>optional</glossterm> (zero or more). </para>
     </listitem>
   </itemizedlist>
 

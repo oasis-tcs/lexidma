@@ -19,10 +19,10 @@
     <itemizedlist>
         <title>Child nodes</title>
         <listitem>
-            <para><literal>forHeadwords</literal> <glossterm>optional</glossterm> (exactly one), <literal>true</literal> or <literal>false</literal></para>
+            <para><literal>forHeadwords</literal> <glossterm>optional</glossterm> (zero or one), <literal>true</literal> or <literal>false</literal></para>
         </listitem>
         <listitem>
-            <para><literal>forTranslations</literal> <glossterm>optional</glossterm> (exactly one), <literal>true</literal> or <literal>false</literal></para>
+            <para><literal>forTranslations</literal> <glossterm>optional</glossterm> (zero or one), <literal>true</literal> or <literal>false</literal></para>
         </listitem>
         <listitem>
             <para><literal>description</literal> <glossterm>optional</glossterm> (zero or one)</para>

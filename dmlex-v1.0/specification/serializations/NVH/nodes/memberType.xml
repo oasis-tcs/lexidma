@@ -22,13 +22,13 @@
             <para><literal>role</literal> <glossterm>required</glossterm> (exactly one)</para>
         </listitem>
         <listitem>
-            <para><literal>min</literal> <glossterm>optional</glossterm> (exactly one)</para>
+            <para><literal>min</literal> <glossterm>optional</glossterm> (zero or one)</para>
         </listitem>
         <listitem>
-            <para><literal>max</literal> <glossterm>optional</glossterm> (exactly one)</para>
+            <para><literal>max</literal> <glossterm>optional</glossterm> (zero or one)</para>
         </listitem>
         <listitem>
-            <para><literal>action</literal> <glossterm>optional</glossterm> (exactly one)</para>
+            <para><literal>action</literal> <glossterm>optional</glossterm> (zero or one)</para>
         </listitem>
         <listitem>
             <para><literal>description</literal> <glossterm>optional</glossterm> (zero or one)</para>

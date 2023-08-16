@@ -62,7 +62,7 @@
         <olink targetptr="linking">Linking Module</olink>).
         When the label is a child of <olink targetptr="core_inflectedForm">inflectedForm</olink>, then it applies
         only to that inflected form of the headword (in all senses). When the label is a child of
-        <olink targetptr="core_pronunciation">pronunciation</olink>, then it applies only to that pronuciation of the headword
+        <olink targetptr="core_pronunciation">pronunciation</olink>, then it applies only to that pronunciation of the headword
         (in all senses).</para>
     </listitem>
   </itemizedlist>

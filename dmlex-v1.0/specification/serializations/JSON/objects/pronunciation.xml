@@ -12,13 +12,13 @@
     <itemizedlist>
         <title>Members</title>
         <listitem>
-            <para><literal>"soundfile"</literal>
+            <para><literal>"soundFile"</literal>
                 <glossterm>optional</glossterm> if <literal>"transcriptions"</literal> is present and non-empty,
                 <glossterm>required</glossterm> otherwise; string</para>
         </listitem>
         <listitem>
             <para><literal>"transcriptions"</literal>
-                <glossterm>optional</glossterm> if <literal>"soundfile"</literal> is present,
+                <glossterm>optional</glossterm> if <literal>"soundFile"</literal> is present,
                 <glossterm>required</glossterm> otherwise; array of zero or more <literal><olink
                     targetptr="json_transcription">transcription</olink></literal> instances</para>
         </listitem>

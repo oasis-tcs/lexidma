@@ -19,7 +19,7 @@
     <itemizedlist>
         <title>Child nodes</title>
         <listitem>
-            <para><literal>displayName</literal> <glossterm>optional</glossterm> (exactly one)</para>
+            <para><literal>displayName</literal> <glossterm>optional</glossterm> (zero or one)</para>
         </listitem>
     </itemizedlist>
     

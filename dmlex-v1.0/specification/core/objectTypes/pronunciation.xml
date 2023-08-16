@@ -34,18 +34,18 @@
         </listitem>
         <listitem>
           <para><literal><olink targetptr="core_transcription">transcription</olink></literal>
-            <glossterm>optional</glossterm> (zero, one or more).</para>
+            <glossterm>optional</glossterm> (zero or more).</para>
         </listitem>
       </itemizedlist>
     </listitem>
     <listitem>
       <para><literal>listingOrder</literal>
-        <glossterm>required</glossterm> (exactly one). Number. The position of this pronuciation object among
-        other pronuciation objects of the same entry. This can be implicit from the serialization.</para>
+        <glossterm>required</glossterm> (exactly one). Number. The position of this pronunciation object among
+        other pronunciation objects of the same entry. This can be implicit from the serialization.</para>
     </listitem>
     <listitem>
       <para><literal><olink targetptr="core_label">label</olink></literal>
-        <glossterm>optional</glossterm> (zero, one or more).</para>
+        <glossterm>optional</glossterm> (zero or more).</para>
     </listitem>
   </itemizedlist>
 
@@ -74,7 +74,7 @@
     <title>RDF</title>
     <programlisting>
 &lt;entry&gt; dmlex:pronunciation [
-  a dmlex:Pronunicaton ;
+  a dmlex:Pronunciation ;
   dmlex:soundFile &lt;...&gt; ;
   dmlex:transcription ... ;
   dmlex:listingOrder 1 ;

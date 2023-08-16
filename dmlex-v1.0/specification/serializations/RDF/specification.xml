@@ -20,7 +20,7 @@
               <para>All other objects are implemented as individuals</para>
           </listitem>
           <listitem>
-              <para>Each other object type is associated with a property (with a lowercase intiial letter) and a class (with an uppercase initial letter. In all case the range of this property is the class</para>
+              <para>Each other object type is associated with a property (with a lowercase initial letter) and a class (with an uppercase initial letter. In all case the range of this property is the class</para>
           </listitem>
           <listitem>
               <para>Arity of properties is implemented by means of OWL class restrictions.</para>
