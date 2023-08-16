@@ -868,6 +868,21 @@
         for more information.</para>
     </note>
   </appendix>-->
+  <appendix role="normative" id="diagram_uml">
+    <title>DMLex UML diagram</title>
+    <graphic fileref="dmlex_uml.svg" contentwidth="16cm"/>
+  </appendix>
+
+  <appendix role="informative" id="diagram_nvh">
+    <title>DMLex plain text description</title>
+    <para>This description uses the <ulink url="https://www.namevaluehierarchy.org/schema.html">NVH schema notation style</ulink> and the convention that all object types and their properties are prefixed by either <literal>core@</literal> or <literal>MODULENAME@</literal> strings. Their arity is denoted by a <literal>*</literal> (zero or more), <literal>+</literal> (one or more), <literal>?</literal> (zero or one) or <literal>N+</literal> (<literal>N</literal> or more). If no arity is given, it indicates the arity of 1, i.e. being required and occurring exactly once.
+    </para>
+    <programlisting>
+      <xi:include href="dmlex.nvh" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    </programlisting>
+  </appendix>
+
+
   <appendix role="informative" id="specChangeTracking">
     <title>Specification Change Tracking</title>
     <para>This appendix will contain tracked changes after the csd01 phase will have been
