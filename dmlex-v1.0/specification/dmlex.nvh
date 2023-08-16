@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+<programlisting>
+core@lexicographicResource:
+    core@title: ?
+    core@uri:
+    core@language:
+    core@entry: *
+    xlingual@translationLanguage: +
+    values@definitionTypeTag: *
+    values@inflectedFormTag: *
+    values@labelTag: *
+    values@labelTypeTag: *
+    values@partOfSpeechTag: *
+    values@sourceIdentityTag: *
+    values@transcriptionSchemeTag: *
+    linking@relation: *
+    linking@relationType: *
+    etymology@etymonLanguage: *
+    etymology@etymonType: *
+core@entry:
+    core@headword:
+    core@homographNumber: ?
+    core@partOfSpeech: *
+    core@label: *
+    core@pronunciation: *
+    core@inflectedForm: *
+    core@sense: *
+    annotation@placeholderMarker: *
+    etymology@etymology: *
+core@partOfSpeech:
+    core@tag:
+    core@listingOrder:
+core@inflectedForm:
+    core@tag: ?
+    core@text:
+    core@label: *
+    core@pronunciation: *
+    core@listingOrder:
+core@sense:
+    core@listingOrder:
+    core@indicator: ?
+    core@label: *
+    core@definition: *
+    core@example: *
+    xlingual@headwordExplanation: *
+    xlingual@headwordTranslation: *
+core@definition:
+    core@text:
+    core@definitionType: ?
+    core@listingOrder:
+    annotation@headwordMarker: *
+    annotation@collocateMarker: *
+core@label:
+    core@tag:
+    core@listingOrder:
+core@pronunciation:
+    core@soundFile: ?
+    core@transcription: ?
+    core@listingOrder:
+    core@label: *
+core@transcription:
+    core@text:
+    core@scheme: ?
+    core@listingOrder:
+core@example:
+    core@text:
+    core@sourceIdentity: ?
+    core@sourceElaboration: ?
+    core@label: *
+    core@soundFile: ?
+    core@listingOrder:
+    xlingual@exampleTranslation: *
+    annotation@headwordMarker: *
+    annotation@collocateMarker: *
+xlingual@translationLanguage:
+    xlingual@langCode:
+    xlingual@listingOrder:
+xlingual@headwordExplanation:
+    xlingual@text:
+    xlingual@language: *    
+xlingual@headwordTranslation:
+    xlingual@text:
+    xlingual@language: *
+    xlingual@listingOrder:
+    xlingual@partOfSpeech: *
+    xlingual@label: *
+    xlingual@pronunciation: *
+    xlingual@inflectedForm: *
+    annotation@placeholderMarker: *
+xlingual@exampleTranslation:
+    xlingual@text:
+    xlingual@language: *
+    xlingual@label: *
+    xlingual@soundFile: *
+    xlingual@listingOrder:
+    annotation@headwordMarker: *
+    annotation@collocateMarker: *
+values@definitionTypeTag:
+    values@tag:
+    values@description: ?
+    values@sameAs: *
+values@inflectedFormTag:
+    values@tag:
+    values@description: ?
+    values@forHeadwords: ?
+    values@forTranslations: ?
+    values@forLanguage: *
+    values@forPartOfSpeech: *
+    values@sameAs: *
+values@labelTag:
+    values@tag:
+    values@description: ?
+    values@typeTag: ?
+    values@forHeadwords: ?
+    values@forTranslations: ?
+    values@forLanguage: *
+    values@forPartOfSpeech: *
+    values@sameAs: *
+values@labelTypeTag:
+    values@tag:
+    values@description: ?
+    values@sameAs: *
+values@partOfSpeechTag:
+    values@tag:
+    values@description: ?
+    values@forHeadwords: ?
+    values@forTranslations: ?
+    values@forLanguage: *
+    values@forPartOfSpeech: *
+    values@sameAs: *
+values@sourceIdentityTag:
+    values@tag:
+    values@description: ?
+    values@sameAs: *
+values@transcriptionSchemeTag:
+    values@tag:
+    values@description: ?
+    values@forHeadwords: ?
+    values@forTranslations: ?
+    values@forLanguage: *
+linking@relation:
+    linking@type:
+    linking@description: ?
+    linking@member: 2+
+linking@member:
+    linking@memberID:
+    linking@role: ?
+    linking@listingOrder:
+    linking@obverseListingOrder:
+linking@relationType:
+    linking@type:
+    linking@description: ?
+    linking@scope: ?(any,sameEntry,sameResource)
+    linking@memberType: *
+    linking@sameAs: *
+linking@memberType:
+    linking@role:
+    linking@description: ?
+    linking@memberType: (sense,entry,collocate)
+    linking@min: ?
+    linking@max: ?
+    linking@action: (embed,navigate,none)
+    linking@sameAs: *
+annotation@placeholderMarker:
+annotation@headwordMarker:
+annotation@collocateMarker:
+    annotation@lemma: ?
+    annotation@label: *
+etymology@etymology:
+    etymology@description: ?
+    etymology@etymon: *
+    etymology@listingOrder: 
+etymology@etymon:
+    etymology@when: ?
+    etymology@type: ?
+    etymology@note: ?
+    etymology@etymonUnit: +
+    etymology@translation: ?
+    etymology@listingOrder:
+etymology@etymonUnit:
+    etymology@language:
+    etymology@text:
+    etymology@reconstructed: ?
+    etymology@partOfSpeech: *
+    etymology@translation: ?
+    etymology@listingOrder:
+etymology@etymonLanguage:
+    etymology@langCode:
+    etymology@displayName: ?
+etymology@etymonType:
+    etymology@type:
+    etymology@description: ?
+</programlisting>
