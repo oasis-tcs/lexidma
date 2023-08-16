@@ -8,7 +8,7 @@
 ]>
 <article status="&standard;" lang="en-US">
   <articleinfo>
-    <title>Data Model for Lexicography (DMLex), Version &version;</title>
+    <title>Data Model for Lexicography (DMLex) Version &version;</title>
     <releaseinfo role="cvs">$Id: spectools-docbook-template-wd03.xml,v 1.4 2010/07/08 12:28:15 admin
       Exp$</releaseinfo>
     <releaseinfo role="track">Standards Track Work Product</releaseinfo>
@@ -53,9 +53,8 @@
         <firstname>David</firstname>
         <surname>Filip</surname>
         <affiliation>
-          <orgname><ulink url="http://www.adaptcentre.ie/">Trinity College Dublin
-            (ADAPT)</ulink></orgname>
-          <address format="linespecific"><email>david.filip@adaptcentre.ie</email></address>
+          <orgname><ulink url="https://www.muni.cz/">Masaryk University</ulink></orgname>
+          <address format="linespecific"><email>glorfindel@mail.muni.cz</email></address>
         </affiliation>
         <email>david.filip@adaptcentre.ie</email>
       </editor>
@@ -722,7 +721,7 @@
   </appendix>
   <appendix role="informative" id="specChangeTracking">
     <title>Specification Change Tracking</title>
-    <para>This appendix will contain tracked changes after the csprd01 phase will have been
+    <para>This appendix will contain tracked changes after the csd01 phase will have been
       reached.</para>
     <!--
     <xi:include href="ReviewChangeTracking/ReviewChangeTrack.xml"

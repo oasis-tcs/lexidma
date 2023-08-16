@@ -56,9 +56,9 @@
 -->
 <!ENTITY standard "Working Draft 01">
 
-<!ENTITY this-loc "http://docs.oasis-open.org/lexidma/dmlex/v&version;/&stage;">
-<!ENTITY previous-loc "http://docs.oasis-open.org/lexidma/dmlex/v&version;/&pstage;">
-<!ENTITY latest-loc "http://docs.oasis-open.org/lexidma/dmlex/v&version;">
+<!ENTITY this-loc "https://docs.oasis-open.org/lexidma/dmlex/v&version;/&stage;">
+<!ENTITY previous-loc "https://docs.oasis-open.org/lexidma/dmlex/v&version;/&pstage;">
+<!ENTITY latest-loc "https://docs.oasis-open.org/lexidma/dmlex/v&version;">
 
 <!ENTITY pubdate "16 August &pubyear;">
 
