@@ -473,13 +473,13 @@
 
 <xsl:template match="legalnotice[@role='notices']/title" mode="titlepage.mode"
               priority="1">
--->
+
   <hr/>
   <h2 class="notices-heading">
     <xsl:apply-templates/>
   </h2>
 </xsl:template>
-
+-->
 <xsl:template match="releaseinfo" mode="titlepage.mode">
   <xsl:comment>
     <xsl:text> </xsl:text>
