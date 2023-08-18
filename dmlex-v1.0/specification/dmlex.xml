@@ -67,6 +67,14 @@
         </affiliation>
         <email>simon.krek@ijs.si</email>
       </editor>
+      <editor>
+        <firstname>John</firstname>
+        <surname>McCrae</surname>
+        <affiliation>
+          <orgname><ulink url="https://www.universityofgalway.ie/">University of Galway</ulink></orgname>
+          <address format="linespecific"><email>john.mccrae@universityofgalway.ie</email></address>
+        </affiliation>
+      </editor>
     </authorgroup>
     <pubdate>&pubdate;</pubdate>
     <copyright>

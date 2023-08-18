@@ -14,10 +14,13 @@
       <para>The RDF serialization used in this document follows the following principles</para>
       <itemizedlist>
           <listitem>
-              <para>The <code>lexicographicResource</code> object is an individual of type <code>dmlex:LexicographicResource</code></para>
+            <para>The RDF serialization uses an vocabulary defined at the namespace <code>https://www.oasis-open.org/to-be-confirmed/dmlex</code>, al elements of the vocabulary are in this namespace</para>
           </listitem>
           <listitem>
-              <para>All other objects are implemented as individuals</para>
+            <para>The vocabulary file provides RDF Schema and OWL axioms which implement the restrictions described by the data model. It also provides a linking to the <ulink url="https://www.w3.org/2016/05/ontolex/">OntoLex-Lemon</ulink> model. The ontology provides rules to infer an OntoLex-lemon model from DMLex data. This is achieved by means of subclass and subproperty axioms and so conversion can be performed by an OWL reasoner.</para>
+          </listitem>
+          <listitem>
+            <para>All elements of the modules are modelled as individuals with an appropriate class definitions</para>
           </listitem>
           <listitem>
               <para>Each other object type is associated with a property (with a lowercase initial letter) and a class (with an uppercase initial letter. In all case the range of this property is the class</para>
@@ -36,8 +39,12 @@
   </section>
 
   <section>
-      <title>Interoperability with OntoLex-lemon</title>
-      <para>The ontology provides rules to infer an OntoLex-lemon model from DMLex data. This is achieved by means of subclass and subproperty axioms and so conversion can be performed by an OWL reasoner.</para>
+    <title>DMLex RDF serialization elements</title>
+  <xi:include href="elements/LexicographicResource.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/Entry.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/PartOfSpeech.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   </section>
+ 
+
 </section>
 

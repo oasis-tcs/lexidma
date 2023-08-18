@@ -10,6 +10,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dmlex:LexicographicResource a owl:Class ;
+  rdfs:comment "Represents a dictionary"@en ;
   rdfs:label "Lexicographic resource"@en ;
   rdfs:subClassOf [
     a owl:Restriction ;
@@ -28,6 +29,8 @@ dmlex:uri a owl:DatatypeProperty ;
 
 dmlex:language a owl:DatatypeProperty ;
   rdfs:label "Language"@en ;
+  rdfs:domain dmlex:LexicographicResource ;
+  rdfs:range xsd:language ;
   rdfs:subPropertyOf lime:language .
 
 dmlex:entry a owl:ObjectProperty ;
@@ -36,17 +39,17 @@ dmlex:entry a owl:ObjectProperty ;
   rdfs:range dmlex:Entry ;
   rdfs:subPropertyOf lime:entry .
 
-dmlex:tag a owl:ObjectProperty ;
-  rdfs:label "Tag"@en ;
-  rdfs:domain dmlex:LexicographicResource ;
-  rdfs:range dmlex:Tag .
-
 dmlex:Entry a owl:Class ;
+  rdfs:comment "Represents a dictionary entry"@en ;
   rdfs:label "Entry"@en ;
   rdfs:subClassOf [
     a owl:Restriction ;
     owl:onProperty dmlex:headword ;
-    owl:cardinality 1 ] , ontolex:LexicalEntry .
+    owl:cardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:homographNumber ;
+    owl:maxCardinality 1 ] , 
+    ontolex:LexicalEntry .
 
 dmlex:headword a owl:DatatypeProperty ;
   rdfs:label "Headword"@en ;
@@ -89,27 +92,34 @@ dmlex:sense a owl:ObjectProperty ;
   rdfs:subPropertyOf ontolex:evokes .
 
 dmlex:PartOfSpeech a owl:Class ;
+  rdfs:comment "Represents a part of speech label"@en ;
   rdfs:label "Part of Speech"@en ;
   rdfs:subClassOf [
     a owl:Restriction ;
-    owl:onProperty dmlex:value ;
+    owl:onProperty dmlex:tag ;
     owl:cardinality 1 ] , [
     a owl:Restriction ;
     owl:onProperty dmlex:listingOrder ;
     owl:cardinality 1 ] .
 
+dmlex:tag a owl:DatatypeProperty ;
+  rdfs:label "Tag"@en ;
+  rdfs:domain [ a owlClass ;
+    owl:unionOf ( dmlex:PartOfSpeech dmlex:InflectedForm ) ] ;
+  rdf:range rdfs:Literal .
+
 dmlex:listingOrder a owl:DatatypeProperty ;
   rdfs:label "Listing Order"@en ;
+  rdfs:domain [ a owl:Class ;
+    owl:unionOf ( dmlex:PartOfSpeech dmlex:InflectedForm dmlex:Sense ) ] ;
   rdfs:range xsd:nonNegativeInteger .
 
-dmlex:value a owl:DatatypeProperty ;
-  rdfs:label "Value"@en .
-
 dmlex:InflectedForm a owl:Class ;
+  rdfs:comment "Represents one (of possibly many) inflected forms of the headword"@en ;
   rdfs:label "Inflected Form"@en ;
   rdfs:subClassOf [
     a owl:Restriction ;
-    owl:onProperty dmlex:inflectedTag ;
+    owl:onProperty dmlex:tag ;
     owl:maxCardinality 1 ] , [
     a owl:Restriction ;
     owl:onProperty dmlex:text ;
@@ -120,19 +130,20 @@ dmlex:InflectedForm a owl:Class ;
 
 dmlex:text a owl:DatatypeProperty ;
   rdfs:label "Text"@en ;
-  rdfs:range rdfs:Literal .
-
-dmlex:inflectedTag a owl:DatatypeProperty ;
-  rdfs:label "Inflected Tag"@en ;
   rdfs:domain dmlex:InflectedForm ;
   rdfs:range rdfs:Literal .
 
 dmlex:Sense a owl:Class ;
+  rdfs:comment "Represents one of possibly many meanings (or meaning potentials) of the headword."@en ;
   rdfs:label "Sense"@en ;
   rdfs:subClassOf [
     a owl:Restriction ;
     owl:onProperty dmlex:listingOrder ;
-    owl:cardinality 1 ] , ontolex:LexicalConcept .
+    owl:cardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:indicator ;
+    owl:maxCardinality 1 ] ,
+    ontolex:LexicalConcept .
 
 dmlex:indicator a owl:ObjectProperty ;
   rdfs:label "Indicator"@en ;
@@ -234,31 +245,14 @@ dmlex:sourceElaboration a owl:DatatypeProperty ;
   rdfs:domain dmlex:Example ;
   rdfs:range rdfs:Literal .
 
-dmlex:Tag a owl:Class ;
-  rdfs:label "Tag"@en ;
-  rdfs:subClassOf  [
-    a owl:Restriction ;
-    owl:onProperty dmlex:value ;
-    owl:cardinality 1 ] .
-
 dmlex:description a owl:DatatypeProperty ;
   rdfs:label "Description"@en ;
   rdfs:range rdfs:Literal .
 
-dmlex:target a owl:DatatypeProperty ;
-  rdfs:label "Target"@en ;
-  rdfs:domain dmlex:Tag ;
-  rdfs:range xsd:string .
-
-dmlex:partOfSpeechConstraint a owl:ObjectProperty ;
-  rdfs:label "Part of Speech Constraint"@en ;
-  rdfs:domain dmlex:Tag ;
-  rdfs:range dmlex:PartOfSpeechConstraint .
-
 dmlex:sameAs a owl:ObjectProperty ;
   rdfs:label "Same As"@en ;
   rdfs:domain [ a owl:Class ;
-    owl:unionOf ( dmlex:Tag dmlex:RelationType dmlex:MemberRole ) ] ;
+    owl:unionOf ( dmlex:RelationType dmlex:MemberRole ) ] ;
   rdfs:range dmlex:SameAs .
 
 dmlex:SameAs a owl:Class ;
