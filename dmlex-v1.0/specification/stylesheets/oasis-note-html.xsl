@@ -13,13 +13,13 @@
                 xmlns:exsl="http://exslt.org/common"
                 extension-element-prefixes="saxon xalanredirect lxslt exsl"
                 version="1.0">
-<!-- $Id: oasis-specification-html.xsl,v 1.43 2018/12/06 18:56:20 admin Exp $ -->
+<!-- $Id: oasis-note-html.xsl,v 1.11 2018/12/06 18:56:15 admin Exp $ -->
 
 <!-- This stylesheet is a customization of the DocBook XSL Stylesheets -->
 <!-- from http://docs.oasis-open.org/templates/ -->
 <!-- See http://sourceforge.net/projects/docbook/ -->
 <xsl:import href="../docbook/xsl/html/docbook.xsl"/>
-<xsl:include href="titlepage-html.xsl"/>
+<xsl:include href="titlepage-notes-html.xsl"/>
 
 <!-- ============================================================ -->
 <!-- Parameters -->
@@ -33,7 +33,7 @@
 
 <!--common between offline and online-->
 
-<xsl:param name="css.stylesheet">oasis-spec.css</xsl:param>
+<xsl:param name="css.stylesheet">oasis-note.css</xsl:param>
 <!--No longer changing the style based on the stage of development
   <xsl:choose>
     <xsl:when test="/article/@status='Working Draft'">oasis-wd.css</xsl:when>
@@ -162,6 +162,8 @@
 <!-- Titlepage -->
 
 <xsl:template match="articleinfo/title" mode="titlepage.mode">
+  <div style="font-size:200%;font-weight:bold;color:#7f7f7f;margin-top:0pt"
+    >OASIS Committee Note</div>
   <hr style="margin-bottom:0pt"/>
   <xsl:apply-imports/>
 </xsl:template>
@@ -739,7 +741,7 @@
         </xsl:choose>
         <xsl:text> </xsl:text>
         <xsl:value-of select="/*/articleinfo/copyright/year"/>
-        <xsl:text>. All rights reserved.</xsl:text>
+        <xsl:text>. All Rights Reserved.</xsl:text>
       </td>
       <td style="text-align:right">
         <xsl:value-of select="/*/articleinfo/pubdate"/>
