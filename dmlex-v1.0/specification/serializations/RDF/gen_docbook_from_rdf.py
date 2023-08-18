@@ -25,9 +25,9 @@ def describe_property(g, property, file, restrictions):
     </listitem>""")
 
 
-for file in glob("ontology/dmlex-*.ttl"):
+def parse_rdf():
     g = rdflib.Graph()
-    g.parse(file, format="turtle")
+    g.parse("ontology/dmlex.ttl", format="turtle")
 
     props = defaultdict(list)
     # First scan for domains
@@ -60,6 +60,8 @@ for file in glob("ontology/dmlex-*.ttl"):
                             restrictions[o2] = f" REQUIRED (exactly {o3})"
                         for o3 in g.objects(o, OWL.maxCardinality):
                             restrictions[o2] = f" OPTIONAL (at most {o3})"
+                        for o3 in g.objects(o, OWL.minCardinality):
+                            restrictions[o2] = f" REQUIRED (at least {o3})"
 
             with open(f"elements/{name}.xml", "w") as f:
                 f.write(f"""<?xml version="1.0" encoding="UTF-8"?>
@@ -98,3 +100,5 @@ for file in glob("ontology/dmlex-*.ttl"):
 
 </section>""")
 
+if __name__ == "__main__":
+    parse_rdf()

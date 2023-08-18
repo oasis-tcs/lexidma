@@ -32,6 +32,12 @@
               <para>Listing order can be specified with the property <code>dmlex:listingOrder</code> with values starting from 1 and ascending</para>
           </listitem>
           <listitem>
+            <para>There is not a specific <code>id</code> property, instead the URI of the entity acts as the ID</para>
+          </listitem>
+          <listitem>
+            <para>There is no property for <olink targetptr="values_sameAs"><code>sameAs</code></olink> in the controlled values module. Instead you can use OWL's <code>sameAs</code> property</para>
+          </lisitem>
+          <listitem>
               <para>The implementation is not aware of which modules are in use, to enable publishing on the web. As such cardinality constraints that are only required in a module are not implemented.</para>
           </listitem>
       </itemizedlist>
