@@ -465,13 +465,15 @@
   <!-- nop -->
 </xsl:template>
 
+<!--  
 <xsl:template match="legalnotice[@role='notices']" mode="titlepage.mode"
               priority="1">
-  <xsl:apply-templates mode="titlepage.mode"/>
+<xsl:apply-templates mode="titlepage.mode"/>
 </xsl:template>
 
 <xsl:template match="legalnotice[@role='notices']/title" mode="titlepage.mode"
               priority="1">
+-->
   <hr/>
   <h2 class="notices-heading">
     <xsl:apply-templates/>
