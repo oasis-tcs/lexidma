@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
+                         ]>
+<section id="rdb_forLanguage">
+    <title>Database table: <literal>forLanguage</literal></title>
+    <para>Implements the <literal>forLanguage</literal> property
+        of the
+        <olink targetptr="values_partOfSpeechTag">partOfSpeechTag</olink>,
+        <olink targetptr="values_inflectedFormTag">inflectedFormTag</olink>,
+        <olink targetptr="values_labelTag">labelTag</olink> and
+        <olink targetptr="values_transcriptionScheme">transcriptionScheme</olink>
+        object types
+        from the Controlled Values Module.</para>
+
+    <itemizedlist>
+        <title>Columns</title>
+        <listitem>
+            <para><literal>id: int</literal>, primary key</para>
+        </listitem>
+        <listitem>
+            <para><literal>partOfSpeechTag: nvarchar</literal>, foreign key,
+                references column <literal>tag</literal>
+                of table <literal><olink targetptr="rdb_partOfSpeechTags">partOfSpeechTags</olink></literal>
+            </para>
+        </listitem>
+        <listitem>
+            <para><literal>inflectedFormTag: nvarchar</literal>, foreign key,
+                references column <literal>tag</literal>
+                of table <literal><olink targetptr="rdb_inflectedFormTags">inflectedFormTags</olink></literal>
+            </para>
+        </listitem>
+        <listitem>
+            <para><literal>labelTag: nvarchar</literal>, foreign key,
+                references column <literal>tag</literal>
+                of table <literal><olink targetptr="rdb_labelTags">labelTags</olink></literal>
+            </para>
+        </listitem>
+        <listitem>
+            <para><literal>transcriptionSchemeTag: nvarchar</literal>, foreign key,
+                references column <literal>tag</literal>
+                of table <literal><olink targetptr="rdb_transcriptionSchemeTags">transcriptionSchemeTags</olink></literal>
+            </para>
+        </listitem>
+        <listitem>
+            <para><literal>langCode: nvarchar</literal>, foreign key,
+                references column <literal>langCode</literal>
+                of table <literal><olink targetptr="rdb_translationLanguages">translationLanguages</olink></literal>
+            </para>
+        </listitem>
+    </itemizedlist>
+    
+    <itemizedlist>
+        <title>Constraint</title>
+        <listitem>
+            <para>
+                Exactly one of the foreign keys
+                <literal>partOfSpeechTag</literal>,
+                <literal>inflectedFormTag</literal>, 
+                <literal>labelTag</literal> and
+                <literal>transcriptionSchemeTag</literal>
+                is <glossterm>required</glossterm> to be non-empty.
+            </para>
+        </listitem>
+    </itemizedlist>
+    
+    
+
+</section>
