@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
+                         ]>
+<section id="rdb_translationLanguages">
+    <title>Database table: <literal>translationLanguages</literal></title>
+    <para>Implements the <olink targetptr="xlingual_translationLanguage">translationLanguage</olink> object type
+        from the Crosslingual Module.</para>
+
+    <itemizedlist>
+        <title>Columns</title>
+        <listitem>
+            <para><literal>langCode: varchar</literal>, primary key</para>
+        </listitem>
+        <listitem>
+            <para><literal>lexicographicResourceID: int</literal>, foreign key,
+                references column <literal>id</literal>
+                of table <literal><olink targetptr="rdb_lexicographicResources">lexicographicResources</olink></literal>
+            </para>
+        </listitem>
+        <listitem>
+            <para><literal>listingOrder: int</literal></para>
+        </listitem>
+    </itemizedlist>
+
+</section>

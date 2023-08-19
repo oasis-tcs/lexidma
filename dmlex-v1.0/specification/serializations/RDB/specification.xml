@@ -40,6 +40,12 @@
     <xi:include href="tables/pronunciations.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="tables/transcriptions.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="tables/examples.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    
+    <xi:include href="tables/translationLanguages.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/headwordTranslations.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/headwordExplanations.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/exampleTranslations.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    
   </section>
   
 
