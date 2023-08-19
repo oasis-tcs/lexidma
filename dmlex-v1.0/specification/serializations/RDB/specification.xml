@@ -66,6 +66,11 @@
     <xi:include href="tables/headwordMarkers.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="tables/collocateMarkers.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     
+    <xi:include href="tables/etymologies.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/etymons.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/etymonUnits.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/etymonTypes.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/etymonLanguages.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   </section>
   
 

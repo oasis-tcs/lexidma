@@ -44,9 +44,9 @@
     <itemizedlist>
         <title>Columns if implementing the Etymology Module</title>
         <listitem>
-            <para><literal>etymonID: int</literal>, foreign key,
+            <para><literal>etymonUnitID: int</literal>, foreign key,
                 references column <literal>id</literal>
-                of table <literal><olink targetptr="rdb_etymons">etymon</olink></literal>
+                of table <literal><olink targetptr="rdb_etymonUnits">etymonUnits</olink></literal>
             </para>
         </listitem>
     </itemizedlist>
