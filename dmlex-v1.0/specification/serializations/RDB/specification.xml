@@ -62,6 +62,10 @@
     <xi:include href="tables/relationTypes.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="tables/memberTypes.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     
+    <xi:include href="tables/placeholderMarkers.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/headwordMarkers.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/collocateMarkers.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    
   </section>
   
 
