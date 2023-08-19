@@ -32,6 +32,14 @@
     <title>DMLex relational database serialization tables</title>
     <xi:include href="tables/lexicographicResources.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="tables/entries.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/partsOfSpeech.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/inflectedForms.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/senses.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/definitions.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/labels.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/pronunciations.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/transcriptions.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/examples.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   </section>
   
 
