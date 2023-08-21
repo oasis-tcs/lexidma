@@ -1,4 +1,4 @@
-## The ontology for DMLex - Linking Module
+## The ontology for DMLex
 ## Author: John P. McCrae
 
 @prefix dmlex: <http://www.oasis-open.org/to-be-confirmed/dmlex#> .
@@ -8,6 +8,9 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+################################################################################
+## Linking Module
 
 dmlex:relation a owl:ObjectProperty ;
   rdfs:label "Relation"@en ;
@@ -20,11 +23,15 @@ dmlex:relationType a owl:ObjectProperty ;
   rdfs:range dmlex:RelationType .
 
 dmlex:Relation a owl:Class ;
+  rdfs:comment "Represents the fact that a relation exists between two or more objects."@en ;
   rdfs:label "Relation"@en ;
   rdfs:subClassOf  [
     a owl:Restriction ;
     owl:onProperty dmlex:type ;
     owl:cardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:description ;
+    owl:maxCardinality 1 ] , [
     a owl:Restriction ;
     owl:onProperty dmlex:member ;
     owl:minCardinality 2 ] .
@@ -32,7 +39,7 @@ dmlex:Relation a owl:Class ;
 dmlex:type a owl:DatatypeProperty ;
   rdfs:label "Type"@en ;
   rdfs:domain [ a owl:Class ;
-    owl:unionOf ( dmlex:Relation dmlex:Etymon dmlex:MultiEtymon ) ] ;
+    owl:unionOf ( dmlex:Relation dmlex:RelationType dmlex:Etymon dmlex:EtymonType ) ] ;
   rdfs:range xsd:string .
 
 dmlex:member a owl:ObjectProperty ;
@@ -41,66 +48,82 @@ dmlex:member a owl:ObjectProperty ;
   rdfs:range dmlex:Member .
 
 dmlex:Member a owl:Class ;
+  rdfs:comment "Represents the fact that an object, such as an entry or a sense, is a member of a relation."@en ;
   rdfs:label "Member"@en ;
   rdfs:subClassOf  [
     a owl:Restriction ;
-    owl:onProperty dmlex:idref ;
+    owl:onProperty dmlex:memberID ;
     owl:cardinality 1 ] ,  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:role ;
+    owl:maxCardinality 1 ] , [
     a owl:Restriction ;
     owl:onProperty dmlex:listingOrder ;
     owl:cardinality 1 ] ,  [
     a owl:Restriction ;
-    owl:onProperty dmlex:reverseListingOrder ;
+    owl:onProperty dmlex:obverseListingOrder ;
     owl:cardinality 1 ] .
 
-dmlex:idref a owl:DatatypeProperty ;
-  rdfs:label "ID ref"@en ;
-  rdfs:domain dmlex:Member ;
+dmlex:memberID a owl:DatatypeProperty ;
+  rdfs:label "Member ID"@en ;
+  rdfs:domain [ a owl:Class ;
+    owl:unionOf ( dmlex:Member ) ] ;
   rdfs:range xsd:string .
 
 dmlex:role a owl:DatatypeProperty ;
   rdfs:label "Role"@en ;
-  rdfs:domain dmlex:Member ;
+  rdfs:domain [ a owl:Class ;
+    owl:unionOf ( dmlex:Member dmlex:MemberType ) ] ;
   rdfs:range xsd:string .
 
-dmlex:reverseListingOrder a owl:DatatypeProperty ;
-  rdfs:label "Reverse Listing Order"@en ;
-  rdfs:range xsd:nonNegativeInteger .
+dmlex:obverseListingOrder a owl:DatatypeProperty ;
+  rdfs:label "Obverse Listing Order"@en ;
+  rdfs:domain dmlex:Member ;
+  rdfs:range xsd:integer .
 
 dmlex:RelationType a owl:Class ;
+  rdfs:comment "Represents one of possible values for the type of relation."@en ;
   rdfs:label "Relation Type"@en ;
   rdfs:subClassOf  [
     a owl:Restriction ;
-    owl:onProperty dmlex:value ;
-    owl:cardinality 1 ] .
+    owl:onProperty dmlex:type ;
+    owl:cardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:description ;
+    owl:maxCardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:scope ;
+    owl:maxCardinality 1 ] .
 
 dmlex:scope a owl:DatatypeProperty ;
   rdfs:label "Scope"@en ;
   rdfs:domain dmlex:RelationType ;
   rdfs:range xsd:string .
 
-dmlex:memberRole a owl:ObjectProperty ;
-  rdfs:label "Member Role"@en ;
+dmlex:memberType a owl:ObjectProperty ;
+  rdfs:label "Member Type"@en ;
   rdfs:domain dmlex:RelationType ;
-  rdfs:range dmlex:MemberRole .
+  rdfs:range dmlex:MemberType .
 
-dmlex:MemberRole a owl:Class ;
-  rdfs:label "Member Role"@en ;
+dmlex:MemberType a owl:Class ;
+  rdfs:comment "Represents one of possible values for the role of member, as well as various restrictions on members having this role."@en ;
+  rdfs:label "Member Type"@en ;
   rdfs:subClassOf  [
     a owl:Restriction ;
-    owl:onProperty dmlex:value ;
+    owl:onProperty dmlex:role ;
     owl:cardinality 1 ] , [
     a owl:Restriction ;
-    owl:onProperty dmlex:memberType ;
-    owl:cardinality 1 ] , [
+    owl:onProperty dmlex:description ;
+    owl:maxCardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:min ;
+    owl:maxCardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:max ;
+    owl:maxCardinality 1 ] , [
     a owl:Restriction ;
     owl:onProperty dmlex:action ;
-    owl:cardinality 1 ] .
-
-dmlex:memberType a owl:DatatypeProperty ;
-  rdfs:label "MemberType"@en ;
-  rdfs:domain dmlex:MemberRole ;
-  rdfs:range xsd:string .
+    owl:maxCardinality 1 ] .
 
 dmlex:min a owl:DatatypeProperty ;
   rdfs:label "Min"@en ;
@@ -116,4 +139,5 @@ dmlex:action a owl:DatatypeProperty ;
   rdfs:label "Action"@en ;
   rdfs:domain dmlex:MemberType ;
   rdfs:range xsd:string .
+
 

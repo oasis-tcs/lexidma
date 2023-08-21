@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
+                         ]>
+<section id="rdf_MemberType">
+    <title>RDF element: <literal>dmlex:MemberType</literal></title>
+
+    <para>Represents one of possible values for the role of member, as well as various restrictions on members having this role.</para>
+
+
+    <itemizedlist>
+        <title>Properties</title>
+    <listitem>
+        <para><literal>dmlex:description</literal>  OPTIONAL (at most 1) of type <literal>http://www.w3.org/2000/01/rdf-schema#Literal</literal></para>
+    </listitem>
+    <listitem>
+        <para><literal>dmlex:role</literal>  REQUIRED (exactly 1) of type <literal>http://www.w3.org/2001/XMLSchema#string</literal></para>
+    </listitem>
+    <listitem>
+        <para><literal>dmlex:min</literal>  OPTIONAL (at most 1) of type <literal>http://www.w3.org/2001/XMLSchema#nonNegativeInteger</literal></para>
+    </listitem>
+    <listitem>
+        <para><literal>dmlex:max</literal>  OPTIONAL (at most 1) of type <literal>http://www.w3.org/2001/XMLSchema#nonNegativeInteger</literal></para>
+    </listitem>
+    <listitem>
+        <para><literal>dmlex:action</literal>  OPTIONAL (at most 1) of type <literal>http://www.w3.org/2001/XMLSchema#string</literal></para>
+    </listitem>
+    </itemizedlist>
+
+
+</section>

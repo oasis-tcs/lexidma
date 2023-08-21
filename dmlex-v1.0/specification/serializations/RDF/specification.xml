@@ -36,7 +36,7 @@
           </listitem>
           <listitem>
             <para>There is no property for <olink targetptr="values_sameAs"><code>sameAs</code></olink> in the controlled values module. Instead you can use OWL's <code>sameAs</code> property</para>
-          </lisitem>
+          </listitem>
           <listitem>
               <para>The implementation is not aware of which modules are in use, to enable publishing on the web. As such cardinality constraints that are only required in a module are not implemented.</para>
           </listitem>
@@ -46,9 +46,50 @@
 
   <section>
     <title>DMLex RDF serialization elements</title>
+    <!-- core module -->
   <xi:include href="elements/LexicographicResource.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="elements/Entry.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="elements/PartOfSpeech.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/InflectedForm.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/Sense.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/Definition.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/Label.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/Pronunciation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/Transcription.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/Example.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+
+  <!-- cross-lingual module -->
+  <xi:include href="elements/TranslationLanguage.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/HeadwordTranslation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/HeadwordExplanation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/ExampleTranslation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+
+  <!-- controlled values module -->
+  <xi:include href="elements/DefinitionTypeTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/InflectedFormTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/LabelTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/LabelTypeTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/PartOfSpeechTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/SourceIdentityTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/TranscriptionSchemeTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+
+  <!-- linking module -->
+  <xi:include href="elements/Relation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/Member.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/RelationType.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/MemberType.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+
+  <!-- annotation module -->
+  <xi:include href="elements/PlaceholderMarker.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/HeadwordMarker.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/CollocateMarker.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+
+  <!-- etymology module -->
+  <xi:include href="elements/Etymology.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/Etymon.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/EtymonUnit.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/EtymonType.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="elements/EtymonLanguage.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   </section>
  
 
