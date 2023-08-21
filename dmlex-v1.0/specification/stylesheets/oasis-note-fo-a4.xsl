@@ -16,7 +16,7 @@
                 exclude-result-prefixes="saxon lxslt xalanredirect exsl axf"
                 extension-element-prefixes="saxon xalanredirect lxslt exsl"
                 version="1.0">
-<!-- $Id: oasis-specification-fo-a4.xsl,v 1.54 2018/12/02 02:44:17 admin Exp $ -->
+<!-- $Id: oasis-note-fo-a4.xsl,v 1.18 2018/12/02 23:20:14 admin Exp $ -->
 
 <!-- This stylesheet is a customization of the DocBook XSL Stylesheets -->
 <!-- from http://www.oasis-open.org/spectools/stylesheets/oasis-docbook-fo.xsl
@@ -24,7 +24,7 @@
      settings for international paper size (for an international standards
      organization) and body indentation (new with DocBook stylesheets);
      note also that directory locations have been parameterized; a number of
-     changes were made to conform to revised OASIS presentation reqts
+     changes were made to conform to revised OASIS presentation reqts 
   
      Yellow: A09A4F
      Purple: 3B006F
@@ -34,7 +34,7 @@
   -->
 <!-- See http://sourceforge.net/projects/docbook/ -->
 <xsl:import href="../docbook/xsl/fo/docbook.xsl"/>
-<xsl:import href="titlepage-fo.xsl"/>
+<xsl:import href="titlepage-notes-fo.xsl"/>
 
 <!-- ============================================================ -->
 <!-- Parameters -->
@@ -267,7 +267,10 @@
 
 <xsl:template match="articleinfo/title" 
               mode="article.titlepage.recto.auto.mode">
-  <fo:block>
+  <fo:block font-size="18pt" font-weight="bold" color="#7F7F7F"
+            space-before="5pt"
+    >OASIS Committee Note</fo:block>
+  <fo:block font-size="3pt">
     <fo:leader leader-length="100%" leader-pattern="rule" color="black"/>
   </fo:block>
   <xsl:apply-imports/>
@@ -835,20 +838,85 @@
 
 <!-- ============================================================ -->
 
+<xsl:template name="user.pagemasters">
+    <!--<fo:simple-page-master master-name="oasis-note-first"
+                           page-width="{$page.width}"
+                           page-height="{$page.height}"
+                           margin-top="{$page.margin.top}"
+                           margin-bottom="{$page.margin.bottom}"
+                           margin-left="{$margin.left.inner}"
+                           margin-right="{$page.margin.outer}">
+      <fo:region-body margin-bottom="{$body.margin.bottom}"
+                      margin-top="{$body.margin.top}"
+                      margin-left="2in - {$margin.left.inner} + .1in"
+                      column-gap="{$column.gap.titlepage}"
+                      column-count="{$column.count.titlepage}">
+      </fo:region-body>
+      <fo:region-start region-name="xsl-region-start-first"
+                       extent="2in - {$margin.left.inner} + .1in"/>
+      <fo:region-before region-name="xsl-region-before-first"
+                        extent="{$region.before.extent}"
+                        display-align="before"/>
+      <fo:region-after region-name="xsl-region-after-first"
+                       extent="{$region.after.extent}"
+                        display-align="after"/>
+    </fo:simple-page-master>-->
+  <fo:page-sequence-master master-name="oasis-note-body">
+      <fo:repeatable-page-master-alternatives>
+        <fo:conditional-page-master-reference master-reference="blank"
+                                              blank-or-not-blank="blank"/>
+        <fo:conditional-page-master-reference master-reference="body-first"
+                                              page-position="first"/>
+        <fo:conditional-page-master-reference master-reference="body-odd"
+                                              odd-or-even="odd"/>
+        <fo:conditional-page-master-reference 
+                                              odd-or-even="even">
+          <xsl:attribute name="master-reference">
+            <xsl:choose>
+              <xsl:when test="$double.sided != 0">body-even</xsl:when>
+              <xsl:otherwise>body-odd</xsl:otherwise>
+            </xsl:choose>
+          </xsl:attribute>
+        </fo:conditional-page-master-reference>
+      </fo:repeatable-page-master-alternatives>
+    </fo:page-sequence-master>
+</xsl:template>
+<xsl:template name="select.user.pagemaster">oasis-note-body</xsl:template>
+
 <xsl:param name="header.rule" select="'0'"/>
 <xsl:param name="region.before.extent" select="'0pt'"/>
 
-<xsl:template name="header.content">
+<xsl:attribute-set name="header.content.properties">
+</xsl:attribute-set>
+
+<xsl:template name="header.content.new">
   <!--last minute change to remove all header content-->
 </xsl:template>
   
+<xsl:template name="header.content">
+  <xsl:param name="sequence" select="''"/>
+  <xsl:param name="position" select="''"/>
+</xsl:template>
+<xsl:param name="header.column.widths">0 100 0</xsl:param>
+  
+<xsl:template name="oasis-note-banner-text">
+  <!--this template is needed to utilize the axf: namespace in a template-->
+<!--  <fo:block axf:line-number="none">
+    This is a Non-Standards<fo:block/>
+    Track Work Product.<fo:block/>
+    The patent provisions of<fo:block/>
+    the OASIS IPR Policy<fo:block/>
+    do not apply.
+  </fo:block>-->
+</xsl:template>
+
 <!--replace DocBook footer with custom footer-->
 <xsl:template name="footer.table">
   <xsl:param name="pageclass" select="''"/>
   <xsl:param name="sequence" select="''"/>
   <xsl:param name="gentext-key" select="''"/>
 
-    <!-- Really output a footer? -->
+  <!-- Really output a footer? -->
   <xsl:choose>
     <xsl:when test="$pageclass='titlepage' and $gentext-key='book'
                     and $sequence='first'">
@@ -858,6 +926,9 @@
       <!-- no output -->
     </xsl:when>
     <xsl:otherwise>
+      <fo:block font-size="3pt">
+        <fo:leader leader-length="100%" leader-pattern="rule"/>
+      </fo:block>
   <fo:table width="100%">
     <fo:table-column column-width="proportional-column-width(29)"/>
     <fo:table-column column-width="proportional-column-width(21)"/>
