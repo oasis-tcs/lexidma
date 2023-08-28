@@ -28,10 +28,108 @@
     </itemizedlist>
   </section>
   
+  <section role="informative">
+    <title>Database diagrams</title>
+    <para>
+      The following diagrams provide a high-level overview of the relational database serialization of DMLex.
+      Each diagram presents a "view" of the database from the perspective of one of the modules or from the perspective of the DMLex Core.
+      The diagrams shown here follow the usual conventions used in relational database diagrams:
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>Each box represents a database table and contains a list of its column headings.
+          The abbreviation PK next to a column name indicates that the column is a primary key.
+          The abbreviation FK next to a column name indicates that the column is a foreign key.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Lines between the boxes represent relationships between tables,
+          with the conventional "crow's feet" symbols at the ends of the lines
+          to indicate the relation's arity (one-to-many etc.).
+        </para>
+      </listitem>
+    </itemizedlist>
+    <para>In addition to that, the following non-standard conventions are used in the diagrams:</para>
+    <itemizedlist>
+      <listitem>
+        <para>A curly bracket surrounding a group of foreign keys in a table indicates the constraint
+        that exactly one of the foreign keys in this group must be non-empty while all the other ones must be null.</para>
+      </listitem>
+      <listitem>
+        <para>Tables and columns shown in grey are tables are defined in another module (or in the core)
+        and are shown only for information.</para>
+      </listitem>
+    </itemizedlist>
+    <section>
+      <title>Database diagram: DMLex Core</title>
+      <graphic fileref="serializations/RDB/databaseDiagrams/core.svg" contentwidth="16cm"/>
+    </section>
+    <section>
+      <title>Database diagram: DMLex Crosslingual Module</title>
+      <graphic fileref="serializations/RDB/databaseDiagrams/xlingual.svg" contentwidth="16cm"/>
+    </section>
+    <section>
+      <title>Database diagram: DMLex Controlled Values Module</title>
+      <graphic fileref="serializations/RDB/databaseDiagrams/values.svg" contentwidth="16cm"/>
+    </section>
+    <section>
+      <title>Database diagram: DMLex Linking Module</title>
+      <graphic fileref="serializations/RDB/databaseDiagrams/linking.svg" contentwidth="16cm"/>
+    </section>
+    <section>
+      <title>Database diagram: DMLex Annotation Module</title>
+      <graphic fileref="serializations/RDB/databaseDiagrams/annotation.svg" contentwidth="16cm"/>
+    </section>
+    <section>
+      <title>Database diagram: DMLex Etymology Module</title>
+      <graphic fileref="serializations/RDB/databaseDiagrams/etymology.svg" contentwidth="16cm"/>
+    </section>
+  </section>
+  
   <section id="RDBTables" role="normative">
     <title>DMLex relational database serialization tables</title>
     <xi:include href="tables/lexicographicResources.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="tables/entries.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/partsOfSpeech.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/inflectedForms.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/senses.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/definitions.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/labels.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/pronunciations.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/transcriptions.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/examples.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    
+    <xi:include href="tables/translationLanguages.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/headwordTranslations.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/headwordExplanations.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/exampleTranslations.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    
+    <xi:include href="tables/definitionTypeTags.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/inflectedFormTags.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/labelTags.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/labelTypeTags.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/partOfSpeechTags.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/sourceIdentityTags.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/transcriptionSchemeTags.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/sameAs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/forPartOfSpeech.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/forLanguage.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    
+    <xi:include href="tables/relations.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/members.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/relationTypes.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/memberTypes.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    
+    <xi:include href="tables/placeholderMarkers.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/headwordMarkers.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/collocateMarkers.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    
+    <xi:include href="tables/etymologies.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/etymons.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/etymonUnits.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/etymonTypes.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tables/etymonLanguages.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   </section>
   
 
