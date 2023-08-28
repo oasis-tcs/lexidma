@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
+                         ]>
+<section id="rdb_labels">
+    <title>Database table: <literal>labels</literal></title>
+    <para>Implements the <olink targetptr="core_label">label</olink> object type.</para>
+
+    <itemizedlist>
+        <title>Columns</title>
+        <listitem>
+            <para><literal>id: int</literal>, primary key</para>
+        </listitem>
+        <listitem>
+            <para><literal>entryID: int</literal>, foreign key,
+                references column <literal>id</literal>
+                of table <literal><olink targetptr="rdb_entries">entries</olink></literal>
+            </para>
+        </listitem>
+        <listitem>
+            <para><literal>inflectedFormID: int</literal>, foreign key,
+                references column <literal>id</literal>
+                of table <literal><olink targetptr="rdb_inflectedForms">inflectedForms</olink></literal>
+            </para>
+        </listitem>
+        <listitem>
+            <para><literal>pronunciationID: int</literal>, foreign key,
+                references column <literal>id</literal>
+                of table <literal><olink targetptr="rdb_pronunciations">pronunciations</olink></literal>
+            </para>
+        </listitem>
+        <listitem>
+            <para><literal>senseID: int</literal>, foreign key,
+                references column <literal>id</literal>
+                of table <literal><olink targetptr="rdb_senses">senses</olink></literal>
+            </para>
+        </listitem>
+        <listitem>
+            <para><literal>exampleID: int</literal>, foreign key,
+                references column <literal>id</literal>
+                of table <literal><olink targetptr="rdb_examples">examples</olink></literal>
+            </para>
+        </listitem>
+        <listitem>
+            <para><literal>tag: nvarchar</literal>, foreign key,
+                references column <literal>tag</literal>
+                of table <literal><olink targetptr="rdb_labelTags">labelTags</olink></literal>
+            </para>
+        </listitem>
+        <listitem>
+            <para><literal>listingOrder: int</literal></para>
+        </listitem>
+    </itemizedlist>
+    
+    <itemizedlist>
+        <title>Columns if implementing the Crosslingual Module</title>
+        <listitem>
+            <para><literal>headwordTranslationID: int</literal>, foreign key,
+                references column <literal>id</literal>
+                of table <literal><olink targetptr="rdb_headwordTranslations">headwordTranslations</olink></literal>
+            </para>
+        </listitem>
+        <listitem>
+            <para><literal>exampleTranslationID: int</literal>, foreign key,
+                references column <literal>id</literal>
+                of table <literal><olink targetptr="rdb_exampleTranslations">exampleTranslations</olink></literal>
+            </para>
+        </listitem>
+    </itemizedlist>
+
+    <itemizedlist>
+        <title>Columns if implementing the Annotation Module</title>
+        <listitem>
+            <para><literal>collocateMarkerID: int</literal>, foreign key,
+                references column <literal>id</literal>
+                of table <literal><olink targetptr="rdb_collocateMarkers">collocateMarkers</olink></literal>
+            </para>
+        </listitem>
+    </itemizedlist>
+    
+    <itemizedlist>
+        <title>Constraint</title>
+        <listitem>
+            <para>
+                Exactly one of the foreign keys
+                <literal>entryID</literal>,
+                <literal>inflectedFormID</literal>, 
+                <literal>pronunciationID</literal>, 
+                <literal>senseID</literal>, 
+                <literal>exampleID</literal>, 
+                <literal>headwordTranslationID</literal>, 
+                <literal>exampleTranslationID</literal> and 
+                <literal>collocateMarkerID</literal> 
+                is <glossterm>required</glossterm> to be non-empty.
+            </para>
+        </listitem>
+    </itemizedlist>
+
+</section>

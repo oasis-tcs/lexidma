@@ -5,9 +5,10 @@
                          %xinclude;
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
                          ]>
-<section id="rdb_entries">
-    <title>Database table: <literal>entries</literal></title>
-    <para>Implements the <olink targetptr="core_entry">entry</olink> object type.</para>
+<section id="rdb_relations">
+    <title>Database table: <literal>relations</literal></title>
+    <para>Implements the <olink targetptr="linking_relation">relation</olink> object type
+        from the Linking Module.</para>
 
     <itemizedlist>
         <title>Columns</title>
@@ -21,10 +22,13 @@
             </para>
         </listitem>
         <listitem>
-            <para><literal>headword: nvarchar</literal></para>
+            <para><literal>type: nvarchar</literal>, foreign key,
+                references column <literal>type</literal>
+                of table <literal><olink targetptr="rdb_relationTypes">relationTypes</olink></literal>
+            </para>
         </listitem>
         <listitem>
-            <para><literal>homographNumber: int</literal></para>
+            <para><literal>description: nvarchar</literal></para>
         </listitem>
     </itemizedlist>
 
