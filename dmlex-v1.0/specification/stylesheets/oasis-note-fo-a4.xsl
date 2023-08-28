@@ -54,7 +54,7 @@
 <xsl:param name="ulink.hyphenate">&#x200b;</xsl:param>
 <xsl:param name="ulink.show">0</xsl:param>
 <xsl:param name="xep.extensions">1</xsl:param>
-<xsl:param name="axf.extensions">1</xsl:param>
+<xsl:param name="axf.extensions">0</xsl:param>
   
 <xsl:param name="local.l10n.xml" select="document('')"/>
 <l:i18n xmlns:l="http://docbook.sourceforge.net/xmlns/l10n/1.0">
