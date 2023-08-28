@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
+                         ]>
+<section id="rdb_headwordMarkers">
+    <title>Database table: <literal>headwordMarkers</literal></title>
+    <para>Implements the <olink targetptr="annonation_headwordMarker">headwordMarker</olink> object type
+        from the Annotationm Module.</para>
+
+    <itemizedlist>
+        <title>Columns</title>
+        <listitem>
+            <para><literal>id: int</literal>, primary key</para>
+        </listitem>
+        <listitem>
+            <para><literal>definitionID: int</literal>, foreign key,
+                references column <literal>id</literal>
+                of table <literal><olink targetptr="rdb_definitions">definitions</olink></literal>
+            </para>
+        </listitem>
+        <listitem>
+            <para><literal>exampleID: int</literal>, foreign key,
+                references column <literal>id</literal>
+                of table <literal><olink targetptr="rdb_examples">examples</olink></literal>
+            </para>
+        </listitem>
+        <listitem>
+            <para><literal>startIndex: int</literal></para>
+        </listitem>
+        <listitem>
+            <para><literal>endIndex: int</literal></para>
+        </listitem>
+    </itemizedlist>
+    
+    <itemizedlist>
+        <title>Columns if implementing the Crosslingual Module</title>
+        <listitem>
+            <para><literal>exampleTranslationID: int</literal>, foreign key,
+                references column <literal>id</literal>
+                of table <literal><olink targetptr="rdb_exampleTranslations">exampleTranslations</olink></literal>
+            </para>
+        </listitem>
+    </itemizedlist>
+    
+    <itemizedlist>
+        <title>Constraint</title>
+        <listitem>
+            <para>
+                Exactly one of the foreign keys
+                <literal>definitionID</literal>,
+                <literal>exampleID</literal> and
+                <literal>exampleTranslationID</literal>, 
+                is <glossterm>required</glossterm> to be non-empty.
+            </para>
+        </listitem>
+    </itemizedlist>
+
+</section>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
+                         ]>
+<section id="rdb_etymonUnits">
+    <title>Database table: <literal>etymonUnits</literal></title>
+    <para>Implements the <olink targetptr="etymology_etymonUnit">etymonUnit</olink> object type
+        from the Etymology Module.</para>
+
+    <itemizedlist>
+        <title>Columns</title>
+        <listitem>
+            <para><literal>id: int</literal>, primary key</para>
+        </listitem>
+        <listitem>
+            <para><literal>etymonID: int</literal>, foreign key,
+                references column <literal>id</literal>
+                of table <literal><olink targetptr="rdb_etymons">etymons</olink></literal>
+            </para>
+        </listitem>
+        <listitem>
+            <para><literal>langCode: nvarchar</literal>, foreign key,
+                references column <literal>langCode</literal>
+                of table <literal><olink targetptr="rdb_etymonLanguages">etymonLanguages</olink></literal>
+            </para>
+        </listitem>
+        <listitem>
+            <para><literal>text: nvarchar</literal></para>
+        </listitem>
+        <listitem>
+            <para><literal>reconstructed: bit</literal></para>
+        </listitem>
+        <listitem>
+            <para><literal>translation: nvarchar</literal></para>
+        </listitem>
+        <listitem>
+            <para><literal>listingOrder: int</literal></para>
+        </listitem>
+    </itemizedlist>
+
+</section>

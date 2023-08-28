@@ -8,31 +8,31 @@
 <section id="rdb_lexicographicResources">
     <title>Database table: <literal>lexicographicResources</literal></title>
     <para>Implements the <olink targetptr="core_lexicographicResource">lexicographicResource</olink>
-        data type.</para>
+        object type.</para>
 
-    <bridgehead>Columns</bridgehead>
     <itemizedlist>
+        <title>Columns</title>
         <listitem>
-            <para><literal>id int primary key</literal></para>
+            <para><literal>id: int</literal>, primary key</para>
         </listitem>
         <listitem>
-            <para><literal>title varchar(255)</literal></para>
+            <para><literal>title: nvarchar</literal></para>
         </listitem>
         <listitem>
-            <para><literal>uri varchar(255)</literal></para>
+            <para><literal>uri: nvarchar</literal></para>
         </listitem>
         <listitem>
-            <para><literal>language varchar(10)</literal></para>
+            <para><literal>langCode: varchar</literal></para>
         </listitem>
     </itemizedlist>
 
     
     <itemizedlist>
-        <title>Processing Requirements</title>
+        <title>Comment</title>
         <listitem>
-            <para>If the implementation contains only one lexicographic resource, then the <olink
-                    targetptr="core_lexicographicResource">lexicographicResource</olink> table is
-                not <glossterm>required</glossterm> to be unimplemented.</para>
+            <para>If the database is designed to contain only one lexicographic resource then this table,
+                includng all foreign keys in other tables that reference it, is
+                not <glossterm>required</glossterm> to be implemented.</para>
         </listitem>
     </itemizedlist>
     

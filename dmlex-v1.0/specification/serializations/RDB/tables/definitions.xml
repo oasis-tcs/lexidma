@@ -5,9 +5,9 @@
                          %xinclude;
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
                          ]>
-<section id="rdb_entries">
-    <title>Database table: <literal>entries</literal></title>
-    <para>Implements the <olink targetptr="core_entry">entry</olink> object type.</para>
+<section id="rdb_definitions">
+    <title>Database table: <literal>definitions</literal></title>
+    <para>Implements the <olink targetptr="core_definition">definition</olink> object type.</para>
 
     <itemizedlist>
         <title>Columns</title>
@@ -15,16 +15,22 @@
             <para><literal>id: int</literal>, primary key</para>
         </listitem>
         <listitem>
-            <para><literal>lexicographicResourceID: int</literal>, foreign key,
+            <para><literal>senseID: int</literal>, foreign key,
                 references column <literal>id</literal>
-                of table <literal><olink targetptr="rdb_lexicographicResources">lexicographicResources</olink></literal>
+                of table <literal><olink targetptr="rdb_senses">senses</olink></literal>
             </para>
         </listitem>
         <listitem>
-            <para><literal>headword: nvarchar</literal></para>
+            <para><literal>text: nvarchar</literal></para>
         </listitem>
         <listitem>
-            <para><literal>homographNumber: int</literal></para>
+            <para><literal>definitionType: nvarchar</literal>, foreign key,
+                references column <literal>tag</literal>
+                of table <literal><olink targetptr="rdb_definitionTypeTags">definitionTypeTags</olink></literal>
+            </para>
+        </listitem>
+        <listitem>
+            <para><literal>listingOrder: int</literal></para>
         </listitem>
     </itemizedlist>
 

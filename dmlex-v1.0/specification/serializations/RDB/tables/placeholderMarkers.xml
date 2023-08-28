@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
+                         ]>
+<section id="rdb_placeholderMarkers">
+    <title>Database table: <literal>placeholderMarkers</literal></title>
+    <para>Implements the <olink targetptr="annonation_placeholderMarker">placeholderMarker</olink> object type
+        from the Annotationm Module.</para>
+
+    <itemizedlist>
+        <title>Columns</title>
+        <listitem>
+            <para><literal>id: int</literal>, primary key</para>
+        </listitem>
+        <listitem>
+            <para><literal>entryID: int</literal>, foreign key,
+                references column <literal>id</literal>
+                of table <literal><olink targetptr="rdb_entries">entries</olink></literal>
+            </para>
+        </listitem>
+        <listitem>
+            <para><literal>startIndex: int</literal></para>
+        </listitem>
+        <listitem>
+            <para><literal>endIndex: int</literal></para>
+        </listitem>
+    </itemizedlist>
+    
+    <itemizedlist>
+        <title>Columns if implementing the Crosslingual Module</title>
+        <listitem>
+            <para><literal>headwordTranslationID: int</literal>, foreign key,
+                references column <literal>id</literal>
+                of table <literal><olink targetptr="rdb_headwordTranslations">headwordTranslations</olink></literal>
+            </para>
+        </listitem>
+    </itemizedlist>
+    
+    <itemizedlist>
+        <title>Constraint</title>
+        <listitem>
+            <para>
+                Exactly one of the foreign keys
+                <literal>entryID</literal> and
+                <literal>headwordTranslationID</literal>, 
+                is <glossterm>required</glossterm> to be non-empty.
+            </para>
+        </listitem>
+    </itemizedlist>
+
+</section>

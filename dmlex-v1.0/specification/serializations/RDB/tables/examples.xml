@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
+                         ]>
+<section id="rdb_examples">
+    <title>Database table: <literal>examples</literal></title>
+    <para>Implements the <olink targetptr="core_example">example</olink> object type.</para>
+
+    <itemizedlist>
+        <title>Columns</title>
+        <listitem>
+            <para><literal>id: int</literal>, primary key</para>
+        </listitem>
+        <listitem>
+            <para><literal>senseID: int</literal>, foreign key,
+                references column <literal>id</literal>
+                of table <literal><olink targetptr="rdb_senses">senses</olink></literal>
+            </para>
+        </listitem>
+        <listitem>
+            <para><literal>text: nvarchar</literal></para>
+        </listitem>
+        <listitem>
+            <para><literal>sourceIdentity: nvarchar</literal>, foreign key,
+                references column <literal>tag</literal>
+                of table <literal><olink targetptr="rdb_sourceIdentityTags">sourceIdentityTags</olink></literal></para>
+        </listitem>
+        <listitem>
+            <para><literal>sourceElaboration: nvarchar</literal></para>
+        </listitem>
+        <listitem>
+            <para><literal>soundFile: nvarchar</literal></para>
+        </listitem>
+        <listitem>
+            <para><literal>listingOrder: int</literal></para>
+        </listitem>
+    </itemizedlist>
+
+</section>
