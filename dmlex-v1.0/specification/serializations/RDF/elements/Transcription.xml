@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
+                         ]>
+<section id="rdf_Transcription">
+    <title>RDF element: <literal>dmlex:Transcription</literal></title>
+
+    <para>Represents the transcription of a pronunciation in some notation such as IPA.</para>
+
+
+    <itemizedlist>
+        <title>Properties</title>
+    <listitem>
+        <para><literal>dmlex:listingOrder</literal>  REQUIRED (exactly 1) of type <literal>http://www.w3.org/2001/XMLSchema#nonNegativeInteger</literal></para>
+    </listitem>
+    <listitem>
+        <para><literal>dmlex:text</literal>  REQUIRED (exactly 1) of type <literal>http://www.w3.org/2000/01/rdf-schema#Literal</literal></para>
+    </listitem>
+    </itemizedlist>
+
+
+</section>

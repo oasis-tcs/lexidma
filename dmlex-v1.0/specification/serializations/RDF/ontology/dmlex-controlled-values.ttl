@@ -1,0 +1,185 @@
+## The ontology for DMLex
+## Author: John P. McCrae
+
+@prefix dmlex: <http://www.oasis-open.org/to-be-confirmed/dmlex#> .
+@prefix lime: <http://www.w3.org/ns/lemon/lime#> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+################################################################################
+## Controlled Values Module
+
+dmlex:definitionTypeTag a owl:ObjectProperty ;
+  rdfs:label "Definition Type Tag"@en ;
+  rdfs:domain dmlex:LexicographicResource ;
+  rdfs:range dmlex:DefinitionTypeTag .
+
+dmlex:inflectedFormTag a owl:ObjectProperty ;
+  rdfs:label "Inflected Form Tag"@en ;
+  rdfs:domain dmlex:LexicographicResource ;
+  rdfs:range dmlex:InflectedFormTag . 
+
+dmlex:labelTag a owl:ObjectProperty ;
+  rdfs:label "Label Tag"@en ;
+  rdf:domain dmlex:LexicographicResource ;
+  rdfs:range dmlex:LabelTag . 
+
+dmlex:labelTypeTag a owl:ObjectProperty ;
+  rdfs:label "Label Type Tag"@en ;
+  rdfs:domain dmlex:LexicographicResource ;
+  rdfs:range dmlex:LabelTypeTag . 
+
+dmlex:partOfSpeechTag a owl:ObjectProperty ;
+  rdfs:label "Part of Speech Tag"@en ;
+  rdfs:domain dmlex:LexicographicResource ;
+  rdfs:range dmlex:PartOfSpeechTag . 
+
+dmlex:sourceIdentityTag a owl:ObjectProperty ;
+  rdfs:label "Source Identity Tag"@en ;
+  rdfs:domain dmlex:LexicographicResource ;
+  rdfs:range dmlex:SourceIdentityTag . 
+
+dmlex:transcriptionSchemeTag a owl:ObjectProperty ;
+  rdfs:label "Transcription Scheme Tag"@en ;
+  rdfs:domain dmlex:LexicographicResource ;
+  rdfs:range dmlex:TranscriptionSchemeTag . 
+
+dmlex:description a owl:DatatypeProperty ;
+  rdfs:label "Description"@en ;
+  rdfs:domain [ a owl:Class ;
+    owl:unionOf ( dmlex:DefinitionTypeTag dmlex:InflectedFormTag dmlex:LabelTag dmlex:LabelTypeTag dmlex:PartOfSpeechTag dmlex:SourceIdentityTag dmlex:TranscriptionSchemeTag dmlex:Relation dmlex:RelationType dmlex:RelationType dmlex:MemberType dmlex:Etymology dmlex:EtymonType ) ] ;
+  rdfs:range rdfs:Literal .
+
+dmlex:DefinitionTypeTag a owl:Class ;
+  rdfs:comment "Represents one (of many) possible values for definitionType of definition."@en ;
+  rdfs:label "Definition Type Tag"@en ;
+  rdfs:subClassOf  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:tag ;
+    owl:cardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:description ;
+    owl:cardinality 1 ] .
+
+dmlex:InflectedFormTag a owl:Class ;
+  rdfs:comment "Represents one (of many) possible values for tag of inflectedForm"@en ;
+  rdfs:label "Inflected Form Tag"@en ;
+  rdfs:subClassOf  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:tag ;
+    owl:cardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:description ;
+    owl:cardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:forHeadwords ;
+    owl:maxCardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:forTranslations ;
+    owl:maxCardinality 1 ] .
+
+
+dmlex:forHeadwords a owl:ObjectProperty ;
+  rdfs:label "For Headwords"@en ;
+  rdfs:domain [ a owl:Class ;
+    owl:unionOf ( dmlex:InflectedFormTag dmlex:LabelTag dmlex:PartOfSpeechTag dmlex:TranscriptionSchemeTag ) ] ;
+  rdfs:range xsd:boolean .
+
+dmlex:forTranslations a owl:ObjectProperty ;
+  rdfs:label "For Translations"@en ;
+  rdfs:domain [ a owl:Class ;
+    owl:unionOf ( dmlex:InflectedFormTag dmlex:LabelTag dmlex:PartOfSpeechTag dmlex:TranscriptionSchemeTag ) ] ;
+  rdfs:range xsd:boolean .
+
+dmlex:forLanguage a owl:ObjectProperty ;
+  rdfs:label "For Language"@en ;
+  rdfs:domain [ a owl:Class ;
+    owl:unionOf ( dmlex:InflectedFormTag dmlex:LabelTag dmlex:PartOfSpeechTag dmlex:TranscriptionSchemeTag ) ] ;
+  rdfs:range xsd:language .
+
+dmlex:forPartOfSpeech a owl:ObjectProperty ;
+  rdfs:label "For Part of Speech"@en ;
+  rdfs:domain [ a owl:Class ;
+    owl:unionOf ( dmlex:InflectedFormTag dmlex:LabelTag dmlex:PartOfSpeechTag ) ] ;
+  rdfs:range rdfs:Literal .
+
+dmlex:LabelTag a owl:Class ;
+  rdfs:comment "Represents one (of many) possible values for tag of label."@en ;
+  rdfs:label "Label Tag"@en ;
+  rdfs:subClassOf  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:tag ;
+    owl:cardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:description ;
+    owl:cardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:typeTag ;
+    owl:maxCardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:forHeadwords ;
+    owl:maxCardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:forTranslations ;
+    owl:maxCardinality 1 ] .
+
+dmlex:LabelTypeTag a owl:Class ;
+  rdfs:comment "Represents one (of many) possible values for typeTag of labelTag."@en ;
+  rdfs:label "Label Type Tag"@en ;
+  rdfs:subClassOf  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:tag ;
+    owl:cardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:description ;
+    owl:cardinality 1 ] .
+
+dmlex:PartOfSpeechTag a owl:Class ;
+  rdfs:comment "Represents one (of many) possible values for tag of partOfSpeech."@en ;
+  rdfs:label "Part of Speech Tag"@en ;
+  rdfs:subClassOf  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:tag ;
+    owl:cardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:description ;
+    owl:cardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:forHeadwords ;
+    owl:maxCardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:forTranslations ;
+    owl:maxCardinality 1 ] .
+
+dmlex:SourceIdentityTag a owl:Class ;
+  rdfs:comment "Represents one (of many) possible values for sourceIdentity of example."@en ;
+  rdfs:label "Source Identity Tag"@en ;
+  rdfs:subClassOf  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:tag ;
+    owl:cardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:description ;
+    owl:cardinality 1 ] .
+
+dmlex:TranscriptionSchemeTag a owl:Class ;
+  rdfs:comment "Represents one (of many) possible values for scheme of transcription."@en ;
+  rdfs:label "Transcription Scheme Tag"@en ;
+  rdfs:subClassOf  [
+    a owl:Restriction ;
+    owl:onProperty dmlex:tag ;
+    owl:cardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:description ;
+    owl:cardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:forHeadwords ;
+    owl:maxCardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:forTranslations ;
+    owl:maxCardinality 1 ] .
+
+

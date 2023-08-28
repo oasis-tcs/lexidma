@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
+                         ]>
+<section id="rdf_TranslationLanguage">
+    <title>RDF element: <literal>dmlex:TranslationLanguage</literal></title>
+
+    <para>Represents one of the languages in which translations are given in this lexicographic resource</para>
+
+
+    <itemizedlist>
+        <title>Properties</title>
+    <listitem>
+        <para><literal>dmlex:listingOrder</literal>  REQUIRED (exactly 1) of type <literal>http://www.w3.org/2001/XMLSchema#nonNegativeInteger</literal></para>
+    </listitem>
+    <listitem>
+        <para><literal>dmlex:langCode</literal>  REQUIRED (exactly 1) of type <literal>http://www.w3.org/2001/XMLSchema#language</literal></para>
+    </listitem>
+    </itemizedlist>
+
+
+</section>

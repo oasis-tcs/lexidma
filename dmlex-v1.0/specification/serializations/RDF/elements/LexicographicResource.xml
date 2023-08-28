@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
+                         ]>
+<section id="rdf_LexicographicResource">
+    <title>RDF element: <literal>dmlex:LexicographicResource</literal></title>
+
+    <para>Represents a dictionary</para>
+
+    <itemizedlist>
+        <title>Superclasses</title>
+        <listitem>
+            <para><literal>http://www.w3.org/ns/lemon/lime#Lexicon</literal></para>
+        </listitem>
+    </itemizedlist>
+
+    <itemizedlist>
+        <title>Properties</title>
+    <listitem>
+        <para><literal>dmlex:title</literal> of type <literal>http://www.w3.org/2000/01/rdf-schema#Literal</literal></para>
+    </listitem>
+    <listitem>
+        <para><literal>dmlex:uri</literal> of type <literal>http://www.w3.org/2001/XMLSchema#anyURI</literal></para>
+    </listitem>
+    <listitem>
+        <para><literal>dmlex:entry</literal> reference to <olink targetptr="rdf_Entry">Entry</olink> (subproperty of <literal>http://www.w3.org/ns/lemon/lime#entry</literal>)</para>
+    </listitem>
+    <listitem>
+        <para><literal>dmlex:translationLanguage</literal> reference to <olink targetptr="rdf_TranslationLanguage">TranslationLanguage</olink></para>
+    </listitem>
+    <listitem>
+        <para><literal>dmlex:definitionTypeTag</literal> reference to <olink targetptr="rdf_DefinitionTypeTag">DefinitionTypeTag</olink></para>
+    </listitem>
+    <listitem>
+        <para><literal>dmlex:inflectedFormTag</literal> reference to <olink targetptr="rdf_InflectedFormTag">InflectedFormTag</olink></para>
+    </listitem>
+    <listitem>
+        <para><literal>dmlex:labelTypeTag</literal> reference to <olink targetptr="rdf_LabelTypeTag">LabelTypeTag</olink></para>
+    </listitem>
+    <listitem>
+        <para><literal>dmlex:partOfSpeechTag</literal> reference to <olink targetptr="rdf_PartOfSpeechTag">PartOfSpeechTag</olink></para>
+    </listitem>
+    <listitem>
+        <para><literal>dmlex:sourceIdentityTag</literal> reference to <olink targetptr="rdf_SourceIdentityTag">SourceIdentityTag</olink></para>
+    </listitem>
+    <listitem>
+        <para><literal>dmlex:transcriptionSchemeTag</literal> reference to <olink targetptr="rdf_TranscriptionSchemeTag">TranscriptionSchemeTag</olink></para>
+    </listitem>
+    <listitem>
+        <para><literal>dmlex:relation</literal> reference to <olink targetptr="rdf_Relation">Relation</olink></para>
+    </listitem>
+    <listitem>
+        <para><literal>dmlex:relationType</literal> reference to <olink targetptr="rdf_RelationType">RelationType</olink></para>
+    </listitem>
+    <listitem>
+        <para><literal>dmlex:etymonType</literal> reference to <olink targetptr="rdf_EtymonType">EtymonType</olink></para>
+    </listitem>
+    <listitem>
+        <para><literal>dmlex:etymonLanguage</literal> reference to <olink targetptr="rdf_EtymonLanguage">EtymonLanguage</olink></para>
+    </listitem>
+    <listitem>
+        <para><literal>dmlex:language</literal>  REQUIRED (exactly 1) of type <literal>http://www.w3.org/2001/XMLSchema#language</literal> (subproperty of <literal>http://www.w3.org/ns/lemon/lime#language</literal>)</para>
+    </listitem>
+    </itemizedlist>
+
+
+</section>

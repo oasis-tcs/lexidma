@@ -1,4 +1,4 @@
-## The ontology for DMLex - Inline Markup module
+## The ontology for DMLex
 ## Author: John P. McCrae
 
 @prefix dmlex: <http://www.oasis-open.org/to-be-confirmed/dmlex#> .
@@ -9,13 +9,17 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+################################################################################
+## Annotation Module
+
 dmlex:placeholderMarker a owl:ObjectProperty ;
   rdfs:label "Placeholder Marker"@en ;
   rdfs:domain [ a owl:Class ;
-    owl:unionOf ( dmlex:Headword dmlex:HeadwordTranslation ) ] ;
+    owl:unionOf ( dmlex:Entry dmlex:HeadwordTranslation ) ] ;
   rdfs:range dmlex:PlaceholderMarker .
 
 dmlex:PlaceholderMarker a owl:Class ;
+  rdfs:comment "Marks up a substring inside a headword or inside a headword translation which is not part of the expression itself but stands for things that can take its place."@en ;
   rdfs:label "Placeholder Marker"@en ;
   rdfs:subClassOf  [
     a owl:Restriction ;
@@ -43,13 +47,14 @@ dmlex:headwordMarker a owl:ObjectProperty ;
     owl:unionOf ( dmlex:Definition dmlex:Example dmlex:ExampleTranslation ) ] ;
   rdfs:range dmlex:HeadwordMarker .
 
-dmlex:itemMarker a owl:ObjectProperty ;
-  rdfs:label "Item Marker"@en ;
+dmlex:collocateMarker a owl:ObjectProperty ;
+  rdfs:label "Collocate Marker"@en ;
   rdfs:domain [ a owl:Class ;
     owl:unionOf ( dmlex:Definition dmlex:Example dmlex:ExampleTranslation ) ] ;
-  rdfs:range dmlex:ItemMarker .
+  rdfs:range dmlex:CollocateMarker .
 
 dmlex:HeadwordMarker a owl:Class ;
+  rdfs:comment "Marks up a substring inside an example, inside an example translation or inside a definition which corresponds to the headword (or to a translation of the headword)"@en ;
   rdfs:label "HeadwordMarker"@en ;
   rdfs:subClassOf [
     a owl:Restriction ;
@@ -59,8 +64,8 @@ dmlex:HeadwordMarker a owl:Class ;
     owl:onProperty dmlex:endIndex ;
     owl:cardinality 1 ] .
 
-dmlex:ItemMarker a owl:Class ;
-  rdfs:label "ItemMarker"@en ;
+dmlex:CollocateMarker a owl:Class ;
+  rdfs:label "Collocate Marker"@en ;
   rdfs:subClassOf [
     a owl:Restriction ;
     owl:onProperty dmlex:startIndex ;
@@ -74,15 +79,4 @@ dmlex:lemma a owl:DatatypeProperty ;
   rdfs:domain dmlex:ItemMarker ;
   rdfs:range xsd:string .
 
-dmlex:itemRole a owl:ObjectProperty ;
-  rdfs:label "ItemRole"@en ;
-  rdfs:domain dmlex:ItemMark ;
-  rdfs:range dmlex:ItemRole .
-
-dmlex:ItemRole a owl:Class ;
-  rdfs:label "ItemRole"@en ;
-  rdfs:subClassOf  [
-    a owl:Restriction ;
-    owl:onProperty dmlex:value ;
-    owl:cardinality 1 ] .
 

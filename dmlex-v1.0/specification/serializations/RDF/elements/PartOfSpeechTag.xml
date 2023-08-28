@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
+                         ]>
+<section id="rdf_PartOfSpeechTag">
+    <title>RDF element: <literal>dmlex:PartOfSpeechTag</literal></title>
+
+    <para>Represents one (of many) possible values for tag of partOfSpeech.</para>
+
+
+    <itemizedlist>
+        <title>Properties</title>
+    <listitem>
+        <para><literal>dmlex:tag</literal>  REQUIRED (exactly 1)</para>
+    </listitem>
+    <listitem>
+        <para><literal>dmlex:description</literal>  REQUIRED (exactly 1) of type <literal>http://www.w3.org/2000/01/rdf-schema#Literal</literal></para>
+    </listitem>
+    <listitem>
+        <para><literal>dmlex:forHeadwords</literal>  OPTIONAL (at most 1) of type <literal>http://www.w3.org/2001/XMLSchema#boolean</literal></para>
+    </listitem>
+    <listitem>
+        <para><literal>dmlex:forTranslations</literal>  OPTIONAL (at most 1) of type <literal>http://www.w3.org/2001/XMLSchema#boolean</literal></para>
+    </listitem>
+    <listitem>
+        <para><literal>dmlex:forLanguage</literal> of type <literal>http://www.w3.org/2001/XMLSchema#language</literal></para>
+    </listitem>
+    <listitem>
+        <para><literal>dmlex:forPartOfSpeech</literal> of type <literal>http://www.w3.org/2000/01/rdf-schema#Literal</literal></para>
+    </listitem>
+    </itemizedlist>
+
+
+</section>

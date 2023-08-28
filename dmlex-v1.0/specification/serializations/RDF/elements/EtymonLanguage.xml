@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
+                         ]>
+<section id="rdf_EtymonLanguage">
+    <title>RDF element: <literal>dmlex:EtymonLanguage</literal></title>
+
+    <para>Represents one of several allowed values for the language property of etymonUnit objects.</para>
+
+
+    <itemizedlist>
+        <title>Properties</title>
+    <listitem>
+        <para><literal>dmlex:langCode</literal>  REQUIRED (exactly 1) of type <literal>http://www.w3.org/2001/XMLSchema#language</literal></para>
+    </listitem>
+    <listitem>
+        <para><literal>dmlex:displayName</literal>  OPTIONAL (at most 1) of type <literal>http://www.w3.org/2001/XMLSchema#string</literal></para>
+    </listitem>
+    </itemizedlist>
+
+
+</section>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
+                         ]>
+<section id="rdf_EtymonUnit">
+    <title>RDF element: <literal>dmlex:EtymonUnit</literal></title>
+
+    <para>Represents a form (typically a word) which is the etymological origin of the headword, or another etymologically related form</para>
+
+
+    <itemizedlist>
+        <title>Properties</title>
+    <listitem>
+        <para><literal>dmlex:listingOrder</literal>  REQUIRED (exactly 1) of type <literal>http://www.w3.org/2001/XMLSchema#nonNegativeInteger</literal></para>
+    </listitem>
+    <listitem>
+        <para><literal>dmlex:language</literal>  REQUIRED (exactly 1) of type <literal>http://www.w3.org/2001/XMLSchema#language</literal> (subproperty of <literal>http://www.w3.org/ns/lemon/lime#language</literal>)</para>
+    </listitem>
+    <listitem>
+        <para><literal>dmlex:partOfSpeech</literal> reference to <olink targetptr="rdf_PartOfSpeech">PartOfSpeech</olink></para>
+    </listitem>
+    <listitem>
+        <para><literal>dmlex:text</literal>  REQUIRED (exactly 1) of type <literal>http://www.w3.org/2000/01/rdf-schema#Literal</literal></para>
+    </listitem>
+    <listitem>
+        <para><literal>dmlex:translation</literal>  OPTIONAL (at most 1) of type <literal>http://www.w3.org/2001/XMLSchema#string</literal></para>
+    </listitem>
+    <listitem>
+        <para><literal>dmlex:reconstructed</literal>  OPTIONAL (at most 1) of type <literal>http://www.w3.org/2001/XMLSchema#boolean</literal></para>
+    </listitem>
+    </itemizedlist>
+
+
+</section>
