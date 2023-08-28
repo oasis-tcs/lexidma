@@ -20,31 +20,31 @@
     <itemizedlist>
         <title>Properties</title>
     <listitem>
-        <para><literal>dmlex:headword</literal>  REQUIRED (exactly 1) of type <literal>http://www.w3.org/2000/01/rdf-schema#Literal</literal></para>
+        <para><literal>dmlex:headword</literal> REQUIRED (exactly 1) of type <literal>http://www.w3.org/2000/01/rdf-schema#Literal</literal></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:homographNumber</literal>  OPTIONAL (at most 1) of type <literal>http://www.w3.org/2001/XMLSchema#nonNegativeInteger</literal></para>
+        <para><literal>dmlex:homographNumber</literal> OPTIONAL (at most 1) of type <literal>http://www.w3.org/2001/XMLSchema#nonNegativeInteger</literal></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:sense</literal> reference to <olink targetptr="rdf_Sense">Sense</olink> (subproperty of <literal>http://www.w3.org/ns/lemon/ontolex#evokes</literal>)</para>
+        <para><literal>dmlex:sense</literal> OPTIONAL reference to <olink targetptr="rdf_Sense">Sense</olink> (subproperty of <literal>http://www.w3.org/ns/lemon/ontolex#evokes</literal>)</para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:etymology</literal> reference to <olink targetptr="rdf_Etymology">Etymology</olink></para>
+        <para><literal>dmlex:etymology</literal> OPTIONAL reference to <olink targetptr="rdf_Etymology">Etymology</olink></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:partOfSpeech</literal> reference to <olink targetptr="rdf_PartOfSpeech">PartOfSpeech</olink></para>
+        <para><literal>dmlex:partOfSpeech</literal> OPTIONAL reference to <olink targetptr="rdf_PartOfSpeech">PartOfSpeech</olink></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:label</literal> reference to <olink targetptr="rdf_Label">Label</olink></para>
+        <para><literal>dmlex:label</literal> OPTIONAL reference to <olink targetptr="rdf_Label">Label</olink></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:pronunciation</literal> reference to <olink targetptr="rdf_Pronunciation">Pronunciation</olink></para>
+        <para><literal>dmlex:pronunciation</literal> OPTIONAL reference to <olink targetptr="rdf_Pronunciation">Pronunciation</olink></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:inflectedForm</literal> reference to <olink targetptr="rdf_InflectedForm">InflectedForm</olink></para>
+        <para><literal>dmlex:inflectedForm</literal> OPTIONAL reference to <olink targetptr="rdf_InflectedForm">InflectedForm</olink></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:placeholderMarker</literal> reference to <olink targetptr="rdf_PlaceholderMarker">PlaceholderMarker</olink></para>
+        <para><literal>dmlex:placeholderMarker</literal> OPTIONAL reference to <olink targetptr="rdf_PlaceholderMarker">PlaceholderMarker</olink></para>
     </listitem>
     </itemizedlist>
 

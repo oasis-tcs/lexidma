@@ -24,7 +24,14 @@ dmlex:LexicographicResource a owl:Class ;
   rdfs:subClassOf [
     a owl:Restriction ;
     owl:onProperty dmlex:language ;
-    owl:cardinality 1 ] , lime:Lexicon .
+    owl:cardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:title ;
+    owl:maxCardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:uri ;
+    owl:maxCardinality 1 ] ,
+    lime:Lexicon .
 
 dmlex:title a owl:DatatypeProperty ;
   rdfs:label "Title"@en ;

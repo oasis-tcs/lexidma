@@ -20,49 +20,49 @@
     <itemizedlist>
         <title>Properties</title>
     <listitem>
-        <para><literal>dmlex:title</literal> of type <literal>http://www.w3.org/2000/01/rdf-schema#Literal</literal></para>
+        <para><literal>dmlex:title</literal> OPTIONAL (at most 1) of type <literal>http://www.w3.org/2000/01/rdf-schema#Literal</literal></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:uri</literal> of type <literal>http://www.w3.org/2001/XMLSchema#anyURI</literal></para>
+        <para><literal>dmlex:uri</literal> OPTIONAL (at most 1) of type <literal>http://www.w3.org/2001/XMLSchema#anyURI</literal></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:entry</literal> reference to <olink targetptr="rdf_Entry">Entry</olink> (subproperty of <literal>http://www.w3.org/ns/lemon/lime#entry</literal>)</para>
+        <para><literal>dmlex:entry</literal> OPTIONAL reference to <olink targetptr="rdf_Entry">Entry</olink> (subproperty of <literal>http://www.w3.org/ns/lemon/lime#entry</literal>)</para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:translationLanguage</literal> reference to <olink targetptr="rdf_TranslationLanguage">TranslationLanguage</olink></para>
+        <para><literal>dmlex:translationLanguage</literal> OPTIONAL reference to <olink targetptr="rdf_TranslationLanguage">TranslationLanguage</olink></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:definitionTypeTag</literal> reference to <olink targetptr="rdf_DefinitionTypeTag">DefinitionTypeTag</olink></para>
+        <para><literal>dmlex:definitionTypeTag</literal> OPTIONAL reference to <olink targetptr="rdf_DefinitionTypeTag">DefinitionTypeTag</olink></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:inflectedFormTag</literal> reference to <olink targetptr="rdf_InflectedFormTag">InflectedFormTag</olink></para>
+        <para><literal>dmlex:inflectedFormTag</literal> OPTIONAL reference to <olink targetptr="rdf_InflectedFormTag">InflectedFormTag</olink></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:labelTypeTag</literal> reference to <olink targetptr="rdf_LabelTypeTag">LabelTypeTag</olink></para>
+        <para><literal>dmlex:labelTypeTag</literal> OPTIONAL reference to <olink targetptr="rdf_LabelTypeTag">LabelTypeTag</olink></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:partOfSpeechTag</literal> reference to <olink targetptr="rdf_PartOfSpeechTag">PartOfSpeechTag</olink></para>
+        <para><literal>dmlex:partOfSpeechTag</literal> OPTIONAL reference to <olink targetptr="rdf_PartOfSpeechTag">PartOfSpeechTag</olink></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:sourceIdentityTag</literal> reference to <olink targetptr="rdf_SourceIdentityTag">SourceIdentityTag</olink></para>
+        <para><literal>dmlex:sourceIdentityTag</literal> OPTIONAL reference to <olink targetptr="rdf_SourceIdentityTag">SourceIdentityTag</olink></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:transcriptionSchemeTag</literal> reference to <olink targetptr="rdf_TranscriptionSchemeTag">TranscriptionSchemeTag</olink></para>
+        <para><literal>dmlex:transcriptionSchemeTag</literal> OPTIONAL reference to <olink targetptr="rdf_TranscriptionSchemeTag">TranscriptionSchemeTag</olink></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:relation</literal> reference to <olink targetptr="rdf_Relation">Relation</olink></para>
+        <para><literal>dmlex:relation</literal> OPTIONAL reference to <olink targetptr="rdf_Relation">Relation</olink></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:relationType</literal> reference to <olink targetptr="rdf_RelationType">RelationType</olink></para>
+        <para><literal>dmlex:relationType</literal> OPTIONAL reference to <olink targetptr="rdf_RelationType">RelationType</olink></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:etymonType</literal> reference to <olink targetptr="rdf_EtymonType">EtymonType</olink></para>
+        <para><literal>dmlex:etymonType</literal> OPTIONAL reference to <olink targetptr="rdf_EtymonType">EtymonType</olink></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:etymonLanguage</literal> reference to <olink targetptr="rdf_EtymonLanguage">EtymonLanguage</olink></para>
+        <para><literal>dmlex:etymonLanguage</literal> OPTIONAL reference to <olink targetptr="rdf_EtymonLanguage">EtymonLanguage</olink></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:language</literal>  REQUIRED (exactly 1) of type <literal>http://www.w3.org/2001/XMLSchema#language</literal> (subproperty of <literal>http://www.w3.org/ns/lemon/lime#language</literal>)</para>
+        <para><literal>dmlex:language</literal> REQUIRED (exactly 1) of type <literal>http://www.w3.org/2001/XMLSchema#language</literal> (subproperty of <literal>http://www.w3.org/ns/lemon/lime#language</literal>)</para>
     </listitem>
     </itemizedlist>
 

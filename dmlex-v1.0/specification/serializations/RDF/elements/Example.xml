@@ -14,31 +14,31 @@
     <itemizedlist>
         <title>Properties</title>
     <listitem>
-        <para><literal>dmlex:listingOrder</literal>  REQUIRED (exactly 1) of type <literal>http://www.w3.org/2001/XMLSchema#nonNegativeInteger</literal></para>
+        <para><literal>dmlex:listingOrder</literal> REQUIRED (exactly 1) of type <literal>http://www.w3.org/2001/XMLSchema#nonNegativeInteger</literal></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:label</literal> reference to <olink targetptr="rdf_Label">Label</olink></para>
+        <para><literal>dmlex:label</literal> OPTIONAL reference to <olink targetptr="rdf_Label">Label</olink></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:text</literal>  REQUIRED (exactly 1) of type <literal>http://www.w3.org/2000/01/rdf-schema#Literal</literal></para>
+        <para><literal>dmlex:text</literal> REQUIRED (exactly 1) of type <literal>http://www.w3.org/2000/01/rdf-schema#Literal</literal></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:soundFile</literal>  OPTIONAL (at most 1) of type <literal>http://www.w3.org/2001/XMLSchema#anyURI</literal></para>
+        <para><literal>dmlex:soundFile</literal> OPTIONAL (at most 1) of type <literal>http://www.w3.org/2001/XMLSchema#anyURI</literal></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:sourceIdentity</literal>  OPTIONAL (at most 1) of type <literal>http://www.w3.org/2000/01/rdf-schema#Literal</literal></para>
+        <para><literal>dmlex:sourceIdentity</literal> OPTIONAL (at most 1) of type <literal>http://www.w3.org/2000/01/rdf-schema#Literal</literal></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:sourceElaboration</literal>  OPTIONAL (at most 1) of type <literal>http://www.w3.org/2000/01/rdf-schema#Literal</literal></para>
+        <para><literal>dmlex:sourceElaboration</literal> OPTIONAL (at most 1) of type <literal>http://www.w3.org/2000/01/rdf-schema#Literal</literal></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:exampleTranslation</literal> reference to <olink targetptr="rdf_ExampleTranslation">ExampleTranslation</olink></para>
+        <para><literal>dmlex:exampleTranslation</literal> OPTIONAL reference to <olink targetptr="rdf_ExampleTranslation">ExampleTranslation</olink></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:headwordMarker</literal> reference to <olink targetptr="rdf_HeadwordMarker">HeadwordMarker</olink></para>
+        <para><literal>dmlex:headwordMarker</literal> OPTIONAL reference to <olink targetptr="rdf_HeadwordMarker">HeadwordMarker</olink></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:collocateMarker</literal> reference to <olink targetptr="rdf_CollocateMarker">CollocateMarker</olink></para>
+        <para><literal>dmlex:collocateMarker</literal> OPTIONAL reference to <olink targetptr="rdf_CollocateMarker">CollocateMarker</olink></para>
     </listitem>
     </itemizedlist>
 

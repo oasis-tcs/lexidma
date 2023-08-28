@@ -14,13 +14,13 @@
     <itemizedlist>
         <title>Properties</title>
     <listitem>
-        <para><literal>dmlex:description</literal>  OPTIONAL (at most 1) of type <literal>http://www.w3.org/2000/01/rdf-schema#Literal</literal></para>
+        <para><literal>dmlex:description</literal> OPTIONAL (at most 1) of type <literal>http://www.w3.org/2000/01/rdf-schema#Literal</literal></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:type</literal>  REQUIRED (exactly 1) of type <literal>http://www.w3.org/2001/XMLSchema#string</literal></para>
+        <para><literal>dmlex:type</literal> REQUIRED (exactly 1) of type <literal>http://www.w3.org/2001/XMLSchema#string</literal></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:member</literal>  REQUIRED (at least 2) reference to <olink targetptr="rdf_Member">Member</olink></para>
+        <para><literal>dmlex:member</literal> REQUIRED (at least 2) reference to <olink targetptr="rdf_Member">Member</olink></para>
     </listitem>
     </itemizedlist>
 

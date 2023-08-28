@@ -14,19 +14,19 @@
     <itemizedlist>
         <title>Properties</title>
     <listitem>
-        <para><literal>dmlex:description</literal>  OPTIONAL (at most 1) of type <literal>http://www.w3.org/2000/01/rdf-schema#Literal</literal></para>
+        <para><literal>dmlex:description</literal> OPTIONAL (at most 1) of type <literal>http://www.w3.org/2000/01/rdf-schema#Literal</literal></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:description</literal>  OPTIONAL (at most 1) of type <literal>http://www.w3.org/2000/01/rdf-schema#Literal</literal></para>
+        <para><literal>dmlex:description</literal> OPTIONAL (at most 1) of type <literal>http://www.w3.org/2000/01/rdf-schema#Literal</literal></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:type</literal>  REQUIRED (exactly 1) of type <literal>http://www.w3.org/2001/XMLSchema#string</literal></para>
+        <para><literal>dmlex:type</literal> REQUIRED (exactly 1) of type <literal>http://www.w3.org/2001/XMLSchema#string</literal></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:scope</literal>  OPTIONAL (at most 1) of type <literal>http://www.w3.org/2001/XMLSchema#string</literal></para>
+        <para><literal>dmlex:scope</literal> OPTIONAL (at most 1) of type <literal>http://www.w3.org/2001/XMLSchema#string</literal></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:memberType</literal> reference to <olink targetptr="rdf_MemberType">MemberType</olink></para>
+        <para><literal>dmlex:memberType</literal> OPTIONAL reference to <olink targetptr="rdf_MemberType">MemberType</olink></para>
     </listitem>
     </itemizedlist>
 

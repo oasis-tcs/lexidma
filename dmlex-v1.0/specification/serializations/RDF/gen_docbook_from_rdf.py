@@ -10,8 +10,7 @@ def describe_property(g, property, file, restrictions):
     file.write(f"""
     <listitem>
         <para><literal>dmlex:{property.split("#")[-1]}</literal>""")
-    if property in restrictions:
-        file.write(f""" {restrictions[property]}""")
+    file.write(f"""{restrictions[property]}""")
     for o in g.objects(property, RDFS.range):
         if isinstance(o, rdflib.term.URIRef):
             if str(o).startswith(DMLEX):
@@ -50,7 +49,7 @@ def parse_rdf():
                 break
 
             subclasses = []
-            restrictions = {}
+            restrictions = defaultdict(lambda: " OPTIONAL")
             for o in g.objects(class_uri, RDFS.subClassOf):
                 if isinstance(o, rdflib.term.URIRef):
                     subclasses.append(o)
