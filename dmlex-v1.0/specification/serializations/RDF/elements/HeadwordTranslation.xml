@@ -14,25 +14,28 @@
     <itemizedlist>
         <title>Properties</title>
     <listitem>
-        <para><literal>dmlex:listingOrder</literal>  REQUIRED (exactly 1) of type <literal>http://www.w3.org/2001/XMLSchema#nonNegativeInteger</literal></para>
+        <para><literal>dmlex:listingOrder</literal> REQUIRED (exactly 1) of type <literal>http://www.w3.org/2001/XMLSchema#nonNegativeInteger</literal></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:partOfSpeech</literal> reference to <olink targetptr="rdf_PartOfSpeech">PartOfSpeech</olink></para>
+        <para><literal>dmlex:language</literal> OPTIONAL (at most 1) of type <literal>http://www.w3.org/2001/XMLSchema#language</literal> (subproperty of <literal>http://www.w3.org/ns/lemon/lime#language</literal>)</para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:label</literal> reference to <olink targetptr="rdf_Label">Label</olink></para>
+        <para><literal>dmlex:partOfSpeech</literal> OPTIONAL reference to <olink targetptr="rdf_PartOfSpeech">PartOfSpeech</olink></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:pronunciation</literal> reference to <olink targetptr="rdf_Pronunciation">Pronunciation</olink></para>
+        <para><literal>dmlex:label</literal> OPTIONAL reference to <olink targetptr="rdf_Label">Label</olink></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:inflectedForm</literal> reference to <olink targetptr="rdf_InflectedForm">InflectedForm</olink></para>
+        <para><literal>dmlex:pronunciation</literal> OPTIONAL reference to <olink targetptr="rdf_Pronunciation">Pronunciation</olink></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:text</literal>  REQUIRED (exactly 1) of type <literal>http://www.w3.org/2000/01/rdf-schema#Literal</literal></para>
+        <para><literal>dmlex:inflectedForm</literal> OPTIONAL reference to <olink targetptr="rdf_InflectedForm">InflectedForm</olink></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:placeholderMarker</literal> reference to <olink targetptr="rdf_PlaceholderMarker">PlaceholderMarker</olink></para>
+        <para><literal>dmlex:text</literal> REQUIRED (exactly 1) of type <literal>http://www.w3.org/2000/01/rdf-schema#Literal</literal></para>
+    </listitem>
+    <listitem>
+        <para><literal>dmlex:placeholderMarker</literal> OPTIONAL reference to <olink targetptr="rdf_PlaceholderMarker">PlaceholderMarker</olink></para>
     </listitem>
     </itemizedlist>
 

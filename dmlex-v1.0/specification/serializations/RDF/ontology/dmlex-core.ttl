@@ -14,9 +14,25 @@
 
 dmlex:listingOrder a owl:DatatypeProperty ;
   rdfs:label "Listing Order"@en ;
-  rdfs:domain [ a owl:Class ;
-    owl:unionOf ( dmlex:PartOfSpeech dmlex:InflectedForm dmlex:Sense dmlex:Definition dmlex:Label dmlex:Pronunciation dmlex:Transcription dmlex:Example dmlex:TranslationLanguage dmlex:HeadwordTranslation dmlex:ExampleTranslation dmlex:Member dmlex:Etymology dmlex:EtymonUnit ) ] ;
+  rdfs:domain dmlex:HasListingOrder ; 
   rdfs:range xsd:nonNegativeInteger .
+
+dmlex:HasListingOrder a owl:Class .
+dmlex:PartOfSpeech rdfs:subClassOf dmlex:HasListingOrder .
+dmlex:InflectedForm rdfs:subClassOf dmlex:HasListingOrder .
+dmlex:Sense rdfs:subClassOf dmlex:HasListingOrder .
+dmlex:Definition rdfs:subClassOf dmlex:HasListingOrder .
+dmlex:Label rdfs:subClassOf dmlex:HasListingOrder .
+dmlex:Pronunciation rdfs:subClassOf dmlex:HasListingOrder .
+dmlex:Transcription rdfs:subClassOf dmlex:HasListingOrder .
+dmlex:Example rdfs:subClassOf dmlex:HasListingOrder .
+dmlex:TranslationLanguage rdfs:subClassOf dmlex:HasListingOrder .
+dmlex:HeadwordTranslation rdfs:subClassOf dmlex:HasListingOrder .
+dmlex:ExampleTranslation rdfs:subClassOf dmlex:HasListingOrder .
+dmlex:Member rdfs:subClassOf dmlex:HasListingOrder .
+dmlex:Etymon rdfs:subClassOf dmlex:HasListingOrder .
+dmlex:Etymology rdfs:subClassOf dmlex:HasListingOrder .
+dmlex:EtymonUnit rdfs:subClassOf dmlex:HasListingOrder .
 
 dmlex:LexicographicResource a owl:Class ;
   rdfs:comment "Represents a dictionary"@en ;
@@ -24,7 +40,14 @@ dmlex:LexicographicResource a owl:Class ;
   rdfs:subClassOf [
     a owl:Restriction ;
     owl:onProperty dmlex:language ;
-    owl:cardinality 1 ] , lime:Lexicon .
+    owl:cardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:title ;
+    owl:maxCardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:uri ;
+    owl:maxCardinality 1 ] ,
+    lime:Lexicon .
 
 dmlex:title a owl:DatatypeProperty ;
   rdfs:label "Title"@en ;
@@ -38,10 +61,15 @@ dmlex:uri a owl:DatatypeProperty ;
 
 dmlex:language a owl:DatatypeProperty ;
   rdfs:label "Language"@en ;
-  rdfs:domain [ a owl:Class ;
-    owl:unionOf ( dmlex:LexicographicResource dmlex:HeadwordExplanation dmlex:ExampleTranslation dmlex:EtymonUnit ) ] ;
+  rdfs:domain dmlex:HasLanguage ;
   rdfs:range xsd:language ;
   rdfs:subPropertyOf lime:language .
+
+dmlex:LexicographicResource rdfs:subClassOf dmlex:HasLanguage .
+dmlex:HeadwordTranslation rdfs:subClassOf dmlex:HasLanguage .
+dmlex:HeadwordExplanation rdfs:subClassOf dmlex:HasLanguage .
+dmlex:ExampleTranslation rdfs:subClassOf dmlex:HasLanguage .
+dmlex:EtymonUnit rdfs:subClassOf dmlex:HasLanguage .
 
 dmlex:entry a owl:ObjectProperty ;
   rdfs:label "Entry"@en ;
@@ -73,27 +101,45 @@ dmlex:homographNumber a owl:DatatypeProperty ;
 
 dmlex:partOfSpeech a owl:ObjectProperty ;
   rdfs:label "Part of Speech"@en ;
-  rdfs:domain [ a owl:Class ; 
-    owl:unionOf ( dmlex:Entry dmlex:HeadwordTranslation dmlex:EtymonUnit ) ] ;
+  rdfs:domain dmlex:HasPartOfSpeech ;
   rdfs:range dmlex:PartOfSpeech .
+
+dmlex:Entry rdfs:subClassOf dmlex:HasPartOfSpeech .
+dmlex:HeadwordTranslation rdfs:subClassOf dmlex:HasPartOfSpeech .
+dmlex:EtymonUnit rdfs:subClassOf dmlex:HasPartOfSpeech .
+
 
 dmlex:label a owl:ObjectProperty ;
   rdfs:label "Label"@en ;
-  rdfs:domain [ a owl:Class ; 
-    owl:unionOf ( dmlex:Entry dmlex:InflectedForm dmlex:Sense dmlex:Pronunciation dmlex:Example dmlex:HeadwordTranslation dmlex:ExampleTranslation dmlex:CollocateMarker ) ] ;
+  rdfs:domain dmlex:HasLabel ;
   rdfs:range dmlex:Label .
+
+dmlex:Entry rdfs:subClassOf dmlex:HasLabel .
+dmlex:InflectedForm rdfs:subClassOf dmlex:HasLabel .
+dmlex:Sense rdfs:subClassOf dmlex:HasLabel .
+dmlex:Pronunciation rdfs:subClassOf dmlex:HasLabel .
+dmlex:Example rdfs:subClassOf dmlex:HasLabel .
+dmlex:HeadwordTranslation rdfs:subClassOf dmlex:HasLabel .
+dmlex:ExampleTranslation rdfs:subClassOf dmlex:HasLabel .
+dmlex:CollocateMarker rdfs:subClassOf dmlex:HasLabel .
+
 
 dmlex:pronunciation a owl:ObjectProperty ;
   rdfs:label "Pronunciation"@en ;
-  rdfs:domain [ a owl:Class ; 
-    owl:unionOf ( dmlex:Entry dmlex:InflectedForm dmlex:HeadwordTranslation) ] ;
+  rdfs:domain dmlex:HasPronunciation ;
   rdfs:range dmlex:Pronunciation .
+
+dmlex:Entry rdfs:subClassOf dmlex:HasPronunciation .
+dmlex:InflectedForm rdfs:subClassOf dmlex:HasPronunciation .
+dmlex:HeadwordTranslation rdfs:subClassOf dmlex:HasPronunciation .
 
 dmlex:inflectedForm a owl:ObjectProperty ;
   rdfs:label "Inflected Form"@en ;
-  rdfs:domain [ a owl:Class ;
-    owl:unionOf ( dmlex:Entry dmlex:HeadwordTranslation ) ] ;
+  rdfs:domain dmlex:HasInflectedForm ;
   rdfs:range dmlex:InflectedForm .
+
+dmlex:Entry rdfs:subClassOf dmlex:HasInflectedForm .
+dmlex:HeadwordTranslation rdfs:subClassOf dmlex:HasInflectedForm .
 
 dmlex:sense a owl:ObjectProperty ;
   rdfs:label "Sense"@en ;
@@ -114,9 +160,19 @@ dmlex:PartOfSpeech a owl:Class ;
 
 dmlex:tag a owl:DatatypeProperty ;
   rdfs:label "Tag"@en ;
-  rdfs:domain [ a owl:Class ;
-    owl:unionOf ( dmlex:PartOfSpeech dmlex:InflectedForm dmlex:Label dmlex:DefinitionTypeTag dmlex:InflectedFormTag dmlex:LabelTag dmlex:LabelTypeTag dmlex:PartOfSpeechTag dmlex:SourceIdentityTag dmlex:TranscriptionSchemeTag) ] ;
+  rdfs:domain dmlex:HasTag ;
   rdf:range rdfs:Literal .
+
+dmlex:PartOfSpeech rdfs:subClassOf dmlex:HasTag .
+dmlex:InflectedForm rdfs:subClassOf dmlex:HasTag .
+dmlex:Label rdfs:subClassOf dmlex:HasTag .
+dmlex:DefinitionTypeTag rdfs:subClassOf dmlex:HasTag .
+dmlex:InflectedFormTag rdfs:subClassOf dmlex:HasTag .
+dmlex:LabelTag rdfs:subClassOf dmlex:HasTag .
+dmlex:LabelTypeTag rdfs:subClassOf dmlex:HasTag .
+dmlex:PartOfSpeechTag rdfs:subClassOf dmlex:HasTag .
+dmlex:SourceIdentityTag rdfs:subClassOf dmlex:HasTag .
+dmlex:TranscriptionSchemeTag rdfs:subClassOf dmlex:HasTag .
 
 dmlex:InflectedForm a owl:Class ;
   rdfs:comment "Represents one (of possibly many) inflected forms of the headword"@en ;
@@ -134,9 +190,17 @@ dmlex:InflectedForm a owl:Class ;
 
 dmlex:text a owl:DatatypeProperty ;
   rdfs:label "Text"@en ;
-  rdfs:domain [ a owl:Class ;
-    owl:unionOf ( dmlex:InflectedForm dmlex:Definition dmlex:Transcription dmlex:Example dmlex:HeadwordTranslation dmlex:HeadwordExplanation dmlex:ExampleTranslation dmlex:EtymonUnit ) ] ;
+  rdfs:domain dmlex:HasText ;
   rdfs:range rdfs:Literal .
+
+dmlex:InflectedForm rdfs:subClassOf dmlex:HasText .
+dmlex:Definition rdfs:subClassOf dmlex:HasText .
+dmlex:Transcription rdfs:subClassOf dmlex:HasText .
+dmlex:Example rdfs:subClassOf dmlex:HasText .
+dmlex:HeadwordTranslation rdfs:subClassOf dmlex:HasText .
+dmlex:HeadwordExplanation rdfs:subClassOf dmlex:HasText .
+dmlex:ExampleTranslation rdfs:subClassOf dmlex:HasText .
+dmlex:EtymonUnit rdfs:subClassOf dmlex:HasText .
 
 dmlex:Sense a owl:Class ;
   rdfs:comment "Represents one of possibly many meanings (or meaning potentials) of the headword."@en ;
@@ -196,6 +260,7 @@ dmlex:Label a owl:Class ;
     owl:cardinality 1 ] .
 
 dmlex:Pronunciation a owl:Class ;
+  rdfs:comment "Represents the pronunciation of its parent. Pronunciations must have either a sound file or a transcription."@en ;
   rdfs:label "Pronunciation"@en ;
   rdfs:subClassOf  [
     a owl:Restriction ;
@@ -207,9 +272,12 @@ dmlex:Pronunciation a owl:Class ;
 
 dmlex:soundFile a owl:DatatypeProperty ;
   rdfs:label "Sound File"@en ;
-  rdfs:domain [ a owl:Class ; 
-    owl:unionOf ( dmlex:Pronunciation dmlex:Example dmlex:ExampleTranslation) ] ;
+  rdfs:domain dmlex:HasSoundFile ;
   rdfs:range xsd:anyURI .
+
+dmlex:Pronunciation rdfs:subClassOf dmlex:HasSoundFile .
+dmlex:Example rdfs:subClassOf dmlex:HasSoundFile .
+dmlex:ExampleTranslation rdfs:subClassOf dmlex:HasSoundFile .
 
 dmlex:transcription a owl:ObjectProperty ;
   rdfs:label "Transcription"@en ;
@@ -229,6 +297,11 @@ dmlex:Transcription a owl:Class ;
     a owl:Restriction ;
     owl:onProperty dmlex:listingOrder ;
     owl:cardinality 1 ] .
+
+dmlex:scheme a owl:DatatypeProperty ;
+  rdfs:label "Scheme"@en ;
+  rdfs:domain dmlex:Transcription ;
+  rdfs:range xsd:language .
 
 dmlex:Example a owl:Class ;
   rdfs:comment "Represents a sentence or other text fragment which illustrates the headword being used."@en ;
@@ -259,81 +332,5 @@ dmlex:sourceElaboration a owl:DatatypeProperty ;
   rdfs:label "Source Elaboration"@en ;
   rdfs:domain dmlex:Example ;
   rdfs:range rdfs:Literal .
-
-################################################################################
-## Crosslingual Modules
-
-dmlex:translationLanguage a owl:ObjectProperty ;
-  rdfs:label "Translation Language"@en ;
-  rdfs:domain dmlex:LexicographicResource ;
-  rdfs:range dmlex:TranslationLanguage .
-
-dmlex:TranslationLanguage a owl:Class ;
-  rdfs:comment "Represents one of the languages in which translations are given in this lexicographic resource"@en ;
-  rdfs:label "TranslationLanguage"@en ;
-  rdfs:subClassOf  [
-    a owl:Restriction ;
-    owl:onProperty dmlex:langCode ;
-    owl:cardinality 1 ] , [
-    a owl:Restriction ;
-    owl:onProperty dmlex:listingOrder ;
-    owl:cardinality 1 ] .
-
-dmlex:langCode a owl:ObjectProperty ;
-  rdfs:label "Language Code"@en ;
-  rdfs:domain [ a owl:Class ;
-    owl:unionOf ( dmlex:TranslationLanguage dmlex:EtymonLanguage ) ] ;
-  rdfs:range xsd:language .
-
-dmlex:headwordExplanation a owl:ObjectProperty ;
-  rdfs:label "Headword Explanation"@en ;
-  rdfs:domain dmlex:Sense ;
-  rdfs:range dmlex:HeadwordExplanation .
-
-dmlex:headwordTranslation a owl:ObjectProperty ;
-  rdfs:label "Headword Translation"@en ;
-  rdfs:domain dmlex:Sense ;
-  rdfs:range dmlex:HeadwordTranslation .
-
-dmlex:HeadwordTranslation a owl:Class ;
-  rdfs:comment "Represents one of possibly multiple translations of a headword"@en ;
-  rdfs:label "Headword Translation"@en ;
-  rdfs:subClassOf  [
-    a owl:Restriction ;
-    owl:onProperty dmlex:text ;
-    owl:cardinality 1 ] , [
-    a owl:Restriction ;
-    owl:onProperty dmlex:language ;
-    owl:maxCardinality 1 ] , [
-    a owl:Restriction ;
-    owl:onProperty dmlex:listingOrder ;
-    owl:cardinality 1 ] .
-
-dmlex:HeadwordExplanation a owl:Class ;
-  rdfs:comment "Represents a statement in the translation language which explains (but does not translate) the meaning of the headword."@en ;
-  rdfs:label "Headword Explanation"@en ;
-  rdfs:subClassOf  [
-    a owl:Restriction ;
-    owl:onProperty dmlex:text ;
-    owl:cardinality 1 ] , [
-    a owl:Restriction ;
-    owl:onProperty dmlex:language ;
-    owl:maxCardinality 1 ] .
-
-dmlex:exampleTranslation a owl:ObjectProperty ;
-  rdfs:label "Example Translation"@en ;
-  rdfs:domain dmlex:Example ;
-  rdfs:range dmlex:ExampleTranslation .
-
-dmlex:ExampleTranslation a owl:Class ;
-  rdfs:comment "Represents the translation of an example."@en ;
-  rdfs:label "Example Translation"@en ;
-  rdfs:subClassOf  [
-    a owl:Restriction ;
-    owl:onProperty dmlex:text ;
-    owl:cardinality 1 ] , [
-    a owl:Restriction ;
-    owl:onProperty dmlex:language ;
-    owl:maxCardinality 1 ] .
 
 

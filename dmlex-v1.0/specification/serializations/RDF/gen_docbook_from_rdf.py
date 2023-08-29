@@ -10,8 +10,7 @@ def describe_property(g, property, file, restrictions):
     file.write(f"""
     <listitem>
         <para><literal>dmlex:{property.split("#")[-1]}</literal>""")
-    if property in restrictions:
-        file.write(f""" {restrictions[property]}""")
+    file.write(f"""{restrictions[property]}""")
     for o in g.objects(property, RDFS.range):
         if isinstance(o, rdflib.term.URIRef):
             if str(o).startswith(DMLEX):
@@ -33,14 +32,18 @@ def parse_rdf():
     # First scan for domains
     for s, p, o in g.triples((None, RDFS.domain, None)):
         if isinstance(o, rdflib.term.URIRef):
-            props[o].append(s)
+            if str(o).startswith(DMLEX + "Has"):
+                for domain_class in g.subjects(RDFS.subClassOf, o):
+                    props[domain_class].append(s)
+            else:
+                props[o].append(s)
         else:
             for listname in g.objects(o, OWL.unionOf):
                 for item in Collection(g, listname):
                     props[item].append(s)
     # Generate for each class
     for class_uri in g.subjects(RDF.type, OWL.Class):
-        if isinstance(class_uri, rdflib.term.URIRef):
+        if isinstance(class_uri, rdflib.term.URIRef) and not str(class_uri).startswith(DMLEX + "Has"):
             uri = str(class_uri)
             name = uri.split("#")[-1]
 
@@ -50,18 +53,18 @@ def parse_rdf():
                 break
 
             subclasses = []
-            restrictions = {}
+            restrictions = defaultdict(lambda: defaultdict(lambda: " OPTIONAL"))
             for o in g.objects(class_uri, RDFS.subClassOf):
-                if isinstance(o, rdflib.term.URIRef):
+                if isinstance(o, rdflib.term.URIRef) and not str(o).startswith(DMLEX + "Has"):
                     subclasses.append(o)
                 elif isinstance(o, rdflib.term.BNode):
                     for o2 in g.objects(o, OWL.onProperty):
                         for o3 in g.objects(o, OWL.cardinality):
-                            restrictions[o2] = f" REQUIRED (exactly {o3})"
+                            restrictions[class_uri][o2] = f" REQUIRED (exactly {o3})"
                         for o3 in g.objects(o, OWL.maxCardinality):
-                            restrictions[o2] = f" OPTIONAL (at most {o3})"
+                            restrictions[class_uri][o2] = f" OPTIONAL (at most {o3})"
                         for o3 in g.objects(o, OWL.minCardinality):
-                            restrictions[o2] = f" REQUIRED (at least {o3})"
+                            restrictions[class_uri][o2] = f" REQUIRED (at least {o3})"
 
             with open(f"elements/{name}.xml", "w") as f:
                 f.write(f"""<?xml version="1.0" encoding="UTF-8"?>
@@ -93,7 +96,7 @@ def parse_rdf():
         <title>Properties</title>""")
 
                 for p in props[class_uri]:
-                    describe_property(g, p, f, restrictions)
+                    describe_property(g, p, f, restrictions[class_uri])
                 f.write("""
     </itemizedlist>
 

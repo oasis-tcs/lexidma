@@ -49,9 +49,22 @@ dmlex:transcriptionSchemeTag a owl:ObjectProperty ;
 
 dmlex:description a owl:DatatypeProperty ;
   rdfs:label "Description"@en ;
-  rdfs:domain [ a owl:Class ;
-    owl:unionOf ( dmlex:DefinitionTypeTag dmlex:InflectedFormTag dmlex:LabelTag dmlex:LabelTypeTag dmlex:PartOfSpeechTag dmlex:SourceIdentityTag dmlex:TranscriptionSchemeTag dmlex:Relation dmlex:RelationType dmlex:RelationType dmlex:MemberType dmlex:Etymology dmlex:EtymonType ) ] ;
+  rdfs:domain dmlex:HasDescription ;
   rdfs:range rdfs:Literal .
+
+dmlex:DefinitionTypeTag rdfs:subClassOf dmlex:HasDescription .
+dmlex:InflectedFormTag rdfs:subClassOf dmlex:HasDescription .
+dmlex:LabelTag rdfs:subClassOf dmlex:HasDescription .
+dmlex:LabelTypeTag rdfs:subClassOf dmlex:HasDescription .
+dmlex:PartOfSpeechTag rdfs:subClassOf dmlex:HasDescription .
+dmlex:SourceIdentityTag rdfs:subClassOf dmlex:HasDescription .
+dmlex:TranscriptionSchemeTag rdfs:subClassOf dmlex:HasDescription .
+dmlex:Relation rdfs:subClassOf dmlex:HasDescription .
+dmlex:RelationType rdfs:subClassOf dmlex:HasDescription .
+dmlex:RelationType rdfs:subClassOf dmlex:HasDescription .
+dmlex:MemberType rdfs:subClassOf dmlex:HasDescription .
+dmlex:Etymology rdfs:subClassOf dmlex:HasDescription .
+dmlex:EtymonType rdfs:subClassOf dmlex:HasDescription .
 
 dmlex:DefinitionTypeTag a owl:Class ;
   rdfs:comment "Represents one (of many) possible values for definitionType of definition."@en ;
@@ -62,7 +75,7 @@ dmlex:DefinitionTypeTag a owl:Class ;
     owl:cardinality 1 ] , [
     a owl:Restriction ;
     owl:onProperty dmlex:description ;
-    owl:cardinality 1 ] .
+    owl:maxCardinality 1 ] .
 
 dmlex:InflectedFormTag a owl:Class ;
   rdfs:comment "Represents one (of many) possible values for tag of inflectedForm"@en ;
@@ -73,7 +86,7 @@ dmlex:InflectedFormTag a owl:Class ;
     owl:cardinality 1 ] , [
     a owl:Restriction ;
     owl:onProperty dmlex:description ;
-    owl:cardinality 1 ] , [
+    owl:maxCardinality 1 ] , [
     a owl:Restriction ;
     owl:onProperty dmlex:forHeadwords ;
     owl:maxCardinality 1 ] , [
@@ -84,27 +97,31 @@ dmlex:InflectedFormTag a owl:Class ;
 
 dmlex:forHeadwords a owl:ObjectProperty ;
   rdfs:label "For Headwords"@en ;
-  rdfs:domain [ a owl:Class ;
-    owl:unionOf ( dmlex:InflectedFormTag dmlex:LabelTag dmlex:PartOfSpeechTag dmlex:TranscriptionSchemeTag ) ] ;
+  rdfs:domain dmlex:HasForHeadwords ;
   rdfs:range xsd:boolean .
+
+dmlex:InflectedFormTag rdfs:subClassOf dmlex:HasInflectedForm .
+dmlex:LabelTag rdfs:subClassOf dmlex:HasInflectedForm .
+dmlex:PartOfSpeechTag rdfs:subClassOf dmlex:HasInflectedForm .
+dmlex:TranscriptionSchemeTag rdfs:subClassOf dmlex:HasInflectedForm .
 
 dmlex:forTranslations a owl:ObjectProperty ;
   rdfs:label "For Translations"@en ;
-  rdfs:domain [ a owl:Class ;
-    owl:unionOf ( dmlex:InflectedFormTag dmlex:LabelTag dmlex:PartOfSpeechTag dmlex:TranscriptionSchemeTag ) ] ;
+  rdfs:domain dmlex:HasForHeadwords ;
   rdfs:range xsd:boolean .
 
 dmlex:forLanguage a owl:ObjectProperty ;
   rdfs:label "For Language"@en ;
-  rdfs:domain [ a owl:Class ;
-    owl:unionOf ( dmlex:InflectedFormTag dmlex:LabelTag dmlex:PartOfSpeechTag dmlex:TranscriptionSchemeTag ) ] ;
+  rdfs:domain dmlex:HasForHeadwords ;
   rdfs:range xsd:language .
 
 dmlex:forPartOfSpeech a owl:ObjectProperty ;
   rdfs:label "For Part of Speech"@en ;
-  rdfs:domain [ a owl:Class ;
-    owl:unionOf ( dmlex:InflectedFormTag dmlex:LabelTag dmlex:PartOfSpeechTag ) ] ;
+  rdfs:domain dmlex:HasForPartOfSpeech ;
   rdfs:range rdfs:Literal .
+
+dmlex:InflectedFormTag rdfs:subClassOf dmlex:HasForPartOfSpeech .
+dmlex:LabelTag rdfs:subClassOf dmlex:HasForPartOfSpeech .
 
 dmlex:LabelTag a owl:Class ;
   rdfs:comment "Represents one (of many) possible values for tag of label."@en ;
@@ -115,7 +132,7 @@ dmlex:LabelTag a owl:Class ;
     owl:cardinality 1 ] , [
     a owl:Restriction ;
     owl:onProperty dmlex:description ;
-    owl:cardinality 1 ] , [
+    owl:maxCardinality 1 ] , [
     a owl:Restriction ;
     owl:onProperty dmlex:typeTag ;
     owl:maxCardinality 1 ] , [
@@ -124,7 +141,20 @@ dmlex:LabelTag a owl:Class ;
     owl:maxCardinality 1 ] , [
     a owl:Restriction ;
     owl:onProperty dmlex:forTranslations ;
+    owl:maxCardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:forCollocates ;
     owl:maxCardinality 1 ] .
+
+dmlex:typeTag a owl:DatatypeProperty ;
+  rdfs:label "Type Tag"@en ;
+  rdfs:doman dmlex:LabelTag ;
+  rdfs:range xsd:string .
+
+dmlex:forCollocates a owl:DatatypeProperty ;
+  rdfs:label "For Collocates"@en ;
+  rdfs:domain dmlex:LabelTag ;
+  rdfs:range xsd:boolean .
 
 dmlex:LabelTypeTag a owl:Class ;
   rdfs:comment "Represents one (of many) possible values for typeTag of labelTag."@en ;
@@ -146,13 +176,21 @@ dmlex:PartOfSpeechTag a owl:Class ;
     owl:cardinality 1 ] , [
     a owl:Restriction ;
     owl:onProperty dmlex:description ;
-    owl:cardinality 1 ] , [
+    owl:maxCardinality 1 ] , [
     a owl:Restriction ;
     owl:onProperty dmlex:forHeadwords ;
     owl:maxCardinality 1 ] , [
     a owl:Restriction ;
     owl:onProperty dmlex:forTranslations ;
+    owl:maxCardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:forEtymology ;
     owl:maxCardinality 1 ] .
+
+dmlex:forEtymology a owl:DatatypeProperty ;
+  rdfs:label "For Etymology"@en ;
+  rdfs:domain dmlex:PartOfSpeechTag ;
+  rdfs:range xsd:boolean .
 
 dmlex:SourceIdentityTag a owl:Class ;
   rdfs:comment "Represents one (of many) possible values for sourceIdentity of example."@en ;
@@ -163,7 +201,7 @@ dmlex:SourceIdentityTag a owl:Class ;
     owl:cardinality 1 ] , [
     a owl:Restriction ;
     owl:onProperty dmlex:description ;
-    owl:cardinality 1 ] .
+    owl:maxCardinality 1 ] .
 
 dmlex:TranscriptionSchemeTag a owl:Class ;
   rdfs:comment "Represents one (of many) possible values for scheme of transcription."@en ;
@@ -174,12 +212,10 @@ dmlex:TranscriptionSchemeTag a owl:Class ;
     owl:cardinality 1 ] , [
     a owl:Restriction ;
     owl:onProperty dmlex:description ;
-    owl:cardinality 1 ] , [
+    owl:maxCardinality 1 ] , [
     a owl:Restriction ;
     owl:onProperty dmlex:forHeadwords ;
     owl:maxCardinality 1 ] , [
     a owl:Restriction ;
     owl:onProperty dmlex:forTranslations ;
     owl:maxCardinality 1 ] .
-
-
