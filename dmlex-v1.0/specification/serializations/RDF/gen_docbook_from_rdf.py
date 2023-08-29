@@ -49,18 +49,18 @@ def parse_rdf():
                 break
 
             subclasses = []
-            restrictions = defaultdict(lambda: " OPTIONAL")
+            restrictions = defaultdict(lambda: defaultdict(lambda: " OPTIONAL"))
             for o in g.objects(class_uri, RDFS.subClassOf):
                 if isinstance(o, rdflib.term.URIRef):
                     subclasses.append(o)
                 elif isinstance(o, rdflib.term.BNode):
                     for o2 in g.objects(o, OWL.onProperty):
                         for o3 in g.objects(o, OWL.cardinality):
-                            restrictions[o2] = f" REQUIRED (exactly {o3})"
+                            restrictions[class_uri][o2] = f" REQUIRED (exactly {o3})"
                         for o3 in g.objects(o, OWL.maxCardinality):
-                            restrictions[o2] = f" OPTIONAL (at most {o3})"
+                            restrictions[class_uri][o2] = f" OPTIONAL (at most {o3})"
                         for o3 in g.objects(o, OWL.minCardinality):
-                            restrictions[o2] = f" REQUIRED (at least {o3})"
+                            restrictions[class_uri][o2] = f" REQUIRED (at least {o3})"
 
             with open(f"elements/{name}.xml", "w") as f:
                 f.write(f"""<?xml version="1.0" encoding="UTF-8"?>
@@ -92,7 +92,7 @@ def parse_rdf():
         <title>Properties</title>""")
 
                 for p in props[class_uri]:
-                    describe_property(g, p, f, restrictions)
+                    describe_property(g, p, f, restrictions[class_uri])
                 f.write("""
     </itemizedlist>
 

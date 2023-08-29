@@ -203,6 +203,7 @@ dmlex:Label a owl:Class ;
     owl:cardinality 1 ] .
 
 dmlex:Pronunciation a owl:Class ;
+  rdfs:comment "Represents the pronunciation of its parent. Pronunciations must have either a sound file or a transcription."@en ;
   rdfs:label "Pronunciation"@en ;
   rdfs:subClassOf  [
     a owl:Restriction ;
@@ -236,6 +237,11 @@ dmlex:Transcription a owl:Class ;
     a owl:Restriction ;
     owl:onProperty dmlex:listingOrder ;
     owl:cardinality 1 ] .
+
+dmlex:scheme a owl:DatatypeProperty ;
+  rdfs:label "Scheme"@en ;
+  rdfs:domain dmlex:Transcription ;
+  rdfs:range xsd:language .
 
 dmlex:Example a owl:Class ;
   rdfs:comment "Represents a sentence or other text fragment which illustrates the headword being used."@en ;
