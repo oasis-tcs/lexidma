@@ -40,6 +40,9 @@
           <listitem>
               <para>The implementation is not aware of which modules are in use, to enable publishing on the web. As such cardinality constraints that are only required in a module are not implemented.</para>
           </listitem>
+          <listitem>
+              <para>The domain of some properties is given as a <code>HasProperty</code> class when it can be used with multiple classes. As such, classes may be subclasses of several different <code>HasProperty</code> classes</para>
+          </listitem>
       </itemizedlist>
 
   </section>
