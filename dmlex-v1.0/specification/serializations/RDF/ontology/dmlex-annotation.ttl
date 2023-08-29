@@ -14,9 +14,11 @@
 
 dmlex:placeholderMarker a owl:ObjectProperty ;
   rdfs:label "Placeholder Marker"@en ;
-  rdfs:domain [ a owl:Class ;
-    owl:unionOf ( dmlex:Entry dmlex:HeadwordTranslation ) ] ;
+  rdfs:domain dmlex:HasPlaceholderMarker ;
   rdfs:range dmlex:PlaceholderMarker .
+
+dmlex:Entry rdfs:subClassOf dmlex:HasPlaceholderMarker .
+dmlex:HeadwordTranslation rdfs:subClassOf dmlex:HasPlaceholderMarker .
 
 dmlex:PlaceholderMarker a owl:Class ;
   rdfs:comment "Marks up a substring inside a headword or inside a headword translation which is not part of the expression itself but stands for things that can take its place."@en ;
@@ -31,31 +33,34 @@ dmlex:PlaceholderMarker a owl:Class ;
 
 dmlex:startIndex a owl:DatatypeProperty ;
   rdfs:label "Start Index"@en ;
-  rdfs:domain [ a owl:Class ;
-    owl:unionOf ( dmlex:PlaceholderMarker dmlex:HeadwordMarker ) ] ;
+  rdfs:domain dmlex:HasIndex ;
   rdfs:range xsd:string .
 
 dmlex:endIndex a owl:DatatypeProperty ;
   rdfs:label "End Index"@en ;
-  rdfs:domain [ a owl:Class ;
-    owl:unionOf ( dmlex:PlaceholderMarker dmlex:HeadwordMarker ) ] ;
+  rdfs:domain dmlex:HasIndex ;
   rdfs:range xsd:string .
+
+dmlex:PlaceholderMarker rdfs:subClassOf dmlex:HasIndex .
+dmlex:HeadwordMarker rdfs:subClassOf dmlex:HasIndex .
 
 dmlex:headwordMarker a owl:ObjectProperty ;
   rdfs:label "Headword Marker"@en ;
-  rdfs:domain [ a owl:Class ;
-    owl:unionOf ( dmlex:Definition dmlex:Example dmlex:ExampleTranslation ) ] ;
+  rdfs:domain dmlex:HasMarker ;
   rdfs:range dmlex:HeadwordMarker .
 
 dmlex:collocateMarker a owl:ObjectProperty ;
   rdfs:label "Collocate Marker"@en ;
-  rdfs:domain [ a owl:Class ;
-    owl:unionOf ( dmlex:Definition dmlex:Example dmlex:ExampleTranslation ) ] ;
+  rdfs:domain dmlex:HasMarker ;
   rdfs:range dmlex:CollocateMarker .
+
+dmlex:Definition rdfs:subClassOf dmlex:HasMarker .
+dmlex:Example rdfs:subClassOf dmlex:HasMarker .
+dmlex:ExampleTranslation rdfs:subClassOf dmlex:HasMarker .
 
 dmlex:HeadwordMarker a owl:Class ;
   rdfs:comment "Marks up a substring inside an example, inside an example translation or inside a definition which corresponds to the headword (or to a translation of the headword)"@en ;
-  rdfs:label "HeadwordMarker"@en ;
+  rdfs:label "Headword Marker"@en ;
   rdfs:subClassOf [
     a owl:Restriction ;
     owl:onProperty dmlex:startIndex ;
@@ -65,6 +70,7 @@ dmlex:HeadwordMarker a owl:Class ;
     owl:cardinality 1 ] .
 
 dmlex:CollocateMarker a owl:Class ;
+  rdfs:comment "Marks up a substring other than the headword inside an example, inside an example translation or inside a definition."@en ;
   rdfs:label "Collocate Marker"@en ;
   rdfs:subClassOf [
     a owl:Restriction ;
@@ -72,11 +78,17 @@ dmlex:CollocateMarker a owl:Class ;
     owl:cardinality 1 ] ,  [
     a owl:Restriction ;
     owl:onProperty dmlex:endIndex ;
-    owl:cardinality 1 ] .
+    owl:cardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:lemma ;
+    owl:maxCardinality 1 ] .
 
 dmlex:lemma a owl:DatatypeProperty ;
   rdfs:label "Lemma"@en ;
-  rdfs:domain dmlex:ItemMarker ;
+  rdfs:domain dmlex:HasLemma ;
   rdfs:range xsd:string .
+
+dmlex:ItemMarker rdfs:subClassOf dmlex:HasLemma .
+dmlex:CollocateMarker rdfs:subClassOf dmlex:HasLemma .
 
 

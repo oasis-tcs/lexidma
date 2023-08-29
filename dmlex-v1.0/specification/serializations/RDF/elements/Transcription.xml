@@ -19,6 +19,9 @@
     <listitem>
         <para><literal>dmlex:text</literal> REQUIRED (exactly 1) of type <literal>http://www.w3.org/2000/01/rdf-schema#Literal</literal></para>
     </listitem>
+    <listitem>
+        <para><literal>dmlex:scheme</literal> OPTIONAL (at most 1) of type <literal>http://www.w3.org/2001/XMLSchema#language</literal></para>
+    </listitem>
     </itemizedlist>
 
 

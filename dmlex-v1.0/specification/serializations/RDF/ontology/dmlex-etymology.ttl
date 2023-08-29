@@ -71,11 +71,13 @@ dmlex:etymonUnit a owl:ObjectProperty ;
   rdfs:domain dmlex:Etymon ;
   rdfs:range dmlex:EtymonUnit .
 
-dmlex:translation a owl:DataProperty ;
+dmlex:translation a owl:DatatypeProperty ;
   rdfs:label "Translation"@en ;
-  rdfs:domain [ a owl:Class ;
-    owl:unionOf ( dmlex:Etymon dmlex:EtymonUnit ) ] ;
+  rdfs:domain dmlex:HasTranslation ;
   rdfs:range xsd:string .
+
+dmlex:Etymon rdfs:subClassOf dmlex:HasTranslation .
+dmlex:EtymonUnit rdfs:subClassOf dmlex:HasTranslation .
 
 dmlex:EtymonUnit a owl:Class ;
   rdfs:comment "Represents a form (typically a word) which is the etymological origin of the headword, or another etymologically related form"@en ;

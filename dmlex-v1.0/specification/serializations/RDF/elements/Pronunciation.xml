@@ -8,7 +8,7 @@
 <section id="rdf_Pronunciation">
     <title>RDF element: <literal>dmlex:Pronunciation</literal></title>
 
-    <para>DEFINITION MISSING</para>
+    <para>Represents the pronunciation of its parent. Pronunciations must have either a sound file or a transcription.</para>
 
 
     <itemizedlist>

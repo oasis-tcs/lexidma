@@ -30,9 +30,11 @@ dmlex:TranslationLanguage a owl:Class ;
 
 dmlex:langCode a owl:ObjectProperty ;
   rdfs:label "Language Code"@en ;
-  rdfs:domain [ a owl:Class ;
-    owl:unionOf ( dmlex:TranslationLanguage dmlex:EtymonLanguage ) ] ;
+  rdfs:domain dmlex:HasLangCode ;
   rdfs:range xsd:language .
+
+dmlex:TranslationLanguage rdfs:subClassOf dmlex:HasLangCode .
+dmlex:EtymonLanguage rdfs:subClassOf dmlex:HasLangCode .
 
 dmlex:headwordExplanation a owl:ObjectProperty ;
   rdfs:label "Headword Explanation"@en ;

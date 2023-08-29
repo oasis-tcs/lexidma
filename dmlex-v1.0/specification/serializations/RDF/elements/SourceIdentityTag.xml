@@ -17,7 +17,7 @@
         <para><literal>dmlex:tag</literal> REQUIRED (exactly 1)</para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:description</literal> REQUIRED (exactly 1) of type <literal>http://www.w3.org/2000/01/rdf-schema#Literal</literal></para>
+        <para><literal>dmlex:description</literal> OPTIONAL (at most 1) of type <literal>http://www.w3.org/2000/01/rdf-schema#Literal</literal></para>
     </listitem>
     </itemizedlist>
 

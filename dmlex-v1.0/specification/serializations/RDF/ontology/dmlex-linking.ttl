@@ -38,9 +38,13 @@ dmlex:Relation a owl:Class ;
 
 dmlex:type a owl:DatatypeProperty ;
   rdfs:label "Type"@en ;
-  rdfs:domain [ a owl:Class ;
-    owl:unionOf ( dmlex:Relation dmlex:RelationType dmlex:Etymon dmlex:EtymonType ) ] ;
+  rdfs:domain dmlex:HasType ;
   rdfs:range xsd:string .
+
+dmlex:Relation rdfs:subClassOf dmlex:HasType .
+dmlex:RelationType rdfs:subClassOf dmlex:HasType .
+dmlex:Etymon rdfs:subClassOf dmlex:HasType .
+dmlex:EtymonType rdfs:subClassOf dmlex:HasType .
 
 dmlex:member a owl:ObjectProperty ;
   rdfs:label "Member"@en ;
@@ -66,15 +70,16 @@ dmlex:Member a owl:Class ;
 
 dmlex:memberID a owl:DatatypeProperty ;
   rdfs:label "Member ID"@en ;
-  rdfs:domain [ a owl:Class ;
-    owl:unionOf ( dmlex:Member ) ] ;
+  rdfs:domain dmlex:Member ;
   rdfs:range xsd:string .
 
 dmlex:role a owl:DatatypeProperty ;
   rdfs:label "Role"@en ;
-  rdfs:domain [ a owl:Class ;
-    owl:unionOf ( dmlex:Member dmlex:MemberType ) ] ;
+  rdfs:domain dmlex:HasRole ;
   rdfs:range xsd:string .
+
+dmlex:Member rdfs:subClassOf dmlex:HasRole .
+dmlex:MemberType rdfs:subClassOf dmlex:HasRole .
 
 dmlex:obverseListingOrder a owl:DatatypeProperty ;
   rdfs:label "Obverse Listing Order"@en ;

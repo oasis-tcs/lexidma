@@ -32,14 +32,18 @@ def parse_rdf():
     # First scan for domains
     for s, p, o in g.triples((None, RDFS.domain, None)):
         if isinstance(o, rdflib.term.URIRef):
-            props[o].append(s)
+            if str(o).startswith(DMLEX + "Has"):
+                for domain_class in g.subjects(RDFS.subClassOf, o):
+                    props[domain_class].append(s)
+            else:
+                props[o].append(s)
         else:
             for listname in g.objects(o, OWL.unionOf):
                 for item in Collection(g, listname):
                     props[item].append(s)
     # Generate for each class
     for class_uri in g.subjects(RDF.type, OWL.Class):
-        if isinstance(class_uri, rdflib.term.URIRef):
+        if isinstance(class_uri, rdflib.term.URIRef) and not str(class_uri).startswith(DMLEX + "Has"):
             uri = str(class_uri)
             name = uri.split("#")[-1]
 
@@ -51,7 +55,7 @@ def parse_rdf():
             subclasses = []
             restrictions = defaultdict(lambda: defaultdict(lambda: " OPTIONAL"))
             for o in g.objects(class_uri, RDFS.subClassOf):
-                if isinstance(o, rdflib.term.URIRef):
+                if isinstance(o, rdflib.term.URIRef) and not str(o).startswith(DMLEX + "Has"):
                     subclasses.append(o)
                 elif isinstance(o, rdflib.term.BNode):
                     for o2 in g.objects(o, OWL.onProperty):
