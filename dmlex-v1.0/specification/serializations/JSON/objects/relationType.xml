@@ -17,7 +17,7 @@
                 <glossterm>required</glossterm>, string</para>
         </listitem>
         <listitem>
-            <para><literal>"scope"</literal>
+            <para><literal>"scopeRestriction"</literal>
                 <glossterm>optional</glossterm>, string</para>
         </listitem>
         <listitem>

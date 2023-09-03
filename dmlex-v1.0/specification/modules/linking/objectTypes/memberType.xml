@@ -32,7 +32,7 @@
         explanation of this member role.</para>
     </listitem>
     <listitem>
-      <para><literal>memberType</literal>
+      <para><literal>type</literal>
         <glossterm>required</glossterm> (exactly one). Non-empty string. A restriction on the types
         of objects that can have this role. The possible values are:</para>
       <itemizedlist>
@@ -63,10 +63,10 @@
         limit.</para>
     </listitem>
     <listitem>
-      <para><literal>action</literal>
-        <glossterm>required</glossterm> (exactly one). Non-empty string. Gives instructions on what
-        machine agents should do when showing this relation to a human user (either on its own or in
-        the context of one of its members). The possible values are:</para>
+      <para><literal>hint</literal>
+        <glossterm>optional</glossterm> (zero or one). Non-empty string. Suggests what machine
+        agents should do when showing this member to a human user (in the context of another member
+        of the same relation). The possible values are:</para>
       <itemizedlist>
         <listitem>
           <para>
@@ -95,7 +95,7 @@
   <example>
     <title>XML</title>
     <programlisting>
-&lt;memberType role="..." memberType="..." min="..." max="..." action="..."&gt;
+&lt;memberType role="..." type="..." min="..." max="..." hint="..."&gt;
     &lt;description&gt;&lt;/description&gt;
     &lt;sameAs.../&gt;
 &lt;/memberType&gt;
@@ -108,10 +108,10 @@
 {
     "role": "...",
     "description": "...",
-    "memberType": "...",
+    "type": "...",
     "min": "...",
     "max": "...",
-    "action": "...",
+    "hint": "...",
     "sameAs": [...]
 }
     </programlisting>
@@ -119,13 +119,13 @@
   <example>
       <title>RDF</title>
       <programlisting>
-&lt;#relationType&gt; dmlex:memberType [
+&lt;#relationType&gt; dmlex:type [
   dmlex:role "..." ;
   dmlex:description "..." ;
   dmlex:memberType "..." ;
   dmlex:min 0 ;
   dmlex:max 0 ;
-  dmlex:action "..." ;
+  dmlex:hint "..." ;
   dmlex:sameAs ... ] .
       </programlisting>
   </example>

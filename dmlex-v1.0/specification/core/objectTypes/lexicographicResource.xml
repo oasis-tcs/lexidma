@@ -32,7 +32,7 @@
         identifying it on the Web.</para>
     </listitem>
     <listitem>
-      <para><literal>language</literal>
+      <para><literal>langCode</literal>
         <glossterm>required</glossterm> (exactly one). The IETF language code of the language that
         this lexicographic resource describes.</para>
     </listitem>
@@ -71,7 +71,7 @@
   <example>
     <title>XML</title>
     <programlisting>
-&lt;lexicographicResource uri="..." language="..."&gt;
+&lt;lexicographicResource uri="..." langCode="..."&gt;
     &lt;title&gt;...&lt;/title&gt;
     &lt;entry.../&gt;
 &lt;/lexicographicResource&gt;
@@ -83,7 +83,7 @@
     <programlisting>
 {
     "title": "...",
-    "language": "...",
+    "langCode": "...",
     "entries": [...]
 }
 </programlisting>
@@ -97,7 +97,7 @@
 &lt;#id&gt; a dmlex:LexicographicResource ;
   dmlex:title "..." ;
   dmlex:uri "..." ;
-  dmlex:language "..." ;
+  dmlex:langCode "..." ;
   dmlex:entry &lt;entry1&gt; , ... .
       </programlisting>
   </example>

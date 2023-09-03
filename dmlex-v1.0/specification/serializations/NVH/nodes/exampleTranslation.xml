@@ -19,7 +19,7 @@
     <itemizedlist>
         <title>Child nodes</title>
         <listitem>
-            <para><literal>language</literal> <glossterm>optional</glossterm> (zero or one)</para>
+            <para><literal>langCode</literal> <glossterm>optional</glossterm> (zero or one)</para>
         </listitem>
         <listitem>
             <para><literal>soundFile</literal>

@@ -19,7 +19,7 @@
     <itemizedlist>
         <title>Child nodes</title>
         <listitem>
-            <para><literal>scope</literal> <glossterm>required</glossterm> (exactly one)</para>
+            <para><literal>scopeRestriction</literal> <glossterm>required</glossterm> (exactly one)</para>
         </listitem>
         <listitem>
             <para><literal>description</literal> <glossterm>optional</glossterm> (zero or one)</para>

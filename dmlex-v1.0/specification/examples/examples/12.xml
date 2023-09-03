@@ -15,7 +15,7 @@
     <example>
         <title>Pseudocode</title>
         <programlisting>
-- lexicographicResource (language: en)
+- lexicographicResource (uri: http://example.com, langCode: en)
     - entry (id: glasses, headword: glasses)
         - sense (id: glasses-1)
             - definition (text: an optical seeing aid)
@@ -32,14 +32,14 @@
         - member (memberID: microscrope-1, role: whole)
         - member (memberID: lens-1, role: part)
     - relationType (type: meronomy, description: part-whole relationship)
-        - memberType (role: whole, memberType: sense, min: 1, max: 1, action: navigate)
-        - memberType (role: part, memberType: sense, min: 1, max: 1, action: navigate)
+        - memberType (role: whole, type: sense, min: 1, max: 1, hint: navigate)
+        - memberType (role: part, type: sense, min: 1, max: 1, hint: navigate)
 </programlisting>
     </example>
     <example>
         <title>XML</title>
         <programlisting>
-&lt;lexicographicResource language="en"&gt;
+&lt;lexicographicResource uri="http://example.com" langCode="en"&gt;
     &lt;entry id="glasses"&gt;
         &lt;headword&gt;glasses&lt;/headword&gt;
         &lt;sense id="glasses-1"&gt;
@@ -68,8 +68,8 @@
     &lt;/relation&gt;
     &lt;relationType type="meronomy"&gt;
         &lt;description&gt;part-whole relationship&lt;/description&gt;
-        &lt;memberType role="whole" memberType="sense" min="1" max="1" action="navigate"/&gt;
-        &lt;memberType role="part" memberType="sense" min="1" max="1" action="navigate"/&gt;
+        &lt;memberType role="whole" type="sense" min="1" max="1" hint="navigate"/&gt;
+        &lt;memberType role="part" type="sense" min="1" max="1" hint="navigate"/&gt;
     &lt;/relationType
 &lt;/lexicographicResource&gt;
 </programlisting>
@@ -78,7 +78,8 @@
         <title>JSON</title>
         <programlisting>
 {
-    "language": "en",
+    "uri": "http://example.com",
+    "langCode": "en",
     "entries": [{
         "id": "glasses",
         "headword": "glasses",
@@ -123,16 +124,16 @@
         "description": "part-whole relationship",
         "memberTypes": [{
             "role": "whole",
-            "memberType": "sense",
+            "type": "sense",
             "min": 1,
             "max": 1,
-            "action": "navigate"
+            "hint": "navigate"
         }, {
             "role": "part",
-            "memberType": "sense",
+            "type": "sense",
             "min": 1,
             "max": 1,
-            "action": "navigate"
+            "hint": "navigate"
         }]
     }]
 }

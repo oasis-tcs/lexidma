@@ -27,7 +27,7 @@
                 <glossterm>required</glossterm> (exactly one). Non-empty string.</para>
         </listitem>
         <listitem>
-            <para><literal>language</literal>
+            <para><literal>langCode</literal>
                 <glossterm>optional</glossterm> (zero or one) if only one translation language
                 exists in the lexicographic resource, <glossterm>required</glossterm> (exactly one)
                 otherwise. IETF language tag. Indicates the language in which this explanation is
@@ -50,7 +50,7 @@
     <example>
         <title>XML</title>
         <programlisting>
-&lt;headwordExplanation language="..."&gt;...&lt;/headwordExplanation&gt;
+&lt;headwordExplanation langCode="..."&gt;...&lt;/headwordExplanation&gt;
         </programlisting>
     </example>
     
@@ -58,7 +58,7 @@
         <title>JSON</title>
         <programlisting>
 {
-    "language": "...",
+    "langCode": "...",
     "text": "...",
 }
         </programlisting>
@@ -67,7 +67,7 @@
         <title>RDF</title>
         <programlisting>
 &lt;#sense&gt; dmlex:headwordExplanation [
-  dmlex:language "..." ;
+  dmlex:langCode "..." ;
   dmlex:text "..." ] .
         </programlisting>
     </example>

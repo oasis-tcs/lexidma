@@ -12,7 +12,7 @@
     <itemizedlist>
         <title>Attributes</title>
         <listitem>
-            <para><literal>@language</literal> <glossterm>optional</glossterm> if the ancestor <literal>&lt;lexicographicResource&gt;</literal>
+            <para><literal>@langCode</literal> <glossterm>optional</glossterm> if the ancestor <literal>&lt;lexicographicResource&gt;</literal>
                 contains exactly one <literal>&lt;translationLanguage&gt;</literal>,
                 <glossterm>required</glossterm> otherwise</para>
         </listitem>

@@ -17,7 +17,7 @@
     <example>
         <title>Pseudocode</title>
         <programlisting>
-- lexicographicResource (language: en)
+- lexicographicResource (uri: http://example.com, langCode: en)
     - entry (id: colour, headword: colour)
         - partOfSpeech (tag: n)
         - label (tag: europeanSpelling)
@@ -31,13 +31,13 @@
         - member (memberID: colour)
         - member (memberID: color)
     - relationType (type: variants, description: words which differ only in spelling)
-        - memberType (memberType: entry, min: 2, action: navigate)
+        - memberType (type: entry, min: 2, hint: navigate)
 </programlisting>
     </example>
     <example>
         <title>XML</title>
         <programlisting>
-&lt;lexicographicResource language="en"&gt;
+&lt;lexicographicResource uri="http://example.com" langCode="en"&gt;
     &lt;entry id="colour"&gt;
         &lt;headword&gt;colour&lt;/headword&gt;
         &lt;partOfSpeech tag="n"/&gt;
@@ -58,7 +58,7 @@
     &lt;/relation&gt;
     &lt;relationType type="variants"&gt;
         &lt;description&gt;words which differ only in spelling&lt;/description&gt;
-        &lt;memberType memberType="entry" min="2" action="navigate"/&gt;
+        &lt;memberType type="entry" min="2" hint="navigate"/&gt;
     &lt;/relationType&gt;
 &lt;/lexicographicResource&gt;
 </programlisting>
@@ -67,7 +67,8 @@
         <title>JSON</title>
         <programlisting>
 {
-    "language": "en",
+    "uri": "http://example.com",
+    "langCode": "en",
     "entries": [{
         "id": "colour",
         "headword": "colour",
@@ -95,9 +96,9 @@
         "type": "variants",
         "description": "words which differ only in spelling",
         "memberTypes": [{
-            "memberType": "entry",
+            "type": "entry",
             "min": 2,
-            "action": "navigate"
+            "hint": "navigate"
         }]
     }]
 }

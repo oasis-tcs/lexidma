@@ -18,7 +18,7 @@
             <para><literal>@uri</literal> <glossterm>required</glossterm></para>
         </listitem>
         <listitem>
-            <para><literal>@language</literal> <glossterm>required</glossterm></para>
+            <para><literal>@langCode</literal> <glossterm>required</glossterm></para>
         </listitem>
     </itemizedlist>
     

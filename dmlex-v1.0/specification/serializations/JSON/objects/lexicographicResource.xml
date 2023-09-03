@@ -21,7 +21,7 @@
                 <glossterm>required</glossterm>, string</para>
         </listitem>
         <listitem>
-            <para><literal>"language"</literal>
+            <para><literal>"langCode"</literal>
                 <glossterm>required</glossterm>, string</para>
         </listitem>
         <listitem>

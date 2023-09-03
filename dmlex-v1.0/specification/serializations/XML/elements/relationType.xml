@@ -15,7 +15,7 @@
             <para><literal>@type</literal> <glossterm>required</glossterm></para>
         </listitem>
         <listitem>
-            <para><literal>@scope</literal> <glossterm>required</glossterm></para>
+            <para><literal>@scopeRestriction</literal> <glossterm>required</glossterm></para>
         </listitem>
     </itemizedlist>
     

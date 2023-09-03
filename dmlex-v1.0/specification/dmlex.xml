@@ -478,7 +478,7 @@
             <title>Internationalization Tag Set (ITS) Version 2.0</title>, <citetitle>
             <ulink url="http://www.w3.org/TR/its20/">http://www.w3.org/TR/its20/</ulink>
           </citetitle> W3C Recommendation 29 October 2013.</bibliomixed>
-        <bibliomixed><abbrev>JSON</abbrev>
+        <bibliomixed id="bib_json"><abbrev>JSON</abbrev>
           <title>The JavaScript Object Notation (JSON) Data Interchange Format</title>, <citetitle>
             <ulink url="https://tools.ietf.org/html/rfc8259"
               >https://tools.ietf.org/html/rfc8259</ulink>
@@ -514,6 +514,13 @@
               >
               http://standards.iso.org/ittf/PubliclyAvailableStandards/c055982_ISO_IEC_19757-3_2016.zip</ulink>
           </citetitle> ISO, January 15, 2016.</bibliomixed>
+        <bibliomixed id="bib_sql"><abbrev>SQL</abbrev> International Standards
+          Organization, <title>ISO/IEC 9075, Information technology – Database languages – SQL</title>, <citetitle>
+              <ulink
+                url="https://www.iso.org/standard/76583.html"
+                >
+                https://www.iso.org/standard/76583.html</ulink>
+            </citetitle> ISO, 2023.</bibliomixed>
         <bibliomixed id="uax9"><abbrev>UAX #9</abbrev> M. Davis, A. Lanin, A. Glass, <title>UNICODE
             BIDIRECTIONAL ALGORITHM</title>, <citetitle>
             <ulink url="http://www.unicode.org/reports/tr9/tr9-35.html"

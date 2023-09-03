@@ -25,7 +25,7 @@
             <para><literal>uri</literal> <glossterm>required</glossterm> (exactly one)</para>
         </listitem>
         <listitem>
-            <para><literal>language</literal> <glossterm>required</glossterm> (exactly one)</para>
+            <para><literal>langCode</literal> <glossterm>required</glossterm> (exactly one)</para>
         </listitem>
     </itemizedlist>
     
