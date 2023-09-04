@@ -13,6 +13,11 @@
     (JavaScript Object Notation)
     [<link linkend="bib_json">JSON</link>].
   </para>
+  <para>
+    For data exchange purposes,
+    a valid DMLex JSON object where either a <literal>lexicographicResource</literal> or a <literal>entry</literal>.
+  </para>
+  
 
   <section>
     <title>Design principles</title>

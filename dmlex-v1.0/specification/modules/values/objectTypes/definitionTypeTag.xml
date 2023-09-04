@@ -28,6 +28,14 @@
       <para><literal>tag</literal>
         <glossterm>required</glossterm> (exactly one). Non-empty string. An abbreviation, a code or
         some other string of text.</para>
+      <formalpara>
+        <title>Uniqueness constraint</title>
+        <para>
+          No two instances of <literal>definitionTypeTag</literal>
+          in the same <literal>lexicographicResource</literal>
+          can have the same <literal>tag</literal>.
+        </para>
+      </formalpara> 
     </listitem>
     <listitem>
       <para><literal>description</literal>

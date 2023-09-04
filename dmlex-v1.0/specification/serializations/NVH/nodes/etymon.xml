@@ -12,6 +12,9 @@
     <itemizedlist>
         <title>Child nodes</title>
         <listitem>
+            <para><literal>id</literal> <glossterm>optional</glossterm> (zero or one)</para>
+        </listitem>
+        <listitem>
             <para><literal>when</literal> <glossterm>optional</glossterm> (zero or one)</para>
         </listitem>
         <listitem>

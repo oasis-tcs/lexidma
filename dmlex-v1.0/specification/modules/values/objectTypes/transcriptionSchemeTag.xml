@@ -27,6 +27,14 @@
     <listitem>
       <para><literal>tag</literal>
         <glossterm>required</glossterm> (exactly one). An IETF language tag.</para>
+      <formalpara>
+        <title>Uniqueness constraint</title>
+        <para>
+          No two instances of <literal>transcriptionSchemeTag</literal>
+          in the same <literal>lexicographicResource</literal>
+          can have the same <literal>tag</literal>.
+        </para>
+      </formalpara> 
     </listitem>
     <listitem>
       <para><literal>description</literal>

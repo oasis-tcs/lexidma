@@ -12,6 +12,9 @@
     <itemizedlist>
         <title>Attributes</title>
         <listitem>
+            <para><literal>@id</literal> <glossterm>optional</glossterm></para>
+        </listitem>
+        <listitem>
             <para><literal>@when</literal> <glossterm>optional</glossterm></para>
         </listitem>
         <listitem>

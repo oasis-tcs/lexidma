@@ -46,8 +46,7 @@
             </para>
         </listitem>
         <listitem>
-            <para><literal>langCode: nvarchar</literal>, foreign key,
-                references column <literal>langCode</literal>
+            <para><literal>langCode: nvarchar</literal>, optionally a foreign key referencing column <literal>langCode</literal>
                 of table <literal><olink targetptr="rdb_translationLanguages">translationLanguages</olink></literal>
             </para>
         </listitem>

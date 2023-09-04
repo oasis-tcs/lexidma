@@ -18,7 +18,10 @@
 
 	<itemizedlist>
         <title>Child nodes</title>
-        <listitem>
+	    <listitem>
+	        <para><literal>id</literal> <glossterm>optional</glossterm> (zero or one)</para>
+	    </listitem>
+	    <listitem>
             <para><literal>langCode</literal> <glossterm>optional (zero or one)</glossterm> if the ancestor <literal>lexicographicResource</literal>
                 contains exactly one <literal>translationLanguage</literal>,
                 <glossterm>required</glossterm> otherwise</para>

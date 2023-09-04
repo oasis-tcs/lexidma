@@ -8,6 +8,17 @@
                          ]>
 <section id="nvh" role="normative">
   <title>DMLex NVH serialization</title>
+  <para>
+    This section specifies a serialization of the DMLex data model in NVH
+    (Name-Value Hierarchy)
+    [<link linkend="bib_nvh">NVH</link>].
+  </para>
+  <para>
+    For data exchange purposes,
+    a valid DMLex NVH tree is one where either <literal>lexicographicResource</literal> or <literal>entry</literal>
+    is the top-level node.
+  </para>
+  
 
   <section id="NVHDesignPrinciples" role="informative">
     <title>Design Principles </title>

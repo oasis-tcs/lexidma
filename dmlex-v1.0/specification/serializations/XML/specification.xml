@@ -13,7 +13,13 @@
     (Extensible Markup Language)
     [<link linkend="bib_XML">XML</link>].
   </para>
-  
+  <para>
+    For data exchange purposes,
+    a valid DMLex XML document is one where either <literal>lexicographicResource</literal> or <literal>entry</literal>
+    is the document element.
+  </para>
+
+
   <section id="XMLDesignPrinciples" role="informative">
     <title>Design Principles </title>
     <para>The XML serialization of DMLex shown in this document follows these principles:</para>
