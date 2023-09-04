@@ -8,6 +8,11 @@
                          ]>
 <section id="rdb" role="normative">
   <title>DMLex relational database serialization</title>
+  <para>
+    This section specifies a serialization of the DMLex data model as a reational database,
+    using conventional database modelling concepts (tables with columns and rows, primary keys, relationhips, foreign keys)
+    and data types from the ISO SQL (Structured Query Language) Standard [<link linkend="bib_sql">SQL</link>].
+  </para>
   
   <section role="informative">
     <title>Design principles</title>

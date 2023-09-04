@@ -19,7 +19,7 @@
     <itemizedlist>
         <title>Child nodes</title>
         <listitem>
-            <para><literal>language</literal> <glossterm>required</glossterm> (exactly one)</para>
+            <para><literal>langCode</literal> <glossterm>required</glossterm> (exactly one)</para>
         </listitem>
         <listitem>
             <para><literal>reconstructed</literal> <glossterm>optional</glossterm> (zero or one)</para>

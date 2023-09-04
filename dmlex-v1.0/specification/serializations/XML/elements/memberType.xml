@@ -15,7 +15,7 @@
             <para><literal>@role</literal> <glossterm>required</glossterm></para>
         </listitem>
         <listitem>
-            <para><literal>@memberType</literal> <glossterm>required</glossterm></para>
+            <para><literal>@type</literal> <glossterm>required</glossterm></para>
         </listitem>
         <listitem>
             <para><literal>@min</literal> <glossterm>optional</glossterm></para>
@@ -24,7 +24,7 @@
             <para><literal>@max</literal> <glossterm>optional</glossterm></para>
         </listitem>
         <listitem>
-            <para><literal>@action</literal> <glossterm>optional</glossterm></para>
+            <para><literal>@hint</literal> <glossterm>optional</glossterm></para>
         </listitem>
     </itemizedlist>
     

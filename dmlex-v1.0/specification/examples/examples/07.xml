@@ -15,14 +15,14 @@
     <example>
         <title>Pseudocode</title>
         <programlisting>
-- lexicographicResource (title: My German-English Dictionary,  language: de)
+- lexicographicResource (title: My German-English Dictionary, uri: http://example.com, langCode: de)
     - translationLanguage (langCode: en)
 </programlisting>
     </example>
     <example>
         <title>XML</title>
         <programlisting>
-&lt;lexicographicResource language="de"&gt;
+&lt;lexicographicResource uri="http://example.com" langCode="de"&gt;
     &lt;title&gt;My German-English Dictionary&lt;/title&gt;
     &lt;translationLanguage langCode="en"/&gt;
     ...
@@ -34,7 +34,8 @@
         <programlisting>
 {
     "title": "My German-English Dictionary",
-    "language": "de",
+    "uri": "http://example.com",
+    "langCode": "de",
     "translationLanguages": ["en"],
     ...
 }

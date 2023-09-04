@@ -31,7 +31,7 @@
         explanation of this relation type.</para>
     </listitem>
     <listitem>
-      <para><literal>scope</literal>
+      <para><literal>scopeRestriction</literal>
         <glossterm>optional</glossterm> (zero or one). Non-empty string. Specifies restrictions on
         member of relations of this type. The possible values are:</para>
       <itemizedlist>
@@ -48,7 +48,7 @@
         </listitem>
         <listitem>
           <para>
-            <code>any</code> (default): no restriction</para>
+            <code>any</code>: no restriction</para>
         </listitem>
       </itemizedlist>
     </listitem>
@@ -65,7 +65,7 @@
   <example>
     <title>XML</title>
     <programlisting>
-&lt;relationType type="..." scope="..."&gt;
+&lt;relationType type="..." scopeRestriction="..."&gt;
     &lt;description&gt;...&lt;/description&gt;
     &lt;memberType.../&gt;
     &lt;sameAs.../&gt;
@@ -78,7 +78,7 @@
     <programlisting>
 {
     "type": "...",
-    "scope": "...",
+    "scopeRestriction": "...",
     "memberTypes": [...],
     "sameAs": ["..."]
 }
@@ -89,7 +89,7 @@
     <programlisting>
 &lt;#lexicographicResource&gt; dmlex:relationType [
   dmlex:type "..." ;
-  dmlex:scope "..." ;
+  dmlex:scopeRestriction "..." ;
   dmlex:memberType ... ;
   dmlex:sameAs ... ] .
       </programlisting>

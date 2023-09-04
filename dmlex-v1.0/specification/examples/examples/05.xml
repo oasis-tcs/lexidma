@@ -14,7 +14,7 @@
     <example>
         <title>Pseudocode</title>
         <programlisting>
-- lexicographicResource (language: ga)
+- lexicographicResource (uri: http://example.com, langCode: ga)
     - entry (id: folúsghlantóir-n, headword: folúsghlantóir)
         - partOfSpeech (tag: n-masc)
         - inflectedForm (tag: sg-gen, text: folúsghlantóra)
@@ -33,7 +33,7 @@
     <example>
         <title>XML</title>
         <programlisting>
-&lt;lexicographicResource language="ga"&gt;
+&lt;lexicographicResource uri="http://example.com" langCode="ga"&gt;
     &lt;entry id="folúsghlantóir-n"&gt;
         &lt;headword&gt;folúsghlantóir&lt;/headword&gt;
         &lt;partOfSpeech value="n-masc"/&gt;
@@ -69,7 +69,8 @@
         <title>JSON</title>
         <programlisting>
 {
-    "language": "ga",
+    "uri": "http://example.com",
+    "langCode": "ga",
     "entries": [{
         "id": "folúsghlantóir-n",
         "headword": "folúsghlantóir",

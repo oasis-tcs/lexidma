@@ -17,7 +17,7 @@
                 <glossterm>required</glossterm>, string</para>
         </listitem>
         <listitem>
-            <para><literal>"memberType"</literal>
+            <para><literal>"type"</literal>
                 <glossterm>required</glossterm>, string</para>
         </listitem>
         <listitem>
@@ -29,7 +29,7 @@
                 <glossterm>optional</glossterm>, number</para>
         </listitem>
         <listitem>
-            <para><literal>"action"</literal>
+            <para><literal>"hint"</literal>
                 <glossterm>optional</glossterm>, string</para>
         </listitem>
         <listitem>

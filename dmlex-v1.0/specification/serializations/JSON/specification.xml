@@ -8,6 +8,11 @@
                          ]>
 <section id="json" role="informative">
   <title>DMLex JSON serialization</title>
+  <para>
+    This section specifies a serialization of the DMLex data model in JSON
+    (JavaScript Object Notation)
+    [<link linkend="bib_json">JSON</link>].
+  </para>
 
   <section>
     <title>Design principles</title>

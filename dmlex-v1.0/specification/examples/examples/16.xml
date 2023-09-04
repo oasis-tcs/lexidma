@@ -15,7 +15,7 @@
     <example>
         <title>Pseudocode</title>
         <programlisting>
-- lexicographicResource (language: en)
+- lexicographicResource (uri: http://example.com, langCode: en)
     - entry (id: colour, headword: colour)
         - sense (id: colour-1)
             - definition (text: red, blue, yellow etc.)
@@ -35,15 +35,15 @@
     - relation (type: subsensing)
         - member (memberID: colour-1, role: super)
         - member (memberID: colour-3, role: sub)
-    - relationType (type: subsensing, scope: sameEntry)
-        - memberType (role: super, memberType: sense, min: 1, max: 1 action: none)
-        - memberRole (role: sub, memberType: sense, min: 1, max: 1, action: embed)
+    - relationType (type: subsensing, scopeRestriction: sameEntry)
+        - memberType (role: super, type: sense, min: 1, max: 1, hint: none)
+        - memberRole (role: sub, type: sense, min: 1, max: 1, hint: embed)
 </programlisting>
     </example>
     <example>
         <title>XML</title>
         <programlisting>
-&lt;lexicographicResource language="en"&gt;
+&lt;lexicographicResource uri="http://example.com" langCode="en"&gt;
     &lt;entry id="colour"&gt;
         &lt;headword&gt;colour&lt;/headword&gt;
         &lt;sense id="colour-1"&gt;
@@ -71,9 +71,9 @@
         &lt;member memberID="colour-1" role="super"/&gt;
         &lt;member memberID="colour-3" role="sub"/&gt;
     &lt;/relation&gt;
-    &lt;relationType type="subsensing" scope="sameEntry"&gt;
-        &lt;memberType role="super" memberType="sense" min="1" max="1" action="none"/&gt;
-        &lt;memberType role="subs" memberType="sense" min="1" max="1" action="embed"/&gt;
+    &lt;relationType type="subsensing" scopeRestriction="sameEntry"&gt;
+        &lt;memberType role="super" type="sense" min="1" max="1" hint="none"/&gt;
+        &lt;memberType role="subs" type="sense" min="1" max="1" hint="embed"/&gt;
     &lt;/relationType&gt;
 &lt;/lexicographicResource&gt;
 </programlisting>
@@ -82,7 +82,8 @@
         <title>JSON</title>
         <programlisting>
 {
-    "language": "en",
+    "uri": "http://example.com",
+    "langCode": "en",
     "entries": [{
         "id": "colour",
         "headword": "colour",
@@ -119,19 +120,19 @@
     }],
     "relationTypes": [{
         "type": "subsensing",
-        "scope": "sameEntry",
+        "scopeRestriction": "sameEntry",
         "memberTypes": [{
             "role": "super",
-            "memberType": "sense",
+            "type": "sense",
             "min": 1,
             "max": 1,
-            "action": "none"
+            "hint": "none"
         }, {
             "role": "sub",
-            "memberType": "sense",
+            "type": "sense",
             "min": 1,
             "max": 1,
-            "action": "embed"
+            "hint": "embed"
         }]
     }]
 }

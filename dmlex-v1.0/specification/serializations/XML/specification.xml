@@ -8,7 +8,12 @@
                          ]>
 <section id="xml" role="normative">
   <title>DMLex XML serialization</title>
-
+  <para>
+    This section specifies a serialization of the DMLex data model in XML
+    (Extensible Markup Language)
+    [<link linkend="bib_XML">XML</link>].
+  </para>
+  
   <section id="XMLDesignPrinciples" role="informative">
     <title>Design Principles </title>
     <para>The XML serialization of DMLex shown in this document follows these principles:</para>

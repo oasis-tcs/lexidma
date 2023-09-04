@@ -16,14 +16,14 @@
         <programlisting>
 - entry (id: fómhar-n, headword: fómhar)
     - sense (id: fómhar-n-1)
-        - headwordTranslation (language: en, text: autumn)
-        - headwordTranslation (language: en, text: fall)
-        - headwordTranslation (language: de, text: Herbst)
-        - headwordTranslation (language: cs, text: podzim)
+        - headwordTranslation (langCode: en, text: autumn)
+        - headwordTranslation (langCode: en, text: fall)
+        - headwordTranslation (langCode: de, text: Herbst)
+        - headwordTranslation (langCode: cs, text: podzim)
     - sense (id: fómhar-n-2)
-        - headwordTranslation (language: en, text: harvest)
-        - headwordTranslation (language: de, text: Ernte)
-        - headwordTranslation (language: cs, text: sklizeň)
+        - headwordTranslation (langCode: en, text: harvest)
+        - headwordTranslation (langCode: de, text: Ernte)
+        - headwordTranslation (langCode: cs, text: sklizeň)
 </programlisting>
     </example>
     <example>
@@ -32,27 +32,27 @@
 &lt;entry id="fómhar-n"&gt;
     &lt;headword&gt;fómhar&lt;/headword&gt;
     &lt;sense id="fómhar-n-1"&gt;
-        &lt;headwordTranslation language="en"&gt;
+        &lt;headwordTranslation langCode="en"&gt;
             &lt;text&gt;autumn&lt;/text&gt;
         &lt;/headwordTranslation&gt;
-        &lt;headwordTranslation language="en"&gt;
+        &lt;headwordTranslation langCode="en"&gt;
             &lt;text&gt;fall&lt;/text&gt;
         &lt;/headwordTranslation&gt;
-        &lt;headwordTranslation language="de"&gt;
+        &lt;headwordTranslation langCode="de"&gt;
             &lt;text&gt;Herbst&lt;/text&gt;
         &lt;/headwordTranslation&gt;
-        &lt;headwordTranslation language="cs"&gt;
+        &lt;headwordTranslation langCode="cs"&gt;
             &lt;text&gt;podzim&lt;/text&gt;
         &lt;/headwordTranslation&gt;
     &lt;/sense&gt;
     &lt;sense id="fómhar-n-2"&gt;
-        &lt;headwordTranslation language="en"&gt;
+        &lt;headwordTranslation langCode="en"&gt;
             &lt;text&gt;harvest&lt;/text&gt;
         &lt;/headwordTranslation&gt;
-        &lt;headwordTranslation language="de"&gt;
+        &lt;headwordTranslation langCode="de"&gt;
             &lt;text&gt;Ernte&lt;/text&gt;
         &lt;/headwordTranslation&gt;
-        &lt;headwordTranslation language="cs"&gt;
+        &lt;headwordTranslation langCode="cs"&gt;
             &lt;text&gt;sklizeň&lt;/text&gt;
         &lt;/headwordTranslation&gt;
     &lt;/sense&gt;
@@ -68,28 +68,28 @@
     "senses": [{
         "id": "fómhar-n-1",
         "headwordTranslations": [{
-            "language": "en",
+            "langCode": "en",
             "text": "autumn"
         }, {
-            "language": "en",
+            "langCode": "en",
             "text": "fall"
         }, {
-            "language": "de",
+            "langCode": "de",
             "text": "Herbst"
         }, {
-            "language": "cs",
+            "langCode": "cs",
             "text": "podzim"
         }]
     }, {
         "id": "fómhar-n-2",
         "headwordTranslations": [{
-            "language": "en",
+            "langCode": "en",
             "text": "harvest"
         }, {
-            "language": "de",
+            "langCode": "de",
             "text": "Ernte"
         }, {
-            "language": "cs",
+            "langCode": "cs",
             "text": "sklizeň"
         }]
     },]

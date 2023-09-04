@@ -16,12 +16,12 @@
     - sense ...
     - etymology
         - etymon
-            - etymonUnit (language: enm, text: catte)
+            - etymonUnit (langCode: enm, text: catte)
         - etymon
-            - etymonUnit (language: ang, text: catt, translation: male cat)
-            - etymonUnit (language: ang, text: catte, translation: female cat)
+            - etymonUnit (langCode: ang, text: catt, translation: male cat)
+            - etymonUnit (langCode: ang, text: catte, translation: female cat)
         - etymon
-            - etymonUnit (language: gem-x-proto, text: kattuz, reconstructed: true)
+            - etymonUnit (langCode: gem-x-proto, text: kattuz, reconstructed: true)
 </programlisting>
     </example>
     <example>
@@ -32,22 +32,22 @@
     &lt;sense&gt;...&lt;/sense>
     &lt;etymology>
         &lt;etymon>
-            &lt;etymonUnit language="enm">
+            &lt;etymonUnit langCode="enm">
                 &lt;text>catte&lt;/text>
             &lt;/etymonUnit>
         &lt;/etymon>
         &lt;etymon>
-            &lt;etymonUnit language="ang">
+            &lt;etymonUnit langCode="ang">
                 &lt;text>catt&lt;/text>
                 &lt;translation>male cat&lt;/translation>
             &lt;/etymonUnit>
-            &lt;etymonUnit language="ang">
+            &lt;etymonUnit langCode="ang">
                 &lt;text>catte&lt;/text>
                 &lt;translation>female cat&lt;/translation>
             &lt;/etymonUnit>
         &lt;/etymon>
         &lt;etymon>
-            &lt;etymonUnit language="gem-x-proto" reconstructed="true">
+            &lt;etymonUnit langCode="gem-x-proto" reconstructed="true">
                 &lt;text>kattuz&lt;/text>
             &lt;/etymonUnit>
         &lt;/etymon>
@@ -65,16 +65,16 @@
   "etymology": {
     "etymons" [{
       "etymonUnits": [
-        {"language": "enm", "text": "catte"}
+        {"langCode": "enm", "text": "catte"}
       ]
     }, {
       "etymonUnits": [
-        {"language": "ang", "text": "catt", "translation": "male cat"},
-        {"language": "ang", "text": "catte", "translation": "female cat"}
+        {"langCode": "ang", "text": "catt", "translation": "male cat"},
+        {"langCode": "ang", "text": "catte", "translation": "female cat"}
       ]
     }, {
       "etymonUnits": [
-        {"language": "gem-x-proto", "text": "kattuz", "reconstructed": true}
+        {"langCode": "gem-x-proto", "text": "kattuz", "reconstructed": true}
       ]
     }]
   }
