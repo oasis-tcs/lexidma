@@ -65,6 +65,23 @@
         <para>Tables and columns shown in grey are tables are defined in another module (or in the core)
         and are shown only for information.</para>
       </listitem>
+      <listitem>
+        <para>The dashed outline on the table <literal>lexicographicResources</literal>
+          indicates that the table is optional. If a database contains only one lexicographic resource,
+          then this table, as well as any foreign-key columns in other tables that reference it,
+          can be left unimplemented.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Any relationships indicated by a dashed line and/or
+          labelled with the lower-case abbreviation "fk" (as opposed to upper case "FK")
+          are optional: they can be implemented as constraints (if the implementor
+          wishes to have a high degree of referential integrity) or left unimplemented 
+          (for example if referential integrity cannot be assumed when
+          importing data from an untrusted tree-structured serialization of DMLex).
+        </para>
+      </listitem>
     </itemizedlist>
     <section>
       <title>Database diagram: DMLex Core</title>

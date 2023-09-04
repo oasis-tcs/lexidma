@@ -391,6 +391,34 @@
           are modelled as non-tree relations in order in order to avoid recusion in the tree
           structures and to minimize the number of object types in the data model.</para>
       </section>
+      <section>
+        <title>Unique identifiers</title>
+        <para>
+          Some object types defined in DMLex have a property called <literal>id</literal>
+          whose type is given as unique identifier. Unique identifiers in DMLex serve two purposes:
+        </para>
+        <itemizedlist>
+          <listitem>
+            <para>
+              To enable objects to participate in relational structures.
+              Relational structures (as opposed to tree structures)
+              are modelled in DMLex as tuples (triples, ...) of unique identifiers.
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              To enable addressing and accessing individual objects,
+              for example indvidual senses or individual exampe sentences,
+              outside the context of the entries they are in.
+            </para>
+          </listitem>
+        </itemizedlist>
+        <para>
+          DMLex does not prescribe a specific data type for unique identifiers.
+          Implementers can choose to implement them as numeric or alphanumeric,
+          as human-readably meanigful or arbitrary.
+        </para>
+      </section>
     </section>
   </section>
 
@@ -496,6 +524,13 @@
               >
               http://standards.iso.org/ittf/PubliclyAvailableStandards/c038615_ISO_IEC_19757-4_2006(E).zip</ulink>
           </citetitle> ISO, June 1, 2006.</bibliomixed>
+        <bibliomixed id="bib_nvh"><abbrev>NVH</abbrev>
+          <title>Name-Value Hierarchy</title>, <citetitle>
+              <ulink
+                url="https://www.namevaluehierarchy.org/"
+                >
+                https://www.namevaluehierarchy.org/</ulink>
+            </citetitle>.</bibliomixed>
         <bibliomixed id="rfc3987"><abbrev>RFC 3987</abbrev> M. Duerst and M. Suignard,
             <title>Internationalized Resource Identifiers (IRIs)</title>, <citetitle>
             <ulink url="https://www.ietf.org/rfc/rfc3987.txt"

@@ -10,6 +10,13 @@
     <para>Implements the <olink targetptr="etymology_etymology">etymology</olink> object type from the Etymology Module.</para>
 
     <itemizedlist>
+        <title>Attributes</title>
+        <listitem>
+            <para><literal>@id</literal> <glossterm>optional</glossterm></para>
+        </listitem>
+    </itemizedlist>
+
+    <itemizedlist>
         <title>Child elements</title>
         <listitem>
             <para><literal>&lt;description&gt;</literal> <glossterm>optional</glossterm> (zero or one)</para>

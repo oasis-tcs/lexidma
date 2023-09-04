@@ -25,6 +25,14 @@
       <para><literal>role</literal>
         <glossterm>required</glossterm> (exactly one). String. If the value is empty, then members
         having this role do not need to have a <code>role</code> property.</para>
+      <formalpara>
+        <title>Uniqueness constraint</title>
+        <para>
+          No two instances of <literal>memberTYpe</literal>
+          in the same <literal>relationType</literal>
+          can have the same <literal>role</literal>.
+        </para>
+      </formalpara> 
     </listitem>
     <listitem>
       <para><literal>description</literal>

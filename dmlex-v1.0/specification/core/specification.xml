@@ -41,6 +41,12 @@
 			<para><literal><olink targetptr="core_example">example</olink></literal></para>
     </listitem>
   </itemizedlist>
+  <para>
+    When exchanging data encoded in a DMLex serialization
+    which has the concept of a "root" or top-level object, such as XML and JSON,
+    then the object types <literal>lexicographicResource</literal> and <literal>entry</literal>
+    can serve as such roots.
+  </para>
   <xi:include href="objectTypes/lexicographicResource.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objectTypes/entry.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objectTypes/partOfSpeech.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>

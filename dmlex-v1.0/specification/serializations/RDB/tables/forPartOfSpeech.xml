@@ -31,8 +31,7 @@
             </para>
         </listitem>
         <listitem>
-            <para><literal>partOfSpeechTag: nvarchar</literal>, foreign key,
-                references column <literal>tag</literal>
+            <para><literal>partOfSpeechTag: nvarchar</literal>, optionally a foreign key referencing column <literal>tag</literal>
                 of table <literal><olink targetptr="rdb_partOfSpeechTags">partOfSpeechTags</olink></literal>
             </para>
         </listitem>

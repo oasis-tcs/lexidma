@@ -13,7 +13,7 @@
         <title>Members</title>
         <listitem>
             <para><literal>"id"</literal>
-                <glossterm>required</glossterm>, string</para>
+                <glossterm>optional</glossterm>, string</para>
         </listitem>
         <listitem>
             <para><literal>"headword"</literal>

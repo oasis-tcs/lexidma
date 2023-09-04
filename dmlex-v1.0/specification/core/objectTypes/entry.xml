@@ -27,6 +27,15 @@
         <glossterm>optional</glossterm> (zero or one). An unique identifier of the entry. Entries
         which have identifiers are capable of being involved in relations created with the <olink
           targetptr="linking">Linking module</olink>.</para>
+      <formalpara>
+        <title>Uniqueness constraint</title>
+        <para>
+          No two instances of <literal>entry</literal>
+          in the same <literal>lexicographicResource</literal>
+          (or in the same collection of lexicographic resources if cross-resource linking is required)
+          can have the same <literal>id</literal>.
+        </para>
+      </formalpara> 
     </listitem>
     <listitem>
       <para><literal>headword</literal>

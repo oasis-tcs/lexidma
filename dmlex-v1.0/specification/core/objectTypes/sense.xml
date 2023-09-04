@@ -27,6 +27,15 @@
         <glossterm>optional</glossterm> (zero or one). A unique identifier of the sense. Senses
         which have identifiers can be involved in relations created with the <olink
           targetptr="linking">Linking module</olink>.</para>
+      <formalpara>
+        <title>Uniqueness constraint</title>
+        <para>
+          No two instances of <literal>sense</literal>
+          in the same <literal>lexicographicResource</literal>
+          (or in the same collection of lexicographic resources if cross-resource linking is required)
+          can have the same <literal>id</literal>.
+        </para>
+      </formalpara> 
     </listitem>
     <listitem>
       <para><literal>listingOrder</literal>

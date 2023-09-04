@@ -13,6 +13,10 @@
     <itemizedlist>
         <title>Members</title>
         <listitem>
+            <para><literal>"id"</literal>
+                <glossterm>optional</glossterm>, string</para>
+        </listitem>
+        <listitem>
             <para><literal>"langCode"</literal>
                 <glossterm>optional</glossterm> if the <literal>lexicographicResource</literal>
                 contains exactly one <literal>translationLanguage</literal>,

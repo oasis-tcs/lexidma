@@ -24,6 +24,14 @@
     <listitem>
       <para><literal>type</literal>
         <glossterm>required</glossterm> (exactly one). Non-empty string.</para>
+      <formalpara>
+        <title>Uniqueness constraint</title>
+        <para>
+          No two instances of <literal>relationType</literal>
+          in the same <literal>lexicographicResource</literal>
+          can have the same <literal>type</literal>.
+        </para>
+      </formalpara> 
     </listitem>
     <listitem>
       <para><literal>description</literal>
