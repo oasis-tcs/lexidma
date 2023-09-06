@@ -48,7 +48,7 @@
     <example>
         <title>RDF</title>
         <programlisting>
-&lt;lexicographicResource&gt; dmlex:etymonLanguage ... .
+&lt;#lexicographicResource&gt; dmlex:etymonLanguage ... .
         </programlisting>
     </example>
   

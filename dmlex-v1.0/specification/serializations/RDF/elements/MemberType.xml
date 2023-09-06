@@ -3,7 +3,7 @@
                          "http://www.docbook.org/xml/4.5/docbookx.dtd" [
                          <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
                          %xinclude;
-                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" > 
                          ]>
 <section id="rdf_MemberType">
     <title>RDF element: <literal>dmlex:MemberType</literal></title>
@@ -15,6 +15,9 @@
         <title>Properties</title>
     <listitem>
         <para><literal>dmlex:description</literal> OPTIONAL (at most 1) of type <literal>http://www.w3.org/2000/01/rdf-schema#Literal</literal></para>
+    </listitem>
+    <listitem>
+        <para><literal>dmlex:type</literal> OPTIONAL of type <literal>http://www.w3.org/2001/XMLSchema#string</literal></para>
     </listitem>
     <listitem>
         <para><literal>dmlex:role</literal> REQUIRED (exactly 1) of type <literal>http://www.w3.org/2001/XMLSchema#string</literal></para>

@@ -77,7 +77,7 @@
   a dmlex:SourceIdentityTag ;
   dmlex:tag "..." ;
   dmlex:description "..." ;
-  dmlex:sameAs ... ] .
+  owl:sameAs ... ] .
     </programlisting>
   </example>
   

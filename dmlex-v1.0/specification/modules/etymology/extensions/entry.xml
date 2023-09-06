@@ -54,7 +54,7 @@
   <example>
       <title>RDF</title>
       <programlisting>
-&lt;Entry&gt; dmlex:etymology ... .
+&lt;#entry&gt; dmlex:etymology ... .
       </programlisting>
   </example>
   

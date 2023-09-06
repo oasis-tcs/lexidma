@@ -97,7 +97,7 @@
     <example>
         <title>RDF</title>
         <programlisting>
-&lt;etymon&gt; 
+&lt;#etymon&gt; 
   dmlex:when "..." ;
   dmlex:type "..." ;
   dmlex:note "..." ;

@@ -74,6 +74,7 @@
       <title>RDF</title>
       <programlisting>
 &lt;#relation&gt; dmlex:member [
+  a dmlex:Member ;
   dmlex:memberID "..." ;
   dmlex:role "..." ;
   dmlex:listingOrder 0 ;

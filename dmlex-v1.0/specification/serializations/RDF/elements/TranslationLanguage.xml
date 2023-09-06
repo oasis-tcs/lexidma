@@ -3,7 +3,7 @@
                          "http://www.docbook.org/xml/4.5/docbookx.dtd" [
                          <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
                          %xinclude;
-                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" > 
                          ]>
 <section id="rdf_TranslationLanguage">
     <title>RDF element: <literal>dmlex:TranslationLanguage</literal></title>

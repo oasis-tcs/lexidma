@@ -76,7 +76,7 @@
   a dmlex:DefinitionTypeTag ;
   dmlex:tag "..." ;
   dmlex:description "..." ;
-  dmlex:sameAs ... ] .
+  owl:sameAs ... ] .
     </programlisting>
   </example>
   
