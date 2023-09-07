@@ -736,6 +736,10 @@
             <ulink url="https://www.w3.org/TR/xmlschema-1/"
               >https://www.w3.org/TR/xmlschema-1/</ulink>
           </citetitle> (Second Edition) W3C Recommendation 28 October 2004.</bibliomixed>
+        <bibliomixed id="DublinCore"><abbrev>DCMI Metadata Terms</abbrev> DCMI Usage Board, <title>DCMI Metadata Terms</title>, <citetitle>
+            <ulink url="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/"
+              >https://www.dublincore.org/specifications/dublin-core/dcmi-terms/</ulink>
+          </citetitle> Date issued: 2020-01-20.</bibliomixed>
       </bibliography>
     </section>
     <section role="informative" id="informativeReferences">

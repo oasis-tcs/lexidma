@@ -60,11 +60,9 @@
         for the existence of lexicographic resources which are not yet complete. </para>
     </listitem>
     <listitem>
-      <para>The <code>lexicographicResource</code> data type does not contain properties for
-        detailed metadata about the lexicographic resource, such as author, editor, publisher,
-        copyright status or publication year. Describing these properties of lexicographic resources
-        is outside the scope of DMLex. DMLex is a formalism for modelling the internal structure of
-        a lexicographic resource, not its metadata.</para>
+      <para>The <code>lexicographicResource</code> data type does not prescribe properties for
+	  detailed metadata about the lexicographic resource, implementers are advised to refer to
+	  the properties in the <link linkend="DublinCore">Dublin Core <code>elements</code> namespace</link> as for basic metadata. </para>
     </listitem>
   </itemizedlist>
 
