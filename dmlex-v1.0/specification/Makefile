@@ -13,7 +13,7 @@ dmlex-v1.0-wd01.fo: dmlex-v1.0-wd01.xml
 dmlex-v1.0-wd01.html: dmlex-v1.0-wd01.xml
 	xsltproc --xinclude -o $@ stylesheets/oasis-specification-html.xsl $<
 
-dmlex-v1.0-wd01.xml: dmlex.xml $(SOURCE_XML)
+dmlex-v1.0-wd01.xml: dmlex.xml docbook/dbgenent.mod $(SOURCE_XML)
 	./merge.sh
 
 Makefile.dep: dmlex.xml $(SOURCE_XML) makedep.sh
