@@ -216,10 +216,10 @@
           <glossterm>required</glossterm>, <glossterm>shall</glossterm>, <glossterm>shall
           not</glossterm>, <glossterm>should</glossterm>, <glossterm>should not</glossterm>,
           <glossterm>recommended</glossterm>, <glossterm>may</glossterm>, and
-          <glossterm>optional</glossterm> in this document are to be interpreted as described in
+          <glossterm>optional</glossterm>  in this document are to be interpreted as described in
           <ulink url="https://tools.ietf.org/html/bcp14">BCP 14</ulink> [<link linkend="rfc2119"
           >RFC2119</link>] and [<link linkend="rfc8174">RFC8174</link>] if, and only if, they appear
-        in all capitals, as shown here.</para>
+          in all capitals, as shown here. The term <glossterm>UNIQUE</glossterm> shall be interpreted as given in the section on <olink targetptr="uniqueids">Unique identifiers</olink>.</para>
     </legalnotice>
     <legalnotice role="citation">
       <title>Citation format</title>
@@ -394,11 +394,12 @@
           are modelled as non-tree relations in order in order to avoid recusion in the tree
           structures and to minimize the number of object types in the data model.</para>
       </section>
-      <section>
+      <section id="uniqueids">
         <title>Unique identifiers</title>
         <para>
-          Some object types defined in DMLex have a property called <literal>id</literal>
-          whose type is given as unique identifier. Unique identifiers in DMLex serve two purposes:
+          Some object types defined in DMLex have a property or a combination of properties mandated to be unique.
+          Designating a property as unique means that its value must be unique within the scope of its parent object type.
+          Designating a combination of properties as unique means that the ordered composition of its values must be unique within the scope of their parent object type. Such unique properties in DMLex serve two purposes:
         </para>
         <itemizedlist>
           <listitem>
@@ -417,10 +418,8 @@
           </listitem>
         </itemizedlist>
         <para>
-          DMLex does not prescribe a specific data type for unique identifiers.
-          Implementers can choose to implement them as numeric or alphanumeric,
-          as human-readably meanigful or arbitrary.
-        </para>
+          Serializations of DMLex may choose to assign arbitrary unique identifiers (e.g. a random interger or a hash of the property value) to each property or combination of properties.
+		</para>
       </section>
     </section>
   <section id="defintions">

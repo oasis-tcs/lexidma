@@ -18,10 +18,7 @@
 
 	<itemizedlist>
         <title>Child nodes</title>
-	    <listitem>
-	        <para><literal>id</literal> <glossterm>optional</glossterm> (zero or one)</para>
-	    </listitem>
-	    <listitem>
+        <listitem>
             <para><literal><olink targetptr="nvh_etymon">etymon</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
         </listitem>
     </itemizedlist>

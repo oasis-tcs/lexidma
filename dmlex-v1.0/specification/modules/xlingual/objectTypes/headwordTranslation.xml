@@ -23,25 +23,13 @@
   <itemizedlist>
     <title>Properties</title>
     <listitem>
-      <para><literal>id</literal>
-        <glossterm>optional</glossterm> (zero or one). A unique identifier.</para>
-      <formalpara>
-        <title>Uniqueness constraint</title>
-        <para>
-          No two instances of <literal>exampleTranslation</literal>
-          in the same <literal>lexicographicResource</literal>
-          can have the same <literal>id</literal>.
-        </para>
-      </formalpara> 
-    </listitem>
-    <listitem>
       <para><literal>text</literal>
-        <glossterm>required</glossterm> (exactly one). Non-empty string.</para>
+        <glossterm>required</glossterm> (exactly one) and <glossterm>unique</glossterm> (in combination with <literal>langCode</literal> if present). Non-empty string.</para>
     </listitem>
     <listitem>
       <para><literal>langCode</literal>
         <glossterm>optional</glossterm> (zero or one) if only one translation language exists in the
-        lexicographic resource, <glossterm>required</glossterm> (exactly one) otherwise. IETF
+        lexicographic resource, <glossterm>required</glossterm> (exactly one) and <glossterm>unique</glossterm> (in combination with <literal>text</literal>) otherwise. IETF
         language tag. Indicates the language of this translation. The <code><olink
             targetptr="xlingual_translation">translationLanguage</olink></code> datatype can be used
         to explain the meaning of the language codes that appear here and/or to constrain which

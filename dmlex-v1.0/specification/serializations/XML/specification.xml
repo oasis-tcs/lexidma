@@ -13,12 +13,12 @@
     (Extensible Markup Language)
     [<link linkend="bib_XML">XML</link>].
   </para>
+
   <para>
     For data exchange purposes,
-    a valid DMLex XML document is one where either <literal>lexicographicResource</literal> or <literal>entry</literal>
-    is the document element.
+    a valid DMLex XML document is one where either a <literal>lexicographicResource</literal> or an <literal>entry</literal>
+    is the document element or one with an arbitrary document element other than <literal>lexicographicResource</literal> or <literal>entry</literal> containing a concatenation of one (and only one) of these two element types.
   </para>
-
 
   <section id="XMLDesignPrinciples" role="informative">
     <title>Design Principles </title>

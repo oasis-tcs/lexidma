@@ -22,20 +22,8 @@
     <itemizedlist>
         <title>Properties</title>
         <listitem>
-            <para><literal>id</literal>
-                <glossterm>optional</glossterm> (zero or one). A unique identifier.</para>
-            <formalpara>
-                <title>Uniqueness constraint</title>
-                <para>
-                    No two instances of <literal>etymon</literal>
-                    in the same <literal>lexicographicResource</literal>
-                    can have the same <literal>id</literal>.
-                </para>
-            </formalpara> 
-        </listitem>
-        <listitem>
             <para><literal>when</literal>
-                <glossterm>optional</glossterm> (zero or one). Indicates the time period during which this etymological origin is valid.
+                <glossterm>optional</glossterm> (zero or one) and <glossterm>unique</glossterm>. Indicates the time period during which this etymological origin is valid.
                 The value is an open-text indication of the time period, in the language of the dictionary.
             </para>
         </listitem>

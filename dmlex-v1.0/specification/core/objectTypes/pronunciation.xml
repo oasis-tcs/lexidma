@@ -26,27 +26,15 @@
   <itemizedlist>
     <title>Properties</title>
     <listitem>
-      <para><literal>id</literal>
-        <glossterm>optional</glossterm> (zero or one). A unique identifier.</para>
-      <formalpara>
-        <title>Uniqueness constraint</title>
-        <para>
-          No two instances of <literal>pronunciation</literal>
-          in the same <literal>lexicographicResource</literal>
-          can have the same <literal>id</literal>.
-        </para>
-      </formalpara> 
-    </listitem>
-    <listitem>
       <para>At least one of:</para>
       <itemizedlist>
         <listitem>
           <para><literal>soundFile</literal>
-            <glossterm>optional</glossterm> (zero or one). A pointer to a file, such as a filename or a URI, containing a sound recording of the pronunciation</para>
+            <glossterm>optional</glossterm> (zero or one) and <glossterm>unique</glossterm>. A pointer to a file, such as a filename or a URI, containing a sound recording of the pronunciation</para>
         </listitem>
         <listitem>
           <para><literal><olink targetptr="core_transcription">transcription</olink></literal>
-            <glossterm>optional</glossterm> (zero or more).</para>
+            <glossterm>optional</glossterm> (zero or more) and <glossterm>unique</glossterm>.</para>
         </listitem>
       </itemizedlist>
     </listitem>

@@ -25,7 +25,8 @@
             <para><literal>when: nvarchar</literal></para>
         </listitem>
         <listitem>
-            <para><literal>type: nvarchar</literal>, optionally a foreign key referencing column <literal>type</literal>
+            <para><literal>type: nvarchar</literal>, foreign key,
+                references column <literal>type</literal>
                 of table <literal><olink targetptr="rdb_etymonTypes">etymonTypes</olink></literal>
             </para>
         </listitem>

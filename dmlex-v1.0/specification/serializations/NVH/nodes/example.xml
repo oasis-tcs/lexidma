@@ -19,9 +19,6 @@
     <itemizedlist>
         <title>Child nodes</title>
         <listitem>
-            <para><literal>id</literal> <glossterm>optional</glossterm> (zero or one)</para>
-        </listitem>
-        <listitem>
             <para><literal>sourceIdentity</literal> <glossterm>optional</glossterm> (zero or one)</para>
         </listitem>
         <listitem>

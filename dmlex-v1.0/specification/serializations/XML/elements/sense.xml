@@ -9,14 +9,7 @@
     <title>XML element: <literal>&lt;sense&gt;</literal></title>
     <para>Implements the <olink targetptr="core_sense">sense</olink> object type.</para>
 
-    <itemizedlist>
-        <title>Attributes</title>
-        <listitem>
-            <para><literal>@id</literal> <glossterm>optional</glossterm></para>
-        </listitem>
-    </itemizedlist>
-    
-    <itemizedlist>
+   <itemizedlist>
         <title>Child elements</title>
         <listitem>
             <para><literal>&lt;indicator&gt;</literal> <glossterm>optional</glossterm> (zero or one)</para>

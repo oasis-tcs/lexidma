@@ -43,7 +43,7 @@
   </itemizedlist>
   <para>
     When exchanging data encoded in a DMLex serialization
-    which has the concept of a "root" or top-level object, such as XML and JSON,
+    which has the concept of a "root" or top-level object, such as XML, JSON or NVH,
     then the object types <literal>lexicographicResource</literal> and <literal>entry</literal>
     can serve as such roots.
   </para>

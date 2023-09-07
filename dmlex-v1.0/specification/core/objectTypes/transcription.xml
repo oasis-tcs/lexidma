@@ -23,20 +23,8 @@
   <itemizedlist>
     <title>Properties</title>
     <listitem>
-      <para><literal>id</literal>
-        <glossterm>optional</glossterm> (zero or one). A unique identifier.</para>
-      <formalpara>
-        <title>Uniqueness constraint</title>
-        <para>
-          No two instances of <literal>transcription</literal>
-          in the same <literal>lexicographicResource</literal>
-          can have the same <literal>id</literal>.
-        </para>
-      </formalpara> 
-    </listitem>
-    <listitem>
       <para><literal>text</literal>
-        <glossterm>required</glossterm> (exactly one). Non-empty string. The actual
+        <glossterm>required</glossterm> (exactly one) and <glossterm>unique</glossterm>. Non-empty string. The actual
         transcription.</para>
     </listitem>
     <listitem>

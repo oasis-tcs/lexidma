@@ -15,9 +15,9 @@
   </para>
   <para>
     For data exchange purposes,
-    a valid DMLex JSON object where either a <literal>lexicographicResource</literal> or a <literal>entry</literal>.
+    a valid DMLex JSON file contains either a <literal>lexicographicResource</literal> object or an <literal>entry</literal> object or a concatenation of one (and only one) of these two object types in the JSON Lines format (i.e. separated by a system-specific newline delimiter).  
   </para>
-  
+
 
   <section>
     <title>Design principles</title>
