@@ -23,16 +23,8 @@
     <title>Properties</title>
     <listitem>
       <para><literal>role</literal>
-        <glossterm>required</glossterm> (exactly one). String. If the value is empty, then members
+        <glossterm>required</glossterm> (exactly one) and <glossterm>unique</glossterm>. String. If the value is empty, then members
         having this role do not need to have a <code>role</code> property.</para>
-      <formalpara>
-        <title>Uniqueness constraint</title>
-        <para>
-          No two instances of <literal>memberTYpe</literal>
-          in the same <literal>relationType</literal>
-          can have the same <literal>role</literal>.
-        </para>
-      </formalpara> 
     </listitem>
     <listitem>
       <para><literal>description</literal>
@@ -41,7 +33,7 @@
     </listitem>
     <listitem>
       <para><literal>type</literal>
-        <glossterm>required</glossterm> (exactly one). Non-empty string. A restriction on the types
+        <glossterm>required</glossterm> (exactly one) and <glossterm>unique</glossterm>. Non-empty string. A restriction on the types
         of objects that can have this role. The possible values are:</para>
       <itemizedlist>
         <listitem>

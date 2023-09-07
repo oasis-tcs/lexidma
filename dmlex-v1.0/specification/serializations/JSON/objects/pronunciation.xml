@@ -12,10 +12,6 @@
     <itemizedlist>
         <title>Members</title>
         <listitem>
-            <para><literal>"id"</literal>
-                <glossterm>optional</glossterm>, string</para>
-        </listitem>
-        <listitem>
             <para><literal>"soundFile"</literal>
                 <glossterm>optional</glossterm> if <literal>"transcriptions"</literal> is present and non-empty,
                 <glossterm>required</glossterm> otherwise; string</para>

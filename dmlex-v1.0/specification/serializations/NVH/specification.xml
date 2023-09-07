@@ -15,10 +15,9 @@
   </para>
   <para>
     For data exchange purposes,
-    a valid DMLex NVH tree is one where either <literal>lexicographicResource</literal> or <literal>entry</literal>
-    is the top-level node.
+    a valid DMLex NVH file is one where either a <literal>lexicographicResource</literal> or an <literal>entry</literal>
+    is the top-level node or the file contains a concatenation of one (and only one) of these two nodes separated by a system-specific newline delimiter. 
   </para>
-  
 
   <section id="NVHDesignPrinciples" role="informative">
     <title>Design Principles </title>
