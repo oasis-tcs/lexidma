@@ -142,7 +142,7 @@
   dmlex:forCollocates "..." ;
   dmlex:forLanguage "..." .
   dmlex:forPartOfSpeech "..." ;
-  dmlex:sameAs ... ] .
+  owl:sameAs ... ] .
     </programlisting>
   </example>
   

@@ -75,7 +75,8 @@
   <example>
     <title>RDF</title>
     <programlisting>
-&lt;entry&gt; dmlex:etymology [
+&lt;#entry&gt; dmlex:etymology [
+  a dmlex:Etymology ;
   dmlex:description "..." ;
   dmlex:etymon ... ;
   dmlex:listingOrder: ...] .

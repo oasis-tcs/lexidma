@@ -105,7 +105,7 @@
   dmlex:description "..." ;
   dmlex:forHeadwords "..." ;
   dmlex:forTranslations "..." ;
-  dmlex:forLanguage "..." .
+  dmlex:forLanguage "..." ] .
     </programlisting>
   </example>
   

@@ -97,7 +97,7 @@
   dmlex:tag "..." ;
   dmlex:listingOrder 1 ;
   dmlex:label ... ;
-  dmlex:pronunciation ... .
+  dmlex:pronunciation ... ] .
     </programlisting>
   </example>
   

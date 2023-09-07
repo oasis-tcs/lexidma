@@ -126,9 +126,9 @@
   dmlex:description "..." ;
   dmlex:forHeadwods "..." ;
   dmlex:forTranslations "..." ;
-  dmlex:forLanguage "..." .
+  dmlex:forLanguage "..." ;
   dmlex:forPartOfSpeech "..." ;
-  dmlex:sameAs ... ] .
+  owl:sameAs ... ] .
     </programlisting>
   </example>
   

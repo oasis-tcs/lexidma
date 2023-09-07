@@ -75,6 +75,7 @@
       <title>RDF</title>
       <programlisting>
 &lt;#lexicographicResource&gt; dmlex:relation [
+  a dmlex:Relation ;
   dmlex:type "..." ;
   dmlex:description "..." ;
   dmlex:member ... ] .

@@ -128,13 +128,14 @@
       <title>RDF</title>
       <programlisting>
 &lt;#relationType&gt; dmlex:type [
+  a dmlex:MemberType ;
   dmlex:role "..." ;
   dmlex:description "..." ;
   dmlex:memberType "..." ;
   dmlex:min 0 ;
   dmlex:max 0 ;
   dmlex:hint "..." ;
-  dmlex:sameAs ... ] .
+  owl:sameAs ... ] .
       </programlisting>
   </example>
   <example>

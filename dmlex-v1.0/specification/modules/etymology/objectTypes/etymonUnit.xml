@@ -93,7 +93,7 @@
     <example>
         <title>RDF</title>
         <programlisting>
-&lt;etymonUnit&gt; 
+&lt;#etymonUnit&gt; 
   dmlex:langCode "..." ;
   dmlex:text "..." ;
   dmlex:reconstructed true ;

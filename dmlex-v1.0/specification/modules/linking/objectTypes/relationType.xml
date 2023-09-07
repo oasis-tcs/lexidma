@@ -96,10 +96,11 @@
     <title>RDF</title>
     <programlisting>
 &lt;#lexicographicResource&gt; dmlex:relationType [
+  a dmlex:RelationType ;
   dmlex:type "..." ;
   dmlex:scopeRestriction "..." ;
   dmlex:memberType ... ;
-  dmlex:sameAs ... ] .
+  owl:sameAs ... ] .
       </programlisting>
   </example>
   <example>

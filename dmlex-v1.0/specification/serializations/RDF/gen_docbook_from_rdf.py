@@ -1,6 +1,5 @@
 import rdflib
-from glob import glob
-from rdflib.namespace import RDF, RDFS, OWL, XSD, Namespace
+from rdflib.namespace import RDF, RDFS, OWL, URIRef
 from collections import defaultdict
 from rdflib.collection import Collection
 
@@ -14,7 +13,8 @@ def describe_property(g, property, file, restrictions):
     for o in g.objects(property, RDFS.range):
         if isinstance(o, rdflib.term.URIRef):
             if str(o).startswith(DMLEX):
-                file.write(f""" reference to <olink targetptr="rdf_{str(o)[len(DMLEX):]}">{str(o)[len(DMLEX):]}</olink>""")
+                file.write(""" reference to <olink targetptr="rdf_""" +
+                           f"""{str(o)[len(DMLEX):]}">{str(o)[len(DMLEX):]}</olink>""")
             else:
                 file.write(f""" of type <literal>{o}</literal>""")
     for o in g.objects(property, RDFS.subPropertyOf):
@@ -41,9 +41,11 @@ def parse_rdf():
             for listname in g.objects(o, OWL.unionOf):
                 for item in Collection(g, listname):
                     props[item].append(s)
+
     # Generate for each class
     for class_uri in g.subjects(RDF.type, OWL.Class):
-        if isinstance(class_uri, rdflib.term.URIRef) and not str(class_uri).startswith(DMLEX + "Has"):
+        if (isinstance(class_uri, rdflib.term.URIRef) and 
+            not str(class_uri).startswith(DMLEX + "Has")):
             uri = str(class_uri)
             name = uri.split("#")[-1]
 
@@ -55,7 +57,8 @@ def parse_rdf():
             subclasses = []
             restrictions = defaultdict(lambda: defaultdict(lambda: " OPTIONAL"))
             for o in g.objects(class_uri, RDFS.subClassOf):
-                if isinstance(o, rdflib.term.URIRef) and not str(o).startswith(DMLEX + "Has"):
+                if (isinstance(o, rdflib.term.URIRef) and 
+                    not str(o).startswith(DMLEX + "Has")):
                     subclasses.append(o)
                 elif isinstance(o, rdflib.term.BNode):
                     for o2 in g.objects(o, OWL.onProperty):
@@ -72,7 +75,7 @@ def parse_rdf():
                          "http://www.docbook.org/xml/4.5/docbookx.dtd" [
                          <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
                          %xinclude;
-                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" > 
                          ]>
 <section id="rdf_{name}">
     <title>RDF element: <literal>dmlex:{name}</literal></title>
@@ -80,7 +83,7 @@ def parse_rdf():
     <para>{definition}</para>
 """)
                 if subclasses:
-                    f.write(f"""
+                    f.write("""
     <itemizedlist>
         <title>Superclasses</title>""")
                     for s in subclasses:
@@ -88,7 +91,7 @@ def parse_rdf():
         <listitem>
             <para><literal>{s}</literal></para>
         </listitem>""")
-                    f.write(f"""
+                    f.write("""
     </itemizedlist>""")
                 f.write("""
 

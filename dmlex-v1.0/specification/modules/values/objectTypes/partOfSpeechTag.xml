@@ -123,8 +123,8 @@
   dmlex:forHeadwods "..." ;
   dmlex:forTranslations "..." ;
   dmlex:forEtymology "..." ;
-  dmlex:forLanguage "..." .
-  dmlex:sameAs ... ] .
+  dmlex:forLanguage "..." ;
+  owl:sameAs ... ] .
     </programlisting>
   </example>
   

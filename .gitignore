@@ -9,3 +9,5 @@ dmlex-v1.0/specification/core/objectTypes/.label.xml.swp
 *.drawio.bkp
 *.drawio.dtmp
 dmlex-v1.0/specification/dmlex.xpr
+
+dmlex-v1.0/specification/Makefile.dep

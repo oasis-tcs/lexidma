@@ -658,6 +658,7 @@ dmlex:Relation rdfs:subClassOf dmlex:HasType .
 dmlex:RelationType rdfs:subClassOf dmlex:HasType .
 dmlex:Etymon rdfs:subClassOf dmlex:HasType .
 dmlex:EtymonType rdfs:subClassOf dmlex:HasType .
+dmlex:MemberType rdfs:subClassOf dmlex:HasType .
 
 dmlex:member a owl:ObjectProperty ;
   rdfs:label "Member"@en ;
@@ -729,6 +730,9 @@ dmlex:MemberType a owl:Class ;
   rdfs:subClassOf  [
     a owl:Restriction ;
     owl:onProperty dmlex:role ;
+    owl:cardinality 1 ] , [
+    a owl:Restriction ;
+    owl:onProperty dmlex:type ;
     owl:cardinality 1 ] , [
     a owl:Restriction ;
     owl:onProperty dmlex:description ;
