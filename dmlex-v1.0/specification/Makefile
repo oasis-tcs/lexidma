@@ -19,3 +19,6 @@ dmlex-v1.0-wd01.xml: dmlex.xml docbook/dbgenent.mod $(SOURCE_XML)
 Makefile.dep: dmlex.xml $(SOURCE_XML) makedep.sh
 	echo -n "SOURCE_XML=" > $@
 	./makedep.sh >> $@
+
+clean:
+	rm dmlex-v1.0-wd01.html dmlex-v1.0-wd01.pdf dmlex-v1.0-wd01.fo dmlex-v1.0-wd01.xml Makefile.dep
