@@ -47,10 +47,10 @@
     <title>Comments</title>
     <listitem>
       <para>
-        <code>language</code> identifies the language of headwords, definitions and examples in this
+        <code>langCode</code> identifies the language of headwords, definitions and examples in this
         dictionary. DMLex is based on the assumption that all headwords in a lexicographic resource
         are in the same language, and that definitions and examples, if any are included in the
-        lexicographic resource, are in that language too. The <code>language</code> property of
+        lexicographic resource, are in that language too. The <code>langCode</code> property of
           <code>lexicographicResource</code> informs potential users of the lexicographic resource
         which language that is.</para>
     </listitem>
