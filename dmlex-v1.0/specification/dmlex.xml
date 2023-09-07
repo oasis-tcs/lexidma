@@ -354,7 +354,7 @@
         <title>Tree structures</title>
         <para>The mechanics of objects which (through their properties) contain other objects mimics
           the tree-like structure commonly used in lexicography to represent dictionary entries,
-          typicaly using XML.</para>
+          typically using XML.</para>
         <para>Because of this, this document sometimes refers to objects being the “children”,
           “parents”, “descendants” or “ancestors” of other objects, or objects “belonging to” other
           objects. This is to be understood as follows.</para>
@@ -386,12 +386,12 @@
           <code>relation</code> object type defined in the Linking Module) the modelling of non-tree relations
           between objects, that is, relations connecting objects which belong to different
           parents.</para>
-        <para>Non-tree relations are used in DMLex to model cross-references betwen entries and
+        <para>Non-tree relations are used in DMLex to model cross-references between entries and
           senses, both within a single lexicographic resource and across multiple lexicographic
           resources. Non-tree relations are also used in DMLex to model certain things which have
           traditionally been modelled with tree structures in lexicography, such as the hierarchical
           arrangement of entries and subentries, or senses and subsenses. In DMLex, these phenomena
-          are modelled as non-tree relations in order in order to avoid recusion in the tree
+          are modelled as non-tree relations in order in order to avoid recursion in the tree
           structures and to minimize the number of object types in the data model.</para>
       </section>
       <section id="uniqueids">
@@ -412,13 +412,13 @@
           <listitem>
             <para>
               To enable addressing and accessing individual objects,
-              for example indvidual senses or individual exampe sentences,
+              for example individual senses or individual example sentences,
               outside the context of the entries they are in.
             </para>
           </listitem>
         </itemizedlist>
         <para>
-          Serializations of DMLex may choose to assign arbitrary unique identifiers (e.g. a random interger or a hash of the property value) to each property or combination of properties.
+          Serializations of DMLex may choose to assign arbitrary unique identifiers (e.g. a random integer or a hash of the property value) to each property or combination of properties.
 		</para>
       </section>
     </section>
