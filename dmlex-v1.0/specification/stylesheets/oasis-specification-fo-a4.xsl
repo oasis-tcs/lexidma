@@ -552,6 +552,7 @@
   <!-- nop -->
 </xsl:template>
 
+  <!--  Commenting out the front matter exception that makes the "Notices" their own section
 <xsl:template match="legalnotice[@role='notices']" mode="titlepage.mode"
               priority="1">
   <xsl:apply-templates mode="titlepage.mode"/>
@@ -568,6 +569,7 @@
     <xsl:apply-templates/>
   </fo:block>
 </xsl:template>
+  -->
 
 <xsl:template match="articleinfo/legalnotice/para[1]">
   <fo:block>
