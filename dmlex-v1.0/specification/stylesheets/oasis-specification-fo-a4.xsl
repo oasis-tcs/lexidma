@@ -761,6 +761,17 @@
             border-before-style="solid" border-before-width="1pt"/>
   <xsl:apply-imports/>
 </xsl:template>
+  
+<!-- Uppercasing normative keywords via <glossterm> -->
+  
+ <xsl:template match="glossterm">
+    
+  <fo:inline font-style="normal" font-weight="normal"> 
+    <xsl:value-of select="translate(., '&lower;', '&upper;')"/>
+  </fo:inline> 
+    
+</xsl:template>
+  
 
 <!--remove these interim features
 <xsl:param name="section-automatic-page-break" select="'no'"/>

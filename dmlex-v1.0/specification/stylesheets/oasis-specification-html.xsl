@@ -634,6 +634,12 @@
     <xsl:apply-templates/>
   </b>
 </xsl:template>
+<!-- Uppercasing normative keywords via <glossterm> -->
+  
+<xsl:template match="glossterm">
+   <xsl:value-of select="translate(., '&lower;', '&upper;')"/>
+</xsl:template>  
+  
 
 <!--the entire template has to change just to get italics and no bold-->
 <xsl:template name="formal.object.heading">
