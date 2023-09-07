@@ -29,8 +29,10 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install packages
         run: |
+          echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
           sudo apt-get update
-          sudo apt-get install xsltproc fop xmlstarlet
+          sudo apt-get install xsltproc fop xmlstarlet ttf-mscorefonts-installer
+          sudo fc-cache -f
       - name: Make XML, HTML and PDF
         run: make html pdf
       - name: Update Automatic Release
