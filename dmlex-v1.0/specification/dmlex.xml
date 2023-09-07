@@ -166,7 +166,7 @@
             <para>An RDF serialization of DMLex</para>
           </listitem>
           <listitem>
-            <para>An NVH serialization of DMLex</para>
+            <para>An iformative NVH serialization of DMLex</para>
           </listitem>
         </itemizedlist>
       </para>
@@ -237,7 +237,7 @@
     </legalnotice>
     <legalnotice role="notices">
       <title>Notices</title>
-      <para>Copyright © OASIS Open 2023.</para>
+      <para>Copyright © OASIS Open &pubyear;.</para>
       <para>All Rights Reserved.Distributed under the terms of the OASIS <ulink
           url="https://www.oasis-open.org/policies-guidelines/ipr/"
         >IPR Policy</ulink>).</para>
@@ -249,7 +249,7 @@
     </legalnotice>
   </articleinfo>
 
-  <section id="Introduction">
+  <section id="Introduction" role="normative">
     <title>Introduction</title>
     <para>DMLex is a data model for modelling dictionaries (here called <emphasis>lexicographic
         resources</emphasis>) in computer applications such as dictionary writing systems.</para>
@@ -259,7 +259,7 @@
       Web triplestore.</para>
     <section>
       <title>Modular structure of DMLex</title>
-      <para>The DMLex specification is divided into a core with several optional modules.</para>
+      <para>The DMLex specification is divided into a <glossterm>required</glossterm> core with several <glossterm>optional</glossterm> modules.</para>
       <itemizedlist>
         <listitem>
           <para>
@@ -302,13 +302,16 @@
       <title>Implementing DMLex</title>
       <para>DMLex is an abstract data model which can be implemented in many different programming
         environments and serialization languages. In this document, we specify
-          <glossterm>recommended</glossterm> implementations for: <simplelist>
+          <glossterm>required</glossterm> serializations for: <simplelist>
           <member><olink targetptr="XML_implementation">XML</olink>,</member>
           <member><olink targetptr="JSON_implementation">JSON</olink>,</member>
-          <member><olink targetptr="RDF_implementation">RDF</olink>,</member>
-          <member><olink targetptr="NVH_implementation">NVH</olink>,</member>
-          <member>and <olink targetptr="RDB_implementation">relational databases</olink>.</member>
+          <member><olink targetptr="RDF_implementation">RDF</olink>, and</member>
+          <member><olink targetptr="RDB_implementation">relational databases</olink>.</member>
         </simplelist></para>
+      <para> An informative serialization specification is provided for:<simplelist>
+          <member><olink targetptr="NVH_implementation">NVH</olink>.</member>
+        </simplelist>
+      </para>
     </section>
     <section>
       <title>The metamodel behind DMLex</title>
@@ -420,6 +423,124 @@
         </para>
       </section>
     </section>
+  <section id="defintions">
+    <title>Definitions</title>
+    <variablelist>
+      
+      <varlistentry>
+        <term>Agent</term>
+        
+        <listitem>
+          <para>any application or tool that , reads, edits, writes, processes, stores, renders or
+              otherwise handles <firstterm>DMLex Instances</firstterm>.</para>
+          <para><firstterm>Agent</firstterm> is the most general application conformance target
+            that subsumes all other specialized user agents disregarding whether they are
+            defined in this specification or not.</para>
+        </listitem>
+      </varlistentry>
+      
+      <varlistentry>
+        <term>Enrich</term>
+        <term>Enriching</term>
+        <listitem>
+          <para> the process of adding metadata and resources to <firstterm>DMLex
+                Instances</firstterm>
+            </para>
+          <itemizedlist>
+            <title>Processing Requirements</title>
+            <listitem><para>
+                  <firstterm>Enriching</firstterm>
+                  <glossterm>may</glossterm> happen at the time of <firstterm>Creation</firstterm>. </para></listitem>
+          </itemizedlist>
+          
+        </listitem>
+      </varlistentry>
+      
+      <varlistentry>
+        <term>Enricher</term>
+        <term>Enricher Agent</term>
+        <listitem><para>any <firstterm>Agent</firstterm> that performs the <firstterm>Enriching</firstterm> process
+        </para></listitem>
+      </varlistentry>
+      
+      <varlistentry>
+        <term>Create</term>
+        <term>Creation</term>
+        <listitem>
+          <para>the process of encoding lexicographic data as <firstterm>DMLex
+              Instances</firstterm></para>
+        </listitem>
+      </varlistentry>
+      
+      <varlistentry>
+        <term>Creator</term>
+        <term>Creator Agent</term>
+        <listitem><para>any <firstterm>Agent</firstterm> that performs the <firstterm>Creation</firstterm> process
+        </para></listitem>
+      </varlistentry>
+      
+      <varlistentry>
+        <term>Modify</term>
+        <term>Modification</term>
+        <listitem>
+          <para> the process of changing core and module based structural and inline objects
+            that were previously created by other <firstterm>Writers</firstterm>
+          </para>
+          <itemizedlist>
+            <title>Processing Requirements</title>
+            <listitem><para> DMLex Instances <glossterm>may</glossterm> be <firstterm>Modified</firstterm> and
+                    <firstterm>Enriched</firstterm> at the same time. </para></listitem>
+          </itemizedlist>
+          <note><para><firstterm>Creator</firstterm> or <firstterm>Enricher</firstterm> knowledge of the <firstterm>DMLex
+            Instance</firstterm> is not assumed while <firstterm>Modifying</firstterm>. However,
+                modifications can only happen in the same serialization.</para></note>
+        </listitem>
+      </varlistentry>
+      
+      <varlistentry>
+        <term>Modifier</term>
+        <term>Modifier Agent</term>
+        
+        <listitem>
+          <para>an <firstterm>Agent</firstterm> that performs the <firstterm>Modification</firstterm> process
+            
+          </para>
+          
+          
+        </listitem>
+        
+      </varlistentry>
+      
+      <varlistentry>
+        <term>Writer</term>
+        <term>Writer Agent</term>
+        
+        <listitem>
+          <para>an <firstterm>Agent</firstterm> that <firstterm>Creates</firstterm>, generates, or otherwise writes
+                <firstterm>DMLex Instances</firstterm> for whatever purpose, including but not
+              limited to <firstterm>Creator</firstterm>, <firstterm>Modifier</firstterm>, and
+                <firstterm>Enricher</firstterm>
+              <firstterm>Agents</firstterm>. </para>
+          
+          <note><para>Since DMLex serializations are intended as editing and exchange formats rather than processing
+                formats, many applications will need to generate <firstterm>DMLex
+                  Instances</firstterm> from their internal processing formats, even in cases when
+                they are processing <firstterm>DMLex Instances</firstterm> provided by other
+                  <firstterm>Writers</firstterm>. </para></note>
+        </listitem>
+        
+        
+      </varlistentry>
+      
+      
+      
+      
+      
+      
+    </variablelist>
+    
+  </section>
+    
   </section>
 
   <!--Conformance section should go last, but it seems to make better sense here -->
@@ -428,7 +549,7 @@
   <!-- core and modules -->
   <xi:include href="core/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <section id="modules" role="normative">
-    <title>DMLex Optional Modules</title>
+    <title>DMLex <glossterm>Optional</glossterm> Modules</title>
 
     <xi:include href="modules/xlingual/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="modules/values/specification.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
@@ -440,7 +561,7 @@
   </section>
 
   <section id="serializations" role="normative">
-    <title>DMLex Recommended Serializations</title>
+    <title>DMLex <glossterm>Required</glossterm> Serializations</title>
 
     <!-- serialisations -->
     <xi:include href="serializations/XML/specification.xml"
@@ -451,12 +572,15 @@
       xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="serializations/RDB/specification.xml"
       xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="serializations/NVH/specification.xml"
-      xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    
   </section>
   <appendix role="informative">
+    <title>Informative material on serializations</title>
     <!-- examples -->
     <xi:include href="examples/examples.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <!-- informative serializations -->
+    <xi:include href="serializations/NVH/specification.xml"
+      xmlns:xi="http://www.w3.org/2001/XInclude"/>
 
   </appendix>
   <appendix role="normative" id="references">
@@ -491,6 +615,7 @@
             Languages</title>, <citetitle>
             <ulink url="http://tools.ietf.org/html/bcp47">http://tools.ietf.org/html/bcp47</ulink>
           </citetitle> IETF (Internet Engineering Task Force).</bibliomixed>
+        <!--  
         <bibliomixed id="rfc3552"><abbrev>RFC 3552</abbrev> R. Escrola, B. Korver, <title>Guidelines
             for Writing RFC Text on Security Considerations</title>, <citetitle>
             <ulink url="https://www.tools.ietf.org/rfc/rfc3552.txt"
@@ -500,7 +625,7 @@
             ><abbrev><?oxy_custom_start type="oxy_content_highlight" color="255,198,140"?>EXAMPLE_ABBREV</abbrev>
           N. Surname, A. Surname, <title>Exampe Title</title>, <citetitle><ulink
               url="example.org/citetitle">example.org/citetitle</ulink>Example
-          Citetitle</citetitle>, Month dd, yyyy.<?oxy_custom_end?></bibliomixed>
+          Citetitle</citetitle>, Month dd, yyyy.<?oxy_custom_end?></bibliomixed>-->
         <bibliomixed id="ITS20"><abbrev>ITS</abbrev> David Filip, Shaun McCance, Dave Lewis,
           Christian Lieske, Arle Lommel, Jirka Kosek, Felix Sasaki, Yves Savourel
             <title>Internationalization Tag Set (ITS) Version 2.0</title>, <citetitle>
@@ -511,6 +636,7 @@
             <ulink url="https://tools.ietf.org/html/rfc8259"
               >https://tools.ietf.org/html/rfc8259</ulink>
           </citetitle> IETF RFC 8259 December 2017. </bibliomixed>
+        <!--  
         <bibliomixed id="bib_datetime"><abbrev>NOTE-datetime</abbrev> M. Wolf, C. Wicksteed,
             <title>Date and Time Formats</title>, <citetitle>
             <ulink url="http://www.w3.org/TR/NOTE-datetime"
@@ -524,13 +650,8 @@
               >
               http://standards.iso.org/ittf/PubliclyAvailableStandards/c038615_ISO_IEC_19757-4_2006(E).zip</ulink>
           </citetitle> ISO, June 1, 2006.</bibliomixed>
-        <bibliomixed id="bib_nvh"><abbrev>NVH</abbrev>
-          <title>Name-Value Hierarchy</title>, <citetitle>
-              <ulink
-                url="https://www.namevaluehierarchy.org/"
-                >
-                https://www.namevaluehierarchy.org/</ulink>
-            </citetitle>.</bibliomixed>
+        -->
+        
         <bibliomixed id="rfc3987"><abbrev>RFC 3987</abbrev> M. Duerst and M. Suignard,
             <title>Internationalized Resource Identifiers (IRIs)</title>, <citetitle>
             <ulink url="https://www.ietf.org/rfc/rfc3987.txt"
@@ -617,6 +738,13 @@
       </para>
       <bibliography>
         <title/>
+        <bibliomixed id="bib_nvh"><abbrev>NVH</abbrev>
+          <title>Name-Value Hierarchy</title>, <citetitle>
+            <ulink
+              url="https://www.namevaluehierarchy.org/"
+              >
+              https://www.namevaluehierarchy.org/</ulink>
+          </citetitle>.</bibliomixed>
         <bibliomixed id="biblio_ldml"><abbrev>LDML</abbrev>
           <title>Unicode Locale Data Markup Language</title>
           <citetitle>
@@ -706,6 +834,7 @@
             >&this-loc;/schemas/informativeCopiesOf3rdPartySchemas/w3c/xml.xsd</ulink> in this distribution.</para>
     </section>-->
   </appendix>
+  <!--  
   <appendix role="normative | informative" id="SecurityPrivacy">
     <title>Security and privacy considerations</title>
     <note>
@@ -726,7 +855,7 @@
         Writing RFC Text on Security Considerations, IETF [<link linkend="rfc3552">RFC 3552</link>],
         for more information.</para>
     </note>
-  </appendix>
+  </appendix>-->
   <appendix role="informative" id="specChangeTracking">
     <title>Specification Change Tracking</title>
     <para>This appendix will contain tracked changes after the csd01 phase will have been
@@ -772,7 +901,7 @@
   </appendix>
   <appendix role="informative" id="full-notices">
     <title>Notices</title>
-    <para>Copyright © OASIS Open 2023. All Rights Reserved.</para>
+    <para>Copyright © OASIS Open &pubyear;. All Rights Reserved.</para>
     <para>All capitalized terms in the following text have the meanings assigned to them in the OASIS Intellectual Property Rights Policy (the "OASIS IPR Policy"). The full <ulink url="https://www.oasis-open.org/policies-guidelines/ipr/">Policy</ulink> may be found at the OASIS website.</para>
     <para>This document and translations of it may be copied and furnished to others, and derivative works that comment on or otherwise explain it or assist in its implementation may be prepared, copied, published, and distributed, in whole or in part, without restriction of any kind, provided that the above copyright notice and this section are included on all such copies and derivative works. However, this document itself may not be modified in any way, including by removing the copyright notice or references to OASIS, except as needed for the purpose of developing any document or deliverable produced by an OASIS Technical Committee (in which case the rules applicable to copyrights, as set forth in the OASIS IPR Policy, must be followed) or as required to translate it into languages other than English.</para>
     <para>The limited permissions granted above are perpetual and will not be revoked by OASIS or its successors or assigns.</para>

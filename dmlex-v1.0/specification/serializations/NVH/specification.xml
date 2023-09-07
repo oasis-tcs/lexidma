@@ -6,7 +6,7 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
 <!--the document properties were transferred to "dockbook/dbgenent.mod"-->
                          ]>
-<section id="nvh" role="normative">
+<section id="nvh" role="informative">
   <title>DMLex NVH serialization</title>
   <para>
     This section specifies a serialization of the DMLex data model in NVH

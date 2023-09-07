@@ -16,16 +16,9 @@
                <listitem>
     <para>Conformant <firstterm>DMLex Instances</firstterm>
                         <glossterm>must</glossterm> be well formed and valid instances according to
-                        one of DMLex Serialization Specifications.</para>
+                        one of the normative DMLex Serialization Specifications.</para>
                </listitem>
-               <listitem>
-    
-                   <para>Another Instance conformance clause.</para>
-               </listitem>
-               <listitem>
-    
-    <para> ...</para>
-               </listitem>
+               
                <listitem>
                 <para><firstterm>DMLex Instances</firstterm>
                         <glossterm>may</glossterm> contain custom extensions, provided that those
@@ -68,19 +61,20 @@
                                       
                    <listitem>
                        <para> Specialized <firstterm>Agents</firstterm> defined in this
-                        specification - this is <firstterm>Writer</firstterm>,
-                            <firstterm>Modifier</firstterm>, and <firstterm>Enricher</firstterm>
+                        specification - this is <firstterm>Creator</firstterm>,
+                            <firstterm>Writer</firstterm>, <firstterm>Modifier</firstterm>, and
+                            <firstterm>Enricher</firstterm>
                         <firstterm>Agents</firstterm> - <glossterm>must</glossterm> comply with the
                         Processing Requirements targeting their specifically defined type of
                             <firstterm>Agent</firstterm> on top of Processing Requirements targeting
                         all <firstterm>Agents</firstterm> as per point c. above.</para>
                    </listitem>
                    <listitem>
-                    <para>DMLex is an object model explicitly designed for exchanging data among
-                        various <firstterm>Agents</firstterm>. Thus, a conformant DMLex application
-                            <glossterm>must</glossterm> be able to accept <firstterm>DMLex
-                            Instances</firstterm>
-                        <firstterm>Created</firstterm>,  <firstterm>Modified</firstterm>, or
+                    <para>DMLex is an object model explicitly designed for exchanging data in the
+                        same serialization among various <firstterm>Agents</firstterm>. Thus, a
+                        conformant DMLex application <glossterm>must</glossterm> be able to accept
+                            <firstterm>DMLex Instances</firstterm>
+                        <firstterm>Created</firstterm>, <firstterm>Modified</firstterm>, or
                             <firstterm>Enriched</firstterm> by a different application, provided
                         that:</para>
                         <orderedlist>
@@ -112,4 +106,10 @@
     
     <note><para><firstterm>DMLex Instances</firstterm> cannot be conformant to this specification w/o being
             conformant to a specific serialization. </para></note>
+    <warning><para>Exchange of <firstterm>DMLex Instances</firstterm> data between and among DMLex serializations
+            is out of scope of the DMLex Version &version; specification. Although, the
+            serializations are semantically compatible, they don't have to posses compatible
+            addressing and fargemnt identification mechanims, mainly due to the fact that each
+            serialization is expected to use its own native id data types, uniqueness scopes, and
+            addressing methods.</para></warning>
 </section>
