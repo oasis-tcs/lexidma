@@ -569,13 +569,14 @@
     <xsl:apply-templates/>
   </fo:block>
 </xsl:template>
-  -->
+  
 
 <xsl:template match="articleinfo/legalnotice/para[1]">
   <fo:block>
     <xsl:apply-templates/>
   </fo:block>
 </xsl:template>
+  -->
 
 <xsl:template match="copyright" mode="titlepage.mode">
   <fo:block space-before="1em">
