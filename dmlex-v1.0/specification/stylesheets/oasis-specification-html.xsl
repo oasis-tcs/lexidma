@@ -27,8 +27,7 @@
 <!--online configuration-->
 <xsl:param name="css.path"
            select="'&oasis-spec;css/'"/>
-<xsl:param name="oasis.logo"
-           select="'&oasis-spec;OASISLogo.png'"/>
+<xsl:param name="oasis.logo">https://docs.oasis-open.org/templates/OASISLogo-v3.0.png</xsl:param>
 <xsl:param name="oasis-base" select="'no'"/>
 
 <!--common between offline and online-->
