@@ -340,7 +340,7 @@
         <para>For every object type, DMLex defines which properties it can have, whether the properties
           are required or optional, what their arities are (for example “zero or more”), and what
           kinds of values it can contains.</para>
-        <para>There are two kinds of properties: those can contain literal values and those that
+        <para>There are two kinds of properties: those that contain literal values and those that
           contain objects.</para>
         <para>Some properties are defined to contain literal values such as strings and numbers. The
           following types of literal values are used in DMLex: <simplelist>
@@ -400,7 +400,7 @@
           resources. Non-tree relations are also used in DMLex to model certain things which have
           traditionally been modelled with tree structures in lexicography, such as the hierarchical
           arrangement of entries and subentries, or senses and subsenses. In DMLex, these phenomena
-          are modelled as non-tree relations in order in order to avoid recursion in the tree
+          are modelled as non-tree relations in order to avoid recursion in the tree
           structures and to minimize the number of object types in the data model.</para>
       </section>
       <section id="uniqueids">
