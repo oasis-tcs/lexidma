@@ -228,7 +228,7 @@
           <glossterm>optional</glossterm>  in this document are to be interpreted as described in
           <ulink url="https://tools.ietf.org/html/bcp14">BCP 14</ulink> [<link linkend="rfc2119"
           >RFC2119</link>] and [<link linkend="rfc8174">RFC8174</link>] if, and only if, they appear
-          in all capitals, as shown here. The term <glossterm>UNIQUE</glossterm> shall be interpreted as given in the section on <olink targetptr="uniqueids">Unique identifiers</olink>.</para>
+          in all capitals, as shown here.</para>
     </legalnotice>
     <legalnotice role="citation">
       <title>Citation format</title>
@@ -540,6 +540,12 @@
         
       </varlistentry>
       
+      <varlistentry>
+        <term>UNIQUE</term>
+        <listitem>
+	      The term <glossterm>UNIQUE</glossterm> shall be interpreted as given in the section on <olink targetptr="uniqueids">Unique identifiers</olink>.
+        </listitem>
+      </varlistentry>
       
       
       
