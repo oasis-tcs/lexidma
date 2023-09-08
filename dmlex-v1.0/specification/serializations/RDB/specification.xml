@@ -19,7 +19,7 @@
     <para>The relational database serialization of DMLex shown in this document follows these principles:</para>
     <itemizedlist>
       <listitem>
-        <para>The <code>lexicographicResource</code> object is implemented as table. (Alternatively, it can left unimplemented if the database is going to contain only one lexicographic resource.)</para>
+        <para>The <code>lexicographicResource</code> object is implemented as table. (Alternatively, it can be left unimplemented if the database is going to contain only one lexicographic resource.)</para>
       </listitem>
       <listitem>
         <para>Other objects with an arity other than <code>(0..1)</code> and <code>(1..1)</code> are implemented as tables.</para>
