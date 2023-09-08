@@ -41,15 +41,6 @@
         <email>tomaz.erjavec@ijs.si</email>
       </othercredit>
       <editor>
-        <firstname>Michal</firstname>
-        <surname>Měchura</surname>
-        <affiliation>
-          <orgname><ulink url="https://www.muni.cz/">Masaryk University</ulink></orgname>
-          <address format="linespecific"><email>michmech@mail.muni.cz</email></address>
-        </affiliation>
-        <email>michmech@mail.muni.cz</email>
-      </editor>
-      <editor>
         <firstname>David</firstname>
         <surname>Filip</surname>
         <affiliation>
@@ -57,6 +48,15 @@
           <address format="linespecific"><email>glorfindel@mail.muni.cz</email></address>
         </affiliation>
         <email>glorfindel@mail.muni.cz</email>
+      </editor>
+      <editor>
+        <firstname>Miloš</firstname>
+        <surname>Jakubíček</surname>
+        <affiliation>
+          <orgname><ulink url="http://www.lexicalcomputing.com/">Lexical Computing</ulink></orgname>
+          <address format="linespecific"><email>milos.jakubicek@sketchengine.eu</email></address>
+        </affiliation>
+        <email>milos.jakubicek@sketchengine.eu</email>
       </editor>
       <editor>
         <firstname>Simon</firstname>
@@ -74,6 +74,15 @@
           <orgname><ulink url="https://www.universityofgalway.ie/">University of Galway</ulink></orgname>
           <address format="linespecific"><email>john.mccrae@universityofgalway.ie</email></address>
         </affiliation>
+      </editor>
+      <editor>
+        <firstname>Michal</firstname>
+        <surname>Měchura</surname>
+        <affiliation>
+          <orgname><ulink url="https://www.muni.cz/">Masaryk University</ulink></orgname>
+          <address format="linespecific"><email>michmech@mail.muni.cz</email></address>
+        </affiliation>
+        <email>michmech@mail.muni.cz</email>
       </editor>
     </authorgroup>
     <pubdate>&pubdate;</pubdate>
@@ -216,10 +225,10 @@
           <glossterm>required</glossterm>, <glossterm>shall</glossterm>, <glossterm>shall
           not</glossterm>, <glossterm>should</glossterm>, <glossterm>should not</glossterm>,
           <glossterm>recommended</glossterm>, <glossterm>may</glossterm>, and
-          <glossterm>optional</glossterm> in this document are to be interpreted as described in
+          <glossterm>optional</glossterm>  in this document are to be interpreted as described in
           <ulink url="https://tools.ietf.org/html/bcp14">BCP 14</ulink> [<link linkend="rfc2119"
           >RFC2119</link>] and [<link linkend="rfc8174">RFC8174</link>] if, and only if, they appear
-        in all capitals, as shown here.</para>
+          in all capitals, as shown here. The term <glossterm>UNIQUE</glossterm> shall be interpreted as given in the section on <olink targetptr="uniqueids">Unique identifiers</olink>.</para>
     </legalnotice>
     <legalnotice role="citation">
       <title>Citation format</title>
@@ -331,7 +340,7 @@
         <para>For every object type, DMLex defines which properties it can have, whether the properties
           are required or optional, what their arities are (for example “zero or more”), and what
           kinds of values it can contains.</para>
-        <para>There are two kinds of properties: those can contain literal values and those that
+        <para>There are two kinds of properties: those that contain literal values and those that
           contain objects.</para>
         <para>Some properties are defined to contain literal values such as strings and numbers. The
           following types of literal values are used in DMLex: <simplelist>
@@ -354,7 +363,7 @@
         <title>Tree structures</title>
         <para>The mechanics of objects which (through their properties) contain other objects mimics
           the tree-like structure commonly used in lexicography to represent dictionary entries,
-          typicaly using XML.</para>
+          typically using XML.</para>
         <para>Because of this, this document sometimes refers to objects being the “children”,
           “parents”, “descendants” or “ancestors” of other objects, or objects “belonging to” other
           objects. This is to be understood as follows.</para>
@@ -386,19 +395,20 @@
           <code>relation</code> object type defined in the Linking Module) the modelling of non-tree relations
           between objects, that is, relations connecting objects which belong to different
           parents.</para>
-        <para>Non-tree relations are used in DMLex to model cross-references betwen entries and
+        <para>Non-tree relations are used in DMLex to model cross-references between entries and
           senses, both within a single lexicographic resource and across multiple lexicographic
           resources. Non-tree relations are also used in DMLex to model certain things which have
           traditionally been modelled with tree structures in lexicography, such as the hierarchical
           arrangement of entries and subentries, or senses and subsenses. In DMLex, these phenomena
-          are modelled as non-tree relations in order in order to avoid recusion in the tree
+          are modelled as non-tree relations in order to avoid recursion in the tree
           structures and to minimize the number of object types in the data model.</para>
       </section>
-      <section>
+      <section id="uniqueids">
         <title>Unique identifiers</title>
         <para>
-          Some object types defined in DMLex have a property called <literal>id</literal>
-          whose type is given as unique identifier. Unique identifiers in DMLex serve two purposes:
+          Some object types defined in DMLex have a property or a combination of properties mandated to be unique.
+          Designating a property as unique means that its value must be unique within the scope of its parent object type.
+          Designating a combination of properties as unique means that the ordered composition of its values must be unique within the scope of their parent object type. Such unique properties in DMLex serve two purposes:
         </para>
         <itemizedlist>
           <listitem>
@@ -411,16 +421,14 @@
           <listitem>
             <para>
               To enable addressing and accessing individual objects,
-              for example indvidual senses or individual exampe sentences,
-              outside the context of the entries they are in.
+              for example individual senses or individual example sentences,
+              outside the context of the entries they are in. See <olink targetptr="fragid">Fragment identification</olink> for details.
             </para>
           </listitem>
         </itemizedlist>
         <para>
-          DMLex does not prescribe a specific data type for unique identifiers.
-          Implementers can choose to implement them as numeric or alphanumeric,
-          as human-readably meanigful or arbitrary.
-        </para>
+          Serializations of DMLex may choose to assign arbitrary unique identifiers (e.g. a random integer or a hash of the property value) to each property or combination of properties.
+		</para>
       </section>
     </section>
   <section id="defintions">
@@ -728,6 +736,10 @@
             <ulink url="https://www.w3.org/TR/xmlschema-1/"
               >https://www.w3.org/TR/xmlschema-1/</ulink>
           </citetitle> (Second Edition) W3C Recommendation 28 October 2004.</bibliomixed>
+        <bibliomixed id="DublinCore"><abbrev>DCMI Metadata Terms</abbrev> DCMI Usage Board, <title>DCMI Metadata Terms</title>, <citetitle>
+            <ulink url="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/"
+              >https://www.dublincore.org/specifications/dublin-core/dcmi-terms/</ulink>
+          </citetitle> Date issued: 2020-01-20.</bibliomixed>
       </bibliography>
     </section>
     <section role="informative" id="informativeReferences">
@@ -856,6 +868,21 @@
         for more information.</para>
     </note>
   </appendix>-->
+  <appendix role="normative" id="diagram_uml">
+    <title>DMLex UML diagram</title>
+    <graphic fileref="dmlex_uml.svg" contentwidth="16cm"/>
+  </appendix>
+
+  <appendix role="informative" id="diagram_nvh">
+    <title>DMLex plain text description</title>
+    <para>This description uses the <ulink url="https://www.namevaluehierarchy.org/schema.html">NVH schema notation style</ulink> and the convention that all object types and their properties are prefixed by either <literal>core@</literal> or <literal>MODULENAME@</literal> strings. Their arity is denoted by a <literal>*</literal> (zero or more), <literal>+</literal> (one or more), <literal>?</literal> (zero or one) or <literal>N+</literal> (<literal>N</literal> or more). If no arity is given, it indicates the arity of 1, i.e. being required and occurring exactly once.
+    </para>
+    <programlisting>
+      <xi:include href="dmlex.nvh" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    </programlisting>
+  </appendix>
+
+
   <appendix role="informative" id="specChangeTracking">
     <title>Specification Change Tracking</title>
     <para>This appendix will contain tracked changes after the csd01 phase will have been

@@ -41,12 +41,30 @@
 			<para><literal><olink targetptr="core_example">example</olink></literal></para>
     </listitem>
   </itemizedlist>
-  <para>
-    When exchanging data encoded in a DMLex serialization
-    which has the concept of a "root" or top-level object, such as XML and JSON,
-    then the object types <literal>lexicographicResource</literal> and <literal>entry</literal>
-    can serve as such roots.
-  </para>
+  <simplesect id="optionalroots">
+    <title>Optional roots</title>
+    <para>
+      When exchanging data encoded in a DMLex serialization
+      which has the concept of a "root" or top-level object, such as XML, JSON or NVH,
+      the object types <literal>lexicographicResource</literal> and <literal>entry</literal>
+      can serve as such roots.
+    </para>
+  </simplesect>
+  <simplesect id="fragid">
+    <title>Fragment identification</title>
+    <para>
+      Incomplete parts of DMLex objects represent valid fragments as long as it is possible to identify their complete source DMLex object.
+      For a particular serialization, this can be achieved by:
+      <itemizedlist>
+        <listitem>
+          <para>Making sure the fragment contains all <olink targetptr="uniqueids">unique properties</olink> of the DMLex parent-child hierarchy that are necessary to determine its source object.</para>
+        </listitem>
+        <listitem>
+          <para>Using a serialization-specific addressing mechanism (e.g. XPath for XML, JMESPath for JSON or an NVH query) to provide the location of the fragment in the source DMLex object.</para>
+        </listitem>
+     </itemizedlist>
+	</para>
+  </simplesect>
   <xi:include href="objectTypes/lexicographicResource.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objectTypes/entry.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objectTypes/partOfSpeech.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>

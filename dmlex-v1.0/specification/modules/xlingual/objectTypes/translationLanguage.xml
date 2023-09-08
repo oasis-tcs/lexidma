@@ -23,16 +23,8 @@
     <title>Properties</title>
     <listitem>
       <para><literal>langCode</literal>
-        <glossterm>required</glossterm> (exactly one). The IETF language code of the
+        <glossterm>required</glossterm> (exactly one) and <glossterm>unique</glossterm>. The IETF language code of the
         language.</para>
-      <formalpara>
-        <title>Uniqueness constraint</title>
-        <para>
-          No two instances of <literal>translationLanguage</literal>
-          in the same <literal>lexicographicResource</literal>
-          can have the same <literal>langCode</literal>.
-        </para>
-      </formalpara> 
     </listitem>
     <listitem>
       <para><literal>listingOrder</literal>

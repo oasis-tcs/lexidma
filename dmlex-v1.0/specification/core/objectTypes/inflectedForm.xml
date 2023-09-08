@@ -24,16 +24,9 @@
   <itemizedlist>
     <title>Properties</title>
     <listitem>
-      <para><literal>id</literal>
-        <glossterm>optional</glossterm> (zero or one). A unique identifier.</para>
-      <formalpara>
-        <title>Uniqueness constraint</title>
-        <para>
-          No two instances of <literal>inflectedForm</literal>
-          in the same <literal>lexicographicResource</literal>
-          can have the same <literal>id</literal>.
-        </para>
-      </formalpara> 
+      <para><literal>text</literal>
+        <glossterm>required</glossterm> (exactly one) and <glossterm>unique</glossterm>. Non-empty string. The text of the inflected
+        form.</para>
     </listitem>
     <listitem>
       <para><literal>tag</literal>
@@ -44,11 +37,6 @@
         type can be used to explain the meaning of the inflection tags, to constrain which
         inflection tags are allowed to occur in the lexicographic resource, and to map them onto
         external inventories and ontologies.</para>
-    </listitem>
-    <listitem>
-      <para><literal>text</literal>
-        <glossterm>required</glossterm> (exactly one). Non-empty string. The text of the inflected
-        form.</para>
     </listitem>
     <listitem>
       <para><literal><olink targetptr="core_label">label</olink></literal>

@@ -25,7 +25,8 @@
             <para><literal>description: nvarchar</literal></para>
         </listitem>
         <listitem>
-            <para><literal>typeTag: nvarchar</literal>, optionally a foreign key referencing column <literal>tag</literal>
+            <para><literal>typeTag: nvarchar</literal>, foreign key,
+                references column <literal>tag</literal>
                 of table <literal><olink targetptr="rdb_lexicographicResources">labelTypeTags</olink></literal>
             </para>
         </listitem>

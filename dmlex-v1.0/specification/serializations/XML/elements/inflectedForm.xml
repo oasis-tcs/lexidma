@@ -12,9 +12,6 @@
     <itemizedlist>
         <title>Attributes</title>
         <listitem>
-            <para><literal>@id</literal> <glossterm>optional</glossterm></para>
-        </listitem>
-        <listitem>
             <para><literal>@tag</literal> <glossterm>optional</glossterm></para>
         </listitem>
     </itemizedlist>

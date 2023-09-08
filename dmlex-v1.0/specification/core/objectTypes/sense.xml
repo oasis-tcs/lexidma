@@ -23,28 +23,13 @@
   <itemizedlist>
     <title>Properties</title>
     <listitem>
-      <para><literal>id</literal>
-        <glossterm>optional</glossterm> (zero or one). A unique identifier of the sense. Senses
-        which have identifiers can be involved in relations created with the <olink
-          targetptr="linking">Linking module</olink>.</para>
-      <formalpara>
-        <title>Uniqueness constraint</title>
-        <para>
-          No two instances of <literal>sense</literal>
-          in the same <literal>lexicographicResource</literal>
-          (or in the same collection of lexicographic resources if cross-resource linking is required)
-          can have the same <literal>id</literal>.
-        </para>
-      </formalpara> 
-    </listitem>
-    <listitem>
       <para><literal>listingOrder</literal>
         <glossterm>required</glossterm> (exactly one). Number. The position of this sense among
         other senses of the same entry. Can be implicit from the serialization.</para>
     </listitem>
     <listitem>
       <para><literal>indicator</literal>
-        <glossterm>optional</glossterm> (zero or one). A short statement, in the same language as
+        <glossterm>optional</glossterm> (zero or one) and <glossterm>unique</glossterm>. A short statement, in the same language as
         the headword, that gives an indication of the meaning of a sense and permits its
         differentiation from other senses in the entry. Indicators are sometimes used in
         dictionaries instead of or in addition to definitions.</para>
@@ -55,7 +40,7 @@
     </listitem>
     <listitem>
       <para><literal><olink targetptr="core_definition">definition</olink></literal>
-        <glossterm>optional</glossterm> (zero or more). </para>
+        <glossterm>optional</glossterm> (zero or more) and <glossterm>unique</glossterm>. </para>
     </listitem>
     <listitem>
       <para><literal><olink targetptr="core_example">example</olink></literal>
@@ -81,7 +66,7 @@
   <example>
     <title>XML</title>
     <programlisting>
-&lt;sense id="..."&gt;
+&lt;sense&gt;
     &lt;indicator&gt;...&lt;/indicator&gt;
     &lt;label.../&gt;
     &lt;definition.../&gt;
@@ -94,7 +79,6 @@
     <title>JSON</title>
     <programlisting>
 {
-    "id": "...",
     "indicator": "...",
     "labels": [...],
     "definitions": [...],
