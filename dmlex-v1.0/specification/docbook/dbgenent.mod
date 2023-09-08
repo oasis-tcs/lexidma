@@ -49,12 +49,12 @@
 <!ENTITY cschversion "1.0">
 
 
-<!ENTITY stage "wd01">
+<!ENTITY stage "csd01">
 <!ENTITY pstage "N/A">
 <!--
 <!ENTITY standard "Commitee Specification Draft 01 / Public Review Draft 01">
 -->
-<!ENTITY standard "Working Draft 01">
+<!ENTITY standard "Commitee Specification Draft 01">
 
 <!ENTITY this-loc "https://docs.oasis-open.org/lexidma/dmlex/v&version;/&stage;">
 <!ENTITY previous-loc "https://docs.oasis-open.org/lexidma/dmlex/v&version;/&pstage;">
