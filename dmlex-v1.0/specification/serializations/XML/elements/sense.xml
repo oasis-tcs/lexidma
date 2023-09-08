@@ -11,7 +11,10 @@
 
    <itemizedlist>
         <title>Child elements</title>
-        <listitem>
+       <listitem>
+           <para><literal>@id</literal> <glossterm>optional</glossterm></para>
+       </listitem>
+       <listitem>
             <para><literal>&lt;indicator&gt;</literal> <glossterm>optional</glossterm> (zero or one)</para>
         </listitem>
         <listitem>
