@@ -14,20 +14,20 @@
     <releaseinfo role="track">Standards Track Work Product</releaseinfo>
     <productname>&name;</productname>
     <productnumber>&stage;</productnumber>
-    <releaseinfo role="OASIS-specification-this-authoritative"
+    <releaseinfo role="OASIS-specification-this"
       >&this-loc;/&name;-&stage;.html</releaseinfo>
-    <releaseinfo role="OASIS-specification-this">&this-loc;/&name;-&stage;.pdf</releaseinfo>
-    <releaseinfo role="OASIS-specification-this">&this-loc;/&name;-&stage;.xml</releaseinfo>
-    <releaseinfo role="OASIS-specification-previous-authoritative"
+    <releaseinfo role="OASIS-specification-this-authoritative">&this-loc;/&name;-&stage;.pdf</releaseinfo>
+    <!--<releaseinfo role="OASIS-specification-this">&this-loc;/&name;-&stage;.xml</releaseinfo>-->
+    <releaseinfo role="OASIS-specification-previous"
       >&previous-loc;/&name;-&pstage;.html</releaseinfo>
-    <releaseinfo role="OASIS-specification-previous"
+    <releaseinfo role="OASIS-specification-previous-authoritative"
       >&previous-loc;/&name;-&pstage;.pdf</releaseinfo>
-    <releaseinfo role="OASIS-specification-previous"
-      >&previous-loc;/&name;-&pstage;.xml</releaseinfo>
-    <releaseinfo role="OASIS-specification-latest-authoritative"
+    <!--<releaseinfo role="OASIS-specification-previous"
+      >&previous-loc;/&name;-&pstage;.xml</releaseinfo>-->
+    <releaseinfo role="OASIS-specification-latest"
       >&latest-loc;/&name;.html</releaseinfo>
-    <releaseinfo role="OASIS-specification-latest">&latest-loc;/&name;.pdf</releaseinfo>
-    <releaseinfo role="OASIS-specification-latest">&latest-loc;/&name;.xml</releaseinfo>
+    <releaseinfo role="OASIS-specification-latest-authoritative">&latest-loc;/&name;.pdf</releaseinfo>
+    <!--<releaseinfo role="OASIS-specification-latest">&latest-loc;/&name;.xml</releaseinfo>-->
     <releaseinfo role="committee"><ulink url="http://www.oasis-open.org/committees/lexidma/">OASIS
         Lexicographic Infrastructure Data Model and API (LEXIDMA) TC</ulink></releaseinfo>
     <authorgroup>
