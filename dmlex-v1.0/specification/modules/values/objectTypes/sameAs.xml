@@ -36,7 +36,7 @@
     <title>Properties</title>
     <listitem>
       <para><literal>uri</literal>
-        <glossterm>required</glossterm> (exactly one). The URI of an item in an external inventory.</para>
+        <glossterm>required</glossterm> (exactly one) and <glossterm>unique</glossterm>. The URI of an item in an external inventory.</para>
     </listitem>
   </itemizedlist>
     

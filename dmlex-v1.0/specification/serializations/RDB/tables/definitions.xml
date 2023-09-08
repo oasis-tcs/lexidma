@@ -24,8 +24,7 @@
             <para><literal>text: nvarchar</literal></para>
         </listitem>
         <listitem>
-            <para><literal>definitionType: nvarchar</literal>, foreign key,
-                references column <literal>tag</literal>
+            <para><literal>definitionType: nvarchar</literal>, optionally a foreign key referencing column <literal>tag</literal>
                 of table <literal><olink targetptr="rdb_definitionTypeTags">definitionTypeTags</olink></literal>
             </para>
         </listitem>

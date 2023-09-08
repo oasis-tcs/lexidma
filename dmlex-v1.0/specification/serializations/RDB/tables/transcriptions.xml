@@ -24,8 +24,7 @@
             <para><literal>text: nvarchar</literal></para>
         </listitem>
         <listitem>
-            <para><literal>scheme: nvarchar</literal>, foreign key,
-                references column <literal>tag</literal>
+            <para><literal>scheme: nvarchar</literal>, optionally a foreign key referencing column <literal>tag</literal>
                 of table <literal><olink targetptr="rdb_transcriptionSchemeTags">transcriptionSchemeTags</olink></literal></para>
         </listitem>
         <listitem>

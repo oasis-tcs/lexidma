@@ -24,7 +24,7 @@
     <title>Properties</title>
     <listitem>
       <para><literal>tag</literal>
-        <glossterm>required</glossterm> (exactly one). Non-empty string. An abbreviation, a code or
+        <glossterm>required</glossterm> (exactly one) and <glossterm>unique</glossterm>. Non-empty string. An abbreviation, a code or
         some other string of text which identifies the part-of-speech label, for example
           <code>n</code> for noun, <code>v</code> for verb, <code>adj</code> for adjective. The
         <code><olink targetptr="values_partOfSpeechTag">partOfSpeechTag</olink></code> object type can be used to explain

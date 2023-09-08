@@ -38,7 +38,7 @@
     <title>Properties</title>
     <listitem>
       <para><literal>tag</literal>
-        <glossterm>required</glossterm> (exactly one). Non-empty string. An abbreviation, a code or
+        <glossterm>required</glossterm> (exactly one) and <glossterm>unique</glossterm>. Non-empty string. An abbreviation, a code or
         some other string of text which identifies the label, for example <code>neo</code> for
         neologism, <code>colloq</code> for colloquial, <code>polit</code> for politics. The
             <code><olink targetptr="values_labelTag">labelTag</olink></code> object type can be used to explain
