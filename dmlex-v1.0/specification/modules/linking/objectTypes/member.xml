@@ -22,12 +22,12 @@
     <title>Properties</title>
     <listitem>
       <para><literal>memberID</literal>
-        <glossterm>required</glossterm> (exactly one). The ID of an object, such as an entry or a
+        <glossterm>required</glossterm> (exactly one) and <glossterm>unique</glossterm> (in combination with other unique properties if present). Reference to an object, such as an entry or a
         sense.</para>
     </listitem>
     <listitem>
       <para><literal>role</literal>
-        <glossterm>optional</glossterm> (zero or one). Non-empty string. An indication of the role
+        <glossterm>optional</glossterm> (zero or one) and <glossterm>unique</glossterm> (in combination with other unique properties if present). Non-empty string. An indication of the role
         the member has in this relation: whether it is the hypernym or the hyponym (in a
         hyperonymy/hyponymy relation), or whether it is one of the synonyms (in a synonymy
         relation), and so on. You can use <code><olink targetptr="linking_memberType"

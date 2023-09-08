@@ -25,12 +25,12 @@
     <title>Properties</title>
     <listitem>
       <para><literal>text</literal>
-        <glossterm>required</glossterm> (exactly one) and <glossterm>unique</glossterm>. Non-empty string. The text of the inflected
+        <glossterm>required</glossterm> (exactly one) and <glossterm>unique</glossterm> (in combination with other unique properties if present). Non-empty string. The text of the inflected
         form.</para>
     </listitem>
     <listitem>
       <para><literal>tag</literal>
-        <glossterm>optional</glossterm> (zero or one). Non-empty string. An abbreviation, a code or
+        <glossterm>optional</glossterm> (zero or one) and <glossterm>unique</glossterm> (in combination with other unique properties if present). Non-empty string. An abbreviation, a code or
         some other string of text which identifies the inflected form, for example <code>pl</code>
         for plural, <code>gs</code> for genitive singular, <code>com</code> for comparative. The
             <code><olink targetptr="values_inflectedFormTag">inflectedFormTag</olink></code> object

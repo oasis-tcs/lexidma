@@ -23,7 +23,7 @@
         <title>Properties</title>
         <listitem>
             <para><literal>when</literal>
-                <glossterm>optional</glossterm> (zero or one) and <glossterm>unique</glossterm>. Indicates the time period during which this etymological origin is valid.
+                <glossterm>optional</glossterm> (zero or one) and <glossterm>unique</glossterm> (in combination with other unique properties if present). Indicates the time period during which this etymological origin is valid.
                 The value is an open-text indication of the time period, in the language of the dictionary.
             </para>
         </listitem>
@@ -42,7 +42,7 @@
         </listitem>
         <listitem>
             <para><literal><olink targetptr="etymology_etymonUnit">etymonUnit</olink></literal>
-                <glossterm>required</glossterm> (one or more).</para>
+                <glossterm>required</glossterm> (one or more) and <glossterm>unique</glossterm> (in combination with other unique properties if present).</para>
         </listitem>
         <listitem>
             <para><literal>translation</literal>
