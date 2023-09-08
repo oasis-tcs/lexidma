@@ -6,7 +6,7 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
 <!--the document properties were transferred to "dockbook/dbgenent.mod"-->
                          ]>
-<section id="json" role="informative">
+<section id="json" role="normative">
   <title>DMLex JSON serialization</title>
   <para>
     This section specifies a serialization of the DMLex data model in JSON

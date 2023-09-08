@@ -19,9 +19,13 @@
     <releaseinfo role="OASIS-specification-this-authoritative">&this-loc;/&name;-&stage;.pdf</releaseinfo>
     <!--<releaseinfo role="OASIS-specification-this">&this-loc;/&name;-&stage;.xml</releaseinfo>-->
     <releaseinfo role="OASIS-specification-previous"
-      >&previous-loc;/&name;-&pstage;.html</releaseinfo>
+      >
+      N/A</releaseinfo>
+    <!-- <releaseinfo role="OASIS-specification-previous"
+      >
+      &previous-loc;/&name;-&pstage;.html</releaseinfo>
     <releaseinfo role="OASIS-specification-previous-authoritative"
-      >&previous-loc;/&name;-&pstage;.pdf</releaseinfo>
+      >&previous-loc;/&name;-&pstage;.pdf</releaseinfo>-->
     <!--<releaseinfo role="OASIS-specification-previous"
       >&previous-loc;/&name;-&pstage;.xml</releaseinfo>-->
     <releaseinfo role="OASIS-specification-latest"
@@ -175,7 +179,7 @@
             <para>An RDF serialization of DMLex</para>
           </listitem>
           <listitem>
-            <para>An iformative NVH serialization of DMLex</para>
+            <para>An informative NVH serialization of DMLex</para>
           </listitem>
         </itemizedlist>
       </para>

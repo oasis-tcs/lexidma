@@ -6,7 +6,7 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
 <!--the document properties were transferred to "dockbook/dbgenent.mod"-->
                          ]>
-<section id="rdf" role="normative | informative">
+<section id="rdf" role="normative">
   <title>DMLex RDF serialization</title>
 
   <section>
