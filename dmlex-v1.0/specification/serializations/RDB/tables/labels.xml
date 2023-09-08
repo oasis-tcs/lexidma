@@ -45,8 +45,7 @@
             </para>
         </listitem>
         <listitem>
-            <para><literal>tag: nvarchar</literal>, foreign key,
-                references column <literal>tag</literal>
+            <para><literal>tag: nvarchar</literal>, optionally a foreign key referencing column <literal>tag</literal>
                 of table <literal><olink targetptr="rdb_labelTags">labelTags</olink></literal>
             </para>
         </listitem>
