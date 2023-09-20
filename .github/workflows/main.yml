@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Main build on push
 
 # Controls when the action will run.
 on:
@@ -45,4 +45,5 @@ jobs:
           files: |
             dmlex-v1.0/specification/dmlex-v1.0-csd01.html
             dmlex-v1.0/specification/dmlex-v1.0-csd01.pdf
-            dmlex-v1.0/specification/dmlex-v1.0-cs01.xml
+            dmlex-v1.0/specification/dmlex-v1.0-csd01.xml
+            dmlex-v1.0/specification/dmlex_uml.svg
