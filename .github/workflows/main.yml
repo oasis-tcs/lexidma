@@ -45,4 +45,4 @@ jobs:
           files: |
             dmlex-v1.0/specification/dmlex-v1.0-csd01.html
             dmlex-v1.0/specification/dmlex-v1.0-csd01.pdf
-            dmlex-v1.0/specification/dmlex-v1.0-cs01.xml
+            dmlex-v1.0/specification/dmlex-v1.0-csd01.xml
