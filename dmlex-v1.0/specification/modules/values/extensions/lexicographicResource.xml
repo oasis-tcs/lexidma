@@ -72,7 +72,7 @@
     "labelTypeTags": [...],
     "partOfSpeechTags": [...],
     "sourceIdentityTags": [...]
-    "transcriptionSchemeTag": [...]
+    "transcriptionSchemeTags": [...]
 }
     </programlisting>
   </example>
