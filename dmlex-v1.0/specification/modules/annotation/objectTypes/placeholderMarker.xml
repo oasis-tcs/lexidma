@@ -23,7 +23,20 @@
       <para><literal><olink targetptr="annotation_headwordTranslation">headwordTranslation</olink></literal></para>
     </listitem>
   </itemizedlist>
-  
+
+  <itemizedlist>
+    <title>Properties</title>
+    <listitem>
+        <para><literal>startIndex</literal> (required). Non-negative integer. The index of the first character of the substring
+        according to the number of Unicode code points. The first character of the string has index
+        0. This property may be implicit if using in-line markup.</para>
+    </listitem>
+    <listitem>
+        <para><literal>endIndex</literal> (required). Non-negative integer. The index of the last character after the substring
+        according to the number of Unicode code points. This property may be implicit if using in-line markup</para>
+    </listitem>
+  </itemizedlist>
+ 
   <example>
     <title>XML</title>
     <programlisting>
