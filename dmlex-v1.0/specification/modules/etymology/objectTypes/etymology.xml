@@ -18,16 +18,21 @@
   </itemizedlist>
 
   <itemizedlist>
-    <title>Properties</title>
-    <listitem>
-      <para><literal>description</literal>
-        <glossterm>optional</glossterm> (zero or one) and <glossterm>unique</glossterm>. A plain-text form of the etymology, which may
-        contain notes about the etymology. This may be used instead of or alongside a structured list of
-        origin and etymon objects.</para>
-    </listitem>
-    <listitem>
-      <para><literal><olink targetptr="etymology_etymon">etymon</olink></literal>
-        <glossterm>optional</glossterm> (zero or more).</para>
+      <title>Properties</title>
+      <listitem>
+          <para>At least one of:</para>
+          <itemizedlist>
+        <listitem>
+          <para><literal>description</literal>
+            <glossterm>optional</glossterm> (zero or one) and <glossterm>unique</glossterm>. A plain-text form of the etymology, which may
+            contain notes about the etymology. This may be used instead of or alongside a structured list of
+            origin and etymon objects.</para>
+        </listitem>
+        <listitem>
+          <para><literal><olink targetptr="etymology_etymon">etymon</olink></literal>
+            <glossterm>optional</glossterm> (zero or more).</para>
+        </listitem>
+    </itemizedlist>
     </listitem>
     <listitem>
       <para><literal>listingOrder</literal>
