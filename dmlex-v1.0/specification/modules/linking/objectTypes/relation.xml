@@ -22,7 +22,7 @@
     <title>Properties</title>
     <listitem>
       <para><literal>type</literal>
-        <glossterm>required</glossterm> (exactly one) and <glossterm>unique</glossterm> (in combination with all <literal>member</literal>) properties. Non-empty string. Specifies what type of
+        <glossterm>required</glossterm> (exactly one). Non-empty string. Specifies what type of
         relation it is, for example a relation between synonyms or a relation between a sense and a
         subsense. Optionally, <code><olink targetptr="linking_relationType"
           >relationType</olink></code> objects can be used to explain those types and to constrain
@@ -35,7 +35,7 @@
     </listitem>
     <listitem>
       <para><literal><olink targetptr="linking_member">member</olink></literal>
-        <glossterm>required</glossterm> (two or more) and <glossterm>unique</glossterm> (in combination with <literal>type</literal>).</para>
+        <glossterm>required</glossterm> (two or more).</para>
     </listitem>
   </itemizedlist>
 
