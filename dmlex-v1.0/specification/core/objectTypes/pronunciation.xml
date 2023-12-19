@@ -30,7 +30,9 @@
       <itemizedlist>
         <listitem>
           <para><literal>soundFile</literal>
-            <glossterm>optional</glossterm> (zero or one) and <glossterm>unique</glossterm>. A pointer to a file, such as a filename or a URI, containing a sound recording of the pronunciation</para>
+            <glossterm>optional</glossterm> (zero or one) and <glossterm>unique</glossterm>. An
+            <emphasis>Internationalized Resource Identifier</emphasis> (<link linkend="bib_rfc3987">IRI</link>)
+            pointing to a file which contains a sound recording of the pronunciation</para>
         </listitem>
         <listitem>
           <para><literal><olink targetptr="core_transcription">transcription</olink></literal>
@@ -48,6 +50,14 @@
         <glossterm>optional</glossterm> (zero or more).</para>
     </listitem>
   </itemizedlist>
+  
+  <note>
+    <para>
+      The value of the <literal>soundFile</literal> property is an IRI.
+      This means, among other things, that it can be an internet URL or a relative file path,
+      and can contain non-ASCII characters.
+    </para>
+  </note>
 
   <example>
     <title>XML</title>
