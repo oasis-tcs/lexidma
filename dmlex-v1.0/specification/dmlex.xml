@@ -619,6 +619,15 @@
         <title/>
         <bibliomixed id="bcp14">
           <abbrev>BCP 14</abbrev> is a concatenation of [RFC 2119] and [RFC 8174] </bibliomixed>
+        <bibliomixed id="bib_rfc3987">
+          <abbrev>RFC 3987</abbrev>
+          Martin J. Dürst, Michel Suignard,
+          <title>Internationalized Resource Identifiers (IRIs)</title>,
+          <citetitle>
+            <ulink url="https://datatracker.ietf.org/doc/rfc3987/">https://datatracker.ietf.org/doc/rfc3987/</ulink>
+          </citetitle>
+          IETF (Internet Engineering Task Force) RFC 3987, January 2005.
+        </bibliomixed>
         <bibliomixed id="rfc2119"><abbrev>RFC 2119</abbrev> S. Bradner, <title>Key words for use in
             RFCs to Indicate Requirement Levels</title>, <citetitle>
             <ulink url="https://www.ietf.org/rfc/rfc2119.txt"

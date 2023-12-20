@@ -81,6 +81,16 @@
   </note>
 
   <note>
+    <para> DMLex allows entries to contain zero senses. An entry with zero senses is an entry which
+      declares the existence of its headword and, optionally, gives some information about the
+      headword's morphosyntactical properties (part of speech, inflected forms etc.) but does not
+      say anything about its semantics, about its meaning. Such entries can exist as entries which
+      are work in progress, or as entries whose only purpose is to serve as members in
+      entry-to-entry relations (defined in the <olink targetptr="linking">DMLex Linking
+        Module</olink>) such as spelling variants (example: <xref linkend="ex15"/>).</para>
+  </note>
+  
+  <note>
     <para>Entries in DMLex do not have an explicit listing order. An application can imply a listing
       order from a combination of the headword and the homograph number, such that the headword is
       the primary sorting key and the homograph number (for entries that have one) is the secondary

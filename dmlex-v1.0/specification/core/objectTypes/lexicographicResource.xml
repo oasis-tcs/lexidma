@@ -64,6 +64,12 @@
 	  detailed metadata about the lexicographic resource, implementers are advised to refer to
 	  the properties in the <link linkend="DublinCore">Dublin Core <code>elements</code> namespace</link> as for basic metadata. </para>
     </listitem>
+    <listitem>
+      <para>DMLex allows lexicographic resources to contain zero entries. This is to enable the
+        existence of lexicographic resources which are work in progress, and lexicographic resources
+        whose only purpose is to contain relations (defined in the <olink targetptr="linking">DMLex Linking Module</olink>)
+        that link entries from other lexicographic resources.</para>
+    </listitem>
   </itemizedlist>
 
   <example>
