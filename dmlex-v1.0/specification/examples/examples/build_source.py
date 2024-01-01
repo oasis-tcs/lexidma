@@ -15,7 +15,12 @@ for f in glob("source/*.xml"):
     with open(f) as inf:
         with open(f + ".xml", "w") as outf:
             outf.write("<programlisting>\n")
-            outf.write(inf.read().replace("<", "&lt;").replace(">", "&gt;"))
+            for line in inf.readlines():
+                while len(line) > N:
+                    outf.write(line[:N].replace("<", "&lt;").replace(">", "&gt;"))
+                    outf.write("\n")
+                    line = line[N:]
+                outf.write(line.replace("<", "&lt;").replace(">", "&gt;"))
             outf.write("</programlisting>\n")
 
 for f in glob("source/*.rdf"):
