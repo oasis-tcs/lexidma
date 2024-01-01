@@ -1,0 +1,16 @@
+<programlisting>
+&lt;file:beat-up-1&gt; a dmlex:Sense;
+  dmlex:headwordTranslation [ a dmlex:HeadwordTranslation;
+      dmlex:placeholderMarker [ 
+          dmlex:startIndex "0"^^xsd:unsignedInt;
+          dmlex:endIndex "8"^^xsd:unsignedInt ];
+      dmlex:listingOrder "1"^^xsd:unsignedInt;
+      dmlex:text "jemanden verprügeln" ];
+  dmlex:listingOrder "1"^^xsd:unsignedInt.
+&lt;file:beat-up&gt; a dmlex:Entry;
+  dmlex:sense &lt;file:beat-up-1&gt;;
+  dmlex:headword "beat sb. up";
+  dmlex:placeholderMarker [ 
+      dmlex:startIndex "5"^^xsd:unsignedInt;
+      dmlex:endIndex "8"^^xsd:unsignedInt ].
+</programlisting>

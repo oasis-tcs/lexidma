@@ -30,68 +30,15 @@
     </example>
     <example>
         <title>XML</title>
-        <programlisting>
-&lt;lexicographicResource uri="http://example.com" langCode="en"&gt;
-    &lt;entry id="buy"&gt;
-        &lt;headword&gt;buy&lt;/headword&gt;
-        &lt;sense id="buy-1"&gt;
-            &lt;definition&gt;get something by paying money for it&lt;/definition&gt;
-        &lt;/sense&gt;
-    &lt;/entry&gt;
-    &lt;entry id="sell"&gt;
-        &lt;headword&gt;sell&lt;/headword&gt;
-        &lt;sense id="sell-1"&gt;
-            &lt;definition&gt;exchange something for money&lt;/definition&gt;
-        &lt;/sense&gt;
-    &lt;/entry&gt;
-    &lt;relation type="antonyms"&gt;
-        &lt;member memberID="buy-1"/&gt;
-        &lt;member memberID="sell-1"/&gt;
-    &lt;/relation&gt;
-    &lt;relationType type="antonyms"&gt;
-        &lt;memberType type="sense" min="2" max="2" hint="navigate"/&gt;
-    &lt;/relationType&gt;
-&lt;/lexicographicResource&gt;
-</programlisting>
+      <xi:include href="source/13.xml.xml"/>
     </example>
     <example>
         <title>JSON</title>
-        <programlisting>
-{
-    "uri": "http://example.com",
-    "langCode": "en",
-    "entries": [{
-        "id": "buy",
-        "headword": "buy",
-        "senses": [{
-            "id": "buy-1",
-            "definitions": [{"text": "get something by paying money for it"}]
-        }, {
-        "id": "sell",
-        "headword": "sell",
-        "senses": [{
-            "id": "sell-1",
-            "definitions": [{"text": "exchange something for money"}]
-        }]
-    }],
-    "relations": [{
-        "type": "antonyms",
-        "members": [
-            {"memberID": "buy-1"},
-            {"memberID": "sell-1"}
-        ]
-    }],
-    "relationTypes": [{
-        "type": "antonyms",
-        "memberTypes": [{
-            "type": "sense",
-            "min": 2,
-            "max": 2,
-            "hint": "navigate"
-        }]
-    }]
-}
-</programlisting>
+        <xi:include href="source/13.json.xml"/>
+    </example>
+    <example>
+        <title>RDF</title>
+        <xi:include href="source/13.rdf.xml"/>
     </example>
     <example>
         <title>Suggested rendering for human users</title>

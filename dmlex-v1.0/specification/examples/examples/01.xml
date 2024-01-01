@@ -24,38 +24,14 @@
     </example>
     <example>
         <title>XML</title>
-        <programlisting>
-&lt;entry id="folúsghlantóir-n"&gt;
-    &lt;headword&gt;folúsghlantóir&lt;/headword&gt;
-    &lt;partOfSpeech tag="n-masc"/&gt;
-    &lt;inflectedForm tag="sg-gen"&gt;
-        &lt;text>folúsghlantóra&lt;/text>
-    &lt;/inflectedForm&gt;
-    &lt;inflectedForm tag="pl"&gt;
-        &lt;text>folúsghlantóirí&lt;/text>
-    &lt;/inflectedForm&gt;
-    &lt;sense&gt;...&lt;/sense&gt;
-&lt;/entry&gt;
-</programlisting>
+        <xi:include href="source/1.xml.xml"/>
     </example>
     <example>
         <title>JSON</title>
-        <programlisting>
-{
-    "id": "folúsghlantóir-n",
-    "headword": "folúsghlantóir",
-    "partsOfSpeech": ["n-masc"],
-    "inflectedForms": [{
-        "tag": "sg-gen",
-        "text": "folúsghlantóra"
-    }, {
-        "tag": "pl",
-        "text": "folúsghlantóirí"
-    }],
-    "senses": [...]
-}
-</programlisting>
+        <xi:include href="source/1.json.xml"/>
     </example>
-
-
+    <example>
+        <title>RDF</title>
+        <xi:include href="source/1.rdf.xml"/>
+    </example>
 </section>

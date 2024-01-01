@@ -30,79 +30,22 @@
     - relation (type: variants)
         - member (memberID: colour)
         - member (memberID: color)
-    - relationType (type: variants, description: words which differ only in spelling)
+    - relationType (type: variants, description: words which differ 
+			only in spelling)
         - memberType (type: entry, min: 2, hint: navigate)
 </programlisting>
     </example>
     <example>
         <title>XML</title>
-        <programlisting>
-&lt;lexicographicResource uri="http://example.com" langCode="en"&gt;
-    &lt;entry id="colour"&gt;
-        &lt;headword&gt;colour&lt;/headword&gt;
-        &lt;partOfSpeech tag="n"/&gt;
-        &lt;label tag="europeanSpelling"/&gt;
-        &lt;sense id="colour-1"&gt;
-            &lt;definition&gt;red, blue, yellow etc.&lt;/definition&gt;
-            &lt;example&gt;&lt;text&gt;What is your favourite colour?&lt;/text&gt;&lt;/example&gt;
-        &lt;/sense&gt;
-    &lt;/entry&gt;
-    &lt;entry id="color"&gt;
-        &lt;headword&gt;color&lt;/headword&gt;
-        &lt;partOfSpeech tag="n"/&gt;
-        &lt;label tag="americanSpelling"/&gt;
-    &lt;/entry&gt;
-    &lt;relation type="variants"&gt;
-        &lt;member memberID="colour"/&gt;
-        &lt;member memberID="color"/&gt;
-    &lt;/relation&gt;
-    &lt;relationType type="variants"&gt;
-        &lt;description&gt;words which differ only in spelling&lt;/description&gt;
-        &lt;memberType type="entry" min="2" hint="navigate"/&gt;
-    &lt;/relationType&gt;
-&lt;/lexicographicResource&gt;
-</programlisting>
+      <xi:include href="source/15.xml.xml"/>
     </example>
     <example>
         <title>JSON</title>
-        <programlisting>
-{
-    "uri": "http://example.com",
-    "langCode": "en",
-    "entries": [{
-        "id": "colour",
-        "headword": "colour",
-        "partsOfSpeech": ["n"],
-        "labels": ["europeanSpelling"],
-        "senses": [{
-            "id": "colour-1",
-            "definitions": [{"text": "red, blue, yellow etc."}],
-            "examples": [{"text": "What is your favourite colour?"}]
-        }]
-    }, {
-        "id": "color",
-        "headword": "color",
-        "partsOfSpeech": ["n"],
-        "labels": ["americanSpelling"]
-    }],
-    "relations": [{
-        "type": "variants",
-        "members": [
-          {"memberID": "colour"},
-          {"memberID": "color"}
-        ]
-    }],
-    "relationTypes": [{
-        "type": "variants",
-        "description": "words which differ only in spelling",
-        "memberTypes": [{
-            "type": "entry",
-            "min": 2,
-            "hint": "navigate"
-        }]
-    }]
-}
-</programlisting>
+        <xi:include href="source/15.json.xml"/>
+    </example>
+    <example>
+        <title>RDF</title>
+        <xi:include href="source/15.rdf.xml"/>
     </example>
     <example>
         <title>Suggested rendering for human users</title>

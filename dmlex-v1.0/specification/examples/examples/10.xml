@@ -14,7 +14,8 @@
     <example>
         <title>Pseudocode</title>
         <programlisting>
-- lexicographicResource (title: My Irish-Multilingual Dictionary, uri: http://example.com, langCode: ga)
+- lexicographicResource (title: My Irish-Multilingual Dictionary, 
+            uri: http://example.com, langCode: ga)
     - translationLanguage (langCode: en)
     - translationLanguage (langCode: de)
     - translationLanguage (langCode: cs)
@@ -22,27 +23,14 @@
     </example>
     <example>
         <title>XML</title>
-        <programlisting>
-&lt;lexicographicResource uri="http://example.com" langCode="ga"&gt;
-    &lt;title&gt;My Irish-Multilingual Dictionary&lt;/title&gt;
-    &lt;translationLanguage langCode="en"/&gt;
-    &lt;translationLanguage langCode="de"/&gt;
-    &lt;translationLanguage langCode="cs"/&gt;
-    ...
-&lt;/lexicographicResource&gt;
-</programlisting>
+       <xi:include href="source/10.xml.xml"/>
     </example>
     <example>
         <title>JSON</title>
-        <programlisting>
-{
-    "title": "My Irish-Multilingual Dictionary",
-    "uri": "http://example.com",
-    "langCode": "ga",
-    "translationLanguages": ["en", "de", "cs"],
-    ...
-}
-</programlisting>
+        <xi:include href="source/10.json.xml"/>
     </example>
-
+    <example>
+        <title>RDF</title>
+        <xi:include href="source/10.rdf.xml"/>
+    </example>
 </section>

@@ -1,0 +1,27 @@
+<programlisting>
+{
+  "id": "cat-n",
+  "headword": "cat",
+  "senses": [],
+  "etymologies": [{
+    "etymons": [{
+      "etymonUnits": [
+        {"langCode": "enm", "text": "catte"}
+      ]
+    }, {
+      "etymonUnits": [
+        {"langCode": "ang", "text": "catt", "translation": "male cat"}
+,
+        {"langCode": "ang", "text": "catte", "translation": "female ca
+t"}
+      ]
+    }, {
+      "etymonUnits": [
+        {"langCode": "gem-x-proto", "text": "kattuz", 
+            "reconstructed": true}
+      ]
+    }]
+  }]
+}
+
+</programlisting>

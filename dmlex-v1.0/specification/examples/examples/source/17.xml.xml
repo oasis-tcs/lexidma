@@ -1,0 +1,40 @@
+<programlisting>
+&lt;lexicographicResource uri="http://example.com" langCode="en"&gt;
+    &lt;entry id="safe"&gt;
+        &lt;headword&gt;safe&lt;/headword&gt;
+        &lt;sense id="safe-1"&gt;
+            &lt;indicator&gt;protected from harm&lt;/indicator&gt;
+            &lt;example&gt;
+                &lt;text&gt;It isn't safe to park here.&lt;/text&gt;
+            &lt;/example&gt;
+        &lt;/sense&gt;
+        &lt;sense id="safe-2"&gt;
+            &lt;indicator&gt;not likely to cause harm&lt;/indicator&gt;
+            &lt;example&gt;
+                &lt;text&gt;Is the ride safe for a small child?&lt;/text&gt;
+            &lt;/example&gt;
+        &lt;/sense&gt;
+    &lt;/entry&gt;
+    &lt;entry id="better-safe"&gt;
+        &lt;headword&gt;better safe than sorry&lt;/headword&gt;
+        &lt;sense id="better-safe-1"&gt;
+            &lt;definition&gt;
+                you should be careful even if it seems unnecessary
+            &lt;/definition&gt;
+        &lt;/sense&gt;
+    &lt;/entry&gt;
+    &lt;relation type="subentrying"&gt;
+        &lt;member memberID="safe-1" role="container" 
+            obverseListingOrder="0"/&gt;
+        &lt;member memberID="better-safe" role="subentry" 
+            obverseListingOrder="0"/&gt;
+    &lt;/relation&gt;
+    &lt;relationType type="subentrying" scopeRestriction="sameResource"&gt;
+        &lt;memberType role="container" type="sense" min="1" max="1" 
+            hint="navigate"/&gt;
+        &lt;memberType role="subentry" type="entry" min="1" max="1" 
+            hint="embed"/&gt;
+    &lt;/relationType&gt;
+&lt;/lexicographicResource&gt;
+
+</programlisting>

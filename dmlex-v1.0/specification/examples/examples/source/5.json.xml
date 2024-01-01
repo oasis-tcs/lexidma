@@ -1,0 +1,35 @@
+<programlisting>
+{
+    "uri": "http://example.com",
+    "langCode": "ga",
+    "entries": [{
+        "id": "folúsghlantóir-n",
+        "headword": "folúsghlantóir",
+        "partsOfSpeech": ["n-masc"],
+        "inflectedForms": [{
+            "tag": "sg-gen",
+            "text": "folúsghlantóra"
+        }, {
+            "tag": "pl",
+            "text": "folúsghlantóirí"
+        }],
+        "senses": []
+    }],
+    "partOfSpeechTags": [{
+        "tag": "n-masc",
+        "description": "masculine noun"
+    }, {
+    "tag": "n-fem",
+    "description": "feminine noun"
+    }],
+    "inflectedFormTags": [{
+        "tag": "sg-gen",
+        "description": "singular genitive",
+        "forPartsOfSpeech": ["n-masc", "n-fem"]
+    }, {
+        "tag": "pl",
+        "description": "plural",
+        "forPartsOfSpeech": ["n-masc", "n-fem"]
+    }]
+}
+</programlisting>

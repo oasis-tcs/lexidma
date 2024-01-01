@@ -32,76 +32,14 @@
     </example>
     <example>
         <title>XML</title>
-        <programlisting>
-&lt;lexicographicResource uri="http://example.com" langCode="ga"&gt;
-    &lt;entry id="folúsghlantóir-n"&gt;
-        &lt;headword&gt;folúsghlantóir&lt;/headword&gt;
-        &lt;partOfSpeech value="n-masc"/&gt;
-        &lt;inflectedForm tag="sg-gen"&gt;
-            &lt;text>folúsghlantóra&lt;/text>
-        &lt;/inflectedForm&gt;
-        &lt;inflectedForm tag="pl"&gt;
-            &lt;text>folúsghlantóirí&lt;/text>
-        &lt;/inflectedForm&gt;
-        &lt;sense&gt;...&lt;/sense&gt;
-    &lt;/entry&gt;
-    &lt;partOfSpeechTag tag="n-masc"&gt;
-        &lt;description&gt;masculine noun&lt;/description&gt;
-    &lt;/partOfSpeechTag&gt;
-    &lt;partOfSpeechTag tag="n-fem"&gt;
-        &lt;description&gt;feminine noun&lt;/description&gt;
-    &lt;/partOfSpeechTag&gt;
-    &lt;inflectedFormTag tag="sg-gen"&gt;
-        &lt;description&gt;singular genitive&lt;/description&gt;
-        &lt;forPartOfSpeech tag="n-masc"/&gt;
-        &lt;forPartOfSpeech tag="n-fem"/&gt;
-    &lt;/tag&gt;
-    &lt;tag value="pl"&gt;
-        &lt;description&gt;plural&lt;/description&gt;
-        &lt;target value="inflectedTag"/&gt;
-        &lt;forPartOfSpeech tag="n-masc"/&gt;
-        &lt;forPartOfSpeech tag="n-fem"/&gt;
-    &lt;/tag&gt;
-&lt;/lexicographicResource&gt;
-</programlisting>
+        <xi:include href="source/5.xml.xml"/>
     </example>
     <example>
         <title>JSON</title>
-        <programlisting>
-{
-    "uri": "http://example.com",
-    "langCode": "ga",
-    "entries": [{
-        "id": "folúsghlantóir-n",
-        "headword": "folúsghlantóir",
-        "partsOfSpeech": ["n-masc"],
-        "inflectedForms": [{
-            "tag": "sg-gen",
-            "text": "folúsghlantóra"
-        }, {
-            "tag": "pl",
-            "text": "folúsghlantóirí"
-        }],
-        "senses": [...]
-    }],
-    "partOfSpeechTags": [{
-        "tag": "n-masc",
-        "description": "masculine noun"
-    }, {
-        "tag": "n-fem",
-        "description": "feminine noun"
-    }],
-    "inflectedFormTags": [{
-        "tag": "sg-gen",
-        "description": "singular genitive"
-        "forPartsOfSpeech": ["n-masc", "n-fem"]
-    }, {
-        "tag": "pl",
-        "description": "plural",
-        "forPartsOfSpeech": ["n-masc", "n-fem"]
-    }]
-}
-</programlisting>
+        <xi:include href="source/5.json.xml"/>
     </example>
-
+    <example>
+        <title>RDF</title>
+        <xi:include href="source/5.rdf.xml"/>
+    </example>
 </section>

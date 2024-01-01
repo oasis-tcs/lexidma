@@ -1,0 +1,57 @@
+<programlisting>
+{
+    "uri": "http://example.com",
+    "langCode": "en",
+    "entries": [{
+        "id": "safe",
+        "headword": "safe",
+        "senses": [{
+            "id": "safe-1",
+            "indicator": "protected from harm",
+            "examples": [{"text": "It isn't safe to park here."}]
+        }, {
+            "id": "safe-2",
+            "indicator": "not likely to cause harm",
+            "examples": [{"text": "Is the ride safe for a small child?
+"}]
+        }]
+    }, {
+        "id": "better-safe",
+        "headword": "better safe than sorry",
+        "senses": [{
+            "id": "better-safe-1",
+            "definitions": [{
+                "text": "you should be careful even if it seems unnece
+ssary"
+            }]
+        }]
+    }],
+    "relations": [{
+        "type": "subentrying",
+        "members": [
+          {"role": "container", "memberID": "safe-1", 
+              "obverseListingOrder": 0},
+          {"role": "subentry", "memberID": "better-safe", 
+              "obverseListingOrder": 0}
+        ]
+    }],
+    "relationTypes": [{
+        "type": "subentrying",
+        "scopeRestriction": "sameResource",
+        "memberTypes": [{
+            "role": "container",
+            "type": "sense",
+            "min": 1,
+            "max": 1,
+            "hint": "navigate"
+        }, {
+            "role": "subentry",
+            "type": "entry",
+            "min": 1,
+            "max": 1,
+            "hint": "embed"
+        }]
+    }]
+}
+
+</programlisting>

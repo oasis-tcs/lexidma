@@ -1,0 +1,49 @@
+<programlisting>
+{
+  "langCode": "en",
+  "entries": [ {
+      "id": "school-noun-2",
+      "headword": "school",
+      "etymologies": [ {
+          "description": "Middle Dutch scole (\"multitude, troop, crow
+d, school\") from Proto-Germanic *skulō; doublet of shoal",
+          "etymons": [ {
+              "type": "derivation",
+              "etymonUnits": [ {
+                  "langCode": "dum",
+                  "text": "scole",
+                  "translation": "multitude, troop, crowd, school"
+            }]},
+            {
+              "type": "derivation",
+              "etymonUnits": [ {
+                  "langCode": "gem-pro",
+                  "text": "skulō",
+                  "reconstructed": true
+            }]},
+            {
+              "type": "doublet",
+              "etymonUnits": [ {
+                  "langCode": "en",
+                  "text": "shoal"
+              }]
+            }]
+      }]
+  }],
+  "etymonLanguages": [ {
+      "langCode": "dum",
+      "displayName": "Middle Dutch"
+    }, {
+      "langCode": "gem-pro",
+      "displayName": "Proto-Germanic"
+  }],
+  "etymonTypes": [ {
+      "type": "derivation",
+      "description": "A historical form of the word"
+    }, {
+      "type": "doublet",
+      "description": "Two words derived from the same etymological roo
+t"
+  }] 
+}
+</programlisting>

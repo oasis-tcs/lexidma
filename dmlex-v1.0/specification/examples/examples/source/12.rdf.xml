@@ -1,0 +1,58 @@
+<programlisting>
+&lt;file:lens-1&gt; a dmlex:Sense;
+  dmlex:listingOrder "1"^^xsd:unsignedInt;
+  dmlex:definition [ a dmlex:Definition;
+      dmlex:listingOrder "1"^^xsd:unsignedInt;
+      dmlex:text "curved glass that makes things seem bigger" ].
+&lt;file:microscope-1&gt; a dmlex:Sense;
+  dmlex:definition [ a dmlex:Definition;
+      dmlex:listingOrder "1"^^xsd:unsignedInt;
+      dmlex:text "equipment for looking at very small things" ];
+  dmlex:listingOrder "1"^^xsd:unsignedInt.
+[] a dmlex:LexicographicResource;
+  dmlex:uri "http://example.com";
+  dmlex:entry &lt;file:glasses&gt;,
+    &lt;file:lens&gt;,
+    &lt;file:microscope&gt;;
+  dmlex:langCode "en";
+  dmlex:relation [ a dmlex:Relation;
+      dmlex:listingOrder "1"^^xsd:unsignedInt;
+      dmlex:member [ a dmlex:Member;
+          dmlex:role "part";
+          dmlex:listingOrder "2"^^xsd:unsignedInt;
+          dmlex:obverseListingOrder "0"^^xsd:unsignedInt;
+          dmlex:memberID "lens-1" ],
+        [ a dmlex:Member;
+          dmlex:role "whole";
+          dmlex:listingOrder "1"^^xsd:unsignedInt;
+          dmlex:memberID "glasses-1";
+          dmlex:obverseListingOrder "0"^^xsd:unsignedInt ];
+      dmlex:type "meronymy" ],
+    [ a dmlex:Relation;
+      dmlex:listingOrder "2"^^xsd:unsignedInt;
+      dmlex:member [ a dmlex:Member;
+          dmlex:obverseListingOrder "0"^^xsd:unsignedInt;
+          dmlex:memberID "microscope-1";
+          dmlex:role "whole";
+          dmlex:listingOrder "1"^^xsd:unsignedInt ],
+        [ a dmlex:Member;
+          dmlex:memberID "lens-1";
+          dmlex:role "part";
+          dmlex:obverseListingOrder "0"^^xsd:unsignedInt;
+          dmlex:listingOrder "2"^^xsd:unsignedInt ];
+      dmlex:type "meronymy" ].
+&lt;file:glasses-1&gt; a dmlex:Sense;
+  dmlex:listingOrder "1"^^xsd:unsignedInt;
+  dmlex:definition [ a dmlex:Definition;
+      dmlex:listingOrder "1"^^xsd:unsignedInt;
+      dmlex:text "an optical seeing aid" ].
+&lt;file:microscope&gt; a dmlex:Entry;
+  dmlex:sense &lt;file:microscope-1&gt;;
+  dmlex:headword "microscope".
+&lt;file:lens&gt; a dmlex:Entry;
+  dmlex:headword "lens";
+  dmlex:sense &lt;file:lens-1&gt;.
+&lt;file:glasses&gt; a dmlex:Entry;
+  dmlex:sense &lt;file:glasses-1&gt;;
+  dmlex:headword "glasses".
+</programlisting>

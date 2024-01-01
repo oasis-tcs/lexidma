@@ -12,34 +12,21 @@
     <example>
         <title>Pseudocode</title>
         <programlisting>
-- entry (id: continue-studies, headword: continue your studies, placeholderMarker: "your")
+- entry (id: continue-studies, headword: continue your studies, 
+		placeholderMarker: "your")
     - sense ...
 </programlisting>
     </example>
     <example>
         <title>XML</title>
-        <programlisting>
-&lt;entry id="continue-studies"&gt;
-    &lt;headword&gt;
-        continue &lt;placeholderMarker&gt;your&lt;/placeholderMarker&gt; studies
-    &lt;/headword&gt;
-    &lt;sense.../&gt;
-&lt;/entry&gt;
-</programlisting>
+      <xi:include href="source/19.xml.xml"/>
     </example>
     <example>
         <title>JSON</title>
-        <programlisting>
-{
-  "id": "continue-studies",
-  "headword": "continue your studies",
-  "placeholderMarkers": [
-     {"startIndex": 9, "endIndex": 13}
-  ],
-  "senses": [...]
-}
-</programlisting>
+        <xi:include href="source/19.json.xml"/>
     </example>
-
-
+    <example>
+        <title>RDF</title>
+        <xi:include href="source/19.rdf.xml"/>
+    </example>
 </section>

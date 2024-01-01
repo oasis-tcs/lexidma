@@ -1,0 +1,52 @@
+<programlisting>
+{
+    "uri": "http://example.com",
+    "langCode": "de",
+    "translationLanguages": ["en"],
+    "entries": [{
+        "id": "die-see",
+        "headword": "See",
+        "partsOfSpeech": ["n-fem"],
+        "senses": [{
+            "id": "die-see-1",
+            "headwordTranslations": [{"text": "sea"}]
+        }]
+    }, {
+        "id": "das-meer",
+        "headword": "Meer",
+        "partsOfSpeech": ["n-neut"],
+        "senses": [{
+            "id": "das-meer-1",
+            "headwordTranslations": [{"text": "sea"}]
+        }]
+    }, {
+        "id": "der-ozean",
+        "headword": "Ozean",
+        "partsOfSpeech": ["n-masc"],
+        "senses": [{
+            "id": "der-ozean-1",
+            "headwordTranslations": [{"text": "ocean"}]
+        }]
+    }],
+    "relations": [{
+        "type": "synonyms",
+        "description": "words that mean sea and ocean",
+        "members": [
+          {"memberID": "die-see-1", "obverseListingOrder": 0},
+          {"memberID": "das-meer-1", "obverseListingOrder": 0},
+          {"memberID": "der-ozean-1", "obverseListingOrder": 0}
+        ]
+    }],
+    "relationTypes": [{
+        "type": "synonyms",
+        "description": "synonyms and near synonyms",
+        "memberTypes": [{
+            "role": "whole",
+            "type": "sense",
+            "min": 2,
+            "hint": "navigate"
+        }]
+    }]
+}
+
+</programlisting>

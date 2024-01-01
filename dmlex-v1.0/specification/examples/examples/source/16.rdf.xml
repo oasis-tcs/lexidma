@@ -1,0 +1,68 @@
+<programlisting>
+&lt;file:colour&gt; a dmlex:Entry;
+  dmlex:sense &lt;file:colour-1&gt;, &lt;file:colour-2&gt;, &lt;file:colour-4&gt;, 
+  &lt;file:colour-3&gt;;
+  dmlex:headword "colour".
+&lt;file:colour-4&gt; a dmlex:Sense;
+  dmlex:listingOrder "4"^^xsd:unsignedInt;
+  dmlex:definition [ a dmlex:Definition;
+      dmlex:text "interest or excitement";
+      dmlex:listingOrder "1"^^xsd:unsignedInt ];
+  dmlex:example [ a dmlex:Example;
+      dmlex:listingOrder "1"^^xsd:unsignedInt;
+      dmlex:text "Examples add colour to your writing." ].
+[] a dmlex:LexicographicResource;
+  dmlex:langCode "en";
+  dmlex:relation [ a dmlex:Relation;
+      dmlex:listingOrder "1"^^xsd:unsignedInt;
+      dmlex:member [ a dmlex:Member;
+          dmlex:role "sub";
+          dmlex:listingOrder "2"^^xsd:unsignedInt;
+          dmlex:obverseListingOrder "0"^^xsd:unsignedInt;
+          dmlex:memberID "colour-2" ],
+        [ a dmlex:Member;
+          dmlex:obverseListingOrder "0"^^xsd:unsignedInt;
+          dmlex:role "super";
+          dmlex:memberID "colour-1";
+          dmlex:listingOrder "1"^^xsd:unsignedInt ];
+      dmlex:type "subsensing" ],
+    [ a dmlex:Relation;
+      dmlex:type "subsensing";
+      dmlex:member [ a dmlex:Member;
+          dmlex:role "sub";
+          dmlex:obverseListingOrder "0"^^xsd:unsignedInt;
+          dmlex:listingOrder "2"^^xsd:unsignedInt;
+          dmlex:memberID "colour-3" ],
+        [ a dmlex:Member;
+          dmlex:listingOrder "1"^^xsd:unsignedInt;
+          dmlex:role "super";
+          dmlex:memberID "colour-1";
+          dmlex:obverseListingOrder "0"^^xsd:unsignedInt ];
+      dmlex:listingOrder "2"^^xsd:unsignedInt ];
+  dmlex:uri "http://example.com";
+  dmlex:entry &lt;file:colour&gt;.
+&lt;file:colour-3&gt; a dmlex:Sense;
+  dmlex:example [ a dmlex:Example;
+      dmlex:text "People of all creeds and colours.";
+      dmlex:listingOrder "1"^^xsd:unsignedInt ];
+  dmlex:listingOrder "3"^^xsd:unsignedInt;
+  dmlex:definition [ a dmlex:Definition;
+      dmlex:text "a sign of a person's race";
+      dmlex:listingOrder "1"^^xsd:unsignedInt ].
+&lt;file:colour-1&gt; a dmlex:Sense;
+  dmlex:example [ a dmlex:Example;
+      dmlex:text "What is your favourite colour?";
+      dmlex:listingOrder "1"^^xsd:unsignedInt ];
+  dmlex:definition [ a dmlex:Definition;
+      dmlex:listingOrder "1"^^xsd:unsignedInt;
+      dmlex:text "red, blue, yellow etc." ];
+  dmlex:listingOrder "1"^^xsd:unsignedInt.
+&lt;file:colour-2&gt; a dmlex:Sense;
+  dmlex:example [ a dmlex:Example;
+      dmlex:text "Owning a colour TV meant you were rich.";
+      dmlex:listingOrder "1"^^xsd:unsignedInt ];
+  dmlex:listingOrder "2"^^xsd:unsignedInt;
+  dmlex:definition [ a dmlex:Definition;
+      dmlex:listingOrder "1"^^xsd:unsignedInt;
+      dmlex:text "not being black and white" ].
+</programlisting>

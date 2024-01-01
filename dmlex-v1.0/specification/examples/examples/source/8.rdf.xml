@@ -1,0 +1,36 @@
+<programlisting>
+&lt;file:doctor-n-1&gt; a dmlex:Sense;
+  dmlex:headwordTranslation [ a dmlex:HeadwordTranslation;
+      dmlex:text "Ärztin";
+      dmlex:listingOrder "2"^^xsd:unsignedInt;
+      dmlex:partOfSpeech [ 
+          dmlex:tag "n-fem";
+          dmlex:listingOrder "1"^^xsd:unsignedInt ] ],
+    [ a dmlex:HeadwordTranslation;
+      dmlex:listingOrder "1"^^xsd:unsignedInt;
+      dmlex:text "Arzt";
+      dmlex:partOfSpeech [ 
+          dmlex:listingOrder "1"^^xsd:unsignedInt;
+          dmlex:tag "n-masc" ] ];
+  dmlex:indicator "medical doctor";
+  dmlex:listingOrder "1"^^xsd:unsignedInt.
+&lt;file:doctor-n-2&gt; a dmlex:Sense;
+  dmlex:headwordTranslation [ a dmlex:HeadwordTranslation;
+      dmlex:partOfSpeech [ 
+          dmlex:listingOrder "1"^^xsd:unsignedInt;
+          dmlex:tag "n-masc" ];
+      dmlex:text "Doktor";
+      dmlex:listingOrder "1"^^xsd:unsignedInt ],
+    [ a dmlex:HeadwordTranslation;
+      dmlex:partOfSpeech [ 
+          dmlex:listingOrder "1"^^xsd:unsignedInt;
+          dmlex:tag "n-fem" ];
+      dmlex:listingOrder "2"^^xsd:unsignedInt;
+      dmlex:text "Doktorin" ];
+  dmlex:listingOrder "2"^^xsd:unsignedInt;
+  dmlex:indicator "academic title".
+&lt;file:doctor-n&gt; a dmlex:Entry;
+  dmlex:sense &lt;file:doctor-n-1&gt;,
+    &lt;file:doctor-n-2&gt;;
+  dmlex:headword "doctor".
+</programlisting>

@@ -15,56 +15,22 @@
 - entry (id: autopsy, headword: autopsy)
     - sense (id: autopsy-1)
         - headwordTranslation (text: pitva)
-        - example (text: The coroner performed an autopsy., headwordMarker: "autopsy")
-            - exampleTranslation (text: Koroner provedl pitvu., headwordMarker: "pitvu")
+        - example (text: The coroner performed an autopsy., 
+			headwordMarker: "autopsy")
+            - exampleTranslation (text: Koroner provedl pitvu., 
+			headwordMarker: "pitvu")
 </programlisting>
     </example>
     <example>
         <title>XML</title>
-        <programlisting>
-&lt;entry id="autopsy"&gt;
-    &lt;headword&gt;autopsy&lt;/headword&gt;
-    &lt;sense id="autopsy-1"&gt;
-        &lt;headwordTranslation&gt;&lt;text&gt;pitva&lt;/text&gt;&lt;/headwordTranslation&gt;
-        &lt;example&gt;
-            &lt;text&gt;
-                The coroner performed an &lt;headwordMarker&gt;autopsy&lt;/headwordMarker&gt;.
-            &lt;/text&gt;
-            &lt;exampleTranslation&gt;
-                &lt;text&gt;
-                    Koroner provedl &lt;headwordMarker&gt;pitvu&lt;/headwordMarker&gt;.
-                &lt;/text&gt;
-            &lt;/exampleTranslation&gt;
-        &lt;/example&gt;
-    &lt;/sense&gt;
-&lt;/entry&gt;
-</programlisting>
+      <xi:include href="source/21.xml.xml"/>
     </example>
     <example>
         <title>JSON</title>
-        <programlisting>
-{
-  "id": "autopsy",
-  "headword": "autopsy",
-  "senses": [{
-    "id": "autopsy-1",
-    "headwordTranslations": [{"text": "pitva"}],
-    "examples": [{
-      "text": "The coroner performed an autopsy.",
-      "headwordMarkers": [
-        {"startIndex": 25, "endIndex": 32}
-      ],
-      "exampleTranslations": [{
-        "text": "Koroner provedl pitvu.",
-        "headwordMarkers": [
-          {"startIndex": 16, "endIndex": 21}
-        ]
-      }]
-    }]
-  }]
-}
-</programlisting>
+        <xi:include href="source/21.json.xml"/>
     </example>
-
-
+    <example>
+        <title>RDF</title>
+        <xi:include href="source/21.rdf.xml"/>
+    </example>
 </section>

@@ -1,0 +1,34 @@
+<programlisting>
+&lt;file:sell&gt; a dmlex:Entry;
+  dmlex:sense &lt;file:sell-1&gt;;
+  dmlex:headword "sell".
+&lt;file:buy&gt; a dmlex:Entry;
+  dmlex:sense &lt;file:buy-1&gt;;
+  dmlex:headword "buy".
+&lt;file:sell-1&gt; a dmlex:Sense;
+  dmlex:listingOrder "1"^^xsd:unsignedInt;
+  dmlex:definition [ a dmlex:Definition;
+      dmlex:listingOrder "1"^^xsd:unsignedInt;
+      dmlex:text "exchange something for money" ].
+&lt;file:buy-1&gt; a dmlex:Sense;
+  dmlex:listingOrder "1"^^xsd:unsignedInt;
+  dmlex:definition [ a dmlex:Definition;
+      dmlex:listingOrder "1"^^xsd:unsignedInt;
+      dmlex:text "get something by paying money for it" ].
+[] a dmlex:LexicographicResource;
+  dmlex:uri "http://example.com";
+  dmlex:entry &lt;file:sell&gt;,
+    &lt;file:buy&gt;;
+  dmlex:relation [ a dmlex:Relation;
+      dmlex:member [ a dmlex:Member;
+          dmlex:memberID "buy-1";
+          dmlex:obverseListingOrder "0"^^xsd:unsignedInt;
+          dmlex:listingOrder "1"^^xsd:unsignedInt ],
+        [ a dmlex:Member;
+          dmlex:memberID "sell-1";
+          dmlex:obverseListingOrder "0"^^xsd:unsignedInt;
+          dmlex:listingOrder "2"^^xsd:unsignedInt ];
+      dmlex:listingOrder "1"^^xsd:unsignedInt;
+      dmlex:type "antonyms" ];
+  dmlex:langCode "en".
+</programlisting>

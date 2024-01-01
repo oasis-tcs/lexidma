@@ -1,0 +1,27 @@
+<programlisting>
+&lt;entry id="doctor-n"&gt;
+    &lt;headword&gt;doctor&lt;/headword&gt;
+    &lt;sense id="doctor-n-1"&gt;
+        &lt;indicator&gt;medical doctor&lt;/indicator&gt;
+        &lt;headwordTranslation&gt;
+            &lt;text&gt;Arzt&lt;/text&gt;
+            &lt;partOfSpeech tag="n-masc"/&gt;
+        &lt;/headwordTranslation&gt;
+        &lt;headwordTranslation&gt;
+            &lt;text&gt;Ärztin&lt;/text&gt;
+            &lt;partOfSpeech tag="n-fem"/&gt;
+        &lt;/headwordTranslation&gt;
+    &lt;/sense&gt;
+    &lt;sense id="doctor-n-2"&gt;
+        &lt;indicator&gt;academic title&lt;/indicator&gt;
+        &lt;headwordTranslation&gt;
+            &lt;text&gt;Doktor&lt;/text&gt;
+            &lt;partOfSpeech tag="n-masc"/&gt;
+        &lt;/headwordTranslation&gt;
+        &lt;headwordTranslation&gt;
+            &lt;text&gt;Doktorin&lt;/text&gt;
+            &lt;partOfSpeech tag="n-fem"/&gt;
+        &lt;/headwordTranslation&gt;
+    &lt;/sense&gt;
+&lt;/entry&gt;
+</programlisting>

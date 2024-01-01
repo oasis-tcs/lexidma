@@ -28,73 +28,14 @@
     </example>
     <example>
         <title>XML</title>
-        <programlisting>
-&lt;entry id="fómhar-n"&gt;
-    &lt;headword&gt;fómhar&lt;/headword&gt;
-    &lt;sense id="fómhar-n-1"&gt;
-        &lt;headwordTranslation langCode="en"&gt;
-            &lt;text&gt;autumn&lt;/text&gt;
-        &lt;/headwordTranslation&gt;
-        &lt;headwordTranslation langCode="en"&gt;
-            &lt;text&gt;fall&lt;/text&gt;
-        &lt;/headwordTranslation&gt;
-        &lt;headwordTranslation langCode="de"&gt;
-            &lt;text&gt;Herbst&lt;/text&gt;
-        &lt;/headwordTranslation&gt;
-        &lt;headwordTranslation langCode="cs"&gt;
-            &lt;text&gt;podzim&lt;/text&gt;
-        &lt;/headwordTranslation&gt;
-    &lt;/sense&gt;
-    &lt;sense id="fómhar-n-2"&gt;
-        &lt;headwordTranslation langCode="en"&gt;
-            &lt;text&gt;harvest&lt;/text&gt;
-        &lt;/headwordTranslation&gt;
-        &lt;headwordTranslation langCode="de"&gt;
-            &lt;text&gt;Ernte&lt;/text&gt;
-        &lt;/headwordTranslation&gt;
-        &lt;headwordTranslation langCode="cs"&gt;
-            &lt;text&gt;sklizeň&lt;/text&gt;
-        &lt;/headwordTranslation&gt;
-    &lt;/sense&gt;
-&lt;/entry&gt;
-</programlisting>
+       <xi:include href="source/11.xml.xml"/>
     </example>
     <example>
         <title>JSON</title>
-        <programlisting>
-{
-    "id": "fómhar-n",
-    "headword": "fómhar",
-    "senses": [{
-        "id": "fómhar-n-1",
-        "headwordTranslations": [{
-            "langCode": "en",
-            "text": "autumn"
-        }, {
-            "langCode": "en",
-            "text": "fall"
-        }, {
-            "langCode": "de",
-            "text": "Herbst"
-        }, {
-            "langCode": "cs",
-            "text": "podzim"
-        }]
-    }, {
-        "id": "fómhar-n-2",
-        "headwordTranslations": [{
-            "langCode": "en",
-            "text": "harvest"
-        }, {
-            "langCode": "de",
-            "text": "Ernte"
-        }, {
-            "langCode": "cs",
-            "text": "sklizeň"
-        }]
-    },]
-}
-</programlisting>
+        <xi:include href="source/11.json.xml"/>
     </example>
-
+    <example>
+        <title>RDF</title>
+        <xi:include href="source/11.rdf.xml"/>
+    </example>
 </section>

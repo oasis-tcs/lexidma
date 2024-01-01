@@ -1,0 +1,12 @@
+<programlisting>
+&lt;lexicographicResource uri="http://example.com" langCode="ga"&gt;
+    &lt;title&gt;My Irish-Multilingual Dictionary&lt;/title&gt;
+    &lt;translationLanguage langCode="en"/&gt;
+    &lt;translationLanguage langCode="de"/&gt;
+    &lt;translationLanguage langCode="cs"/&gt;
+    &lt;entry&gt;
+        &lt;headword&gt;focal&lt;/headword&gt;
+    &lt;/entry&gt;
+&lt;/lexicographicResource&gt;
+
+</programlisting>

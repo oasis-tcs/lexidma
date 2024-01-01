@@ -20,29 +20,14 @@
     </example>
     <example>
         <title>XML</title>
-        <programlisting>
-&lt;entry id="aardvark-noun"&gt;
-    &lt;headword&gt;aardvark&lt;/headword&gt;
-    &lt;pronunciation&gt;
-        &lt;transcription&gt;a:rdva:rk&lt;/transcription&gt;
-    &lt;/pronunciation&gt;
-    &lt;sense&gt;...&lt;/sense&gt;
-&lt;/entry&gt;
-</programlisting>
+        <xi:include href="source/2.xml.xml"/>
     </example>
     <example>
         <title>JSON</title>
-        <programlisting>
-{
-    "id": "aardvark-noun",
-    "headword": "aardvark",
-    "pronunciations": [{
-        "transcriptions": [{"text": "a:rdva:rk"}]
-    }],
-    "senses": [...]
-}
-</programlisting>
+        <xi:include href="source/2.json.xml"/>
     </example>
-
-
+    <example>
+        <title>RDF</title>
+        <xi:include href="source/2.rdf.xml"/>
+    </example>
 </section>

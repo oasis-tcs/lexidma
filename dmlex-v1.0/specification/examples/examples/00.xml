@@ -33,88 +33,14 @@
     </example>
     <example>
         <title>XML</title>
-        <programlisting>
-&lt;lexicographicResource uri="http://example.com" langCode="en"&gt;
-    &lt;entry id="abandon-verb"&gt;
-        &lt;headword&gt;abandon&lt;/headword&gt;
-        &lt;partOfSpeech value="verb"/&gt;
-        &lt;sense id="abandon-verb-1"&gt;
-            &lt;definition&gt;to suddenly leave a place or a person&lt;/definition&gt;
-            &lt;example&gt;
-                &lt;text&gt;I'm sorry I abandoned you like that.&lt;/text&gt;
-            &lt;/example&gt;
-            &lt;example&gt;
-                &lt;text&gt;Abandon ship!&lt;/text&gt;
-                &lt;label value="idiom"/&gt;
-            &lt;/example&gt;
-        &lt;sense id="abandon-verb-2"&gt;
-            &lt;label value="mostly-passive"/&gt;
-            &lt;definition&gt;to stop supporting an idea&lt;/definition&gt;
-            &lt;example&gt;
-                &lt;text&gt;That theory has been abandoned.&lt;/text&gt;
-            &lt;/example&gt;
-        &lt;/sense&gt;
-    &lt;/entry&gt;
-&lt;lexicographicResource&gt;
-</programlisting>
+        <xi:include href="source/0.xml.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     </example>
     <example>
         <title>JSON</title>
-        <programlisting>
-{
-    "uri": "http://example.com",
-    "langCode": "en",
-    "entry": {
-        "id": "abandon-verb",
-        "headword": "abandon",
-        "partsOfSpeech": ["verb"],
-        "senses": [{
-            "id": "abandon-verb-1",
-            "definitions": [{
-                "text": "to suddenly leave a place or a person"
-            }],
-            "examples": [{
-                "text": "I'm sorry I abandoned you like that."
-            }, {
-                "text": "Abandon ship!",
-                "labels": ["idiom"]
-            }]
-        }, {
-            "id": "abandon-verb-2",
-            "labels": ["mostly-passive"],
-            "definitions": ["to stop supporting an idea"],
-            "examples": [{
-                "text": "That theory has been abandoned."
-            }]
-        }]
-    }
-}
-</programlisting>
+        <xi:include href="source/0.json.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     </example>
     <example>
         <title>RDF</title>
-        <programlisting>
-&lt;#my-dictionary&gt; dmlex:entry &lt;#abandon-verb&gt; .
-
-&lt;abandon-verb&gt; dmlex:headword "abandon" ;
-  dmlex:partOfSpeech "verb" ;
-  dmlex:sense &lt;#abandon-verb-1"&gt; , &lt;#abandon-verb-2&gt; .
-
-&lt;#abandon-verb-1&lt; dmlex:definition [
-     dmlex:text "to suddenly leave a place or a person" ] ;
-   dmlex:example [
-     dmlex:text "I'm sorry I abandoned you like that."
-   ] , [
-     dmlex:text "Abandon ship!" ;
-     dmlex:labels "idiom" ] .
-
-
-&lt;#abandon-verb-2"&gt; 
-  dmlex:label "mostly-passive" ;
-  dmlex:definition [
-    dmlex:text "to stop supporting an idea" ] ;
-  dmlex:example [
-    dmlex:text "That theory has been abandoned." ] .
-      </programlisting>
+        <xi:include href="source/0.rdf.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     </example>
 </section>

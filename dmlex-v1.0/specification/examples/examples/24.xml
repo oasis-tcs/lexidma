@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section id="ex24">
+
+    <title>Modelling etymology types and language</title>
+    <example>
+        <title>Pseudocode</title>
+        <programlisting>
+- lexicographicResource (langCode: en)
+    - entry (id: school-noun-2, headword: school)
+        - etymology (description:  Middle Dutch scole ("multitude, 
+			troop, crowd, school") from Proto-Germanic 
+			*skulō; doublet of shoal)
+            - etymon (type: derivation)
+                - etymonUnit (langCode: dut, text: scole, 
+			translation: multitude, troop, crowd, school)
+            - etymon (type: derivation)
+                - etymonUnit (langCode: gem-pro, text: skulō, 
+			reconstructed: true)
+            - etymon (type: doublet)
+                - etymonUnit (langCode: en, text: shoal)
+    - etymonLanguage (langCode: dum, displayName: Middle Dutch)
+    - etymonLanguage (langCode: gem-pro, displayName: Proto-Germanic)
+    - etymonType (name: derivation, 
+	description: A historical form of the word)
+    - etymonType (name: doublet, 
+	description: Two words derived from the same etymological root)
+</programlisting>
+    </example>
+    <example>
+        <title>XML</title>
+      <xi:include href="source/24.xml.xml"/>
+    </example>
+    <example>
+        <title>JSON</title>
+        <xi:include href="source/24.json.xml"/>
+    </example>
+    <example>
+        <title>RDF</title>
+        <xi:include href="source/24.rdf.xml"/>
+    </example>
+</section>

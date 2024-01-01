@@ -1,0 +1,7 @@
+<programlisting>
+&lt;file:continue-studies&gt; a dmlex:Entry;
+  dmlex:headword "continue your studies";
+  dmlex:placeholderMarker [ 
+      dmlex:startIndex "9"^^xsd:unsignedInt;
+      dmlex:endIndex "13"^^xsd:unsignedInt ].
+</programlisting>

@@ -14,46 +14,20 @@
         <programlisting>
 - entry (id: beat-up, headword: beat sb. up, placeholderMarker: "sb.")
     - sense (id: beat-up-1)
-        headwordTranslation (text: jemanden verprügeln, placeholderMarker: "jemanden")
+        headwordTranslation (text: jemanden verprügeln, 
+		placeholderMarker: "jemanden")
 </programlisting>
     </example>
     <example>
         <title>XML</title>
-        <programlisting>
-&lt;entry id="beat-up"&gt;
-    &lt;headword&gt;
-        beat &lt;placeholderMarker&gt;sb.&lt;/placeholderMarker&gt; up
-    &lt;/headword&gt;
-    &lt;sense id="beat-up-1"&gt;
-      &lt;headwordTranslation&gt;
-        &lt;text&gt;
-            &lt;placeholderMarker&gt;jemanden&lt;/placeholderMarker&gt; verprügeln
-        &lt;/text&gt;
-      &lt;/headwordTranslation&gt;
-    &lt;/sense&gt;
-&lt;/entry&gt;
-</programlisting>
+      <xi:include href="source/20.xml.xml"/>
     </example>
     <example>
         <title>JSON</title>
-        <programlisting>
-{
-  "id": "beat-up",
-  "headword": "beat sb. up",
-  "placeholderMarkers": [
-      {"startIndex": 5, "endIndex": 8}
-  ],
-  "senses": [{
-    "id": "beat-up-1",
-    "headwordTranslations": [{
-      "text": "jemanden verprügeln",
-      "placeholderMarkers": [
-          {"startIndex": 0, "endIndex": 8}
-      ],
-    }]
-  }]
-}
-</programlisting>
+        <xi:include href="source/20.json.xml"/>
     </example>
-
+    <example>
+        <title>RDF</title>
+        <xi:include href="source/20.rdf.xml"/>
+    </example>
 </section>

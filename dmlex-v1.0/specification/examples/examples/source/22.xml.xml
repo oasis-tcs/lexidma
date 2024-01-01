@@ -1,0 +1,23 @@
+<programlisting>
+&lt;entry id="autopsy"&gt;
+    &lt;headword&gt;autopsy&lt;/headword&gt;
+    &lt;sense id="autopsy-1"&gt;
+        &lt;headwordTranslation&gt;&lt;text&gt;pitva&lt;/text&gt;&lt;/headwordTranslation&gt;
+        &lt;example&gt;
+            &lt;text&gt;
+                    The coroner &lt;collocateMarker 
+                        lemma="perform"&gt;performed&lt;/collocateMarker
+                            &gt; an &lt;headwordMarker&gt;autopsy&lt;/headwordMarker&gt;.
+            &lt;/text&gt;
+            &lt;exampleTranslation&gt;
+                &lt;text&gt;
+                        Koroner &lt;collocateMarker 
+                            lemma="provést"&gt;provedl&lt;/collocateMarker
+                                &gt; &lt;headwordMarker&gt;pitvu&lt;/headwordMarker&gt;.
+                &lt;/text&gt;
+            &lt;/exampleTranslation&gt;
+        &lt;/example&gt;
+    &lt;/sense&gt;
+&lt;/entry&gt;
+
+</programlisting>

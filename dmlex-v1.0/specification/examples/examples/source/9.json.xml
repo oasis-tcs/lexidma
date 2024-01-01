@@ -1,0 +1,16 @@
+<programlisting>
+{
+    "id": "treppenwitz",
+    "headword": "Treppenwitz",
+    "partsOfSpeech": ["n-masc"],
+    "senses": [{
+        "id": "treppenwitz-1",
+        "headwordExplanations": [{
+            "text": "belated realisation of what one could have said"
+        }],
+        "headwordTranslations": [{
+            "text": "staircase wit"
+        }]
+    }]
+}
+</programlisting>

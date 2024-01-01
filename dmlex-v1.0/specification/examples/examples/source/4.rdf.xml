@@ -1,0 +1,10 @@
+<programlisting>
+&lt;file:aardvark-noun&gt; a dmlex:Entry;
+  dmlex:pronunciation [ a dmlex:Pronunciation;
+      dmlex:soundFile "aardvark.mp3";
+      dmlex:listingOrder "1"^^xsd:unsignedInt;
+      dmlex:transcription [ a dmlex:Transcription;
+          dmlex:listingOrder "1"^^xsd:unsignedInt;
+          dmlex:text "a:rdva:rk" ] ];
+  dmlex:headword "aardvark".
+</programlisting>
