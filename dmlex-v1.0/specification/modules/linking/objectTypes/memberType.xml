@@ -23,8 +23,8 @@
     <title>Properties</title>
     <listitem>
       <para><literal>role</literal>
-        <glossterm>required</glossterm> (exactly one) and <glossterm>unique</glossterm>. String. If the value is empty, then members
-        having this role do not need to have a <code>role</code> property.</para>
+        <glossterm>optional</glossterm> (zero or one) and <glossterm>unique</glossterm>.
+        String.</para>
     </listitem>
     <listitem>
       <para><literal>description</literal>
