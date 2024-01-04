@@ -19,11 +19,12 @@
     <itemizedlist>
         <title>Text content</title>
         <listitem>
-            <para><glossterm>Required</glossterm>, implements the <literal>text</literal> property. If implementing the Annotation Module
-                <literal>&lt;definition&gt;</literal> can contain a mixture of plain text, 
-                <literal><olink targetptr="xml_headwordMarker">&lt;headwordMarker&gt;</olink></literal> elements
-                and <literal><olink targetptr="xml_collocateMarker">&lt;collocateMarker&gt;</olink></literal> elements.
-            </para>
+            <para><glossterm>Required</glossterm>, implements the <literal>text</literal> property.
+                If implementing the Annotation Module <literal>&lt;definition&gt;</literal> can
+                contain a mixture of plain text, <literal><olink targetptr="xml_headwordMarker"
+                        >&lt;headwordMarker&gt;</olink></literal> elements and <literal><olink
+                        targetptr="xml_collocateMarker">&lt;collocateMarker&gt;</olink></literal>
+                elements and whitespace inside it should be <emphasis>preserved</emphasis>. </para>
         </listitem>
     </itemizedlist>
     

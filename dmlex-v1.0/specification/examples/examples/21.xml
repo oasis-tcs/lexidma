@@ -21,19 +21,18 @@
     </example>
     <example>
         <title>XML</title>
+        <para>The character <code>\</code> at the end of a line means that the line continues on the next line (with leading whitespace removed).</para>
         <programlisting>
 &lt;entry id="autopsy"&gt;
     &lt;headword&gt;autopsy&lt;/headword&gt;
     &lt;sense id="autopsy-1"&gt;
         &lt;headwordTranslation&gt;&lt;text&gt;pitva&lt;/text&gt;&lt;/headwordTranslation&gt;
         &lt;example&gt;
-            &lt;text&gt;
-                The coroner performed an &lt;headwordMarker&gt;autopsy&lt;/headwordMarker&gt;.
-            &lt;/text&gt;
+            &lt;text&gt;The coroner performed an \
+                &lt;headwordMarker&gt;autopsy&lt;/headwordMarker&gt;.&lt;/text&gt;
             &lt;exampleTranslation&gt;
-                &lt;text&gt;
-                    Koroner provedl &lt;headwordMarker&gt;pitvu&lt;/headwordMarker&gt;.
-                &lt;/text&gt;
+                &lt;text&gt;Koroner provedl \
+                    &lt;headwordMarker&gt;pitvu&lt;/headwordMarker&gt;.&lt;/text&gt;
             &lt;/exampleTranslation&gt;
         &lt;/example&gt;
     &lt;/sense&gt;
