@@ -13,7 +13,7 @@
         <title>Attributes</title>
         <listitem>
             <para><literal>@ref</literal>
-                <glossterm>required</glossterm></para>
+                <glossterm>required</glossterm>: the <code>id</code> of an <code>entry</code>, a <code>sense</code> or a <code>collocateMarker</code></para>
         </listitem>
         <listitem>
             <para><literal>@role</literal> <glossterm>optional</glossterm></para>
