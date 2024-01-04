@@ -44,7 +44,7 @@
     </listitem>
     <listitem>
       <para><literal>obverseListingOrder</literal>
-        <glossterm>required</glossterm> (exactly one). Number. The position of this relation among
+        <glossterm>optional</glossterm> (at most one). Number. The position of this relation among
         other relations this member is involved in. When an object - such as an entry or a sense -
         is a member of several relations (for example: when a sense is a member of a synonymy
         relation and also of an antonymy relation) then, when showing the object (the entry or the

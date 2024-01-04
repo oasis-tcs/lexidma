@@ -22,7 +22,7 @@
         </listitem>
         <listitem>
             <para><literal>"obverseListingOrder"</literal>
-                <glossterm>required</glossterm>, number</para>
+                <glossterm>optional</glossterm>, number</para>
         </listitem>
     </itemizedlist>
 

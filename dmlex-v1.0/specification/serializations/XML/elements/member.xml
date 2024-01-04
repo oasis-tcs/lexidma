@@ -18,7 +18,8 @@
             <para><literal>@role</literal> <glossterm>optional</glossterm></para>
         </listitem>
         <listitem>
-            <para><literal>@obverseListingOrder</literal> <glossterm>required</glossterm></para>
+            <para><literal>@obverseListingOrder</literal>
+                <glossterm>optional</glossterm></para>
         </listitem>
     </itemizedlist>
     

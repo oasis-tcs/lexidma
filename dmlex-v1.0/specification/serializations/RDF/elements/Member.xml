@@ -20,7 +20,8 @@
         <para><literal>dmlex:memberID</literal> REQUIRED (exactly 1) of type <literal>http://www.w3.org/2001/XMLSchema#string</literal></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:obverseListingOrder</literal> REQUIRED (exactly 1) of type <literal>http://www.w3.org/2001/XMLSchema#integer</literal></para>
+        <para><literal>dmlex:obverseListingOrder</literal> OPTIONAL (at most 1) of type
+                    <literal>http://www.w3.org/2001/XMLSchema#integer</literal></para>
     </listitem>
     <listitem>
         <para><literal>dmlex:role</literal> OPTIONAL (at most 1) of type <literal>http://www.w3.org/2001/XMLSchema#string</literal></para>

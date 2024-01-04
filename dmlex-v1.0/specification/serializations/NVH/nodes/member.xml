@@ -22,7 +22,8 @@
             <para><literal>role</literal> <glossterm>optional</glossterm> (zero or one)</para>
         </listitem>
         <listitem>
-            <para><literal>obverseListingOrder</literal> <glossterm>required</glossterm> (exactly one)</para>
+            <para><literal>obverseListingOrder</literal>
+                <glossterm>optional</glossterm> (exactly one)</para>
         </listitem>
     </itemizedlist>
     
