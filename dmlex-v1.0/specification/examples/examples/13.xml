@@ -22,8 +22,8 @@
         - sense (id: sell-1)
             - definition (text: exchange something for money)
     - relation (type: antonyms)
-        - member (memberID: buy-1)
-        - member (memberID: sell-1)
+        - member (ref: buy-1)
+        - member (ref: sell-1)
     - relationType: (type: antonyms)
         - memberType (type: sense, min: 2, max: 2, hint: navigate)
 </programlisting>
@@ -45,8 +45,8 @@
         &lt;/sense&gt;
     &lt;/entry&gt;
     &lt;relation type="antonyms"&gt;
-        &lt;member memberID="buy-1"/&gt;
-        &lt;member memberID="sell-1"/&gt;
+        &lt;member ref="buy-1"/&gt;
+        &lt;member ref="sell-1"/&gt;
     &lt;/relation&gt;
     &lt;relationType type="antonyms"&gt;
         &lt;memberType type="sense" min="2" max="2" hint="navigate"/&gt;
@@ -77,8 +77,8 @@
     "relations": [{
         "type": "antonyms",
         "members": [
-            {"memberID": "buy-1"},
-            {"memberID": "sell-1"}
+            {"ref": "buy-1"},
+            {"ref": "sell-1"}
         ]
     }],
     "relationTypes": [{

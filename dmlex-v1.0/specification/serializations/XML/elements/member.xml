@@ -12,7 +12,8 @@
     <itemizedlist>
         <title>Attributes</title>
         <listitem>
-            <para><literal>@memberID</literal> <glossterm>required</glossterm></para>
+            <para><literal>@ref</literal>
+                <glossterm>required</glossterm></para>
         </listitem>
         <listitem>
             <para><literal>@role</literal> <glossterm>optional</glossterm></para>

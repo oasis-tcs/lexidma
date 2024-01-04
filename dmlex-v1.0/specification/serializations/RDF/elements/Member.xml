@@ -17,7 +17,8 @@
         <para><literal>dmlex:listingOrder</literal> REQUIRED (exactly 1) of type <literal>http://www.w3.org/2001/XMLSchema#nonNegativeInteger</literal></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:memberID</literal> REQUIRED (exactly 1) of type <literal>http://www.w3.org/2001/XMLSchema#string</literal></para>
+        <para><literal>dmlex:ref</literal> REQUIRED (exactly 1) of type
+                    <literal>http://www.w3.org/2001/XMLSchema#string</literal></para>
     </listitem>
     <listitem>
         <para><literal>dmlex:obverseListingOrder</literal> OPTIONAL (at most 1) of type

@@ -13,7 +13,7 @@
     <itemizedlist>
         <title>Members</title>
         <listitem>
-            <para><literal>"memberID"</literal>
+            <para><literal>"ref"</literal>
                 <glossterm>required</glossterm>, string</para>
         </listitem>
         <listitem>
