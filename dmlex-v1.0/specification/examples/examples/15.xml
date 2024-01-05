@@ -28,8 +28,8 @@
         - partOfSpeech (tag: n)
         - label (tag: americanSpelling)
     - relation (type: variants)
-        - member (memberID: colour)
-        - member (memberID: color)
+        - member (ref: colour)
+        - member (ref: color)
     - relationType (type: variants, description: words which differ 
 			only in spelling)
         - memberType (type: entry, min: 2, hint: navigate)
@@ -45,7 +45,6 @@
     </example>
     <example>
         <title>RDF</title>
-        <xi:include href="source/15.rdf.xml"/>
     </example>
     <example>
         <title>Suggested rendering for human users</title>

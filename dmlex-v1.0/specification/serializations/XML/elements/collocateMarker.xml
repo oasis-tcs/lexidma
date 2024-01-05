@@ -13,14 +13,17 @@
     <itemizedlist>
         <title>Attributes</title>
         <listitem>
-            <para><literal>@id</literal> <glossterm>optional</glossterm></para>
-        </listitem>
-        <listitem>
             <para><literal>@lemma</literal> <glossterm>optional</glossterm></para>
         </listitem>
     </itemizedlist>
 
-
+    <itemizedlist>
+        <title>Attributes if implementing the Linking Module</title>
+        <listitem>
+            <para><literal>@id</literal> <glossterm>optional</glossterm>. Collocate markers that have an ID can appear as members of relations.</para>
+        </listitem>
+    </itemizedlist>
+    
     <itemizedlist>
         <title>Child elements</title>
         <listitem>

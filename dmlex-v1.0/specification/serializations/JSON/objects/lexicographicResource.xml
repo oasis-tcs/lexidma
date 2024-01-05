@@ -91,9 +91,10 @@
     <itemizedlist>
         <title>Members if implementing the Etymology Module</title>
         <listitem>
-            <para><literal>"etymonLanguage"</literal>
+            <para><literal>"etymonLanguages"</literal>
                 <glossterm>optional</glossterm>, array of zero or more <literal><olink
-                    targetptr="json_etymonLanguage">etymonLanguage</olink></literal> instances</para>
+                        targetptr="json_etymonLanguage">etymonLanguage</olink></literal>
+                instances</para>
         </listitem>
         <listitem>
             <para><literal>"etymonTypes"</literal>

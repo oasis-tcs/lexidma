@@ -26,8 +26,8 @@
             - definition (text: you should be careful even if it seems 
 				unnecessary)
     - relation (type: subentrying)
-        member (memberID: safe-1, role: container)
-        member (memberID: better-safe, role: subentry)
+        member (ref: safe-1, role: container)
+        member (ref: better-safe, role: subentry)
     - relationType (type: subentrying, scopeRestriction: sameResource)
         - memberType (role: container, type: sense, min: 1, max: 1, 
 			hint: navigate)

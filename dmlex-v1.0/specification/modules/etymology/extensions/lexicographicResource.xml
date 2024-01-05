@@ -30,6 +30,7 @@
         <programlisting>
 &lt;lexicographicResource&gt; 
   &lt;etymonLanguage&gt;...&lt;etymonLanguage/&gt;
+  &lt;etymonType&gt;...&lt;etymonType/&gt;
   ...
 &lt;/lexicographicResource&gt;
         </programlisting>
@@ -40,6 +41,7 @@
         <programlisting>
 {
   "etymonLanguages": [...],
+  "etymonTypes": [...],
   ...
 }
         </programlisting>

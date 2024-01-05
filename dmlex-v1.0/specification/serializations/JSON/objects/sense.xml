@@ -12,10 +12,6 @@
     <itemizedlist>
         <title>Members</title>
         <listitem>
-            <para><literal>"id"</literal>
-                <glossterm>optional</glossterm>, string</para>
-        </listitem>
-        <listitem>
             <para><literal>"indicator"</literal>
                 <glossterm>optional</glossterm>, string</para>
         </listitem>
@@ -33,6 +29,16 @@
             <para><literal>"examples"</literal>
                 <glossterm>optional</glossterm>, array of zero or more <literal><olink
                     targetptr="json_example">example</olink></literal> instances</para>
+        </listitem>
+    </itemizedlist>
+
+    <itemizedlist>
+        <title>Members if implementing the Linking Module</title>
+        <listitem>
+            <para><literal>"id"</literal>
+                <glossterm>optional</glossterm>, string.
+                Senses that have an ID can be members of relations.
+            </para>
         </listitem>
     </itemizedlist>
 

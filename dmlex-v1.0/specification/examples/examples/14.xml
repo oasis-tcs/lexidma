@@ -30,9 +30,9 @@
         - sense (id: der-ozean-1)
             - headwordTranslation (text: ocean)
     - relation (type: synonyms, description: words that mean sea and ocean)
-        - member (memberID: die-see-1)
-        - member (memberID: das-meer-1)
-        - member (memberID: der-ozean-1)
+        - member (ref: die-see-1)
+        - member (ref: das-meer-1)
+        - member (ref: der-ozean-1)
     - relationType (type: synonyms, description: synonyms and near synonyms)
         memberType (type: sense, min: 2, hint: navigate)
 </programlisting>

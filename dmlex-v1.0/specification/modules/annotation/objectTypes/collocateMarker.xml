@@ -60,10 +60,7 @@
   <example>
     <title>XML</title>
     <programlisting>
-&lt;itemMarker id="..." lemma="..."&gt;
-    ...
-    &lt;label tag="..."/&gt;
-&lt;/itemMarker&gt;
+&lt;collocateMarker id="..." lemma="..."&gt;...&lt;label tag="..."/&gt;&lt;/collocateMarker&gt;
     </programlisting>
   </example>
 

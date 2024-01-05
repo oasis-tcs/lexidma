@@ -44,6 +44,17 @@
         <para>In such cases the object is implemented as a child XML element of its parent.</para>
       </listitem>
     </itemizedlist>
+    <para> Whitespace in all text nodes should always be <emphasis>collapsed</emphasis> by rules
+      defined in the XML Schema W3C Recommendation [<link linkend="bib_XMLSchema">XML
+      Schema</link>]: <itemizedlist>
+        <listitem>
+          <para>all sequences of whitespace should be reduced to a single space</para>
+        </listitem>
+        <listitem>
+          <para>all leading and trailing spaces should be removed</para>
+        </listitem>
+      </itemizedlist> unless otherwise stated in the specification of individual XML elements. </para>
+    
   </section>
   <section id="XMLElements" role="normative">
     <title>DMLex XML serialization elements</title>

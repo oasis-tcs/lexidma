@@ -22,8 +22,8 @@
         - sense (id: sell-1)
             - definition (text: exchange something for money)
     - relation (type: antonyms)
-        - member (memberID: buy-1)
-        - member (memberID: sell-1)
+        - member (ref: buy-1)
+        - member (ref: sell-1)
     - relationType: (type: antonyms)
         - memberType (type: sense, min: 2, max: 2, hint: navigate)
 </programlisting>
