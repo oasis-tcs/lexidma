@@ -30,11 +30,11 @@
             - definition (text: interest or excitement)
             - example (text: Examples add colour to your writing.)
     - relation (type: subsensing)
-        - member (memberID: colour-1, role: super)
-        - member (memberID: colour-2, role: sub)
+        - member (rer: colour-1, role: super)
+        - member (ref: colour-2, role: sub)
     - relation (type: subsensing)
-        - member (memberID: colour-1, role: super)
-        - member (memberID: colour-3, role: sub)
+        - member (ref: colour-1, role: super)
+        - member (ref: colour-3, role: sub)
     - relationType (type: subsensing, scopeRestriction: sameEntry)
         - memberType (role: super, type: sense, min: 1, max: 1, hint: none)
         - memberRole (role: sub, type: sense, min: 1, max: 1, hint: embed)
@@ -64,12 +64,12 @@
         &lt;/sense&gt;
     &lt;/entry&gt;
     &lt;relation type="subsensing"&gt;
-        &lt;member memberID="colour-1" role="super"/&gt;
-        &lt;member memberID="colour-2" role="sub"/&gt;
+        &lt;member ref="colour-1" role="super"/&gt;
+        &lt;member ref="colour-2" role="sub"/&gt;
     &lt;/relation&gt;
     &lt;relation type="subsensing"&gt;
-        &lt;member memberID="colour-1" role="super"/&gt;
-        &lt;member memberID="colour-3" role="sub"/&gt;
+        &lt;member ref="colour-1" role="super"/&gt;
+        &lt;member ref="colour-3" role="sub"/&gt;
     &lt;/relation&gt;
     &lt;relationType type="subsensing" scopeRestriction="sameEntry"&gt;
         &lt;memberType role="super" type="sense" min="1" max="1" hint="none"/&gt;
@@ -108,14 +108,14 @@
     "relations": [{
         "type": "subsensing",
         "members": [
-          {"role": "super", "memberID": "colour-1"},
-          {"role": "sub", "memberID": "colour-2"}
+          {"role": "super", "ref": "colour-1"},
+          {"role": "sub", "ref": "colour-2"}
         ]
     }, {
         "type": "subsensing",
         "members": [
-          {"role": "super", "memberID": "colour-1"},
-          {"role": "sub", "memberID": "colour-3"}
+          {"role": "super", "ref": "colour-1"},
+          {"role": "sub", "ref": "colour-3"}
         ]
     }],
     "relationTypes": [{

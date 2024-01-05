@@ -9,11 +9,8 @@
     <title>XML element: <literal>&lt;sense&gt;</literal></title>
     <para>Implements the <olink targetptr="core_sense">sense</olink> object type.</para>
 
-   <itemizedlist>
+    <itemizedlist>
         <title>Child elements</title>
-       <listitem>
-           <para><literal>@id</literal> <glossterm>optional</glossterm></para>
-       </listitem>
        <listitem>
             <para><literal>&lt;indicator&gt;</literal> <glossterm>optional</glossterm> (zero or one)</para>
         </listitem>
@@ -28,6 +25,13 @@
         </listitem>
     </itemizedlist>
 
+    <itemizedlist>
+        <title>Attributes if implementing the Linking Module</title>
+        <listitem>
+            <para><literal>@id</literal> <glossterm>optional</glossterm>. Senses that have an ID can be members of relations.</para>
+        </listitem>
+    </itemizedlist>
+    
     <itemizedlist>
         <title>Child elements if implementing the Crosslingual Module</title>
         <listitem>

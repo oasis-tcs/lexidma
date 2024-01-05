@@ -12,7 +12,8 @@
     <itemizedlist>
         <title>Value</title>
         <listitem>
-            <para><literal>memberID</literal> <glossterm>required</glossterm></para>
+            <para><literal>ref</literal>
+                <glossterm>required</glossterm>: the <code>id</code> of an <code>entry</code>, a <code>sense</code> or a <code>collocateMarker</code></para>
         </listitem>
 	</itemizedlist>
 
@@ -22,7 +23,8 @@
             <para><literal>role</literal> <glossterm>optional</glossterm> (zero or one)</para>
         </listitem>
         <listitem>
-            <para><literal>obverseListingOrder</literal> <glossterm>required</glossterm> (exactly one)</para>
+            <para><literal>obverseListingOrder</literal>
+                <glossterm>optional</glossterm> (exactly one)</para>
         </listitem>
     </itemizedlist>
     

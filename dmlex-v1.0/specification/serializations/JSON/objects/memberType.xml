@@ -14,7 +14,7 @@
         <title>Members</title>
         <listitem>
             <para><literal>"role"</literal>
-                <glossterm>required</glossterm>, string</para>
+                <glossterm>optional</glossterm>, string</para>
         </listitem>
         <listitem>
             <para><literal>"type"</literal>

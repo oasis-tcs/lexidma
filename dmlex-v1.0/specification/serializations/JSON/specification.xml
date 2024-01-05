@@ -55,6 +55,15 @@
             </itemizedlist>
           </listitem>
         </itemizedlist>
+        <para>The names of objects are:</para>
+        <itemizedlist>
+          <listitem>
+            <para>plural if the value is an array, for example <code>labels</code>, <code>partsOfSpeech</code></para>
+          </listitem>
+          <listitem>
+            <para>singular if the value is anything else, for example <code>headword</code>, <code>indicator</code></para>
+          </listitem>
+        </itemizedlist>
       </listitem>
     </itemizedlist>
   </section>

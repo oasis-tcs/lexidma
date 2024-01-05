@@ -46,7 +46,7 @@
       <programlisting>
 {
   ...,
-  "etymology": {...}
+  "etymologies": [...]
 }
       </programlisting>
   </example>
@@ -54,7 +54,8 @@
   <example>
       <title>RDF</title>
       <programlisting>
-&lt;#entry&gt; dmlex:etymology ... .
+&lt;#entry&gt; dmlex:etymology ... ;
+  dmlex:etymonType ... .
       </programlisting>
   </example>
   

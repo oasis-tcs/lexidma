@@ -24,8 +24,8 @@
         - sense (id: bible-2)
             - definition (text: a book considered important for a subject)
     - relation (type: subentrying)
-        - member (memberID: bible-1, role: container)
-        - member (memberID: the-bible, role: subentry)
+        - member (ref: bible-1, role: container)
+        - member (ref: the-bible, role: subentry)
     - relationType (type: subentrying, scopeRestcriction: sameResource)
         - memberType (role: container, type: sense, min: 1, max: 1, hint: navigate)
         - memberRole (role: subentry, type: entry, min: 1, max: 1, hint: embed)
@@ -53,8 +53,8 @@
         &lt;/sense&gt;
     &lt;/entry&gt;
     &lt;relation type="subentrying"&gt;
-        &lt;member memberID="bible-1" role="container"/&gt;
-        &lt;member memberID="the-bible" role="subentry"/&gt;
+        &lt;member ref="bible-1" role="container"/&gt;
+        &lt;member ref="the-bible" role="subentry"/&gt;
     &lt;/relation&gt;
     &lt;relationType type="subentrying" scopeRestriction="sameResource"&gt;
         &lt;memberType role="container" type="sense" min="1" max="1" hint="navigate"/&gt;
@@ -89,8 +89,8 @@
     "relations": [{
         "type": "subentrying",
         "members": [
-          {"role": "container", "memberID": "bible-1"},
-          {"role": "subentry", "memberID": "the-bible"}
+          {"role": "container", "ref": "bible-1"},
+          {"role": "subentry", "ref": "the-bible"}
         ]
     }],
     "relationTypes": [{

@@ -13,8 +13,8 @@
     <itemizedlist>
         <title>Members</title>
         <listitem>
-            <para><literal>"memberID"</literal>
-                <glossterm>required</glossterm>, string</para>
+            <para><literal>"ref"</literal>
+                <glossterm>required</glossterm>, string: the <code>id</code> of an <code>entry</code>, a <code>sense</code> or a <code>collocateMarker</code>.</para>
         </listitem>
         <listitem>
             <para><literal>"role"</literal>
@@ -22,7 +22,7 @@
         </listitem>
         <listitem>
             <para><literal>"obverseListingOrder"</literal>
-                <glossterm>required</glossterm>, number</para>
+                <glossterm>optional</glossterm>, number</para>
         </listitem>
     </itemizedlist>
 
