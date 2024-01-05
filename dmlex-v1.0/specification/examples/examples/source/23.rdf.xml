@@ -1,5 +1,5 @@
 <programlisting>
-&lt;file:cat-n&gt; a dmlex:Entry;
+ex:cat-n a dmlex:Entry;
   dmlex:etymology [ a dmlex:Etymology;
       dmlex:etymon [ a dmlex:Etymon;
           dmlex:listingOrder "1"^^xsd:unsignedInt;

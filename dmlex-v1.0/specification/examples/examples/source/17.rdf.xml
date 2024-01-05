@@ -1,45 +1,47 @@
 <programlisting>
-&lt;file:better-safe&gt; a dmlex:Entry;
-  dmlex:sense &lt;file:better-safe-1&gt;;
-  dmlex:headword "better safe than sorry".
-&lt;file:safe&gt; a dmlex:Entry;
-  dmlex:headword "safe";
-  dmlex:sense &lt;file:safe-2&gt;,
-    &lt;file:safe-1&gt;.
-&lt;file:safe-2&gt; a dmlex:Sense;
-  dmlex:example [ a dmlex:Example;
-      dmlex:text "Is the ride safe for a small child?";
-      dmlex:listingOrder "1"^^xsd:unsignedInt ];
-  dmlex:indicator "not likely to cause harm";
-  dmlex:listingOrder "2"^^xsd:unsignedInt.
-[] a dmlex:LexicographicResource;
-  dmlex:entry &lt;file:better-safe&gt;,
-    &lt;file:safe&gt;;
+ex:lexicon a dmlex:LexicographicResource;
+  dmlex:entry ex:safe,
+    ex:better-safe;
   dmlex:relation [ a dmlex:Relation;
-      dmlex:listingOrder "1"^^xsd:unsignedInt;
-      dmlex:member [ a dmlex:Member;
-          dmlex:role "container";
+      dmlex:member [ dmlex:ref "safe-1";
           dmlex:listingOrder "1"^^xsd:unsignedInt;
-          dmlex:obverseListingOrder "0"^^xsd:unsignedInt;
-          dmlex:memberID "safe-1" ],
-        [ a dmlex:Member;
+          dmlex:role "container" ], [ 
           dmlex:listingOrder "2"^^xsd:unsignedInt;
-          dmlex:memberID "better-safe";
-          dmlex:role "subentry";
-          dmlex:obverseListingOrder "0"^^xsd:unsignedInt ];
+          dmlex:ref "better-safe";
+          dmlex:role "subentry" ];
+      dmlex:listingOrder "1"^^xsd:unsignedInt;
       dmlex:type "subentrying" ];
-  dmlex:langCode "en";
-  dmlex:uri "http://example.com".
-&lt;file:safe-1&gt; a dmlex:Sense;
-  dmlex:example [ a dmlex:Example;
-      dmlex:listingOrder "1"^^xsd:unsignedInt;
-      dmlex:text "It isn't safe to park here." ];
+  dmlex:uri "http://example.com";
+  dmlex:relationType [ dmlex:type "subentrying";
+      dmlex:memberType [ a dmlex:MemberType;
+          dmlex:type dmlex:entry;
+          dmlex:hint dmlex:embed;
+          dmlex:min 1 ; dmlex:max 1 ;
+          dmlex:role "subentry" ], [
+          dmlex:hint dmlex:navigate;
+          dmlex:role "container";
+          dmlex:min 1 ; dmlex:max 1;
+          dmlex:type dmlex:sense ];
+      dmlex:scopeRestriction dmlex:sameResource ];
+  dmlex:langCode "en".
+ex:safe a dmlex:Entry;
+  dmlex:headword "safe";
+  dmlex:sense ex:safe-1, ex:safe-2.
+ex:safe-1 a dmlex:Sense;
   dmlex:listingOrder "1"^^xsd:unsignedInt;
-  dmlex:indicator "protected from harm".
-&lt;file:better-safe-1&gt; a dmlex:Sense;
-  dmlex:definition [ a dmlex:Definition;
-      dmlex:listingOrder "1"^^xsd:unsignedInt;
-      dmlex:text "you should be careful even if it seems unnecessary" 
-];
-  dmlex:listingOrder "1"^^xsd:unsignedInt.
+  dmlex:indicator "protected from harm";
+  dmlex:example [ dmlex:listingOrder "1"^^xsd:unsignedInt;
+      dmlex:text "It isn't safe to park here." ].
+ex:safe-2 a dmlex:Sense;
+  dmlex:example [ dmlex:text "Is the ride safe for a small child?";
+      dmlex:listingOrder "1"^^xsd:unsignedInt ];
+  dmlex:listingOrder "2"^^xsd:unsignedInt;
+  dmlex:indicator "not likely to cause harm".
+ex:better-safe a dmlex:Entry;
+  dmlex:sense ex:better-safe-1;
+  dmlex:headword "better safe than sorry".
+ex:better-safe-1 a dmlex:Sense;
+  dmlex:listingOrder "1"^^xsd:unsignedInt;
+  dmlex:definition [ dmlex:listingOrder "1"^^xsd:unsignedInt;
+      dmlex:text "you should be careful even if it seems unnecessary" ].
 </programlisting>

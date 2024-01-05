@@ -7,6 +7,7 @@
         &lt;sense id="colour-1"&gt;
             &lt;definition&gt;red, blue, yellow etc.&lt;/definition&gt;
             &lt;example&gt;&lt;text&gt;What is your favourite colour?&lt;/text&gt;&lt;/example&gt;
+
         &lt;/sense&gt;
     &lt;/entry&gt;
     &lt;entry id="color"&gt;
@@ -15,12 +16,12 @@
         &lt;label tag="americanSpelling"/&gt;
     &lt;/entry&gt;
     &lt;relation type="variants"&gt;
-        &lt;member memberID="colour" obverseListingOrder="0"/&gt;
-        &lt;member memberID="color" obverseListingOrder="0"/&gt;
+        &lt;member ref="colour"/&gt;
+        &lt;member ref="color"/&gt;
     &lt;/relation&gt;
     &lt;relationType type="variants"&gt;
         &lt;description&gt;words which differ only in spelling&lt;/description&gt;
-        &lt;memberType type="entry" min="2" hint="navigate" role="obverse"/&gt;
+        &lt;memberType type="entry" min="2" hint="navigate"/&gt;
     &lt;/relationType&gt;
 &lt;/lexicographicResource&gt;
 

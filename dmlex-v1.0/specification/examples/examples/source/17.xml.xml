@@ -24,10 +24,8 @@
         &lt;/sense&gt;
     &lt;/entry&gt;
     &lt;relation type="subentrying"&gt;
-        &lt;member memberID="safe-1" role="container" 
-            obverseListingOrder="0"/&gt;
-        &lt;member memberID="better-safe" role="subentry" 
-            obverseListingOrder="0"/&gt;
+        &lt;member ref="safe-1" role="container"/&gt;
+        &lt;member ref="better-safe" role="subentry"/&gt;
     &lt;/relation&gt;
     &lt;relationType type="subentrying" scopeRestriction="sameResource"&gt;
         &lt;memberType role="container" type="sense" min="1" max="1" 

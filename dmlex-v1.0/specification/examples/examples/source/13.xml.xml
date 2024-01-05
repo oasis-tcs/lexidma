@@ -13,8 +13,8 @@
         &lt;/sense&gt;
     &lt;/entry&gt;
     &lt;relation type="antonyms"&gt;
-        &lt;member memberID="buy-1" obverseListingOrder="0"/&gt;
-        &lt;member memberID="sell-1" obverseListingOrder="0"/&gt;
+        &lt;member ref="buy-1"/&gt;
+        &lt;member ref="sell-1"/&gt;
     &lt;/relation&gt;
     &lt;relationType type="antonyms"&gt;
         &lt;memberType type="sense" min="2" max="2" hint="navigate"

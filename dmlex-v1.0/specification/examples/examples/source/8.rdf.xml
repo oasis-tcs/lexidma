@@ -1,5 +1,9 @@
 <programlisting>
-&lt;file:doctor-n-1&gt; a dmlex:Sense;
+ex:doctor-n a dmlex:Entry;
+  dmlex:sense ex:doctor-n-1,
+    ex:doctor-n-2;
+  dmlex:headword "doctor".
+ex:doctor-n-1 a dmlex:Sense;
   dmlex:headwordTranslation [ a dmlex:HeadwordTranslation;
       dmlex:text "Ärztin";
       dmlex:listingOrder "2"^^xsd:unsignedInt;
@@ -14,7 +18,7 @@
           dmlex:tag "n-masc" ] ];
   dmlex:indicator "medical doctor";
   dmlex:listingOrder "1"^^xsd:unsignedInt.
-&lt;file:doctor-n-2&gt; a dmlex:Sense;
+ex:doctor-n-2 a dmlex:Sense;
   dmlex:headwordTranslation [ a dmlex:HeadwordTranslation;
       dmlex:partOfSpeech [ 
           dmlex:listingOrder "1"^^xsd:unsignedInt;
@@ -29,8 +33,4 @@
       dmlex:text "Doktorin" ];
   dmlex:listingOrder "2"^^xsd:unsignedInt;
   dmlex:indicator "academic title".
-&lt;file:doctor-n&gt; a dmlex:Entry;
-  dmlex:sense &lt;file:doctor-n-1&gt;,
-    &lt;file:doctor-n-2&gt;;
-  dmlex:headword "doctor".
 </programlisting>

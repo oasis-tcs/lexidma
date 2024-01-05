@@ -6,6 +6,7 @@
             &lt;partOfSpeech tag="verb"/&gt;
         &lt;sense id="abandon-verb-1"&gt;
             &lt;definition&gt;to suddenly leave a place or a person&lt;/definition&gt;
+
             &lt;example&gt;
                 &lt;text&gt;I'm sorry I abandoned you like that.&lt;/text&gt;
             &lt;/example&gt;

@@ -1,58 +1,62 @@
 <programlisting>
-&lt;file:die-see-1&gt; a dmlex:Sense;
-  dmlex:headwordTranslation [ a dmlex:HeadwordTranslation;
-      dmlex:text "sea";
-      dmlex:listingOrder "1"^^xsd:unsignedInt ];
-  dmlex:listingOrder "1"^^xsd:unsignedInt.
-&lt;file:die-see&gt; a dmlex:Entry;
-  dmlex:sense &lt;file:die-see-1&gt;;
-  dmlex:headword "See";
-  dmlex:partOfSpeech [ 
-      dmlex:tag "n-fem";
-      dmlex:listingOrder "1"^^xsd:unsignedInt ].
-&lt;file:das-meer&gt; a dmlex:Entry;
-  dmlex:sense &lt;file:das-meer-1&gt;;
-  dmlex:partOfSpeech [ 
-      dmlex:tag "n-neut";
-      dmlex:listingOrder "1"^^xsd:unsignedInt ];
-  dmlex:headword "Meer".
-&lt;file:der-ozean&gt; a dmlex:Entry;
+ex:lexicon a dmlex:LexicographicResource;
+  dmlex:langCode "de";
+  dmlex:entry ex:die-see,
+    ex:das-meer,
+    ex:der-ozean;
+  dmlex:uri "http://example.com";
+  dmlex:relation [ a dmlex:Relation;
+      dmlex:type "synonyms";
+      dmlex:member [ a dmlex:Member;
+          dmlex:listingOrder "1"^^xsd:unsignedInt;
+          dmlex:ref "die-see-1" ],
+        [ a dmlex:Member;
+          dmlex:listingOrder "2"^^xsd:unsignedInt;
+          dmlex:ref "das-meer-1" ],
+        [ a dmlex:Member;
+          dmlex:ref "der-ozean-1";
+          dmlex:listingOrder "3"^^xsd:unsignedInt ];
+      dmlex:listingOrder "1"^^xsd:unsignedInt;
+      dmlex:description "words that mean sea and ocean" ];
+  dmlex:translationLanguage "en";
+  dmlex:relationType [ a dmlex:RelationType;
+      dmlex:description "synonyms and near synonyms";
+      dmlex:memberType [ a dmlex:MemberType;
+          dmlex:hint dmlex:navigate;
+          dmlex:type dmlex:sense;
+          dmlex:min "2"^^xsd:unsignedInt ];
+      dmlex:type "synonyms" ].
+ex:der-ozean a dmlex:Entry;
+  dmlex:sense ex:der-ozean-1;
   dmlex:headword "Ozean";
-  dmlex:sense &lt;file:der-ozean-1&gt;;
   dmlex:partOfSpeech [ 
       dmlex:listingOrder "1"^^xsd:unsignedInt;
       dmlex:tag "n-masc" ].
-&lt;file:der-ozean-1&gt; a dmlex:Sense;
-  dmlex:listingOrder "1"^^xsd:unsignedInt;
-  dmlex:headwordTranslation [ a dmlex:HeadwordTranslation;
-      dmlex:text "ocean";
-      dmlex:listingOrder "1"^^xsd:unsignedInt ].
-&lt;file:das-meer-1&gt; a dmlex:Sense;
-  dmlex:listingOrder "1"^^xsd:unsignedInt;
+ex:der-ozean-1 a dmlex:Sense;
   dmlex:headwordTranslation [ a dmlex:HeadwordTranslation;
       dmlex:listingOrder "1"^^xsd:unsignedInt;
-      dmlex:text "sea" ].
-[] a dmlex:LexicographicResource;
-  dmlex:uri "http://example.com";
-  dmlex:entry &lt;file:das-meer&gt;,
-    &lt;file:der-ozean&gt;,
-    &lt;file:die-see&gt;;
-  dmlex:translationLanguage "en";
-  dmlex:langCode "de";
-  dmlex:relation [ a dmlex:Relation;
-      dmlex:type "synonyms";
+      dmlex:text "ocean" ];
+  dmlex:listingOrder "1"^^xsd:unsignedInt.
+ex:das-meer a dmlex:Entry;
+  dmlex:headword "Meer";
+  dmlex:partOfSpeech [ 
+      dmlex:tag "n-neut";
+      dmlex:listingOrder "1"^^xsd:unsignedInt ];
+  dmlex:sense ex:das-meer-1.
+ex:das-meer-1 a dmlex:Sense;
+  dmlex:headwordTranslation [ a dmlex:HeadwordTranslation;
       dmlex:listingOrder "1"^^xsd:unsignedInt;
-      dmlex:member [ a dmlex:Member;
-          dmlex:obverseListingOrder "0"^^xsd:unsignedInt;
-          dmlex:listingOrder "2"^^xsd:unsignedInt;
-          dmlex:memberID "das-meer-1" ],
-        [ a dmlex:Member;
-          dmlex:listingOrder "3"^^xsd:unsignedInt;
-          dmlex:obverseListingOrder "0"^^xsd:unsignedInt;
-          dmlex:memberID "der-ozean-1" ],
-        [ a dmlex:Member;
-          dmlex:obverseListingOrder "0"^^xsd:unsignedInt;
-          dmlex:listingOrder "1"^^xsd:unsignedInt;
-          dmlex:memberID "die-see-1" ];
-      dmlex:description "words that mean sea and ocean" ].
+      dmlex:text "sea" ];
+  dmlex:listingOrder "1"^^xsd:unsignedInt.
+ex:die-see a dmlex:Entry;
+  dmlex:partOfSpeech [ 
+      dmlex:tag "n-fem";
+      dmlex:listingOrder "1"^^xsd:unsignedInt ];
+  dmlex:sense ex:die-see-1;
+  dmlex:headword "See".
+ex:die-see-1 a dmlex:Sense;
+  dmlex:headwordTranslation [ a dmlex:HeadwordTranslation;
+      dmlex:listingOrder "1"^^xsd:unsignedInt;
+      dmlex:text "sea" ];
+  dmlex:listingOrder "1"^^xsd:unsignedInt.
 </programlisting>

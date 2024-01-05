@@ -9,7 +9,7 @@
 
 from glob import glob
 
-N = 70
+N = 74
 
 for f in glob("source/*.xml"):
     with open(f) as inf:
@@ -26,6 +26,7 @@ for f in glob("source/*.xml"):
 for f in glob("source/*.rdf"):
     with open(f) as inf:
         with open(f + ".xml", "w") as outf:
+            n = 1
             outf.write("<programlisting>\n")
             for line in inf.readlines():
                 if "PREFIX" not in line and line.strip() != "":

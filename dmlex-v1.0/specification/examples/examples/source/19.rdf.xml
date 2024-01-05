@@ -1,5 +1,5 @@
 <programlisting>
-&lt;file:continue-studies&gt; a dmlex:Entry;
+ex:continue-studies a dmlex:Entry;
   dmlex:headword "continue your studies";
   dmlex:placeholderMarker [ 
       dmlex:startIndex "9"^^xsd:unsignedInt;

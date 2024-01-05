@@ -1,5 +1,5 @@
 <programlisting>
-&lt;file:aardvark-noun&gt; a dmlex:Entry;
+ex:aardvark-noun a dmlex:Entry;
   dmlex:headword "aardvark";
   dmlex:pronunciation [ a dmlex:Pronunciation;
       dmlex:transcription [ a dmlex:Transcription;

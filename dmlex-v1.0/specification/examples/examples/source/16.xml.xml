@@ -20,24 +20,20 @@
                 &lt;text&gt;People of all creeds and colours.&lt;/text&gt;
             &lt;/example&gt;
         &lt;/sense&gt;
-        &lt;sense id="colour-4"&gt;
-            &lt;definition&gt;interest or excitement&lt;/definition&gt;
-            &lt;example&gt;
-                &lt;text&gt;Examples add colour to your writing.&lt;/text&gt;
-            &lt;/example&gt;
-        &lt;/sense&gt;
     &lt;/entry&gt;
     &lt;relation type="subsensing"&gt;
-        &lt;member memberID="colour-1" role="super" obverseListingOrder="0"/&gt;
-        &lt;member memberID="colour-2" role="sub" obverseListingOrder="0"/&gt;
+        &lt;member ref="colour-1" role="super"/&gt;
+        &lt;member ref="colour-2" role="sub"/&gt;
     &lt;/relation&gt;
     &lt;relation type="subsensing"&gt;
-        &lt;member memberID="colour-1" role="super" obverseListingOrder="0"/&gt;
-        &lt;member memberID="colour-3" role="sub" obverseListingOrder="0"/&gt;
+        &lt;member ref="colour-1" role="super"/&gt;
+        &lt;member ref="colour-3" role="sub"/&gt;
     &lt;/relation&gt;
     &lt;relationType type="subsensing" scopeRestriction="sameEntry"&gt;
-        &lt;memberType role="super" type="sense" min="1" max="1" hint="none"/&gt;
-        &lt;memberType role="sub" type="sense" min="1" max="1" hint="embed"/&gt;
+        &lt;memberType role="super" type="sense" min="1" 
+            max="1" hint="none"/&gt;
+        &lt;memberType role="sub" type="sense" min="1" 
+            max="1" hint="embed"/&gt;
     &lt;/relationType&gt;
 &lt;/lexicographicResource&gt;
 </programlisting>

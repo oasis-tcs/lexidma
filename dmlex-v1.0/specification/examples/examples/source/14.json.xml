@@ -32,16 +32,15 @@
         "type": "synonyms",
         "description": "words that mean sea and ocean",
         "members": [
-          {"memberID": "die-see-1", "obverseListingOrder": 0},
-          {"memberID": "das-meer-1", "obverseListingOrder": 0},
-          {"memberID": "der-ozean-1", "obverseListingOrder": 0}
+          {"ref": "die-see-1"},
+          {"ref": "das-meer-1"},
+          {"ref": "der-ozean-1"}
         ]
     }],
     "relationTypes": [{
         "type": "synonyms",
         "description": "synonyms and near synonyms",
         "memberTypes": [{
-            "role": "whole",
             "type": "sense",
             "min": 2,
             "hint": "navigate"

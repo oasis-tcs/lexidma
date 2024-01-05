@@ -20,28 +20,19 @@
             "definitions": [{"text": "a sign of a person's race"}],
             "examples": [{"text": 
                 "People of all creeds and colours."}]
-        }, {
-            "id": "colour-4",
-            "definitions": [{"text": "interest or excitement"}],
-            "examples": [{"text": 
-                "Examples add colour to your writing."}]
         }]
     }],
     "relations": [{
         "type": "subsensing",
         "members": [
-          {"role": "super", "memberID": "colour-1", 
-              "obverseListingOrder": 0},
-          {"role": "sub", "memberID": "colour-2", 
-              "obverseListingOrder": 0}
+          {"role": "super", "ref": "colour-1"},
+          {"role": "sub", "ref": "colour-2"} 
         ]
     }, {
         "type": "subsensing",
         "members": [
-          {"role": "super", "memberID": "colour-1", 
-              "obverseListingOrder": 0},
-          {"role": "sub", "memberID": "colour-3", 
-              "obverseListingOrder": 0}
+          {"role": "super", "ref": "colour-1"}, 
+          {"role": "sub", "ref": "colour-3"}
         ]
     }],
     "relationTypes": [{

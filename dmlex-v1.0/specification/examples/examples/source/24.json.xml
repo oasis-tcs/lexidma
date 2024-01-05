@@ -5,8 +5,8 @@
       "id": "school-noun-2",
       "headword": "school",
       "etymologies": [ {
-          "description": "Middle Dutch scole (\"multitude, troop, crow
-d, school\") from Proto-Germanic *skulō; doublet of shoal",
+          "description": "Middle Dutch scole (\"multitude, troop, crowd, s
+chool\") from Proto-Germanic *skulō; doublet of shoal",
           "etymons": [ {
               "type": "derivation",
               "etymonUnits": [ {
@@ -42,8 +42,7 @@ d, school\") from Proto-Germanic *skulō; doublet of shoal",
       "description": "A historical form of the word"
     }, {
       "type": "doublet",
-      "description": "Two words derived from the same etymological roo
-t"
+      "description": "Two words derived from the same etymological root"
   }] 
 }
 </programlisting>

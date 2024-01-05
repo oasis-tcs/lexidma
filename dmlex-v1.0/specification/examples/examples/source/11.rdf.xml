@@ -1,5 +1,5 @@
 <programlisting>
-&lt;file:fómhar-n-1&gt; a dmlex:Sense;
+ex:fómhar-n-1 a dmlex:Sense;
   dmlex:headwordTranslation [ a dmlex:HeadwordTranslation;
       dmlex:listingOrder "3"^^xsd:unsignedInt;
       dmlex:text "Herbst";
@@ -17,7 +17,7 @@
       dmlex:listingOrder "4"^^xsd:unsignedInt;
       dmlex:langCode "cs" ];
   dmlex:listingOrder "1"^^xsd:unsignedInt.
-&lt;file:fómhar-n-2&gt; a dmlex:Sense;
+ex:fómhar-n-2 a dmlex:Sense;
   dmlex:headwordTranslation [ a dmlex:HeadwordTranslation;
       dmlex:langCode "en";
       dmlex:listingOrder "1"^^xsd:unsignedInt;
@@ -31,8 +31,8 @@
       dmlex:langCode "de";
       dmlex:listingOrder "2"^^xsd:unsignedInt ];
   dmlex:listingOrder "2"^^xsd:unsignedInt.
-&lt;file:fómhar-n&gt; a dmlex:Entry;
+ex:fómhar-n a dmlex:Entry;
   dmlex:headword "fómhar";
-  dmlex:sense &lt;file:fómhar-n-1&gt;,
-    &lt;file:fómhar-n-2&gt;.
+  dmlex:sense ex:fómhar-n-1,
+    ex:fómhar-n-2.
 </programlisting>

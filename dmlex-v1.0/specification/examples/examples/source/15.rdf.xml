@@ -1,43 +1,48 @@
 <programlisting>
-&lt;file:colour-1&gt; a dmlex:Sense;
-  dmlex:listingOrder "1"^^xsd:unsignedInt;
-  dmlex:definition [ a dmlex:Definition;
-      dmlex:text "red, blue, yellow etc.";
-      dmlex:listingOrder "1"^^xsd:unsignedInt ];
-  dmlex:example [ a dmlex:Example;
-      dmlex:listingOrder "1"^^xsd:unsignedInt;
-      dmlex:text "What is your favourite colour?" ].
-[] a dmlex:LexicographicResource;
+ex:lexicon a dmlex:LexicographicResource;
+  dmlex:entry ex:color,
+    ex:colour;
   dmlex:relation [ a dmlex:Relation;
+      dmlex:type "variants";
       dmlex:member [ a dmlex:Member;
-          dmlex:obverseListingOrder "0"^^xsd:unsignedInt;
-          dmlex:listingOrder "1"^^xsd:unsignedInt;
-          dmlex:memberID "colour" ],
+          dmlex:ref "color";
+          dmlex:listingOrder "2"^^xsd:unsignedInt ],
         [ a dmlex:Member;
-          dmlex:memberID "color";
-          dmlex:obverseListingOrder "0"^^xsd:unsignedInt;
-          dmlex:listingOrder "2"^^xsd:unsignedInt ];
-      dmlex:listingOrder "1"^^xsd:unsignedInt;
+          dmlex:ref "colour";
+          dmlex:listingOrder "1"^^xsd:unsignedInt ];
+      dmlex:listingOrder "1"^^xsd:unsignedInt ];
+  dmlex:relationType [ a dmlex:RelationType;
+      dmlex:memberType [ a dmlex:MemberType;
+          dmlex:hint dmlex:navigate;
+          dmlex:type dmlex:entry;
+          dmlex:min "2"^^xsd:unsignedInt ];
+      dmlex:description "words which differ only in spelling";
       dmlex:type "variants" ];
-  dmlex:entry &lt;file:color&gt;,
-    &lt;file:colour&gt;;
   dmlex:langCode "en";
   dmlex:uri "http://example.com".
-&lt;file:colour&gt; a dmlex:Entry;
-  dmlex:label [ 
+ex:color a dmlex:Entry;
+  dmlex:partOfSpeech [ 
       dmlex:listingOrder "1"^^xsd:unsignedInt;
-      dmlex:tag "europeanSpelling" ];
+      dmlex:tag "n" ];
+  dmlex:headword "color";
+  dmlex:label [ 
+      dmlex:tag "americanSpelling";
+      dmlex:listingOrder "1"^^xsd:unsignedInt ].
+ex:colour a dmlex:Entry;
   dmlex:headword "colour";
   dmlex:partOfSpeech [ 
       dmlex:tag "n";
       dmlex:listingOrder "1"^^xsd:unsignedInt ];
-  dmlex:sense &lt;file:colour-1&gt;.
-&lt;file:color&gt; a dmlex:Entry;
   dmlex:label [ 
-      dmlex:tag "americanSpelling";
-      dmlex:listingOrder "1"^^xsd:unsignedInt ];
-  dmlex:headword "color";
-  dmlex:partOfSpeech [ 
       dmlex:listingOrder "1"^^xsd:unsignedInt;
-      dmlex:tag "n" ].
+      dmlex:tag "europeanSpelling" ];
+  dmlex:sense ex:colour-1.
+ex:colour-1 a dmlex:Sense;
+  dmlex:example [ a dmlex:Example;
+      dmlex:listingOrder "1"^^xsd:unsignedInt;
+      dmlex:text "What is your favourite colour?" ];
+  dmlex:listingOrder "1"^^xsd:unsignedInt;
+  dmlex:definition [ a dmlex:Definition;
+      dmlex:listingOrder "1"^^xsd:unsignedInt;
+      dmlex:text "red, blue, yellow etc." ].
 </programlisting>

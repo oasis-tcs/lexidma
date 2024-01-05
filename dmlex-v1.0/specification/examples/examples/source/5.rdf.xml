@@ -1,5 +1,5 @@
 <programlisting>
-[] a dmlex:LexicographicResource;
+ex:lexicon a dmlex:LexicographicResource;
   dmlex:inflectedFormTag [ a dmlex:InflectedFormTag;
       dmlex:description "singular genitive";
       dmlex:forPartOfSpeech "n-fem",
@@ -18,8 +18,8 @@
       dmlex:tag "n-masc" ];
   dmlex:uri "http://example.com";
   dmlex:langCode "ga";
-  dmlex:entry &lt;file:folúsghlantóir-n&gt;.
-&lt;file:folúsghlantóir-n&gt; a dmlex:Entry;
+  dmlex:entry ex:folúsghlantóir-n.
+ex:folúsghlantóir-n a dmlex:Entry;
   dmlex:partOfSpeech [ 
       dmlex:listingOrder "1"^^xsd:unsignedInt;
       dmlex:tag "n-masc" ];

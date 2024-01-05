@@ -27,24 +27,20 @@
     "relations": [{
         "type": "meronymy",
         "members": [{
-            "memberID": "glasses-1",
-            "role": "whole",
-            "obverseListingOrder": 0
+            "ref": "glasses-1",
+            "role": "whole"
         }, {
-            "memberID": "lens-1",
-            "role": "part",
-            "obverseListingOrder": 0
+            "ref": "lens-1",
+            "role": "part"
         }]
     }, {
         "type": "meronymy",
         "members": [{
-            "memberID": "microscope-1",
-            "role": "whole",
-            "obverseListingOrder": 0
+            "ref": "microscope-1",
+            "role": "whole"
         }, {
-            "memberID": "lens-1",
-            "role": "part",
-            "obverseListingOrder": 0
+            "ref": "lens-1",
+            "role": "part"
         }]
     }],
     "relationTypes": [{

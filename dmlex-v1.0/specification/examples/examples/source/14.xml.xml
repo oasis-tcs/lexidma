@@ -24,13 +24,13 @@
     &lt;/entry&gt;
     &lt;relation type="synonyms"&gt;
         &lt;description&gt;words that mean sea and ocean&lt;/description&gt;
-        &lt;member memberID="die-see-1" obverseListingOrder="0"/&gt;
-        &lt;member memberID="das-meer-1" obverseListingOrder="0"/&gt;
-        &lt;member memberID="der-ozean-1" obverseListingOrder="0"/&gt;
+        &lt;member ref="die-see-1"/&gt;
+        &lt;member ref="das-meer-1"/&gt;
+        &lt;member ref="der-ozean-1"/&gt;
     &lt;/relation&gt;
     &lt;relationType type="synonyms"&gt;
         &lt;description&gt;synonyms and near synonyms&lt;/description&gt;
-        &lt;memberType type="sense" min="2" hint="navigate" role="whole"/&gt;
+        &lt;memberType type="sense" min="2" hint="navigate"/&gt;
     &lt;/relationType&gt;
 &lt;/lexicographicResource&gt;
 </programlisting>

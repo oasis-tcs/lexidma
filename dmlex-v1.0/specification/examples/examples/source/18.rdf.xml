@@ -1,39 +1,52 @@
 <programlisting>
-[] a dmlex:LexicographicResource;
-  dmlex:entry &lt;file:the-bible&gt;,
-    &lt;file:bible&gt;;
+ex:lexicon a dmlex:LexicographicResource;
+  dmlex:langCode "en";
+  dmlex:entry ex:the-bible,
+    ex:bible;
+  dmlex:relationType [ a dmlex:RelationType;
+      dmlex:type "subentrying";
+      dmlex:memberType [ a dmlex:MemberType;
+          dmlex:hint dmlex:embed;
+          dmlex:role "subentry";
+          dmlex:max "1"^^xsd:unsignedInt;
+          dmlex:type dmlex:entry;
+          dmlex:min "1"^^xsd:unsignedInt ],
+        [ a dmlex:MemberType;
+          dmlex:hint dmlex:navigate;
+          dmlex:max "1"^^xsd:unsignedInt;
+          dmlex:type dmlex:sense;
+          dmlex:min "1"^^xsd:unsignedInt;
+          dmlex:role "container" ];
+      dmlex:scopeRestriction dmlex:sameResource ];
+  dmlex:uri "http://example.com";
   dmlex:relation [ a dmlex:Relation;
+      dmlex:listingOrder "1"^^xsd:unsignedInt;
       dmlex:type "subentrying";
       dmlex:member [ a dmlex:Member;
-          dmlex:role "subentry";
-          dmlex:obverseListingOrder "0"^^xsd:unsignedInt;
           dmlex:listingOrder "2"^^xsd:unsignedInt;
-          dmlex:memberID "the-bible" ],
+          dmlex:ref "the-bible";
+          dmlex:role "subentry" ],
         [ a dmlex:Member;
-          dmlex:role "container";
-          dmlex:memberID "bible-1";
           dmlex:listingOrder "1"^^xsd:unsignedInt;
-          dmlex:obverseListingOrder "0"^^xsd:unsignedInt ];
-      dmlex:listingOrder "1"^^xsd:unsignedInt ];
-  dmlex:uri "http://example.com";
-  dmlex:langCode "en".
-&lt;file:bible-2&gt; a dmlex:Sense;
-  dmlex:listingOrder "2"^^xsd:unsignedInt;
+          dmlex:ref "bible-1";
+          dmlex:role "container" ] ].
+ex:bible a dmlex:Entry;
+  dmlex:sense ex:bible-1,
+    ex:bible-2;
+  dmlex:headword "bible".
+ex:bible-1 a dmlex:Sense;
+  dmlex:listingOrder "1"^^xsd:unsignedInt.
+ex:bible-2 a dmlex:Sense;
   dmlex:definition [ a dmlex:Definition;
-      dmlex:listingOrder "1"^^xsd:unsignedInt;
-      dmlex:text "a book considered important for a subject" ].
-&lt;file:the-bible&gt; a dmlex:Entry;
-  dmlex:headword "the Bible";
-  dmlex:sense &lt;file:the-bible-1&gt;.
-&lt;file:the-bible-1&gt; a dmlex:Sense;
+      dmlex:text "a book considered important for a subject";
+      dmlex:listingOrder "1"^^xsd:unsignedInt ];
+  dmlex:listingOrder "2"^^xsd:unsignedInt.
+ex:the-bible a dmlex:Entry;
+  dmlex:sense ex:the-bible-1;
+  dmlex:headword "the Bible".
+ex:the-bible-1 a dmlex:Sense;
+  dmlex:listingOrder "1"^^xsd:unsignedInt;
   dmlex:definition [ a dmlex:Definition;
       dmlex:text "the book considered holy by Christians";
-      dmlex:listingOrder "1"^^xsd:unsignedInt ];
-  dmlex:listingOrder "1"^^xsd:unsignedInt.
-&lt;file:bible-1&gt; a dmlex:Sense;
-  dmlex:listingOrder "1"^^xsd:unsignedInt.
-&lt;file:bible&gt; a dmlex:Entry;
-  dmlex:headword "bible";
-  dmlex:sense &lt;file:bible-1&gt;,
-    &lt;file:bible-2&gt;.
+      dmlex:listingOrder "1"^^xsd:unsignedInt ].
 </programlisting>

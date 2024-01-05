@@ -23,16 +23,12 @@
         &lt;/sense&gt;
     &lt;/entry&gt;
     &lt;relation type="meronymy"&gt;
-        &lt;member memberID="glasses-1" role="whole" 
-            obverseListingOrder="0"/&gt;
-        &lt;member memberID="lens-1" role="part" 
-            obverseListingOrder="0"/&gt;
+        &lt;member ref="glasses-1" role="whole"/&gt;
+        &lt;member ref="lens-1" role="part"/&gt;
     &lt;/relation&gt;
     &lt;relation type="meronymy"&gt;
-        &lt;member memberID="microscope-1" role="whole" 
-            obverseListingOrder="0"/&gt;
-        &lt;member memberID="lens-1" role="part" 
-            obverseListingOrder="0"/&gt;
+        &lt;member ref="microscope-1" role="whole"/&gt;
+        &lt;member ref="lens-1" role="part"/&gt;
     &lt;/relation&gt;
     &lt;relationType type="meronymy"&gt;
         &lt;description&gt;part-whole relationship&lt;/description&gt;

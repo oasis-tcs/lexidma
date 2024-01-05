@@ -1,5 +1,5 @@
 <programlisting>
-[] a dmlex:LexicographicResource;
+ex:lexicon a dmlex:LexicographicResource;
   dmlex:langCode "en";
   dmlex:partOfSpeechTag [ a dmlex:PartOfSpeechTag;
       dmlex:tag "n-masc";

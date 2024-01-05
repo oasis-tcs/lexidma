@@ -21,15 +21,14 @@
     "relations": [{
         "type": "variants",
         "members": [
-          {"memberID": "colour", "obverseListingOrder": 0},
-          {"memberID": "color", "obverseListingOrder": 0}
+          {"ref": "colour"},
+          {"ref": "color"}
         ]
     }],
     "relationTypes": [{
         "type": "variants",
         "description": "words which differ only in spelling",
         "memberTypes": [{
-            "role": "obverse",
             "type": "entry",
             "min": 2,
             "hint": "navigate"

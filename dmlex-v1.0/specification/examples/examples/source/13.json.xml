@@ -20,8 +20,8 @@
     "relations": [{
         "type": "antonyms",
         "members": [
-            {"memberID": "buy-1", "obverseListingOrder": 0},
-            {"memberID": "sell-1", "obverseListingOrder": 0}
+            {"ref": "buy-1"},
+            {"ref": "sell-1"}
         ]
     }],
     "relationTypes": [{

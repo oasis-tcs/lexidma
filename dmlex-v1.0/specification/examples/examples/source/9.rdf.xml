@@ -1,15 +1,15 @@
 <programlisting>
-&lt;file:treppenwitz-1&gt; a dmlex:Sense;
+ex:treppenwitz a dmlex:Entry;
+  dmlex:partOfSpeech [ 
+      dmlex:tag "n-masc";
+      dmlex:listingOrder "1"^^xsd:unsignedInt ];
+  dmlex:sense ex:treppenwitz-1;
+  dmlex:headword "Treppenwitz".
+ex:treppenwitz-1 a dmlex:Sense;
   dmlex:headwordExplanation [ a dmlex:HeadwordExplanation;
       dmlex:text "belated realisation of what one could have said" ];
   dmlex:headwordTranslation [ a dmlex:HeadwordTranslation;
       dmlex:text "staircase wit";
       dmlex:listingOrder "1"^^xsd:unsignedInt ];
   dmlex:listingOrder "1"^^xsd:unsignedInt.
-&lt;file:treppenwitz&gt; a dmlex:Entry;
-  dmlex:partOfSpeech [ 
-      dmlex:tag "n-masc";
-      dmlex:listingOrder "1"^^xsd:unsignedInt ];
-  dmlex:sense &lt;file:treppenwitz-1&gt;;
-  dmlex:headword "Treppenwitz".
 </programlisting>

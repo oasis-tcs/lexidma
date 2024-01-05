@@ -1,5 +1,5 @@
 <programlisting>
-&lt;file:resource&gt; a dmlex:LexicographicResource;
+ex:lexicon a dmlex:LexicographicResource;
   dmlex:etymonLanguage [ a dmlex:EtymonLanguage;
       dmlex:langCode "dum";
       dmlex:displayName "Middle Dutch" ],
@@ -7,19 +7,19 @@
       dmlex:langCode "gem-pro";
       dmlex:displayName "Proto-Germanic" ];
   dmlex:langCode "en";
-  dmlex:entry &lt;file:school-noun-2&gt;;
+  dmlex:entry ex:school-noun-2;
   dmlex:etymonType [ a dmlex:EtymonType;
-      dmlex:description "Two words derived from the same etymological 
-root";
+      dmlex:description "Two words derived from the same etymological root
+";
       dmlex:type "doublet" ],
     [ a dmlex:EtymonType;
       dmlex:description "A historical form of the word";
       dmlex:type "derivation" ].
-&lt;file:school-noun-2&gt; a dmlex:Entry;
+ex:school-noun-2 a dmlex:Entry;
   dmlex:headword "school";
   dmlex:etymology [ a dmlex:Etymology;
-      dmlex:description "Middle Dutch scole (\"multitude, troop, crowd
-, school\") from Proto-Germanic *skulō; doublet of shoal";
+      dmlex:description "Middle Dutch scole (\"multitude, troop, crowd, sc
+hool\") from Proto-Germanic *skulō; doublet of shoal";
       dmlex:etymon [ a dmlex:Etymon;
           dmlex:type "derivation";
           dmlex:etymonUnit [ a dmlex:EtymonUnit;

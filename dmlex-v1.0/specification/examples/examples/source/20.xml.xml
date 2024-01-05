@@ -1,13 +1,11 @@
 <programlisting>
 &lt;entry id="beat-up"&gt;
-    &lt;headword&gt;
-        beat &lt;placeholderMarker&gt;sb.&lt;/placeholderMarker&gt; up
-    &lt;/headword&gt;
+    &lt;headword&gt;beat &lt;placeholderMarker&gt;sb.&lt;/placeholderMarker&gt; up&lt;/headword
+&gt;
     &lt;sense id="beat-up-1"&gt;
       &lt;headwordTranslation&gt;
-        &lt;text&gt;
-            &lt;placeholderMarker&gt;jemanden&lt;/placeholderMarker&gt; verprügeln
-        &lt;/text&gt;
+        &lt;text&gt;&lt;placeholderMarker&gt;jemanden&lt;/placeholderMarker&gt; verprügeln&lt;/
+text&gt;
       &lt;/headwordTranslation&gt;
     &lt;/sense&gt;
 &lt;/entry&gt;

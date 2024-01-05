@@ -1,5 +1,5 @@
 <programlisting>
-[] a dmlex:LexicographicResource;
+ex:lexicon a dmlex:LexicographicResource;
   dmlex:uri "http://example.com";
   dmlex:translationLanguage "en";
   dmlex:title "My German-English Dictionary";
