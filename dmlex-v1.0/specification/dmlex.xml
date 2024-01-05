@@ -743,7 +743,7 @@
             <ulink url="https://www.oasis-open.org/committees/download.php/14809/xml-catalogs.html"
               >https://www.oasis-open.org/committees/download.php/14809/xml-catalogs.html</ulink>
           </citetitle> OASIS Standard V1.1, 07 October 2005.</bibliomixed>
-        <bibliomixed id="XMLSchema"><abbrev>XML Schema</abbrev> W3C, <title>XML Schema</title>,
+        <bibliomixed id="bib_XMLSchema"><abbrev>XML Schema</abbrev> W3C, <title>XML Schema</title>,
             <citetitle> refers to the two part standard comprising <link linkend="XMLSchema1">[XML
               Schema Structures]</link> and <link linkend="XMLSchema2">[XML Schema Datatypes]</link>
           </citetitle> (Second Editions) W3C Recommendations 28 October 2004.</bibliomixed>

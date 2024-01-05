@@ -12,7 +12,7 @@
     <itemizedlist>
         <title>Attributes</title>
         <listitem>
-            <para><literal>@role</literal> <glossterm>required</glossterm></para>
+            <para><literal>@role</literal> <glossterm>optional</glossterm></para>
         </listitem>
         <listitem>
             <para><literal>@type</literal> <glossterm>required</glossterm></para>

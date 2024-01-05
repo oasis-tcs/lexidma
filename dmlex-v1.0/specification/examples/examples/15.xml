@@ -28,8 +28,8 @@
         - partOfSpeech (tag: n)
         - label (tag: americanSpelling)
     - relation (type: variants)
-        - member (memberID: colour)
-        - member (memberID: color)
+        - member (ref: colour)
+        - member (ref: color)
     - relationType (type: variants, description: words which differ only in spelling)
         - memberType (type: entry, min: 2, hint: navigate)
 </programlisting>
@@ -53,8 +53,8 @@
         &lt;label tag="americanSpelling"/&gt;
     &lt;/entry&gt;
     &lt;relation type="variants"&gt;
-        &lt;member memberID="colour"/&gt;
-        &lt;member memberID="color"/&gt;
+        &lt;member ref="colour"/&gt;
+        &lt;member ref="color"/&gt;
     &lt;/relation&gt;
     &lt;relationType type="variants"&gt;
         &lt;description&gt;words which differ only in spelling&lt;/description&gt;
@@ -88,8 +88,8 @@
     "relations": [{
         "type": "variants",
         "members": [
-          {"memberID": "colour"},
-          {"memberID": "color"}
+          {"ref": "colour"},
+          {"ref": "color"}
         ]
     }],
     "relationTypes": [{

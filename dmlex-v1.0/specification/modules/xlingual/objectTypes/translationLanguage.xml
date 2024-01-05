@@ -45,6 +45,7 @@
   </example>
   <example>
     <title>JSON</title>
+    <para>Implemented as a string</para>
     <programlisting>
 "..."
     </programlisting>

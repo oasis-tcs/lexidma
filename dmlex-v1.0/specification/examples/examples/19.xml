@@ -20,9 +20,7 @@
         <title>XML</title>
         <programlisting>
 &lt;entry id="continue-studies"&gt;
-    &lt;headword&gt;
-        continue &lt;placeholderMarker&gt;your&lt;/placeholderMarker&gt; studies
-    &lt;/headword&gt;
+    &lt;headword&gt;continue &lt;placeholderMarker&gt;your&lt;/placeholderMarker&gt; studies&lt;/headword&gt;
     &lt;sense.../&gt;
 &lt;/entry&gt;
 </programlisting>

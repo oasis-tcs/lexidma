@@ -21,9 +21,10 @@
   <itemizedlist>
     <title>Properties</title>
     <listitem>
-      <para><literal>memberID</literal>
-        <glossterm>required</glossterm> (exactly one) and <glossterm>unique</glossterm> (in combination with other unique properties if present). Reference to an object, such as an entry or a
-        sense.</para>
+      <para><literal>ref</literal>
+        <glossterm>required</glossterm> (exactly one) and <glossterm>unique</glossterm> (in
+        combination with other unique properties if present). Reference to an object, such as an
+        entry or a sense.</para>
     </listitem>
     <listitem>
       <para><literal>role</literal>
@@ -44,7 +45,7 @@
     </listitem>
     <listitem>
       <para><literal>obverseListingOrder</literal>
-        <glossterm>required</glossterm> (exactly one). Number. The position of this relation among
+        <glossterm>optional</glossterm> (at most one). Number. The position of this relation among
         other relations this member is involved in. When an object - such as an entry or a sense -
         is a member of several relations (for example: when a sense is a member of a synonymy
         relation and also of an antonymy relation) then, when showing the object (the entry or the
@@ -56,7 +57,7 @@
   <example>
     <title>XML</title>
     <programlisting>
-&lt;member memberID="..." role="..." obverseListingOrder="..."/&gt;
+&lt;member ref="..." role="..." obverseListingOrder="..."/&gt;
 </programlisting>
   </example>
 
@@ -64,7 +65,7 @@
     <title>JSON</title>
     <programlisting>
 {
-    "memberID": "...",
+    "ref": "...",
     "role": "...",
     "obverseListingOrder": "..."
 }
@@ -75,7 +76,7 @@
       <programlisting>
 &lt;#relation&gt; dmlex:member [
   a dmlex:Member ;
-  dmlex:memberID "..." ;
+  dmlex:ref "..." ;
   dmlex:role "..." ;
   dmlex:listingOrder 0 ;
   dmlex:obverseListingOrder 0 ] .
