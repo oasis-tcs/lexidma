@@ -1,19 +1,19 @@
 include Makefile.dep
 
-html: dmlex-v1.0-csd01.html
+html: dmlex-v1.0-csd02.html
 
-pdf: dmlex-v1.0-csd01.pdf
+pdf: dmlex-v1.0-csd02.pdf
 
-dmlex-v1.0-csd01.pdf: dmlex-v1.0-csd01.fo
+dmlex-v1.0-csd02.pdf: dmlex-v1.0-csd02.fo
 	fop -c stylesheets/fop.xconf -pdf $@ -fo $<
 
-dmlex-v1.0-csd01.fo: dmlex-v1.0-csd01.xml
+dmlex-v1.0-csd02.fo: dmlex-v1.0-csd02.xml
 	xsltproc --xinclude -o $@ stylesheets/oasis-specification-fo-a4.xsl $<
 
-dmlex-v1.0-csd01.html: dmlex-v1.0-csd01.xml
+dmlex-v1.0-csd02.html: dmlex-v1.0-csd02.xml
 	xsltproc --xinclude -o $@ stylesheets/oasis-specification-html.xsl $<
 
-dmlex-v1.0-csd01.xml: dmlex.xml docbook/dbgenent.mod dmlex_uml.svg $(SOURCE_XML)
+dmlex-v1.0-csd02.xml: dmlex.xml docbook/dbgenent.mod dmlex_uml.svg $(SOURCE_XML)
 	./merge.sh
 
 dmlex_uml.pdf: dmlex.dot
@@ -33,4 +33,4 @@ Makefile.dep: dmlex.xml $(SOURCE_XML) makedep.sh
 	./makedep.sh >> $@
 
 clean:
-	rm dmlex-v1.0-csd01.html dmlex-v1.0-csd01.pdf dmlex-v1.0-csd01.fo dmlex-v1.0-csd01.xml Makefile.dep dmlex_uml.svg dmlex_uml.pdf dmlex.dot dmlex.dot.content
+	rm dmlex-v1.0-csd02.html dmlex-v1.0-csd02.pdf dmlex-v1.0-csd02.fo dmlex-v1.0-csd02.xml Makefile.dep dmlex_uml.svg dmlex_uml.pdf dmlex.dot dmlex.dot.content
