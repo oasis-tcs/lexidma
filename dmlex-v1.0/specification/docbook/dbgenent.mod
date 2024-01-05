@@ -49,20 +49,20 @@
 <!ENTITY cschversion "1.0">
 
 
-<!ENTITY stage "csd01">
-<!ENTITY pstage "N/A">
+<!ENTITY stage "csd02">
+<!ENTITY pstage "csd01">
 <!--
 <!ENTITY standard "Commitee Specification Draft 01 / Public Review Draft 01">
 -->
-<!ENTITY standard "Commitee Specification Draft 01">
+<!ENTITY standard "Commitee Specification Draft 02">
 
 <!ENTITY this-loc "https://docs.oasis-open.org/lexidma/dmlex/v&version;/&stage;">
 <!ENTITY previous-loc "https://docs.oasis-open.org/lexidma/dmlex/v&version;/&pstage;">
 <!ENTITY latest-loc "https://docs.oasis-open.org/lexidma/dmlex/v&version;">
 
-<!ENTITY pubdate "8 September &pubyear;">
+<!ENTITY pubdate "12 January &pubyear;">
 
-<!ENTITY pubyear "2023">
+<!ENTITY pubyear "2024">
 <!ENTITY releaseinfo "Standards Track Work Product">
 <!-- End of DMLex V1.0 publishing entities -->
 

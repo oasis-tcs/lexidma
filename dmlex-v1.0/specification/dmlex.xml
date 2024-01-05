@@ -36,13 +36,13 @@
         Lexicographic Infrastructure Data Model and API (LEXIDMA) TC</ulink></releaseinfo>
     <authorgroup>
       <othercredit role="chair">
-        <firstname>Tomaž</firstname>
-        <surname>Erjavec</surname>
+        <firstname>Michal</firstname>
+        <surname>Měchura</surname>
         <affiliation>
-          <orgname><ulink url="http://www.ijs.si/">Jozef Stefan Institute</ulink></orgname>
-          <address format="linespecific"><email>tomaz.erjavec@ijs.si</email></address>
+          <orgname><ulink url="http://www.ijs.si/">Masaryk University</ulink></orgname>
+          <address format="linespecific"><email>michmech@mail.muni.cz</email></address>
         </affiliation>
-        <email>tomaz.erjavec@ijs.si</email>
+        <email>michmech@mail.muni.cz</email>
       </othercredit>
       <editor>
         <firstname>David</firstname>
@@ -78,6 +78,7 @@
           <orgname><ulink url="https://www.universityofgalway.ie/">University of Galway</ulink></orgname>
           <address format="linespecific"><email>john.mccrae@universityofgalway.ie</email></address>
         </affiliation>
+        <email>john.mccrae@universityofgalway.ie</email>
       </editor>
       <editor>
         <firstname>Michal</firstname>

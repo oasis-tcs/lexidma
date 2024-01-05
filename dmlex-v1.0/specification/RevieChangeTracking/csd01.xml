@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd"[
+<!ENTITY % xinclude SYSTEM "../docbook/xinclude.mod">
+%xinclude;
+<!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED">
+]>
+<section id="csprd01">
+<title>Tracking of changes in response to the 1st Public Review</title>
+<para>This section tracks major changes made to this specification compared to the Committee
+        Specification Draft 01 <ulink
+            url="http://docs.oasis-open.org/xliff/xliff-core/v2.1/csprd01/xliff-core-v2.1-csprd01.html"
+            >http://docs.oasis-open.org/xliff/xliff-core/v2.1/csprd01/xliff-core-v2.1-csprd01.html</ulink>.
+        The initial Public Review took place from 26th October 2016 until 25th November 2016.</para>
+<orderedlist>
+<!-- Add new change track items to the bottom of the list -->
+<listitem>
+    <para>Major changes were made in [core/modules/serializations/validation artifatcs] in response
+                to Comments/Issues [Github Issues &lt;ulinks> <ulink
+                    url="https://github.com/oasis-tcs/lexidma/issues/xxx"/>]. [Additional info -
+                optional]. </para>
+</listitem>
+        <listitem>
+            <para>Major changes were made in the Change Tracking Module and validation artifacts in
+                response to Comment/Issue [Github Issues &lt;ulinks> <ulink
+                    url="https://github.com/oasis-tcs/lexidma/issues/xxx"/>]. [Additional info -
+                optional].</para>
+        </listitem>
+        <listitem>
+            <para>Clarifications to Core with validation impact, non-of which were normative changes
+                were provided in response to Comments/Issues: [Github Issues &lt;ulinks> <ulink
+                    url="https://github.com/oasis-tcs/lexidma/issues/xxx"/>]. [Additional info -
+                optional].</para>
+        </listitem>
+        <listitem>
+            <para>Material clarification with validation impact was provided for
+                [core/module/serialization faeture] in response to Comment/Issue: [Github Issues
+                &lt;ulinks> <ulink url="https://github.com/oasis-tcs/lexidma/issues/xxx"/>].
+                [Additional info - optional].</para>
+        </listitem>
+        <listitem>
+            <para>Editorial changes have been made in response to Comments/Issues: [Github Issues
+                &lt;ulinks> <ulink url="https://github.com/oasis-tcs/lexidma/issues/xxx"/>]. </para>
+        </listitem>
+
+<!-- Add new change track items to the bottom of the list
+<listitem>
+<para>[This is a suggested wording for your change track item:] In response to comment(s) nnn, nnn, and nnn, following changes have been made to
+feature XYZ: [description of changes]... </para>
+</listitem>
+-->
+
+</orderedlist>
+
+</section>
