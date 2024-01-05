@@ -18,14 +18,14 @@
       >&this-loc;/&name;-&stage;.html</releaseinfo>
     <releaseinfo role="OASIS-specification-this-authoritative">&this-loc;/&name;-&stage;.pdf</releaseinfo>
     <!--<releaseinfo role="OASIS-specification-this">&this-loc;/&name;-&stage;.xml</releaseinfo>-->
-    <releaseinfo role="OASIS-specification-previous"
+ <!--  <releaseinfo role="OASIS-specification-previous"
       >
-      N/A</releaseinfo>
-    <!-- <releaseinfo role="OASIS-specification-previous"
+      N/A</releaseinfo>-->
+    <releaseinfo role="OASIS-specification-previous"
       >
       &previous-loc;/&name;-&pstage;.html</releaseinfo>
     <releaseinfo role="OASIS-specification-previous-authoritative"
-      >&previous-loc;/&name;-&pstage;.pdf</releaseinfo>-->
+      >&previous-loc;/&name;-&pstage;.pdf</releaseinfo>
     <!--<releaseinfo role="OASIS-specification-previous"
       >&previous-loc;/&name;-&pstage;.xml</releaseinfo>-->
     <releaseinfo role="OASIS-specification-latest"
@@ -239,10 +239,11 @@
       <title>Citation format</title>
       <para>When referencing this specification the following citation format should be used:</para>
       <para><citation>DMLex-&version;</citation></para>
-      <para><emphasis>Data Model for Lexicography Version &version;</emphasis>. Edited by Michal
-        Měchura, David Filip and Simon Krek. &pubdate;. OASIS &standard;. <ulink
-          url="&this-loc;/&name;-&stage;.html">&this-loc;/&name;-&stage;.html</ulink>. Latest
-        version: <ulink url="&latest-loc;/&name;.html">&latest-loc;/&name;.html</ulink>. </para>
+      <para><emphasis>Data Model for Lexicography Version &version;</emphasis>. Edited by David
+        Filip, Miloš Jakubíček, Simon Krek, John McCrae, and Michal Měchura. &pubdate;. OASIS
+        &standard;. <ulink url="&this-loc;/&name;-&stage;.html"
+          >&this-loc;/&name;-&stage;.html</ulink>. Latest version: <ulink
+          url="&latest-loc;/&name;.html">&latest-loc;/&name;.html</ulink>. </para>
       <!--
       <para>The non-normative errata page for this specification is located at <ulink
           url="http://www.oasis-open.org/committees/xliff/"
@@ -907,10 +908,10 @@
     <title>Specification Change Tracking</title>
     <para>This appendix will contain tracked changes after the csd01 phase will have been
       reached.</para>
-    <!--
+    
     <xi:include href="ReviewChangeTracking/ReviewChangeTrack.xml"
       xmlns:xi="http://www.w3.org/2001/XInclude"/>
-      -->
+    
   </appendix>
   <appendix role="informative" id="acknowledgements">
     <title>Acknowledgements</title>

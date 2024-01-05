@@ -8,9 +8,9 @@
 <title>Tracking of changes in response to the 1st Public Review</title>
 <para>This section tracks major changes made to this specification compared to the Committee
         Specification Draft 01 <ulink
-            url="http://docs.oasis-open.org/xliff/xliff-core/v2.1/csprd01/xliff-core-v2.1-csprd01.html"
-            >http://docs.oasis-open.org/xliff/xliff-core/v2.1/csprd01/xliff-core-v2.1-csprd01.html</ulink>.
-        The initial Public Review took place from 26th October 2016 until 25th November 2016.</para>
+            url="&previous-loc;/&name;-&pstage;.pdf"
+            >&previous-loc;/&name;-&pstage;.pdf</ulink>.
+        The initial Public Review took place from 22nd September 2023 until 17th November 2023.</para>
 <orderedlist>
 <!-- Add new change track items to the bottom of the list -->
 <listitem>
