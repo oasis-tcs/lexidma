@@ -29,63 +29,14 @@
     </example>
     <example>
         <title>XML</title>
-        <programlisting>
-&lt;entry id="doctor-n"&gt;
-    &lt;headword&gt;doctor&lt;/headword&gt;
-    &lt;sense id="doctor-n-1"&gt;
-        &lt;indicator&gt;medical doctor&lt;/indicator&gt;
-        &lt;headwordTranslation&gt;
-            &lt;text&gt;Arzt&lt;/text&gt;
-            &lt;partOfSpeech tag="n-masc"/&gt;
-        &lt;/headwordTranslation&gt;
-        &lt;headwordTranslation&gt;
-            &lt;text&gt;Ärztin&lt;/text&gt;
-            &lt;partOfSpeech tag="n-fem"/&gt;
-        &lt;/headwordTranslation&gt;
-    &lt;/sense&gt;
-    &lt;sense id="doctor-n-2"&gt;
-        &lt;indicator&gt;academic title&lt;/indicator&gt;
-        &lt;headwordTranslation&gt;
-            &lt;text&gt;Doktor&lt;/text&gt;
-            &lt;partOfSpeech tag="n-masc"/&gt;
-        &lt;/headwordTranslation&gt;
-        &lt;headwordTranslation&gt;
-            &lt;text&gt;Doktorin&lt;/text&gt;
-            &lt;partOfSpeech tag="n-fem"/&gt;
-        &lt;/headwordTranslation&gt;
-    &lt;/sense&gt;
-&lt;/entry&gt;
-</programlisting>
+       <xi:include href="source/8.xml.xml"/>
     </example>
     <example>
         <title>JSON</title>
-        <programlisting>
-{
-    "id": "doctor-n",
-    "headword": "doctor",
-    "senses": [{
-        "id": "doctor-n-1",
-        "indicator": "medical doctor",
-        "headwordTranslations": [{
-            "text": "Arzt",
-            "partsOfSpeech": ["n-masc"]
-        }, {
-            "text": "Ärztin",
-            "partsOfSpeech": ["n-fem"]
-        }]
-    }, {
-        "id": "doctor-n-2",
-        "indicator": "academic title",
-        "headwordTranslations": [{
-            "text": "Doktor",
-            "partsOfSpeech": ["n-masc"]
-        }, {
-            "text": "Doktorin",
-            "partsOfSpeech": ["n-fem"]
-        }]
-    }]
-}
-</programlisting>
+        <xi:include href="source/8.json.xml"/>
     </example>
-
+    <example>
+        <title>RDF</title>
+        <xi:include href="source/8.rdf.xml"/>
+    </example>
 </section>

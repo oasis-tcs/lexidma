@@ -1,0 +1,12 @@
+<programlisting>
+&lt;entry id="folúsghlantóir-n"&gt;
+    &lt;headword&gt;folúsghlantóir&lt;/headword&gt;
+    &lt;partOfSpeech tag="n-masc"/&gt;
+    &lt;inflectedForm tag="sg-gen"&gt;
+        &lt;text&gt;folúsghlantóra&lt;/text&gt;
+    &lt;/inflectedForm&gt;
+    &lt;inflectedForm tag="pl"&gt;
+        &lt;text&gt;folúsghlantóirí&lt;/text&gt;
+    &lt;/inflectedForm&gt;
+&lt;/entry&gt;
+</programlisting>

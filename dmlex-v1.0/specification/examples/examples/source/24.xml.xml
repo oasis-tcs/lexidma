@@ -1,0 +1,42 @@
+<programlisting>
+&lt;lexicographicResource langCode="en"&gt;
+    &lt;entry id="school-noun-2"&gt;
+        &lt;headword&gt;school&lt;/headword&gt;
+        &lt;etymology&gt;
+            &lt;description&gt;Middle Dutch scole ("multitude, troop, crowd, sch
+ool") from Proto-Germanic *skulō; doublet of shoal&lt;/description&gt;
+            &lt;etymon type="derivation"&gt;
+                &lt;etymonUnit langCode="dum"&gt;
+                    &lt;text&gt;scole&lt;/text&gt;
+                    &lt;translation&gt;multitude, troop, crowd, school&lt;/translat
+ion&gt;
+                &lt;/etymonUnit&gt;
+            &lt;/etymon&gt;
+            &lt;etymon type="derivation"&gt;
+                &lt;etymonUnit langCode="gem-pro" reconstructed="true"&gt;
+                    &lt;text&gt;skulō&lt;/text&gt;
+                &lt;/etymonUnit&gt;
+            &lt;/etymon&gt;
+            &lt;etymon type="doublet"&gt;
+                &lt;etymonUnit langCode="en"&gt;
+                    &lt;text&gt;shoal&lt;/text&gt;
+                &lt;/etymonUnit&gt;
+            &lt;/etymon&gt;
+        &lt;/etymology&gt;
+    &lt;/entry&gt;
+    &lt;etymonType type="derivation"&gt;
+        &lt;description&gt;A historical form of the word&lt;/description&gt;
+    &lt;/etymonType&gt;
+    &lt;etymonType type="doublet"&gt;
+        &lt;description&gt;Two words derived from the same etymological root&lt;/de
+scription&gt;
+    &lt;/etymonType&gt;
+    &lt;etymonLanguage langCode="dum"&gt;
+        &lt;displayName&gt;Middle Dutch&lt;/displayName&gt;
+    &lt;/etymonLanguage&gt;
+    &lt;etymonLanguage langCode="gem-pro"&gt;
+        &lt;displayName&gt;Proto-Germanic&lt;/displayName&gt;
+    &lt;/etymonLanguage&gt;
+&lt;/lexicographicResource&gt;
+            
+</programlisting>

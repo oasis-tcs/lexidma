@@ -1,0 +1,9 @@
+<programlisting>
+ex:lexicon a dmlex:LexicographicResource;
+  dmlex:title "My Irish-Multilingual Dictionary";
+  dmlex:uri "http://example.com";
+  dmlex:translationLanguage "cs",
+    "en",
+    "de";
+  dmlex:langCode "ga".
+</programlisting>

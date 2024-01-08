@@ -1,0 +1,39 @@
+<programlisting>
+ex:lexicon a dmlex:LexicographicResource;
+  dmlex:title "Example Dictionary";
+  dmlex:uri "http://example.com";
+  dmlex:langCode "en";
+  dmlex:entry ex:abandon-verb.
+ex:abandon-verb a dmlex:Entry;
+  dmlex:sense ex:abandon-verb-1,
+    ex:abandon-verb-2;
+  dmlex:partOfSpeech [ 
+      dmlex:tag "verb";
+      dmlex:listingOrder "1"^^xsd:unsignedInt ];
+  dmlex:headword "abandon".
+ex:abandon-verb-1 a dmlex:Sense;
+  dmlex:definition [ a dmlex:Definition;
+      dmlex:text "to suddenly leave a place or a person";
+      dmlex:listingOrder "1"^^xsd:unsignedInt ];
+  dmlex:example [ a dmlex:Example;
+      dmlex:text "I'm sorry I abandoned you like that.";
+      dmlex:listingOrder "1"^^xsd:unsignedInt ],
+    [ a dmlex:Example;
+      dmlex:text "Abandon ship!";
+      dmlex:label [ 
+          dmlex:listingOrder "1"^^xsd:unsignedInt;
+          dmlex:tag "idiom" ];
+      dmlex:listingOrder "2"^^xsd:unsignedInt ];
+  dmlex:listingOrder "1"^^xsd:unsignedInt.
+ex:abandon-verb-2 a dmlex:Sense;
+  dmlex:listingOrder "2"^^xsd:unsignedInt;
+  dmlex:label [ 
+      dmlex:tag "mostly-passive";
+      dmlex:listingOrder "1"^^xsd:unsignedInt ];
+  dmlex:example [ a dmlex:Example;
+      dmlex:listingOrder "1"^^xsd:unsignedInt;
+      dmlex:text "That theory has been abandoned." ];
+  dmlex:definition [ a dmlex:Definition;
+      dmlex:listingOrder "1"^^xsd:unsignedInt;
+      dmlex:text "to stop supporting an idea" ].
+</programlisting>

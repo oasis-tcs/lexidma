@@ -1,0 +1,47 @@
+<programlisting>
+ex:lexicon a dmlex:LexicographicResource;
+  dmlex:etymonLanguage [ a dmlex:EtymonLanguage;
+      dmlex:langCode "dum";
+      dmlex:displayName "Middle Dutch" ],
+    [ a dmlex:EtymonLanguage;
+      dmlex:langCode "gem-pro";
+      dmlex:displayName "Proto-Germanic" ];
+  dmlex:langCode "en";
+  dmlex:entry ex:school-noun-2;
+  dmlex:etymonType [ a dmlex:EtymonType;
+      dmlex:description "Two words derived from the same etymological root
+";
+      dmlex:type "doublet" ],
+    [ a dmlex:EtymonType;
+      dmlex:description "A historical form of the word";
+      dmlex:type "derivation" ].
+ex:school-noun-2 a dmlex:Entry;
+  dmlex:headword "school";
+  dmlex:etymology [ a dmlex:Etymology;
+      dmlex:description "Middle Dutch scole (\"multitude, troop, crowd, sc
+hool\") from Proto-Germanic *skulō; doublet of shoal";
+      dmlex:etymon [ a dmlex:Etymon;
+          dmlex:type "derivation";
+          dmlex:etymonUnit [ a dmlex:EtymonUnit;
+              dmlex:text "skulō";
+              dmlex:listingOrder "1"^^xsd:unsignedInt;
+              dmlex:reconstructed true;
+              dmlex:langCode "gem-pro" ];
+          dmlex:listingOrder "2"^^xsd:unsignedInt ],
+        [ a dmlex:Etymon;
+          dmlex:listingOrder "1"^^xsd:unsignedInt;
+          dmlex:etymonUnit [ a dmlex:EtymonUnit;
+              dmlex:langCode "dum";
+              dmlex:text "scole";
+              dmlex:translation "multitude, troop, crowd, school";
+              dmlex:listingOrder "1"^^xsd:unsignedInt ];
+          dmlex:type "derivation" ],
+        [ a dmlex:Etymon;
+          dmlex:etymonUnit [ a dmlex:EtymonUnit;
+              dmlex:langCode "en";
+              dmlex:text "shoal";
+              dmlex:listingOrder "1"^^xsd:unsignedInt ];
+          dmlex:type "doublet";
+          dmlex:listingOrder "3"^^xsd:unsignedInt ];
+      dmlex:listingOrder "1"^^xsd:unsignedInt ].
+</programlisting>

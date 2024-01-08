@@ -1,0 +1,7 @@
+<programlisting>
+ex:folúsghlantóir-n a dmlex:Entry;
+  dmlex:headword "folúsghlantóir";
+  dmlex:partOfSpeech [ 
+      dmlex:listingOrder "1"^^xsd:unsignedInt;
+      dmlex:tag "n-masc" ].
+</programlisting>

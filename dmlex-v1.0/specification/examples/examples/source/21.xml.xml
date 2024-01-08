@@ -1,0 +1,17 @@
+<programlisting>
+&lt;entry id="autopsy"&gt;
+    &lt;headword&gt;autopsy&lt;/headword&gt;
+    &lt;sense id="autopsy-1"&gt;
+        &lt;headwordTranslation&gt;&lt;text&gt;pitva&lt;/text&gt;&lt;/headwordTranslation&gt;
+        &lt;example&gt;
+            &lt;text&gt;The coroner performed an &lt;headwordMarker&gt;autopsy&lt;/headwo
+rdMarker&gt;.&lt;/text&gt;
+            &lt;exampleTranslation&gt;
+                &lt;text&gt;Koroner provedl &lt;headwordMarker&gt;pitvu&lt;/headwordMarke
+r&gt;.&lt;/text&gt;
+            &lt;/exampleTranslation&gt;
+        &lt;/example&gt;
+    &lt;/sense&gt;
+&lt;/entry&gt;
+
+</programlisting>

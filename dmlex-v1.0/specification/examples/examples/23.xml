@@ -18,67 +18,25 @@
         - etymon
             - etymonUnit (langCode: enm, text: catte)
         - etymon
-            - etymonUnit (langCode: ang, text: catt, translation: male cat)
-            - etymonUnit (langCode: ang, text: catte, translation: female cat)
+            - etymonUnit (langCode: ang, text: catt, 
+		translation: male cat)
+            - etymonUnit (langCode: ang, text: catte, 
+		translation: female cat)
         - etymon
-            - etymonUnit (langCode: gem-x-proto, text: kattuz, reconstructed: true)
+            - etymonUnit (langCode: gem-x-proto, text: kattuz, 
+		reconstructed: true)
 </programlisting>
     </example>
     <example>
         <title>XML</title>
-        <programlisting>
-&lt;entry id="cat-n"&gt;
-    &lt;headword&gt;cat&lt;/headword&gt;
-    &lt;sense&gt;...&lt;/sense>
-    &lt;etymology>
-        &lt;etymon>
-            &lt;etymonUnit langCode="enm">
-                &lt;text>catte&lt;/text>
-            &lt;/etymonUnit>
-        &lt;/etymon>
-        &lt;etymon>
-            &lt;etymonUnit langCode="ang">
-                &lt;text>catt&lt;/text>
-                &lt;translation>male cat&lt;/translation>
-            &lt;/etymonUnit>
-            &lt;etymonUnit langCode="ang">
-                &lt;text>catte&lt;/text>
-                &lt;translation>female cat&lt;/translation>
-            &lt;/etymonUnit>
-        &lt;/etymon>
-        &lt;etymon>
-            &lt;etymonUnit langCode="gem-x-proto" reconstructed="true">
-                &lt;text>kattuz&lt;/text>
-            &lt;/etymonUnit>
-        &lt;/etymon>
-    &lt;/etymology>
-&lt;/entry&gt;
-</programlisting>
+      <xi:include href="source/23.xml.xml"/>
     </example>
     <example>
         <title>JSON</title>
-        <programlisting>
-{
-  "id": "cat-n",
-  "headword": "cat",
-  "senses": [...],
-  "etymology": {
-    "etymons" [{
-      "etymonUnits": [
-        {"langCode": "enm", "text": "catte"}
-      ]
-    }, {
-      "etymonUnits": [
-        {"langCode": "ang", "text": "catt", "translation": "male cat"},
-        {"langCode": "ang", "text": "catte", "translation": "female cat"}
-      ]
-    }, {
-      "etymonUnits": [
-        {"langCode": "gem-x-proto", "text": "kattuz", "reconstructed": true}
-      ]
-    }]
-  }
-}
-</programlisting>
+        <xi:include href="source/23.json.xml"/>
+    </example>
+    <example>
+        <title>RDF</title>
+        <xi:include href="source/23.rdf.xml"/>
     </example>
 </section>

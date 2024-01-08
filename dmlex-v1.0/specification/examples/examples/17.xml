@@ -23,103 +23,29 @@
             - example (text: Is the ride safe for a small child?)
     - entry (id: better-safe, headword: better safe than sorry)
         - sense (id: better-safe-1)
-            - definition (text: you should be careful even if it seems unnecessary)
+            - definition (text: you should be careful even if it seems 
+				unnecessary)
     - relation (type: subentrying)
         member (ref: safe-1, role: container)
         member (ref: better-safe, role: subentry)
     - relationType (type: subentrying, scopeRestriction: sameResource)
-        - memberType (role: container, type: sense, min: 1, max: 1, hint: navigate)
-        - memberType (role: subentry, type: entry, min: 1, max: 1, hint: embed)
+        - memberType (role: container, type: sense, min: 1, max: 1, 
+			hint: navigate)
+        - memberType (role: subentry, type: entry, min: 1, max: 1, 
+			hint: embed)
 </programlisting>
     </example>
     <example>
         <title>XML</title>
-        <programlisting>
-&lt;lexicographicResource uri="http://example.com" langCode="en"&gt;
-    &lt;entry id="safe"&gt;
-        &lt;headword&gt;safe&lt;/headword&gt;
-        &lt;sense id="safe-1"&gt;
-            &lt;indicator&gt;protected from harm&lt;/indicator&gt;
-            &lt;example&gt;&lt;text&gt;It isn't safe to park here.&lt;/text&gt;&lt;/example&gt;
-        &lt;/sense&gt;
-        &lt;sense id="safe-2"&gt;
-            &lt;indicator&gt;not likely to cause harm&lt;/indicator&gt;
-            &lt;example&gt;&lt;text&gt;Is the ride safe for a small child?&lt;/text&gt;&lt;/example&gt;
-        &lt;/sense&gt;
-    &lt;/entry&gt;
-    &lt;entry id="better-safe"&gt;
-        &lt;headword&gt;better safe than sorry&lt;/headword&gt;
-        &lt;sense id="better-safe-1"&gt;
-            &lt;definition&gt;
-                &lt;text&gt;you should be careful even if it seems unnecessary&lt;/text&gt;
-            &lt;/definition&gt;
-        &lt;/sense&gt;
-    &lt;/entry&gt;
-    &lt;relation type="subentrying"&gt;
-        &lt;member ref="safe-1" role="container"/&gt;
-        &lt;member ref="better-safe" role="subentry"/&gt;
-    &lt;/relation&gt;
-    &lt;relationType type="subentrying" scopeRestriction="sameResource"&gt;
-        &lt;memberType role="container" type="sense" min="1" max="1" hint="navigate"/&gt;
-        &lt;memberType role="subentry" type="entry" min="1" max="1" hint="embed"/&gt;
-    &lt;/relationType&gt;
-&lt;/lexicographicResource&gt;
-</programlisting>
+      <xi:include href="source/17.xml.xml"/>
     </example>
     <example>
         <title>JSON</title>
-        <programlisting>
-{
-    "uri": "http://example.com",
-    "langCode": "en",
-    "entries": [{
-        "id": "safe",
-        "headword": "safe",
-        "senses": [{
-            "id": "safe-1",
-            "indicator": "protected from harm",
-            "examples": [{"text": "It isn't safe to park here."}]
-        }, {
-            "id": "safe-2",
-            "indicator": "not likely to cause harm",
-            "examples": [{"text": "Is the ride safe for a small child?"}]
-        }]
-    }, {
-        "id": "better-safe",
-        "headword": "better safe than sorry",
-        "senses": [{
-            "id": "better-safe-1",
-            "definitions": [{
-                "text": "you should be careful even if it seems unnecessary"
-            }]
-        }]
-    }],
-    "relations": [{
-        "type": "subentrying",
-        "members": [
-          {"role": "container", "ref": "safe-1"},
-          {"role": "subentry", "ref": "better-safe"}
-        ]
-    }],
-    "relationTypes": [{
-        "type": "subentrying",
-        "scopeRestriction": "sameResource",
-        "memberTypes": [{
-            "role": "container",
-            "type": "sense",
-            "min": 1,
-            "max": 1,
-            "hint": "navigate"
-        }, {
-            "role": "subentry",
-            "type": "entry",
-            "min": 1,
-            "max": 1,
-            "hint": "embed"
-        }]
-    }]
-}
-</programlisting>
+        <xi:include href="source/17.json.xml"/>
+    </example>
+    <example>
+        <title>RDF</title>
+        <xi:include href="source/17.rdf.xml"/>
     </example>
     <example>
         <title>Suggested rendering for human users</title>

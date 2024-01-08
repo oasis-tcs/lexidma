@@ -1,0 +1,7 @@
+<programlisting>
+ex:aardvark-noun a dmlex:Entry;
+  dmlex:pronunciation [ a dmlex:Pronunciation;
+      dmlex:listingOrder "1"^^xsd:unsignedInt;
+      dmlex:soundFile "aardvark.mp3" ];
+  dmlex:headword "aardvark".
+</programlisting>

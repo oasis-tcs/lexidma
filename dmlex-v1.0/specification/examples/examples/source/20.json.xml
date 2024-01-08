@@ -1,0 +1,19 @@
+<programlisting>
+{
+  "id": "beat-up",
+  "headword": "beat sb. up",
+  "placeholderMarkers": [
+      {"startIndex": 5, "endIndex": 8}
+  ],
+  "senses": [{
+    "id": "beat-up-1",
+    "headwordTranslations": [{
+      "text": "jemanden verprügeln",
+      "placeholderMarkers": [
+          {"startIndex": 0, "endIndex": 8}
+      ]
+    }]
+  }]
+}
+
+</programlisting>

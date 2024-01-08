@@ -1,0 +1,24 @@
+<programlisting>
+&lt;lexicographicResource uri="http://example.com" langCode="en"&gt;
+    &lt;entry id="buy"&gt;
+        &lt;headword&gt;buy&lt;/headword&gt;
+        &lt;sense id="buy-1"&gt;
+            &lt;definition&gt;get something by paying money for it&lt;/definition&gt;
+        &lt;/sense&gt;
+    &lt;/entry&gt;
+    &lt;entry id="sell"&gt;
+        &lt;headword&gt;sell&lt;/headword&gt;
+        &lt;sense id="sell-1"&gt;
+            &lt;definition&gt;exchange something for money&lt;/definition&gt;
+        &lt;/sense&gt;
+    &lt;/entry&gt;
+    &lt;relation type="antonyms"&gt;
+        &lt;member ref="buy-1"/&gt;
+        &lt;member ref="sell-1"/&gt;
+    &lt;/relation&gt;
+    &lt;relationType type="antonyms"&gt;
+        &lt;memberType type="sense" min="2" max="2" hint="navigate"
+            role="obverse"/&gt;
+    &lt;/relationType&gt;
+&lt;/lexicographicResource&gt;
+</programlisting>

@@ -1,0 +1,9 @@
+<programlisting>
+ex:aardvark-noun a dmlex:Entry;
+  dmlex:headword "aardvark";
+  dmlex:pronunciation [ a dmlex:Pronunciation;
+      dmlex:transcription [ a dmlex:Transcription;
+          dmlex:text "a:rdva:rk";
+          dmlex:listingOrder "1"^^xsd:unsignedInt ];
+      dmlex:listingOrder "1"^^xsd:unsignedInt ].
+</programlisting>

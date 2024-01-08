@@ -1,0 +1,29 @@
+<programlisting>
+{
+  "id": "autopsy",
+  "headword": "autopsy",
+  "senses": [{
+    "id": "autopsy-1",
+    "headwordTranslations": [{"text": "pitva"}],
+    "examples": [{
+      "text": "The coroner performed an autopsy.",
+      "headwordMarkers": [
+        {"startIndex": 25, "endIndex": 32}
+      ],
+      "collocateMarkers": [
+        {"startIndex": 12, "endIndex": 21, "lemma": "perform"}
+      ],
+      "exampleTranslations": [{
+        "text": "Koroner provedl pitvu.",
+        "headwordMarkers": [
+          {"startIndex": 16, "endIndex": 21}
+        ],
+        "collocateMarkers": [
+          {"startIndex": 8, "endIndex": 15, "lemma": "provést"}
+        ]
+      }]
+    }]
+  }]
+}
+
+</programlisting>

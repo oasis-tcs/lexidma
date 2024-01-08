@@ -1,0 +1,11 @@
+<programlisting>
+{
+    "id": "aardvark-noun",
+    "headword": "aardvark",
+    "pronunciations": [{
+        "soundFile": "aardvark.mp3",
+        "transcriptions": [{"text": "a:rdva:rk"}]
+    }],
+    "senses": []
+}
+</programlisting>

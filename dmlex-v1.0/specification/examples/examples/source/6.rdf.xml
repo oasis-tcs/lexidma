@@ -1,0 +1,16 @@
+<programlisting>
+ex:lexicon a dmlex:LexicographicResource;
+  dmlex:langCode "en";
+  dmlex:partOfSpeechTag [ a dmlex:PartOfSpeechTag;
+      dmlex:tag "n-masc";
+      dmlex:description "masculine noun";
+      owl:sameAs
+        &lt;http://www.lexinfo.net/ontology/3.0/lexinfo#noun&gt;,
+        &lt;http://www.lexinfo.net/ontology/3.0/lexinfo#masculine&gt; ],
+    [ a dmlex:PartOfSpeechTag;
+      owl:sameAs
+        &lt;http://www.lexinfo.net/ontology/3.0/lexinfo#feminine&gt;,
+        &lt;http://www.lexinfo.net/ontology/3.0/lexinfo#noun&gt;;
+      dmlex:tag "n-fem";
+      dmlex:description "feminine noun" ].
+</programlisting>

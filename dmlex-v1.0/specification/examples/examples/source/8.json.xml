@@ -1,0 +1,28 @@
+<programlisting>
+{
+    "id": "doctor-n",
+    "headword": "doctor",
+    "senses": [{
+        "id": "doctor-n-1",
+        "indicator": "medical doctor",
+        "headwordTranslations": [{
+            "text": "Arzt",
+            "partsOfSpeech": ["n-masc"]
+        }, {
+            "text": "Ärztin",
+            "partsOfSpeech": ["n-fem"]
+        }]
+    }, {
+        "id": "doctor-n-2",
+        "indicator": "academic title",
+        "headwordTranslations": [{
+            "text": "Doktor",
+            "partsOfSpeech": ["n-masc"]
+        }, {
+            "text": "Doktorin",
+            "partsOfSpeech": ["n-fem"]
+        }]
+    }]
+}
+
+</programlisting>

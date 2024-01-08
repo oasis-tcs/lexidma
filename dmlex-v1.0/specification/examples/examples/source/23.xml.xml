@@ -1,0 +1,28 @@
+<programlisting>
+&lt;entry id="cat-n"&gt;
+    &lt;headword&gt;cat&lt;/headword&gt;
+    &lt;etymology&gt;
+        &lt;etymon&gt;
+            &lt;etymonUnit langCode="enm"&gt;
+                &lt;text&gt;catte&lt;/text&gt;
+            &lt;/etymonUnit&gt;
+        &lt;/etymon&gt;
+        &lt;etymon&gt;
+            &lt;etymonUnit langCode="ang"&gt;
+                &lt;text&gt;catt&lt;/text&gt;
+                &lt;translation&gt;male cat&lt;/translation&gt;
+            &lt;/etymonUnit&gt;
+            &lt;etymonUnit langCode="ang"&gt;
+                &lt;text&gt;catte&lt;/text&gt;
+                &lt;translation&gt;female cat&lt;/translation&gt;
+            &lt;/etymonUnit&gt;
+        &lt;/etymon&gt;
+        &lt;etymon&gt;
+            &lt;etymonUnit langCode="gem-x-proto" reconstructed="true"&gt;
+                &lt;text&gt;kattuz&lt;/text&gt;
+            &lt;/etymonUnit&gt;
+        &lt;/etymon&gt;
+    &lt;/etymology&gt;
+&lt;/entry&gt;
+
+</programlisting>

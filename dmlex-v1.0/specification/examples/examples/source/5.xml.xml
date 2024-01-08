@@ -1,0 +1,30 @@
+<programlisting>
+&lt;lexicographicResource uri="http://example.com" langCode="ga"&gt;
+    &lt;entry id="folúsghlantóir-n"&gt;
+        &lt;headword&gt;folúsghlantóir&lt;/headword&gt;
+        &lt;partOfSpeech tag="n-masc"/&gt;
+        &lt;inflectedForm tag="sg-gen"&gt;
+            &lt;text&gt;folúsghlantóra&lt;/text&gt;
+        &lt;/inflectedForm&gt;
+        &lt;inflectedForm tag="pl"&gt;
+            &lt;text&gt;folúsghlantóirí&lt;/text&gt;
+        &lt;/inflectedForm&gt;
+    &lt;/entry&gt;
+    &lt;partOfSpeechTag tag="n-masc"&gt;
+        &lt;description&gt;masculine noun&lt;/description&gt;
+    &lt;/partOfSpeechTag&gt;
+    &lt;partOfSpeechTag tag="n-fem"&gt;
+        &lt;description&gt;feminine noun&lt;/description&gt;
+    &lt;/partOfSpeechTag&gt;
+    &lt;inflectedFormTag tag="sg-gen"&gt;
+        &lt;description&gt;singular genitive&lt;/description&gt;
+        &lt;forPartOfSpeech tag="n-masc"/&gt;
+        &lt;forPartOfSpeech tag="n-fem"/&gt;
+    &lt;/inflectedFormTag&gt;
+    &lt;inflectedFormTag tag="pl"&gt;
+        &lt;description&gt;plural&lt;/description&gt;
+        &lt;forPartOfSpeech tag="n-masc"/&gt;
+        &lt;forPartOfSpeech tag="n-fem"/&gt;
+    &lt;/inflectedFormTag&gt;
+&lt;/lexicographicResource&gt;
+</programlisting>

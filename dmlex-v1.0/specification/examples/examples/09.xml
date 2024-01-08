@@ -15,44 +15,21 @@
 - entry (id: treppenwitz, headword: Treppenwitz)
     - partOfSpeech (tag: n-masc)
     - sense (id: treppenwitz-1)
-        - headwordExplanation (text: belated realisation of what one could have said)
+        - headwordExplanation (text: belated realisation of 
+            what one could have said)
         - headwordTranslation (text: staircase wit)
 </programlisting>
     </example>
     <example>
         <title>XML</title>
-        <programlisting>
-&lt;entry id="treppenwitz"&gt;
-    &lt;headword&gt;Treppenwitz&lt;/headword&gt;
-    &lt;partOfSpeech value="n-masc"/&gt;
-    &lt;sense id="treppenwitz-1"&gt;
-        &lt;headwordExplanation&gt;
-            belated realisation of what one could have said
-        &lt;/headwordExplanation&gt;
-        &lt;headwordTranslation&gt;
-            &lt;text&gt;staircase wit&lt;/text&gt;
-        &lt;/headwordTranslation&gt;
-    &lt;/sense&gt;
-</programlisting>
+       <xi:include href="source/9.xml.xml"/>
     </example>
     <example>
         <title>JSON</title>
-        <programlisting>
-{
-    "id": "treppenwitz",
-    "headword": "Treppenwitz",
-    "partsOfSpeech": ["n-masc"],
-    "senses": [{
-        "id": "treppenwitz-1",
-        "headwordExplanations": [{
-            "text": "belated realisation of what one could have said"
-        }],
-        "headwordTranslations": [{
-            "text": "staircase wit"
-        }]
-    }]
-}
-</programlisting>
+        <xi:include href="source/9.json.xml"/>
     </example>
-
+    <example>
+        <title>RDF</title>
+        <xi:include href="source/9.rdf.xml"/>
+    </example>
 </section>

@@ -1,0 +1,32 @@
+<programlisting>
+&lt;lexicographicResource uri="http://example.com" langCode="en"&gt;
+    &lt;entry id="the-bible"&gt;
+        &lt;headword&gt;the Bible&lt;/headword&gt;
+        &lt;sense id="the-bible-1"&gt;
+            &lt;definition&gt;
+                the book considered holy by Christians
+            &lt;/definition&gt;
+        &lt;/sense&gt;
+    &lt;/entry&gt;
+    &lt;entry id="bible"&gt;
+        &lt;headword&gt;bible&lt;/headword&gt;
+        &lt;sense id="bible-1"/&gt;
+        &lt;sense id="bible-2"&gt;
+            &lt;definition&gt;
+                a book considered important for a subject
+            &lt;/definition&gt;
+        &lt;/sense&gt;
+    &lt;/entry&gt;
+    &lt;relation type="subentrying"&gt;
+        &lt;member ref="bible-1" role="container"/&gt;
+        &lt;member ref="the-bible" role="subentry"/&gt; 
+    &lt;/relation&gt;
+    &lt;relationType type="subentrying" scopeRestriction="sameResource"&gt;
+        &lt;memberType role="container" type="sense" min="1" max="1" 
+            hint="navigate"/&gt;
+        &lt;memberType role="subentry" type="entry" min="1" max="1" 
+            hint="embed"/&gt;
+    &lt;/relationType&gt;
+&lt;/lexicographicResource&gt;
+
+</programlisting>

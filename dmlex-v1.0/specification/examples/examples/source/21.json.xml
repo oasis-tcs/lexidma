@@ -1,0 +1,23 @@
+<programlisting>
+{
+  "id": "autopsy",
+  "headword": "autopsy",
+  "senses": [{
+    "id": "autopsy-1",
+    "headwordTranslations": [{"text": "pitva"}],
+    "examples": [{
+      "text": "The coroner performed an autopsy.",
+      "headwordMarkers": [
+        {"startIndex": 25, "endIndex": 32}
+      ],
+      "exampleTranslations": [{
+        "text": "Koroner provedl pitvu.",
+        "headwordMarkers": [
+          {"startIndex": 16, "endIndex": 21}
+        ]
+      }]
+    }]
+  }]
+}
+
+</programlisting>

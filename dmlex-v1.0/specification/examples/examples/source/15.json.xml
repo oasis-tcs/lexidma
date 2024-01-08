@@ -1,0 +1,39 @@
+<programlisting>
+{
+    "uri": "http://example.com",
+    "langCode": "en",
+    "entries": [{
+        "id": "colour",
+        "headword": "colour",
+        "partsOfSpeech": ["n"],
+        "labels": ["europeanSpelling"],
+        "senses": [{
+            "id": "colour-1",
+            "definitions": [{"text": "red, blue, yellow etc."}],
+            "examples": [{"text": "What is your favourite colour?"}]
+        }]
+    }, {
+        "id": "color",
+        "headword": "color",
+        "partsOfSpeech": ["n"],
+        "labels": ["americanSpelling"]
+    }],
+    "relations": [{
+        "type": "variants",
+        "members": [
+          {"ref": "colour"},
+          {"ref": "color"}
+        ]
+    }],
+    "relationTypes": [{
+        "type": "variants",
+        "description": "words which differ only in spelling",
+        "memberTypes": [{
+            "type": "entry",
+            "min": 2,
+            "hint": "navigate"
+        }]
+    }]
+}
+
+</programlisting>
