@@ -13,34 +13,50 @@
         The initial Public Review took place from 22nd September 2023 until 17th November 2023.</para>
 <orderedlist>
 <!-- Add new change track items to the bottom of the list -->
-<listitem>
-    <para>Major changes were made in [core/modules/serializations/validation artifatcs] in response
-                to Comments/Issues [Github Issues &lt;ulinks> <ulink
-                    url="https://github.com/oasis-tcs/lexidma/issues/xxx"/>]. [Additional info -
-                optional]. </para>
-</listitem>
-        <listitem>
-            <para>Major changes were made in the Change Tracking Module and validation artifacts in
-                response to Comment/Issue [Github Issues &lt;ulinks> <ulink
-                    url="https://github.com/oasis-tcs/lexidma/issues/xxx"/>]. [Additional info -
-                optional].</para>
-        </listitem>
-        <listitem>
-            <para>Clarifications to Core with validation impact, non-of which were normative changes
-                were provided in response to Comments/Issues: [Github Issues &lt;ulinks> <ulink
-                    url="https://github.com/oasis-tcs/lexidma/issues/xxx"/>]. [Additional info -
-                optional].</para>
-        </listitem>
-        <listitem>
-            <para>Material clarification with validation impact was provided for
-                [core/module/serialization faeture] in response to Comment/Issue: [Github Issues
-                &lt;ulinks> <ulink url="https://github.com/oasis-tcs/lexidma/issues/xxx"/>].
-                [Additional info - optional].</para>
-        </listitem>
-        <listitem>
-            <para>Editorial changes have been made in response to Comments/Issues: [Github Issues
-                &lt;ulinks> <ulink url="https://github.com/oasis-tcs/lexidma/issues/xxx"/>]. </para>
-        </listitem>
+
+<listitem><para>
+Clarifications have been added to explain why DMLex allows lexicographic resources with zero entries and entries with zero senses, in response to a review comment (GitHub issue <ulink url="https://github.com/oasis-tcs/lexidma/issues/52">52</ulink>).
+</para></listitem>
+
+<listitem><para>
+The data type of <code>pronunciation.soundFile</code> has been changed to Internationalized Resource Identifier (IRI), in response to a review comment (GitHub issue <ulink url="https://github.com/oasis-tcs/lexidma/issues/54">54</ulink>).
+</para></listitem>
+
+<listitem><para>
+In the Controlled Values Module, the properties of various object types such as <code>forHeadwords</code>, <code>forPartOfSpeech</code> and so on, which had originally been intended to model various constraints on the use of tags, have been radically simplified into a single property called <code>for</code> – in response to a review comment (GitHub issue <ulink url="https://github.com/oasis-tcs/lexidma/issues/55">55</ulink>).
+</para></listitem>
+
+<listitem><para>
+In the Linking Module, uniqueness constraints on <code>relation</code> have been removed in response to a review comment (GitHub issue <ulink url="https://github.com/oasis-tcs/lexidma/issues/56">56</ulink>).
+</para></listitem>
+
+<listitem><para>
+The Etymology Module has been updated to disallow the existence of empty etymologies, in response to a review comment (GitHub issue <ulink url="https://github.com/oasis-tcs/lexidma/issues/59">59</ulink>).
+</para></listitem>
+
+<listitem><para>
+In the XML and JSON serializations (which are normative) and in the NVH serialization (which is informative), items which have <code>id</code> properties (those are: entries, senses, collocate markers) have been changed so that the <code>id</code> property is relevant only if implementing the Linking Module – in response to a review comment (GitHub issue <ulink url="https://github.com/oasis-tcs/lexidma/issues/65">65</ulink>).
+</para></listitem>
+
+<listitem><para>
+In the Linking Module, the <code>member_id</code> property of <code>member</code> has been changed to <code>ref</code> to avoid a potential misunderstanding about the purpose of this property, in response to a review comment (GitHub issue <ulink url="https://github.com/oasis-tcs/lexidma/issues/66">66</ulink>).
+</para></listitem>
+
+<listitem><para>
+In the Linking Module, the <code>obverseListingOrder</code> property of <code>member</code> has been made optional in response to a review comment (GitHub issue <ulink url="https://github.com/oasis-tcs/lexidma/issues/67">67</ulink>).
+</para></listitem>
+
+<listitem><para>
+In the Linking Module, the <code>role</code> property of <code>memberType</code> has been made optional in response to a review comment (GitHub issue <ulink url="https://github.com/oasis-tcs/lexidma/issues/68">68</ulink>).
+</para></listitem>
+
+<listitem><para>
+In the XML serialization, whitespace handling rules have been added, both at the default level for all elements, and specifically for elements which are allowed to contain inline markup, in reponse to a review comment (GitHub issue <ulink url="https://github.com/oasis-tcs/lexidma/issues/69">69</ulink>).
+</para></listitem>
+
+<listitem><para>
+Multiple changes have made to the Examples section to correct inconsistencies between the examples and the rest of the specificiation, in response to various review comments (including GitHub issue <ulink url="https://github.com/oasis-tcs/lexidma/issues/62">62</ulink>).  
+</para></listitem>
 
 <!-- Add new change track items to the bottom of the list
 <listitem>
