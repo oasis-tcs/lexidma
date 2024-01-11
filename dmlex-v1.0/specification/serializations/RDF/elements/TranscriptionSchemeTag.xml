@@ -22,6 +22,9 @@
     <listitem>
         <para><literal>dmlex:description</literal> OPTIONAL (at most 1) of type <literal>http://www.w3.org/2000/01/rdf-schema#Literal</literal></para>
     </listitem>
+    <listitem>
+        <para><literal>dmlex:for</literal> OPTIONAL (at most 1) of type <literal>http://www.w3.org/2001/XMLSchema#boolean</literal></para>
+    </listitem>
     </itemizedlist>
 
 

@@ -17,27 +17,13 @@
                 <glossterm>required</glossterm>, string</para>
         </listitem>
         <listitem>
-            <para><literal>"forHeadwords"</literal>
-                <glossterm>optional</glossterm>, boolean</para>
-        </listitem>
-        <listitem>
-            <para><literal>"forTranslations"</literal>
-                <glossterm>optional</glossterm>, boolean</para>
-        </listitem>        
-        <listitem>
             <para><literal>"description"</literal>
                 <glossterm>optional</glossterm>, string</para>
         </listitem>
         <listitem>
-            <para><literal>"forLanguages"</literal>
-                <glossterm>optional</glossterm>, array of zero or more strings implementing the
-                    <olink targetptr="values_forLanguage">forLanguage</olink> object type</para>
-        </listitem>
-        <listitem>
-            <para><literal>"forPartsOfSpeech"</literal>
-                <glossterm>optional</glossterm>, array of zero or more strings implementing the
-                <olink targetptr="values_forPartOfSpeech">forPartOfSpeech</olink> object type</para>
-        </listitem>
+            <para><literal>"for"</literal>
+                <glossterm>optional</glossterm>, string</para>
+        </listitem>        
         <listitem>
             <para><literal>"sameAs"</literal>
                 <glossterm>optional</glossterm>, array of zero or more strings implementing the

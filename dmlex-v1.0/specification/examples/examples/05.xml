@@ -23,11 +23,7 @@
     - partOfSpeechTag (tag: n-masc, description: masculine noun)
     - partOfSpeechTag (tag: n-fem, description: feminine noun)
     - inflectedFormTag (tag: sg-gen, description: singular genitive)
-        - forPartOfSpeech: n-masc
-        - forPartOfSpeech: n-fem
     - inflectedFormTag (tag: pl, description: plural)
-        - forPartOfSpeech: n-masc
-        - forPartOfSpeech: n-fem
 </programlisting>
     </example>
     <example>

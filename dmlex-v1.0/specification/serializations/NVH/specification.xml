@@ -58,8 +58,6 @@
   <xi:include href="nodes/labelTypeTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="nodes/sourceIdentityTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="nodes/transcriptionSchemeTag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="nodes/forLanguage.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="nodes/forPartOfSpeech.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="nodes/sameAs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   
   <xi:include href="nodes/relation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>

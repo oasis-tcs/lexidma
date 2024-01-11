@@ -30,13 +30,7 @@
             </para>
         </listitem>
         <listitem>
-            <para><literal>forHeadwords: bit</literal></para>
-        </listitem>
-        <listitem>
-            <para><literal>forTranslations: bit</literal></para>
-        </listitem>
-        <listitem>
-            <para><literal>forCollocates: bit</literal></para>
+            <para><literal>for: nvarchar</literal></para>
         </listitem>
     </itemizedlist>
 
