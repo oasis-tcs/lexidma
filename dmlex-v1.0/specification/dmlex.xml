@@ -22,8 +22,7 @@
       >
       N/A</releaseinfo>-->
     <releaseinfo role="OASIS-specification-previous"
-      >
-      &previous-loc;/&name;-&pstage;.html</releaseinfo>
+      >&previous-loc;/&name;-&pstage;.html</releaseinfo>
     <releaseinfo role="OASIS-specification-previous-authoritative"
       >&previous-loc;/&name;-&pstage;.pdf</releaseinfo>
     <!--<releaseinfo role="OASIS-specification-previous"
