@@ -18,13 +18,9 @@
     &lt;/partOfSpeechTag&gt;
     &lt;inflectedFormTag tag="sg-gen"&gt;
         &lt;description&gt;singular genitive&lt;/description&gt;
-        &lt;forPartOfSpeech tag="n-masc"/&gt;
-        &lt;forPartOfSpeech tag="n-fem"/&gt;
     &lt;/inflectedFormTag&gt;
     &lt;inflectedFormTag tag="pl"&gt;
         &lt;description&gt;plural&lt;/description&gt;
-        &lt;forPartOfSpeech tag="n-masc"/&gt;
-        &lt;forPartOfSpeech tag="n-fem"/&gt;
     &lt;/inflectedFormTag&gt;
 &lt;/lexicographicResource&gt;
 </programlisting>

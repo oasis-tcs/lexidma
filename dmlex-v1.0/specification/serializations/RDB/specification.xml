@@ -135,8 +135,6 @@
     <xi:include href="tables/sourceIdentityTags.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="tables/transcriptionSchemeTags.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="tables/sameAs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="tables/forPartOfSpeech.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="tables/forLanguage.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     
     <xi:include href="tables/relations.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="tables/members.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>

@@ -33,27 +33,13 @@
         <glossterm>optional</glossterm> (zero or one). Non-empty string.
         A human-readable description of what the tag means.</para>
     </listitem>
-
     <listitem>
-      <para><literal>forHeadwords</literal>
-        <glossterm>optional</glossterm> (zero or one). Boolean. If present, indicates whether this tag is
-        intended to be used on the headword
-        side of the lexicographic resource: inside a <literal>pronunciation</literal> of <literal><olink targetptr="core_entry">entry</olink></literal>.</para>
+      <para><literal>for</literal>
+        <glossterm>optional</glossterm> (zero or one). Non-empty string. A statement about
+        constraints and recommendation on using this tag. This can be a human-readable description
+        such as "for use in German and Czech only" or a machine-readable instruction in any format
+        understandable to the DMLex implemenation, such as <code>language=de OR language=cs</code>.</para>
     </listitem>
-    <listitem>
-      <para><literal>forTranslations</literal>
-        <glossterm>optional</glossterm> (zero or one). Boolean. If present, indicates whether this tag is
-        intended to be used on the translation side of the lexicographic resource:
-        inside a <literal>pronunciation</literal> of <literal><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></literal>.</para>
-    </listitem>
-
-    <listitem>
-      <para><literal>forLanguage</literal>
-        <glossterm>optional</glossterm> (zero or more). If present, says that if this tag is
-        being used inside a <code><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></code> object,
-        then it is intended to be used only inside a <code>headwordTranslation</code> object labelled with this language.</para>
-    </listitem>
-    
   </itemizedlist>
   
   <itemizedlist>
@@ -68,9 +54,8 @@
   <example>
     <title>XML</title>
     <programlisting>
-&lt;transcriptionSchemeTag tag="..." forHeadwords="true" forTranslations="true"&gt;
+&lt;transcriptionSchemeTag tag="..." for="..."&gt;
     &lt;description&gt;...&lt;/description&gt;
-    &lt;forLanguage langCode="..."/&gt;
 &lt;/transcriptionSchemeTag&gt;
   </programlisting>
   </example>
@@ -81,9 +66,7 @@
 {
     "tag": "...",
     "description": "...",
-    "forHeadwords": true,
-    "forTranslations": true,
-    "forLanguages": ["..."]
+    "for": "..."
 }
     </programlisting>
   </example>
@@ -95,9 +78,7 @@
   a dmlex:PartOfSpeechTag ;
   dmlex:tag "..." ;
   dmlex:description "..." ;
-  dmlex:forHeadwords "..." ;
-  dmlex:forTranslations "..." ;
-  dmlex:forLanguage "..." ] .
+  dmlex:for "..." ] .
     </programlisting>
   </example>
   

@@ -108,19 +108,13 @@ values@definitionTypeTag:
 values@inflectedFormTag:
     values@tag:
     values@description: ?
-    values@forHeadwords: ?
-    values@forTranslations: ?
-    values@forLanguage: *
-    values@forPartOfSpeech: *
+    values@for: ?
     values@sameAs: *
 values@labelTag:
     values@tag:
     values@description: ?
     values@typeTag: ?
-    values@forHeadwords: ?
-    values@forTranslations: ?
-    values@forLanguage: *
-    values@forPartOfSpeech: *
+    values@for: ?
     values@sameAs: *
 values@labelTypeTag:
     values@tag:
@@ -129,10 +123,7 @@ values@labelTypeTag:
 values@partOfSpeechTag:
     values@tag:
     values@description: ?
-    values@forHeadwords: ?
-    values@forTranslations: ?
-    values@forLanguage: *
-    values@forPartOfSpeech: *
+    values@for: ?
     values@sameAs: *
 values@sourceIdentityTag:
     values@tag:
@@ -141,9 +132,7 @@ values@sourceIdentityTag:
 values@transcriptionSchemeTag:
     values@tag:
     values@description: ?
-    values@forHeadwords: ?
-    values@forTranslations: ?
-    values@forLanguage: *
+    values@for: ?
 linking@relation:
     linking@type:
     linking@description: ?
