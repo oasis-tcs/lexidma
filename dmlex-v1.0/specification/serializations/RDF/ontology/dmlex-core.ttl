@@ -39,7 +39,7 @@ dmlex:LexicographicResource a owl:Class ;
   rdfs:label "Lexicographic resource"@en ;
   rdfs:subClassOf [
     a owl:Restriction ;
-    owl:onProperty dmlex:language ;
+    owl:onProperty dmlex:langCode ;
     owl:cardinality 1 ] , [
     a owl:Restriction ;
     owl:onProperty dmlex:title ;
@@ -59,17 +59,17 @@ dmlex:uri a owl:DatatypeProperty ;
   rdfs:domain dmlex:LexicographicResource ;
   rdfs:range xsd:anyURI .
 
-dmlex:language a owl:DatatypeProperty ;
+dmlex:langCode a owl:DatatypeProperty ;
   rdfs:label "Language"@en ;
-  rdfs:domain dmlex:HasLanguage ;
+  rdfs:domain dmlex:HasLangCode ;
   rdfs:range xsd:language ;
   rdfs:subPropertyOf lime:language .
 
-dmlex:LexicographicResource rdfs:subClassOf dmlex:HasLanguage .
-dmlex:HeadwordTranslation rdfs:subClassOf dmlex:HasLanguage .
-dmlex:HeadwordExplanation rdfs:subClassOf dmlex:HasLanguage .
-dmlex:ExampleTranslation rdfs:subClassOf dmlex:HasLanguage .
-dmlex:EtymonUnit rdfs:subClassOf dmlex:HasLanguage .
+dmlex:LexicographicResource rdfs:subClassOf dmlex:HasLangCode .
+dmlex:HeadwordTranslation rdfs:subClassOf dmlex:HasLangCode .
+dmlex:HeadwordExplanation rdfs:subClassOf dmlex:HasLangCode .
+dmlex:ExampleTranslation rdfs:subClassOf dmlex:HasLangCode .
+dmlex:EtymonUnit rdfs:subClassOf dmlex:HasLangCode .
 
 dmlex:entry a owl:ObjectProperty ;
   rdfs:label "Entry"@en ;
@@ -217,7 +217,7 @@ dmlex:Sense a owl:Class ;
 dmlex:indicator a owl:ObjectProperty ;
   rdfs:label "Indicator"@en ;
   rdfs:domain dmlex:Sense ;
-  rdfs:range dmlex:Indicator .
+  rdfs:range rdfs:Literal .
 
 dmlex:definition a owl:ObjectProperty ;
   rdfs:label "Definition"@en ;

@@ -57,7 +57,7 @@ dmlex:Member a owl:Class ;
   rdfs:label "Member"@en ;
   rdfs:subClassOf  [
     a owl:Restriction ;
-    owl:onProperty dmlex:memberID ;
+    owl:onProperty dmlex:ref ;
     owl:cardinality 1 ] ,  [
     a owl:Restriction ;
     owl:onProperty dmlex:role ;
@@ -67,10 +67,10 @@ dmlex:Member a owl:Class ;
     owl:cardinality 1 ] ,  [
     a owl:Restriction ;
     owl:onProperty dmlex:obverseListingOrder ;
-    owl:cardinality 1 ] .
+    owl:maxCardinality 1 ] .
 
-dmlex:memberID a owl:DatatypeProperty ;
-  rdfs:label "Member ID"@en ;
+dmlex:ref a owl:DatatypeProperty ;
+  rdfs:label "Ref"@en ;
   rdfs:domain dmlex:Member ;
   rdfs:range xsd:string .
 
