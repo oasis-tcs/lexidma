@@ -18,7 +18,9 @@ ex:lexicon a dmlex:LexicographicResource;
           dmlex:listingOrder "3"^^xsd:unsignedInt ];
       dmlex:listingOrder "1"^^xsd:unsignedInt;
       dmlex:description "words that mean sea and ocean" ];
-  dmlex:translationLanguage "en";
+  dmlex:translationLanguage [
+    dmlex:langCode "en" ;
+    dmlex:listingOrder 1 ] ;
   dmlex:relationType [ a dmlex:RelationType;
       dmlex:description "synonyms and near synonyms";
       dmlex:memberType [ a dmlex:MemberType;

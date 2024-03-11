@@ -1,7 +1,9 @@
 <programlisting>
 ex:lexicon a dmlex:LexicographicResource;
   dmlex:uri "http://example.com";
-  dmlex:translationLanguage "en";
+  dmlex:translationLanguage [
+    dmlex:langCode "en" ;
+    dmlex:listingOrder 1 ] ;
   dmlex:title "My German-English Dictionary";
   dmlex:langCode "de".
 </programlisting>

@@ -2,8 +2,14 @@
 ex:lexicon a dmlex:LexicographicResource;
   dmlex:title "My Irish-Multilingual Dictionary";
   dmlex:uri "http://example.com";
-  dmlex:translationLanguage "cs",
-    "en",
-    "de";
+  dmlex:translationLanguage [
+    dmlex:langCode "cs" ;
+    dmlex:listingOrder 1
+  ] , [
+    dmlex:langCode "en" ;
+    dmlex:listingOrder 2
+  ] , [
+    dmlex:langCode "de" ;
+    dmlex:listingOrder 3 ] ;
   dmlex:langCode "ga".
 </programlisting>
