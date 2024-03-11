@@ -23,10 +23,7 @@
         <para><literal>dmlex:description</literal> OPTIONAL (at most 1) of type <literal>http://www.w3.org/2000/01/rdf-schema#Literal</literal></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:forPartOfSpeech</literal> OPTIONAL of type <literal>http://www.w3.org/2000/01/rdf-schema#Literal</literal></para>
-    </listitem>
-    <listitem>
-        <para><literal>dmlex:forCollocates</literal> OPTIONAL (at most 1) of type <literal>http://www.w3.org/2001/XMLSchema#boolean</literal></para>
+        <para><literal>dmlex:for</literal> OPTIONAL of type <literal>http://www.w3.org/2000/01/rdf-schema#Literal</literal></para>
     </listitem>
     </itemizedlist>
 

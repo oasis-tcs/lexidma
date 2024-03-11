@@ -37,44 +37,12 @@
     </listitem>
 
     <listitem>
-      <para><literal>forHeadwords</literal>
-        <glossterm>optional</glossterm> (zero or one). Boolean. If present, indicates whether this tag is
-        intended to be used on the headword
-        side of the lexicographic resource: as <literal>inflectedForm</literal> of <literal><olink targetptr="core_entry">entry</olink></literal>.</para>
-    </listitem>
-    <listitem>
-      <para><literal>forTranslations</literal>
-        <glossterm>optional</glossterm> (zero or one). Boolean. If present, indicates whether this tag is
-        intended to be used on the translation side of the lexicographic resource:
-        as <literal>headwordTranslation</literal> of <literal><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></literal>.</para>
-    </listitem>
-
-    <listitem>
-      <para><literal>forLanguage</literal>
-        <glossterm>optional</glossterm> (zero or more). If present, says that:</para>
-      <itemizedlist>
-        <listitem>
-          <para>If this tag is
-            being used inside a <code><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></code> object,
-            then it is intended to be used only inside a <code>headwordTranslation</code> object labelled with this language.</para>
-        </listitem>
-      </itemizedlist>
-    </listitem>
-
-    <listitem>
-      <para><literal>forPartOfSpeech</literal>
-        <glossterm>optional</glossterm> (zero or more). If present, says that:</para>
-      <itemizedlist>
-        <listitem>
-          <para>If this tag is used as a <code>inflectedForm</code> of a <code>headwordTranslation</code>, then
-            the <code>headwordTranslation</code> must have this part of
-            speech.</para>
-        </listitem>
-        <listitem>
-          <para>If this tag is used as a <code>inflectedForm</code> of an <code>entry</code>, then 
-            the <code>entry</code> must have this part of speech.</para>
-        </listitem>
-      </itemizedlist>
+      <para><literal>for</literal>
+        <glossterm>optional</glossterm> (zero or one). Non-empty string. A statement about
+        constraints and recommendation on using this tag. This can be a human-readable description
+        such as "for use with German nouns only" or a machine-readable instruction in any format
+        understandable to the DMLex implemenation, such as <code>partOfSpeech=noun AND
+          language=de</code>.</para>
     </listitem>
     <listitem>
       <para><literal><olink targetptr="values_sameAs">sameAs</olink></literal>
@@ -85,10 +53,8 @@
   <example>
     <title>XML</title>
     <programlisting>
-&lt;inflectedFormTag tag="..." forHeadwords="true" forTranslations="true"&gt;
+&lt;inflectedFormTag tag="..." for="..."&gt;
     &lt;description&gt;...&lt;/description&gt;
-    &lt;forLanguage langCode="..."/&gt;
-    &lt;forPartOfSpeech tag="..."/&gt;
     &lt;sameAs.../&gt;
 &lt;/inflectedFormTag&gt;
   </programlisting>
@@ -100,10 +66,7 @@
 {
     "tag": "...",
     "description": "...",
-    "forHeadwords": true,
-    "forTranslations": true,
-    "forLanguages": ["..."]
-    "forPartsOfSpeech": ["..."],
+    "for": "...",
     "sameAs": [...]
 }
     </programlisting>
@@ -116,10 +79,7 @@
   a dmlex:InflectedFormTag ;
   dmlex:tag "..." ;
   dmlex:description "..." ;
-  dmlex:forHeadwods "..." ;
-  dmlex:forTranslations "..." ;
-  dmlex:forLanguage "..." ;
-  dmlex:forPartOfSpeech "..." ;
+  dmlex:for "..." ;
   owl:sameAs ... ] .
     </programlisting>
   </example>

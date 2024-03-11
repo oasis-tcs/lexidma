@@ -46,45 +46,12 @@
     </listitem>
     
     <listitem>
-      <para><literal>forHeadwords</literal>
-        <glossterm>optional</glossterm> (zero or one). Boolean. If present, indicates whether this tag is
-        intended to be used on the headword
-        side of the lexicographic resource: as <literal>inflectedForm</literal> of <literal><olink targetptr="core_entry">entry</olink></literal>.</para>
-    </listitem>
-    <listitem>
-      <para><literal>forTranslations</literal>
-        <glossterm>optional</glossterm> (zero or one). Boolean. If present, indicates whether this tag is
-        intended to be used on the translation side of the lexicographic resource:
-        as <literal>headwordTranslation</literal> of <literal><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></literal>.</para>
-    </listitem>
-    <listitem>
-      <para><literal>forCollocates</literal>
-        <glossterm>optional</glossterm> (zero or one). Boolean. If present, indicates whether this tag is
-        intended to be used on the collocates annotated inside examples:
-        inside a <code><olink targetptr="annotation_collocateMarker">collocateMarker</olink></code> object.</para>
-    </listitem>
-    
-    <listitem>
-      <para><literal>forLanguage</literal>
-        <glossterm>optional</glossterm> (zero or more). If present, says that if this tag is
-        being used inside a <code><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></code> object,
-        then it is intended to be used only inside a <code>headwordTranslation</code> object labelled with this language.</para>
-    </listitem>
-    
-    <listitem>
-      <para><literal>forPartOfSpeech</literal>
-        <glossterm>optional</glossterm> (zero or more). If present, says that:</para>
-      <itemizedlist>
-        <listitem>
-          <para>If this tag is used inside a <code>headwordTranslation</code>, then it is intended
-            to be used only inside a <code>headwordTranslation</code> labelled with this part of
-            speech.</para>
-        </listitem>
-        <listitem>
-          <para>If this tag is used outside a <code>headwordTranslation</code>, then it is intended
-            to be used only inside entries that are labelled with this part of speech.</para>
-        </listitem>
-      </itemizedlist>
+      <para><literal>for</literal>
+        <glossterm>optional</glossterm> (zero or one). Non-empty string. A statement about
+        constraints and recommendation on using this tag. This can be a human-readable description
+        such as "for use with German nouns only" or a machine-readable instruction in any format
+        understandable to the DMLex implemenation, such as <code>partOfSpeech=noun AND
+          language=de</code>.</para>
     </listitem>
     <listitem>
       <para><literal><olink targetptr="values_sameAs">sameAs</olink></literal>
@@ -95,10 +62,8 @@
   <example>
     <title>XML</title>
     <programlisting>
-&lt;labelTag tag="..." typeTag="..." forHeadwords="true" forTranslations="true" forCollocates="true"&gt;
+&lt;labelTag tag="..." typeTag="..." for="..."&gt;
     &lt;description&gt;...&lt;/description&gt;
-    &lt;forLanguage langCode="..."/&gt;
-    &lt;forPartOfSpeech tag="..."/&gt;
     &lt;sameAs.../&gt;
 &lt;/labelTag&gt;
   </programlisting>
@@ -111,11 +76,7 @@
     "tag": "...",
     "description": "...",
     "typeTag": "...",
-    "forHeadwords": true,
-    "forTranslations": true,
-    "forCollocates": true,
-    "forLanguages": ["..."]
-    "forPartsOfSpeech": ["..."],
+    "for": "...",
     "sameAs": [...]
 }
     </programlisting>
@@ -129,11 +90,7 @@
   dmlex:tag "..." ;
   dmlex:description "..." ;
   dmlex:typeTag "..." ;
-  dmlex:forHeadwords "..." ;
-  dmlex:forTranslations "..." ;
-  dmlex:forCollocates "..." ;
-  dmlex:forLanguage "..." .
-  dmlex:forPartOfSpeech "..." ;
+  dmlex:for "..." ;
   owl:sameAs ... ] .
     </programlisting>
   </example>
