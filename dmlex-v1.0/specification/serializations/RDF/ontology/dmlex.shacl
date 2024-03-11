@@ -53,7 +53,7 @@
       sh:path dmlex:etymonLanguage  ;
       sh:class dmlex:EtymonLanguage  ] ;
     sh:property [
-      sh:path dmlex:language  ;
+      sh:path dmlex:langCode  ;
       sh:minCount 1 ;
       sh:maxCount 1 ]  .
 
@@ -145,8 +145,7 @@
     sh:property [
       sh:path dmlex:indicator  ;
       sh:minCount 0 ;
-      sh:maxCount 1 ;
-      sh:class dmlex:Indicator  ] ;
+      sh:maxCount 1 ] ;
     sh:property [
       sh:path dmlex:definition  ;
       sh:class dmlex:Definition  ] ;
@@ -299,9 +298,7 @@
       sh:minCount 1 ;
       sh:maxCount 1 ] ;
     sh:property [
-      sh:path dmlex:language  ;
-      sh:minCount 0 ;
-      sh:maxCount 1 ] ;
+      sh:path dmlex:langCode  ] ;
     sh:property [
       sh:path dmlex:partOfSpeech  ;
       sh:class dmlex:PartOfSpeech  ] ;
@@ -328,9 +325,7 @@
     sh:targetClass dmlex:HeadwordExplanation ;
     sh:closed false ;
     sh:property [
-      sh:path dmlex:language  ;
-      sh:minCount 0 ;
-      sh:maxCount 1 ] ;
+      sh:path dmlex:langCode  ] ;
     sh:property [
       sh:path dmlex:text  ;
       sh:minCount 1 ;
@@ -344,9 +339,7 @@
     sh:property [
       sh:path dmlex:listingOrder  ] ;
     sh:property [
-      sh:path dmlex:language  ;
-      sh:minCount 0 ;
-      sh:maxCount 1 ] ;
+      sh:path dmlex:langCode  ] ;
     sh:property [
       sh:path dmlex:label  ;
       sh:class dmlex:Label  ] ;
@@ -513,12 +506,12 @@
       sh:minCount 1 ;
       sh:maxCount 1 ] ;
     sh:property [
-      sh:path dmlex:memberID  ;
+      sh:path dmlex:ref  ;
       sh:minCount 1 ;
       sh:maxCount 1 ] ;
     sh:property [
       sh:path dmlex:obverseListingOrder  ;
-      sh:minCount 1 ;
+      sh:minCount 0 ;
       sh:maxCount 1 ] ;
     sh:property [
       sh:path dmlex:role  ;
@@ -561,7 +554,7 @@
       sh:maxCount 1 ] ;
     sh:property [
       sh:path dmlex:role  ;
-      sh:minCount 1 ;
+      sh:minCount 0 ;
       sh:maxCount 1 ] ;
     sh:property [
       sh:path dmlex:min  ;
@@ -674,9 +667,7 @@
       sh:minCount 1 ;
       sh:maxCount 1 ] ;
     sh:property [
-      sh:path dmlex:language  ;
-      sh:minCount 1 ;
-      sh:maxCount 1 ] ;
+      sh:path dmlex:langCode  ] ;
     sh:property [
       sh:path dmlex:partOfSpeech  ;
       sh:class dmlex:PartOfSpeech  ] ;
