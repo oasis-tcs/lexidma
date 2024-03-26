@@ -28,7 +28,7 @@
     </listitem>
     <listitem>
       <para><literal>uri</literal>
-        <glossterm>required</glossterm> (zero or one). The URI of the lexicographic resource,
+        <glossterm>optional</glossterm> (zero or one). The URI of the lexicographic resource,
         identifying it on the Web.</para>
     </listitem>
     <listitem>
