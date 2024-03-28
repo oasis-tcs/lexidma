@@ -17,7 +17,7 @@
         <para><literal>dmlex:listingOrder</literal> REQUIRED (exactly 1) of type <literal>http://www.w3.org/2001/XMLSchema#nonNegativeInteger</literal></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:language</literal> REQUIRED (exactly 1) of type <literal>http://www.w3.org/2001/XMLSchema#language</literal> (subproperty of <literal>http://www.w3.org/ns/lemon/lime#language</literal>)</para>
+        <para><literal>dmlex:langCode</literal> OPTIONAL of type <literal>http://www.w3.org/2001/XMLSchema#language</literal> (subproperty of <literal>http://www.w3.org/ns/lemon/lime#language</literal>)</para>
     </listitem>
     <listitem>
         <para><literal>dmlex:partOfSpeech</literal> OPTIONAL reference to <olink targetptr="rdf_PartOfSpeech">PartOfSpeech</olink></para>

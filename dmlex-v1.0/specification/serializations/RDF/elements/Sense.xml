@@ -26,7 +26,7 @@
         <para><literal>dmlex:label</literal> OPTIONAL reference to <olink targetptr="rdf_Label">Label</olink></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:indicator</literal> OPTIONAL (at most 1) reference to <olink targetptr="rdf_Indicator">Indicator</olink></para>
+        <para><literal>dmlex:indicator</literal> OPTIONAL (at most 1) of type <literal>http://www.w3.org/2000/01/rdf-schema#Literal</literal></para>
     </listitem>
     <listitem>
         <para><literal>dmlex:definition</literal> OPTIONAL reference to <olink targetptr="rdf_Definition">Definition</olink></para>
