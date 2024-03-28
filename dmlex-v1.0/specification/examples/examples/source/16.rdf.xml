@@ -31,7 +31,7 @@ ex:lexicon a dmlex:LexicographicResource;
           dmlex:type dmlex:sense;
           dmlex:role "super" ] ].
 ex:colour a dmlex:Entry;
-  dmlex:sense ex:colour-3, ex:colour-2, ex:colour-1;
+  dmlex:sense ex:colour-4, ex:colour-3, ex:colour-2, ex:colour-1;
   dmlex:headword "colour".
 ex:colour-1 a dmlex:Sense;
   dmlex:definition [ dmlex:listingOrder "1"^^xsd:unsignedInt;
@@ -51,4 +51,10 @@ ex:colour-3 a dmlex:Sense;
       dmlex:listingOrder "1"^^xsd:unsignedInt ];
   dmlex:example [ dmlex:listingOrder "1"^^xsd:unsignedInt;
       dmlex:text "People of all creeds and colours." ].
+ex:colour-4 a dmlex:Sense;
+  dmlex:listingOrder "4"^^xsd:unsignedInt;
+  dmlex:definition [ dmlex:text "interest or excitement";
+      dmlex:listingOrder "1"^^xsd:unsignedInt ];
+  dmlex:example [ dmlex:listingOrder "1"^^xsd:unsignedInt;
+      dmlex:text "Examples add colour to your writing." ].
 </programlisting>
