@@ -620,6 +620,15 @@
         <title/>
         <bibliomixed id="bcp14">
           <abbrev>BCP 14</abbrev> is a concatenation of [RFC 2119] and [RFC 8174] </bibliomixed>
+        <bibliomixed id="bib_rfc3986">
+          <abbrev>RFC 3986</abbrev>
+          Tim Berners-Lee, Roy T. Fielding, Larry M Masinter
+          <title>Uniform Resource Identifier (URI): Generic Syntax</title>,
+          <citetitle>
+            <ulink url="https://datatracker.ietf.org/doc/rfc3986/">https://datatracker.ietf.org/doc/rfc3986/</ulink>
+          </citetitle>
+          IETF (Internet Engineering Task Force) RFC 3986, January 2005.
+        </bibliomixed>
         <bibliomixed id="bib_rfc3987">
           <abbrev>RFC 3987</abbrev>
           Martin J. Dürst, Michel Suignard,

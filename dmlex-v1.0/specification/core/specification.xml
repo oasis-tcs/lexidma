@@ -65,6 +65,49 @@
      </itemizedlist>
 	</para>
   </simplesect>
+  <simplesect id="fraguri">
+	  <title>Fragment URIs</title>
+	  <para>Every fragment <glossterm>should</glossterm> be assigned a unique URI, identifying it on the Web, composed of <literal>lexicographicResource.uri</literal> and a sequence of identifiers that uniquely determines the path in the DMLex tree structure. The URI of the root object <literal>lexicographicResource</literal> is the value of its attribute <literal>lexicographicResource.uri</literal>. The URIs of its direct children are constructed as follows:</para>
+
+	<para><literal>lexicographicResource.uri/objectTypeName/objectID</literal></para>
+
+	<para>(We define below how object IDs are created.)</para>
+
+	<para>The URIs of descendant objects are constructed by appending the children's type names and IDs to the URI of their direct parents, using “/” as the delimiter. In other words, the full template for an URI object looks as follows:</para>
+
+
+	<para><literal>lexicographicResource.uri/objectTypeName/objectID/child1TypeName/child1ID/child2TypeName/child2ID/…</literal></para>
+
+	<para>For example, a particular sense (which is a property of entry) is assigned the following URI:</para>
+
+
+	<para><literal>lexicographicResource.uri/entry/entryID/sense/senseID</literal></para>
+
+	<para>URI of an example (which is a property of sense, which is a property of entry) has the following structure:</para>
+
+	<para><literal>lexicographicResource.uri/entry/entryID/sense/senseID/example/exampleID</literal></para>
+
+	<bridgehead>Object IDs</bridgehead>
+
+	<para>For the purpose of creating URIs, each object is assigned a unique ID, based on values of its properties declared as <glossterm>unique</glossterm>. Multiple situations can occur:</para>
+
+	<orderedlist>
+		<listitem>The object type has a single <glossterm>unique</glossterm> property with an arity of “exactly one”, and the value of the property is a string or a number. In this case, the object ID is the string or the number, with the following modifications performed in that particular order:
+			<itemizedlist>
+				<listitem>every “\” (ASCII character 5C) is replaced by “\\”</listitem>
+				<listitem>every “~” (ASCII character 7E) is replaced by “\~”</listitem>
+				<listitem>every “_” (ASCII character 5F) is replaced by “\_”</listitem>
+				<listitem>the result is percent-encoded according to [<link linkend="bib_rfc3986">RFC 3986</link>]</listitem>
+			</itemizedlist>
+		</listitem>
+		<listitem>The object type has a single <glossterm>unique</glossterm> property with an arity of “exactly one”, and the value of the property is a child DMLex object. In this case, the object ID is the same as the object ID of the child object.</listitem>
+		<listitem>The object type has a single <glossterm>unique</glossterm> property with arbitrary arity. In this case, all the partial single values or child object IDs are constructed according to the steps 1. and 2., and the resulting object ID is their concatenation using “_” (ASCII character 5F) as a separator. (Note: this allows empty IDs in case of <glossterm>unique</glossterm> attributes which allow the arity of zero.)</listitem>
+		<listitem>The object type has multiple <glossterm>unique</glossterm> properties. In this case, all the partial values or child object IDs are constructed according to the steps 1., 2. and 3., and the resulting object ID is their concatenation using “~” (ASCII character 5F) as a separator. (Note: this allows empty IDs in case of multiple <glossterm>unique</glossterm> attributes, all of them allowing the arity of zero.)</listitem>
+	</orderedlist>
+
+	<para>The standard does not define the structure of URIs for object types without <glossterm>unique</glossterm> properties.</para>
+
+  </simplesect>
   <xi:include href="objectTypes/lexicographicResource.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objectTypes/entry.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="objectTypes/partOfSpeech.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
