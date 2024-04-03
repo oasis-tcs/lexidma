@@ -109,7 +109,8 @@
 
         </listitem>
       </itemizedlist>-->
-      <para>NONE AT THE MOMENT</para>
+      <para>[All normative machine readable artifacts provided have to be listed here as parts of
+        the multipart product bfeore csd03 progression]</para>
     </legalnotice>
     <legalnotice role="related">
       <title>Related Work</title>
@@ -317,13 +318,13 @@
       <para>DMLex is an abstract data model which can be implemented in many different programming
         environments and serialization languages. In this document, we specify
           <glossterm>required</glossterm> serializations for: <simplelist>
-          <member><olink targetptr="XML_implementation">XML</olink>,</member>
-          <member><olink targetptr="JSON_implementation">JSON</olink>,</member>
-          <member><olink targetptr="RDF_implementation">RDF</olink>, and</member>
-          <member><olink targetptr="RDB_implementation">relational databases</olink>.</member>
+          <member><olink targetptr="xml">XML</olink>,</member>
+          <member><olink targetptr="json">JSON</olink>,</member>
+          <member><olink targetptr="rdf">RDF</olink>, and</member>
+          <member><olink targetptr="rdb">relational databases</olink>.</member>
         </simplelist></para>
       <para> An informative serialization specification is provided for:<simplelist>
-          <member><olink targetptr="NVH_implementation">NVH</olink>.</member>
+          <member><olink targetptr="nvh">NVH</olink>.</member>
         </simplelist>
       </para>
     </section>
@@ -790,10 +791,10 @@
       </bibliography>
     </section>
   </appendix>
-  <appendix role="informative" id="coreValidation">
+  <appendix role="informative" id="Validation">
     <title>Machine Readable Validation Artifacts</title>
-    <para>CURRENTLY NO VALIDATION ARTIFACTS FORESEEN FOR THE OM.. JUST FOR SERIALIZATIONS</para>
-    <para> MAY LIST CONFORMANT ARTIFACTS FOR SPECIFIC SERIALIZATIONS AT A LATER STAGE </para>
+    <para>[This appendix will list all validation artifact references before progression to
+      csd03]</para>
     <!--
       <orderedlist>
         <listitem id="CoreSchema">
@@ -905,8 +906,7 @@
 
   <appendix role="informative" id="specChangeTracking">
     <title>Specification Change Tracking</title>
-    <para>This appendix will contain tracked changes after the csd01 phase will have been
-      reached.</para>
+    <para/>
     
     <xi:include href="ReviewChangeTracking/ReviewChangeTrack.xml"
       xmlns:xi="http://www.w3.org/2001/XInclude"/>
