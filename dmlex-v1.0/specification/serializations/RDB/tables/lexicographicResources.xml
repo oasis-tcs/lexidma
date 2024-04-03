@@ -31,7 +31,7 @@
         <title>Comment</title>
         <listitem>
             <para>If the database is designed to contain only one lexicographic resource then this table,
-                includng all foreign keys in other tables that reference it, is
+                including all foreign keys in other tables that reference it, is
                 not <glossterm>required</glossterm> to be implemented.</para>
         </listitem>
     </itemizedlist>
