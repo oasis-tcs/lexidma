@@ -108,8 +108,8 @@
             conformant to a specific serialization. </para></note>
     <warning><para>Exchange of <firstterm>DMLex Instances</firstterm> data between and among DMLex serializations
             is out of scope of the DMLex Version &version; specification. Although, the
-            serializations are semantically compatible, they don't have to posses compatible
-            addressing and fargemnt identification mechanims, mainly due to the fact that each
+            serializations are semantically compatible, they don't have to possess compatible
+            addressing and fragment identification mechanims, mainly due to the fact that each
             serialization is expected to use its own native id data types, uniqueness scopes, and
             addressing methods.</para></warning>
 </section>
