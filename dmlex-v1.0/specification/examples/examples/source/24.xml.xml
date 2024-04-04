@@ -24,6 +24,12 @@ ion&gt;
             &lt;/etymon&gt;
         &lt;/etymology&gt;
     &lt;/entry&gt;
+    &lt;etymonLanguage langCode="dum"&gt;
+        &lt;displayName&gt;Middle Dutch&lt;/displayName&gt;
+    &lt;/etymonLanguage&gt;
+    &lt;etymonLanguage langCode="gem-pro"&gt;
+        &lt;displayName&gt;Proto-Germanic&lt;/displayName&gt;
+    &lt;/etymonLanguage&gt;
     &lt;etymonType type="derivation"&gt;
         &lt;description&gt;A historical form of the word&lt;/description&gt;
     &lt;/etymonType&gt;
@@ -31,12 +37,6 @@ ion&gt;
         &lt;description&gt;Two words derived from the same etymological root&lt;/de
 scription&gt;
     &lt;/etymonType&gt;
-    &lt;etymonLanguage langCode="dum"&gt;
-        &lt;displayName&gt;Middle Dutch&lt;/displayName&gt;
-    &lt;/etymonLanguage&gt;
-    &lt;etymonLanguage langCode="gem-pro"&gt;
-        &lt;displayName&gt;Proto-Germanic&lt;/displayName&gt;
-    &lt;/etymonLanguage&gt;
 &lt;/lexicographicResource&gt;
             
 </programlisting>

@@ -1,6 +1,5 @@
 <programlisting>
-&lt;lexicographicResource uri="http://example.com" langCode="en"&gt;
-    &lt;title&gt;Example Dictionary&lt;/title&gt;
+&lt;lexicographicResource title="Example Dictionary" uri="http://example.com" langCode="en"&gt;
     &lt;entry id="abandon-verb"&gt;
         &lt;headword&gt;abandon&lt;/headword&gt;
             &lt;partOfSpeech tag="verb"/&gt;

@@ -96,21 +96,25 @@
     </copyright>
     <legalnotice role="additional">
       <title>Additional artifacts</title>
-      <!-- probably will have references to UML diagrams
-      <para>This prose specification is one component of a Work Product that also includes:</para>
+      <para>This prose specification is one component of a Work Product that also includes declarative validation artifacts accessible from <ulink url="&this-loc;/schemas/">&this-loc;/schemas/</ulink>:</para>
 
       <itemizedlist spacing="compact">
         <listitem>
-          <para> Declarative validation artifacts accessible from <ulink url="&this-loc;/schemas/"
-              >&this-loc;/schemas/</ulink>
-          </para>
-
-
-
+			<para><ulink url="&this-loc;/schemas/XML/dmlex.xsd">XML schema</ulink></para>
         </listitem>
-      </itemizedlist>-->
-      <para>[All normative machine readable artifacts provided have to be listed here as parts of
-        the multipart product bfeore csd03 progression]</para>
+        <listitem>
+			<para><ulink url="&this-loc;/schemas/XML/dmlex_no-crosslingual.xsd">XML schema excluding the cross-lingual module</ulink></para>
+        </listitem>
+        <listitem>
+			<para><ulink url="&this-loc;/schemas/JSON/dmlex.json">JSON schema</ulink></para>
+        </listitem>
+        <listitem>
+			<para><ulink url="&this-loc;/schemas/JSON/dmlex_no-crosslingual.json">JSON schema excluding the cross-lingual module</ulink></para>
+        </listitem>
+        <listitem>
+			<para><ulink url="&this-loc;/schemas/informativeCopiesOf3rdPartySchemas/NVH/dmlex.nvh">NVH schema (informative)</ulink></para>
+        </listitem>
+      </itemizedlist>
     </legalnotice>
     <legalnotice role="related">
       <title>Related Work</title>
@@ -792,9 +796,25 @@
     </section>
   </appendix>
   <appendix role="informative" id="Validation">
-    <title>Machine Readable Validation Artifacts</title>
-    <para>[This appendix will list all validation artifact references before progression to
-      csd03]</para>
+	<title>Machine Readable Validation Artifacts</title>
+	  <itemizedlist spacing="compact">
+        <listitem>
+			<para><ulink url="&this-loc;/schemas/XML/dmlex.xsd">XML schema</ulink></para>
+        </listitem>
+        <listitem>
+			<para><ulink url="&this-loc;/schemas/XML/dmlex_no-crosslingual.xsd">XML schema excluding the cross-lingual module</ulink></para>
+        </listitem>
+        <listitem>
+			<para><ulink url="&this-loc;/schemas/JSON/dmlex.json">JSON schema</ulink></para>
+        </listitem>
+        <listitem>
+			<para><ulink url="&this-loc;/schemas/JSON/dmlex_no-crosslingual.json">JSON schema excluding the cross-lingual module</ulink></para>
+        </listitem>
+        <listitem>
+			<para><ulink url="&this-loc;/schemas/informativeCopiesOf3rdPartySchemas/NVH/dmlex.nvh">NVH schema (informative)</ulink></para>
+        </listitem>
+      </itemizedlist>
+
     <!--
       <orderedlist>
         <listitem id="CoreSchema">
@@ -899,7 +919,7 @@
     <para>This description uses the <ulink url="https://www.namevaluehierarchy.org/schema.html">NVH schema notation style</ulink> and the convention that all object types and their properties are prefixed by either <literal>core@</literal> or <literal>MODULENAME@</literal> strings. Their arity is denoted by a <literal>*</literal> (zero or more), <literal>+</literal> (one or more), <literal>?</literal> (zero or one) or <literal>N+</literal> (<literal>N</literal> or more). If no arity is given, it indicates the arity of 1, i.e. being required and occurring exactly once.
     </para>
     <programlisting>
-      <xi:include href="dmlex.nvh" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+      <xi:include href="schemas/informativeCopiesOf3rdPartySchemas/NVH/dmlex.nvh" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     </programlisting>
   </appendix>
 
