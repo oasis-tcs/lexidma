@@ -136,7 +136,8 @@ dmlex:HeadwordTranslation rdfs:subClassOf dmlex:HasPronunciation .
 dmlex:inflectedForm a owl:ObjectProperty ;
   rdfs:label "Inflected Form"@en ;
   rdfs:domain dmlex:HasInflectedForm ;
-  rdfs:range dmlex:InflectedForm .
+  rdfs:range dmlex:InflectedForm ;
+  rdfs:subPropertyOf ontolex:otherForm .
 
 dmlex:Entry rdfs:subClassOf dmlex:HasInflectedForm .
 dmlex:HeadwordTranslation rdfs:subClassOf dmlex:HasInflectedForm .
@@ -622,6 +623,16 @@ dmlex:TranscriptionSchemeTag a owl:Class ;
     owl:onProperty dmlex:forTranslations ;
     owl:maxCardinality 1 ] .
 
+dmlex:sameAs a owl:ObjectProperty ;
+  rdfs:label "Same As"@en ;
+  rdfs:domain dmlex:HasSameAs .
+
+dmlex:DefinitionTypeTag rdfs:subClassOf dmlex:HasSameAs .
+dmlex:InflectedFormTag rdfs:subClassOf dmlex:HasSameAs .
+dmlex:LabelTag rdfs:subClassOf dmlex:HasSameAs .
+dmlex:PartOfSpeechTag rdfs:subClassOf dmlex:HasSameAs .
+dmlex:SourceIdentityTag rdfs:subClassOf dmlex:HasSameAs .
+
 ################################################################################
 ## Linking Module
 
@@ -761,6 +772,10 @@ dmlex:action a owl:DatatypeProperty ;
   rdfs:label "Action"@en ;
   rdfs:domain dmlex:MemberType ;
   rdfs:range xsd:string .
+
+dmlex:MemberType rdfs:subClassOf dmlex:HasSameAs .
+dmlex:RelationType rdfs:subClassOf dmlex:HasSameAs .
+dmlex:MemberType rdfs:subClassOf dmlex:HasSameAs .
 
 ################################################################################
 ## Annotation Module

@@ -91,7 +91,7 @@
   dmlex:description "..." ;
   dmlex:typeTag "..." ;
   dmlex:for "..." ;
-  owl:sameAs ... ] .
+  dmlex:sameAs ... ] .
     </programlisting>
   </example>
   

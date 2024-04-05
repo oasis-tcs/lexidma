@@ -29,7 +29,7 @@
         <para><literal>dmlex:pronunciation</literal> OPTIONAL reference to <olink targetptr="rdf_Pronunciation">Pronunciation</olink></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:inflectedForm</literal> OPTIONAL reference to <olink targetptr="rdf_InflectedForm">InflectedForm</olink></para>
+        <para><literal>dmlex:inflectedForm</literal> OPTIONAL reference to <olink targetptr="rdf_InflectedForm">InflectedForm</olink> (subproperty of <literal>http://www.w3.org/ns/lemon/ontolex#otherForm</literal>)</para>
     </listitem>
     <listitem>
         <para><literal>dmlex:text</literal> REQUIRED (exactly 1) of type <literal>http://www.w3.org/2000/01/rdf-schema#Literal</literal></para>
