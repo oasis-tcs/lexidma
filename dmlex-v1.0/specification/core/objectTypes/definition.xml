@@ -24,18 +24,18 @@
     <title>Properties</title>
     <listitem>
       <para><literal>text</literal>
-        <glossterm>required</glossterm> (exactly one) and <glossterm>UNIQUE</glossterm>. Non-empty string. A statement, in the same
-        language as the headword, that describes and/or explains the meaning of a sense. In DMLex,
-        the term definition encompasses not only formal definitions, but also less formal
-        explanations.</para>
+        <glossterm>required</glossterm> (exactly one) and <glossterm>UNIQUE</glossterm>. Normalised
+        string. A statement, in the same language as the headword, that describes and/or explains
+        the meaning of a sense. In DMLex, the term definition encompasses not only formal
+        definitions, but also less formal explanations.</para>
     </listitem>
     <listitem>
       <para><literal>definitionType</literal>
-        <glossterm>optional</glossterm> (zero or one). If a sense contains multiple definitions,
-        indicates the difference between them, for example that they are intended for different
-        audiences. The <code><olink targetptr="values_definitionTypeTag">definitionTypeTag</olink></code> object type can be used
-        to constrain and/or explain the definition types that occur in the lexicographic
-        resource.</para>
+        <glossterm>optional</glossterm> (zero or one). Normalised string. If a sense contains
+        multiple definitions, indicates the difference between them, for example that they are
+        intended for different audiences. The <code><olink targetptr="values_definitionTypeTag"
+            >definitionTypeTag</olink></code> object type can be used to constrain and/or explain
+        the definition types that occur in the lexicographic resource.</para>
     </listitem>
     <listitem>
       <para><literal>listingOrder</literal>

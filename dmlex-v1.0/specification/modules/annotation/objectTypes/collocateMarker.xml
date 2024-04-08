@@ -39,12 +39,12 @@
     </listitem>
     <listitem>
       <para><literal>lemma</literal>
-        <glossterm>optional</glossterm> (zero or one) and <glossterm>unique</glossterm>. Non-empty string. The lemmatized form of the
-        collocate. An application can use it to provide a clickable link for the user to search for
-        the lemma in the rest of the lexicographic resource or on the web. (If you want to link the
-        collocate explicitly to a specific entry or to a specific sense in your lexicographic
-        resource, or even in an external lexicographic resource, you can use the Linking Module for
-        that.)</para>
+        <glossterm>optional</glossterm> (zero or one) and <glossterm>unique</glossterm>. Normalised
+        string. The lemmatized form of the collocate. An application can use it to provide a
+        clickable link for the user to search for the lemma in the rest of the lexicographic
+        resource or on the web. (If you want to link the collocate explicitly to a specific entry or
+        to a specific sense in your lexicographic resource, or even in an external lexicographic
+        resource, you can use the Linking Module for that.)</para>
     </listitem>
     <listitem>
       <para><literal><olink targetptr="annotation_label">label</olink></literal>

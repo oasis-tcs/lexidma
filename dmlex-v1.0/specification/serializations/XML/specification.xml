@@ -65,18 +65,48 @@
         </itemizedlist>
       </listitem>
     </itemizedlist>
-    <para> Whitespace in all text nodes should always be <emphasis>collapsed</emphasis> by rules
-      defined in the XML Schema W3C Recommendation [<link linkend="bib_XMLSchema">XML
-      Schema</link>]: <itemizedlist>
-        <listitem>
-          <para>all sequences of whitespace should be reduced to a single space</para>
-        </listitem>
-        <listitem>
-          <para>all leading and trailing spaces should be removed</para>
-        </listitem>
-      </itemizedlist> unless otherwise stated in the specification of individual XML elements. </para>
+  </section>
+  
+  <section id="XMLWhitespace" role="normative">
+    <title>Whitespace handling</title>
+    <para>
+      Some XML elements in this serialization are defined as allowed to have text content
+      while other elements are not allowed to have text content.
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          Elements which are not allowed to have text content:
+          whitespace inside these elements should be treated as insignificant:
+          any child nodes consisting of whitespace can be ignored when reading the XML.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Elements which are allowed to have text content
+          (which includes elements implementing object types from the Annotation Module):
+          whitespace inside these elements should be handled as follows when reading the XML:
+        </para>
+        <orderedlist>
+          <listitem>
+            <para>Completely remove all leading whitespace that immediately follows an opening tag.</para>
+          </listitem>
+          <listitem>
+            <para>Completely remove all trailing whitespace that immediately precedes a closing tag.</para>
+          </listitem>
+          <listitem>
+            <para>Replace all remaining sequences of whitespace with a single space.</para>
+          </listitem>
+        </orderedlist>
+        <para>
+          This ensures that whitespace is handled in accordance with DMLex's concept of <emphasis>normalised strings</emphasis>
+          defined in <xref linkend="modelProperties"/>.
+        </para>
+      </listitem>
+    </itemizedlist>
     
   </section>
+  
   <section id="XMLElements" role="normative">
     <title>DMLex XML serialization elements</title>
   

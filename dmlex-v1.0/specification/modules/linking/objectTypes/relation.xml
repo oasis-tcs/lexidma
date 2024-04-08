@@ -22,7 +22,7 @@
     <title>Properties</title>
     <listitem>
       <para><literal>type</literal>
-        <glossterm>required</glossterm> (exactly one). Non-empty string. Specifies what type of
+        <glossterm>required</glossterm> (exactly one). Normalised string. Specifies what type of
         relation it is, for example a relation between synonyms or a relation between a sense and a
         subsense. Optionally, <code><olink targetptr="linking_relationType"
           >relationType</olink></code> objects can be used to explain those types and to constrain
@@ -30,7 +30,7 @@
     </listitem>
     <listitem>
       <para><literal>description</literal>
-        <glossterm>optional</glossterm> (zero or one). Non-empty string. A human-readable
+        <glossterm>optional</glossterm> (zero or one). Normalised string. A human-readable
         explanation of this relation.</para>
     </listitem>
     <listitem>

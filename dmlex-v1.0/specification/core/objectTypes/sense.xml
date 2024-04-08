@@ -29,10 +29,11 @@
     </listitem>
     <listitem>
       <para><literal>indicator</literal>
-        <glossterm>optional</glossterm> (zero or one) and <glossterm>unique</glossterm>. A short statement, in the same language as
-        the headword, that gives an indication of the meaning of a sense and permits its
-        differentiation from other senses in the entry. Indicators are sometimes used in
-        dictionaries instead of or in addition to definitions.</para>
+        <glossterm>optional</glossterm> (zero or one) and <glossterm>unique</glossterm>. Normalised
+        string. A short statement, in the same language as the headword, that gives an indication of
+        the meaning of a sense and permits its differentiation from other senses in the entry.
+        Indicators are sometimes used in dictionaries instead of or in addition to
+        definitions.</para>
     </listitem>
     <listitem>
       <para><literal><olink targetptr="core_label">label</olink></literal>

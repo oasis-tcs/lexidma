@@ -30,8 +30,9 @@
         </listitem>
         <listitem>
             <para><literal>text</literal>
-                <glossterm>required</glossterm> (exactly one) and <glossterm>unique</glossterm> (in combination with other unique properties if present). The written form of the
-                etymon.</para>
+                <glossterm>required</glossterm> (exactly one) and <glossterm>unique</glossterm> (in
+                combination with other unique properties if present). Normalised string. The written
+                form of the etymon.</para>
         </listitem>
         <listitem>
             <para><literal>reconstructed</literal>
@@ -44,7 +45,8 @@
         </listitem>
         <listitem>
             <para><literal>translation</literal>
-                <glossterm>optional</glossterm> (zero or one). A translation or gloss of the etymon in the language of the lexicographic resource.</para>
+                <glossterm>optional</glossterm> (zero or one). Normalised string. A translation or
+                gloss of the etymon in the language of the lexicographic resource.</para>
         </listitem>
         <listitem>
             <para><literal>listingOrder</literal>

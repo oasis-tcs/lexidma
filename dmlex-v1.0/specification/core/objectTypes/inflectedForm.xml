@@ -25,18 +25,20 @@
     <title>Properties</title>
     <listitem>
       <para><literal>text</literal>
-        <glossterm>required</glossterm> (exactly one) and <glossterm>unique</glossterm> (in combination with other unique properties if present). Non-empty string. The text of the inflected
-        form.</para>
+        <glossterm>required</glossterm> (exactly one) and <glossterm>unique</glossterm> (in
+        combination with other unique properties if present). Normalised string. The text of the
+        inflected form.</para>
     </listitem>
     <listitem>
       <para><literal>tag</literal>
-        <glossterm>optional</glossterm> (zero or one) and <glossterm>unique</glossterm> (in combination with other unique properties if present). Non-empty string. An abbreviation, a code or
-        some other string of text which identifies the inflected form, for example <code>pl</code>
-        for plural, <code>gs</code> for genitive singular, <code>com</code> for comparative. The
-            <code><olink targetptr="values_inflectedFormTag">inflectedFormTag</olink></code> object
-        type can be used to explain the meaning of the inflection tags, to constrain which
-        inflection tags are allowed to occur in the lexicographic resource, and to map them onto
-        external inventories and ontologies.</para>
+        <glossterm>optional</glossterm> (zero or one) and <glossterm>unique</glossterm> (in
+        combination with other unique properties if present). Normalised string. An abbreviation, a
+        code or some other string of text which identifies the inflected form, for example
+          <code>pl</code> for plural, <code>gs</code> for genitive singular, <code>com</code> for
+        comparative. The <code><olink targetptr="values_inflectedFormTag"
+          >inflectedFormTag</olink></code> object type can be used to explain the meaning of the
+        inflection tags, to constrain which inflection tags are allowed to occur in the
+        lexicographic resource, and to map them onto external inventories and ontologies.</para>
     </listitem>
     <listitem>
       <para><literal><olink targetptr="core_label">label</olink></literal>

@@ -24,7 +24,8 @@
         <title>Properties</title>
         <listitem>
             <para><literal>text</literal>
-                <glossterm>required</glossterm> (exactly one) and <glossterm>unique</glossterm> (in combination with <literal>langCode</literal> if present). Non-empty string.</para>
+                <glossterm>required</glossterm> (exactly one) and <glossterm>unique</glossterm> (in
+                combination with <literal>langCode</literal> if present). Normalised string.</para>
         </listitem>
         <listitem>
             <para><literal>langCode</literal>
