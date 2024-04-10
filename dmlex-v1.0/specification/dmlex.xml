@@ -62,6 +62,15 @@
         <email>milos.jakubicek@sketchengine.eu</email>
       </editor>
       <editor>
+        <firstname>Vojtěch</firstname>
+        <surname>Kovář</surname>
+        <affiliation>
+          <orgname><ulink url="https://www.muni.cz/">Masaryk University</ulink></orgname>
+          <address format="linespecific"><email>vojcek@mail.muni.cz</email></address>
+        </affiliation>
+        <email>vojcek@mail.muni.cz</email>
+      </editor>
+      <editor>
         <firstname>Simon</firstname>
         <surname>Krek</surname>
         <affiliation>
