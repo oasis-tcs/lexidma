@@ -21,6 +21,11 @@
     of the <code>member</code> datatype.</para>
   <para>The Linking Module can be used to set up relations between objects inside the same
     lexicographic resource, or between objects residing in different lexicographic resources.</para>
+  <para>For linking, some type of reference IDs of linked objects are needed (cf. the
+    <literal>ref</literal> property in <xref linkend="linking_member"/>). DMLex does not prescribe
+    the exact form of these IDs, however, a recommended method for creating unique IRIs for
+    DMLex objects is available in <xref linkend="frag_iri"/>, which may be useful especially
+    when linking objects from different lexicographic resources on the Web.</para>
   <para>Examples: <xref linkend="ex12"/>, <xref linkend="ex13"/>, <xref linkend="ex14"/>, <xref
       linkend="ex15"/>, <xref linkend="ex16"/>, <xref linkend="ex17"/>, <xref linkend="ex18"/>. </para>
   <xi:include href="extensions/lexicographicResource.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
