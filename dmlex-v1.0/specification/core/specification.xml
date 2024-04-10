@@ -78,11 +78,11 @@
 
 		<para><literal>lexicographicResource.uri/objectTypeName/objectID/child1TypeName/child1ID/child2TypeName/child2ID/…</literal></para>
 
-		<para>For example, a particular sense (which is a property of entry) is assigned the following IRI:</para>
+		<para>For example, a particular <literal><olink targetptr="core_sense">sense</olink></literal> (which is a property of <literal><olink targetptr="core_entry">entry</olink></literal>) is assigned the following IRI:</para>
 
 		<para><literal>lexicographicResource.uri/entry/entryID/sense/senseID</literal></para>
 
-		<para>IRI of an example (which is a property of sense, which is a property of entry) has the following structure:</para>
+		<para>IRI of an <literal><olink targetptr="core_example">example</olink></literal> (which is a property of <literal><olink targetptr="core_sense">sense</olink></literal>, which is a property of <literal><olink targetptr="core_entry">entry</olink></literal>) has the following structure:</para>
 
 		<para><literal>lexicographicResource.uri/entry/entryID/sense/senseID/example/exampleID</literal></para>
 
