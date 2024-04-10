@@ -107,6 +107,15 @@
 
 			<para>DMLex does not define the structure of IRIs for object types without <glossterm>unique</glossterm> properties.</para>
 		</section>
+		<section id="iri_examples">
+			<title>IRI examples</title>
+			<para>Particular IRI examples can then look as follows:</para>
+			<itemizedlist>
+				<listitem><literal>http://www.example.com/lexicon/entry/cat~1~noun</literal></listitem>
+				<listitem><literal>http://www.example.com/lexicon/entry/cat~1~noun/sense/small%20furry%20animal</literal></listitem>
+				<listitem><literal>http://www.example.com/lexicon/entry/cat~1~noun/sense/small%20furry%20animal/example/I%20have%20two%20dogs%20and%20a%20cat.</literal></listitem>
+			</itemizedlist>
+		</section>
 	  </section>
   </section>
   <xi:include href="objectTypes/lexicographicResource.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
