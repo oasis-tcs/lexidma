@@ -10,10 +10,10 @@
             &lt;text&gt;folúsghlantóirí&lt;/text&gt;
         &lt;/inflectedForm&gt;
     &lt;/entry&gt;
-    &lt;inflectedFormTag tag="sg-gen"&gt;
+    &lt;inflectedFormTag tag="sg-gen" for="n-masc n-fem"&gt;
         &lt;description&gt;singular genitive&lt;/description&gt;
     &lt;/inflectedFormTag&gt;
-    &lt;inflectedFormTag tag="pl"&gt;
+    &lt;inflectedFormTag tag="pl" for="n-masc n-fem"&gt;
         &lt;description&gt;plural&lt;/description&gt;
     &lt;/inflectedFormTag&gt;
     &lt;partOfSpeechTag tag="n-masc"&gt;

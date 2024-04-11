@@ -7,20 +7,24 @@
         "indicator": "medical doctor",
         "headwordTranslations": [{
             "text": "Arzt",
-            "partsOfSpeech": ["n-masc"]
+            "partsOfSpeech": ["n-masc"],
+            "langCode": "de"
         }, {
             "text": "Ärztin",
-            "partsOfSpeech": ["n-fem"]
+            "partsOfSpeech": ["n-fem"],
+            "langCode": "de"
         }]
     }, {
         "id": "doctor-n-2",
         "indicator": "academic title",
         "headwordTranslations": [{
             "text": "Doktor",
-            "partsOfSpeech": ["n-masc"]
+            "partsOfSpeech": ["n-masc"],
+            "langCode": "de"
         }, {
             "text": "Doktorin",
-            "partsOfSpeech": ["n-fem"]
+            "partsOfSpeech": ["n-fem"],
+            "langCode": "de"
         }]
     }]
 }
