@@ -1,6 +1,5 @@
 <programlisting>
-&lt;lexicographicResource uri="http://example.com" langCode="de"&gt;
-    &lt;title&gt;My German-English Dictionary&lt;/title&gt;
+&lt;lexicographicResource title="My German-English Dictionary" uri="http://example.com" langCode="de"&gt;
     &lt;translationLanguage langCode="en"/&gt;
 &lt;/lexicographicResource&gt;
 </programlisting>

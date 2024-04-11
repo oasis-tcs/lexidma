@@ -10,17 +10,17 @@
             &lt;text&gt;folúsghlantóirí&lt;/text&gt;
         &lt;/inflectedForm&gt;
     &lt;/entry&gt;
-    &lt;partOfSpeechTag tag="n-masc"&gt;
-        &lt;description&gt;masculine noun&lt;/description&gt;
-    &lt;/partOfSpeechTag&gt;
-    &lt;partOfSpeechTag tag="n-fem"&gt;
-        &lt;description&gt;feminine noun&lt;/description&gt;
-    &lt;/partOfSpeechTag&gt;
     &lt;inflectedFormTag tag="sg-gen"&gt;
         &lt;description&gt;singular genitive&lt;/description&gt;
     &lt;/inflectedFormTag&gt;
     &lt;inflectedFormTag tag="pl"&gt;
         &lt;description&gt;plural&lt;/description&gt;
     &lt;/inflectedFormTag&gt;
+    &lt;partOfSpeechTag tag="n-masc"&gt;
+        &lt;description&gt;masculine noun&lt;/description&gt;
+    &lt;/partOfSpeechTag&gt;
+    &lt;partOfSpeechTag tag="n-fem"&gt;
+        &lt;description&gt;feminine noun&lt;/description&gt;
+    &lt;/partOfSpeechTag&gt;
 &lt;/lexicographicResource&gt;
 </programlisting>
