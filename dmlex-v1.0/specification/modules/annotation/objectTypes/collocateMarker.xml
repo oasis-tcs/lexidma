@@ -29,22 +29,26 @@
   <itemizedlist>
     <title>Properties</title>
     <listitem>
-        <para><literal>startIndex</literal> (required). Non-negative integer. The index of the first character of the substring
-        according to the number of Unicode code points. The first character of the string has index
-        0. This property may be implicit if using in-line markup.</para>
+        <para><literal>startIndex</literal>
+        <glossterm>required</glossterm> and <glossterm>unique</glossterm>. Non-negative integer. The
+        index of the first character of the substring according to the number of Unicode code
+        points. The first character of the string has index 0. This property may be implicit if
+        using in-line markup.</para>
     </listitem>
     <listitem>
-        <para><literal>endIndex</literal> (required). Non-negative integer. The index of the last character after the substring
-        according to the number of Unicode code points. This property may be implicit if using in-line markup</para>
+        <para><literal>endIndex</literal>
+        <glossterm>required</glossterm> and <glossterm>unique</glossterm>. Non-negative integer. The
+        index of the last character after the substring according to the number of Unicode code
+        points. This property may be implicit if using in-line markup</para>
     </listitem>
     <listitem>
       <para><literal>lemma</literal>
-        <glossterm>optional</glossterm> (zero or one) and <glossterm>unique</glossterm>. Normalised
-        string. The lemmatized form of the collocate. An application can use it to provide a
-        clickable link for the user to search for the lemma in the rest of the lexicographic
-        resource or on the web. (If you want to link the collocate explicitly to a specific entry or
-        to a specific sense in your lexicographic resource, or even in an external lexicographic
-        resource, you can use the Linking Module for that.)</para>
+        <glossterm>optional</glossterm> (zero or one). Normalised string. The lemmatized form of the
+        collocate. An application can use it to provide a clickable link for the user to search for
+        the lemma in the rest of the lexicographic resource or on the web. (If you want to link the
+        collocate explicitly to a specific entry or to a specific sense in your lexicographic
+        resource, or even in an external lexicographic resource, you can use the Linking Module for
+        that.)</para>
     </listitem>
     <listitem>
       <para><literal><olink targetptr="annotation_label">label</olink></literal>
