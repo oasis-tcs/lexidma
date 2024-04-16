@@ -51,7 +51,9 @@
     <example>
         <title>XML</title>
         <programlisting>
-&lt;headwordExplanation langCode="..."&gt;...&lt;/headwordExplanation&gt;
+&lt;headwordExplanation langCode="..."&gt;
+  &lt;text>...&lt;/text>
+&lt;/headwordExplanation&gt;
         </programlisting>
     </example>
     

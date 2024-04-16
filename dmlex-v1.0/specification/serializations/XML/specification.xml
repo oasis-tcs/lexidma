@@ -25,44 +25,27 @@
     <para>The XML serialization of DMLex shown in this document follows these principles:</para>
     <itemizedlist>
       <listitem>
-        <para>The top-level <code>lexicographicResource</code> object is implemented as an XML element.</para>
+        <para>The top-level <code>lexicographicResource</code> and <code>entry</code> object types
+          are implemented as XML elements.</para>
       </listitem>
       <listitem>
-        <para>All other objects and their properties are implemented as XML attributes of their parents, unless:</para>
+        <para>All other object types and their properties are implemented as XML attributes of their
+          parents, unless:</para>
         <itemizedlist>
           <listitem>
-            <para>the object has an arity other than <code>(0..1)</code> and <code>(1..1)</code>
-            </para>
+            <para>the object has an arity other than <code>(0..1)</code> and <code>(1..1)</code> in
+              at least one of its parent objects </para>
           </listitem>
           <listitem>
             <para>or the object can have child objects</para>
           </listitem>
           <listitem>
-            <para>or the object's value is human-readable text, such as a headword or a definition.</para>
+            <para>or the object's value is human-readable text, such as a headword or a definition
+              (this applies, among other things, to all properties named <code>text</code> and
+                <code>description</code>).</para>
           </listitem>
         </itemizedlist>
         <para>In such cases the object or property is implemented as a child XML element of its parent.</para>
-      </listitem>
-      <listitem>
-        <para>
-          When an object or property has been implemented as a XML element,
-          and when it has a property called <code>text</code> which contains a literal value
-          (such as the text of a definition or the text of an example sentence), then: 
-        </para>
-        <itemizedlist>
-          <listitem>
-            <para>
-              If the parent element cannot have any child elements,
-              then its <code>text</code> property is implemented as its text content.
-            </para>
-          </listitem>
-          <listitem>
-            <para>
-              If the parent element can have child elements,
-              then its <code>text</code> property is implemented as as a child element called <code>&lt;text&gt;</code>.
-            </para>
-          </listitem>
-        </itemizedlist>
       </listitem>
     </itemizedlist>
   </section>

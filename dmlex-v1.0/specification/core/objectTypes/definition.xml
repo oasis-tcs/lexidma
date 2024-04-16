@@ -47,7 +47,9 @@
   <example>
     <title>XML</title>
     <programlisting>
-&lt;definition definitionType="..."&gt;...&lt;/definition&gt;
+&lt;definition definitionType="..."&gt;
+  &lt;text>...&lt;/text>
+&lt;/definition&gt;
     </programlisting>
   </example>
   

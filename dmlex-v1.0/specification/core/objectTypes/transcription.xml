@@ -47,7 +47,9 @@
   <example>
     <title>XML</title>
     <programlisting>
-&lt;transcription scheme="..."&gt;...&lt;/transcription&gt;
+&lt;transcription scheme="..."&gt;
+  &lt;text>...&lt;/text>
+&lt;/transcription&gt;
     </programlisting>
   </example>
 

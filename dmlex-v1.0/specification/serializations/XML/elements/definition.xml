@@ -15,16 +15,16 @@
             <para><literal>@definitionType</literal> <glossterm>optional</glossterm></para>
         </listitem>
     </itemizedlist>
-    
     <itemizedlist>
-        <title>Text content</title>
+        <title>Child elements</title>
         <listitem>
-            <para><glossterm>Required</glossterm>, implements the <literal>text</literal> property.
-                If implementing the Annotation Module <literal>&lt;definition&gt;</literal> can
-                contain a mixture of plain text, <literal><olink targetptr="xml_headwordMarker"
+            <para><literal>&lt;text&gt;</literal>
+                <glossterm>required</glossterm> (exactly one). If implementing the Annotation Module
+                    <literal>&lt;text&gt;</literal> can contain a mixture of plain text,
+                        <literal><olink targetptr="xml_headwordMarker"
                         >&lt;headwordMarker&gt;</olink></literal> elements and <literal><olink
                         targetptr="xml_collocateMarker">&lt;collocateMarker&gt;</olink></literal>
-                elements and whitespace inside it should be <emphasis>preserved</emphasis>. </para>
+                elements.</para>
         </listitem>
     </itemizedlist>
     
