@@ -97,12 +97,13 @@
 						<listitem>every “\” (ASCII character 5C) is replaced by “\\”</listitem>
 						<listitem>every “~” (ASCII character 7E) is replaced by “\~”</listitem>
 						<listitem>every “_” (ASCII character 5F) is replaced by “\_”</listitem>
+						<listitem>every “0” (zero, ASCII character 30) is replaced by “\0”</listitem>
 						<listitem>all IRI-unsafe characters (outside the <literal>iunreserved</literal> class according to [<link linkend="bib_rfc3987">RFC 3987</link>]) are percent-encoded according to [<link linkend="bib_rfc3986">RFC 3986</link>]</listitem>
 					</itemizedlist>
 				</listitem>
 				<listitem>The object type has a single <glossterm>unique</glossterm> property with an arity of “exactly one”, and the value of the property is a child DMLex object. In this case, the object ID is the same as the object ID of the child object. (Note: this case actually does not occur in the specification as such; we list it here to streamline the description of the following cases.)</listitem>
-				<listitem>The object type has a single <glossterm>unique</glossterm> property with an arbitrary arity. In this case, all the partial single values or child object IDs are constructed according to the steps 1. and 2., and the resulting object ID is their concatenation using “_” (ASCII character 5F) as a separator. The order of the partial values is driven by the <literal>listingOrder</literal> of the respective objects. (Note: this allows empty IDs in case of <glossterm>unique</glossterm> attributes which allow the arity of zero.)</listitem>
-				<listitem>The object type has multiple <glossterm>unique</glossterm> properties. In this case, all the partial values or child object IDs are constructed according to the steps 1., 2. and 3., and the resulting object ID is their concatenation using “~” (ASCII character 5F) as a separator. The order of the partial values is driven by the order of the properties as given in this specification. (Note: this allows empty IDs in case of multiple <glossterm>unique</glossterm> attributes, all of them allowing the arity of zero.)</listitem>
+				<listitem>The object type has a single <glossterm>unique</glossterm> property with an arbitrary arity. In this case, all the partial single values or child object IDs are constructed according to the steps 1. and 2., and the resulting object ID is their concatenation using “_” (ASCII character 5F) as a separator. The order of the partial values is driven by the <literal>listingOrder</literal> of the respective objects. If this procedure returns an empty string (which can happen in case of <glossterm>unique</glossterm> attributes that allow the arity of zero), the string “0” (zero, ASCII character 30) is used instead of the empty string.</listitem>
+				<listitem>The object type has multiple <glossterm>unique</glossterm> properties. In this case, all the partial values or child object IDs are constructed according to the steps 1., 2. and 3., and the resulting object ID is their concatenation using “~” (ASCII character 5F) as a separator. The order of the partial values is driven by the order of the properties as given in this specification. (Note: all atributes marked as <glossterm>unique</glossterm> need to be represented in the ID, as empty values are replaced by “0” according to step 3. No empty IDs are allowed.)</listitem>
 			</orderedlist>
 
 			<para>DMLex does not define the structure of IRIs for object types without <glossterm>unique</glossterm> properties.</para>
@@ -112,8 +113,8 @@
 			<para>Particular IRI examples can then look as follows:</para>
 			<itemizedlist>
 				<listitem><literal>http://www.example.com/lexicon/entry/cat~1~noun</literal></listitem>
-				<listitem><literal>http://www.example.com/lexicon/entry/cat~1~noun/sense/small%20furry%20animal</literal></listitem>
-				<listitem><literal>http://www.example.com/lexicon/entry/cat~1~noun/sense/small%20furry%20animal/example/I%20have%20two%20dogs%20and%20a%20cat.</literal></listitem>
+				<listitem><literal>http://www.example.com/lexicon/entry/cat~1~noun/sense/0~small%20furry%20animal</literal> (In this case, we suppose that the sense's <literal>indicator</literal> is empty and it has one <literal>definition</literal> which says “small furry animal”).</listitem>
+				<listitem><literal>http://www.example.com/lexicon/entry/cat~1~noun/sense/0~small%20furry%20animal/example/I%20have%20two%20dogs%20and%20a%20cat.</literal></listitem>
 			</itemizedlist>
 		</section>
 	  </section>
