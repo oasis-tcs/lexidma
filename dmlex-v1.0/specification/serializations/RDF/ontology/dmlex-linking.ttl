@@ -149,4 +149,7 @@ dmlex:action a owl:DatatypeProperty ;
   rdfs:domain dmlex:MemberType ;
   rdfs:range xsd:string .
 
+dmlex:MemberType rdfs:subClassOf dmlex:HasSameAs .
+dmlex:RelationType rdfs:subClassOf dmlex:HasSameAs .
+dmlex:MemberType rdfs:subClassOf dmlex:HasSameAs .
 

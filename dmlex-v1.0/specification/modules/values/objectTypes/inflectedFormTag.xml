@@ -80,7 +80,7 @@
   dmlex:tag "..." ;
   dmlex:description "..." ;
   dmlex:for "..." ;
-  owl:sameAs ... ] .
+  dmlex:sameAs ... ] .
     </programlisting>
   </example>
   

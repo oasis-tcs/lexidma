@@ -127,7 +127,7 @@
   dmlex:min 0 ;
   dmlex:max 0 ;
   dmlex:hint "..." ;
-  owl:sameAs ... ] .
+  dmlex:sameAs ... ] .
       </programlisting>
   </example>
   <example>

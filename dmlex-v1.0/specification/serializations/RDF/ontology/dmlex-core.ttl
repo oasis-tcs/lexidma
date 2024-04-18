@@ -136,7 +136,8 @@ dmlex:HeadwordTranslation rdfs:subClassOf dmlex:HasPronunciation .
 dmlex:inflectedForm a owl:ObjectProperty ;
   rdfs:label "Inflected Form"@en ;
   rdfs:domain dmlex:HasInflectedForm ;
-  rdfs:range dmlex:InflectedForm .
+  rdfs:range dmlex:InflectedForm ;
+  rdfs:subPropertyOf ontolex:otherForm .
 
 dmlex:Entry rdfs:subClassOf dmlex:HasInflectedForm .
 dmlex:HeadwordTranslation rdfs:subClassOf dmlex:HasInflectedForm .

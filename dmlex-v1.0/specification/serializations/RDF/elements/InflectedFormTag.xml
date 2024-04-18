@@ -14,7 +14,7 @@
     <itemizedlist>
         <title>Properties</title>
     <listitem>
-        <para><literal>dmlex:inflectedForm</literal> OPTIONAL reference to <olink targetptr="rdf_InflectedForm">InflectedForm</olink></para>
+        <para><literal>dmlex:inflectedForm</literal> OPTIONAL reference to <olink targetptr="rdf_InflectedForm">InflectedForm</olink> (subproperty of <literal>http://www.w3.org/ns/lemon/ontolex#otherForm</literal>)</para>
     </listitem>
     <listitem>
         <para><literal>dmlex:tag</literal> REQUIRED (exactly 1)</para>
@@ -23,7 +23,10 @@
         <para><literal>dmlex:description</literal> OPTIONAL (at most 1) of type <literal>http://www.w3.org/2000/01/rdf-schema#Literal</literal></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:for</literal> OPTIONAL of type <literal>http://www.w3.org/2000/01/rdf-schema#Literal</literal></para>
+        <para><literal>dmlex:forPartOfSpeech</literal> OPTIONAL of type <literal>http://www.w3.org/2000/01/rdf-schema#Literal</literal></para>
+    </listitem>
+    <listitem>
+        <para><literal>dmlex:sameAs</literal> OPTIONAL</para>
     </listitem>
     </itemizedlist>
 

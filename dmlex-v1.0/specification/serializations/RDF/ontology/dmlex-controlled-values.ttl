@@ -219,3 +219,14 @@ dmlex:TranscriptionSchemeTag a owl:Class ;
     a owl:Restriction ;
     owl:onProperty dmlex:forTranslations ;
     owl:maxCardinality 1 ] .
+
+dmlex:sameAs a owl:ObjectProperty ;
+  rdfs:label "Same As"@en ;
+  rdfs:domain dmlex:HasSameAs .
+
+dmlex:DefinitionTypeTag rdfs:subClassOf dmlex:HasSameAs .
+dmlex:InflectedFormTag rdfs:subClassOf dmlex:HasSameAs .
+dmlex:LabelTag rdfs:subClassOf dmlex:HasSameAs .
+dmlex:PartOfSpeechTag rdfs:subClassOf dmlex:HasSameAs .
+dmlex:SourceIdentityTag rdfs:subClassOf dmlex:HasSameAs .
+

@@ -92,7 +92,7 @@
   dmlex:type "..." ;
   dmlex:scopeRestriction "..." ;
   dmlex:memberType ... ;
-  owl:sameAs ... ] .
+  dmlex:sameAs ... ] .
       </programlisting>
   </example>
   <example>
