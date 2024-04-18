@@ -1,3 +1,4 @@
+<!-- This example is automatically generated. DO NOT EDIT -->
 <programlisting>
 ex:aardvark-noun a dmlex:Entry;
   dmlex:pronunciation [ a dmlex:Pronunciation;

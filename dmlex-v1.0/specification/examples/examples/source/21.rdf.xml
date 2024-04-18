@@ -1,3 +1,4 @@
+<!-- This example is automatically generated. DO NOT EDIT -->
 <programlisting>
 ex:autopsy-1 a dmlex:Sense;
   dmlex:listingOrder "1"^^xsd:unsignedInt;
