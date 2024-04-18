@@ -4,8 +4,9 @@
         &lt;headword&gt;abandon&lt;/headword&gt;
             &lt;partOfSpeech tag="verb"/&gt;
         &lt;sense id="abandon-verb-1"&gt;
-            &lt;definition&gt;to suddenly leave a place or a person&lt;/definition&gt;
-
+            &lt;definition&gt;
+                &lt;text>to suddenly leave a place or a person&lt;/text>
+            &lt;/definition&gt;
             &lt;example&gt;
                 &lt;text&gt;I'm sorry I abandoned you like that.&lt;/text&gt;
             &lt;/example&gt;
@@ -16,7 +17,9 @@
         &lt;/sense&gt;
         &lt;sense id="abandon-verb-2"&gt;
             &lt;label tag="mostly-passive"/&gt;
-            &lt;definition&gt;to stop supporting an idea&lt;/definition&gt;
+            &lt;definition&gt;
+                &lt;text>to stop supporting an idea&lt;/text>
+            &lt;/definition&gt;
             &lt;example&gt;
                 &lt;text&gt;That theory has been abandoned.&lt;/text&gt;
             &lt;/example&gt;

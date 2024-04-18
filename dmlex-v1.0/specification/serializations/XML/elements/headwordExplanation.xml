@@ -7,22 +7,23 @@
                          ]>
 <section id="xml_headwordExplanation">
     <title>XML element: <literal>&lt;headwordExplanation&gt;</literal></title>
-    <para>Implements the <olink targetptr="xlingual_headwordExplanation">headwordExplanation</olink> object type from the Crosslingual Module.</para>
-
+    <para>Implements the <olink targetptr="xlingual_headwordExplanation">headwordExplanation</olink>
+        object type from the Crosslingual Module.</para>
     <itemizedlist>
         <title>Attributes</title>
         <listitem>
-            <para><literal>@langCode</literal> <glossterm>optional</glossterm> if the ancestor <literal>&lt;lexicographicResource&gt;</literal>
-                contains exactly one <literal>&lt;translationLanguage&gt;</literal>,
-                <glossterm>required</glossterm> otherwise</para>
+            <para><literal>@langCode</literal>
+                <glossterm>optional</glossterm> if the ancestor
+                    <literal>&lt;lexicographicResource&gt;</literal> contains exactly one
+                    <literal>&lt;translationLanguage&gt;</literal>, <glossterm>required</glossterm>
+                otherwise</para>
         </listitem>
     </itemizedlist>
-    
     <itemizedlist>
-        <title>Text content</title>
+        <title>Child elements</title>
         <listitem>
-            <para><glossterm>Required</glossterm>, implements the <literal>text</literal> property.</para>
+            <para><literal>&lt;text&gt;</literal>
+                <glossterm>required</glossterm> (exactly one).</para>
         </listitem>
     </itemizedlist>
-    
 </section>

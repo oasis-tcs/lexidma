@@ -29,11 +29,13 @@
     <title>XML</title>
     <programlisting>
 &lt;definition...&gt;
+  &lt;text>
     ...
     &lt;headwordMarker&gt;...&lt;/headwordMarker&gt;
     ...
     &lt;collocateMarker...&gt;...&lt;/collocateMarker&gt;
     ...
+  &lt;/text>
 &lt;/definition&gt;
     </programlisting>
   </example>

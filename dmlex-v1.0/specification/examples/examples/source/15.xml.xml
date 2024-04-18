@@ -5,9 +5,12 @@
         &lt;partOfSpeech tag="n"/&gt;
         &lt;label tag="europeanSpelling"/&gt;
         &lt;sense id="colour-1"&gt;
-            &lt;definition&gt;red, blue, yellow etc.&lt;/definition&gt;
-            &lt;example&gt;&lt;text&gt;What is your favourite colour?&lt;/text&gt;&lt;/example&gt;
-
+            &lt;definition&gt;
+                &lt;text>red, blue, yellow etc.&lt;/text>
+            &lt;/definition&gt;
+            &lt;example&gt;
+                &lt;text&gt;What is your favourite colour?&lt;/text&gt;
+            &lt;/example&gt;
         &lt;/sense&gt;
     &lt;/entry&gt;
     &lt;entry id="color"&gt;

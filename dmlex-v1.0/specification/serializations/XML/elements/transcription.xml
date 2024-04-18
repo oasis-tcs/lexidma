@@ -7,20 +7,20 @@
                          ]>
 <section id="xml_transcription">
     <title>XML element: <literal>&lt;transcription&gt;</literal></title>
-    <para>Implements the <olink targetptr="core_transcription">transcription</olink> object type.</para>
-
+    <para>Implements the <olink targetptr="core_transcription">transcription</olink> object
+        type.</para>
     <itemizedlist>
         <title>Attributes</title>
         <listitem>
-            <para><literal>@scheme</literal> <glossterm>optional</glossterm></para>
+            <para><literal>@scheme</literal>
+                <glossterm>optional</glossterm></para>
         </listitem>
     </itemizedlist>
-    
     <itemizedlist>
-        <title>Text content</title>
+        <title>Child elements</title>
         <listitem>
-            <para><glossterm>Required</glossterm>, implements the <literal>text</literal> property.</para>
+            <para><literal>&lt;text&gt;</literal>
+                <glossterm>required</glossterm> (exactly one).</para>
         </listitem>
     </itemizedlist>
-    
 </section>

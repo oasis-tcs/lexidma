@@ -2,7 +2,9 @@
 &lt;entry id="aardvark-noun"&gt;
     &lt;headword&gt;aardvark&lt;/headword&gt;
     &lt;pronunciation&gt;
-        &lt;transcription&gt;a:rdva:rk&lt;/transcription&gt;
+        &lt;transcription&gt;
+            &lt;text>a:rdva:rk&lt;/text>
+        &lt;/transcription&gt;
     &lt;/pronunciation&gt;
 &lt;/entry&gt;
 </programlisting>

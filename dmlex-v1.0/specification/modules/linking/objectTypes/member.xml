@@ -28,8 +28,9 @@
     </listitem>
     <listitem>
       <para><literal>role</literal>
-        <glossterm>optional</glossterm> (zero or one) and <glossterm>unique</glossterm> (in combination with other unique properties if present). Non-empty string. An indication of the role
-        the member has in this relation: whether it is the hypernym or the hyponym (in a
+        <glossterm>optional</glossterm> (zero or one) and <glossterm>unique</glossterm> (in
+        combination with other unique properties if present). Normalised string. An indication of
+        the role the member has in this relation: whether it is the hypernym or the hyponym (in a
         hyperonymy/hyponymy relation), or whether it is one of the synonyms (in a synonymy
         relation), and so on. You can use <code><olink targetptr="linking_memberType"
             >memberType</olink></code> objects to explain those roles and to constrain which

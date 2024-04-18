@@ -25,20 +25,22 @@
     <title>Properties</title>
     <listitem>
       <para><literal>text</literal>
-        <glossterm>required</glossterm> (exactly one) and <glossterm>unique</glossterm>. Non-empty string. The example itself.</para>
+        <glossterm>required</glossterm> (exactly one) and <glossterm>unique</glossterm>. Normalised
+        string. The example itself.</para>
     </listitem>
     <listitem>
       <para><literal>sourceIdentity</literal>
-        <glossterm>optional</glossterm> (zero or one). An abbreviation, a code or some other string
-        of text which identifies the source. The <code><olink targetptr="values_sourceIdentityTag"
-          >sourceIdentityTag</olink></code> object type can be used to explain the meaning of the source
-        identifiers, to constrain which source identifiers are allowed to occur in the lexicographic
-        resource, and to map them onto external inventories and ontologies.</para>
+        <glossterm>optional</glossterm> (zero or one). Normalised string. An abbreviation, a code or
+        some other string of text which identifies the source. The <code><olink
+            targetptr="values_sourceIdentityTag">sourceIdentityTag</olink></code> object type can be
+        used to explain the meaning of the source identifiers, to constrain which source identifiers
+        are allowed to occur in the lexicographic resource, and to map them onto external
+        inventories and ontologies.</para>
     </listitem>
     <listitem>
       <para><literal>sourceElaboration</literal>
-        <glossterm>optional</glossterm> (zero or one). Non-empty string. A free-form statement about
-        the source of the example. If <code>sourceIdentity</code> is present, then
+        <glossterm>optional</glossterm> (zero or one). Normalised string. A free-form statement
+        about the source of the example. If <code>sourceIdentity</code> is present, then
           <code>sourceElaboration</code> can be used for information about where in the source the
         example can be found: page number, chapter and so on. If <code>sourceIdentity</code> is
         absent then <code>sourceElaboration</code> can be used to fully name the source.</para>
@@ -49,8 +51,9 @@
     </listitem>
     <listitem>
       <para><literal>soundFile</literal>
-        <glossterm>optional</glossterm> (zero or one). A pointer to a file, such as a filename or a URI, containing a sound recording of the
-        example.</para>
+        <glossterm>optional</glossterm> (zero or one). An <emphasis>Internationalized Resource
+          Identifier</emphasis> (<link linkend="bib_rfc3987">IRI</link>) pointing to a file which
+        contains a sound recording of the example.</para>
     </listitem>
     <listitem>
       <para><literal>listingOrder</literal>

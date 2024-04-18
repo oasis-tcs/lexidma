@@ -23,7 +23,7 @@
     <title>Properties</title>
     <listitem>
       <para><literal>title</literal>
-        <glossterm>optional</glossterm> (zero or one). Non-empty string. A human-readable title of
+        <glossterm>optional</glossterm> (zero or one). Normalised string. A human-readable title of
         the lexicographic resource.</para>
     </listitem>
     <listitem>

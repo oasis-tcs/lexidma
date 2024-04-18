@@ -345,7 +345,7 @@
           including all the modules. An object type defined in one module is guaranteed not to
           name-conflict with another object type in another module.</para>
       </section>
-      <section>
+      <section id="modelProperties">
         <title>Properties</title>
         <para>For every object type, DMLex defines which properties it can have, whether the properties
           are required or optional, what their arities are (for example “zero or more”), and what
@@ -353,13 +353,33 @@
         <para>There are two kinds of properties: those that contain literal values and those that
           contain objects.</para>
         <para>Some properties are defined to contain literal values such as strings and numbers. The
-          following types of literal values are used in DMLex: <simplelist>
-            <member>non-empty string,</member>
-            <member>number,</member>
-            <member>unique identifier</member>
-            <member>and reference to a unique identifier</member>
-          </simplelist>
-        </para>
+          following types of literal values are used in DMLex:</para>
+        <itemizedlist>
+          <listitem>
+            <para>normalised string: a string that contains no new lines, does not start or end with a whitespace, contains no block of ASCII whitespace more than a single space and is non-empty.</para>
+          </listitem>
+          <listitem>
+            <para>number: including negative numbers and floating-point numbers</para>
+          </listitem>
+          <listitem>
+            <para>non-negative integer number</para>
+          </listitem>
+          <listitem>
+            <para>boolean: a true/false value</para>
+          </listitem>
+          <listitem>
+            <para>URI</para>
+          </listitem>
+          <listitem>
+            <para>IETF language code</para>
+          </listitem>
+          <listitem>
+            <para><link linkend="bib_rfc3987">IRI</link>: an Internationalized Resource Identifier</para>
+          </listitem>
+          <listitem>
+            <para>closed list of possible values</para>
+          </listitem>
+        </itemizedlist>
         <para>Some properties are defined to contain objects (of types defined in DMLex), for
           example an object of type <code>entry</code> can contain objects of type
             <code>sense</code>. In such cases, the name of the property is the same as the name of
