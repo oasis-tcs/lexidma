@@ -5,6 +5,7 @@ ex:beat-up-1 a dmlex:Sense;
           dmlex:startIndex "0"^^xsd:unsignedInt;
           dmlex:endIndex "8"^^xsd:unsignedInt ];
       dmlex:listingOrder "1"^^xsd:unsignedInt;
+      dmlex:langCode "de";
       dmlex:text "jemanden verprügeln" ];
   dmlex:listingOrder "1"^^xsd:unsignedInt.
 ex:beat-up a dmlex:Entry;

@@ -6,10 +6,12 @@
     "senses": [{
         "id": "treppenwitz-1",
         "headwordExplanations": [{
-            "text": "belated realisation of what one could have said"
+            "text": "belated realisation of what one could have said",
+            "langCode": "en"
         }],
         "headwordTranslations": [{
-            "text": "staircase wit"
+            "text": "staircase wit",
+            "langCode": "en"
         }]
     }]
 }

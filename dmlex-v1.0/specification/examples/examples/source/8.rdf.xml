@@ -7,11 +7,13 @@ ex:doctor-n-1 a dmlex:Sense;
   dmlex:headwordTranslation [ a dmlex:HeadwordTranslation;
       dmlex:text "Ärztin";
       dmlex:listingOrder "2"^^xsd:unsignedInt;
+      dmlex:langCode "de"
       dmlex:partOfSpeech [ 
           dmlex:tag "n-fem";
           dmlex:listingOrder "1"^^xsd:unsignedInt ] ],
     [ a dmlex:HeadwordTranslation;
       dmlex:listingOrder "1"^^xsd:unsignedInt;
+      dmlex:langCode "de";
       dmlex:text "Arzt";
       dmlex:partOfSpeech [ 
           dmlex:listingOrder "1"^^xsd:unsignedInt;
@@ -23,12 +25,14 @@ ex:doctor-n-2 a dmlex:Sense;
       dmlex:partOfSpeech [ 
           dmlex:listingOrder "1"^^xsd:unsignedInt;
           dmlex:tag "n-masc" ];
+      dmlex:langCode "de";
       dmlex:text "Doktor";
       dmlex:listingOrder "1"^^xsd:unsignedInt ],
     [ a dmlex:HeadwordTranslation;
       dmlex:partOfSpeech [ 
           dmlex:listingOrder "1"^^xsd:unsignedInt;
           dmlex:tag "n-fem" ];
+      dmlex:langCode "de";
       dmlex:listingOrder "2"^^xsd:unsignedInt;
       dmlex:text "Doktorin" ];
   dmlex:listingOrder "2"^^xsd:unsignedInt;

@@ -1,5 +1,6 @@
 <programlisting>
-&lt;lexicographicResource title="My Irish-Multilingual Dictionary" uri="http://example.com" langCode="ga"&gt;
+&lt;lexicographicResource title="My Irish-Multilingual Dictionary" 
+    uri="http://example.com" langCode="ga"&gt;
     &lt;translationLanguage langCode="en"/&gt;
     &lt;translationLanguage langCode="de"/&gt;
     &lt;translationLanguage langCode="cs"/&gt;

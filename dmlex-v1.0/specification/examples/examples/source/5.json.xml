@@ -24,10 +24,12 @@
     }],
     "inflectedFormTags": [{
         "tag": "sg-gen",
-        "description": "singular genitive"
+        "description": "singular genitive",
+        "for": "n-masc n-fem"
     }, {
         "tag": "pl",
-        "description": "plural"
+        "description": "plural",
+        "for": "n-masc n-fem"
     }]
 }
 </programlisting>

@@ -2,9 +2,11 @@
 ex:lexicon a dmlex:LexicographicResource;
   dmlex:inflectedFormTag [ a dmlex:InflectedFormTag;
       dmlex:description "singular genitive";
+      dmlex:for "n-masc n-fem" ;
       dmlex:tag "sg-gen" ],
     [ a dmlex:InflectedFormTag;
       dmlex:tag "pl";
+      dmlex:for "n-masc n-fem" ;
       dmlex:description "plural" ];
   dmlex:partOfSpeechTag [ a dmlex:PartOfSpeechTag;
       dmlex:tag "n-fem";
