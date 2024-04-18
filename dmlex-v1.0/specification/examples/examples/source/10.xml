@@ -1,0 +1,7 @@
+<lexicographicResource title="My Irish-Multilingual Dictionary" 
+    uri="http://example.com" langCode="ga">
+    <translationLanguage langCode="en"/>
+    <translationLanguage langCode="de"/>
+    <translationLanguage langCode="cs"/>
+</lexicographicResource>
+

@@ -1,0 +1,21 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dmlex: <http://www.oasis-open.org/to-be-confirmed/dmlex#>
+PREFIX ex: <http://www.example.com/#>
+
+ex:lexicon a dmlex:LexicographicResource;
+  dmlex:langCode "en";
+  dmlex:partOfSpeechTag [ a dmlex:PartOfSpeechTag;
+      dmlex:tag "n-masc";
+      dmlex:description "masculine noun";
+      dmlex:sameAs
+        <http://www.lexinfo.net/ontology/3.0/lexinfo#noun>,
+        <http://www.lexinfo.net/ontology/3.0/lexinfo#masculine> ],
+    [ a dmlex:PartOfSpeechTag;
+      dmlex:sameAs
+        <http://www.lexinfo.net/ontology/3.0/lexinfo#feminine>,
+        <http://www.lexinfo.net/ontology/3.0/lexinfo#noun>;
+      dmlex:tag "n-fem";
+      dmlex:description "feminine noun" ].
+

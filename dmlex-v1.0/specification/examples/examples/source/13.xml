@@ -1,0 +1,22 @@
+<lexicographicResource uri="http://example.com" langCode="en">
+    <entry id="buy">
+        <headword>buy</headword>
+        <sense id="buy-1">
+            <definition>get something by paying money for it</definition>
+        </sense>
+    </entry>
+    <entry id="sell">
+        <headword>sell</headword>
+        <sense id="sell-1">
+            <definition>exchange something for money</definition>
+        </sense>
+    </entry>
+    <relation type="antonyms">
+        <member ref="buy-1"/>
+        <member ref="sell-1"/>
+    </relation>
+    <relationType type="antonyms">
+        <memberType type="sense" min="2" max="2" hint="navigate"
+            role="obverse"/>
+    </relationType>
+</lexicographicResource>

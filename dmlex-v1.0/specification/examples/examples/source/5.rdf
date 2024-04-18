@@ -1,0 +1,31 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dmlex: <http://www.oasis-open.org/to-be-confirmed/dmlex#>
+PREFIX ex: <http://www.example.com/#>
+
+ex:lexicon a dmlex:LexicographicResource;
+  dmlex:inflectedFormTag [ a dmlex:InflectedFormTag;
+      dmlex:description "singular genitive";
+      dmlex:for "n-masc n-fem" ;
+      dmlex:tag "sg-gen" ],
+    [ a dmlex:InflectedFormTag;
+      dmlex:tag "pl";
+      dmlex:for "n-masc n-fem" ;
+      dmlex:description "plural" ];
+  dmlex:partOfSpeechTag [ a dmlex:PartOfSpeechTag;
+      dmlex:tag "n-fem";
+      dmlex:description "feminine noun" ],
+    [ a dmlex:PartOfSpeechTag;
+      dmlex:description "masculine noun";
+      dmlex:tag "n-masc" ];
+  dmlex:uri "http://example.com";
+  dmlex:langCode "ga";
+  dmlex:entry ex:folúsghlantóir-n.
+
+ex:folúsghlantóir-n a dmlex:Entry;
+  dmlex:partOfSpeech [ 
+      dmlex:listingOrder "1"^^xsd:unsignedInt;
+      dmlex:tag "n-masc" ];
+  dmlex:headword "folúsghlantóir".
+

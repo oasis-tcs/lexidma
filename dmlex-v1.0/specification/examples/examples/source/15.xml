@@ -1,0 +1,25 @@
+<lexicographicResource uri="http://example.com" langCode="en">
+    <entry id="colour">
+        <headword>colour</headword>
+        <partOfSpeech tag="n"/>
+        <label tag="europeanSpelling"/>
+        <sense id="colour-1">
+            <definition>red, blue, yellow etc.</definition>
+            <example><text>What is your favourite colour?</text></example>
+        </sense>
+    </entry>
+    <entry id="color">
+        <headword>color</headword>
+        <partOfSpeech tag="n"/>
+        <label tag="americanSpelling"/>
+    </entry>
+    <relation type="variants">
+        <member ref="colour"/>
+        <member ref="color"/>
+    </relation>
+    <relationType type="variants">
+        <description>words which differ only in spelling</description>
+        <memberType type="entry" min="2" hint="navigate"/>
+    </relationType>
+</lexicographicResource>
+

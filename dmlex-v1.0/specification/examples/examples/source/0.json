@@ -1,0 +1,29 @@
+{
+    "uri": "http://example.com",
+    "langCode": "en",
+    "title": "Example Dictionary",
+    "entries": [{
+        "id": "abandon-verb",
+        "headword": "abandon",
+        "partsOfSpeech": ["verb"],
+        "senses": [{
+            "id": "abandon-verb-1",
+            "definitions": [{
+                "text": "to suddenly leave a place or a person"
+            }],
+            "examples": [{
+                "text": "I'm sorry I abandoned you like that."
+            }, {
+            "text": "Abandon ship!",
+            "labels": ["idiom"]
+            }]
+        }, {
+            "id": "abandon-verb-2",
+            "labels": ["mostly-passive"],
+            "definitions": [{"text":"to stop supporting an idea"}],
+            "examples": [{
+                "text": "That theory has been abandoned."
+            }]
+        }]
+    }]
+}

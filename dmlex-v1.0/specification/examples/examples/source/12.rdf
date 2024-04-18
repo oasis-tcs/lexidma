@@ -1,0 +1,79 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dmlex: <http://www.oasis-open.org/to-be-confirmed/dmlex#>
+PREFIX ex: <http://www.example.com/#>
+
+ex:lexicon a dmlex:LexicographicResource;
+  dmlex:entry ex:microscope,
+    ex:lens,
+    ex:glasses;
+  dmlex:relationType [ a dmlex:RelationType;
+      dmlex:memberType [ a dmlex:MemberType;
+          dmlex:min "1"^^xsd:unsignedInt;
+          dmlex:type dmlex:sense;
+          dmlex:hint dmlex:navigate;
+          dmlex:max "1"^^xsd:unsignedInt;
+          dmlex:role "part" ],
+        [ a dmlex:MemberType;
+          dmlex:max "1"^^xsd:unsignedInt;
+          dmlex:type dmlex:sense;
+          dmlex:role "whole";
+          dmlex:min "1"^^xsd:unsignedInt;
+          dmlex:hint dmlex:navigate ];
+      dmlex:description "part-whole relationship";
+      dmlex:type "meronymy" ];
+  dmlex:relation [ a dmlex:Relation;
+      dmlex:member [ a dmlex:Member;
+          dmlex:listingOrder "1"^^xsd:unsignedInt;
+          dmlex:ref "microscope-1";
+          dmlex:role "whole" ],
+        [ a dmlex:Member;
+          dmlex:role "part";
+          dmlex:listingOrder "2"^^xsd:unsignedInt;
+          dmlex:ref "lens-1" ];
+      dmlex:type "meronymy";
+      dmlex:listingOrder "2"^^xsd:unsignedInt ],
+    [ a dmlex:Relation;
+      dmlex:type "meronymy";
+      dmlex:member [ a dmlex:Member;
+          dmlex:ref "glasses-1";
+          dmlex:listingOrder "1"^^xsd:unsignedInt;
+          dmlex:role "whole" ],
+        [ a dmlex:Member;
+          dmlex:role "part";
+          dmlex:listingOrder "2"^^xsd:unsignedInt;
+          dmlex:ref "lens-1" ];
+      dmlex:listingOrder "1"^^xsd:unsignedInt ];
+  dmlex:langCode "en";
+  dmlex:uri "http://example.com".
+
+ex:glasses a dmlex:Entry;
+  dmlex:headword "glasses";
+  dmlex:sense ex:glasses-1.
+
+ex:glasses-1 a dmlex:Sense;
+  dmlex:definition [ a dmlex:Definition;
+      dmlex:listingOrder "1"^^xsd:unsignedInt;
+      dmlex:text "an optical seeing aid" ];
+  dmlex:listingOrder "1"^^xsd:unsignedInt.
+
+ex:lens a dmlex:Entry;
+  dmlex:sense ex:lens-1;
+  dmlex:headword "lens".
+
+ex:lens-1 a dmlex:Sense;
+  dmlex:definition [ a dmlex:Definition;
+      dmlex:text "curved glass that makes things seem bigger";
+      dmlex:listingOrder "1"^^xsd:unsignedInt ];
+  dmlex:listingOrder "1"^^xsd:unsignedInt.
+
+ex:microscope a dmlex:Entry;
+  dmlex:sense ex:microscope-1;
+  dmlex:headword "microscope".
+
+ex:microscope-1 a dmlex:Sense;
+  dmlex:definition [ a dmlex:Definition;
+      dmlex:text "equipment for looking at very small things";
+      dmlex:listingOrder "1"^^xsd:unsignedInt ];
+  dmlex:listingOrder "1"^^xsd:unsignedInt.

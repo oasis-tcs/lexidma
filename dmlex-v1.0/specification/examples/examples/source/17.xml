@@ -1,0 +1,36 @@
+<lexicographicResource uri="http://example.com" langCode="en">
+    <entry id="safe">
+        <headword>safe</headword>
+        <sense id="safe-1">
+            <indicator>protected from harm</indicator>
+            <example>
+                <text>It isn't safe to park here.</text>
+            </example>
+        </sense>
+        <sense id="safe-2">
+            <indicator>not likely to cause harm</indicator>
+            <example>
+                <text>Is the ride safe for a small child?</text>
+            </example>
+        </sense>
+    </entry>
+    <entry id="better-safe">
+        <headword>better safe than sorry</headword>
+        <sense id="better-safe-1">
+            <definition>
+                you should be careful even if it seems unnecessary
+            </definition>
+        </sense>
+    </entry>
+    <relation type="subentrying">
+        <member ref="safe-1" role="container"/>
+        <member ref="better-safe" role="subentry"/>
+    </relation>
+    <relationType type="subentrying" scopeRestriction="sameResource">
+        <memberType role="container" type="sense" min="1" max="1" 
+            hint="navigate"/>
+        <memberType role="subentry" type="entry" min="1" max="1" 
+            hint="embed"/>
+    </relationType>
+</lexicographicResource>
+

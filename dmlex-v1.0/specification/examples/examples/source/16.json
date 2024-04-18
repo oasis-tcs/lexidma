@@ -1,0 +1,60 @@
+{
+    "uri": "http://example.com",
+    "langCode": "en",
+    "entries": [{
+        "id": "colour",
+        "headword": "colour",
+        "senses": [{
+            "id": "colour-1",
+            "definitions": [{"text": "red, blue, yellow etc."}],
+            "examples": [{"text": 
+                "What is your favourite colour?"}]
+        }, {
+            "id": "colour-2",
+            "definitions": [{"text": "not being black and white"}],
+            "examples": [{"text": 
+                "Owning a colour TV meant you were rich."}]
+        }, {
+            "id": "colour-3",
+            "definitions": [{"text": "a sign of a person's race"}],
+            "examples": [{"text": 
+                "People of all creeds and colours."}]
+        }, {
+            "id": "colour-4",
+            "definitions": [{"text": "interest or excitement"}],
+            "examples": [{"text": 
+                "Examples add colour to your writing."}]
+        }]
+    }],
+    "relations": [{
+        "type": "subsensing",
+        "members": [
+          {"role": "super", "ref": "colour-1"},
+          {"role": "sub", "ref": "colour-2"} 
+        ]
+    }, {
+        "type": "subsensing",
+        "members": [
+          {"role": "super", "ref": "colour-1"}, 
+          {"role": "sub", "ref": "colour-3"}
+        ]
+    }],
+    "relationTypes": [{
+        "type": "subsensing",
+        "scopeRestriction": "sameEntry",
+        "memberTypes": [{
+            "role": "super",
+            "type": "sense",
+            "min": 1,
+            "max": 1,
+            "hint": "none"
+        }, {
+            "role": "sub",
+            "type": "sense",
+            "min": 1,
+            "max": 1,
+            "hint": "embed"
+        }]
+    }]
+}
+

@@ -1,0 +1,13 @@
+<entry id="autopsy">
+    <headword>autopsy</headword>
+    <sense id="autopsy-1">
+        <headwordTranslation><text>pitva</text></headwordTranslation>
+        <example>
+            <text>The coroner <collocateMarker lemma="perform">performed</collocateMarker > an <headwordMarker>autopsy</headwordMarker>.</text>
+            <exampleTranslation>
+                <text>Koroner <collocateMarker lemma="provést">provedl</collocateMarker> <headwordMarker>pitvu</headwordMarker>.</text>
+            </exampleTranslation>
+        </example>
+    </sense>
+</entry>
+

@@ -1,0 +1,36 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dmlex: <http://www.oasis-open.org/to-be-confirmed/dmlex#>
+PREFIX ex: <http://www.example.com/#>
+
+ex:cat-n a dmlex:Entry;
+  dmlex:etymology [ a dmlex:Etymology;
+      dmlex:etymon [ a dmlex:Etymon;
+          dmlex:listingOrder "1"^^xsd:unsignedInt;
+          dmlex:etymonUnit [ a dmlex:EtymonUnit;
+              dmlex:listingOrder "1"^^xsd:unsignedInt;
+              dmlex:text "catte";
+              dmlex:langCode "enm" ] ],
+        [ a dmlex:Etymon;
+          dmlex:listingOrder "3"^^xsd:unsignedInt;
+          dmlex:etymonUnit [ a dmlex:EtymonUnit;
+              dmlex:listingOrder "1"^^xsd:unsignedInt;
+              dmlex:text "kattuz";
+              dmlex:reconstructed true;
+              dmlex:langCode "gem-x-proto" ] ],
+        [ a dmlex:Etymon;
+          dmlex:listingOrder "2"^^xsd:unsignedInt;
+          dmlex:etymonUnit [ a dmlex:EtymonUnit;
+              dmlex:listingOrder "2"^^xsd:unsignedInt;
+              dmlex:text "catte";
+              dmlex:translation "female cat";
+              dmlex:langCode "ang" ],
+            [ a dmlex:EtymonUnit;
+              dmlex:text "catt";
+              dmlex:langCode "ang";
+              dmlex:translation "male cat";
+              dmlex:listingOrder "1"^^xsd:unsignedInt ] ];
+      dmlex:listingOrder "1"^^xsd:unsignedInt ];
+  dmlex:headword "cat".
+

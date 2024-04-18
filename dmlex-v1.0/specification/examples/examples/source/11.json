@@ -1,0 +1,32 @@
+{
+    "id": "fómhar-n",
+    "headword": "fómhar",
+    "senses": [{
+        "id": "fómhar-n-1",
+        "headwordTranslations": [{
+            "langCode": "en",
+            "text": "autumn"
+        }, {
+            "langCode": "en",
+            "text": "fall"
+        }, {
+            "langCode": "de",
+            "text": "Herbst"
+        }, {
+            "langCode": "cs",
+            "text": "podzim"
+        }]
+    }, {
+        "id": "fómhar-n-2",
+        "headwordTranslations": [{
+            "langCode": "en",
+            "text": "harvest"
+        }, {
+            "langCode": "de",
+            "text": "Ernte"
+        }, {
+            "langCode": "cs",
+            "text": "sklizeň"
+        }]
+    }]
+}
