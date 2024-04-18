@@ -12,6 +12,8 @@ from glob import glob
 N = 74
 
 for f in glob("source/*.xml"):
+    if f.endswith(".xml.xml") or f.endswith(".rdf.xml") or f.endswith(".json.xml"):
+        continue
     with open(f) as inf:
         with open(f + ".xml", "w") as outf:
             outf.write("<programlisting>\n")

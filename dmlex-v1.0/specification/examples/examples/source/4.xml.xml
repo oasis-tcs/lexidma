@@ -3,7 +3,7 @@
     &lt;headword&gt;aardvark&lt;/headword&gt;
     &lt;pronunciation soundFile="aardvark.mp3"&gt;
         &lt;transcription&gt;
-            &lt;text>a:rdva:rk&lt;/text>
+            &lt;text&gt;a:rdva:rk&lt;/text&gt;
         &lt;/transcription&gt;
     &lt;/pronunciation&gt;
 &lt;/entry&gt;

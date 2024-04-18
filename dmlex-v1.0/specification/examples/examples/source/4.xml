@@ -1,6 +1,8 @@
 <entry id="aardvark-noun">
     <headword>aardvark</headword>
     <pronunciation soundFile="aardvark.mp3">
-        <transcription>a:rdva:rk</transcription>
+        <transcription>
+            <text>a:rdva:rk</text>
+        </transcription>
     </pronunciation>
 </entry>

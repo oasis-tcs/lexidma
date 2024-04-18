@@ -4,7 +4,7 @@
         &lt;headword&gt;glasses&lt;/headword&gt;
         &lt;sense id="glasses-1"&gt;
             &lt;definition&gt;
-                &lt;text>an optical seeing aid&lt;/text>
+                &lt;text&gt;an optical seeing aid&lt;/text&gt;
             &lt;/definition&gt;
         &lt;/sense&gt;
     &lt;/entry&gt;
@@ -12,7 +12,7 @@
         &lt;headword&gt;microscope&lt;/headword&gt;
         &lt;sense id="microscope-1"&gt;
             &lt;definition&gt;
-                &lt;text>equipment for looking at very small things&lt;/text>
+                &lt;text&gt;equipment for looking at very small things&lt;/text&gt;
             &lt;/definition&gt;
         &lt;/sense&gt;
     &lt;/entry&gt;
@@ -20,7 +20,7 @@
         &lt;headword&gt;lens&lt;/headword&gt;
         &lt;sense id="lens-1"&gt;
             &lt;definition&gt;
-                    &lt;text>curved glass that makes things seem bigger&lt;/text>
+                &lt;text&gt;curved glass that makes things seem bigger&lt;/text&gt;
             &lt;/definition&gt;
         &lt;/sense&gt;
     &lt;/entry&gt;

@@ -4,7 +4,7 @@
         &lt;headword&gt;colour&lt;/headword&gt;
         &lt;sense id="colour-1"&gt;
             &lt;definition&gt;
-                &lt;text>red, blue, yellow etc.&lt;/text>
+                &lt;text&gt;red, blue, yellow etc.&lt;/text&gt;
             &lt;/definition&gt;
             &lt;example&gt;
                 &lt;text&gt;What is your favourite colour?&lt;/text&gt;
@@ -12,7 +12,7 @@
         &lt;/sense&gt;
         &lt;sense id="colour-2"&gt;
             &lt;definition&gt;
-                &lt;text>not being black and white&lt;/text>
+                &lt;text&gt;not being black and white&lt;/text&gt;
             &lt;/definition&gt;
             &lt;example&gt;
                 &lt;text&gt;Owning a colour TV meant you were rich.&lt;/text&gt;
@@ -20,7 +20,7 @@
         &lt;/sense&gt;
         &lt;sense id="colour-3"&gt;
             &lt;definition&gt;
-                &lt;text>a sign of a person's race&lt;/text>
+                &lt;text&gt;a sign of a person's race&lt;/text&gt;
             &lt;/definition&gt;
             &lt;example&gt;
                 &lt;text&gt;People of all creeds and colours.&lt;/text&gt;
@@ -28,7 +28,7 @@
         &lt;/sense&gt;
         &lt;sense id="colour-4"&gt;
             &lt;definition&gt;
-                &lt;text>interest or excitement&lt;/text>
+                &lt;text&gt;interest or excitement&lt;/text&gt;
             &lt;/definition&gt;
             &lt;example&gt;
                 &lt;text&gt;Examples add colour to your writing.&lt;/text&gt;

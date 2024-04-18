@@ -3,7 +3,7 @@
         <headword>the Bible</headword>
         <sense id="the-bible-1">
             <definition>
-                the book considered holy by Christians
+                <text>the book considered holy by Christians</text>
             </definition>
         </sense>
     </entry>
@@ -12,7 +12,7 @@
         <sense id="bible-1"/>
         <sense id="bible-2">
             <definition>
-                a book considered important for a subject
+                <text>a book considered important for a subject</text>
             </definition>
         </sense>
     </entry>

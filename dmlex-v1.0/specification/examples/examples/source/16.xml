@@ -2,25 +2,33 @@
     <entry id="colour">
         <headword>colour</headword>
         <sense id="colour-1">
-            <definition>red, blue, yellow etc.</definition>
+            <definition>
+                <text>red, blue, yellow etc.</text>
+            </definition>
             <example>
                 <text>What is your favourite colour?</text>
             </example>
         </sense>
         <sense id="colour-2">
-            <definition>not being black and white</definition>
+            <definition>
+                <text>not being black and white</text>
+            </definition>
             <example>
                 <text>Owning a colour TV meant you were rich.</text>
             </example>
         </sense>
         <sense id="colour-3">
-            <definition>a sign of a person's race</definition>
+            <definition>
+                <text>a sign of a person's race</text>
+            </definition>
             <example>
                 <text>People of all creeds and colours.</text>
             </example>
         </sense>
         <sense id="colour-4">
-            <definition>interest or excitement</definition>
+            <definition>
+                <text>interest or excitement</text>
+            </definition>
             <example>
                 <text>Examples add colour to your writing.</text>
             </example>

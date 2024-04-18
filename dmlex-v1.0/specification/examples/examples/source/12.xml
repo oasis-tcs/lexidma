@@ -2,14 +2,16 @@
     <entry id="glasses">
         <headword>glasses</headword>
         <sense id="glasses-1">
-            <definition>an optical seeing aid</definition>
+            <definition>
+                <text>an optical seeing aid</text>
+            </definition>
         </sense>
     </entry>
     <entry id="microscope">
         <headword>microscope</headword>
         <sense id="microscope-1">
             <definition>
-                equipment for looking at very small things
+                <text>equipment for looking at very small things</text>
             </definition>
         </sense>
     </entry>
@@ -17,7 +19,7 @@
         <headword>lens</headword>
         <sense id="lens-1">
             <definition>
-                    curved glass that makes things seem bigger
+                <text>curved glass that makes things seem bigger</text>
             </definition>
         </sense>
     </entry>

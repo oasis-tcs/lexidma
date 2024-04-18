@@ -4,8 +4,12 @@
         <partOfSpeech tag="n"/>
         <label tag="europeanSpelling"/>
         <sense id="colour-1">
-            <definition>red, blue, yellow etc.</definition>
-            <example><text>What is your favourite colour?</text></example>
+            <definition>
+                <text>red, blue, yellow etc.</text>
+            </definition>
+            <example>
+                <text>What is your favourite colour?</text>
+            </example>
         </sense>
     </entry>
     <entry id="color">
