@@ -1,0 +1,16 @@
+<lexicographicResource langCode="en">
+    <partOfSpeechTag tag="n-masc">
+        <description>masculine noun</description>
+        <sameAs 
+            uri="http://www.lexinfo.net/ontology/3.0/lexinfo#noun"/>
+        <sameAs 
+            uri="http://www.lexinfo.net/ontology/3.0/lexinfo#masculine"/>
+    </partOfSpeechTag>
+    <partOfSpeechTag tag="n-fem">
+        <description>feminine noun</description>
+        <sameAs 
+            uri="http://www.lexinfo.net/ontology/3.0/lexinfo#noun"/>
+        <sameAs 
+            uri="http://www.lexinfo.net/ontology/3.0/lexinfo#feminine"/>
+    </partOfSpeechTag>
+</lexicographicResource>

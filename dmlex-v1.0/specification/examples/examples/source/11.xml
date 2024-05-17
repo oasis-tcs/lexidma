@@ -1,0 +1,29 @@
+<entry id="fómhar-n">
+    <headword>fómhar</headword>
+    <sense id="fómhar-n-1">
+        <headwordTranslation langCode="en">
+            <text>autumn</text>
+        </headwordTranslation>
+        <headwordTranslation langCode="en">
+            <text>fall</text>
+        </headwordTranslation>
+        <headwordTranslation langCode="de">
+            <text>Herbst</text>
+        </headwordTranslation>
+        <headwordTranslation langCode="cs">
+            <text>podzim</text>
+        </headwordTranslation>
+    </sense>
+    <sense id="fómhar-n-2">
+        <headwordTranslation langCode="en">
+            <text>harvest</text>
+        </headwordTranslation>
+        <headwordTranslation langCode="de">
+            <text>Ernte</text>
+        </headwordTranslation>
+        <headwordTranslation langCode="cs">
+            <text>sklizeň</text>
+        </headwordTranslation>
+    </sense>
+</entry>
+

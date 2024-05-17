@@ -1,0 +1,29 @@
+<lexicographicResource title="Example Dictionary" 
+    uri="http://example.com" langCode="en">
+    <entry id="abandon-verb">
+        <headword>abandon</headword>
+            <partOfSpeech tag="verb"/>
+        <sense id="abandon-verb-1">
+            <definition>
+                <text>to suddenly leave a place or a person</text>
+            </definition>
+            <example>
+                <text>I'm sorry I abandoned you like that.</text>
+            </example>
+            <example>
+                <text>Abandon ship!</text>
+                <label tag="idiom"/>
+            </example>
+        </sense>
+        <sense id="abandon-verb-2">
+            <label tag="mostly-passive"/>
+            <definition>
+                <text>to stop supporting an idea</text>
+            </definition>
+            <example>
+                <text>That theory has been abandoned.</text>
+            </example>
+        </sense>
+    </entry>
+</lexicographicResource>
+

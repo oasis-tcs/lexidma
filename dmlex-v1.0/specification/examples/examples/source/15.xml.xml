@@ -1,3 +1,4 @@
+<!-- This example is automatically generated. DO NOT EDIT -->
 <programlisting>
 &lt;lexicographicResource uri="http://example.com" langCode="en"&gt;
     &lt;entry id="colour"&gt;
@@ -6,7 +7,7 @@
         &lt;label tag="europeanSpelling"/&gt;
         &lt;sense id="colour-1"&gt;
             &lt;definition&gt;
-                &lt;text>red, blue, yellow etc.&lt;/text>
+                &lt;text&gt;red, blue, yellow etc.&lt;/text&gt;
             &lt;/definition&gt;
             &lt;example&gt;
                 &lt;text&gt;What is your favourite colour?&lt;/text&gt;

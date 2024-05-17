@@ -1,0 +1,16 @@
+{
+    "id": "treppenwitz",
+    "headword": "Treppenwitz",
+    "partsOfSpeech": ["n-masc"],
+    "senses": [{
+        "id": "treppenwitz-1",
+        "headwordExplanations": [{
+            "text": "belated realisation of what one could have said",
+            "langCode": "en"
+        }],
+        "headwordTranslations": [{
+            "text": "staircase wit",
+            "langCode": "en"
+        }]
+    }]
+}

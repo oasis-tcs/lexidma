@@ -1,0 +1,26 @@
+<entry id="cat-n">
+    <headword>cat</headword>
+    <etymology>
+        <etymon>
+            <etymonUnit langCode="enm">
+                <text>catte</text>
+            </etymonUnit>
+        </etymon>
+        <etymon>
+            <etymonUnit langCode="ang">
+                <text>catt</text>
+                <translation>male cat</translation>
+            </etymonUnit>
+            <etymonUnit langCode="ang">
+                <text>catte</text>
+                <translation>female cat</translation>
+            </etymonUnit>
+        </etymon>
+        <etymon>
+            <etymonUnit langCode="gem-x-proto" reconstructed="true">
+                <text>kattuz</text>
+            </etymonUnit>
+        </etymon>
+    </etymology>
+</entry>
+

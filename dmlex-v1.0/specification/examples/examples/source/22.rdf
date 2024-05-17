@@ -1,0 +1,35 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dmlex: <http://www.oasis-open.org/to-be-confirmed/dmlex#>
+PREFIX ex: <http://www.example.com/#>
+
+ex:autopsy a dmlex:Entry;
+  dmlex:sense ex:autopsy-1;
+  dmlex:headword "autopsy".
+
+ex:autopsy-1 a dmlex:Sense;
+  dmlex:headwordTranslation [ a dmlex:HeadwordTranslation;
+      dmlex:listingOrder "1"^^xsd:unsignedInt;
+      dmlex:text "pitva" ];
+  dmlex:listingOrder "1"^^xsd:unsignedInt;
+  dmlex:example [ a dmlex:Example;
+      dmlex:headwordMarker [ 
+          dmlex:startIndex "25"^^xsd:unsignedInt;
+          dmlex:endIndex "32"^^xsd:unsignedInt ];
+      dmlex:text "The coroner performed an autopsy.";
+      dmlex:listingOrder "1"^^xsd:unsignedInt;
+      dmlex:exampleTranslation [ a dmlex:ExampleTranslation;
+          dmlex:collocateMarker [ 
+              dmlex:endIndex "15"^^xsd:unsignedInt;
+              dmlex:startIndex "8"^^xsd:unsignedInt;
+              dmlex:lemma "provést" ];
+          dmlex:listingOrder "1"^^xsd:unsignedInt;
+          dmlex:headwordMarker [ 
+              dmlex:endIndex "21"^^xsd:unsignedInt;
+              dmlex:startIndex "16"^^xsd:unsignedInt ];
+          dmlex:text "Koroner provedl pitvu." ];
+      dmlex:collocateMarker [ 
+          dmlex:endIndex "21"^^xsd:unsignedInt;
+          dmlex:lemma "perform";
+          dmlex:startIndex "12"^^xsd:unsignedInt ] ].

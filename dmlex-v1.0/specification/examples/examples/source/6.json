@@ -1,0 +1,18 @@
+{
+    "langCode": "en",
+    "partOfSpeechTags": [{
+        "tag": "n-masc",
+        "description": "masculine noun",
+        "sameAs": [
+            "http://www.lexinfo.net/ontology/3.0/lexinfo#noun",
+            "http://www.lexinfo.net/ontology/3.0/lexinfo#masculine"
+        ]
+        }, {
+        "tag": "n-fem",
+        "description": "feminine noun",
+        "sameAs": [
+            "http://www.lexinfo.net/ontology/3.0/lexinfo#noun",
+            "http://www.lexinfo.net/ontology/3.0/lexinfo#feminine"
+        ]
+    }]
+}

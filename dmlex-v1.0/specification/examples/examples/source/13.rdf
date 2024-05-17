@@ -1,0 +1,49 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dmlex: <http://www.oasis-open.org/to-be-confirmed/dmlex#>
+PREFIX ex: <http://www.example.com/#>
+
+[] a dmlex:LexicographicResource;
+  dmlex:uri "http://example.com";
+  dmlex:langCode "en";
+  dmlex:relationType [ a dmlex:RelationType;
+      dmlex:type "antonyms";
+      dmlex:memberType [ a dmlex:MemberType;
+          dmlex:type dmlex:sense;
+          dmlex:max "2"^^xsd:unsignedInt;
+          dmlex:min "2"^^xsd:unsignedInt;
+          dmlex:role "obverse";
+          dmlex:hint dmlex:navigate ] ];
+  dmlex:entry ex:buy,
+    ex:sell;
+  dmlex:relation [ a dmlex:Relation;
+      dmlex:type "antonyms";
+      dmlex:member [ a dmlex:Member;
+          dmlex:ref "sell-1";
+          dmlex:listingOrder "2"^^xsd:unsignedInt ],
+        [ a dmlex:Member;
+          dmlex:ref "buy-1";
+          dmlex:listingOrder "1"^^xsd:unsignedInt ];
+      dmlex:listingOrder "1"^^xsd:unsignedInt ].
+
+ex:sell a dmlex:Entry;
+  dmlex:headword "sell";
+  dmlex:sense ex:sell-1.
+
+ex:sell-1 a dmlex:Sense;
+  dmlex:definition [ a dmlex:Definition;
+      dmlex:text "exchange something for money";
+      dmlex:listingOrder "1"^^xsd:unsignedInt ];
+  dmlex:listingOrder "1"^^xsd:unsignedInt.
+
+ex:buy a dmlex:Entry;
+  dmlex:sense ex:buy-1;
+  dmlex:headword "buy".
+
+ex:buy-1 a dmlex:Sense;
+  dmlex:listingOrder "1"^^xsd:unsignedInt;
+  dmlex:definition [ a dmlex:Definition;
+      dmlex:text "get something by paying money for it";
+      dmlex:listingOrder "1"^^xsd:unsignedInt ].
+

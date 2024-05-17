@@ -1,0 +1,62 @@
+{
+    "uri": "http://example.com",
+    "langCode": "en",
+    "entries": [{
+        "id": "glasses",
+        "headword": "glasses",
+        "senses": [{
+            "id": "glasses-1",
+            "definitions": [{"text": "an optical seeing aid"}]
+        }]}, {
+        "id": "microscope",
+        "headword": "microscope",
+        "senses": [{
+            "id": "microscope-1",
+            "definitions": [{"text": 
+                "equipment for looking at very small things"}]
+        }]}, {
+        "id": "lens",
+        "headword": "lens",
+        "senses": [{
+            "id": "lens-1",
+            "definitions": [{"text": 
+                "curved glass that makes things seem bigger"}]
+        }]
+    }],
+    "relations": [{
+        "type": "meronymy",
+        "members": [{
+            "ref": "glasses-1",
+            "role": "whole"
+        }, {
+            "ref": "lens-1",
+            "role": "part"
+        }]
+    }, {
+        "type": "meronymy",
+        "members": [{
+            "ref": "microscope-1",
+            "role": "whole"
+        }, {
+            "ref": "lens-1",
+            "role": "part"
+        }]
+    }],
+    "relationTypes": [{
+        "type": "meronymy",
+        "description": "part-whole relationship",
+        "memberTypes": [{
+            "role": "whole",
+            "type": "sense",
+            "min": 1,
+            "max": 1,
+            "hint": "navigate"
+        }, {
+            "role": "part",
+            "type": "sense",
+            "min": 1,
+            "max": 1,
+            "hint": "navigate"
+        }]
+    }]
+}

@@ -1,0 +1,16 @@
+<entry id="treppenwitz">
+    <headword>Treppenwitz</headword>
+    <partOfSpeech tag="n-masc"/>
+    <sense id="treppenwitz-1">
+        <headwordExplanation langCode="en">
+            <text>
+                belated realisation of what one
+                could have said
+            </text>
+        </headwordExplanation>
+        <headwordTranslation langCode="en">
+            <text>staircase wit</text>
+        </headwordTranslation>
+    </sense>
+</entry>
+

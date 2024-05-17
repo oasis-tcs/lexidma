@@ -1,19 +1,20 @@
+<!-- This example is automatically generated. DO NOT EDIT -->
 <programlisting>
 &lt;lexicographicResource uri="http://example.com" langCode="en"&gt;
     &lt;entry id="buy"&gt;
         &lt;headword&gt;buy&lt;/headword&gt;
         &lt;sense id="buy-1"&gt;
             &lt;definition&gt;
-                &lt;text>get something by paying money for it&lt;/text>
-             &lt;/definition&gt;
+                &lt;text&gt;get something by paying money for it&lt;/text&gt;
+            &lt;/definition&gt;
         &lt;/sense&gt;
     &lt;/entry&gt;
     &lt;entry id="sell"&gt;
         &lt;headword&gt;sell&lt;/headword&gt;
         &lt;sense id="sell-1"&gt;
             &lt;definition&gt;
-                &lt;text>exchange something for money&lt;/text>
-             &lt;/definition&gt;
+                &lt;text&gt;exchange something for money&lt;/text&gt;
+            &lt;/definition&gt;
         &lt;/sense&gt;
     &lt;/entry&gt;
     &lt;relation type="antonyms"&gt;

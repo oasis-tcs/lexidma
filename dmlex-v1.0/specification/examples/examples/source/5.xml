@@ -1,0 +1,24 @@
+<lexicographicResource uri="http://example.com" langCode="ga">
+    <entry id="folúsghlantóir-n">
+        <headword>folúsghlantóir</headword>
+        <partOfSpeech tag="n-masc"/>
+        <inflectedForm tag="sg-gen">
+            <text>folúsghlantóra</text>
+        </inflectedForm>
+        <inflectedForm tag="pl">
+            <text>folúsghlantóirí</text>
+        </inflectedForm>
+    </entry>
+    <inflectedFormTag tag="sg-gen" for="n-masc n-fem">
+        <description>singular genitive</description>
+    </inflectedFormTag>
+    <inflectedFormTag tag="pl" for="n-masc n-fem">
+        <description>plural</description>
+    </inflectedFormTag>
+    <partOfSpeechTag tag="n-masc">
+        <description>masculine noun</description>
+    </partOfSpeechTag>
+    <partOfSpeechTag tag="n-fem">
+        <description>feminine noun</description>
+    </partOfSpeechTag>
+</lexicographicResource>

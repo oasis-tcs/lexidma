@@ -1,0 +1,6 @@
+{
+    "title": "My German-English Dictionary",
+    "uri": "http://example.com",
+    "langCode": "de",
+    "translationLanguages": ["en"]
+}

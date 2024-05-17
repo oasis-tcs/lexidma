@@ -1,14 +1,15 @@
+<!-- This example is automatically generated. DO NOT EDIT -->
 <programlisting>
 &lt;entry id="treppenwitz"&gt;
     &lt;headword&gt;Treppenwitz&lt;/headword&gt;
     &lt;partOfSpeech tag="n-masc"/&gt;
     &lt;sense id="treppenwitz-1"&gt;
         &lt;headwordExplanation langCode="en"&gt;
-            &lt;text>
+            &lt;text&gt;
                 belated realisation of what one
                 could have said
-            &lt;/text>
-         &lt;/headwordExplanation&gt;
+            &lt;/text&gt;
+        &lt;/headwordExplanation&gt;
         &lt;headwordTranslation langCode="en"&gt;
             &lt;text&gt;staircase wit&lt;/text&gt;
         &lt;/headwordTranslation&gt;

@@ -1,0 +1,56 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dmlex: <http://www.oasis-open.org/to-be-confirmed/dmlex#>
+PREFIX ex: <http://www.example.com/#>
+
+ex:lexicon a dmlex:LexicographicResource;
+  dmlex:entry ex:color,
+    ex:colour;
+  dmlex:relation [ a dmlex:Relation;
+      dmlex:type "variants";
+      dmlex:member [ a dmlex:Member;
+          dmlex:ref "color";
+          dmlex:listingOrder "2"^^xsd:unsignedInt ],
+        [ a dmlex:Member;
+          dmlex:ref "colour";
+          dmlex:listingOrder "1"^^xsd:unsignedInt ];
+      dmlex:listingOrder "1"^^xsd:unsignedInt ];
+  dmlex:relationType [ a dmlex:RelationType;
+      dmlex:memberType [ a dmlex:MemberType;
+          dmlex:hint dmlex:navigate;
+          dmlex:type dmlex:entry;
+          dmlex:min "2"^^xsd:unsignedInt ];
+      dmlex:description "words which differ only in spelling";
+      dmlex:type "variants" ];
+  dmlex:langCode "en";
+  dmlex:uri "http://example.com".
+
+ex:color a dmlex:Entry;
+  dmlex:partOfSpeech [ 
+      dmlex:listingOrder "1"^^xsd:unsignedInt;
+      dmlex:tag "n" ];
+  dmlex:headword "color";
+  dmlex:label [ 
+      dmlex:tag "americanSpelling";
+      dmlex:listingOrder "1"^^xsd:unsignedInt ].
+
+ex:colour a dmlex:Entry;
+  dmlex:headword "colour";
+  dmlex:partOfSpeech [ 
+      dmlex:tag "n";
+      dmlex:listingOrder "1"^^xsd:unsignedInt ];
+  dmlex:label [ 
+      dmlex:listingOrder "1"^^xsd:unsignedInt;
+      dmlex:tag "europeanSpelling" ];
+  dmlex:sense ex:colour-1.
+
+ex:colour-1 a dmlex:Sense;
+  dmlex:example [ a dmlex:Example;
+      dmlex:listingOrder "1"^^xsd:unsignedInt;
+      dmlex:text "What is your favourite colour?" ];
+  dmlex:listingOrder "1"^^xsd:unsignedInt;
+  dmlex:definition [ a dmlex:Definition;
+      dmlex:listingOrder "1"^^xsd:unsignedInt;
+      dmlex:text "red, blue, yellow etc." ].
+

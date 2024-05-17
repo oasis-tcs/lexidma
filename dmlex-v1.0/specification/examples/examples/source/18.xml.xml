@@ -1,10 +1,11 @@
+<!-- This example is automatically generated. DO NOT EDIT -->
 <programlisting>
 &lt;lexicographicResource uri="http://example.com" langCode="en"&gt;
     &lt;entry id="the-bible"&gt;
         &lt;headword&gt;the Bible&lt;/headword&gt;
         &lt;sense id="the-bible-1"&gt;
             &lt;definition&gt;
-                &lt;text>the book considered holy by Christians&lt;/text>
+                &lt;text&gt;the book considered holy by Christians&lt;/text&gt;
             &lt;/definition&gt;
         &lt;/sense&gt;
     &lt;/entry&gt;
@@ -13,7 +14,7 @@
         &lt;sense id="bible-1"/&gt;
         &lt;sense id="bible-2"&gt;
             &lt;definition&gt;
-                &lt;text>a book considered important for a subject&lt;/text>
+                &lt;text&gt;a book considered important for a subject&lt;/text&gt;
             &lt;/definition&gt;
         &lt;/sense&gt;
     &lt;/entry&gt;
