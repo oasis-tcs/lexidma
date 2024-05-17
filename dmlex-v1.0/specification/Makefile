@@ -1,4 +1,4 @@
-include Makefile.dep
+-include Makefile.dep
 
 html: dmlex-v1.0-csd02.html
 
@@ -25,12 +25,13 @@ dmlex_uml.svg: dmlex.dot
 dmlex.dot: dmlex.dot.m4 dmlex.dot.content
 	m4 $< > $@
 
-dmlex.dot.content: dmlex.nvh nvh2dot.py
+dmlex.dot.content: schemas/informativeCopiesOf3rdPartySchemas/NVH/dmlex.nvh nvh2dot.py
 	awk '/<programlisting>/,/<\/programlisting>/' $< | tail -n+2 | head -n-1 | ./nvh2dot.py > $@
 
 Makefile.dep: dmlex.xml $(SOURCE_XML) makedep.sh
 	echo -n "SOURCE_XML=" > $@
 	./makedep.sh >> $@
 
+.PHONY: clean
 clean:
-	rm dmlex-v1.0-csd02.html dmlex-v1.0-csd02.pdf dmlex-v1.0-csd02.fo dmlex-v1.0-csd02.xml Makefile.dep dmlex_uml.svg dmlex_uml.pdf dmlex.dot dmlex.dot.content
+	rm -f dmlex-v1.0-csd02.html dmlex-v1.0-csd02.pdf dmlex-v1.0-csd02.fo dmlex-v1.0-csd02.xml Makefile.dep dmlex_uml.svg dmlex_uml.pdf dmlex.dot dmlex.dot.content

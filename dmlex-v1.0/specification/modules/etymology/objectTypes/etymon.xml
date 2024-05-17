@@ -23,22 +23,23 @@
         <title>Properties</title>
         <listitem>
             <para><literal>when</literal>
-                <glossterm>optional</glossterm> (zero or one) and <glossterm>unique</glossterm> (in combination with other unique properties if present). Indicates the time period during which this etymological origin is valid.
-                The value is an open-text indication of the time period, in the language of the dictionary.
-            </para>
+                <glossterm>optional</glossterm> (zero or one) and <glossterm>unique</glossterm> (in
+                combination with other unique properties if present). Normalised string. Indicates
+                the time period during which this etymological origin is valid. The value is an
+                open-text indication of the time period, in the language of the dictionary. </para>
         </listitem>
         <listitem>
             <para><literal>type</literal>
-                <glossterm>optional</glossterm> (zero or one). The type of the etymological process
-                that occurred at this stage of the headword's etymological history such as
-                derivation, cognate, borrowing. The values can be explained and constrained using
-                the <literal><olink targetptr="etymology_etymonType">etymonType</olink></literal>
-                object type.</para>
+                <glossterm>optional</glossterm> (zero or one). Normalised string. The type of the
+                etymological process that occurred at this stage of the headword's etymological
+                history such as derivation, cognate, borrowing. The values can be explained and
+                constrained using the <literal><olink targetptr="etymology_etymonType"
+                        >etymonType</olink></literal> object type.</para>
         </listitem>
         <listitem>
             <para><literal>note</literal>
-                <glossterm>optional</glossterm> (zero or one). Any additional information about this stage
-                of the headword's etymological history.</para>
+                <glossterm>optional</glossterm> (zero or one). Normalised string. Any additional
+                information about this stage of the headword's etymological history.</para>
         </listitem>
         <listitem>
             <para><literal><olink targetptr="etymology_etymonUnit">etymonUnit</olink></literal>
@@ -46,7 +47,8 @@
         </listitem>
         <listitem>
             <para><literal>translation</literal>
-                <glossterm>optional</glossterm> (zero or one). A translation or gloss of the etymon in the language of the lexicographic resource.</para>
+                <glossterm>optional</glossterm> (zero or one). Normalised string. A translation or
+                gloss of the etymon in the language of the lexicographic resource.</para>
         </listitem>
         <listitem>
             <para><literal>listingOrder</literal>

@@ -1,0 +1,714 @@
+# This file was generated from dmlex.ttl by gen_shacl_from_rdf.py
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix dmlex: <http://www.oasis-open.org/to-be-confirmed/dmlex#> .
+@prefix : <http://www.oasis-open.org/to-be-confirmed/dmlex-shacl#> .
+
+
+:LexicographicResourceShape ;
+    a sh:NodeShape ;
+    sh:targetClass dmlex:LexicographicResource ;
+    sh:closed false ;
+    sh:property [
+      sh:path dmlex:title  ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:uri  ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:entry  ;
+      sh:class dmlex:Entry  ] ;
+    sh:property [
+      sh:path dmlex:translationLanguage  ;
+      sh:class dmlex:TranslationLanguage  ] ;
+    sh:property [
+      sh:path dmlex:definitionTypeTag  ;
+      sh:class dmlex:DefinitionTypeTag  ] ;
+    sh:property [
+      sh:path dmlex:inflectedFormTag  ;
+      sh:class dmlex:InflectedFormTag  ] ;
+    sh:property [
+      sh:path dmlex:labelTypeTag  ;
+      sh:class dmlex:LabelTypeTag  ] ;
+    sh:property [
+      sh:path dmlex:partOfSpeechTag  ;
+      sh:class dmlex:PartOfSpeechTag  ] ;
+    sh:property [
+      sh:path dmlex:sourceIdentityTag  ;
+      sh:class dmlex:SourceIdentityTag  ] ;
+    sh:property [
+      sh:path dmlex:transcriptionSchemeTag  ;
+      sh:class dmlex:TranscriptionSchemeTag  ] ;
+    sh:property [
+      sh:path dmlex:relation  ;
+      sh:class dmlex:Relation  ] ;
+    sh:property [
+      sh:path dmlex:relationType  ;
+      sh:class dmlex:RelationType  ] ;
+    sh:property [
+      sh:path dmlex:etymonType  ;
+      sh:class dmlex:EtymonType  ] ;
+    sh:property [
+      sh:path dmlex:etymonLanguage  ;
+      sh:class dmlex:EtymonLanguage  ] ;
+    sh:property [
+      sh:path dmlex:langCode  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ]  .
+
+
+:EntryShape ;
+    a sh:NodeShape ;
+    sh:targetClass dmlex:Entry ;
+    sh:closed false ;
+    sh:property [
+      sh:path dmlex:headword  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:homographNumber  ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:sense  ;
+      sh:class dmlex:Sense  ] ;
+    sh:property [
+      sh:path dmlex:etymology  ;
+      sh:class dmlex:Etymology  ] ;
+    sh:property [
+      sh:path dmlex:partOfSpeech  ;
+      sh:class dmlex:PartOfSpeech  ] ;
+    sh:property [
+      sh:path dmlex:label  ;
+      sh:class dmlex:Label  ] ;
+    sh:property [
+      sh:path dmlex:pronunciation  ;
+      sh:class dmlex:Pronunciation  ] ;
+    sh:property [
+      sh:path dmlex:inflectedForm  ;
+      sh:class dmlex:InflectedForm  ] ;
+    sh:property [
+      sh:path dmlex:placeholderMarker  ;
+      sh:class dmlex:PlaceholderMarker  ]  .
+
+
+:PartOfSpeechShape ;
+    a sh:NodeShape ;
+    sh:targetClass dmlex:PartOfSpeech ;
+    sh:closed false ;
+    sh:property [
+      sh:path dmlex:listingOrder  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:tag  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ]  .
+
+
+:InflectedFormShape ;
+    a sh:NodeShape ;
+    sh:targetClass dmlex:InflectedForm ;
+    sh:closed false ;
+    sh:property [
+      sh:path dmlex:listingOrder  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:label  ;
+      sh:class dmlex:Label  ] ;
+    sh:property [
+      sh:path dmlex:pronunciation  ;
+      sh:class dmlex:Pronunciation  ] ;
+    sh:property [
+      sh:path dmlex:tag  ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:text  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ]  .
+
+
+:SenseShape ;
+    a sh:NodeShape ;
+    sh:targetClass dmlex:Sense ;
+    sh:closed false ;
+    sh:property [
+      sh:path dmlex:listingOrder  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:label  ;
+      sh:class dmlex:Label  ] ;
+    sh:property [
+      sh:path dmlex:indicator  ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:definition  ;
+      sh:class dmlex:Definition  ] ;
+    sh:property [
+      sh:path dmlex:example  ;
+      sh:class dmlex:Example  ] ;
+    sh:property [
+      sh:path dmlex:headwordExplanation  ;
+      sh:class dmlex:HeadwordExplanation  ] ;
+    sh:property [
+      sh:path dmlex:headwordTranslation  ;
+      sh:class dmlex:HeadwordTranslation  ]  .
+
+
+:DefinitionShape ;
+    a sh:NodeShape ;
+    sh:targetClass dmlex:Definition ;
+    sh:closed false ;
+    sh:property [
+      sh:path dmlex:listingOrder  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:text  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:definitionType  ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
+      sh:class dmlex:DefinitionType  ] ;
+    sh:property [
+      sh:path dmlex:headwordMarker  ;
+      sh:class dmlex:HeadwordMarker  ] ;
+    sh:property [
+      sh:path dmlex:collocateMarker  ;
+      sh:class dmlex:CollocateMarker  ]  .
+
+
+:LabelShape ;
+    a sh:NodeShape ;
+    sh:targetClass dmlex:Label ;
+    sh:closed false ;
+    sh:property [
+      sh:path dmlex:listingOrder  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:tag  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ]  .
+
+
+:PronunciationShape ;
+    a sh:NodeShape ;
+    sh:targetClass dmlex:Pronunciation ;
+    sh:closed false ;
+    sh:property [
+      sh:path dmlex:listingOrder  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:label  ;
+      sh:class dmlex:Label  ] ;
+    sh:property [
+      sh:path dmlex:soundFile  ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:transcription  ;
+      sh:class dmlex:Transcription  ]  .
+
+
+:TranscriptionShape ;
+    a sh:NodeShape ;
+    sh:targetClass dmlex:Transcription ;
+    sh:closed false ;
+    sh:property [
+      sh:path dmlex:listingOrder  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:text  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:scheme  ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ]  .
+
+
+:ExampleShape ;
+    a sh:NodeShape ;
+    sh:targetClass dmlex:Example ;
+    sh:closed false ;
+    sh:property [
+      sh:path dmlex:listingOrder  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:label  ;
+      sh:class dmlex:Label  ] ;
+    sh:property [
+      sh:path dmlex:text  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:soundFile  ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:sourceIdentity  ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:sourceElaboration  ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:exampleTranslation  ;
+      sh:class dmlex:ExampleTranslation  ] ;
+    sh:property [
+      sh:path dmlex:headwordMarker  ;
+      sh:class dmlex:HeadwordMarker  ] ;
+    sh:property [
+      sh:path dmlex:collocateMarker  ;
+      sh:class dmlex:CollocateMarker  ]  .
+
+
+:TranslationLanguageShape ;
+    a sh:NodeShape ;
+    sh:targetClass dmlex:TranslationLanguage ;
+    sh:closed false ;
+    sh:property [
+      sh:path dmlex:listingOrder  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:langCode  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ]  .
+
+
+:HeadwordTranslationShape ;
+    a sh:NodeShape ;
+    sh:targetClass dmlex:HeadwordTranslation ;
+    sh:closed false ;
+    sh:property [
+      sh:path dmlex:listingOrder  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:langCode  ] ;
+    sh:property [
+      sh:path dmlex:partOfSpeech  ;
+      sh:class dmlex:PartOfSpeech  ] ;
+    sh:property [
+      sh:path dmlex:label  ;
+      sh:class dmlex:Label  ] ;
+    sh:property [
+      sh:path dmlex:pronunciation  ;
+      sh:class dmlex:Pronunciation  ] ;
+    sh:property [
+      sh:path dmlex:inflectedForm  ;
+      sh:class dmlex:InflectedForm  ] ;
+    sh:property [
+      sh:path dmlex:text  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:placeholderMarker  ;
+      sh:class dmlex:PlaceholderMarker  ]  .
+
+
+:HeadwordExplanationShape ;
+    a sh:NodeShape ;
+    sh:targetClass dmlex:HeadwordExplanation ;
+    sh:closed false ;
+    sh:property [
+      sh:path dmlex:langCode  ] ;
+    sh:property [
+      sh:path dmlex:text  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ]  .
+
+
+:ExampleTranslationShape ;
+    a sh:NodeShape ;
+    sh:targetClass dmlex:ExampleTranslation ;
+    sh:closed false ;
+    sh:property [
+      sh:path dmlex:listingOrder  ] ;
+    sh:property [
+      sh:path dmlex:langCode  ] ;
+    sh:property [
+      sh:path dmlex:label  ;
+      sh:class dmlex:Label  ] ;
+    sh:property [
+      sh:path dmlex:text  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:soundFile  ] ;
+    sh:property [
+      sh:path dmlex:headwordMarker  ;
+      sh:class dmlex:HeadwordMarker  ] ;
+    sh:property [
+      sh:path dmlex:collocateMarker  ;
+      sh:class dmlex:CollocateMarker  ]  .
+
+
+:DefinitionTypeTagShape ;
+    a sh:NodeShape ;
+    sh:targetClass dmlex:DefinitionTypeTag ;
+    sh:closed false ;
+    sh:property [
+      sh:path dmlex:tag  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:description  ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ]  .
+
+
+:InflectedFormTagShape ;
+    a sh:NodeShape ;
+    sh:targetClass dmlex:InflectedFormTag ;
+    sh:closed false ;
+    sh:property [
+      sh:path dmlex:inflectedForm  ;
+      sh:class dmlex:InflectedForm  ] ;
+    sh:property [
+      sh:path dmlex:tag  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:description  ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:forPartOfSpeech  ]  .
+
+
+:LabelTagShape ;
+    a sh:NodeShape ;
+    sh:targetClass dmlex:LabelTag ;
+    sh:closed false ;
+    sh:property [
+      sh:path dmlex:inflectedForm  ;
+      sh:class dmlex:InflectedForm  ] ;
+    sh:property [
+      sh:path dmlex:tag  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:description  ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:forPartOfSpeech  ] ;
+    sh:property [
+      sh:path dmlex:forCollocates  ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ]  .
+
+
+:LabelTypeTagShape ;
+    a sh:NodeShape ;
+    sh:targetClass dmlex:LabelTypeTag ;
+    sh:closed false ;
+    sh:property [
+      sh:path dmlex:tag  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:description  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ]  .
+
+
+:PartOfSpeechTagShape ;
+    a sh:NodeShape ;
+    sh:targetClass dmlex:PartOfSpeechTag ;
+    sh:closed false ;
+    sh:property [
+      sh:path dmlex:inflectedForm  ;
+      sh:class dmlex:InflectedForm  ] ;
+    sh:property [
+      sh:path dmlex:tag  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:description  ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:forEtymology  ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ]  .
+
+
+:SourceIdentityTagShape ;
+    a sh:NodeShape ;
+    sh:targetClass dmlex:SourceIdentityTag ;
+    sh:closed false ;
+    sh:property [
+      sh:path dmlex:tag  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:description  ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ]  .
+
+
+:TranscriptionSchemeTagShape ;
+    a sh:NodeShape ;
+    sh:targetClass dmlex:TranscriptionSchemeTag ;
+    sh:closed false ;
+    sh:property [
+      sh:path dmlex:inflectedForm  ;
+      sh:class dmlex:InflectedForm  ] ;
+    sh:property [
+      sh:path dmlex:tag  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:description  ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ]  .
+
+
+:RelationShape ;
+    a sh:NodeShape ;
+    sh:targetClass dmlex:Relation ;
+    sh:closed false ;
+    sh:property [
+      sh:path dmlex:description  ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:type  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:member  ;
+      sh:minCount 2 ;
+      sh:class dmlex:Member  ]  .
+
+
+:MemberShape ;
+    a sh:NodeShape ;
+    sh:targetClass dmlex:Member ;
+    sh:closed false ;
+    sh:property [
+      sh:path dmlex:listingOrder  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:ref  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:obverseListingOrder  ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:role  ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ]  .
+
+
+:RelationTypeShape ;
+    a sh:NodeShape ;
+    sh:targetClass dmlex:RelationType ;
+    sh:closed false ;
+    sh:property [
+      sh:path dmlex:description  ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:type  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:scope  ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:memberType  ;
+      sh:class dmlex:MemberType  ]  .
+
+
+:MemberTypeShape ;
+    a sh:NodeShape ;
+    sh:targetClass dmlex:MemberType ;
+    sh:closed false ;
+    sh:property [
+      sh:path dmlex:description  ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:type  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:role  ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:min  ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:max  ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:action  ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ]  .
+
+
+:PlaceholderMarkerShape ;
+    a sh:NodeShape ;
+    sh:targetClass dmlex:PlaceholderMarker ;
+    sh:closed false ;
+    sh:property [
+      sh:path dmlex:startIndex  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:endIndex  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ]  .
+
+
+:HeadwordMarkerShape ;
+    a sh:NodeShape ;
+    sh:targetClass dmlex:HeadwordMarker ;
+    sh:closed false ;
+    sh:property [
+      sh:path dmlex:startIndex  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:endIndex  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ]  .
+
+
+:CollocateMarkerShape ;
+    a sh:NodeShape ;
+    sh:targetClass dmlex:CollocateMarker ;
+    sh:closed false ;
+    sh:property [
+      sh:path dmlex:label  ;
+      sh:class dmlex:Label  ] ;
+    sh:property [
+      sh:path dmlex:lemma  ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ]  .
+
+
+:EtymologyShape ;
+    a sh:NodeShape ;
+    sh:targetClass dmlex:Etymology ;
+    sh:closed false ;
+    sh:property [
+      sh:path dmlex:listingOrder  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:description  ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:etymon  ;
+      sh:class dmlex:Etymon  ]  .
+
+
+:EtymonShape ;
+    a sh:NodeShape ;
+    sh:targetClass dmlex:Etymon ;
+    sh:closed false ;
+    sh:property [
+      sh:path dmlex:listingOrder  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:type  ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:when  ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:note  ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:etymonUnit  ;
+      sh:minCount 1 ;
+      sh:class dmlex:EtymonUnit  ] ;
+    sh:property [
+      sh:path dmlex:translation  ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ]  .
+
+
+:EtymonUnitShape ;
+    a sh:NodeShape ;
+    sh:targetClass dmlex:EtymonUnit ;
+    sh:closed false ;
+    sh:property [
+      sh:path dmlex:listingOrder  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:langCode  ] ;
+    sh:property [
+      sh:path dmlex:partOfSpeech  ;
+      sh:class dmlex:PartOfSpeech  ] ;
+    sh:property [
+      sh:path dmlex:text  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:translation  ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:reconstructed  ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ]  .
+
+
+:EtymonTypeShape ;
+    a sh:NodeShape ;
+    sh:targetClass dmlex:EtymonType ;
+    sh:closed false ;
+    sh:property [
+      sh:path dmlex:description  ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:type  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ]  .
+
+
+:EtymonLanguageShape ;
+    a sh:NodeShape ;
+    sh:targetClass dmlex:EtymonLanguage ;
+    sh:closed false ;
+    sh:property [
+      sh:path dmlex:langCode  ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ] ;
+    sh:property [
+      sh:path dmlex:displayName  ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ]  .
+

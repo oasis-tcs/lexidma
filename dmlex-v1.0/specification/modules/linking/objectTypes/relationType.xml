@@ -23,17 +23,18 @@
     <title>Properties</title>
     <listitem>
       <para><literal>type</literal>
-        <glossterm>required</glossterm> (exactly one) and <glossterm>unique</glossterm>. Non-empty string.</para>
+        <glossterm>required</glossterm> (exactly one) and <glossterm>unique</glossterm>. Normalised
+        string.</para>
     </listitem>
     <listitem>
       <para><literal>description</literal>
-        <glossterm>optional</glossterm> (zero or one). Non-empty string. A human-readable
+        <glossterm>optional</glossterm> (zero or one). Normalised string. A human-readable
         explanation of this relation type.</para>
     </listitem>
     <listitem>
       <para><literal>scopeRestriction</literal>
-        <glossterm>optional</glossterm> (zero or one). Non-empty string. Specifies restrictions on
-        member of relations of this type. The possible values are:</para>
+        <glossterm>optional</glossterm> (zero or one). Specifies restrictions on member of relations
+        of this type. The possible values are:</para>
       <itemizedlist>
         <listitem>
           <para>
@@ -92,7 +93,7 @@
   dmlex:type "..." ;
   dmlex:scopeRestriction "..." ;
   dmlex:memberType ... ;
-  owl:sameAs ... ] .
+  dmlex:sameAs ... ] .
       </programlisting>
   </example>
   <example>

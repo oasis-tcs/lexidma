@@ -24,7 +24,8 @@
         <title>Properties</title>
         <listitem>
             <para><literal>text</literal>
-                <glossterm>required</glossterm> (exactly one) and <glossterm>unique</glossterm> (in combination with <literal>langCode</literal> if present). Non-empty string.</para>
+                <glossterm>required</glossterm> (exactly one) and <glossterm>unique</glossterm> (in
+                combination with <literal>langCode</literal> if present). Normalised string.</para>
         </listitem>
         <listitem>
             <para><literal>langCode</literal>
@@ -50,7 +51,9 @@
     <example>
         <title>XML</title>
         <programlisting>
-&lt;headwordExplanation langCode="..."&gt;...&lt;/headwordExplanation&gt;
+&lt;headwordExplanation langCode="..."&gt;
+  &lt;text>...&lt;/text>
+&lt;/headwordExplanation&gt;
         </programlisting>
     </example>
     

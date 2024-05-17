@@ -30,15 +30,16 @@
     </listitem>
     <listitem>
       <para><literal>description</literal>
-        <glossterm>optional</glossterm> (zero or one). Non-empty string.
-        A human-readable description of what the tag means.</para>
+        <glossterm>optional</glossterm> (zero or one). Normalised string. A human-readable
+        description of what the tag means.</para>
     </listitem>
     <listitem>
       <para><literal>for</literal>
-        <glossterm>optional</glossterm> (zero or one). Non-empty string. A statement about
+        <glossterm>optional</glossterm> (zero or one). Normalised string. A statement about
         constraints and recommendation on using this tag. This can be a human-readable description
         such as "for use in German and Czech only" or a machine-readable instruction in any format
-        understandable to the DMLex implemenation, such as <code>language=de OR language=cs</code>.</para>
+        understandable to the DMLex implemenation, such as <code>language=de OR
+        language=cs</code>.</para>
     </listitem>
   </itemizedlist>
   

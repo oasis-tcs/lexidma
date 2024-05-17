@@ -16,10 +16,10 @@
   <itemizedlist>
     <title>Can additionally be a property of</title>
     <listitem>
-      <para><literal><olink targetptr="linking_relationTypeTag">relationTypeTag</olink></literal></para>
+      <para><literal><olink targetptr="linking_relationTypeTag">relationType</olink></literal></para>
     </listitem>
     <listitem>
-      <para><literal><olink targetptr="linking_memberRoletag">memberRoleTag</olink></literal></para>
+      <para><literal><olink targetptr="linking_memberRoletag">memberType</olink></literal></para>
     </listitem>
   </itemizedlist>
   

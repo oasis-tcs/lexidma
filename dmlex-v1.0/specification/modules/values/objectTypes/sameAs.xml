@@ -25,6 +25,9 @@
       <para><literal><olink targetptr="values_labelTag">labelTag</olink></literal></para>
     </listitem>
     <listitem>
+      <para><literal><olink targetptr="values_labelTypeTag">labelTypeTag</olink></literal></para>
+    </listitem>
+    <listitem>
       <para><literal><olink targetptr="values_partOfSpeechTag">partOfSpeechTag</olink></literal></para>
     </listitem>
     <listitem>

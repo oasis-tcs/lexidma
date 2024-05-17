@@ -9,6 +9,7 @@
     "id": "beat-up-1",
     "headwordTranslations": [{
       "text": "jemanden verprügeln",
+      "langCode": "de",
       "placeholderMarkers": [
           {"startIndex": 0, "endIndex": 8}
       ]

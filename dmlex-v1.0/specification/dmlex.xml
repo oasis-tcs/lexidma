@@ -96,20 +96,25 @@
     </copyright>
     <legalnotice role="additional">
       <title>Additional artifacts</title>
-      <!-- probably will have references to UML diagrams
-      <para>This prose specification is one component of a Work Product that also includes:</para>
+      <para>This prose specification is one component of a Work Product that also includes declarative validation artifacts accessible from <ulink url="&this-loc;/schemas/">&this-loc;/schemas/</ulink>:</para>
 
       <itemizedlist spacing="compact">
         <listitem>
-          <para> Declarative validation artifacts accessible from <ulink url="&this-loc;/schemas/"
-              >&this-loc;/schemas/</ulink>
-          </para>
-
-
-
+			<para><ulink url="&this-loc;/schemas/XML/dmlex.xsd">XML schema</ulink></para>
         </listitem>
-      </itemizedlist>-->
-      <para>NONE AT THE MOMENT</para>
+        <listitem>
+			<para><ulink url="&this-loc;/schemas/XML/dmlex_no-crosslingual.xsd">XML schema excluding the cross-lingual module</ulink></para>
+        </listitem>
+        <listitem>
+			<para><ulink url="&this-loc;/schemas/JSON/dmlex.json">JSON schema</ulink></para>
+        </listitem>
+        <listitem>
+			<para><ulink url="&this-loc;/schemas/JSON/dmlex_no-crosslingual.json">JSON schema excluding the cross-lingual module</ulink></para>
+        </listitem>
+        <listitem>
+			<para><ulink url="&this-loc;/schemas/informativeCopiesOf3rdPartySchemas/NVH/dmlex.nvh">NVH schema (informative)</ulink></para>
+        </listitem>
+      </itemizedlist>
     </legalnotice>
     <legalnotice role="related">
       <title>Related Work</title>
@@ -317,13 +322,13 @@
       <para>DMLex is an abstract data model which can be implemented in many different programming
         environments and serialization languages. In this document, we specify
           <glossterm>required</glossterm> serializations for: <simplelist>
-          <member><olink targetptr="XML_implementation">XML</olink>,</member>
-          <member><olink targetptr="JSON_implementation">JSON</olink>,</member>
-          <member><olink targetptr="RDF_implementation">RDF</olink>, and</member>
-          <member><olink targetptr="RDB_implementation">relational databases</olink>.</member>
+          <member><olink targetptr="xml">XML</olink>,</member>
+          <member><olink targetptr="json">JSON</olink>,</member>
+          <member><olink targetptr="rdf">RDF</olink>, and</member>
+          <member><olink targetptr="rdb">relational databases</olink>.</member>
         </simplelist></para>
       <para> An informative serialization specification is provided for:<simplelist>
-          <member><olink targetptr="NVH_implementation">NVH</olink>.</member>
+          <member><olink targetptr="nvh">NVH</olink>.</member>
         </simplelist>
       </para>
     </section>
@@ -340,7 +345,7 @@
           including all the modules. An object type defined in one module is guaranteed not to
           name-conflict with another object type in another module.</para>
       </section>
-      <section>
+      <section id="modelProperties">
         <title>Properties</title>
         <para>For every object type, DMLex defines which properties it can have, whether the properties
           are required or optional, what their arities are (for example “zero or more”), and what
@@ -348,13 +353,33 @@
         <para>There are two kinds of properties: those that contain literal values and those that
           contain objects.</para>
         <para>Some properties are defined to contain literal values such as strings and numbers. The
-          following types of literal values are used in DMLex: <simplelist>
-            <member>non-empty string,</member>
-            <member>number,</member>
-            <member>unique identifier</member>
-            <member>and reference to a unique identifier</member>
-          </simplelist>
-        </para>
+          following types of literal values are used in DMLex:</para>
+        <itemizedlist>
+          <listitem>
+            <para>normalised string: a string that contains no new lines, does not start or end with a whitespace, contains no block of ASCII whitespace more than a single space and is non-empty.</para>
+          </listitem>
+          <listitem>
+            <para>number: including negative numbers and floating-point numbers</para>
+          </listitem>
+          <listitem>
+            <para>non-negative integer number</para>
+          </listitem>
+          <listitem>
+            <para>boolean: a true/false value</para>
+          </listitem>
+          <listitem>
+            <para>URI</para>
+          </listitem>
+          <listitem>
+            <para>IETF language code</para>
+          </listitem>
+          <listitem>
+            <para><link linkend="bib_rfc3987">IRI</link>: an Internationalized Resource Identifier</para>
+          </listitem>
+          <listitem>
+            <para>closed list of possible values</para>
+          </listitem>
+        </itemizedlist>
         <para>Some properties are defined to contain objects (of types defined in DMLex), for
           example an object of type <code>entry</code> can contain objects of type
             <code>sense</code>. In such cases, the name of the property is the same as the name of
@@ -790,10 +815,26 @@
       </bibliography>
     </section>
   </appendix>
-  <appendix role="informative" id="coreValidation">
-    <title>Machine Readable Validation Artifacts</title>
-    <para>CURRENTLY NO VALIDATION ARTIFACTS FORESEEN FOR THE OM.. JUST FOR SERIALIZATIONS</para>
-    <para> MAY LIST CONFORMANT ARTIFACTS FOR SPECIFIC SERIALIZATIONS AT A LATER STAGE </para>
+  <appendix role="informative" id="Validation">
+	<title>Machine Readable Validation Artifacts</title>
+	  <itemizedlist spacing="compact">
+        <listitem>
+			<para><ulink url="&this-loc;/schemas/XML/dmlex.xsd">XML schema</ulink></para>
+        </listitem>
+        <listitem>
+			<para><ulink url="&this-loc;/schemas/XML/dmlex_no-crosslingual.xsd">XML schema excluding the cross-lingual module</ulink></para>
+        </listitem>
+        <listitem>
+			<para><ulink url="&this-loc;/schemas/JSON/dmlex.json">JSON schema</ulink></para>
+        </listitem>
+        <listitem>
+			<para><ulink url="&this-loc;/schemas/JSON/dmlex_no-crosslingual.json">JSON schema excluding the cross-lingual module</ulink></para>
+        </listitem>
+        <listitem>
+			<para><ulink url="&this-loc;/schemas/informativeCopiesOf3rdPartySchemas/NVH/dmlex.nvh">NVH schema (informative)</ulink></para>
+        </listitem>
+      </itemizedlist>
+
     <!--
       <orderedlist>
         <listitem id="CoreSchema">
@@ -898,15 +939,14 @@
     <para>This description uses the <ulink url="https://www.namevaluehierarchy.org/schema.html">NVH schema notation style</ulink> and the convention that all object types and their properties are prefixed by either <literal>core@</literal> or <literal>MODULENAME@</literal> strings. Their arity is denoted by a <literal>*</literal> (zero or more), <literal>+</literal> (one or more), <literal>?</literal> (zero or one) or <literal>N+</literal> (<literal>N</literal> or more). If no arity is given, it indicates the arity of 1, i.e. being required and occurring exactly once.
     </para>
     <programlisting>
-      <xi:include href="dmlex.nvh" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+      <xi:include href="schemas/informativeCopiesOf3rdPartySchemas/NVH/dmlex.nvh" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     </programlisting>
   </appendix>
 
 
   <appendix role="informative" id="specChangeTracking">
     <title>Specification Change Tracking</title>
-    <para>This appendix will contain tracked changes after the csd01 phase will have been
-      reached.</para>
+    <para/>
     
     <xi:include href="ReviewChangeTracking/ReviewChangeTrack.xml"
       xmlns:xi="http://www.w3.org/2001/XInclude"/>

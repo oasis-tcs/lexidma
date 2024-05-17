@@ -24,12 +24,15 @@
     <title>Properties</title>
     <listitem>
       <para><literal>headword</literal>
-        <glossterm>required</glossterm> (exactly one) and <glossterm>unique</glossterm> (in combination with other unique properties if present). Non-empty string. The entry's
+        <glossterm>required</glossterm> (exactly one) and <glossterm>unique</glossterm> (in
+        combination with other unique properties if present). Normalised string. The entry's
         headword.</para>
     </listitem>
     <listitem>
       <para><literal>homographNumber</literal>
-        <glossterm>optional</glossterm> (zero or one) and <glossterm>unique</glossterm> (in combination with other unique properties if present). The entry's homograph number, as a guide to distinguish entries with the same headword.</para>
+        <glossterm>optional</glossterm> (zero or one) and <glossterm>unique</glossterm> (in
+        combination with other unique properties if present). Number. The entry's homograph number,
+        as a guide to distinguish entries with the same headword.</para>
     </listitem>
     <listitem>
       <para><literal><olink targetptr="core_partOfSpeech">partOfSpeech</olink></literal>

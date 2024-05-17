@@ -25,37 +25,71 @@
     <para>The XML serialization of DMLex shown in this document follows these principles:</para>
     <itemizedlist>
       <listitem>
-        <para>The top-level <code>lexicographicResource</code> object is implemented as an XML element.</para>
+        <para>The top-level <code>lexicographicResource</code> and <code>entry</code> object types
+          are implemented as XML elements.</para>
       </listitem>
       <listitem>
-        <para>All other objects are implemented as XML attributes of their parents, unless:</para>
+        <para>All other object types and their properties are implemented as XML attributes of their
+          parents, unless:</para>
         <itemizedlist>
           <listitem>
-            <para>the object has an arity other than <code>(0..1)</code> and <code>(1..1)</code>
-            </para>
+            <para>the object has an arity other than <code>(0..1)</code> and <code>(1..1)</code> in
+              at least one of its parent objects </para>
           </listitem>
           <listitem>
             <para>or the object can have child objects</para>
           </listitem>
           <listitem>
-            <para>or the object's value is human-readable text, such as a headword or a definition.</para>
+            <para>or the object's value is human-readable text, such as a headword or a definition
+              (this applies, among other things, to all properties named <code>text</code> and
+                <code>description</code>).</para>
           </listitem>
         </itemizedlist>
-        <para>In such cases the object is implemented as a child XML element of its parent.</para>
+        <para>In such cases the object or property is implemented as a child XML element of its parent.</para>
       </listitem>
     </itemizedlist>
-    <para> Whitespace in all text nodes should always be <emphasis>collapsed</emphasis> by rules
-      defined in the XML Schema W3C Recommendation [<link linkend="bib_XMLSchema">XML
-      Schema</link>]: <itemizedlist>
-        <listitem>
-          <para>all sequences of whitespace should be reduced to a single space</para>
-        </listitem>
-        <listitem>
-          <para>all leading and trailing spaces should be removed</para>
-        </listitem>
-      </itemizedlist> unless otherwise stated in the specification of individual XML elements. </para>
+  </section>
+  
+  <section id="XMLWhitespace" role="normative">
+    <title>Whitespace handling</title>
+    <para>
+      Some XML elements in this serialization are defined as allowed to have text content
+      while other elements are not allowed to have text content.
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          Elements which are not allowed to have text content:
+          whitespace inside these elements should be treated as insignificant:
+          any child nodes consisting of whitespace can be ignored when reading the XML.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Elements which are allowed to have text content
+          (which includes elements implementing object types from the Annotation Module):
+          whitespace inside these elements should be handled as follows when reading the XML:
+        </para>
+        <orderedlist>
+          <listitem>
+            <para>Completely remove all leading whitespace that immediately follows an opening tag.</para>
+          </listitem>
+          <listitem>
+            <para>Completely remove all trailing whitespace that immediately precedes a closing tag.</para>
+          </listitem>
+          <listitem>
+            <para>Replace all remaining sequences of whitespace with a single space.</para>
+          </listitem>
+        </orderedlist>
+        <para>
+          This ensures that whitespace is handled in accordance with DMLex's concept of <emphasis>normalised strings</emphasis>
+          defined in <xref linkend="modelProperties"/>.
+        </para>
+      </listitem>
+    </itemizedlist>
     
   </section>
+  
   <section id="XMLElements" role="normative">
     <title>DMLex XML serialization elements</title>
   

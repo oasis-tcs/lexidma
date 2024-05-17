@@ -20,6 +20,11 @@
             "definitions": [{"text": "a sign of a person's race"}],
             "examples": [{"text": 
                 "People of all creeds and colours."}]
+        }, {
+            "id": "colour-4",
+            "definitions": [{"text": "interest or excitement"}],
+            "examples": [{"text": 
+                "Examples add colour to your writing."}]
         }]
     }],
     "relations": [{

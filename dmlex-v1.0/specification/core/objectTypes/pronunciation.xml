@@ -36,7 +36,8 @@
         </listitem>
         <listitem>
           <para><literal><olink targetptr="core_transcription">transcription</olink></literal>
-            <glossterm>optional</glossterm> (zero or more) and <glossterm>unique</glossterm>.</para>
+            <glossterm>optional</glossterm> (zero or more) and <glossterm>unique</glossterm>.
+            Normalised string.</para>
         </listitem>
       </itemizedlist>
     </listitem>

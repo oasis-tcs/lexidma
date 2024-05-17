@@ -25,8 +25,7 @@
                 <glossterm>required</glossterm> (exactly one). If implementing the Annotation Module
                     <literal>&lt;text&gt;</literal> can contain a mixture of plain text and
                         <literal><olink targetptr="xml_placeholderMarker"
-                        >&lt;placeholderMarker&gt;</olink></literal> elements and whitespace inside
-                it should be <emphasis>preserved</emphasis>.</para>
+                        >&lt;placeholderMarker&gt;</olink></literal> elements.</para>
         </listitem>
         <listitem>
             <para><literal><olink targetptr="xml_partOfSpeech">&lt;partOfSpeech&gt;</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>

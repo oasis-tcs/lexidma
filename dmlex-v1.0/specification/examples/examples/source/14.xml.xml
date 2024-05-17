@@ -1,6 +1,5 @@
 <programlisting>
 &lt;lexicographicResource uri="http://example.com" langCode="de"&gt;
-    &lt;translationLanguage langCode="en"/&gt;
     &lt;entry id="die-see"&gt;
         &lt;headword&gt;See&lt;/headword&gt;
         &lt;partOfSpeech tag="n-fem"/&gt;
@@ -22,6 +21,7 @@
             &lt;headwordTranslation&gt;&lt;text&gt;ocean&lt;/text&gt;&lt;/headwordTranslation&gt;
         &lt;/sense&gt;
     &lt;/entry&gt;
+    &lt;translationLanguage langCode="en"/&gt;
     &lt;relation type="synonyms"&gt;
         &lt;description&gt;words that mean sea and ocean&lt;/description&gt;
         &lt;member ref="die-see-1"/&gt;

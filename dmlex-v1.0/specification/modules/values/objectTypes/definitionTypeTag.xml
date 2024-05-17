@@ -26,13 +26,13 @@
     <title>Properties</title>
     <listitem>
       <para><literal>tag</literal>
-        <glossterm>required</glossterm> (exactly one) and <glossterm>unique</glossterm>. Non-empty string. An abbreviation, a code or
-        some other string of text.</para>
+        <glossterm>required</glossterm> (exactly one) and <glossterm>unique</glossterm>. Normalised
+        string. An abbreviation, a code or some other string of text.</para>
     </listitem>
     <listitem>
       <para><literal>description</literal>
-        <glossterm>optional</glossterm> (zero or one). Non-empty string.
-        A human-readable description of what the tag means.</para>
+        <glossterm>optional</glossterm> (zero or one). Normalised string. A human-readable
+        description of what the tag means.</para>
     </listitem>
     <listitem>
       <para><literal><olink targetptr="values_sameAs">sameAs</olink></literal>
@@ -68,7 +68,7 @@
   a dmlex:DefinitionTypeTag ;
   dmlex:tag "..." ;
   dmlex:description "..." ;
-  owl:sameAs ... ] .
+  dmlex:sameAs ... ] .
     </programlisting>
   </example>
   

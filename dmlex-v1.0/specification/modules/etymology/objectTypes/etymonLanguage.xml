@@ -29,7 +29,8 @@
     </listitem>
     <listitem>
       <para><literal>displayName</literal>
-        <glossterm>optional</glossterm> (zero or one). The name of the etymon language, in the language of the lexicographic resource.</para>
+        <glossterm>optional</glossterm> (zero or one). Normalised string. The name of the etymon
+        language, in the language of the lexicographic resource.</para>
     </listitem>
   </itemizedlist>
   

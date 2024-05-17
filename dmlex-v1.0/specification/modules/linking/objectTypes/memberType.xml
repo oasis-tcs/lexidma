@@ -23,18 +23,19 @@
     <title>Properties</title>
     <listitem>
       <para><literal>role</literal>
-        <glossterm>optional</glossterm> (zero or one) and <glossterm>unique</glossterm>.
-        String.</para>
+        <glossterm>optional</glossterm> (zero or one) and <glossterm>unique</glossterm> (in
+        combination with other unique properties if present). Normalised string.</para>
     </listitem>
     <listitem>
       <para><literal>description</literal>
-        <glossterm>optional</glossterm> (zero or one). Non-empty string. A human-readable
+        <glossterm>optional</glossterm> (zero or one). Normalised string. A human-readable
         explanation of this member role.</para>
     </listitem>
     <listitem>
       <para><literal>type</literal>
-        <glossterm>required</glossterm> (exactly one) and <glossterm>unique</glossterm>. Non-empty string. A restriction on the types
-        of objects that can have this role. The possible values are:</para>
+        <glossterm>required</glossterm> (exactly one) and <glossterm>unique</glossterm> (in
+        combination with other unique properties if present). Normalised string. A restriction on
+        the types of objects that can have this role. The possible values are:</para>
       <itemizedlist>
         <listitem>
           <para>
@@ -52,21 +53,21 @@
     </listitem>
     <listitem>
       <para><literal>min</literal>
-        <glossterm>optional</glossterm> (zero or one). Number. Says that relations of this type must
-        have at least this many members with this role. If omitted then there is no lower limit
-        (effectively, zero).</para>
+        <glossterm>optional</glossterm> (zero or one). Non-negative integer. Says that relations of
+        this type must have at least this many members with this role. If omitted then there is no
+        lower limit (effectively, zero).</para>
     </listitem>
     <listitem>
       <para><literal>max</literal>
-        <glossterm>optional</glossterm> (zero or one). Number. Says that relations of this type may
-        have at most this many members with this role. If omitted then there is no upper
-        limit.</para>
+        <glossterm>optional</glossterm> (zero or one). Non-negative integer. Says that relations of
+        this type may have at most this many members with this role. If omitted then there is no
+        upper limit.</para>
     </listitem>
     <listitem>
       <para><literal>hint</literal>
-        <glossterm>optional</glossterm> (zero or one). Non-empty string. Suggests what machine
-        agents should do when showing this member to a human user (in the context of another member
-        of the same relation). The possible values are:</para>
+        <glossterm>optional</glossterm> (zero or one). Suggests what machine agents should do when
+        showing this member to a human user (in the context of another member of the same relation).
+        The possible values are:</para>
       <itemizedlist>
         <listitem>
           <para>
@@ -127,7 +128,7 @@
   dmlex:min 0 ;
   dmlex:max 0 ;
   dmlex:hint "..." ;
-  owl:sameAs ... ] .
+  dmlex:sameAs ... ] .
       </programlisting>
   </example>
   <example>
