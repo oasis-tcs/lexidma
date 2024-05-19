@@ -65,31 +65,31 @@
      </itemizedlist>
 	</para>
 	  <section id="frag_iri">
-		  <title>Fragment IRIs</title>
+		  <title>DMLex fragment identification strings</title>
 		  <para>DMLex provides a recommended method for addressing DMLex objects present on-line, useful for linking (cf. <xref linkend="linking"/>) and general interoperability. Implementing this method is not <glossterm>required</glossterm> for conformance.</para>
 
-		  <para>Every fragment <glossterm>should</glossterm> be assigned a unique IRI (Internationalized Resource Identifier [<link linkend="bib_rfc3987">RFC 3987</link>]), composed of <literal>lexicographicResource.uri</literal> and a sequence of identifiers that uniquely determines the path in the DMLex tree structure. The IRI of the root object <literal>lexicographicResource</literal> is the value of its attribute <literal>lexicographicResource.uri</literal>, converted to IRI according to the algorithm specified in [<link linkend="bib_rfc3987">RFC 3987</link>], if needed. The IRIs of its direct children are constructed as follows:</para>
+		  <para>Every fragment <glossterm>should</glossterm> be assigned a unique fragment identification string, composed of <literal>lexicographicResource.uri</literal>, with protocol identification prefix (such as <literal>http://</literal> or <literal>https://</literal>) removed, and a sequence of identifiers that uniquely determines the path in the DMLex tree structure. The DMLex fragment identification string of the root object <literal>lexicographicResource</literal> is the value of its attribute <literal>lexicographicResource.uri</literal>, with protocol identification prefix (such as <literal>http://</literal> or <literal>https://</literal>) removed. The fragment identification strings of its direct children are constructed as follows:</para>
 
 		<para><literal>lexicographicResource.uri/objectTypeName/objectID</literal></para>
 
 		<para>(We define below how object IDs are created.)</para>
 
-		<para>The IRIs of descendant objects are constructed by appending the children's type names and IDs to the IRI of their direct parents, using “/” as the delimiter. In other words, the full template for an IRI object looks as follows:</para>
+		<para>The DMLex fragment identification strings of descendant objects are constructed by appending the children's type names and IDs to the fragment identification strings of their direct parents, using “/” as the delimiter. In other words, the full template for a fragment identification string looks as follows:</para>
 
 		<para><literal>lexicographicResource.uri/objectTypeName/objectID/child1TypeName/child1ID/child2TypeName/child2ID/…</literal></para>
 
-		<para>For example, a particular <literal><olink targetptr="core_sense">sense</olink></literal> (which is a property of <literal><olink targetptr="core_entry">entry</olink></literal>) is assigned the following IRI:</para>
+		<para>For example, a particular <literal><olink targetptr="core_sense">sense</olink></literal> (which is a property of <literal><olink targetptr="core_entry">entry</olink></literal>) is assigned the following fragment identification string:</para>
 
 		<para><literal>lexicographicResource.uri/entry/entryID/sense/senseID</literal></para>
 
-		<para>IRI of an <literal><olink targetptr="core_example">example</olink></literal> (which is a property of <literal><olink targetptr="core_sense">sense</olink></literal>, which is a property of <literal><olink targetptr="core_entry">entry</olink></literal>) has the following structure:</para>
+		<para>A fragment identification string of an <literal><olink targetptr="core_example">example</olink></literal> (which is a property of <literal><olink targetptr="core_sense">sense</olink></literal>, which is a property of <literal><olink targetptr="core_entry">entry</olink></literal>) has the following structure:</para>
 
 		<para><literal>lexicographicResource.uri/entry/entryID/sense/senseID/example/exampleID</literal></para>
 
 		<section id="objectids">
 			<title>Object IDs</title>
 
-			<para>For the purpose of creating IRIs, each object is assigned a unique ID, based on values of its properties declared as <glossterm>unique</glossterm>. Multiple situations can occur:</para>
+			<para>For the purpose of creating DMLex fragment identification strings, each object is assigned a unique ID relative to its parent, based on values of its properties declared as <glossterm>unique</glossterm>. Multiple situations can occur:</para>
 
 			<orderedlist>
 				<listitem>The object type has a single <glossterm>unique</glossterm> property with an arity of “exactly one”, and the value of the property is a string or a number. In this case, the object ID is the string or the number, with the following modifications performed in that particular order:
@@ -106,15 +106,15 @@
 				<listitem>The object type has multiple <glossterm>unique</glossterm> properties. In this case, all the partial values or child object IDs are constructed according to the steps 1., 2. and 3., and the resulting object ID is their concatenation using “~” (ASCII character 5F) as a separator. The order of the partial values is driven by the order of the properties as given in this specification. (Note: all atributes marked as <glossterm>unique</glossterm> need to be represented in the ID, as empty values are replaced by “0” according to step 3. No empty IDs are allowed.)</listitem>
 			</orderedlist>
 
-			<para>DMLex does not define the structure of IRIs for object types without <glossterm>unique</glossterm> properties.</para>
+			<para>DMLex does not define the structure of DMLex fragment identification strings for object types without <glossterm>unique</glossterm> properties.</para>
 		</section>
 		<section id="iri_examples">
-			<title>IRI examples</title>
-			<para>Particular IRI examples can then look as follows:</para>
+			<title>DMLex fragment identification string examples</title>
+			<para>Particular examples of DMLex fragment identification strings can then look as follows:</para>
 			<itemizedlist>
-				<listitem><literal>http://www.example.com/lexicon/entry/cat~1~noun</literal></listitem>
-				<listitem><literal>http://www.example.com/lexicon/entry/cat~1~noun/sense/0~small%20furry%20animal</literal> (In this case, we suppose that the sense's <literal>indicator</literal> is empty and it has one <literal>definition</literal> which says “small furry animal”).</listitem>
-				<listitem><literal>http://www.example.com/lexicon/entry/cat~1~noun/sense/0~small%20furry%20animal/example/I%20have%20two%20dogs%20and%20a%20cat.</literal></listitem>
+				<listitem><literal>www.example.com/lexicon/entry/cat~1~noun</literal></listitem>
+				<listitem><literal>www.example.com/lexicon/entry/cat~1~noun/sense/0~small%20furry%20animal</literal> (In this case, we suppose that the sense's <literal>indicator</literal> is empty and it has one <literal>definition</literal> which says “small furry animal”).</listitem>
+				<listitem><literal>www.example.com/lexicon/entry/cat~1~noun/sense/0~small%20furry%20animal/example/I%20have%20two%20dogs%20and%20a%20cat.</literal></listitem>
 			</itemizedlist>
 		</section>
 	  </section>
