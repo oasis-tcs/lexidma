@@ -24,7 +24,8 @@
       <para><literal>ref</literal>
         <glossterm>required</glossterm> (exactly one) and <glossterm>unique</glossterm> (in
         combination with other unique properties if present). Reference to an object, such as an
-        entry or a sense.</para>
+        entry or a sense. The IRI addressing mechanism described in <xref linkend="frag_iri"/>
+        can be used (but is not <glossterm>required</glossterm>).</para>
     </listitem>
     <listitem>
       <para><literal>role</literal>
