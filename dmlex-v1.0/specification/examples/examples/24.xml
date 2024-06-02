@@ -13,7 +13,7 @@
         <title>Pseudocode</title>
         <programlisting>
 - lexicographicResource (langCode: en)
-    - entry (id: school-noun-2, headword: school)
+    - entry (headword: school)
         - etymology (description:  Middle Dutch scole ("multitude, 
 			troop, crowd, school") from Proto-Germanic 
 			*skulō; doublet of shoal)
@@ -28,7 +28,7 @@
     - etymonLanguage (langCode: dum, displayName: Middle Dutch)
     - etymonLanguage (langCode: gem-pro, displayName: Proto-Germanic)
     - etymonType (name: derivation, 
-	description: A historical form of the word)
+	     description: A historical form of the word)
     - etymonType (name: doublet, 
 	description: Two words derived from the same etymological root)
 </programlisting>

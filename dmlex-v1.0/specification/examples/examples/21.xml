@@ -12,8 +12,8 @@
     <example>
         <title>Pseudocode</title>
         <programlisting>
-- entry (id: autopsy, headword: autopsy)
-    - sense (id: autopsy-1)
+- entry (headword: autopsy)
+    - sense
         - headwordTranslation (text: pitva)
         - example (text: The coroner performed an autopsy., 
 			headwordMarker: "autopsy")

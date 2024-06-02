@@ -12,9 +12,9 @@
     <example>
         <title>Pseudocode</title>
         <programlisting>
-- entry (id: treppenwitz, headword: Treppenwitz)
+- entry (headword: Treppenwitz)
     - partOfSpeech (tag: n-masc)
-    - sense (id: treppenwitz-1)
+    - sense
         - headwordExplanation (text: belated realisation of 
             what one could have said)
         - headwordTranslation (text: staircase wit)

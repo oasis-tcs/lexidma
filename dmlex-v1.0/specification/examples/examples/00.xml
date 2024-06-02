@@ -18,14 +18,14 @@
         <title>Pseudocode</title>
         <programlisting>
 - lexicographicResource (uri: http://example.com, langCode: en)
-    - entry (id: abandon-verb, headword: abandon)
+    - entry (headword: abandon)
         - partOfSpeech (tag: verb)
-        - sense (id: abandon-verb-1)
+        - sense
             - definition (text: to suddenly leave a place or a person)
             - example (text: I'm sorry I abandoned you like that.)
             - example (text: Abandon ship!)
                 - label (tag: idiom)
-        - sense (id: abandon-verb-2)
+        - sense
             - label (tag: mostly-passive)
             - definition (text: to stop supporting an idea)
             - example (text: That theory has been abandoned.)

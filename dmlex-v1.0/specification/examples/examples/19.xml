@@ -12,7 +12,7 @@
     <example>
         <title>Pseudocode</title>
         <programlisting>
-- entry (id: continue-studies, headword: continue your studies, 
+- entry (headword: continue your studies, 
 		placeholderMarker: "your")
     - sense ...
 </programlisting>

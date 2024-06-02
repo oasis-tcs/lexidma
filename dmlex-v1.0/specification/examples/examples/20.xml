@@ -12,8 +12,8 @@
     <example>
         <title>Pseudocode</title>
         <programlisting>
-- entry (id: beat-up, headword: beat sb. up, placeholderMarker: "sb.")
-    - sense (id: beat-up-1)
+- entry (headword: beat sb. up, placeholderMarker: "sb.")
+    - sense
         headwordTranslation (text: jemanden verprügeln, 
 		placeholderMarker: "jemanden")
 </programlisting>

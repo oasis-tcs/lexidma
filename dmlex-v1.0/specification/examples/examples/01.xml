@@ -15,7 +15,7 @@
     <example>
         <title>Pseudocode</title>
         <programlisting>
-- entry (id: folúsghlantóir-n, headword: folúsghlantóir)
+- entry (headword: folúsghlantóir)
     - partOfSpeech (tag: n-masc)
     - inflectedForm (tag: sg-gen, text: folúsghlantóra)
     - inflectedForm (tag: pl, text: folúsghlantóirí)

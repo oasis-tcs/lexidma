@@ -12,7 +12,7 @@
     <example>
         <title>Pseudocode</title>
         <programlisting>
-- entry (id: cat-n, headword: cat)
+- entry (headword: cat)
     - sense ...
     - etymology
         - etymon

@@ -14,13 +14,13 @@
     <example>
         <title>Pseudocode</title>
         <programlisting>
-- entry (id: doctor-n, headword: doctor)
-    - sense (id: doctor-n-1, indicator: medical doctor)
+- entry (headword: doctor)
+    - sense (indicator: medical doctor)
         - headwordTranslation (text: Arzt)
             - partOfSpeech (tag: n-masc)
         - headwordTranslation (text: Ärztin)
             - partOfSpeech (tag: n-fem)
-    - sense (id: doctor-n-2, indicator: academic title)
+    - sense (indicator: academic title)
         - headwordTranslation (text: Doktor)
             - partOfSpeech (tag: n-masc)
         - headwordTranslation (text: Doktorin)

@@ -14,13 +14,13 @@
     <example>
         <title>Pseudocode</title>
         <programlisting>
-- entry (id: fómhar-n, headword: fómhar)
-    - sense (id: fómhar-n-1)
+- entry (headword: fómhar)
+    - sense
         - headwordTranslation (langCode: en, text: autumn)
         - headwordTranslation (langCode: en, text: fall)
         - headwordTranslation (langCode: de, text: Herbst)
         - headwordTranslation (langCode: cs, text: podzim)
-    - sense (id: fómhar-n-2)
+    - sense
         - headwordTranslation (langCode: en, text: harvest)
         - headwordTranslation (langCode: de, text: Ernte)
         - headwordTranslation (langCode: cs, text: sklizeň)

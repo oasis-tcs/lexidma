@@ -11,7 +11,7 @@
     <example>
         <title>Pseudocode</title>
         <programlisting>
-- entry (id: aardvark-noun, headword: aardvark)
+- entry (headword: aardvark)
     - pronunciation (soundFile: aardvark.mp3)
     - sense: ...
 </programlisting>
