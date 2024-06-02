@@ -31,7 +31,7 @@
         </listitem>
         <listitem>
           <para><literal><olink targetptr="etymology_etymon">etymon</olink></literal>
-            <glossterm>optional</glossterm> (zero or more).</para>
+              <glossterm>optional</glossterm> (zero or more) and <glossterm>unique</glossterm>.</para>
         </listitem>
     </itemizedlist>
     </listitem>
