@@ -90,6 +90,15 @@
     
   </section>
   
+  <section id="XMLElementOrder" role="normative">
+    <title>Element order</title>
+    <para>The child elements of each parent element must be in the order in which they are listed in
+      this specification.</para>
+    <para> The only exception is inline markup elements which implement object types from the
+      Anotation Module: <code>&lt;placeholderMarker&gt;</code>, <code>&lt;headwordMarker&gt;</code>
+      and <code>&lt;collocateMarker&gt;</code>. These can appear in any order. </para>
+  </section>
+  
   <section id="XMLElements" role="normative">
     <title>DMLex XML serialization elements</title>
   
