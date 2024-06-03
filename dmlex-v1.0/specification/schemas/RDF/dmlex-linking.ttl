@@ -1,7 +1,7 @@
 ## The ontology for DMLex
 ## Author: John P. McCrae
 
-@prefix dmlex: <http://www.oasis-open.org/to-be-confirmed/dmlex#> .
+@prefix dmlex: <https://docs.oasis-open.org/lexidma/dmlex/v1.0/schemas/RDF/dmlex.ttl#> .
 @prefix lime: <http://www.w3.org/ns/lemon/lime#> .
 @prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .

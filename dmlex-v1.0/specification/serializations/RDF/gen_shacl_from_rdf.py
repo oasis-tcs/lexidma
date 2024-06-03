@@ -3,8 +3,8 @@ from collections import defaultdict
 from rdflib.namespace import RDF, RDFS, OWL, URIRef
 from rdflib.collection import Collection
 
-DMLEX = "http://www.oasis-open.org/to-be-confirmed/dmlex#"
-DMLEX_SHACL = "http://www.oasis-open.org/to-be-confirmed/dmlex-shacl#"
+DMLEX = "https://docs.oasis-open.org/lexidma/dmlex/v1.0/schemas/RDF/dmlex.ttl#"
+DMLEX_SHACL = "https://docs.oasis-open.org/lexidma/dmlex/v1.0/schemas/RDF/dmlex.shacl#"
 
 def parse_rdf():
     g = rdflib.Graph()

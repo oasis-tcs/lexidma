@@ -1,7 +1,7 @@
 # This file was generated from dmlex.ttl by gen_shacl_from_rdf.py
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix dmlex: <http://www.oasis-open.org/to-be-confirmed/dmlex#> .
-@prefix : <http://www.oasis-open.org/to-be-confirmed/dmlex-shacl#> .
+@prefix dmlex: <https://docs.oasis-open.org/lexidma/dmlex/v1.0/schemas/RDF/dmlex.ttl#> .
+@prefix : <https://docs.oasis-open.org/lexidma/dmlex/v1.0/schemas/RDF/dmlex.shacl#> .
 
 
 :LexicographicResourceShape ;
