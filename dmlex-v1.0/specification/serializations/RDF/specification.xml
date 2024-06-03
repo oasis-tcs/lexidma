@@ -14,7 +14,7 @@
       <para>The RDF serialization used in this document follows the following principles</para>
       <itemizedlist>
           <listitem>
-            <para>The RDF serialization uses an vocabulary defined at the namespace <code>https://www.oasis-open.org/to-be-confirmed/dmlex</code>, al elements of the vocabulary are in this namespace</para>
+            <para>The RDF serialization uses an vocabulary defined at the namespace <code>https://docs.oasis-open.org/lexidma/dmlex/v1.0/schemas/RDF/dmlex.ttl#</code>, al elements of the vocabulary are in this namespace</para>
           </listitem>
           <listitem>
             <para>The vocabulary file provides RDF Schema and OWL axioms which implement the restrictions described by the data model. It also provides a linking to the <ulink url="https://www.w3.org/2016/05/ontolex/">OntoLex-Lemon</ulink> model. The ontology provides rules to infer an OntoLex-lemon model from DMLex data. This is achieved by means of subclass and subproperty axioms and so conversion can be performed by an OWL reasoner.</para>

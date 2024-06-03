@@ -3,7 +3,7 @@ from rdflib.namespace import RDF, RDFS, OWL, URIRef
 from collections import defaultdict
 from rdflib.collection import Collection
 
-DMLEX = "http://www.oasis-open.org/to-be-confirmed/dmlex#"
+DMLEX = "https://docs.oasis-open.org/lexidma/dmlex/v1.0/schemas/RDF/dmlex.ttl#"
 
 def describe_property(g, property, file, restrictions):
     file.write(f"""
