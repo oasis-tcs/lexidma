@@ -447,7 +447,7 @@
         <para>
           Some object types defined in DMLex have a property or a combination of properties mandated to be unique.
           Designating a property as unique means that its value must be unique within the scope of its parent object type.
-          Designating a combination of properties as unique means that the ordered composition of its values must be unique within the scope of their parent object type. Such unique properties in DMLex serve two purposes:
+            Designating a combination of properties as unique means that the ordered composition of its values must be unique within the scope of their parent object type. In the case that all unique properties are missing, <code>listingOrder</code> <glossterm>must</glossterm> be used to verify uniqueness. Such unique properties in DMLex serve two purposes:
         </para>
         <itemizedlist>
           <listitem>
