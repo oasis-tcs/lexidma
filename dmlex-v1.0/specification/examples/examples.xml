@@ -12,6 +12,10 @@
     Each example is shown in pseudocode first to demonstrate the object model at an abstract level.
     After that, each example is shown in XML and JSON. The XML and JSON encoding shown here follows
     DMLex’s own implementation guidance for XML and JSON.</para>
+  <para>In the pseudocode, <code>relation</code> objects use alphanumeric IDs to indicate
+    which entries or senses they point to, for example <code>microscope-1</code> and <code>der-ozean-1</code>.
+    These IDs are used here instead of <olink targetptr="fragid">fragment identification strings</olink>
+    for easier readibility.</para>
   <xi:include href="examples/00.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="examples/01.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="examples/02.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
