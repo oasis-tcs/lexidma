@@ -1,11 +1,5 @@
 #!/usr/bin/python3
-import json
+import json, glob, sys
 from jsonschema import validate
-import glob
-schema = json.load(open('dmlex.schema.json'))
-for file in glob.glob("*.json"):
-  if file.endswith('.schema.json'):
-    continue
-  print(file)
-  validate(json.load(open(file)), schema)
-
+schema = json.load(open(sys.argv[1]))
+validate(json.load(sys.stdin), schema)
