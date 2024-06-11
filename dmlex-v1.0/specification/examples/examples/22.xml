@@ -14,13 +14,13 @@
         <programlisting>
 - entry (headword: autopsy)
     - sense
-        - headwordTranslation (text: pitva)
         - example (text: The coroner performed an autopsy.)
             - headwordMarker: "autopsy"
             - collocateMarker: "performed" (lemma: perform)
             - exampleTranslation (text: Koroner provedl pitvu.)
                 - headwordMarker: "pitvu"
                 - collocateMarker: "provedl" (lemma: provést)
+        - headwordTranslation (text: pitva)
 </programlisting>
     </example>
     <example>

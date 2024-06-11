@@ -1,13 +1,14 @@
-<entry id="autopsy">
+<entry id="autopsy"
+    xmlns="http://docs.oasis-open.org/lexidma/ns/dmlex-1.0">
     <headword>autopsy</headword>
     <sense id="autopsy-1">
-        <headwordTranslation><text>pitva</text></headwordTranslation>
         <example>
-            <text>The coroner <collocateMarker lemma="perform">performed</collocateMarker > an <headwordMarker>autopsy</headwordMarker>.</text>
-            <exampleTranslation>
+            <text>The coroner <collocateMarker lemma="perform">performed</collocateMarker> an <headwordMarker>autopsy</headwordMarker>.</text>
+            <exampleTranslation langCode="cs">
                 <text>Koroner <collocateMarker lemma="provést">provedl</collocateMarker> <headwordMarker>pitvu</headwordMarker>.</text>
             </exampleTranslation>
         </example>
+        <headwordTranslation langCode="cs"><text>pitva</text></headwordTranslation>
     </sense>
 </entry>
 

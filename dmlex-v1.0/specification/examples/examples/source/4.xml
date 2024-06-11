@@ -1,4 +1,5 @@
-<entry id="aardvark-noun">
+<entry id="aardvark-noun"
+    xmlns="http://docs.oasis-open.org/lexidma/ns/dmlex-1.0">
     <headword>aardvark</headword>
     <pronunciation soundFile="aardvark.mp3">
         <transcription>

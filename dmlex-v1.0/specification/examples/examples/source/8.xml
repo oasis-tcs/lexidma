@@ -1,4 +1,5 @@
-<entry id="doctor-n">
+<entry id="doctor-n"
+    xmlns="http://docs.oasis-open.org/lexidma/ns/dmlex-1.0">
     <headword>doctor</headword>
     <sense id="doctor-n-1">
         <indicator>medical doctor</indicator>

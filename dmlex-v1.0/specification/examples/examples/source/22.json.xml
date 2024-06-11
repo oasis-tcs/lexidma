@@ -5,7 +5,7 @@
   "headword": "autopsy",
   "senses": [{
     "id": "autopsy-1",
-    "headwordTranslations": [{"text": "pitva"}],
+    "headwordTranslations": [{"langCode": "cs", "text": "pitva"}],
     "examples": [{
       "text": "The coroner performed an autopsy.",
       "headwordMarkers": [
@@ -15,6 +15,7 @@
         {"startIndex": 12, "endIndex": 21, "lemma": "perform"}
       ],
       "exampleTranslations": [{
+        "langCode": "cs",
         "text": "Koroner provedl pitvu.",
         "headwordMarkers": [
           {"startIndex": 16, "endIndex": 21}

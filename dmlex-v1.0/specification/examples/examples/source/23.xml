@@ -1,4 +1,5 @@
-<entry id="cat-n">
+<entry id="cat-n"
+    xmlns="http://docs.oasis-open.org/lexidma/ns/dmlex-1.0">
     <headword>cat</headword>
     <etymology>
         <etymon>

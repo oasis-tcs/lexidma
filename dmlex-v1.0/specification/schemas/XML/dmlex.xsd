@@ -12,7 +12,7 @@ It is not sure if uniqueness checks will always work as expected for optional el
 Better support could probably be achieved by turning <unique> into <assert> even if it makes the code less readable: see https://stackoverflow.com/a/20520572
 
 Uniqueness cannot be based on properties that are allowed to appear more than once (XML Schema specification says that "Each XPath expression in the {fields} property must identify a single node").
-In the current schema, such uniqueness constraints (there are 7 of them) are commented out and therefore inactive.
+In the current schema, such uniqueness constraints (there are 6 of them) are commented out and therefore inactive.
 It might be possible to re-write them as <assert>s using concatenation of values for all elements of the same name, cf. https://forums.parasoft.com/discussion/5575/using-concat-in-xpath-to-node-that-occurs-more-than-once
 -->
 <xs:schema version="1.0" xml:lang="en"
@@ -101,7 +101,14 @@ It might be possible to re-write them as <assert>s using concatenation of values
   
   <xs:complexType name="lexicographicResourceType">
     <xs:sequence>
-      <xs:element ref="entry" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded" type="entryType">
+        <!-- the following uniqueness checks have been copied from the global entry element: -->
+        <xs:unique ref="partOfSpeechUnique"/>
+        <xs:unique ref="inflectedFormUnique"/>
+        <xs:unique ref="senseUniqueByIndicator"/>
+        <xs:unique ref="labelUnique"/>
+        <xs:unique ref="pronunciationUniqueBySoundFile"/>
+      </xs:element>
       <xs:sequence>
         <xs:element ref="translationLanguage" minOccurs="1" maxOccurs="unbounded"/>
       </xs:sequence>
@@ -126,9 +133,12 @@ It might be possible to re-write them as <assert>s using concatenation of values
     <xs:attribute name="title" use="optional" type="nonEmptyString"/>
     <xs:attribute name="uri" use="optional" type="xs:anyURI"/>
     <xs:attribute name="langCode" use="required" type="xs:language"/>
+    <!-- @langCode is required as long as there is not exactly one translationLanguage -->
+    <xs:assert test="count(translationLanguage)=1 or (count(.//headwordTranslation[not(@langCode)])=0 and count(.//headwordExplanation[not(@langCode)])=0 and count(.//exampleTranslation[not(@langCode)])=0)"/>
   </xs:complexType>
 
-  <xs:element name="entry" type="entryType">
+  <xs:element name="entry" type="entryTypeRequiredLangCode">
+    <!-- @langCode is required when there is no lexicographicResource above entry -->
     <xs:unique name="partOfSpeechUnique">
       <xs:selector xpath="partOfSpeech"/>
       <xs:field xpath="@tag"/>
@@ -195,6 +205,14 @@ It might be possible to re-write them as <assert>s using concatenation of values
     <xs:assert test="string-length(headword)>0"/>
   </xs:complexType>
 
+  <xs:complexType name="entryTypeRequiredLangCode">
+    <xs:complexContent>
+      <xs:extension base="entryType">
+        <xs:assert test="count(.//headwordTranslation[not(@langCode)])=0 and count(.//headwordExplanation[not(@langCode)])=0 and count(.//exampleTranslation[not(@langCode)])=0"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
   <xs:element name="partOfSpeech" type="partOfSpeechType">
     <xs:unique ref="sameAsUnique"/>
   </xs:element>
@@ -224,7 +242,7 @@ It might be possible to re-write them as <assert>s using concatenation of values
   <xs:element name="sense" type="senseType">
     <xs:unique name="definitionUnique">
       <xs:selector xpath="definition"/>
-      <xs:field xpath="."/>
+      <xs:field xpath="text"/>
     </xs:unique>
     <xs:unique ref="labelUnique"/>
     <xs:unique name="exampleUnique">
@@ -238,7 +256,7 @@ It might be possible to re-write them as <assert>s using concatenation of values
     </xs:unique>
     <xs:unique name="headwordExplanationUnique">
       <xs:selector xpath="headwordExplanation"/>
-      <xs:field xpath="."/>
+      <xs:field xpath="text"/>
       <xs:field xpath="@langCode"/>
     </xs:unique>
   </xs:element>
@@ -259,20 +277,21 @@ It might be possible to re-write them as <assert>s using concatenation of values
     <xs:attribute name="id" use="optional" type="xs:string"/>
   </xs:complexType>
 
-  <xs:element name="definition" type="definitionType">
-    <xs:unique name="collocateMarkerUniqueAsChild">
-      <xs:selector xpath="collocateMarker"/>
-      <xs:field xpath="@lemma"/>
-    </xs:unique>
-  </xs:element>
+  <xs:element name="definition" type="definitionType"/>
 
   <xs:complexType name="definitionType" mixed="true">
-    <xs:choice minOccurs="0" maxOccurs="unbounded">
-      <xs:element ref="headwordMarker"/>
-      <xs:element ref="collocateMarker"/>
-    </xs:choice>
+    <xs:sequence>
+      <xs:element name="text">
+        <xs:complexType mixed="true">
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element ref="headwordMarker"/>
+            <xs:element ref="collocateMarker"/>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="definitionType" use="optional" type="xs:string"/>
-    <xs:assert test="string-length(.)>0"/>
+    <xs:assert test="string-length(text)>0"/>
   </xs:complexType>
 
   <xs:element name="label" type="labelType"/>
@@ -283,6 +302,10 @@ It might be possible to re-write them as <assert>s using concatenation of values
 
   <xs:element name="pronunciation" type="pronunciationType">
     <xs:unique ref="labelUnique"/>
+    <xs:unique name="transcriptionUnique">
+      <xs:selector xpath="transcription"/>
+      <xs:field xpath="text"/>
+    </xs:unique>
   </xs:element>
 
   <xs:complexType name="pronunciationType">
@@ -294,19 +317,13 @@ It might be possible to re-write them as <assert>s using concatenation of values
     <xs:assert test="transcription or @soundFile"/>
   </xs:complexType>
 
-  <xs:element name="transcription" type="transcriptionType">
-    <xs:unique name="transcriptionUnique">
-      <xs:selector xpath="transcription"/>
-      <xs:field xpath="."/>
-    </xs:unique>
-  </xs:element>
+  <xs:element name="transcription" type="transcriptionType"/>
 
   <xs:complexType name="transcriptionType">
-    <xs:simpleContent>
-      <xs:extension base="nonEmptyString">
-        <xs:attribute name="scheme" use="optional" type="xs:language"/>
-      </xs:extension>
-    </xs:simpleContent>
+    <xs:sequence>
+      <xs:element name="text" type="nonEmptyString"/>
+    </xs:sequence>
+    <xs:attribute name="scheme" use="optional" type="xs:language"/>
   </xs:complexType>
 
   <xs:element name="example" type="exampleType">
@@ -315,10 +332,6 @@ It might be possible to re-write them as <assert>s using concatenation of values
       <xs:selector xpath="exampleTranslation"/>
       <xs:field xpath="text"/>
       <xs:field xpath="@langCode"/>
-    </xs:unique>
-    <xs:unique name="collocateMarkerUniqueInText">
-      <xs:selector xpath="collocateMarker"/>
-      <xs:field xpath="text/@lemma"/>
     </xs:unique>
   </xs:element>
 
@@ -376,24 +389,20 @@ It might be possible to re-write them as <assert>s using concatenation of values
       <xs:element ref="inflectedForm" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
     <xs:attribute name="langCode" use="optional" type="xs:language"/>
-    <xs:assert test="count(ancestor::lexicographicResource/translationLanguage)=1 or @langCode"/>
     <xs:assert test="string-length(text)>0"/>
   </xs:complexType>
 
   <xs:element name="headwordExplanation" type="headwordExplanationType"/>
 
   <xs:complexType name="headwordExplanationType">
-    <xs:simpleContent>
-      <xs:extension base="nonEmptyString">
-        <xs:attribute name="langCode" use="optional" type="xs:language"/>
-        <xs:assert test="count(ancestor::lexicographicResource/translationLanguage)=1 or @langCode"/>
-      </xs:extension>
-    </xs:simpleContent>
+    <xs:sequence>
+      <xs:element name="text" type="nonEmptyString"/>
+    </xs:sequence>
+    <xs:attribute name="langCode" use="optional" type="xs:language"/>
   </xs:complexType>
 
   <xs:element name="exampleTranslation" type="exampleTranslationType">
     <xs:unique ref="labelUnique"/>
-    <xs:unique ref="collocateMarkerUniqueInText"/>
   </xs:element>
 
   <xs:complexType name="exampleTranslationType">
@@ -410,7 +419,6 @@ It might be possible to re-write them as <assert>s using concatenation of values
     </xs:sequence>
     <xs:attribute name="langCode" use="optional" type="xs:language"/>
     <xs:attribute name="soundFile" use="optional" type="xs:string"/>
-    <xs:assert test="count(ancestor::lexicographicResource/translationLanguage)=1 or @langCode"/>
     <xs:assert test="string-length(text)>0"/>
   </xs:complexType>
 
