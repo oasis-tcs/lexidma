@@ -47,7 +47,7 @@
         <listitem>
             <para><literal>listingOrder</literal>
                 <glossterm>required</glossterm> (exactly one). Number. The position of this translation
-                among other translations of the same example in the same language. Can be implicit from the
+                among other translations of the same example in the same language. This can be implicit from the
                 serialization.</para>
         </listitem>
     </itemizedlist>

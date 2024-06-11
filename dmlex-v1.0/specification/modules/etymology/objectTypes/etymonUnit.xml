@@ -51,7 +51,7 @@
         <listitem>
             <para><literal>listingOrder</literal>
                 <glossterm>required</glossterm> (exactly one). Number. The position of this etymon
-                among other etymons of the origin. Can be implicit from the
+                among other etymons of the origin. This can be implicit from the
                 serialization.</para>
         </listitem>
     </itemizedlist>

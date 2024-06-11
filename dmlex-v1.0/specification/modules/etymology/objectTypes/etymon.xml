@@ -52,7 +52,7 @@
         <listitem>
             <para><literal>listingOrder</literal>
                 <glossterm>required</glossterm> (exactly one). Number. The position of this origin
-                among other origins listed in the etymology. Can be implicit from the
+                among other origins listed in the etymology. This can be implicit from the
                 serialization.</para>
         </listitem>
     </itemizedlist>
