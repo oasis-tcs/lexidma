@@ -1,20 +1,22 @@
 -include Makefile.dep
 
-html: dmlex-v1.0-csd02.html
+VERSION=v1.0-csd03
 
-pdf: dmlex-v1.0-csd02.pdf
+html: dmlex-$(VERSION).html
 
-dmlex-v1.0-csd02.pdf: dmlex-v1.0-csd02.fo
+pdf: dmlex-$(VERSION).pdf
+
+dmlex-$(VERSION).pdf: dmlex-$(VERSION).fo
 	fop -c stylesheets/fop.xconf -pdf $@ -fo $<
 
-dmlex-v1.0-csd02.fo: dmlex-v1.0-csd02.xml
+dmlex-$(VERSION).fo: dmlex-$(VERSION).xml
 	xsltproc --xinclude -o $@ stylesheets/oasis-specification-fo-a4.xsl $<
 
-dmlex-v1.0-csd02.html: dmlex-v1.0-csd02.xml
+dmlex-$(VERSION).html: dmlex-$(VERSION).xml
 	xsltproc --xinclude -o $@ stylesheets/oasis-specification-html.xsl $<
 
-dmlex-v1.0-csd02.xml: dmlex.xml docbook/dbgenent.mod dmlex_uml.svg $(SOURCE_XML)
-	./merge.sh
+dmlex-$(VERSION).xml: dmlex.xml docbook/dbgenent.mod dmlex_uml.svg $(SOURCE_XML)
+	./merge.sh $@
 
 dmlex_uml.pdf: dmlex.dot
 	dot -Tpdf < $< > $@
@@ -34,7 +36,7 @@ Makefile.dep: dmlex.xml $(SOURCE_XML) makedep.sh
 
 .PHONY: clean validate_xml validate_json
 clean:
-	rm -f dmlex-v1.0-csd02.html dmlex-v1.0-csd02.pdf dmlex-v1.0-csd02.fo dmlex-v1.0-csd02.xml Makefile.dep dmlex_uml.svg dmlex_uml.pdf dmlex.dot dmlex.dot.content
+	rm -f dmlex-$(VERSION).html dmlex-$(VERSION).pdf dmlex-$(VERSION).fo dmlex-$(VERSION).xml Makefile.dep dmlex_uml.svg dmlex_uml.pdf dmlex.dot dmlex.dot.content
 
 xmldep:
 	@python -c 'import xmlschema' 2>/dev/null || { echo "Python xmlschema module is not installed, cannot validate XML examples."; exit 2; }

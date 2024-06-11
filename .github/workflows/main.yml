@@ -53,7 +53,7 @@ jobs:
           prerelease: true
           title: "Latest Version"
           files: |
-            dmlex-v1.0/specification/dmlex-v1.0-csd02.html
-            dmlex-v1.0/specification/dmlex-v1.0-csd02.pdf
-            dmlex-v1.0/specification/dmlex-v1.0-csd02.xml
+            dmlex-v1.0/specification/dmlex-v1.0-csd03.html
+            dmlex-v1.0/specification/dmlex-v1.0-csd03.pdf
+            dmlex-v1.0/specification/dmlex-v1.0-csd03.xml
             dmlex-v1.0/specification/dmlex_uml.svg
