@@ -19,10 +19,10 @@
     <itemizedlist>
         <title>Child nodes</title>
         <listitem>
-            <para><literal><olink targetptr="nvh_entry">entry</olink></literal> <glossterm>optional</glossterm> (zero or one)</para>
+            <para><literal><olink targetptr="nvh_entry">entry</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
         </listitem>
         <listitem>
-            <para><literal>uri</literal> <glossterm>required</glossterm> (exactly one)</para>
+            <para><literal>uri</literal> <glossterm>optional</glossterm> (zero or one)</para>
         </listitem>
         <listitem>
             <para><literal>langCode</literal> <glossterm>required</glossterm> (exactly one)</para>
@@ -56,6 +56,9 @@
         <listitem>
             <para><literal><olink targetptr="nvh_sourceIdentityTag">sourceIdentityTag</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
         </listitem>
+        <listitem>
+            <para><literal><olink targetptr="nvh_transcriptionSchemeTag">transcriptionSchemeTag</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
+        </listitem>
     </itemizedlist>
     
     <itemizedlist>
@@ -74,7 +77,7 @@
             <para><literal><olink targetptr="etymology_etymonLanguage">etymonLanguage</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
         </listitem>
         <listitem>
-            <para><literal><olink targetptr="etymology_originType">originType</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
+            <para><literal><olink targetptr="etymology_etymonType">etymonType</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
         </listitem>
     </itemizedlist>
 

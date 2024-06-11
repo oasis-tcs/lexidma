@@ -8,7 +8,7 @@
 <programlisting>
 core@lexicographicResource:
     core@title: ?
-    core@uri:
+    core@uri: ?
     core@language:
     core@entry: *
     xlingual@translationLanguage: +
