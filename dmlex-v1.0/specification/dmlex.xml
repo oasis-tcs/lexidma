@@ -833,7 +833,7 @@
       </bibliography>
     </section>
   </appendix>
-  <appendix role="informative" id="Validation">
+  <appendix role="normative" id="Validation">
 	<title>Machine Readable Validation Artifacts</title>
 	  <itemizedlist spacing="compact">
         <listitem>
