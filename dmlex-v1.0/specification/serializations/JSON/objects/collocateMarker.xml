@@ -35,7 +35,7 @@
         <title>Members if implementing the Linking Module</title>
         <listitem>
             <para><literal>"id"</literal>
-                <glossterm>optional</glossterm>, string. Collocate markers that have an ID can appear as members of relations.</para>
+                <glossterm>optional</glossterm>, string. Collocate markers that have an ID may use this ID as object reference instead of the IRI addressing mechanism described in <xref linkend="frag_iri"/>.</para>
         </listitem>
     </itemizedlist>
 

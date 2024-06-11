@@ -19,7 +19,7 @@
     <itemizedlist>
         <title>Attributes if implementing the Linking Module</title>
         <listitem>
-            <para><literal>@id</literal> <glossterm>optional</glossterm>. Entries that have an ID can be members of relations.</para>
+            <para><literal>@id</literal> <glossterm>optional</glossterm>. Entries that have an ID may use this ID as object reference instead of the IRI addressing mechanism described in <xref linkend="frag_iri"/>.</para>
         </listitem>
     </itemizedlist>
     
