@@ -52,7 +52,7 @@
         is a member of several relations (for example: when a sense is a member of a synonymy
         relation and also of an antonymy relation) then, when showing the object (the entry or the
         sense) to human users, the relations should be listed in this order (for example: the
-        synonyms first, the antonyms second).</para>
+		synonyms first, the antonyms second). This can be implicit from the serialization of the <code><olink targetptr="linking_memberType">relation</olink></code> objects.</para>
     </listitem>
   </itemizedlist>
 
