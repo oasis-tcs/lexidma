@@ -37,7 +37,7 @@
         <listitem>
             <para><literal>"id"</literal>
                 <glossterm>optional</glossterm>, string.
-                Senses that have an ID can be members of relations.
+                Senses that have an ID may use this ID as object reference instead of the IRI addressing mechanism described in <xref linkend="frag_iri"/>.
             </para>
         </listitem>
     </itemizedlist>
