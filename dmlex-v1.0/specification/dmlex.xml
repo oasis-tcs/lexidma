@@ -109,21 +109,17 @@
 
       <itemizedlist spacing="compact">
         <listitem>
-			<para><ulink url="&this-loc;/schemas/XML/dmlex.xsd">XML schema</ulink></para>
+			<para>XML: <ulink url="&this-loc;/schemas/XML/">&this-loc;/schemas/XML/</ulink></para>
         </listitem>
         <listitem>
-			<para><ulink url="&this-loc;/schemas/XML/dmlex_no-crosslingual.xsd">XML schema excluding the cross-lingual module</ulink></para>
+			<para>JSON: <ulink url="&this-loc;/schemas/JSON/">&this-loc;/schemas/JSON/</ulink></para>
         </listitem>
         <listitem>
-			<para><ulink url="&this-loc;/schemas/JSON/dmlex.json">JSON schema</ulink></para>
+			<para>RDF: <ulink url="&this-loc;/schemas/RDF/">&this-loc;/schemas/RDF/</ulink></para>
         </listitem>
-        <listitem>
-			<para><ulink url="&this-loc;/schemas/JSON/dmlex_no-crosslingual.json">JSON schema excluding the cross-lingual module</ulink></para>
-        </listitem>
-        <listitem>
-			<para><ulink url="&this-loc;/schemas/informativeCopiesOf3rdPartySchemas/NVH/dmlex.nvh">NVH schema (informative)</ulink></para>
-        </listitem>
-      </itemizedlist>
+	</itemizedlist>
+	<para>Informative copies of third party schemas are provided:</para>
+	<para><ulink url="&this-loc;/schemas/informativeCopiesOf3rdPartySchemas/">&this-loc;/schemas/informativeCopiesOf3rdPartySchemas/</ulink></para>
     </legalnotice>
     <legalnotice role="related">
       <title>Related Work</title>
