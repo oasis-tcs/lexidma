@@ -13,7 +13,7 @@ ex:doctor-n-1 a dmlex:Sense;
   dmlex:headwordTranslation [ a dmlex:HeadwordTranslation;
       dmlex:text "Ärztin";
       dmlex:listingOrder "2"^^xsd:unsignedInt;
-      dmlex:langCode "de"
+      dmlex:langCode "de" ;
       dmlex:partOfSpeech [ 
           dmlex:tag "n-fem";
           dmlex:listingOrder "1"^^xsd:unsignedInt ] ],

@@ -34,7 +34,7 @@ Makefile.dep: dmlex.xml $(SOURCE_XML) makedep.sh
 	echo -n "SOURCE_XML=" > $@
 	./makedep.sh >> $@
 
-.PHONY: clean validate_xml validate_json
+.PHONY: clean validate_xml validate_json validate_rdf
 clean:
 	rm -f dmlex-$(VERSION).html dmlex-$(VERSION).pdf dmlex-$(VERSION).fo dmlex-$(VERSION).xml Makefile.dep dmlex_uml.svg dmlex_uml.pdf dmlex.dot dmlex.dot.content
 
@@ -67,5 +67,14 @@ validate_json: jsondep validate_json.py schemas/JSON/dmlex.schema.json schemas/J
 		     echo ./validate_json.py schemas/JSON/dmlex.schema.json "< $$jsonexample"; \
 			 echo ./validate_json.py schemas/JSON/dmlex_no-crosslingual.schema.json "< $$jsonexample" ; \
 			 exit 4; \
+		   } \
+	done
+
+validate_rdf: jsondep schemas/RDF/dmlex.shacl
+	@for rdfexample in examples/examples/source/*[0-9].rdf; do \
+		echo validating "$$rdfexample"; \
+		python -m pyshacl -s schemas/RDF/dmlex.shacl -df turtle $$rdfexample -e schemas/RDF/dmlex.ttl -i rdfs \
+		|| { echo "validation of $$rdfexample failed"; \
+			 exit 5; \
 		   } \
 	done
