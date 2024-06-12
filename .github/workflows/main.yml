@@ -18,8 +18,18 @@ defaults:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install packages for XML and JSON validation
+        run: |
+          pip install xmlschema jsonschema xmlstarlet
+      - name: Validate
+        run: make validate_xml validate_json
   build:
+    needs: validate
+
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -43,7 +53,7 @@ jobs:
           prerelease: true
           title: "Latest Version"
           files: |
-            dmlex-v1.0/specification/dmlex-v1.0-csd02.html
-            dmlex-v1.0/specification/dmlex-v1.0-csd02.pdf
-            dmlex-v1.0/specification/dmlex-v1.0-csd02.xml
+            dmlex-v1.0/specification/dmlex-v1.0-csd03.html
+            dmlex-v1.0/specification/dmlex-v1.0-csd03.pdf
+            dmlex-v1.0/specification/dmlex-v1.0-csd03.xml
             dmlex-v1.0/specification/dmlex_uml.svg

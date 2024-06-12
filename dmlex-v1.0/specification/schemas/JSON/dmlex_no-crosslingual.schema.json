@@ -191,7 +191,7 @@
           }
         }
       },
-      "additionalProperties": false      
+      "additionalProperties": false
     },
     "sense": {
       "type": "object",

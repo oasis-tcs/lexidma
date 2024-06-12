@@ -7,10 +7,88 @@
   "type": "object",
   "oneOf": [
     {
-      "$ref": "#/$defs/lexicographicResource"
+      "$ref": "#/$defs/lexicographicResource",
+      "if": {
+        "not": {
+          "required": ["translationLanguages"],
+          "properties": {
+            "translationLanguages": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 1
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "entries": {
+            "items": {
+              "properties": {
+                "senses": {
+                  "items": {
+                    "properties": {
+                      "headwordTranslations": {
+                        "items": {
+                          "required": ["langCode"]
+                        }
+                      },
+                      "headwordExplanations": {
+                        "items": {
+                          "required": ["langCode"]
+                        }
+                      },
+                      "examples": {
+                        "items": {
+                          "properties": {
+                            "exampleTranslations": {
+                              "items": {
+                                "required": ["langCode"]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     },
     {
-      "$ref": "#/$defs/entry"
+      "$ref": "#/$defs/entry",
+      "properties": {
+        "senses": {
+          "items": {
+            "properties": {
+              "headwordTranslations": {
+                "items": {
+                  "required": ["langCode"]
+                }
+              },
+              "headwordExplanations": {
+                "items": {
+                  "required": ["langCode"]
+                }
+              },
+              "examples": {
+                "items": {
+                  "properties": {
+                    "exampleTranslations": {
+                      "items": {
+                        "required": ["langCode"]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   ],
   "$defs": {
@@ -110,45 +188,7 @@
           }
         }
       },
-      "additionalProperties": false,
-      "if": {
-        "not": {
-          "required": ["translationLanguages"],
-          "properties": {
-            "translationLanguages": {
-              "type": "array",
-              "minItems": 1,
-              "maxItems": 1
-            }
-          }
-        }
-      },
-      "then": {
-        "properties": {
-          "entries": {
-            "items": {
-              "properties": {
-                "senses": {
-                  "items": {
-                    "properties": {
-                      "headwordTranslations": {
-                        "items": {
-                          "required": ["langCode"]
-                        }
-                      },
-                      "headwordExplanations": {
-                        "items": {
-                          "required": ["langCode"]
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
+      "additionalProperties": false
     },
     "entry": {
       "type": "object",
@@ -237,7 +277,7 @@
           }
         }
       },
-      "additionalProperties": false      
+      "additionalProperties": false
     },
     "sense": {
       "type": "object",

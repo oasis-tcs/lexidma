@@ -18,9 +18,17 @@ defaults:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install packages for XML and JSON validation
+        run: |
+          pip install xmlschema jsonschema xmlstarlet
+      - name: Validate
+        run: make validate_xml validate_json
   build:
-    # The type of runner that the job will run on
+    needs: validate
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job

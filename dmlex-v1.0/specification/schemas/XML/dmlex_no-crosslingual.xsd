@@ -217,7 +217,7 @@ It might be possible to re-write them as <assert>s using concatenation of values
   <xs:element name="sense" type="senseType">
     <xs:unique name="definitionUnique">
       <xs:selector xpath="definition"/>
-      <xs:field xpath="."/>
+      <xs:field xpath="text"/>
     </xs:unique>
     <xs:unique ref="labelUnique"/>
     <xs:unique name="exampleUnique">
@@ -236,20 +236,21 @@ It might be possible to re-write them as <assert>s using concatenation of values
     <xs:attribute name="id" use="optional" type="xs:string"/>
   </xs:complexType>
 
-  <xs:element name="definition" type="definitionType">
-    <xs:unique name="collocateMarkerUniqueAsChild">
-      <xs:selector xpath="collocateMarker"/>
-      <xs:field xpath="@lemma"/>
-    </xs:unique>
-  </xs:element>
+  <xs:element name="definition" type="definitionType"/>
 
   <xs:complexType name="definitionType" mixed="true">
-    <xs:choice minOccurs="0" maxOccurs="unbounded">
-      <xs:element ref="headwordMarker"/>
-      <xs:element ref="collocateMarker"/>
-    </xs:choice>
+    <xs:sequence>
+      <xs:element name="text">
+        <xs:complexType mixed="true">
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element ref="headwordMarker"/>
+            <xs:element ref="collocateMarker"/>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="definitionType" use="optional" type="xs:string"/>
-    <xs:assert test="string-length(.)>0"/>
+    <xs:assert test="string-length(text)>0"/>
   </xs:complexType>
 
   <xs:element name="label" type="labelType"/>
@@ -260,6 +261,10 @@ It might be possible to re-write them as <assert>s using concatenation of values
 
   <xs:element name="pronunciation" type="pronunciationType">
     <xs:unique ref="labelUnique"/>
+    <xs:unique name="transcriptionUnique">
+      <xs:selector xpath="transcription"/>
+      <xs:field xpath="text"/>
+    </xs:unique>
   </xs:element>
 
   <xs:complexType name="pronunciationType">
@@ -271,27 +276,17 @@ It might be possible to re-write them as <assert>s using concatenation of values
     <xs:assert test="transcription or @soundFile"/>
   </xs:complexType>
 
-  <xs:element name="transcription" type="transcriptionType">
-    <xs:unique name="transcriptionUnique">
-      <xs:selector xpath="transcription"/>
-      <xs:field xpath="."/>
-    </xs:unique>
-  </xs:element>
+  <xs:element name="transcription" type="transcriptionType"/>
 
   <xs:complexType name="transcriptionType">
-    <xs:simpleContent>
-      <xs:extension base="nonEmptyString">
-        <xs:attribute name="scheme" use="optional" type="xs:language"/>
-      </xs:extension>
-    </xs:simpleContent>
+    <xs:sequence>
+      <xs:element name="text" type="nonEmptyString"/>
+    </xs:sequence>
+    <xs:attribute name="scheme" use="optional" type="xs:language"/>
   </xs:complexType>
 
   <xs:element name="example" type="exampleType">
     <xs:unique ref="labelUnique"/>
-    <xs:unique name="collocateMarkerUniqueInText">
-      <xs:selector xpath="collocateMarker"/>
-      <xs:field xpath="text/@lemma"/>
-    </xs:unique>
   </xs:element>
 
   <xs:complexType name="exampleType">

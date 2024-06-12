@@ -1,5 +1,6 @@
 <lexicographicResource title="Example Dictionary" 
-    uri="http://example.com" langCode="en">
+    uri="http://example.com" langCode="en"
+    xmlns="http://docs.oasis-open.org/lexidma/ns/dmlex-1.0">
     <entry id="abandon-verb">
         <headword>abandon</headword>
             <partOfSpeech tag="verb"/>

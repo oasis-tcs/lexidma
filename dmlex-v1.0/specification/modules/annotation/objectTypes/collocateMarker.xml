@@ -53,7 +53,7 @@
     <listitem>
       <para><literal><olink targetptr="annotation_label">label</olink></literal>
         <glossterm>optional</glossterm> (zero or more).
-        Can be used to communicate facts about the role or type of the item in the sentence, for example its syntactic role
+        This can be used to communicate facts about the role or type of the item in the sentence, for example its syntactic role
         (subject, direct object etc.), its semantic role (agent, affected etc) or its semantic type
         (human, institution etc.) The <code><olink targetptr="values_labelTag">labelTag</olink></code> object
         type can be used to explain and/or constrain the collocate labels that are allowed to appear in
