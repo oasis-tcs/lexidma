@@ -20,6 +20,7 @@ ex:autopsy-1 a dmlex:Sense;
       dmlex:text "The coroner performed an autopsy.";
       dmlex:listingOrder "1"^^xsd:unsignedInt;
       dmlex:exampleTranslation [ a dmlex:ExampleTranslation;
+          dmlex:langCode "cs" ;
           dmlex:collocateMarker [ 
               dmlex:endIndex "15"^^xsd:unsignedInt;
               dmlex:startIndex "8"^^xsd:unsignedInt;
