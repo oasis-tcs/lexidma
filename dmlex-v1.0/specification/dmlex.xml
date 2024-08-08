@@ -121,7 +121,8 @@
 	<para>Informative copies of third party schemas are provided:</para>
 	<para><ulink url="&this-loc;/schemas/informativeCopiesOf3rdPartySchemas/">&this-loc;/schemas/informativeCopiesOf3rdPartySchemas/</ulink></para>
     </legalnotice>
-    <legalnotice role="related">
+    <!--  Commenting out the Related Work notice as requested by OASIS Admin, see https://github.com/oasis-tcs/lexidma/issues/134  
+      <legalnotice role="related">
       <title>Related Work</title>
       <!-- Model content for replaced specifications in the future
    <para>This specification replaces or supersedes:</para>
@@ -132,7 +133,7 @@
             05 August 2014. OASIS Standard. <ulink url="http://docs.oasis-open.org/xliff/xliff-core/v2.0/os/xliff-core-v2.0-os.html">http://docs.oasis-open.org/xliff/xliff-core/v&pversion;/os/xliff-core-v&pversion;-os.html</ulink></para>
         </listitem>
       </itemizedlist>
-      -->
+      ->
       <para>This specification is related to:</para>
       <itemizedlist spacing="compact">
         <!-- model content for related specifications in case there are any later on
@@ -150,12 +151,12 @@
               url="http://docs.oasis-open.org/xliff/xliff-core/v2.1/os/xliff-core-v2.1-os.html"
               >http://docs.oasis-open.org/xliff/xliff-core/v2.1/os/xliff-core-v2.1-os.html</ulink></para>
         </listitem>
-        -->
+        ->
         <listitem>
           <para><emphasis>No related specifications.</emphasis></para>
         </listitem>
       </itemizedlist>
-    </legalnotice>
+    </legalnotice>-->
     <legalnotice id="namespaces" role="namespaces">
       <title>Declared namespaces</title>
       <para>This specification declares one or more namespaces. Namespace isn't considered an XML
@@ -249,7 +250,7 @@
       <para>When referencing this specification the following citation format should be used:</para>
       <para><citation>DMLex-&version;</citation></para>
       <para><emphasis>Data Model for Lexicography Version &version;</emphasis>. Edited by David
-        Filip, Miloš Jakubíček, Simon Krek, John McCrae, and Michal Měchura. &pubdate;. OASIS
+        Filip, Miloš Jakubíček, Vojtěch Kovář, Simon Krek, John McCrae, and Michal Měchura. &pubdate;. OASIS
         &standard;. <ulink url="&this-loc;/&name;-&stage;.html"
           >&this-loc;/&name;-&stage;.html</ulink>. Latest version: <ulink
           url="&latest-loc;/&name;.html">&latest-loc;/&name;.html</ulink>. </para>
@@ -262,11 +263,11 @@
     <legalnotice role="notices">
       <title>Notices</title>
       <para>Copyright © OASIS Open &pubyear;.</para>
-      <para>All Rights Reserved.Distributed under the terms of the OASIS <ulink
+      <para>All Rights Reserved. Distributed under the terms of the OASIS <ulink
           url="https://www.oasis-open.org/policies-guidelines/ipr/"
-        >IPR Policy</ulink>).</para>
+        >IPR Policy</ulink>.</para>
       <para>The name "OASIS" is a trademark of <ulink url="https://www.oasis-open.org/"
-        >OASIS</ulink>), the owner and developer of this specification, and
+        >OASIS</ulink>, the owner and developer of this specification, and
         should be used only to refer to the organization and its official outputs.</para>
       <para>For complete copyright information please see the <link linkend="full-notices">full Notices</link> section in an Appendix
         below.</para>
@@ -773,10 +774,11 @@
           <citetitle><ulink url="http://www.w3.org/2001/xml.xsd"
               >http://www.w3.org/2001/xml.xsd</ulink></citetitle> [<edition><ulink
               url="http://www.w3.org/2009/01/xml.xsd"
-            >http://www.w3.org/2009/01/xml.xsd</ulink>]</edition>. at <edition><ulink
+            >http://www.w3.org/2009/01/xml.xsd</ulink>]</edition>. <!-- at <edition><ulink
               url="&this-loc;/schemas/informativeCopiesOf3rdPartySchemas/w3c/xml.xsd"
               >&this-loc;/schemas/informativeCopiesOf3rdPartySchemas/w3c/xml.xsd</ulink></edition>
-          in this distribution</bibliomixed>
+          in this distribution-->
+        </bibliomixed>
         <bibliomixed id="XMLCatalogs"><abbrev>XML Catalogs</abbrev> Norman Walsh, <title>XML
             Catalogs</title>, <citetitle>
             <ulink url="https://www.oasis-open.org/committees/download.php/14809/xml-catalogs.html"
