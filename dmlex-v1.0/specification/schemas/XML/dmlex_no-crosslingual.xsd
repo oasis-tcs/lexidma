@@ -85,10 +85,10 @@ It might be possible to re-write them as <assert>s using concatenation of values
       <xs:selector xpath="etymonType"/>
       <xs:field xpath="@type"/>
     </xs:unique>
-    <xs:key name="entryOrSenseOrCollocateMarkerKey">
+    <xs:unique name="entryOrSenseOrCollocateMarkerKey">
       <xs:selector xpath=".//entry | .//sense | .//collocateMarker"/>
       <xs:field xpath="@id"/>
-    </xs:key>
+    </xs:unique>
     <xs:keyref name="memberRef" refer="entryOrSenseOrCollocateMarkerKey">
       <xs:selector xpath=".//member"/>
       <xs:field xpath="@ref"/>
