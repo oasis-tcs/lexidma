@@ -527,7 +527,6 @@ It might be possible to re-write them as <assert>s using concatenation of values
     <xs:sequence>
       <xs:element name="note" minOccurs="0" type="xs:string"/>
       <xs:element ref="etymonUnit" maxOccurs="unbounded"/>
-      <xs:element name="translation" minOccurs="0" type="xs:string"/>
     </xs:sequence>
     <xs:attribute name="when" use="optional" type="xs:string"/>
     <xs:attribute name="type" use="optional" type="xs:string"/>

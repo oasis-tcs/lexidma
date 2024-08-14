@@ -906,9 +906,6 @@
             "$ref": "#/$defs/etymonUnit"
           },
           "minItems": 1
-        },
-        "translation": {
-          "type": "string"
         }
       },
       "additionalProperties": false

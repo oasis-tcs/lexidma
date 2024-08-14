@@ -29,10 +29,6 @@
                 <glossterm>required</glossterm>, array of one or more <literal><olink
                     targetptr="json_etymonUnit">etymonUnit</olink></literal> instances</para>
         </listitem>
-        <listitem>
-            <para><literal>"translation"</literal>
-                <glossterm>optional</glossterm>, string</para>
-        </listitem>
     </itemizedlist>
 
 </section>

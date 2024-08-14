@@ -926,7 +926,6 @@ dmlex:translation a owl:DatatypeProperty ;
   rdfs:domain dmlex:HasTranslation ;
   rdfs:range xsd:string .
 
-dmlex:Etymon rdfs:subClassOf dmlex:HasTranslation .
 dmlex:EtymonUnit rdfs:subClassOf dmlex:HasTranslation .
 
 dmlex:EtymonUnit a owl:Class ;

@@ -735,9 +735,6 @@
             "$ref": "#/$defs/partOfSpeech"
           },
           "uniqueItems": true
-        },
-        "translation": {
-          "type": "string"
         }
       },
       "additionalProperties": false

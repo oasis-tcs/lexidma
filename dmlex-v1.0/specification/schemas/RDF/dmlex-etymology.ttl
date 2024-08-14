@@ -49,9 +49,6 @@ dmlex:Etymon a owl:Class ;
     a owl:Restriction ;
     owl:onProperty dmlex:etymonUnit ;
     owl:minCardinality 1 ] , [
-    a owl:Restriction ;
-    owl:onProperty dmlex:translation ;
-    owl:maxCardinality 1 ] , [
      a owl:Restriction ;
     owl:onProperty dmlex:listingOrder ;
     owl:cardinality 1 ] .
