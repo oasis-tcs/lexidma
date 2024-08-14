@@ -552,6 +552,7 @@ It might be possible to re-write them as <assert>s using concatenation of values
   <xs:complexType name="etymonTypeType">
     <xs:sequence>
       <xs:element name="description" minOccurs="0" type="nonEmptyString"/>
+      <xs:element ref="sameAs" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
     <xs:attribute name="type" use="required" type="nonEmptyString"/>
   </xs:complexType>
@@ -561,6 +562,7 @@ It might be possible to re-write them as <assert>s using concatenation of values
   <xs:complexType name="etymonLanguageType">
     <xs:sequence>
       <xs:element name="displayName" minOccurs="0" type="xs:string"/>
+      <xs:element ref="sameAs" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
     <xs:attribute name="langCode" use="required" type="xs:language"/>
   </xs:complexType>

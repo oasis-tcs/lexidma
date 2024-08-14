@@ -140,3 +140,7 @@ dmlex:displayName a owl:ObjectProperty ;
   rdfs:label "Display Name"@en ;
   rdfs:domain dmlex:EtymonLanguage ;
   rdfs:range xsd:string .
+
+
+dmlex:EtymonLanguage rdfs:subClassOf dmlex:HasSameAs .
+dmlex:EtymonType rdfs:subClassOf dmlex:HasSameAs .

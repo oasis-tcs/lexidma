@@ -20,6 +20,11 @@
             <para><literal>"displayName"</literal>
                 <glossterm>optional</glossterm>, string</para>
         </listitem>
+        <listitem>
+            <para><literal>"sameAs"</literal>
+                <glossterm>optional</glossterm>, array of zero or more strings implementing the
+                <olink targetptr="values_sameAs">sameAs</olink> object type</para>
+        </listitem>
     </itemizedlist>
 
 </section>

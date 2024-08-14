@@ -31,6 +31,10 @@
                 <glossterm>optional</glossterm> (zero or one). Normalised string. A human-readable
                 explanation of this type.</para>
         </listitem>
+        <listitem>
+            <para><literal><olink targetptr="linking_sameAs">sameAs</olink></literal>
+                <glossterm>optional</glossterm> (zero or more).</para>
+        </listitem>
     </itemizedlist>
     
     <example>
