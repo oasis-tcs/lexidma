@@ -32,7 +32,7 @@
 	</itemizedlist>
 	<para>See <ulink url="https://namevaluehierarchy.org">namevaluehierarchy.org</ulink> for details about the NVH file format and processing libraries.</para>
   </section>
-  <section id="NVHNodes" role="normative">
+  <section id="NVHNodes" role="informative">
     <title>DMLex NVH serialization nodes</title>
   
   <xi:include href="nodes/lexicographicResource.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
