@@ -7,8 +7,8 @@
                          ]>
 <section id="rdb_headwordMarkers">
     <title>Database table: <literal>headwordMarkers</literal></title>
-    <para>Implements the <olink targetptr="annonation_headwordMarker">headwordMarker</olink> object type
-        from the Annotationm Module.</para>
+    <para>Implements the <olink targetptr="annotation_headwordMarker">headwordMarker</olink> object type
+        from the Annotation Module.</para>
 
     <itemizedlist>
         <title>Columns</title>

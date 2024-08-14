@@ -7,8 +7,8 @@
                          ]>
 <section id="rdb_placeholderMarkers">
     <title>Database table: <literal>placeholderMarkers</literal></title>
-    <para>Implements the <olink targetptr="annonation_placeholderMarker">placeholderMarker</olink> object type
-        from the Annotationm Module.</para>
+    <para>Implements the <olink targetptr="annotation_placeholderMarker">placeholderMarker</olink> object type
+        from the Annotation Module.</para>
 
     <itemizedlist>
         <title>Columns</title>
