@@ -38,7 +38,7 @@
         <glossterm>optional</glossterm> (zero or one). Normalised string. A statement about
         constraints and recommendation on using this tag. This can be a human-readable description
         such as "for use in German and Czech only" or a machine-readable instruction in any format
-        understandable to the DMLex implemenation, such as <code>language=de OR
+        understandable to the DMLex implementation, such as <code>language=de OR
         language=cs</code>.</para>
     </listitem>
   </itemizedlist>
