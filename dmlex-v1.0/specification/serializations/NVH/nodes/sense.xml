@@ -12,7 +12,7 @@
     <itemizedlist>
         <title>Value</title>
         <listitem>
-            <para><literal>indicator</literal> <glossterm>optional</glossterm> (zero or one)</para>
+            <para><glossterm>optional</glossterm>, implements the <literal>indicator</literal> property </para>
         </listitem>
     </itemizedlist>
     
@@ -39,11 +39,12 @@
     <itemizedlist>
         <title>Child nodes if implementing the Crosslingual Module</title>
         <listitem>
-            <para><literal><olink targetptr="nvh_headwordExplanation">headwordExplanation</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
+            <para><literal><olink targetptr="nvh_headwordExplanation">[PREFIX]explanation</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
         </listitem>
         <listitem>
-            <para><literal><olink targetptr="nvh_headwordTranslation">headwordTranslation</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
-        </listitem>
+            <para><literal><olink targetptr="nvh_headwordTranslation">[PREFIX]translation</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
+		</listitem>
     </itemizedlist>
+	The string [PREFIX] in the node name <glossterm>may</glossterm> be an empty string if only one translation language exists in the lexicographic resource, otherwise it is replaced by the <literal>langCode</literal> property of the <literal><olink targetptr="xlingual_headwordExplanation">headwordExplanation</olink></literal> or <literal><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></literal> object type, respectively, followed by the underscore character.
 
 </section>

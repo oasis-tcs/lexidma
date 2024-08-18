@@ -26,10 +26,10 @@
     <itemizedlist>
         <title>Child nodes if implementing the Annotation Module</title>
 		<listitem>
-			<para><literal><olink targetptr="nvh_headwordMarker">headwordMarker</olink></literal> node <glossterm>optional</glossterm> (zero or more)</para>
+			<para><literal><olink targetptr="nvh_headword">headword</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
 		</listitem>
 		<listitem>
-			<para><literal><olink targetptr="nvh_collocateMarker">collocateMarker</olink></literal> node <glossterm>optional</glossterm> (zero or more)</para>
+			<para><literal><olink targetptr="nvh_collocate">collocate</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
 		</listitem>
     </itemizedlist>
     

@@ -24,10 +24,16 @@
     <para>The NVH serialization of DMLex shown in this document follows these principles:</para>
     <itemizedlist>
       <listitem>
-        <para>The value of the node is the text property of the object, if defined, otherwise it is one of the required object properties of maximum arity 1.</para>
+        <para>The <literal>listingOrder</literal> property is always implicit from ordering of lines in the NVH file and never serialized explicitly. Object types having only a literal property and <literal>listingOrder</literal> are considered as if they only had the literal property.</para>
       </listitem>
       <listitem>
-        <para>All other objects properties are implemented as NVH nodes.</para>
+        <para>The value of the node is the <literal>text</literal> property of the object, if defined, otherwise it is one of the (typically required) object properties of maximum arity 1.</para>
+      </listitem>
+      <listitem>
+        <para>All other object properties are implemented as NVH nodes. If the property contains a literal value, it is serialized as a node named as the property with the value being the literal value of the property.</para>
+      </listitem>
+      <listitem>
+        <para>Unless specified otherwise, property <literal>names</literal> refer to properties of the DMLex object that is being described.</para>
       </listitem>
 	</itemizedlist>
 	<para>See <ulink url="https://namevaluehierarchy.org">namevaluehierarchy.org</ulink> for details about the NVH file format and processing libraries.</para>

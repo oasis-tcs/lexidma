@@ -5,14 +5,14 @@
                          %xinclude;
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
                          ]>
-<section id="nvh_partOfSpeech">
-    <title>NVH node: <literal>partOfSpeech</literal></title>
+<section id="nvh_pos">
+    <title>NVH node: <literal>pos</literal></title>
     <para>Implements the <olink targetptr="core_partOfSpeech">partOfSpeech</olink> object type.</para>
 
     <itemizedlist>
         <title>Value</title>
         <listitem>
-            <para><literal>tag</literal> <glossterm>required</glossterm></para>
+            <para><glossterm>Required</glossterm>, implements the <literal>tag</literal> property.</para>
         </listitem>
     </itemizedlist>
     

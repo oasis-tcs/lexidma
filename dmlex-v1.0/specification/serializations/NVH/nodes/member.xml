@@ -6,22 +6,19 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
                          ]>
 <section id="nvh_member">
-    <title>NVH node: <literal>member</literal></title>
-    <para>Implements the <olink targetptr="linking_member">member</olink> object type from the Linking Module.</para>
+    <title>NVH nodes: <literal>[PREFIX]member</literal></title>
+    <para>Implements the <olink targetptr="linking_member">member</olink> object type from the Linking Module. The string [PREFIX] in the node name is an empty string if the <literal>role</literal> property of this <literal>member</literal> is not specified, otherwise it is replaced by that <literal>role</literal> property followed by the underscore character. All IRI-unsafe characters (outside the <literal>iunreserved</literal> class according to [<link linkend="bib_rfc3987">RFC 3987</link>]) in the <literal>role</literal> name are percent-encoded according to [<link linkend="bib_rfc3986">RFC 3986</link>].</para>
 
     <itemizedlist>
         <title>Value</title>
         <listitem>
             <para><literal>ref</literal>
-                <glossterm>required</glossterm>: the <code>id</code> of an <code>entry</code>, a <code>sense</code> or a <code>collocateMarker</code></para>
+                <glossterm>required</glossterm></para>
         </listitem>
 	</itemizedlist>
 
     <itemizedlist>
         <title>Child nodes</title>
-        <listitem>
-            <para><literal>role</literal> <glossterm>optional</glossterm> (zero or one)</para>
-        </listitem>
         <listitem>
             <para><literal>obverseListingOrder</literal>
                 <glossterm>optional</glossterm> (exactly one)</para>

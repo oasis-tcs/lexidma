@@ -12,7 +12,7 @@
 	<itemizedlist>
         <title>Value</title>
         <listitem>
-            <para><literal>title</literal> <glossterm>optional</glossterm></para>
+            <para><glossterm>optional</glossterm>, implements the <literal>uri</literal> property.</para>
         </listitem>
     </itemizedlist>
 
@@ -22,7 +22,7 @@
             <para><literal><olink targetptr="nvh_entry">entry</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
         </listitem>
         <listitem>
-            <para><literal>uri</literal> <glossterm>optional</glossterm> (zero or one)</para>
+            <para><literal>title</literal> <glossterm>optional</glossterm> (zero or one)</para>
         </listitem>
         <listitem>
             <para><literal>langCode</literal> <glossterm>required</glossterm> (exactly one)</para>
@@ -42,7 +42,7 @@
             <para><literal><olink targetptr="nvh_definitionTypeTag">definitionTypeTag</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
         </listitem>
         <listitem>
-            <para><literal><olink targetptr="nvh_inflectedFormTag">inflectedFormTag</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
+            <para><literal><olink targetptr="nvh_formTag">formTag</olink></literal> <glossterm>optional</glossterm> (zero or more). Implements the <literal><olink targetptr="values_inflectedFormTag">inflectedFormTag</olink></literal> property.</para>
         </listitem>
         <listitem>
             <para><literal><olink targetptr="nvh_labelTag">labelTag</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
@@ -51,7 +51,7 @@
             <para><literal><olink targetptr="nvh_labelTypeTag">labelTypeTag</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
         </listitem>
         <listitem>
-            <para><literal><olink targetptr="nvh_partOfSpeechTag">partOfSpeechTag</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
+            <para><literal><olink targetptr="nvh_posTag">posTag</olink></literal> <glossterm>optional</glossterm> (zero or more). Implements the <literal><olink targetptr="values_partOfSpeechTag">partOfSpeechTag</olink></literal> property.</para>
         </listitem>
         <listitem>
             <para><literal><olink targetptr="nvh_sourceIdentityTag">sourceIdentityTag</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>

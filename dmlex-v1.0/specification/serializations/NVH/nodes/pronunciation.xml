@@ -7,12 +7,12 @@
                          ]>
 <section id="nvh_pronunciation">
     <title>NVH node: <literal>pronunciation</literal></title>
-    <para>Implements the <olink targetptr="core_pronunciation">pronunciation</olink> object type.</para>
+    <para>Implements the <olink targetptr="core_pronunciation">pronunciation</olink> object type under the <literal><olink targetptr="nvh_entry">entry</olink></literal> node.</para>
 
     <itemizedlist>
         <title>Value</title>
         <listitem>
-            <para><literal>soundFile</literal> <glossterm>required</glossterm> if <literal>transcription</literal> is present, <glossterm>optional</glossterm> otherwise</para>
+            <para><literal>soundFile</literal> <glossterm>optional</glossterm></para>
         </listitem>
     </itemizedlist>
     
@@ -20,8 +20,7 @@
         <title>Child nodes</title>
         <listitem>
             <para><literal><olink targetptr="nvh_transcription">transcription</olink></literal>
-                <glossterm>optional</glossterm> (zero or more) if <literal>soundFile</literal> is present,
-                <glossterm>required</glossterm> (one or more) otherwise</para>
+            <glossterm>optional</glossterm> (zero or more)</para>
         </listitem>
         <listitem>
             <para><literal><olink targetptr="nvh_label">label</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>

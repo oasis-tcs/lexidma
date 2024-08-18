@@ -6,8 +6,9 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
                          ]>
 <section id="nvh_headwordExplanation">
-    <title>NVH node: <literal>headwordExplanation</literal></title>
-    <para>Implements the <olink targetptr="xlingual_headwordExplanation">headwordExplanation</olink> object type from the Crosslingual Module.</para>
+    <title>NVH nodes: <literal>[PREFIX]explanation</literal></title>
+    <para>Implements the <olink targetptr="xlingual_headwordExplanation">headwordExplanation</olink> object type from the Crosslingual Module. 	The string [PREFIX] in the node name <glossterm>may</glossterm> be an empty string if only one translation language exists in the lexicographic resource, otherwise it is replaced by the <literal>langCode</literal> property of the <literal><olink targetptr="xlingual_headwordExplanation">headwordExplanation</olink></literal> followed by the underscore character.
+</para>
 
     <itemizedlist>
         <title>Value</title>
@@ -16,14 +17,4 @@
         </listitem>
     </itemizedlist>
 
-	<itemizedlist>
-        <title>Child nodes</title>
-        <listitem>
-				<para><literal>langCode</literal> <glossterm>optional</glossterm> (zero or one) if the ancestor <literal>lexicographicResource</literal>
-                contains exactly one <literal>translationLanguage</literal>,
-                <glossterm>required</glossterm> otherwise</para>
-        </listitem>
-    </itemizedlist>
-    
-    
 </section>
