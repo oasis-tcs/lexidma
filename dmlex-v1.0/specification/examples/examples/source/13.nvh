@@ -1,0 +1,16 @@
+lexicographicResource: http://example.com
+  langCode: en
+  entry: buy
+    sense:
+      definition: get something by paying money for it
+  entry: sell
+    sense:
+      definition: exchange something for money
+  relation: antonyms
+    member: example.com/entry/buy~0~0/sense/0~get%20something%20by%20paying%20money%20for%20it
+    member: example.com/entry/sell~0~0/sense/0~exchange%20something%20for%20money
+  relationType: antonyms
+    memberType: sense
+	min: 2
+	max: 2
+	hint: navigate

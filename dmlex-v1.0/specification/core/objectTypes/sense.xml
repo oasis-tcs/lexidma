@@ -101,6 +101,16 @@
   </example>
   
   <example>
+    <title>NVH</title>
+    <programlisting>
+sense: [indicator]
+  definition: ...
+  label: ...
+  example: ...
+</programlisting>
+  </example>
+
+  <example>
     <title>Relational database</title>
     <graphic fileref="core/databaseDiagrams/sense.svg" contentwidth="16cm"/>
   </example>

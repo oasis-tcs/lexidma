@@ -81,4 +81,11 @@
     <graphic fileref="core/databaseDiagrams/partOfSpeech.svg" contentwidth="16cm"/>
   </example>
 
+  <example>
+    <title>NVH</title>
+    <programlisting>
+pos: [tag]
+</programlisting>
+  </example>
+
 </section>

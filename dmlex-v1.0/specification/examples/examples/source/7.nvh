@@ -1,0 +1,4 @@
+lexicographicResource: http://example.com
+  title: My German-English Dictionary
+  langCode: de
+  translationLanguage: en

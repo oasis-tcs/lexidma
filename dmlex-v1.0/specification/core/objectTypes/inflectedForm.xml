@@ -96,6 +96,16 @@
     <graphic fileref="core/databaseDiagrams/inflectedForm.svg" contentwidth="16cm"/>
   </example>
   
+  <example>
+    <title>NVH</title>
+    <programlisting>
+form: [text]
+  tag: ...
+  label: ...
+  pronunciation: ...
+</programlisting>
+  </example>
+
   <itemizedlist>
     <title>Comments</title>
     <listitem>

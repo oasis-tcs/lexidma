@@ -111,4 +111,15 @@
     <graphic fileref="core/databaseDiagrams/lexicographicResource.svg" contentwidth="16cm"/>
   </example>
 
+  <example>
+    <title>NVH</title>
+    <programlisting>
+lexicographicResource: http://example.com/dictionary
+  title: An example dictionary
+  langCode: en
+  entry: ...
+  entry: ...
+</programlisting>
+  </example>
+
 </section>
