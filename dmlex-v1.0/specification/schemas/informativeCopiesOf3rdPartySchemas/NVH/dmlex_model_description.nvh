@@ -9,7 +9,7 @@
 core@lexicographicResource:
     core@title: ?
     core@uri: ?
-    core@language:
+    core@langCode:
     core@entry: *
     xlingual@translationLanguage: +
     values@definitionTypeTag: *
@@ -37,8 +37,8 @@ core@partOfSpeech:
     core@tag:
     core@listingOrder:
 core@inflectedForm:
-    core@tag: ?
     core@text:
+    core@tag: ?
     core@label: *
     core@pronunciation: *
     core@listingOrder:
@@ -61,7 +61,7 @@ core@label:
     core@listingOrder:
 core@pronunciation:
     core@soundFile: ?
-    core@transcription: ?
+    core@transcription: *
     core@listingOrder:
     core@label: *
 core@transcription:
@@ -83,10 +83,10 @@ xlingual@translationLanguage:
     xlingual@listingOrder:
 xlingual@headwordExplanation:
     xlingual@text:
-    xlingual@language: *    
+    xlingual@langCode: ?
 xlingual@headwordTranslation:
     xlingual@text:
-    xlingual@language: *
+    xlingual@langCode: ?
     xlingual@listingOrder:
     xlingual@partOfSpeech: *
     xlingual@label: *
@@ -95,9 +95,9 @@ xlingual@headwordTranslation:
     annotation@placeholderMarker: *
 xlingual@exampleTranslation:
     xlingual@text:
-    xlingual@language: *
+    xlingual@langCode: ?
     xlingual@label: *
-    xlingual@soundFile: *
+    xlingual@soundFile: ?
     xlingual@listingOrder:
     annotation@headwordMarker: *
     annotation@collocateMarker: *
@@ -133,32 +133,40 @@ values@transcriptionSchemeTag:
     values@tag:
     values@description: ?
     values@for: ?
+values@sameAs:
+    values@uri:
 linking@relation:
     linking@type:
     linking@description: ?
     linking@member: 2+
 linking@member:
-    linking@memberID:
+    linking@ref:
     linking@role: ?
     linking@listingOrder:
-    linking@obverseListingOrder:
+    linking@obverseListingOrder: ?
 linking@relationType:
     linking@type:
     linking@description: ?
-    linking@scope: ?(any,sameEntry,sameResource)
+    linking@scopeRestriction: ?(any,sameEntry,sameResource)
     linking@memberType: *
     linking@sameAs: *
 linking@memberType:
-    linking@role:
+    linking@role: ?
     linking@description: ?
-    linking@memberType: (sense,entry,collocate)
+    linking@type: (sense,entry,collocate)
     linking@min: ?
     linking@max: ?
-    linking@action: (embed,navigate,none)
+    linking@hint: ?(embed,navigate,none)
     linking@sameAs: *
 annotation@placeholderMarker:
+    annotation@startIndex:
+    annotation@endIndex:
 annotation@headwordMarker:
+    annotation@startIndex:
+    annotation@endIndex:
 annotation@collocateMarker:
+    annotation@startIndex:
+    annotation@endIndex:
     annotation@lemma: ?
     annotation@label: *
 etymology@etymology:
@@ -173,7 +181,7 @@ etymology@etymon:
     etymology@translation: ?
     etymology@listingOrder:
 etymology@etymonUnit:
-    etymology@language:
+    etymology@langCode:
     etymology@text:
     etymology@reconstructed: ?
     etymology@partOfSpeech: *
