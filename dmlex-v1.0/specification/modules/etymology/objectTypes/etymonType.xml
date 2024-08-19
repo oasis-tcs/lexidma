@@ -32,7 +32,7 @@
                 explanation of this type.</para>
         </listitem>
         <listitem>
-            <para><literal><olink targetptr="linking_sameAs">sameAs</olink></literal>
+            <para><literal><olink targetptr="etymology_sameAs">sameAs</olink></literal>
                 <glossterm>optional</glossterm> (zero or more).</para>
         </listitem>
     </itemizedlist>

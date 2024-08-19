@@ -33,7 +33,7 @@
         language, in the language of the lexicographic resource.</para>
     </listitem>
     <listitem>
-      <para><literal><olink targetptr="linking_sameAs">sameAs</olink></literal>
+      <para><literal><olink targetptr="etymology_sameAs">sameAs</olink></literal>
         <glossterm>optional</glossterm> (zero or more).</para>
     </listitem>
   </itemizedlist>
