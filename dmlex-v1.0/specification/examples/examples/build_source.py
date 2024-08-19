@@ -6,8 +6,8 @@ N = 74
 for f in glob("source/*.xml"):
     if f.endswith(".xml.xml") or f.endswith(".rdf.xml") or f.endswith(".json.xml"):
         continue
-    with open(f) as inf:
-        with open(f + ".xml", "w") as outf:
+    with open(f, encoding="utf-8") as inf:
+        with open(f + ".xml", "w", encoding="utf-8") as outf:
             outf.write("<!-- This example is automatically generated. DO NOT EDIT -->\n")
             outf.write("<programlisting>\n")
             for line in inf.readlines():
@@ -19,8 +19,8 @@ for f in glob("source/*.xml"):
             outf.write("</programlisting>\n")
 
 for f in glob("source/*.rdf"):
-    with open(f) as inf:
-        with open(f + ".xml", "w") as outf:
+    with open(f, encoding="utf-8") as inf:
+        with open(f + ".xml", "w", encoding="utf-8") as outf:
             n = 1
             outf.write("<!-- This example is automatically generated. DO NOT EDIT -->\n")
             outf.write("<programlisting>\n")
@@ -34,8 +34,8 @@ for f in glob("source/*.rdf"):
             outf.write("</programlisting>\n")
 
 for f in glob("source/*.json"):
-    with open(f) as inf:
-        with open(f + ".xml", "w") as outf:
+    with open(f, encoding="utf-8") as inf:
+        with open(f + ".xml", "w", encoding="utf-8") as outf:
             outf.write("<!-- This example is automatically generated. DO NOT EDIT -->\n")
             outf.write("<programlisting>\n")
             for line in inf.readlines():

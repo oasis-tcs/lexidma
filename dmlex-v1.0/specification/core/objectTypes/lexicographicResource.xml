@@ -96,7 +96,8 @@
   <example>
     <title>RDF</title>
     <programlisting>
-@prefix dmlex: &lt;https://docs.oasis-open.org/lexidma/dmlex/v1.0/schemas/RDF/dmlex.ttl#&gt; .
+@prefix dmlex: 
+ &lt;https://docs.oasis-open.org/lexidma/dmlex/v1.0/schemas/RDF/dmlex.ttl#&gt; .
 
 &lt;#id&gt; a dmlex:LexicographicResource ;
   dmlex:title "..." ;
