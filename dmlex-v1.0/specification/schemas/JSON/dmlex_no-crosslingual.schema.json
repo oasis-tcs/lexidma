@@ -709,11 +709,7 @@
             "$ref": "#/$defs/etymonUnit"
           },
           "minItems": 1
-        },
-        "translation": {
-          "type": "string"
-        }
-      },
+        }      },
       "additionalProperties": false
     },
     "etymonUnit": {
@@ -735,6 +731,9 @@
             "$ref": "#/$defs/partOfSpeech"
           },
           "uniqueItems": true
+        ,
+        "translation": {
+          "type": "string"
         }
       },
       "additionalProperties": false
