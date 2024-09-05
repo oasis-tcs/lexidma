@@ -74,10 +74,10 @@
     <itemizedlist>
         <title>Child nodes if implementing the Etymology Module</title>
         <listitem>
-            <para><literal><olink targetptr="etymology_etymonLanguage">etymonLanguage</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
+            <para><literal><olink targetptr="nvh_etymonLanguage">etymonLanguage</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
         </listitem>
         <listitem>
-            <para><literal><olink targetptr="etymology_etymonType">etymonType</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
+            <para><literal><olink targetptr="nvh_etymonType">etymonType</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
         </listitem>
     </itemizedlist>
 
