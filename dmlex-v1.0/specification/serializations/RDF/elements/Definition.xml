@@ -20,7 +20,7 @@
         <para><literal>dmlex:text</literal> REQUIRED (exactly 1) of type <literal>http://www.w3.org/2000/01/rdf-schema#Literal</literal></para>
     </listitem>
     <listitem>
-        <para><literal>dmlex:definitionType</literal> OPTIONAL (at most 1) reference to <olink targetptr="rdf_DefinitionType">DefinitionType</olink></para>
+        <para><literal>dmlex:definitionType</literal> OPTIONAL (at most 1) reference to <olink targetptr="rdf_DefinitionTypeTag">DefinitionTypeTag</olink></para>
     </listitem>
     <listitem>
         <para><literal>dmlex:headwordMarker</literal> OPTIONAL reference to <olink targetptr="rdf_HeadwordMarker">HeadwordMarker</olink></para>
