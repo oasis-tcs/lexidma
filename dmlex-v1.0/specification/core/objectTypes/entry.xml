@@ -29,14 +29,14 @@
         headword.</para>
     </listitem>
     <listitem>
+      <para><literal><olink targetptr="core_partOfSpeech">partOfSpeech</olink></literal>
+        <glossterm>optional</glossterm> (zero or more) and <glossterm>unique</glossterm> (in combination with other unique properties if present). </para>
+    </listitem>
+    <listitem>
       <para><literal>homographNumber</literal>
         <glossterm>optional</glossterm> (zero or one) and <glossterm>unique</glossterm> (in
         combination with other unique properties if present). Number. The entry's homograph number,
         as a guide to distinguish entries with the same headword.</para>
-    </listitem>
-    <listitem>
-      <para><literal><olink targetptr="core_partOfSpeech">partOfSpeech</olink></literal>
-        <glossterm>optional</glossterm> (zero or more) and <glossterm>unique</glossterm> (in combination with other unique properties if present). </para>
     </listitem>
     <listitem>
       <para><literal><olink targetptr="core_label">label</olink></literal>

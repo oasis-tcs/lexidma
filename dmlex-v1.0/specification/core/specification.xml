@@ -113,11 +113,11 @@
 			<title>DMLex fragment identification string examples</title>
 			<para>Particular examples of DMLex fragment identification strings can then look as follows:</para>
 			<itemizedlist>
-				<listitem><para><literal>www.example.com/lexicon/entry/cat~1~noun</literal></para></listitem>
-				<listitem><para><literal>www.example.com/lexicon/entry/cat~1~noun/sense/0~small%20furry%20animal</literal> (Here we assume that the sense's <literal>indicator</literal> is empty and it has one <literal>definition</literal> which says “small furry animal”).</para></listitem>
-				<listitem><para><literal>www.example.com/lexicon/entry/cat~1~noun/sense/0~small%20furry%20animal/example/I%20have%20two%20dogs%20and%20a%20cat.</literal></para></listitem>
-				<listitem><para><literal>www.example.com/lexicon/entry/cat~1~noun/sense/0~0</literal> (Here we assume that both the sense's <literal>definition</literal> and its <literal>indicator</literal> are empty, and there is only one such sense.)</para></listitem>
-				<listitem><para><literal>www.example.com/lexicon/entry/cat~1~noun/sense/0~02</literal> (Here we assume that both the sense's <literal>definition</literal> and its <literal>indicator</literal> are empty, there are multiple such senses, and this is the sense number 2, of all this entry's senses.)</para></listitem>
+				<listitem><para><literal>www.example.com/lexicon/entry/cat~noun~1</literal></para></listitem>
+				<listitem><para><literal>www.example.com/lexicon/entry/cat~noun~1/sense/0~small%20furry%20animal</literal> (Here we assume that the sense's <literal>indicator</literal> is empty and it has one <literal>definition</literal> which says “small furry animal”).</para></listitem>
+				<listitem><para><literal>www.example.com/lexicon/entry/cat~noun~1/sense/0~small%20furry%20animal/example/I%20have%20two%20dogs%20and%20a%20cat.</literal></para></listitem>
+				<listitem><para><literal>www.example.com/lexicon/entry/cat~noun~1/sense/0~0</literal> (Here we assume that both the sense's <literal>definition</literal> and its <literal>indicator</literal> are empty, and there is only one such sense.)</para></listitem>
+				<listitem><para><literal>www.example.com/lexicon/entry/cat~noun~1/sense/0~02</literal> (Here we assume that both the sense's <literal>definition</literal> and its <literal>indicator</literal> are empty, there are multiple such senses, and this is the sense number 2, of all this entry's senses.)</para></listitem>
 			</itemizedlist>
 		</section>
 	  </section>
