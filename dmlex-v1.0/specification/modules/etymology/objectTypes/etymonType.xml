@@ -68,4 +68,11 @@
         <graphic fileref="modules/etymology/databaseDiagrams/etymonType.svg" contentwidth="16cm"/>
     </example>
     
-</section>
+    <example>
+        <title>NVH</title>
+        <programlisting>
+etymonType: type
+  description: ...
+</programlisting>
+    </example>
+ </section>

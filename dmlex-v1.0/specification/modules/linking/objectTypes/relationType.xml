@@ -101,4 +101,15 @@
     <graphic fileref="modules/linking/databaseDiagrams/relationType.svg" contentwidth="16cm"/>
   </example>
 
+  <example>
+    <title>NVH</title>
+    <programlisting>
+relationType: type
+  scopeRestriction: ...
+  description: ...
+  memberType: ...
+  sameAs: ...
+</programlisting>
+  </example>
+
 </section>

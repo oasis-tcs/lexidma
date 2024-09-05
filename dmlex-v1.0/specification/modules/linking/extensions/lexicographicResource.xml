@@ -54,4 +54,14 @@
   dmlex:relationType ... .
       </programlisting>
   </example> 
-</section>
+
+  <example>
+    <title>NVH</title>
+    <programlisting>
+lexicographicResource: ...
+    ...
+  relation: ...
+  relationType: ...
+</programlisting>
+  </example>
+ </section>

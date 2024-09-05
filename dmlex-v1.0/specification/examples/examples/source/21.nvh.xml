@@ -1,0 +1,10 @@
+<!-- This example is automatically generated. DO NOT EDIT -->
+<programlisting>
+entry: autopsy
+  sense
+    headwordTranslation: pitva
+    example: The coroner performed an autopsy.
+      headwordMarker: autopsy
+        exampleTranslation: Koroner provedl pitvu.
+          headwordMarker: pitvu
+</programlisting>

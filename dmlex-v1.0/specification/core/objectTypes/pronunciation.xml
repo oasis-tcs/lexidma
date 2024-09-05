@@ -97,4 +97,12 @@
     <graphic fileref="core/databaseDiagrams/pronunciation.svg" contentwidth="16cm"/>
   </example>
   
-</section>
+  <example>
+    <title>NVH</title>
+    <programlisting>
+pronunciation: soundFile
+  transcription: ...
+  label: ...
+    </programlisting>
+  </example>
+ </section>

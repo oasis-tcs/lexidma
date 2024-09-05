@@ -1,0 +1,18 @@
+lexicographicResource: http://example.com
+  langCode: en
+  entry: colour
+    pos: n
+    label: europeanSpelling
+    sense:
+      definition: red, blue, yellow etc.
+      example: What is your favourite colour?
+  entry: color
+    pos: n
+    label: americanSpelling
+  relation: variants
+    member: /colour~n
+    member: /color~n
+  relationType: variants
+    description: words which differ only in spelling
+    memberType: entry
+    min: 2, hint: navigate

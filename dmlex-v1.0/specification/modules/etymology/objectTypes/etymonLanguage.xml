@@ -82,4 +82,12 @@
     <graphic fileref="modules/etymology/databaseDiagrams/etymonLanguage.svg" contentwidth="16cm"/>
   </example>
   
+    <example>
+        <title>NVH</title>
+        <programlisting>
+etymonLanguage: langCode
+  displayName: ...
+  sameAs: ...
+</programlisting>
+    </example>
 </section>

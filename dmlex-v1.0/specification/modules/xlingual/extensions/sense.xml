@@ -57,4 +57,12 @@
     </programlisting>
   </example>
 
+  <example>
+    <title>XML</title>
+    <programlisting>
+sense: ...
+  explanation: ...
+  translation: ...
+    </programlisting>
+  </example>
 </section>

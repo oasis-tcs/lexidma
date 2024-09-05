@@ -35,6 +35,12 @@
       <listitem>
         <para>Unless specified otherwise, property <literal>names</literal> refer to properties of the DMLex object that is being described.</para>
       </listitem>
+      <listitem>
+        <para>Fragment identification strings <glossterm>may</glossterm> omit sequences of trailing "~0" and "0~0" strings in unique identifiers as well as the forward slash trailing the whole fragment identification string.</para>
+      </listitem>
+      <listitem>
+        <para>Fragment identification strings <glossterm>may</glossterm> start with a forward slash character as a shorthand for "[lexicograhpicResource.URI]/entry/" string.</para>
+      </listitem>
 	</itemizedlist>
 	<para>See <ulink url="https://namevaluehierarchy.org">namevaluehierarchy.org</ulink> for details about the NVH file format and processing libraries.</para>
   </section>

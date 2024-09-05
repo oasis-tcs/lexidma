@@ -47,6 +47,10 @@
         <title>RDF</title>
     </example>
     <example>
+        <title>NVH</title>
+        <xi:include href="source/15.nvh.xml"/>
+    </example>
+    <example>
         <title>Suggested rendering for human users</title>
         <programlisting>
 colour (noun, European spelling), variant: color

@@ -61,4 +61,12 @@
       </programlisting>
   </example> 
   
-</section>
+  <example>
+    <title>NVH</title>
+    <programlisting>
+definition: text
+  headword: ...
+  collocate: ...
+    </programlisting>
+  </example>
+ </section>

@@ -78,4 +78,12 @@
     <graphic fileref="core/databaseDiagrams/transcription.svg" contentwidth="16cm"/>
   </example>
 
+  <example>
+    <title>NVH</title>
+    <programlisting>
+transcription: text
+  scheme: ...
+    </programlisting>
+  </example>
+
 </section>

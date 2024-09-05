@@ -77,4 +77,12 @@
     <graphic fileref="modules/values/databaseDiagrams/labelTypeTag.svg" contentwidth="16cm"/>
   </example>
   
+  <example>
+    <title>NVH</title>
+    <programlisting>
+labelTypeTag: tag
+  description: ...
+  sameAs: ...
+  </programlisting>
+  </example>
 </section>

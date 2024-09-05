@@ -47,4 +47,11 @@
       </programlisting>
   </example>
   
+  <example>
+    <title>NVH</title>
+    <programlisting>
+lexicographicResource: ...
+  translationLanguage: ...
+    </programlisting>
+  </example>
 </section>

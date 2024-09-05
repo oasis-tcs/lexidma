@@ -41,6 +41,10 @@
         <xi:include href="source/13.rdf.xml"/>
     </example>
     <example>
+        <title>NVH</title>
+        <xi:include href="source/13.nvh.xml"/>
+    </example>
+    <example>
         <title>Suggested rendering for human users</title>
         <programlisting>
 buy

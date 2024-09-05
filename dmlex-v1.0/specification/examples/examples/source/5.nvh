@@ -3,9 +3,9 @@ lexicographicResource: http://example.com
   entry: folúsghlantóir
     pos: n-masc
     form: folúsghlantóra
-	  tag: sg-gen
+      tag: sg-gen
     form: folúsghlantóirí
-	  tag: pl
+      tag: pl
     sense: ...
   posTag: n-masc
     description: masculine noun

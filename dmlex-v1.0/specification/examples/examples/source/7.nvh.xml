@@ -1,0 +1,7 @@
+<!-- This example is automatically generated. DO NOT EDIT -->
+<programlisting>
+lexicographicResource: http://example.com
+  title: My German-English Dictionary
+  langCode: de
+  translationLanguage: en
+</programlisting>

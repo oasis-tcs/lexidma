@@ -4,22 +4,22 @@ lexicographicResource: http://example.com
   entry: See
     pos: n-fem
     sense:
-	  headwordTranslation: sea
+      headwordTranslation: sea
   entry: Meer
     pos: n-neut
     sense:
-	 headwordTranslation: sea
+      headwordTranslation: sea
   entry: Ozean
     pos: n-masc
     sense
       headwordTranslation: ocean
   relation: synonyms
     description: words that mean sea and ocean
-    member: example.com/entry/See~0~0/sense/0~0
-    member: example.com/entry/Meer~0~0/sense/0~0
-    member: example.com/entry/Ozean~0~0/sense/0~0
+    member: /See~n-fem/sense
+    member: /Meer~n-neut/sense
+    member: /Ozean~n-masc/sense
   relationType: synonyms
     description: synonyms and near synonyms
     memberType: sense
-	min: 2
-	hint: navigate
+    min: 2
+    hint: navigate

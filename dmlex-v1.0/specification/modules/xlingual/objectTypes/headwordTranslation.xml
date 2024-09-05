@@ -105,4 +105,14 @@
     <graphic fileref="modules/xlingual/databaseDiagrams/headwordTranslation.svg" contentwidth="16cm"/>
   </example>
 
-</section>
+  <example>
+    <title>NVH</title>
+    <programlisting>
+langCode_translation: text
+  pos: ...
+  label: ...
+  pronunciation: ...
+  form: ...
+    </programlisting>
+  </example>
+ </section>

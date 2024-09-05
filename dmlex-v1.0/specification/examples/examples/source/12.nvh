@@ -2,7 +2,7 @@ lexicographicResource: http://example.com
   langCode: en
   entry: glasses
     sense:
-	  definition: an optical seeing aid
+      definition: an optical seeing aid
   entry: microscope
     sense:
       definition: equipment for looking at very small things
@@ -10,15 +10,11 @@ lexicographicResource: http://example.com
     sense:
       definition: curved glass that makes things seem bigger
   relation: meronymy
-    member: example.com/entry/glasses~0~0/sense/0~an%20optical%20seeing%20aid
-	  role: whole
-    member: example.com/entry/lens~0~0/sense/0~curved%20glass%20that%20makes%20things%20seem%20bigger
-	  role: part
+    whole_member: /glasses/sense/0~an%20optical%20seeing%20aid
+    part_member: /lens/sense/0~curved%20glass%20that%20makes%20things%20seem%20bigger
   relation: meronymy
-    member: example.com/entry/microscope~0~0/sense/0~equipment%20for%20looking%20at%20very%20small%20things
-	  role: whole
-    member: example.com/entry/lens~0~0/sense/0~curved%20glass%20that%20makes%20things%20seem%20bigger
-	  role: part
+    whole_member: /entry/microscope/sense/0~equipment%20for%20looking%20at%20very%20small%20things
+    part_member: /entry/lens/sense/0~curved%20glass%20that%20makes%20things%20seem%20bigger
   relationType: meronomy
     description: part-whole relationship
     memberType: sense

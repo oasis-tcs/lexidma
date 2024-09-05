@@ -80,4 +80,10 @@
         <graphic fileref="modules/xlingual/databaseDiagrams/headwordExplanation.svg" contentwidth="16cm"/>
     </example>
 
+    <example>
+        <title>NVH</title>
+        <programlisting>
+langCode_explanation: text
+        </programlisting>
+    </example>
 </section>

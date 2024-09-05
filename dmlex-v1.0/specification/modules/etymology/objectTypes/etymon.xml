@@ -96,4 +96,14 @@
         <graphic fileref="modules/etymology/databaseDiagrams/etymon.svg" contentwidth="16cm"/>
     </example>
 
+    <example>
+        <title>NVH</title>
+        <programlisting>
+etymon: type
+  when: ...
+  note: ...
+  etymonUnit: ...
+  etymonUnit: ...
+</programlisting>
+    </example>
 </section>

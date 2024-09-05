@@ -88,4 +88,12 @@
         <graphic fileref="modules/xlingual/databaseDiagrams/exampleTranslation.svg" contentwidth="16cm"/>
     </example>
     
-</section>
+    <example>
+        <title>NVH</title>
+        <programlisting>
+langCode_exampleTranslation: text
+  soundFile: ...
+  label: ...
+        </programlisting>
+    </example>
+ </section>

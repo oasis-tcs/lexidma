@@ -50,4 +50,11 @@
       </programlisting>
   </example> 
   
-</section>
+  <example>
+    <title>NVH</title>
+    <programlisting>
+entry: headword
+  placeholder: ...
+    </programlisting>
+  </example>
+ </section>

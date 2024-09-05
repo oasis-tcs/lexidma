@@ -82,4 +82,13 @@
     <graphic fileref="modules/etymology/databaseDiagrams/etymology.svg" contentwidth="16cm"/>
   </example>
   
-</section>
+  <example>
+    <title>NVH</title>
+    <programlisting>
+etymology: description
+  etymon:
+  etymon:
+  etymon:
+  </programlisting>
+  </example>
+ </section>

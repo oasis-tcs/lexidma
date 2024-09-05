@@ -100,4 +100,14 @@
     <graphic fileref="modules/values/databaseDiagrams/labelTag.svg" contentwidth="16cm"/>
   </example>
   
+  <example>
+    <title>NVH</title>
+    <programlisting>
+labelTag: tag
+  description: ...
+  sameAs: ...
+  for: ...
+  typeTag: ...
+  </programlisting>
+  </example>
 </section>

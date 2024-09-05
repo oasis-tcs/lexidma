@@ -1,0 +1,14 @@
+<!-- This example is automatically generated. DO NOT EDIT -->
+<programlisting>
+entry: doctor
+  sense: medical doctor
+    translation: Arzt
+      pos: n-masc
+    translation: Ärztin
+      pos: n-fem
+  sense: academic title
+    translation: Doktor
+      pos: n-masc
+    translation: Doktorin
+      pos: n-fem
+</programlisting>

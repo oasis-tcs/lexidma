@@ -63,4 +63,10 @@
     <graphic fileref="modules/values/databaseDiagrams/sameAs.svg" contentwidth="16cm"/>
   </example>
   
-</section>
+  <example>
+    <title>NVH</title>
+    <programlisting>
+sameAs: uri
+    </programlisting>
+  </example>
+ </section>

@@ -1,0 +1,36 @@
+<!-- This example is automatically generated. DO NOT EDIT -->
+<programlisting>
+lexicographicResource: http://example.com
+  langCode: en
+  entry: colour
+    sense:
+      definition: red, blue, yellow etc.
+      example: What is your favourite colour?
+    sense:
+      definition: not being black and white
+      example: Owning a colour TV meant you were rich.
+    sense:
+      definition: a sign of a person's race
+      example: People of all creeds and colours.
+    sense:
+      definition: interest or excitement
+      example: Examples add colour to your writing.
+  relation: subsensing
+    super_member: /colour/sense/0~red%2C%20blue%2C%20yellow%20etc.
+    sub_member: /colour/sense/0~not%20being%20black%20and%20white
+  relation: subsensing
+    super_member: /colour/sense/0~red%2C%20blue%2C%20yellow%20etc.
+    sub_member: /colour/sense/0~a%20sign%20of%20a%20person%27s%20race
+  relationType: subsensing
+    scopeRestriction: sameEntry
+    memberType: sense
+      role: super
+      min: 1
+      max: 1
+      hint: none
+    memberType: sense
+      role: sub
+      min: 1
+      max: 1
+      hint: embed
+</programlisting>

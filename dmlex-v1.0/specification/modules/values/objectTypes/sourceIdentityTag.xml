@@ -78,4 +78,12 @@
     <graphic fileref="modules/values/databaseDiagrams/sourceIdentityTag.svg" contentwidth="16cm"/>
   </example>
   
+  <example>
+    <title>NVH</title>
+    <programlisting>
+sourceIdentityTag: tag
+  description: ...
+  sameAs: ...
+  </programlisting>
+  </example>
 </section>

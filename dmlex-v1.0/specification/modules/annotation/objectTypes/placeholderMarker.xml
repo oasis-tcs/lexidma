@@ -70,4 +70,10 @@
     <graphic fileref="modules/annotation/databaseDiagrams/placeholderMarker.svg" contentwidth="16cm"/>
   </example>
 
-</section>
+  <example>
+    <title>NVH</title>
+    <programlisting>
+placeholder: substring
+    </programlisting>
+  </example>
+ </section>

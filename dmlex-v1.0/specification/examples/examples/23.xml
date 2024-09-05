@@ -39,4 +39,8 @@
         <title>RDF</title>
         <xi:include href="source/23.rdf.xml"/>
     </example>
+    <example>
+        <title>NVH</title>
+        <xi:include href="source/23.nvh.xml"/>
+    </example>
 </section>

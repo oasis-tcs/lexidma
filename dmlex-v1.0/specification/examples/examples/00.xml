@@ -43,4 +43,8 @@
         <title>RDF</title>
         <xi:include href="source/0.rdf.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     </example>
+    <example>
+        <title>NVH</title>
+        <xi:include href="source/0.nvh.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    </example>
 </section>

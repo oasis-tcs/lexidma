@@ -54,4 +54,12 @@
         </programlisting>
     </example>
   
-</section>
+  <example>
+        <title>NVH</title>
+        <programlisting>
+lexicographicResource: ...
+  etymonLanguage: ...
+  etymonType: ...
+        </programlisting>
+    </example>
+ </section>
