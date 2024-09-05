@@ -1,0 +1,7 @@
+When making a change to a model, you may need to update:
+- the actual text in the specification
+- the plain-text model description in schemas/informativeCopiesOf3rdPartySchemas/NVH/dmlex_model_description.nvh
+  which is also used to generate the UML diagram
+- all serializations
+- examples of serializations that are next to the specification text
+- examples of serializations that are in the examples/ subdirectory
