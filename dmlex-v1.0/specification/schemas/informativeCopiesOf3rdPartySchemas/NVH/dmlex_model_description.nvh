@@ -178,7 +178,6 @@ etymology@etymon:
     etymology@type: ?
     etymology@note: ?
     etymology@etymonUnit: +
-    etymology@translation: ?
     etymology@listingOrder:
 etymology@etymonUnit:
     etymology@langCode:
@@ -190,7 +189,9 @@ etymology@etymonUnit:
 etymology@etymonLanguage:
     etymology@langCode:
     etymology@displayName: ?
+    etymology@sameAs: *
 etymology@etymonType:
     etymology@type:
     etymology@description: ?
+    etymology@sameAs: *
 </programlisting>
