@@ -578,7 +578,7 @@
       <varlistentry>
         <term>UNIQUE</term>
         <listitem>
-	      The term <glossterm>UNIQUE</glossterm> shall be interpreted as given in the section on <olink targetptr="uniqueids">Unique identifiers</olink>.
+          <para>The term <glossterm>UNIQUE</glossterm> shall be interpreted as given in the section on <olink targetptr="uniqueids">Unique identifiers</olink>.</para>
         </listitem>
       </varlistentry>
       
@@ -859,9 +859,7 @@
     <title>DMLex plain text description</title>
     <para>This description uses the <ulink url="https://www.namevaluehierarchy.org/schema.html">NVH schema notation style</ulink> and the convention that all object types and their properties are prefixed by either <literal>core@</literal> or <literal>MODULENAME@</literal> strings. Their arity is denoted by a <literal>*</literal> (zero or more), <literal>+</literal> (one or more), <literal>?</literal> (zero or one) or <literal>N+</literal> (<literal>N</literal> or more). If no arity is given, it indicates the arity of 1, i.e. being required and occurring exactly once.
     </para>
-    <programlisting>
-      <xi:include href="schemas/informativeCopiesOf3rdPartySchemas/NVH/dmlex_model_description.nvh" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    </programlisting>
+    <xi:include href="schemas/informativeCopiesOf3rdPartySchemas/NVH/dmlex_model_description.nvh" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   </appendix>
 
 
