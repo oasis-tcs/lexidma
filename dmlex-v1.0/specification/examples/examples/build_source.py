@@ -46,3 +46,16 @@ for f in glob("source/*.json"):
                 outf.write(line.replace("<", "&lt;").replace(">", "&gt;"))
             outf.write("</programlisting>\n")
 
+for f in glob("source/*.nvh"):
+    with open(f) as inf:
+        with open(f + ".xml", "w") as outf:
+            outf.write("<!-- This example is automatically generated. DO NOT EDIT -->\n")
+            outf.write("<programlisting>\n")
+            for line in inf.readlines():
+                while len(line) > N:
+                    outf.write(line[:N].replace("<", "&lt;").replace(">", "&gt;"))
+                    outf.write("\n")
+                    line = line[N:]
+                outf.write(line.replace("<", "&lt;").replace(">", "&gt;"))
+            outf.write("</programlisting>\n")
+

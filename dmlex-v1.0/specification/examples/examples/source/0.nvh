@@ -1,0 +1,13 @@
+lexicographicResource: http://example.com
+  langCode: en
+  entry: abandon
+    pos: verb
+    sense:
+      definition: to suddenly leave a place or a person
+      example: I'm sorry I abandoned you like that.
+      example: Abandon ship!
+        label: idiom
+    sense:
+      label: mostly-passive
+      definition: to stop supporting an idea
+      example: That theory has been abandoned.

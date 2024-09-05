@@ -1,0 +1,10 @@
+entry: fómhar
+  sense:
+    en_translation: autumn
+    en_translation: fall
+    de_translation: Herbst
+    cs_translation: podzim
+  sense:
+    en_translation: harvest
+    de_translation: Ernte
+    cs_translation: sklizeň

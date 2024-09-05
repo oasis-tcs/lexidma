@@ -953,7 +953,7 @@
     <para>This description uses the <ulink url="https://www.namevaluehierarchy.org/schema.html">NVH schema notation style</ulink> and the convention that all object types and their properties are prefixed by either <literal>core@</literal> or <literal>MODULENAME@</literal> strings. Their arity is denoted by a <literal>*</literal> (zero or more), <literal>+</literal> (one or more), <literal>?</literal> (zero or one) or <literal>N+</literal> (<literal>N</literal> or more). If no arity is given, it indicates the arity of 1, i.e. being required and occurring exactly once.
     </para>
     <programlisting>
-      <xi:include href="schemas/informativeCopiesOf3rdPartySchemas/NVH/dmlex.nvh" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+      <xi:include href="schemas/informativeCopiesOf3rdPartySchemas/NVH/dmlex_model_description.nvh" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     </programlisting>
   </appendix>
 
@@ -978,7 +978,7 @@
         <para>Filip, David - Masaryk University (previously TCD, ADAPT Centre) </para>
       </listitem>
       <listitem>
-        <para>Jakubíček, Miloš - Lexical Computing </para>
+        <para>Jakubíček, Miloš - Lexical Computing, Masaryk University </para>
       </listitem>
       <listitem>
         <para>Kallas, Jelena - Institute of the Estonian Language</para>
@@ -994,6 +994,9 @@
       </listitem>
       <listitem>
         <para>Krek, Simon - Jožef Stefan Institute </para>
+      </listitem>
+      <listitem>
+        <para>Kovář, Vojtěch - Lexical Computing, Masaryk University </para>
       </listitem>
       <listitem>
         <para>McCrae, John - University of Galway </para>

@@ -22,7 +22,7 @@
             <para><literal>description</literal> <glossterm>optional</glossterm> (zero or one)</para>
         </listitem>
         <listitem>
-            <para><literal><olink targetptr="nvh_member">member</olink></literal> <glossterm>required</glossterm> (two or more)</para>
+            <para><literal><olink targetptr="nvh_member">[PREFIX]member</olink></literal> <glossterm>required</glossterm> (two or more). The string [PREFIX] in the node name is an empty string if the <literal>role</literal> property of this <literal>member</literal> is not specified, otherwise it is replaced by that <literal>role</literal> property followed by the underscore character. All IRI-unsafe characters (outside the <literal>iunreserved</literal> class according to [<link linkend="bib_rfc3987">RFC 3987</link>]) in the <literal>role</literal> name are percent-encoded according to [<link linkend="bib_rfc3986">RFC 3986</link>].</para>
         </listitem>
     </itemizedlist>
 

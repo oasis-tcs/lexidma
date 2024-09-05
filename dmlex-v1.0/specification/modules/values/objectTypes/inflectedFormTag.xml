@@ -41,7 +41,7 @@
         <glossterm>optional</glossterm> (zero or one). Normalised string. A statement about
         constraints and recommendation on using this tag. This can be a human-readable description
         such as "for use with German nouns only" or a machine-readable instruction in any format
-        understandable to the DMLex implemenation, such as <code>partOfSpeech=noun AND
+        understandable to the DMLex implementation, such as <code>partOfSpeech=noun AND
           language=de</code>.</para>
     </listitem>
     <listitem>

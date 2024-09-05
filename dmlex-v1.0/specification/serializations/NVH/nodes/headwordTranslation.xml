@@ -6,8 +6,8 @@
                          <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >                         
                          ]>
 <section id="nvh_headwordTranslation">
-    <title>NVH node: <literal>headwordTranslation</literal></title>
-    <para>Implements the <olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink> object type from the Crosslingual Module.</para>
+    <title>NVH nodes: <literal>[PREFIX]translation</literal></title>
+    <para>Implements the <olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink> object type from the Crosslingual Module. The string [PREFIX] in the node name <glossterm>may</glossterm> be an empty string if only one translation language exists in the lexicographic resource, otherwise it is replaced by the <literal>langCode</literal> property of the <literal><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></literal> followed by the underscore character.</para>
 
     <itemizedlist>
         <title>Value</title>
@@ -19,12 +19,7 @@
     <itemizedlist>
         <title>Child nodes</title>
         <listitem>
-            <para><literal>langCode</literal> <glossterm>optional</glossterm> (zero or one) if the ancestor <literal>lexicographicResource</literal>
-                contains exactly one <literal>translationLanguage</literal>,
-                <glossterm>required</glossterm> otherwise</para>
-        </listitem>
-        <listitem>
-            <para><literal><olink targetptr="nvh_partOfSpeech">partOfSpeech</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
+            <para><literal><olink targetptr="nvh_pos">pos</olink></literal> <glossterm>optional</glossterm> (zero or more). This implements the <literal><olink targetptr="core_partOfSpeech">partOfSpeech</olink></literal> property.</para>
         </listitem>
         <listitem>
             <para><literal><olink targetptr="nvh_label">label</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
@@ -33,14 +28,14 @@
             <para><literal><olink targetptr="nvh_pronunciation">pronunciation</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
         </listitem>
         <listitem>
-            <para><literal><olink targetptr="nvh_inflectedForm">inflectedForm</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
+				<para><literal><olink targetptr="nvh_form">form</olink></literal> <glossterm>optional</glossterm> (zero or more). This implements the <literal><olink targetptr="core_inflectedForm">inflectedForm</olink></literal> property.</para>
         </listitem>
     </itemizedlist>
     
     <itemizedlist>
         <title>Child nodes if implementing the Annotation Module</title>
 		<listitem>
-			<para><literal><olink targetptr="nvh_placeholderMarker">placeholderMarker</olink></literal> <glossterm>optional</glossterm> </para>
+			<para><literal><olink targetptr="nvh_placeholder">placeholder</olink></literal> <glossterm>optional</glossterm> </para>
         </listitem>
     </itemizedlist>
 

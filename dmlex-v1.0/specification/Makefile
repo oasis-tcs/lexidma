@@ -27,7 +27,7 @@ dmlex_uml.svg: dmlex.dot
 dmlex.dot: dmlex.dot.m4 dmlex.dot.content
 	m4 $< > $@
 
-dmlex.dot.content: schemas/informativeCopiesOf3rdPartySchemas/NVH/dmlex.nvh nvh2dot.py
+dmlex.dot.content: schemas/informativeCopiesOf3rdPartySchemas/NVH/dmlex_model_description.nvh nvh2dot.py
 	awk '/<programlisting>/,/<\/programlisting>/' $< | tail -n+2 | head -n-1 | ./nvh2dot.py > $@
 
 Makefile.dep: dmlex.xml $(SOURCE_XML) makedep.sh

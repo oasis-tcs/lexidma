@@ -7,8 +7,8 @@
                          ]>
 <section id="rdb_collocateMarkers">
     <title>Database table: <literal>collocateMarkers</literal></title>
-    <para>Implements the <olink targetptr="annonation_collocateMarker">collocateMarker</olink> object type
-        from the Annotationm Module.</para>
+    <para>Implements the <olink targetptr="annotation_collocateMarker">collocateMarker</olink> object type
+        from the Annotation Module.</para>
 
     <itemizedlist>
         <title>Columns</title>
