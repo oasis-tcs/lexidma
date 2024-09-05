@@ -9,7 +9,7 @@
 <section id="annotation_exampleTranslation">
   <title>Extensions to <code>exampleTranslation</code></title>
   <para>
-    Extends the <code><olink targetptr="xlingual_headword">exampleTranslation</olink></code> object type
+    Extends the <code><olink targetptr="xlingual_exampleTranslation">exampleTranslation</olink></code> object type
     from the <olink targetptr="xlingual">Crosslingual module</olink>.
   </para>
   

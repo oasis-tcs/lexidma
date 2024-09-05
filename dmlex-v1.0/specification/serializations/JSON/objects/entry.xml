@@ -59,7 +59,7 @@
         <listitem>
             <para><literal>"placeholderMarkers"</literal>
                 <glossterm>optional</glossterm>, array of zero or more <literal><olink
-                    targetptr="json_placeholderMarkers">placeholderMarker</olink></literal> instances</para>
+                    targetptr="json_placeholderMarker">placeholderMarker</olink></literal> instances</para>
         </listitem>
     </itemizedlist>
 

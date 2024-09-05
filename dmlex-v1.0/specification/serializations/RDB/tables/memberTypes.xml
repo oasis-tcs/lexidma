@@ -18,7 +18,7 @@
         <listitem>
             <para><literal>relationType: nvarchar</literal>, foreign key,
                 references column <literal>type</literal>
-                of table <literal><olink targetptr="rdb_relationType">relationType</olink></literal>
+                of table <literal><olink targetptr="rdb_relationTypes">relationType</olink></literal>
             </para>
         </listitem>
         <listitem>

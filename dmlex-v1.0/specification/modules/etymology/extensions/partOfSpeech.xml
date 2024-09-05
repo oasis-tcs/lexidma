@@ -9,7 +9,7 @@
 <section id="etymology_partOfSpeech">
   <title>Extensions to <literal>partOfSpeech</literal></title>
   <para>
-    Extends the <code><olink targetptr="linking_partOfSpeech">partOfSpeech</olink></code> object type
+    Extends the <code><olink targetptr="core_partOfSpeech">partOfSpeech</olink></code> object type
     from the <olink targetptr="core">Core</olink>.
   </para>
   
