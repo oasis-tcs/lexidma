@@ -78,5 +78,13 @@
     <title>Relational database</title>
     <graphic fileref="core/databaseDiagrams/definition.svg" contentwidth="16cm"/>
   </example>
+
+  <example>
+    <title>NVH</title>
+    <programlisting>
+definition: text
+  definitionType: ...
+    </programlisting>
+  </example>
   
 </section>

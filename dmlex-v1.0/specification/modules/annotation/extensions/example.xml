@@ -60,4 +60,13 @@
   dmlex:collocateMarker ... ] .
       </programlisting>
   </example> 
-</section>
+
+  <example>
+    <title>NVH</title>
+    <programlisting>
+example: text
+  headword: ...
+  collocate: ...
+    </programlisting>
+  </example>
+ </section>

@@ -466,7 +466,7 @@
 		</para>
       </section>
     </section>
-  <section id="defintions">
+  <section id="definitions">
     <title>Definitions</title>
     <variablelist>
       
@@ -578,7 +578,7 @@
       <varlistentry>
         <term>UNIQUE</term>
         <listitem>
-	      The term <glossterm>UNIQUE</glossterm> shall be interpreted as given in the section on <olink targetptr="uniqueids">Unique identifiers</olink>.
+          <para>The term <glossterm>UNIQUE</glossterm> shall be interpreted as given in the section on <olink targetptr="uniqueids">Unique identifiers</olink>.</para>
         </listitem>
       </varlistentry>
       
@@ -839,110 +839,17 @@
 			<para><ulink url="&this-loc;/schemas/XML/dmlex_no-crosslingual.xsd">XML schema excluding the cross-lingual module</ulink></para>
         </listitem>
         <listitem>
-			<para><ulink url="&this-loc;/schemas/JSON/dmlex.json">JSON schema</ulink></para>
+			<para><ulink url="&this-loc;/schemas/JSON/dmlex.schema.json">JSON schema</ulink></para>
         </listitem>
         <listitem>
-			<para><ulink url="&this-loc;/schemas/JSON/dmlex_no-crosslingual.json">JSON schema excluding the cross-lingual module</ulink></para>
+			<para><ulink url="&this-loc;/schemas/JSON/dmlex_no-crosslingual.schema.json">JSON schema excluding the cross-lingual module</ulink></para>
         </listitem>
         <listitem>
 			<para><ulink url="&this-loc;/schemas/informativeCopiesOf3rdPartySchemas/NVH/dmlex.nvh">NVH schema (informative)</ulink></para>
         </listitem>
       </itemizedlist>
 
-    <!--
-      <orderedlist>
-        <listitem id="CoreSchema">
-          <para><firstterm>DMLex Core</firstterm> <link linkend="XMLSchema">[XML Schema]</link>,</para>
-          <para><ulink url="&this-loc;/schemas/dmlex&-cschversion;.xsd"
-            >&this-loc;/schemas/dmllex-&cschversion;.xsd</ulink></para>
-
-        </listitem>
-        <listitem id="DMLexCatalog">
-          <para><link linkend="XMLCatalogs">[XML Catalog]</link> of <firstterm>DMLex-defined</firstterm> XML Schemas,</para>
-          <para><ulink url="&this-loc;/schemas/catalog.xml"
-            >&this-loc;/schemas/catalog.xml</ulink></para>
-        </listitem>
-        <listitem id="NVDL">
-          <para>Master <link linkend="NVDL">[NVDL]</link> file governing validation of all <firstterm>DMLex-defined</firstterm>
-            namespaces by XML Schemas, Schematron Schemas and other rules if and as required,</para>
-          <para><ulink url="&this-loc;/schemas/advanced_validation.nvdl.xml"
-            >&this-loc;/schemas/advanced_validation.nvdl</ulink></para>
-        </listitem>
-        <listitem id="CoreSchematron">
-          <para><firstterm>DMLex Core</firstterm> <link linkend="Schematron">[Schematron]</link> Schema, </para>
-          <para><ulink url="&this-loc;/schemas/dmlex-&cschversion;.sch"
-            >&this-loc;/schemas/dmlex-&cschversion;.sch</ulink></para>
-        </listitem>
-        <listitem>
-          <para>XML and Schematron Schemas of <firstterm>DMLex Modules</firstterm> are referenced
-            from those modules.</para>
-        </listitem>
-      </orderedlist>
-
-
-
-      <warning>
-        <para>NVDL is not capable of discerning Schemtaron Warnings from Schematron Errors.
-          Therefore all Schematron Warnings will be reported as Errors when initiating the
-          validation from the NVDL schema. Also most of the existing Schematron implementations are
-          not capable of discerning Warnings from Errors, thus implementers are encouraged to re-use
-          the provided Schematron schemas in custom made validation services that can make this
-          distinction. Currently, the Warning/Error distinction is only important when evaluating
-          adherence to Processing Requirements for [ELABORATE].</para>
-      </warning>
-
-    </para>
-    -->
-    <!--  <para>[Relax NG schemas of <firstterm>DMLex Core and Modules</firstterm> are provided. Although the Relax NG schemas are intended as normative validation artifacts, the XML Schema 1.0 [add normative reference] schemas and Schematron [add normative reference] schemas have precedence in case of conflicting validation results.]
-      [This is only relevant if Relax NG is provided.]</para>-->
-    <!-- <xi:include href="core/tree.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>-->
-    <!-- LEXIDMA TC may decide to include the schema listings
-    <xi:include href="core/catalog.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-
-    <xi:include href="core/schema.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
--->
-    <!-- language for potential inclusion of support schemas such as the xml namespace schema
-    <section>
-      <title>Support Schemas</title>
-      <para>Third party support schemas that are normatively referenced from this specification or
-        from the machine readable artifacts that are a part of this multipart product are distributed
-        along with the <firstterm>DMLex-defined</firstterm> schemas in a subfolder named
-        <code>informativeCopiesOf3rdPartySchemas</code> and further subdivided in folders according to the
-      owner/maintainer of the schema.</para>
-      <warning>
-      <para>Schema copies in this sub-folder are provided solely for implementers convenience and are NOT a part of the OASIS multipart product.
-        These schemas belong to their respective owners and their use is governed by their owners' respective IPR policies.
-        The support schemas are organized in folders per owner/maintainer.
-        It is the implementer's sole responsibility to ensure that their local copies of all schemas are the appropriate up to date versions.</para></warning>
-
-        <para>Currently the only included third party support schema is
-          <ulink url="http://www.w3.org/2001/xml.xsd">http://www.w3.org/2001/xml.xsd</ulink> [<ulink url="http://www.w3.org/2009/01/xml.xsd">http://www.w3.org/2009/01/xml.xsd</ulink>] at <ulink
-            url="&this-loc;/schemas/informativeCopiesOf3rdPartySchemas/w3c/xml.xsd"
-            >&this-loc;/schemas/informativeCopiesOf3rdPartySchemas/w3c/xml.xsd</ulink> in this distribution.</para>
-    </section>-->
   </appendix>
-  <!--  
-  <appendix role="normative | informative" id="SecurityPrivacy">
-    <title>Security and privacy considerations</title>
-    <note>
-      <para>OASIS strongly recommends that Technical Committees consider issues that might affect
-        safety, security, privacy, and/or data protection in implementations of their work products
-        and document these for implementers and adopters. For some purposes, you may find it
-        required, e.g. if you apply for IANA registration.</para>
-      <para>While it may not be immediately obvious how your work product might make systems
-        vulnerable to attack, most work products, because they involve communications between
-        systems, message formats, or system settings, open potential channels for exploit. For
-        example, IETF [<link linkend="rfc3552">RFC 3552</link>] lists “eavesdropping, replay,
-        message insertion, deletion, modification, and man-in-the-middle” as well as potential
-        denial of service attacks as threats that must be considered and, if appropriate, addressed
-        in IETF RFCs.</para>
-      <para>In addition to considering and describing foreseeable risks, this section should include
-        guidance on how implementers and adopters can protect against these risks.</para>
-      <para>We encourage editors and TC members concerned with this subject to read Guidelines for
-        Writing RFC Text on Security Considerations, IETF [<link linkend="rfc3552">RFC 3552</link>],
-        for more information.</para>
-    </note>
-  </appendix>-->
   <appendix role="normative" id="diagram_uml">
     <title>DMLex UML diagram</title>
     <graphic fileref="dmlex_uml.svg" contentwidth="16cm"/>
@@ -952,9 +859,7 @@
     <title>DMLex plain text description</title>
     <para>This description uses the <ulink url="https://www.namevaluehierarchy.org/schema.html">NVH schema notation style</ulink> and the convention that all object types and their properties are prefixed by either <literal>core@</literal> or <literal>MODULENAME@</literal> strings. Their arity is denoted by a <literal>*</literal> (zero or more), <literal>+</literal> (one or more), <literal>?</literal> (zero or one) or <literal>N+</literal> (<literal>N</literal> or more). If no arity is given, it indicates the arity of 1, i.e. being required and occurring exactly once.
     </para>
-    <programlisting>
-      <xi:include href="schemas/informativeCopiesOf3rdPartySchemas/NVH/dmlex_model_description.nvh" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    </programlisting>
+    <xi:include href="schemas/informativeCopiesOf3rdPartySchemas/NVH/dmlex_model_description.nvh" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   </appendix>
 
 

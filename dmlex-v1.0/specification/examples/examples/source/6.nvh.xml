@@ -1,0 +1,11 @@
+<!-- This example is automatically generated. DO NOT EDIT -->
+<programlisting>
+posTag: n-masc
+  description: masculine noun
+  sameAs: http://www.lexinfo.net/ontology/3.0/lexinfo#noun
+  sameAs: uri: http://www.lexinfo.net/ontology/3.0/lexinfo#masculine
+posTag: n-fem
+  description: feminine noun
+  sameAs: http://www.lexinfo.net/ontology/3.0/lexinfo#noun
+  sameAs: http://www.lexinfo.net/ontology/3.0/lexinfo#feminine
+</programlisting>

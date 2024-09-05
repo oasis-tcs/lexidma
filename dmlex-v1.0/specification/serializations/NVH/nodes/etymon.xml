@@ -10,12 +10,16 @@
     <para>Implements the <olink targetptr="etymology_etymon">etymon</olink> object type from the Etymology Module.</para>
 
     <itemizedlist>
+        <title>Value</title>
+        <listitem>
+            <para><literal>type</literal> <glossterm>optional</glossterm> (zero or one)</para>
+        </listitem>
+    </itemizedlist>
+
+    <itemizedlist>
         <title>Child nodes</title>
         <listitem>
             <para><literal>when</literal> <glossterm>optional</glossterm> (zero or one)</para>
-        </listitem>
-        <listitem>
-            <para><literal>type</literal> <glossterm>optional</glossterm> (zero or one)</para>
         </listitem>
         <listitem>
             <para><literal>note</literal> <glossterm>optional</glossterm> (zero or one)</para>

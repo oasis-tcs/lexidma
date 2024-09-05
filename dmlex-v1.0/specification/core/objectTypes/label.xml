@@ -97,5 +97,12 @@
     <title>Relational database</title>
     <graphic fileref="core/databaseDiagrams/label.svg" contentwidth="16cm"/>
   </example>
-  
+
+  <example>
+    <title>NVH</title>
+    <programlisting>
+label: tag
+    </programlisting>
+  </example>
+   
 </section>

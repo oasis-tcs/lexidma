@@ -63,4 +63,10 @@
     <graphic fileref="modules/xlingual/databaseDiagrams/translationLanguage.svg" contentwidth="16cm"
     />
   </example>
+  <example>
+    <title>NVH</title>
+    <programlisting>
+translationLanguage: langCode
+    </programlisting>
+  </example>
 </section>

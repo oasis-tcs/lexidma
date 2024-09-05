@@ -92,8 +92,14 @@
       </programlisting>
   </example>
   <example>
-    <title>SQL</title>
+    <title>Relational database</title>
     <graphic fileref="modules/annotation/databaseDiagrams/collocateMarker.svg" contentwidth="16cm"/>
   </example>
 
+  <example>
+    <title>NVH</title>
+    <programlisting>
+collocate: ...
+    </programlisting>
+  </example>
 </section>

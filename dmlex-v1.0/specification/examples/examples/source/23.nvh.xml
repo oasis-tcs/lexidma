@@ -1,0 +1,16 @@
+<!-- This example is automatically generated. DO NOT EDIT -->
+<programlisting>
+entry: cat
+  sense:
+  etymology:
+    etymon:
+        enm_etymonUnit: catte
+    etymon:
+        ang_etymonUnit: catt
+          translation: male cat
+        ang_etymonUnit: catte
+          translation: female cat
+    etymon:
+        gem-x-proto_etymonUnit: kattuz
+          reconstructed: true
+</programlisting>

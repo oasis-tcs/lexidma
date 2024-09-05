@@ -29,7 +29,7 @@
     - relationType (type: subentrying, scopeRestcriction: sameResource)
         - memberType (role: container, type: sense, min: 1, max: 1, 
 			hint: navigate)
-        - memberRole (role: subentry, type: entry, min: 1, max: 1, 
+        - memberType (role: subentry, type: entry, min: 1, max: 1,
 			hint: embed)
         </programlisting>
     </example>
@@ -44,6 +44,10 @@
     <example>
         <title>RDF</title>
         <xi:include href="source/18.rdf.xml"/>
+    </example>
+    <example>
+        <title>NVH</title>
+        <xi:include href="source/18.nvh.xml"/>
     </example>
     <example>
         <title>Suggested rendering for human users</title>

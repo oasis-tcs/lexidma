@@ -1,0 +1,20 @@
+<!-- This example is automatically generated. DO NOT EDIT -->
+<programlisting>
+lexicographicResource: http://example.com
+  langCode: ga
+  entry: folúsghlantóir
+    pos: n-masc
+    form: folúsghlantóra
+      tag: sg-gen
+    form: folúsghlantóirí
+      tag: pl
+    sense: ...
+  posTag: n-masc
+    description: masculine noun
+  posTag: n-fem
+    description: feminine noun
+  formTag: sg-gen
+    description: singular genitive
+  formTag: pl
+    description: plural
+</programlisting>

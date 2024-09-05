@@ -1,0 +1,20 @@
+lexicographicResource:
+  langCode: en
+  entry: school
+    etymology:  Middle Dutch scole ("multitude, troop, crowd, school") from Proto-Germanic *skulō; doublet of shoal
+      etymon: derivation
+        dut_etymonUnit: scole
+          translation: multitude, troop, crowd, school
+      etymon: derivation
+        gem-pro_etymonUnit: skulō
+          reconstructed: true
+      etymon: doublet
+        en_etymonUnit: shoal
+  etymonLanguage: dum
+    displayName: Middle Dutch
+  etymonLanguage: gem-pro
+    displayName: Proto-Germanic
+  etymonType: derivation
+    description: A historical form of the word
+  etymonType: doublet
+    description: Two words derived from the same etymological root

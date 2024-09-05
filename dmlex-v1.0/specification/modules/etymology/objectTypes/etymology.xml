@@ -13,7 +13,7 @@
   <itemizedlist>
     <title>Property of</title>
     <listitem>
-      <para><literal><olink targetptr="etymoloogy_entry">entry</olink></literal></para>
+      <para><literal><olink targetptr="etymology_entry">entry</olink></literal></para>
     </listitem>
   </itemizedlist>
 
@@ -82,4 +82,13 @@
     <graphic fileref="modules/etymology/databaseDiagrams/etymology.svg" contentwidth="16cm"/>
   </example>
   
-</section>
+  <example>
+    <title>NVH</title>
+    <programlisting>
+etymology: description
+  etymon:
+  etymon:
+  etymon:
+  </programlisting>
+  </example>
+ </section>

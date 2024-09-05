@@ -1,0 +1,25 @@
+lexicographicResource: http://example.com
+  langCode: en
+  entry: safe
+    sense: protected from harm
+      example: It isn't safe to park here.
+    sense: not likely to cause harm
+      example: Is the ride safe for a small child?
+  entry: better safe than sorry
+    sense:
+      definition: you should be careful even if it seems unnecessary
+  relation: subentrying
+    container_member: /safe/sense/protected%20from%20harm
+    subentry_member: /better%20safe%20than%20sorry
+  relationType: subentrying
+    scopeRestriction: sameResource
+    memberType: sense
+      role: container
+      min: 1
+      max: 1
+      hint: navigate
+    memberType: entry
+      role: subentry
+      min: 1
+      max: 1
+      hint: embed

@@ -32,7 +32,7 @@
         <glossterm>optional</glossterm> (zero or one) if only one translation language exists in the
         lexicographic resource, <glossterm>required</glossterm> (exactly one) and <glossterm>unique</glossterm> (in combination with <literal>text</literal>) otherwise. IETF
         language tag. Indicates the language of this translation. The <code><olink
-            targetptr="xlingual_translation">translationLanguage</olink></code> datatype can be used
+            targetptr="xlingual_translationLanguage">translationLanguage</olink></code> datatype can be used
         to explain the meaning of the language codes that appear here and/or to constrain which
         language codes are allowed.</para>
     </listitem>
@@ -105,4 +105,14 @@
     <graphic fileref="modules/xlingual/databaseDiagrams/headwordTranslation.svg" contentwidth="16cm"/>
   </example>
 
-</section>
+  <example>
+    <title>NVH</title>
+    <programlisting>
+langCode_translation: text
+  pos: ...
+  label: ...
+  pronunciation: ...
+  form: ...
+    </programlisting>
+  </example>
+ </section>

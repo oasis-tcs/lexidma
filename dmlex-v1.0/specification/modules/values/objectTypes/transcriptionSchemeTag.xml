@@ -88,4 +88,13 @@
     <graphic fileref="modules/values/databaseDiagrams/transcriptionSchemeTag.svg" contentwidth="16cm"/>
   </example>
   
+  <example>
+    <title>NVH</title>
+    <programlisting>
+transcriptionSchemeTag: tag
+  description: ...
+  sameAs: ...
+  for: ...
+  </programlisting>
+  </example>
 </section>

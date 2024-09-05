@@ -104,4 +104,15 @@
     <graphic fileref="core/databaseDiagrams/example.svg" contentwidth="16cm"/>
   </example>
 
+  <example>
+    <title>NVH</title>
+    <programlisting>
+example: text
+  sourceIdentity: ...
+  sourceElaboration: ...
+  soundFile: ...
+  label: ...
+    </programlisting>
+  </example>
+
 </section>

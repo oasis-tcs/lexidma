@@ -1,0 +1,9 @@
+<!-- This example is automatically generated. DO NOT EDIT -->
+<programlisting>
+lexicographicResource: http://example.com
+  title: My Irish-Multilingual Dictionary
+  langCode: ga
+  translationLanguage: en
+  translationLanguage: de
+  translationLanguage: cs
+</programlisting>

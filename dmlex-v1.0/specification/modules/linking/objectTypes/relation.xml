@@ -74,4 +74,13 @@
     <graphic fileref="modules/linking/databaseDiagrams/relation.svg" contentwidth="16cm"/>
   </example>
 
+  <example>
+    <title>NVH</title>
+    <programlisting>
+relation: type
+  description: ...
+  member: ...
+</programlisting>
+  </example>
+
 </section>

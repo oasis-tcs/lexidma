@@ -1,0 +1,7 @@
+entry: autopsy
+  sense
+    headwordTranslation: pitva
+    example: The coroner performed an autopsy.
+      headwordMarker: autopsy
+        exampleTranslation: Koroner provedl pitvu.
+          headwordMarker: pitvu

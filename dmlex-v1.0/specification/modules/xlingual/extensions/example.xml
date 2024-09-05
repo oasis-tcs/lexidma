@@ -46,4 +46,13 @@
 &lt;#example&gt; dmlex:exampleTranslation ... .
       </programlisting>
   </example> 
-</section>
+
+  <example>
+    <title>NVH</title>
+    <programlisting>
+example: ...
+  ...
+  exampleTranslation: ...
+    </programlisting>
+  </example>
+ </section>

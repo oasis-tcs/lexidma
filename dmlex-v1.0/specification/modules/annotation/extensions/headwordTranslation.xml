@@ -50,4 +50,12 @@
   dmlex:placeholderMarker ... .
         </programlisting>
     </example> 
-</section>
+
+	<example>
+        <title>NVH</title>
+        <programlisting>
+translation: text
+  placeholder: ...
+        </programlisting>
+    </example>
+ </section>

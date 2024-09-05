@@ -45,6 +45,6 @@
             <para><literal><olink targetptr="nvh_headwordTranslation">[PREFIX]translation</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
 		</listitem>
     </itemizedlist>
-	The string [PREFIX] in the node name <glossterm>may</glossterm> be an empty string if only one translation language exists in the lexicographic resource, otherwise it is replaced by the <literal>langCode</literal> property of the <literal><olink targetptr="xlingual_headwordExplanation">headwordExplanation</olink></literal> or <literal><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></literal> object type, respectively, followed by the underscore character.
+	<para>The string [PREFIX] in the node name <glossterm>may</glossterm> be an empty string if only one translation language exists in the lexicographic resource, otherwise it is replaced by the <literal>langCode</literal> property of the <literal><olink targetptr="xlingual_headwordExplanation">headwordExplanation</olink></literal> or <literal><olink targetptr="xlingual_headwordTranslation">headwordTranslation</olink></literal> object type, respectively, followed by the underscore character.</para>
 
 </section>

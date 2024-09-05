@@ -84,7 +84,7 @@
   <example>
     <title>NVH</title>
     <programlisting>
-pos: [tag]
+pos: tag
 </programlisting>
   </example>
 

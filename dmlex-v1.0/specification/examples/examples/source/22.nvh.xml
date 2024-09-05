@@ -1,0 +1,14 @@
+<!-- This example is automatically generated. DO NOT EDIT -->
+<programlisting>
+entry: autopsy
+  sense:
+    example: The coroner performed an autopsy.
+      headwordMarker: autopsy
+      collocateMarker: performed
+        lemma: perform
+      exampleTranslation: Koroner provedl pitvu.
+        headwordMarker: pitvu
+        collocateMarker: provedl
+          lemma: provést
+    headwordTranslation: pitva
+</programlisting>

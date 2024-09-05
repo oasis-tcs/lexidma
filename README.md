@@ -20,8 +20,15 @@ Please see the [LICENSE file](https://github.com/oasis-tcs/lexidma/blob/master/L
 
 Current working draft versions in this repository:
 
-* [WD01 HTML](../../releases/download/dev-latest/dmlex-v1.0-wd01.html)
-* [WD01 PDF](../../releases/download/dev-latest/dmlex-v1.0-wd01.pdf)
+* CSD04 [[HTML](../../releases/download/csd04/dmlex-v1.0-csd04.html), [PDF](../../releases/download/csd04/dmlex-v1.0-csd04.pdf)]
+
+* CSD03 [[HTML](../../releases/download/csd03/dmlex-v1.0-csd03.html), [PDF](../../releases/download/csd03/dmlex-v1.0-csd03.pdf)]
+
+* CSD02 [[HTML](../../releases/download/csd02/dmlex-v1.0-csd02.html), [PDF](../../releases/download/csd02/dmlex-v1.0-csd02.pdf)]
+
+* CSD01 [[HTML](../../releases/download/csd01/dmlex-v1.0-csd01.html), [PDF](../../releases/download/csd01/dmlex-v1.0-csd01.pdf)]
+
+* WD01 [[HTML](../../releases/download/dev-latest/dmlex-v1.0-wd01.html), [PDF](../../releases/download/dev-latest/dmlex-v1.0-wd01.pdf)]
 
 ## Contact
 
