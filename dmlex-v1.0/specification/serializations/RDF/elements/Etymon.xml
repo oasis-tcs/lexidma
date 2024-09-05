@@ -28,9 +28,6 @@
     <listitem>
         <para><literal>dmlex:etymonUnit</literal> REQUIRED (at least 1) reference to <olink targetptr="rdf_EtymonUnit">EtymonUnit</olink></para>
     </listitem>
-    <listitem>
-        <para><literal>dmlex:translation</literal> OPTIONAL (at most 1) of type <literal>http://www.w3.org/2001/XMLSchema#string</literal></para>
-    </listitem>
     </itemizedlist>
 
 

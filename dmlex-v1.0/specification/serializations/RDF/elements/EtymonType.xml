@@ -19,6 +19,9 @@
     <listitem>
         <para><literal>dmlex:type</literal> REQUIRED (exactly 1) of type <literal>http://www.w3.org/2001/XMLSchema#string</literal></para>
     </listitem>
+    <listitem>
+        <para><literal>dmlex:sameAs</literal> OPTIONAL</para>
+    </listitem>
     </itemizedlist>
 
 

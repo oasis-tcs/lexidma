@@ -33,9 +33,6 @@
             <para><literal>note: nvarchar</literal></para>
         </listitem>
         <listitem>
-            <para><literal>translation: nvarchar</literal></para>
-        </listitem>
-        <listitem>
             <para><literal>listingOrder: int</literal></para>
         </listitem>
     </itemizedlist>

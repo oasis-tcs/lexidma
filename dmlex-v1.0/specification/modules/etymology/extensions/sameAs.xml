@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+                         <!ENTITY % xinclude SYSTEM "../../../docbook/xinclude.mod" >
+                         %xinclude;
+                         <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED" >
+]>
+
+<section id="etymology_sameAs">
+  <title>Extensions to <code>sameAs</code></title>
+  <para>
+    Extends the <code><olink targetptr="values_sameAs">sameAs</olink></code> object type
+    from the <olink targetptr="values">Controlled Values Module</olink>.
+  </para>
+  
+  <itemizedlist>
+    <title>Can additionally be a property of</title>
+    <listitem>
+      <para><literal><olink targetptr="linking_relationTypeTag">etymonLanguage</olink></literal></para>
+    </listitem>
+    <listitem>
+      <para><literal><olink targetptr="linking_memberRoletag">etymonType</olink></literal></para>
+    </listitem>
+  </itemizedlist>
+  
+  <example>
+    <title>Relational database</title>
+    <graphic fileref="modules/linking/databaseDiagrams/sameAs.svg" contentwidth="16cm"/>
+  </example>
+  
+</section>

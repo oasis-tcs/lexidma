@@ -45,11 +45,6 @@
                 <glossterm>required</glossterm> (one or more) and <glossterm>unique</glossterm>.</para>
         </listitem>
         <listitem>
-            <para><literal>translation</literal>
-                <glossterm>optional</glossterm> (zero or one). Normalised string. A translation or
-                gloss of the etymon in the language of the lexicographic resource.</para>
-        </listitem>
-        <listitem>
             <para><literal>listingOrder</literal>
                 <glossterm>required</glossterm> (exactly one). Number. The position of this origin
                 among other origins listed in the etymology. This can be implicit from the

@@ -906,9 +906,6 @@
             "$ref": "#/$defs/etymonUnit"
           },
           "minItems": 1
-        },
-        "translation": {
-          "type": "string"
         }
       },
       "additionalProperties": false
@@ -950,6 +947,13 @@
         "description": {
           "type": "string",
           "minLength": 1
+        },
+        "sameAs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/sameAs"
+          },
+          "uniqueItems": true
         }
       },
       "additionalProperties": false
@@ -963,6 +967,13 @@
         },
         "displayName": {
           "type": "string"
+        },
+        "sameAs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/sameAs"
+          },
+          "uniqueItems": true
         }
       },
       "additionalProperties": false

@@ -32,6 +32,10 @@
         <glossterm>optional</glossterm> (zero or one). Normalised string. The name of the etymon
         language, in the language of the lexicographic resource.</para>
     </listitem>
+    <listitem>
+      <para><literal><olink targetptr="etymology_sameAs">sameAs</olink></literal>
+        <glossterm>optional</glossterm> (zero or more).</para>
+    </listitem>
   </itemizedlist>
   
   <note>
@@ -48,6 +52,7 @@
         <programlisting>
 &lt;etymonLanguage langCode="..."&gt;
   &lt;displayName&gt;...&lt;displayName&gt;
+  &lt;sameAs.../&gt;
 &lt;/etymonLanguage&gt;
 </programlisting>
     </example>
@@ -57,7 +62,8 @@
         <programlisting>
 {
   "langCode": "..." ,
-  "displayName": "..."
+  "displayName": "...",
+  "sameAs": [ ... ]
 }
 </programlisting>
     </example>
@@ -66,7 +72,8 @@
         <title>RDF</title>
         <programlisting>
 &lt;#etymonLanguage&gt; dmlex:langCode "..." ;
-  dmlex:displayName "... "  .
+  dmlex:displayName "... "  ;
+  dmlex:sameAs ... .
 </programlisting>
     </example>
 
