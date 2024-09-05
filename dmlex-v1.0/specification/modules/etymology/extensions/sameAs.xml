@@ -16,16 +16,16 @@
   <itemizedlist>
     <title>Can additionally be a property of</title>
     <listitem>
-      <para><literal><olink targetptr="linking_relationTypeTag">etymonLanguage</olink></literal></para>
+      <para><literal><olink targetptr="etymology_etymonLanguage">etymonLanguage</olink></literal></para>
     </listitem>
     <listitem>
-      <para><literal><olink targetptr="linking_memberRoletag">etymonType</olink></literal></para>
+      <para><literal><olink targetptr="etymology_etymonType">etymonType</olink></literal></para>
     </listitem>
   </itemizedlist>
   
   <example>
     <title>Relational database</title>
-    <graphic fileref="modules/linking/databaseDiagrams/sameAs.svg" contentwidth="16cm"/>
+    <graphic fileref="modules/etymology/databaseDiagrams/sameAs.svg" contentwidth="16cm"/>
   </example>
   
 </section>
