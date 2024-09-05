@@ -839,10 +839,10 @@
 			<para><ulink url="&this-loc;/schemas/XML/dmlex_no-crosslingual.xsd">XML schema excluding the cross-lingual module</ulink></para>
         </listitem>
         <listitem>
-			<para><ulink url="&this-loc;/schemas/JSON/dmlex.json">JSON schema</ulink></para>
+			<para><ulink url="&this-loc;/schemas/JSON/dmlex.schema.json">JSON schema</ulink></para>
         </listitem>
         <listitem>
-			<para><ulink url="&this-loc;/schemas/JSON/dmlex_no-crosslingual.json">JSON schema excluding the cross-lingual module</ulink></para>
+			<para><ulink url="&this-loc;/schemas/JSON/dmlex_no-crosslingual.schema.json">JSON schema excluding the cross-lingual module</ulink></para>
         </listitem>
         <listitem>
 			<para><ulink url="&this-loc;/schemas/informativeCopiesOf3rdPartySchemas/NVH/dmlex.nvh">NVH schema (informative)</ulink></para>
