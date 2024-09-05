@@ -56,6 +56,9 @@
         <listitem>
             <para><literal><olink targetptr="xml_sourceIdentityTag">&lt;sourceIdentityTag&gt;</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
         </listitem>
+        <listitem>
+            <para><literal><olink targetptr="xml_transcriptionSchemeTag">&lt;transcriptionSchemeTag&gt;</olink></literal> <glossterm>optional</glossterm> (zero or more)</para>
+        </listitem>
     </itemizedlist>
     
     <itemizedlist>

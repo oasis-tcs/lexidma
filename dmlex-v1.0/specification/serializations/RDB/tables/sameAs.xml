@@ -79,6 +79,22 @@
     </itemizedlist>
     
     <itemizedlist>
+        <title>Columns if implementing the Etymology Module</title>
+        <listitem>
+            <para><literal>etymonLanguageCode: nvarchar</literal>, foreign key,
+                references column <literal>langCode</literal>
+                of table <literal><olink targetptr="rdb_etymonLanguages">etymonLanguages</olink></literal>
+            </para>
+        </listitem>
+        <listitem>
+            <para><literal>etymonType: nvarchar</literal>, foreign key,
+                references column <literal>type</literal>
+                of table <literal><olink targetptr="rdb_etymonTypes">etymonTypes</olink></literal>
+            </para>
+        </listitem>
+    </itemizedlist>
+    
+    <itemizedlist>
         <title>Constraint</title>
         <listitem>
             <para>
@@ -90,8 +106,10 @@
                 <literal>labelTypeTag</literal>, 
                 <literal>inflectedFormTag</literal>, 
                 <literal>partOfSpeechTag</literal>, 
-                <literal>relationType</literal> and
+                <literal>relationType</literal>,
                 <literal>memberTypeID</literal>
+                <literal>etymonLanguageCode</literal> and
+                <literal>etymonType</literal>
                 is <glossterm>required</glossterm> to be non-empty.
             </para>
         </listitem>
