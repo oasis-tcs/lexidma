@@ -26,7 +26,7 @@ def describe_property(g, property, file, restrictions):
 
 def parse_rdf():
     g = rdflib.Graph()
-    g.parse("ontology/dmlex.ttl", format="turtle")
+    g.parse("../../schemas/RDF/dmlex.ttl", format="turtle")
 
     props = defaultdict(list)
     # First scan for domains

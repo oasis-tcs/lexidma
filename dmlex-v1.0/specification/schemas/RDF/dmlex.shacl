@@ -176,7 +176,7 @@
       sh:path dmlex:definitionType  ;
       sh:minCount 0 ;
       sh:maxCount 1 ;
-      sh:class dmlex:DefinitionType  ] ;
+      sh:class dmlex:DefinitionTypeTag  ] ;
     sh:property [
       sh:path dmlex:headwordMarker  ;
       sh:class dmlex:HeadwordMarker  ] ;

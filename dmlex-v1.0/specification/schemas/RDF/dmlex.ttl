@@ -247,7 +247,7 @@ dmlex:Definition a owl:Class ;
 dmlex:definitionType a owl:ObjectProperty ;
   rdfs:label "Definition Type"@en ;
   rdfs:domain dmlex:Definition ;
-  rdfs:range dmlex:DefinitionType .
+  rdfs:range dmlex:DefinitionTypeTag .
 
 dmlex:Label a owl:Class ;
   rdfs:comment "Represents a restriction on its parent such as temporal (old-fashioned, neologism), regional (dialect), register (formal, colloquial), domain (medicine, politics) or grammar (singular-only)."@en ;
