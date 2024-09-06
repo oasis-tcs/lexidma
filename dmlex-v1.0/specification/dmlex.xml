@@ -772,10 +772,8 @@
           <citetitle><ulink url="http://www.w3.org/2001/xml.xsd"
               >http://www.w3.org/2001/xml.xsd</ulink></citetitle> [<edition><ulink
               url="http://www.w3.org/2009/01/xml.xsd"
-            >http://www.w3.org/2009/01/xml.xsd</ulink>]</edition>. at <edition><ulink
-              url="&this-loc;/schemas/informativeCopiesOf3rdPartySchemas/w3c/xml.xsd"
-              >&this-loc;/schemas/informativeCopiesOf3rdPartySchemas/w3c/xml.xsd</ulink></edition>
-          in this distribution</bibliomixed>
+			  >http://www.w3.org/2009/01/xml.xsd</ulink>]</edition>.
+        </bibliomixed>
         <bibliomixed id="XMLCatalogs"><abbrev>XML Catalogs</abbrev> Norman Walsh, <title>XML
             Catalogs</title>, <citetitle>
             <ulink url="https://www.oasis-open.org/committees/download.php/14809/xml-catalogs.html"
