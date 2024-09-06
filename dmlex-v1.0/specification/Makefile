@@ -17,6 +17,7 @@ dmlex-$(VERSION).html: dmlex-$(VERSION).xml
 
 dmlex-$(VERSION).xml: dmlex.xml docbook/dbgenent.mod dmlex_uml.svg $(SOURCE_XML)
 	./merge.sh $@
+	xmllint --valid --noout $@
 
 dmlex_uml.pdf: dmlex.dot
 	dot -Tpdf < $< > $@
