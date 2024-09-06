@@ -44,6 +44,9 @@ xmldep:
 jsondep:
 	@python -c 'import jsonschema' 2>/dev/null || { echo "Python jsonschema module is not installed, cannot validate JSON examples."; exit 2; }
 
+rdfdep:
+	@python -c 'import pyshacl' 2>/dev/null || { echo "Python pyshacl module is not installed, cannot validate JSON examples."; exit 2; }
+
 validate_xml: xmldep validate_xml.py schemas/XML/dmlex.xsd schemas/XML/dmlex_no-crosslingual.xsd
 	@for xmlexample in examples/examples/source/*[0-9].xml; do \
 		echo validating "$$xmlexample"; \
@@ -70,7 +73,7 @@ validate_json: jsondep validate_json.py schemas/JSON/dmlex.schema.json schemas/J
 		   } \
 	done
 
-validate_rdf: jsondep schemas/RDF/dmlex.shacl
+validate_rdf: rdfdep schemas/RDF/dmlex.shacl
 	@for rdfexample in examples/examples/source/*[0-9].rdf; do \
 		echo validating "$$rdfexample"; \
 		python -m pyshacl -s schemas/RDF/dmlex.shacl -df turtle $$rdfexample -e schemas/RDF/dmlex.ttl -i rdfs \
