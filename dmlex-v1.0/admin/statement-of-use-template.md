@@ -1,5 +1,10 @@
 # Proposed template for statements of use
 
+Please submit your statement of use by e-mail with the subject line "Statement of use for DMLex CS01". At the start of your e-mail, say that you are submitting a statement of use for DMLex Committee Specification 01 which is available at this URL: https://docs.oasis-open.org/lexidma/dmlex/v1.0/cs01/dmlex-v1.0-cs01.html Please include the URL in the e-mail. Send the e-mail to:
+
+- LEXIDMA's internal mailing list/discussion forum if you are a LEXIDMA member.
+- [This mailing list](https://groups.google.com/u/1/a/oasis-open.org/g/technical-committee-comments) if you are not a LEXIDMA member. You will need to subscribe to the mailing list first. You can unsubscribe immediately after sending your statement statement of use.  
+
 There is no prescribed format or wording for the statement of use. What we’re asking for is a short text which contains as much of the following information as is applicable to your situation.
 
 - Our organisation (name, identification) has implemented/is implementing/is using DMLex in the following software.
