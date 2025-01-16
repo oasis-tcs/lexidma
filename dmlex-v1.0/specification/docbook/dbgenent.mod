@@ -49,17 +49,17 @@
 <!ENTITY cschversion "1.0">
 
 
-<!ENTITY stage "cs01">
-<!ENTITY pstage "csd04">
-<!ENTITY standard "Committee Specification 01">
+<!ENTITY stage "cos01">
+<!ENTITY pstage "cs01">
+<!ENTITY standard "Candidate OASIS Standard 01">
 
 <!ENTITY this-loc "https://docs.oasis-open.org/lexidma/dmlex/v&version;/&stage;">
 <!ENTITY previous-loc "https://docs.oasis-open.org/lexidma/dmlex/v&version;/&pstage;">
 <!ENTITY latest-loc "https://docs.oasis-open.org/lexidma/dmlex/v&version;">
 
-<!ENTITY pubdate "8 November &pubyear;">
+<!ENTITY pubdate "16 January &pubyear;">
 
-<!ENTITY pubyear "2024">
+<!ENTITY pubyear "2025">
 <!ENTITY releaseinfo "Standards Track Work Product">
 <!-- End of DMLex V1.0 publishing entities -->
 
