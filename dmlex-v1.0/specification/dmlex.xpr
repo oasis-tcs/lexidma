@@ -10,7 +10,7 @@
                         <scenarioAssociation-array>
                             <scenarioAssociation>
                                 <field name="url">
-                                    <String>dmlex-v1.0-wd01.xml</String>
+                                    <String>dmlex.xml</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
@@ -30,7 +30,7 @@
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
-                                    <String>dmlex.xml</String>
+                                    <String>dmlex-v1.0-wd01.xml</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
@@ -143,6 +143,7 @@
         </options>
     </meta>
     <projectTree name="dmlex.xpr">
+        <folder path="../../../dF-fork-lexidma/dmlex-v1.0/specification/"/>
         <folder path="."/>
     </projectTree>
 </project>

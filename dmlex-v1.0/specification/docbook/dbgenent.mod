@@ -49,15 +49,15 @@
 <!ENTITY cschversion "1.0">
 
 
-<!ENTITY stage "cos01">
+<!ENTITY stage "os">
 <!ENTITY pstage "cs01">
-<!ENTITY standard "Candidate OASIS Standard 01">
+<!ENTITY standard "OASIS Standard">
 
 <!ENTITY this-loc "https://docs.oasis-open.org/lexidma/dmlex/v&version;/&stage;">
 <!ENTITY previous-loc "https://docs.oasis-open.org/lexidma/dmlex/v&version;/&pstage;">
 <!ENTITY latest-loc "https://docs.oasis-open.org/lexidma/dmlex/v&version;">
 
-<!ENTITY pubdate "16 January &pubyear;">
+<!ENTITY pubdate "29 April &pubyear;">
 
 <!ENTITY pubyear "2025">
 <!ENTITY releaseinfo "Standards Track Work Product">
