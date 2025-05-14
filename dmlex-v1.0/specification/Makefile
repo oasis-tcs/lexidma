@@ -1,6 +1,6 @@
 -include Makefile.dep
 
-VERSION=v1.0-csd04
+VERSION=v1.0-os
 
 html: dmlex-$(VERSION).html
 
