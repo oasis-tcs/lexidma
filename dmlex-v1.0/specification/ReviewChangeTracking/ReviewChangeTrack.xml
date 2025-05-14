@@ -4,16 +4,15 @@
 %xinclude;
 <!ENTITY % local.common.attrib "xml:base CDATA #IMPLIED">
 ]>
-<section>
-  <title>Tracking of changes made during the OASIS publishing process after Public Reviews</title>
-  <para>No technical changes were made during the approval and publishing process since the Committee Specification Draft 04 public review version published on 06 September 2024.</para>
-  
-</section>
-
 <section id="ReviewChangeTrack">
-
-  <title>Tracking of changes made in response to Public Reviews</title>
-<para>This is to facilitate human tracking of changes in the specification made since the first
+  <title>Tracking of changes</title>
+  <section>
+    <title>Tracking of changes made during the OASIS publishing process after Public Reviews</title>
+    <para>No technical changes were made during the approval and publishing process since the Committee Specification Draft 04 public review version published on 06 September 2024.</para>
+  </section>
+  <section>
+    <title>Tracking of changes made in response to Public Reviews</title>
+    <para>This is to facilitate human tracking of changes in the specification made since the first
       Public Review publication on 8th September 2023. </para>
  <!--  
    <xi:include href="cos01.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>-->
@@ -21,4 +20,5 @@
    <xi:include href="csd03.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
    <xi:include href="csd02.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
    <xi:include href="csd01.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  </section>
 </section>
