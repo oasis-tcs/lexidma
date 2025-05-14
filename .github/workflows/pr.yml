@@ -24,7 +24,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install packages for XML and JSON validation
         run: |
-          pip install xmlschema jsonschema xmlstarlet pyshacl
+          pip install xmlschema jsonschema pyshacl
+          sudo apt-get install xmlstarlet
       - name: Validate
         run: make validate_xml validate_json validate_rdf
   build:
